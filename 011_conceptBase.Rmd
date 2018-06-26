@@ -1,0 +1,179 @@
+# (PART) Conceptos básicos {-}
+
+# Primeros pasos {#premiersPas}
+
+## Instalando R
+
+El programa para instalar el software R se puede descargar desde el sitio web de R: https://www.r-project.org/. En el sitio de R, primero es necesario elegir un espejo CRAN (servidor desde el que descargar R, el más cercano a su ubicación geográfica), luego descargue el archivo *base*. Los usuarios de Linux pueden preferir un `sudo apt-get install r-base`. 
+
+```{block, type='rmdnote'}
+El software R se puede descargar de muchos servidores CRAN (Comprehensive R Archive Network) de todo el mundo. Estos servidores se llaman espejos. La elección del espejo es manual. Información adicional como esta nota siempre estará representada con este pictograma *información*.
+```
+
+## R como calculadora
+
+Una vez que se inicia el programa, aparece una ventana cuya apariencia puede variar dependiendo de su sistema operativo (Figura \@ref(fig:screenCapConsole)). Esta ventana se llama *consola*.
+
+```{r screenCapConsole, fig.cap = "Captura de pantalla de la consola R en Windows.\\label{fig:screenCapConsole}", echo = FALSE}
+knitr::include_graphics("myFigures/screencap_rConsoleFR.png")
+```
+
+La consola corresponde a la interfaz donde se interpretará el código, es decir, donde el código será transformado en lenguaje de máquina, ejecutado por la computadora y retransmitido en forma legible por humanos. Esto corresponde a la pantalla de una calculadora. Así es como se usará R más adelante en esta sección.
+
+```{block, type='rmdnote'}
+A lo largo de este libro, los ejemplos del código R aparecerán sobre un fondo gris. Se pueden copiar y pegar directamente en la consola, aunque es mejor reproducir escribando los ejemplos en la consola (o más adelante en los scripts). El resultado de lo que se envía en la consola también aparecerá en un fondo gris con `##` delante del código para hacer la distinción entre el código y el resultado del código.
+```
+
+```{r}
+5 + 5
+```
+
+Si escribimos `5 + 5` en la consola y luego `Enter`, el resultado aparece precedido por el número [1] entre corchetes. Este número corresponde al número del resultado (en nuestro caso, solo hay un resultado, volveremos a este aspecto más adelante). También podemos observar en este ejemplo el uso de espacios antes y después del signo `+`. Estos espacios no son necesarios, pero permiten que el código sea más legible para los humanos (es decir, más agradable de leer tanto para nosotros como para las personas con las que queremos compartir nuestro código).
+Los operadores aritméticos disponibles bajo R se resumen en la tabla \@ref(tab:tabOpAri).
+
+```{r tabOpAri, echo = FALSE}
+opAriDf <- data.frame(Label = c("adición", "resta", "multiplicación", 
+  "división", "potencia", "módulo", "cociente decimal"), 
+  Operador = c("+", "-", "*", "/", "^", "%%", "%/%"))
+knitr::kable(opAriDf, caption = "Operadores aritméticos.\\label{tab:tabOpAri}")
+```
+
+Clásicamente, las multiplicaciones y divisiones tienen prioridad sobre las adiciones y sustracciones. Si es necesario, podemos usar paréntesis.
+
+```{r}
+5 + 5 * 2
+(5 + 5) * 2
+```
+
+El operador de módulo corresponde al resto de la división euclidiana. Se usa en ciencias de la computación, por ejemplo, para saber si un número es par o impar (un número módulo 2 devolverá 1 si es impar y 0 si es par).
+
+```{r}
+451 %% 2
+288 %% 2
+(5 + 5 * 2) %% 2
+((5 + 5) * 2) %% 2
+```
+
+R también incorpora algunas constantes que incluyen `pi`. Además, el signo infinito está representado por `Inf`
+
+```{r}
+pi
+pi * 5^2
+1/0
+```
+
+```{block, type='rmdstyle'}
+el *estilo* del código es importante porque el código está destinado a ser leído por nosotros y por otras personas. Para tener un estilo legible, se recomienda colocar espacios antes y después de los operadores aritméticos, excepto `*`, `/` y `^`, aunque a veces es útil agregarlos como es el caso en nuestro ejemplos. La información sobre el *estilo* siempre estará representada con este pictograma para que sea fácilmente identificable.
+```
+
+## El concepto de objeto
+
+Un aspecto importante de la programación con R, pero también la programación en general es la noción de objeto. Como se indica en la página web de wikipedia (https://ia.wikipedia.org/wiki/Objecto_(informatica)), en ciencias de la computación, un objeto es un *contenedor*, es decir, algo que contendrá información. La inforamción contenida en un objeto puede ser muy diversa, pero por el momento contendremos en un objeto el número 5. Para hacer esto (y para reutilizarlo más adelante), debemos darle un nombre a nuestro objeto. Con R, los nombres de los objetos no deben contener caracteres especiales como *^ $ ? | + () [] {}*. No deben comenzar con un número ni contener espacios. El nombre del objeto debe ser representativo de lo que contiene, sin ser demasiado corto ni demasiado largo. Imagine que nuestro número 5 corresponde al número de repeticiones de un experimento. Nos gustaría darle un nombre que se refiera a *numero* y *repeticiones*, que podríamos reducir a *nbr* y *rep*, respectivamente (*nbr* para number en ingles). Hay varias posibilidades que son bastante comunes bajo R:
+
+* la séparation au moyen du caractère *tiret bas* :  `nbr_rep`
+* la séparation au moyen du caractère *point* : `nbr.rep`
+* l'utilisation de lettres minuscules : `nbrrep`
+* le style *lowerCamelCase* consistant en un premier mot en minuscules et des suivants avec une majuscule : `nbrRep`
+* le style *UpperCamelCase* consistant à mettre une majuscule au début de chacun des mots : `NbrRep`
+
+Toutes ces formes de nommer un objet sont équivalentes. Dans ce livre nous utiliserons le style *lowerCamelCase*. De manière générale il faut éviter les noms trop longs comme `leNombreDeRepetitions` ou trop courts comme `nR`, et les noms ne permettant pas d'identifier le contenu comme `maVariable` ou `monChiffre`, mais aussi `a` ou `b`...
+
+```{block, type='rmdstyle'}
+Il existe différentes façons de définir un nom pour les objets que nous allons créer avec R. Dans ce livre il est utilisé le style *lowerCamelCase*. L'important n'est pas le choix du style mais la consistence dans son choix. L'objectif est d'avoir un code fonctionnel mais également un code facile et agréable à lire.
+```
+
+Maintenant que nous avons choisi un nom pour notre objet, il faut le créer et faire comprendre à R que notre objet doit contenir le chiffre 5. Il existe trois façons de créer un objet sous R:
+
+* avec le signe `<-`
+* avec le signe `=`
+* avec le signe `->`
+
+```{r}
+nbrRep <- 5
+nbrRep = 5
+5 -> nbrRep
+```
+
+Dans ce livre nous utiliserons toujours la forme `<-` par souci de consistence et aussi parce que c'est la forme la plus répendue.
+
+```{r}
+nbrRep <- 5
+```
+
+Nous venons de créer un objet `nbrRep` et de lui affecter la valeur 5. Cet objet est désormais disponible dans notre environnement de calcul et peut donc être utilisé. Voici quelques exemples :
+
+```{r}
+nbrRep + 2
+nbrRep * 5 - 45/56
+pi * nbrRep^2
+```
+
+La valeur associée à notre objet `nbrRep` peut être modifiée de la même manière que lors de sa création :
+
+```{r}
+nbrRep <- 5
+nbrRep + 2
+nbrRep <- 10
+nbrRep + 2
+nbrRep <- 5 * 2 + 7/3
+nbrRep + 2
+```
+
+L'utilisation des objets prend tout son sens lorsque nous avons des opérations complexes à réaliser et rend le code plus agréable à lire et à comprendre. 
+
+```{r}
+(5 + 9^2 - 1/18) / (32 * 45/8 + 3)
+terme01 <- 5 + 9^2 - 1/18
+terme02 <- 32 * 45/8 + 3
+terme01 / terme02
+```
+
+## Les scripts
+
+R est un langage de programmation souvent dénommé *langage de script*. Cela fait référence au fait que la plupart des utilisateurs vont écrire des petits bouts de code plutôt que des programmes entiers. R peut être utilisé comme une simple calculatrice, et dans ce cas il ne sera pas nécessaire de conserver un historique des opérations qui ont été réalisées. Mais si les opérations à réliser sont longues et complexes, il peut devenir nécessaire de pouvoir sauvegarder ce qui a été fait à un moment donné pour pouvoir poursuivre plus tard. Le fichier dans lequel seront conservées les opérations consitue ce que l'on appelle communement le script. Un script est donc un fichier contenant une succession d'informations compréhensibles par R et qu'il est possible d'éxécuter. 
+
+### Créer un script et le documenter
+
+Pour ouvrir un nouveau script il suffit de créer un fichier texte vide qui sera édité par un éditeur de texte comme le bloc note sous Windows ou Mac OS, ou encore Gedit ou même nano sous Linux. Par convention ce fichier prend l'extension ".r" ou plus souvent ".R". C'est cette dernière convention qui sera utilisée dans ce livre. Depuis l'interface graphique de R il est possible de créer un nouveux script sous Mac OS et Windows via *fichier* puis *nouveau script* et *enregistrer sous*.
+Tout comme le nom des objets, le nom du script est important pour que nous puissions facilement identifier son contenu. Par exemple nous pourrions créer un fichier `formRConceptsBase.R` contenant les objets que nous venons de créer et les calculs effectués. Mais même avec des noms de variables et un nom de fichier bien définis, il sera difficile de se rappeler le sens de cce fichier sans une documentation accompagnant ce script. Pour docummenter un script nous allons utiliser des *commentaires*. Les commentaires sont des éléments qui seront identifiés par R comme tel et qui ne seront pas éxécutés. Pour spécifier à R que nous allons faire un commentaire, il faut utiliser le caractère octothorpe (croisillon) `#`. Les commentaires peuvent être insérés sur une nouvelle ligne ou en fin de ligne.
+
+```{r}
+# creation objet nombre de repetitions
+nbrRep <- 5 # commentaire de fin de ligne
+```
+
+Les commentaires peuvent aussi être utilisé pour qu'une ligne ne soit plus éxécutée.
+
+```{r}
+nbrRep <- 5
+# nbrRep + 5
+```
+
+Pour en revenir à la documentation du script, il est recommandé de commencer chacun de ses scripts par une brève description de son contenu, puis lorsque le script devient long, de le structurer en différentes parties pour faciliter sa lecture.
+
+```{r}
+# ------------------------------------------------------------
+# Voici un script pour acquérir les concepts de base 
+# avec R
+# date de création : 25/06/2018
+# auteur : François Rebaudo
+# ------------------------------------------------------------
+
+# [1] création de l'objet nombre de répétitions
+# ------------------------------------------------------------
+
+nbrRep <- 5
+
+# [2] calculs simples
+# ------------------------------------------------------------
+
+pi * nbrRep^2
+```
+
+```{block, type='rmdstyle'}
+Pour aller plus loin sur le style de code, un guide complet de recommandations est disponible en ligne (en anglais ; http://style.tidyverse.org/). 
+```
+
+### Exécuter un script
+
+Depuis que nous avons un script, nous ne travaillons plus directement dans la console. Or seule la console est capable d'interpérter le code R et de nous renvoyer les résultats que nous souhaitons obtenir. Pour l'instant la technique la plus simple consiste à copier-coller les lignes que nous souhaitons éxécuter depuis notre script vers la console. A partir de maintenant nous n'allons plus utiliser les éditeurs de texte comme le bloc note mais des éditeurs spécialisés pour la confection de scripts R. C'est l'objet du chapitre suivant.
