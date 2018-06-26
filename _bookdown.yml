@@ -1,0 +1,8 @@
+---
+book_filename: "myRBook_SP"
+output_dir: public
+language: 
+  ui:
+    chapter_name: " "
+delete_merged_file: true
+---

@@ -1,0 +1,13 @@
+Package: myRBook_SP
+Title: myRBook_SP
+Version: 0.0.1.9000
+Authors@R: c(
+  person("Francois", "Rebaudo", , , c("aut", "cre"))
+  )
+URL: https://github.com/frareb/myRBook_SP
+Depends: 
+    R (>= 3.1.0)
+Imports: 
+    bookdown,
+    knitr,
+    rmarkdown
