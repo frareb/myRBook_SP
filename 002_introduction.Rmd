@@ -1,0 +1,10 @@
+# introducción {#intro}
+
+## Por qué apprender R
+
+## Este libro
+
+## Lectura adicional en español
+
+* R para Principiantes, Emmanuel Paradis (https://cran.r-project.org/doc/contrib/rdebuts_es.pdf)
+* xxx
