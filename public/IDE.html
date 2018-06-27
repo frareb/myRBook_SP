@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
+<link rel="prev" href="premiersPas.html">
 
-<link rel="next" href="licence.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -151,25 +151,77 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Aprender R: iniciación y perfeccionamiento</h1>
-<h4 class="author"><em>François Rebaudo</em></h4>
-<h4 class="date"><em>2018-06-27</em></h4>
+<div id="IDE" class="section level1">
+<h1><span class="header-section-number"> 5</span> Elejir un entorno de desarrollo</h1>
+<div id="editores-de-texto-y-entorno-de-desarrollo" class="section level2">
+<h2><span class="header-section-number">5.1</span> Editores de texto y entorno de desarrollo</h2>
+<p>Hay muchos editores de texto, el capítulo anterior permitió introducir algunos de los más simples como el bloc de notas de Windows. Rápidamente los límites de estos editores han hecho que la tarea de escribir un script tedioso. De hecho, incluso estructurando su script con comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran los editores de texto especializados para facilitar la escritura y la lectura de scripts. El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: <strong>Notepad ++</strong>, <strong>Rstudio</strong> y <strong>Geany</strong>.</p>
 </div>
-<div id="remerciements" class="section level1">
-<h1><span class="header-section-number"> 1</span> Agradecimientos</h1>
-<p>Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones:</p>
-<p>=&gt; lista para actualizar en la publicación.</p>
-<p>Las versiones de gitbook, html y epub de este libro usan los iconos de fuente abierta de Font Awesome (<a href="https://fontawesome.com" class="uri">https://fontawesome.com</a>). La versión en PDF utiliza los iconos del proyecto Tango disponibles en openclipart (<a href="https://openclipart.org/" class="uri">https://openclipart.org/</a>). Este libro fue escrito con el paquete R bookdown (<a href="https://bookdown.org/" class="uri">https://bookdown.org/</a>). El código fuente está disponible en GitHub (<a href="https://github.com/frareb/myRBook_SP" class="uri">https://github.com/frareb/myRBook_SP</a>). La compilación usa Travis CI (<a href="https://travis-ci.org" class="uri">https://travis-ci.org</a>). La versión en línea se aloja y actualiza a través de Netlify (<a href="http://myrbooksp.netlify.com/" class="uri">http://myrbooksp.netlify.com/</a>).</p>
+<div id="rstudio" class="section level2">
+<h2><span class="header-section-number">5.2</span> <code>RStudio</code></h2>
+<div id="instalar-rstudio" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Instalar RStudio</h3>
+<p>El programa para instalar el software RStudio se encuentra en la parte <em>Products</em> del sitio web de RStudio (<a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a>). Instalaremos RStudio para uso local (en nuestra computadora), por lo que la versión que nos interesa es <em>Desktop</em>. Usaremos la versión <em>Open Source</em> que es gratis. Luego, seleccionamos la versión que corresponde a nuestro sistema operativo (Windows, Mac OS, Linux), descargamos el archivo correspondiente y lo ejecutamos para comenzar la instalación. Podemos mantener las opciones predeterminadas durante la instalación.</p>
+</div>
+<div id="un-script-con-rstudio" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Un script con RStudio</h3>
+<p>Podemos abrir RStudio. En la primera apertura, la interfaz se divide en dos con la consola R a la izquierda que vimos en el capítulo anterior (Figura <a href="IDE.html#fig:screenCapRStudio01">5.1</a>). Para abrir un nuevo script, vamos al menú <em>Archivo</em> (o <em>File</em>), <em>Nuevo archivo</em> (o <em>New File</em>), <em>R script</em>. Por defecto, este archivo tiene el nombre <em>Untitled1</em>. Hemos visto en el capítulo anterior la importancia de dar un nombre pertinente a nuestros scripts, por lo que lo cambiaremos de nombre a <em>selecEnvDev.R</em>, en el menú <em>Archivo</em> (o <em>File</em>), con la opción <em>Guardar como …</em> (o <em>Save As…</em>). Podríamos notar que el lado izquierdo de RStudio ahora está dividido en dos, con la consola en la parte inferior de la pantalla y el script en la parte superior.</p>
+<div class="figure"><span id="fig:screenCapRStudio01"></span>
+<img src="myFigures/screencap_RStudio_01.png" alt="Captura de pantalla de RStudio en Windows: pantalla por defecto.\label{fig:screenCapRStudio01}"  />
+<p class="caption">
+Figure 5.1: Captura de pantalla de RStudio en Windows: pantalla por defecto.
+</p>
+</div>
+<p>Luego podemos comenzar a escribir nuestro script con los comentarios que describan lo que vamos a encontrar allí, y agregar un cálculo simple. Una vez que hayamos copiado el siguiente código, podemos guardar nuestro script con el comando <code>CTRL + S</code> o yendo a <em>Archivo</em> (o <em>File</em>, luego <em>Guardar</em> (o <em>Save</em>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ------------------------------------------------------------</span>
+<span class="co"># Un script para seleccionar su entorno de desarrollo</span>
+<span class="co"># fecha de creación : 27/06/2018</span>
+<span class="co"># autor : François Rebaudo</span>
+<span class="co"># ------------------------------------------------------------</span>
 
+<span class="co"># [1] cálculos simples</span>
+<span class="co"># ------------------------------------------------------------</span>
+nbrRep &lt;-<span class="st"> </span><span class="dv">5</span>
+pi <span class="op">*</span><span class="st"> </span>nbrRep<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 78.53982</code></pre>
+<p>Para ejecutar nuestro script, simplemente seleccionamos las líneas que deseamos ejecutar y usamos la combinación de teclas <code>CTRL + ENTER</code>. El resultado aparece en la consola (Figura <a href="IDE.html#fig:screenCapRStudio02">5.2</a>).</p>
+<div class="figure"><span id="fig:screenCapRStudio02"></span>
+<img src="myFigures/screencap_RStudio_02.png" alt="Captura de pantalla de RStudio en Windows: ejecutar nuestro script con CTRL + ENTER.\label{fig:screenCapRStudio02}"  />
+<p class="caption">
+Figure 5.2: Captura de pantalla de RStudio en Windows: ejecutar nuestro script con CTRL + ENTER.
+</p>
+</div>
+<p>Podemos ver que, de forma predeterminada, en la parte del script, los comentarios aparecen en verde, los números en azul y el resto del código en negro. En la parte de la consola, lo que se ejecutó aparece en azul y los resultados de la ejecución en negro. También podemos observar que en la parte del código cada línea tiene un número correspondiente al número de línea a la izquierda sobre un fondo gris. Este es el resaltado de preferencias de sintaxis predeterminado con RStudio. Estas preferencias de sintaxis pueden modificarse yendo al menú <em>Herramientas</em> (o <em>Tools</em>), <em>Opciones globales …</em> (o <em>Global Options…</em>), <em>Aspecto</em> (o <em>Appearance</em>), y luego seleccionando otro tema del <em>Editor de tema:</em> (o <em>Editor theme:</em>). Elegiremos el tema <em>Cobalt</em>, luego <em>OK</em> (Figura <a href="IDE.html#fig:screenCapRStudio03">5.3</a>).</p>
+<div class="figure"><span id="fig:screenCapRStudio03"></span>
+<img src="myFigures/screencap_RStudio_03.png" alt="Captura de pantalla de RStudio en Windows: cambiar preferencias de sintaxis.\label{fig:screenCapRStudio03}"  />
+<p class="caption">
+Figure 5.3: Captura de pantalla de RStudio en Windows: cambiar preferencias de sintaxis.
+</p>
+</div>
+<p>Sabemos cómo crear un nuevo script, guardarlo, ejecutar su contenido y cambiar la apariencia de RStudio. Veremos los muchos otros beneficios de RStudio a lo largo de este libro, ya que es el entorno de desarrollo que se utilizará. Sin embargo, seremos especialmente cuidadosos de que todos los scripts desarrollados a lo largo de este libro se ejecuten de la misma manera, independientemente del entorno de desarrollo utilizado.</p>
+</div>
+</div>
+<div id="notepad-con-npp2r" class="section level2">
+<h2><span class="header-section-number">5.3</span> <code>Notepad++</code> con <code>Npp2R</code></h2>
+<p>XXX</p>
+</div>
+<div id="geany" class="section level2">
+<h2><span class="header-section-number">5.4</span> <code>Geany</code></h2>
+<p>XXX</p>
+</div>
+<div id="otras-soluciones" class="section level2">
+<h2><span class="header-section-number">5.5</span> Otras soluciones</h2>
+<p>XXX</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="premiersPas.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="licence.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

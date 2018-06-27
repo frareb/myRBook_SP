@@ -881,5 +881,138 @@ base de R. Sabemos:
   entender
 \end{itemize}
 
+\chapter{Elejir un entorno de desarrollo}\label{IDE}
+
+\section{Editores de texto y entorno de
+desarrollo}\label{editores-de-texto-y-entorno-de-desarrollo}
+
+Hay muchos editores de texto, el capítulo anterior permitió introducir
+algunos de los más simples como el bloc de notas de Windows. Rápidamente
+los límites de estos editores han hecho que la tarea de escribir un
+script tedioso. De hecho, incluso estructurando su script con
+comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran
+los editores de texto especializados para facilitar la escritura y la
+lectura de scripts. El editor de texto para R más común es Rstudio, pero
+hay muchos más. Hacer una lista exhaustiva de todas las soluciones
+disponibles está más allá del alcance de este libro, por lo que nos
+centraremos en las tres soluciones que utilizo a diario: \textbf{Notepad
+++}, \textbf{Rstudio} y \textbf{Geany}.
+
+\section{\texorpdfstring{\texttt{RStudio}}{RStudio}}\label{rstudio}
+
+\subsection{Instalar RStudio}\label{instalar-rstudio}
+
+El programa para instalar el software RStudio se encuentra en la parte
+\emph{Products} del sitio web de RStudio
+(\url{https://www.rstudio.com/}). Instalaremos RStudio para uso local
+(en nuestra computadora), por lo que la versión que nos interesa es
+\emph{Desktop}. Usaremos la versión \emph{Open Source} que es gratis.
+Luego, seleccionamos la versión que corresponde a nuestro sistema
+operativo (Windows, Mac OS, Linux), descargamos el archivo
+correspondiente y lo ejecutamos para comenzar la instalación. Podemos
+mantener las opciones predeterminadas durante la instalación.
+
+\subsection{Un script con RStudio}\label{un-script-con-rstudio}
+
+Podemos abrir RStudio. En la primera apertura, la interfaz se divide en
+dos con la consola R a la izquierda que vimos en el capítulo anterior
+(Figura \ref{fig:screenCapRStudio01}). Para abrir un nuevo script, vamos
+al menú \emph{Archivo} (o \emph{File}), \emph{Nuevo archivo} (o
+\emph{New File}), \emph{R script}. Por defecto, este archivo tiene el
+nombre \emph{Untitled1}. Hemos visto en el capítulo anterior la
+importancia de dar un nombre pertinente a nuestros scripts, por lo que
+lo cambiaremos de nombre a \emph{selecEnvDev.R}, en el menú
+\emph{Archivo} (o \emph{File}), con la opción \emph{Guardar como
+\ldots{}} (o \emph{Save As\ldots{}}). Podríamos notar que el lado
+izquierdo de RStudio ahora está dividido en dos, con la consola en la
+parte inferior de la pantalla y el script en la parte superior.
+
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_RStudio_01.png}
+\caption{\label{fig:screenCapRStudio01}Captura de pantalla de RStudio en
+Windows: pantalla por defecto.\label{fig:screenCapRStudio01}}
+\end{figure}
+
+Luego podemos comenzar a escribir nuestro script con los comentarios que
+describan lo que vamos a encontrar allí, y agregar un cálculo simple.
+Una vez que hayamos copiado el siguiente código, podemos guardar nuestro
+script con el comando \texttt{CTRL\ +\ S} o yendo a \emph{Archivo} (o
+\emph{File}, luego \emph{Guardar} (o \emph{Save}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# ------------------------------------------------------------}
+\CommentTok{# Un script para seleccionar su entorno de desarrollo}
+\CommentTok{# fecha de creación : 27/06/2018}
+\CommentTok{# autor : François Rebaudo}
+\CommentTok{# ------------------------------------------------------------}
+
+\CommentTok{# [1] cálculos simples}
+\CommentTok{# ------------------------------------------------------------}
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5}
+\NormalTok{pi }\OperatorTok{*}\StringTok{ }\NormalTok{nbrRep}\OperatorTok{^}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 78.53982
+\end{verbatim}
+
+Para ejecutar nuestro script, simplemente seleccionamos las líneas que
+deseamos ejecutar y usamos la combinación de teclas
+\texttt{CTRL\ +\ ENTER}. El resultado aparece en la consola (Figura
+\ref{fig:screenCapRStudio02}).
+
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_RStudio_02.png}
+\caption{\label{fig:screenCapRStudio02}Captura de pantalla de RStudio en
+Windows: ejecutar nuestro script con CTRL +
+ENTER.\label{fig:screenCapRStudio02}}
+\end{figure}
+
+Podemos ver que, de forma predeterminada, en la parte del script, los
+comentarios aparecen en verde, los números en azul y el resto del código
+en negro. En la parte de la consola, lo que se ejecutó aparece en azul y
+los resultados de la ejecución en negro. También podemos observar que en
+la parte del código cada línea tiene un número correspondiente al número
+de línea a la izquierda sobre un fondo gris. Este es el resaltado de
+preferencias de sintaxis predeterminado con RStudio. Estas preferencias
+de sintaxis pueden modificarse yendo al menú \emph{Herramientas} (o
+\emph{Tools}), \emph{Opciones globales \ldots{}} (o \emph{Global
+Options\ldots{}}), \emph{Aspecto} (o \emph{Appearance}), y luego
+seleccionando otro tema del \emph{Editor de tema:} (o \emph{Editor
+theme:}). Elegiremos el tema \emph{Cobalt}, luego \emph{OK} (Figura
+\ref{fig:screenCapRStudio03}).
+
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_RStudio_03.png}
+\caption{\label{fig:screenCapRStudio03}Captura de pantalla de RStudio en
+Windows: cambiar preferencias de
+sintaxis.\label{fig:screenCapRStudio03}}
+\end{figure}
+
+Sabemos cómo crear un nuevo script, guardarlo, ejecutar su contenido y
+cambiar la apariencia de RStudio. Veremos los muchos otros beneficios de
+RStudio a lo largo de este libro, ya que es el entorno de desarrollo que
+se utilizará. Sin embargo, seremos especialmente cuidadosos de que todos
+los scripts desarrollados a lo largo de este libro se ejecuten de la
+misma manera, independientemente del entorno de desarrollo utilizado.
+
+\section{\texorpdfstring{\texttt{Notepad++} con
+\texttt{Npp2R}}{Notepad++ con Npp2R}}\label{notepad-con-npp2r}
+
+XXX
+
+\section{\texorpdfstring{\texttt{Geany}}{Geany}}\label{geany}
+
+XXX
+
+\section{Otras soluciones}\label{otras-soluciones}
+
+XXX
+
 
 \end{document}
