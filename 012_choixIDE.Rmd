@@ -5,7 +5,11 @@
 Hay muchos editores de texto, el capítulo anterior permitió introducir algunos de los más simples como el bloc de notas de Windows. Rápidamente los límites de estos editores han hecho que la tarea de escribir un script tedioso. De hecho, incluso estructurando su script con comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran los editores de texto especializados para facilitar la escritura y la lectura de scripts.
 El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: **Notepad ++**, **Rstudio** y **Geany**.
 
-## `RStudio`
+## RStudio
+
+```{r logoRStudio, fig.cap = "Logo RStudio.\\label{fig:logoRStudio}", echo = FALSE}
+knitr::include_graphics("myLogos/RStudio.png")
+```
 
 ### Instalar RStudio
 
@@ -50,14 +54,101 @@ knitr::include_graphics("myFigures/screencap_RStudio_03.png")
 
 Sabemos cómo crear un nuevo script, guardarlo, ejecutar su contenido y cambiar la apariencia de RStudio. Veremos los muchos otros beneficios de RStudio a lo largo de este libro, ya que es el entorno de desarrollo que se utilizará. Sin embargo, seremos especialmente cuidadosos de que todos los scripts desarrollados a lo largo de este libro se ejecuten de la misma manera, independientemente del entorno de desarrollo utilizado.
 
-## `Notepad++` con `Npp2R`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Notepad++ avec Npp2R
+
+```{r logoNotepad, fig.cap = "Logo Notepad++\\label{fig:logoNotepad}", echo = FALSE}
+knitr::include_graphics("myLogos/Notepadpp.png")
+```
+
+### Installer Notepad++ (pour Windows uniquement)
+
+Le programme pour installer Notepad++ se trouve dans l'onglet *Downloads* (https://notepad-plus-plus.org/download/). Vous pouvez choisir entre la version 32-bit et 64-bit (64-bit si vous ne savez pas quelle version choisir). Notepad++ seul est suffisant pour écrire un script, mais il est encore plus puissant avec *Notepad to R* (*Npp2R*) qui permet d'exécuter automatiquement nos script dans une console en local sur notre ordinateur ou à distance sur un serveur.
+
+### Installer Npp2R
+
+Le programme pour installer Npp2R est hébergé sur le site de Sourceforge (https://sourceforge.net/projects/npptor/). Npp2R doit être installé après Notepad++.
+
+### Un script avec Notepad++
+
+Lors de la première ouverture Notepad++ affiche un fichier vide *new 1* (Figura \@ref(fig:screenCapNpp01)). 
+
+```{r screenCapNpp01, fig.cap = "Captura de pantalla de Notepad++ en Windows: pantalla por defecto.\\label{fig:screenCapNpp01}", echo = FALSE}
+knitr::include_graphics("myFigures/screencap_Npp_01.png")
+```
+
+Puisque nous avons déjà créer un script pour le tester avec RStudio, nous allons l'ouvrir à nouveau avec Notepad++. Dans *Fichier*, selectionnons *Ouvrir...* puis choisir le script *selecEnvDev.R* créé précédemment. Une fois le script ouvert, allons dans *Langage*, puis *R*, et encore une fois *R*. La coloration syntaxique apparaît (Figura \@ref(fig:screenCapNpp02)).
+
+```{r screenCapNpp02, fig.cap = "Captura de pantalla de Notepad++ en Windows: ejecutar nuestro script con F8.\\label{fig:screenCapNpp02}", echo = FALSE}
+knitr::include_graphics("myFigures/screencap_Npp_02.png")
+```
+
+L'execution du script ne peut se faire que si Npp2R est en cours d'exécution. Pour se faire il est nécessaire de lancer le programme Npp2R depuis l'invite de Windows. Un icône devrait apparaître en bas de votre écran. L'exécution automatique du code depuis Notepad++ se fait en sélectionnant le code à exécuter puis en utilisant la commande `F8`. Si la commande ne fonctionne pas et que vous venez d'installer Notepad++, il est peut être nécessaire de redémarrer votre ordinateur. Si la commande fonctionne, une nouvelle fenêtre va s'ouvrir avec une consol exécutant les lignes souhaitées (Figura \@ref(fig:screenCapNpp03).
+
+```{r screenCapNpp03, fig.cap = "Captura de pantalla de Notepad++ en Windows: la consola con F8.\\label{fig:screenCapNpp03}", echo = FALSE}
+knitr::include_graphics("myFigures/screencap_Npp_03.png")
+```
+
+Comme pour RStudio, la coloration syntaxique peut être modifiée depuis le menu *Paramètres*, et un nouveau thème peut être sélectionné (par exemple *Solarized* dans la Figura \@ref(fig:screenCapNpp04))
+
+```{r screenCapNpp04, fig.cap = "Captura de pantalla de Notepad++ en Windows con el tema Solarized.\\label{fig:screenCapNpp04}", echo = FALSE}
+knitr::include_graphics("myFigures/screencap_Npp_04.png")
+```
+
+Par rapport aux autres éditeurs de texte, Notepad++ a l'avantage d'être très léger et offre une vaste gamme d'options pour personnaliser l'écriture du code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Geany (pour Linux et Windows)
+
+```{r logoGeany, fig.cap = "Logo Geany\\label{fig:logoGeany}", echo = FALSE}
+knitr::include_graphics("myLogos/Geany.png")
+```
+
+### Installer Geany
+
+XXX https://www.geany.org/
+
+### Un script avec Geany
 
 XXX
 
-## `Geany`
+## Autres solutions
 
-XXX
-
-## Otras soluciones
-
-XXX
+Il existe beaucoup d'autres solutions, certaines spécialisées pour R comme **Tinn-R** (https://sourceforge.net/projects/tinn-r/), et d'autres plus généralistes pour la programmation comme **Atom** (https://atom.io/), **Sublime Text** (https://www.sublimetext.com/), **Vim** (https://www.vim.org/), **Gedit** (https://wiki.gnome.org/Apps/Gedit), **GNU Emacs** (https://www.gnu.org/software/emacs/), ou encore **Brackets** (http://brackets.io/) et **Eclipse** (http://www.eclipse.org/).
