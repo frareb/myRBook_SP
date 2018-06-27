@@ -898,7 +898,13 @@ disponibles está más allá del alcance de este libro, por lo que nos
 centraremos en las tres soluciones que utilizo a diario: \textbf{Notepad
 ++}, \textbf{Rstudio} y \textbf{Geany}.
 
-\section{\texorpdfstring{\texttt{RStudio}}{RStudio}}\label{rstudio}
+\section{RStudio}\label{rstudio}
+
+\begin{figure}
+\centering
+\includegraphics{myLogos/RStudio.png}
+\caption{\label{fig:logoRStudio}Logo RStudio.\label{fig:logoRStudio}}
+\end{figure}
 
 \subsection{Instalar RStudio}\label{instalar-rstudio}
 
@@ -1001,18 +1007,119 @@ se utilizará. Sin embargo, seremos especialmente cuidadosos de que todos
 los scripts desarrollados a lo largo de este libro se ejecuten de la
 misma manera, independientemente del entorno de desarrollo utilizado.
 
-\section{\texorpdfstring{\texttt{Notepad++} con
-\texttt{Npp2R}}{Notepad++ con Npp2R}}\label{notepad-con-npp2r}
+\section{Notepad++ avec Npp2R}\label{notepad-avec-npp2r}
+
+\begin{figure}
+\centering
+\includegraphics{myLogos/Notepadpp.png}
+\caption{\label{fig:logoNotepad}Logo Notepad++\label{fig:logoNotepad}}
+\end{figure}
+
+\subsection{Installer Notepad++ (pour Windows
+uniquement)}\label{installer-notepad-pour-windows-uniquement}
+
+Le programme pour installer Notepad++ se trouve dans l'onglet
+\emph{Downloads} (\url{https://notepad-plus-plus.org/download/}). Vous
+pouvez choisir entre la version 32-bit et 64-bit (64-bit si vous ne
+savez pas quelle version choisir). Notepad++ seul est suffisant pour
+écrire un script, mais il est encore plus puissant avec \emph{Notepad to
+R} (\emph{Npp2R}) qui permet d'exécuter automatiquement nos script dans
+une console en local sur notre ordinateur ou à distance sur un serveur.
+
+\subsection{Installer Npp2R}\label{installer-npp2r}
+
+Le programme pour installer Npp2R est hébergé sur le site de Sourceforge
+(\url{https://sourceforge.net/projects/npptor/}). Npp2R doit être
+installé après Notepad++.
+
+\subsection{Un script avec Notepad++}\label{un-script-avec-notepad}
+
+Lors de la première ouverture Notepad++ affiche un fichier vide
+\emph{new 1} (Figura \ref{fig:screenCapNpp01}).
+
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_Npp_01.png}
+\caption{\label{fig:screenCapNpp01}Captura de pantalla de Notepad++ en
+Windows: pantalla por defecto.\label{fig:screenCapNpp01}}
+\end{figure}
+
+Puisque nous avons déjà créer un script pour le tester avec RStudio,
+nous allons l'ouvrir à nouveau avec Notepad++. Dans \emph{Fichier},
+selectionnons \emph{Ouvrir\ldots{}} puis choisir le script
+\emph{selecEnvDev.R} créé précédemment. Une fois le script ouvert,
+allons dans \emph{Langage}, puis \emph{R}, et encore une fois \emph{R}.
+La coloration syntaxique apparaît (Figura \ref{fig:screenCapNpp02}).
+
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_Npp_02.png}
+\caption{\label{fig:screenCapNpp02}Captura de pantalla de Notepad++ en
+Windows: ejecutar nuestro script con F8.\label{fig:screenCapNpp02}}
+\end{figure}
+
+L'execution du script ne peut se faire que si Npp2R est en cours
+d'exécution. Pour se faire il est nécessaire de lancer le programme
+Npp2R depuis l'invite de Windows. Un icône devrait apparaître en bas de
+votre écran. L'exécution automatique du code depuis Notepad++ se fait en
+sélectionnant le code à exécuter puis en utilisant la commande
+\texttt{F8}. Si la commande ne fonctionne pas et que vous venez
+d'installer Notepad++, il est peut être nécessaire de redémarrer votre
+ordinateur. Si la commande fonctionne, une nouvelle fenêtre va s'ouvrir
+avec une consol exécutant les lignes souhaitées (Figura
+\ref{fig:screenCapNpp03}.
+
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_Npp_03.png}
+\caption{\label{fig:screenCapNpp03}Captura de pantalla de Notepad++ en
+Windows: la consola con F8.\label{fig:screenCapNpp03}}
+\end{figure}
+
+Comme pour RStudio, la coloration syntaxique peut être modifiée depuis
+le menu \emph{Paramètres}, et un nouveau thème peut être sélectionné
+(par exemple \emph{Solarized} dans la Figura \ref{fig:screenCapNpp04})
+
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_Npp_04.png}
+\caption{\label{fig:screenCapNpp04}Captura de pantalla de Notepad++ en
+Windows con el tema Solarized.\label{fig:screenCapNpp04}}
+\end{figure}
+
+Par rapport aux autres éditeurs de texte, Notepad++ a l'avantage d'être
+très léger et offre une vaste gamme d'options pour personnaliser
+l'écriture du code.
+
+\section{Geany (pour Linux et
+Windows)}\label{geany-pour-linux-et-windows}
+
+\begin{figure}
+\centering
+\includegraphics{myLogos/Geany.png}
+\caption{\label{fig:logoGeany}Logo Geany\label{fig:logoGeany}}
+\end{figure}
+
+\subsection{Installer Geany}\label{installer-geany}
+
+XXX \url{https://www.geany.org/}
+
+\subsection{Un script avec Geany}\label{un-script-avec-geany}
 
 XXX
 
-\section{\texorpdfstring{\texttt{Geany}}{Geany}}\label{geany}
+\section{Autres solutions}\label{autres-solutions}
 
-XXX
-
-\section{Otras soluciones}\label{otras-soluciones}
-
-XXX
+Il existe beaucoup d'autres solutions, certaines spécialisées pour R
+comme \textbf{Tinn-R} (\url{https://sourceforge.net/projects/tinn-r/}),
+et d'autres plus généralistes pour la programmation comme \textbf{Atom}
+(\url{https://atom.io/}), \textbf{Sublime Text}
+(\url{https://www.sublimetext.com/}), \textbf{Vim}
+(\url{https://www.vim.org/}), \textbf{Gedit}
+(\url{https://wiki.gnome.org/Apps/Gedit}), \textbf{GNU Emacs}
+(\url{https://www.gnu.org/software/emacs/}), ou encore \textbf{Brackets}
+(\url{http://brackets.io/}) et \textbf{Eclipse}
+(\url{http://www.eclipse.org/}).
 
 
 \end{document}
