@@ -1,0 +1,63 @@
+# Elejir un entorno de desarrollo {#IDE}
+
+## Editores de texto y entorno de desarrollo
+
+Hay muchos editores de texto, el capítulo anterior permitió introducir algunos de los más simples como el bloc de notas de Windows. Rápidamente los límites de estos editores han hecho que la tarea de escribir un script tedioso. De hecho, incluso estructurando su script con comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran los editores de texto especializados para facilitar la escritura y la lectura de scripts.
+El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: **Notepad ++**, **Rstudio** y **Geany**.
+
+## `RStudio`
+
+### Instalar RStudio
+
+El programa para instalar el software RStudio se encuentra en la parte *Products* del sitio web de RStudio (https://www.rstudio.com/). Instalaremos RStudio para uso local (en nuestra computadora), por lo que la versión que nos interesa es *Desktop*. Usaremos la versión *Open Source* que es gratis. Luego, seleccionamos la versión que corresponde a nuestro sistema operativo (Windows, Mac OS, Linux), descargamos el archivo correspondiente y lo ejecutamos para comenzar la instalación. Podemos mantener las opciones predeterminadas durante la instalación.
+
+### Un script con RStudio
+
+Podemos abrir RStudio. En la primera apertura, la interfaz se divide en dos con la consola R a la izquierda que vimos en el capítulo anterior (Figura \@ref(fig:screenCapRStudio01)). Para abrir un nuevo script, vamos al menú *Archivo* (o *File*), *Nuevo archivo* (o *New File*), *R script*. Por defecto, este archivo tiene el nombre *Untitled1*. Hemos visto en el capítulo anterior la importancia de dar un nombre pertinente a nuestros scripts, por lo que lo cambiaremos de nombre a *selecEnvDev.R*, en el menú *Archivo* (o *File*), con la opción *Guardar como ...* (o *Save As...*).
+Podríamos notar que el lado izquierdo de RStudio ahora está dividido en dos, con la consola en la parte inferior de la pantalla y el script en la parte superior.
+
+```{r screenCapRStudio01, fig.cap = "Captura de pantalla de RStudio en Windows: pantalla por defecto.\\label{fig:screenCapRStudio01}", echo = FALSE}
+knitr::include_graphics("myFigures/screencap_RStudio_01.png")
+```
+
+Luego podemos comenzar a escribir nuestro script con los comentarios que describan lo que vamos a encontrar allí, y agregar un cálculo simple. Una vez que hayamos copiado el siguiente código, podemos guardar nuestro script con el comando `CTRL + S` o yendo a *Archivo* (o *File*, luego *Guardar* (o *Save*).
+
+```{r}
+# ------------------------------------------------------------
+# Un script para seleccionar su entorno de desarrollo
+# fecha de creación : 27/06/2018
+# autor : François Rebaudo
+# ------------------------------------------------------------
+
+# [1] cálculos simples
+# ------------------------------------------------------------
+nbrRep <- 5
+pi * nbrRep^2
+```
+
+Para ejecutar nuestro script, simplemente seleccionamos las líneas que deseamos ejecutar y usamos la combinación de teclas `CTRL + ENTER`. El resultado aparece en la consola (Figura \@ref(fig:screenCapRStudio02)).
+
+```{r screenCapRStudio02, fig.cap = "Captura de pantalla de RStudio en Windows: ejecutar nuestro script con CTRL + ENTER.\\label{fig:screenCapRStudio02}", echo = FALSE}
+knitr::include_graphics("myFigures/screencap_RStudio_02.png")
+```
+
+Podemos ver que, de forma predeterminada, en la parte del script, los comentarios aparecen en verde, los números en azul y el resto del código en negro. En la parte de la consola, lo que se ejecutó aparece en azul y los resultados de la ejecución en negro.
+También podemos observar que en la parte del código cada línea tiene un número correspondiente al número de línea a la izquierda sobre un fondo gris. Este es el resaltado de preferencias de sintaxis predeterminado con RStudio. Estas preferencias de sintaxis pueden modificarse yendo al menú *Herramientas* (o *Tools*), *Opciones globales ...* (o *Global Options...*), *Aspecto* (o *Appearance*), y luego seleccionando otro tema del *Editor de tema:* (o *Editor theme:*). Elegiremos el tema *Cobalt*, luego *OK* (Figura \@ref(fig:screenCapRStudio03)).
+
+```{r screenCapRStudio03, fig.cap = "Captura de pantalla de RStudio en Windows: cambiar preferencias de sintaxis.\\label{fig:screenCapRStudio03}", echo = FALSE}
+knitr::include_graphics("myFigures/screencap_RStudio_03.png")
+```
+
+Sabemos cómo crear un nuevo script, guardarlo, ejecutar su contenido y cambiar la apariencia de RStudio. Veremos los muchos otros beneficios de RStudio a lo largo de este libro, ya que es el entorno de desarrollo que se utilizará. Sin embargo, seremos especialmente cuidadosos de que todos los scripts desarrollados a lo largo de este libro se ejecuten de la misma manera, independientemente del entorno de desarrollo utilizado.
+
+## `Notepad++` con `Npp2R`
+
+XXX
+
+## `Geany`
+
+XXX
+
+## Otras soluciones
+
+XXX
