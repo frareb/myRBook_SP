@@ -1,0 +1,885 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Aprender R: iniciación y perfeccionamiento},
+            pdfauthor={François Rebaudo},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Aprender R: iniciación y perfeccionamiento}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{François Rebaudo}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{2018-06-27}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[bf,singlelinecheck=off]{caption}
+
+\setmainfont[UprightFeatures={SmallCapsFont=Arial}]{Arial} % AlegreyaSC-Regular % Alegreya
+
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\renewenvironment{quote}{\begin{VF}}{\end{VF}}
+\let\oldhref\href
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+\ifxetex
+  \usepackage{letltxmacro}
+  \setlength{\XeTeXLinkMargin}{1pt}
+  \LetLtxMacro\SavedIncludeGraphics\includegraphics
+  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+    \IncludeGraphicsAux{#1}%
+  }%
+  \newcommand*{\IncludeGraphicsAux}[2]{%
+    \XeTeXLinkBox{%
+      \SavedIncludeGraphics#1{#2}%
+    }%
+  }%
+\fi
+
+\makeatletter
+\newenvironment{kframe}{%
+\medskip{}
+\setlength{\fboxsep}{.8em}
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\makeatletter
+\@ifundefined{Shaded}{
+}{\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}}
+\makeatother
+
+\newenvironment{rmdblock}[1]
+  {
+  \begin{itemize}
+  \renewcommand{\labelitemi}{
+    \raisebox{-.7\height}[0pt][0pt]{
+      {\setkeys{Gin}{width=3em,keepaspectratio}\includegraphics{myIcons/#1}} %FR
+    }
+  }
+  \setlength{\fboxsep}{1em}
+  \begin{kframe}
+  \item
+  }
+  {
+  \end{kframe}
+  \end{itemize}
+  }
+\newenvironment{rmdnote}      %FR
+  {\begin{rmdblock}{note}}    %FR
+  {\end{rmdblock}}            %FR
+\newenvironment{rmdstyle}     %FR
+  {\begin{rmdblock}{style}}   %FR
+  {\end{rmdblock}}            %FR
+\newenvironment{rmdcaution}
+  {\begin{rmdblock}{caution}}
+  {\end{rmdblock}}
+\newenvironment{rmdimportant}
+  {\begin{rmdblock}{important}}
+  {\end{rmdblock}}
+\newenvironment{rmdtip}
+  {\begin{rmdblock}{tip}}
+  {\end{rmdblock}}
+\newenvironment{rmdwarning}
+  {\begin{rmdblock}{warning}}
+  {\end{rmdblock}}
+
+\usepackage{makeidx}
+\makeindex
+
+\urlstyle{tt}
+
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\mainmatter
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{Agradecimientos}\label{remerciements}
+
+Agradezco a todos los colaboradores que ayudaron a mejorar este libro
+con sus consejos, sugerencias de cambios y correcciones:
+
+=\textgreater{} lista para actualizar en la publicación.
+
+Las versiones de gitbook, html y epub de este libro usan los iconos de
+fuente abierta de Font Awesome (\url{https://fontawesome.com}). La
+versión en PDF utiliza los iconos del proyecto Tango disponibles en
+openclipart (\url{https://openclipart.org/}). Este libro fue escrito con
+el paquete R bookdown (\url{https://bookdown.org/}). El código fuente
+está disponible en GitHub (\url{https://github.com/frareb/myRBook_SP}).
+La compilación usa Travis CI (\url{https://travis-ci.org}). La versión
+en línea se aloja y actualiza a través de Netlify
+(\url{http://myrbooksp.netlify.com/}).
+
+\chapter{Licencia}\label{licence}
+
+Licencia Reconocimiento-NoComercial-SinObraDerivada 3.0 España (CC
+BY-NC-ND 3.0 ES ;
+\url{https://creativecommons.org/licenses/by-nc-nd/3.0/es/})
+
+Esto es un resumen inteligible para humanos (y no un sustituto) de la
+licencia.
+
+\textbf{Usted es libre de:}
+
+\begin{itemize}
+\tightlist
+\item
+  Compartir --- copiar y redistribuir el material en cualquier medio o
+  formato.
+\item
+  El licenciador no puede revocar estas libertades mientras cumpla con
+  los términos de la licencia.
+\end{itemize}
+
+\textbf{Bajo las condiciones siguientes:}
+
+\begin{itemize}
+\item
+  Reconocimiento --- Debe reconocer adecuadamente la autoría,
+  proporcionar un enlace a la licencia e indicar si se han realizado
+  cambios\textless{}. Puede hacerlo de cualquier manera razonable, pero
+  no de una manera que sugiera que tiene el apoyo del licenciador o lo
+  recibe por el uso que hace.
+\item
+  NoComercial --- No puede utilizar el material para una finalidad
+  comercial.
+\item
+  SinObraDerivada --- Si remezcla, transforma o crea a partir del
+  material, no puede difundir el material modificado.
+\item
+  No hay restricciones adicionales --- No puede aplicar términos legales
+  o medidas tecnológicas que legalmente restrinjan realizar aquello que
+  la licencia permite.
+\end{itemize}
+
+\textbf{Avisos: }
+
+No tiene que cumplir con la licencia para aquellos elementos del
+material en el dominio público o cuando su utilización esté permitida
+por la aplicación de una excepción o un límite. No se dan garantías. La
+licencia puede no ofrecer todos los permisos necesarios para la
+utilización prevista. Por ejemplo, otros derechos como los de
+publicidad, privacidad, o los derechos morales pueden limitar el uso del
+material.
+
+\chapter{introducción}\label{intro}
+
+\section{Por qué apprender R}\label{por-que-apprender-r}
+
+\section{Este libro}\label{este-libro}
+
+\section{Lectura adicional en
+español}\label{lectura-adicional-en-espanol}
+
+\begin{itemize}
+\tightlist
+\item
+  R para Principiantes, Emmanuel Paradis
+  (\url{https://cran.r-project.org/doc/contrib/rdebuts_es.pdf})
+\item
+  xxx
+\end{itemize}
+
+\part{Conceptos básicos}\label{part-conceptos-basicos}
+
+\chapter{Primeros pasos}\label{premiersPas}
+
+\section{Instalar R}\label{instalar-r}
+
+El programa para instalar el software R se puede descargar desde el
+sitio web de R: \url{https://www.r-project.org/}. En el sitio web de R,
+primero es necesario elegir un espejo CRAN (servidor desde el que
+descargar R, el más cercano a su ubicación geográfica), luego descargue
+el archivo \emph{base}. Los usuarios de Linux pueden preferir un
+\texttt{sudo\ apt-get\ install\ r-base}.
+
+\begin{rmdnote}
+El software R se puede descargar de muchos servidores CRAN
+(Comprehensive R Archive Network) de todo el mundo. Estos servidores se
+llaman espejos. La elección del espejo es manual. Información adicional
+como esta nota siempre estará representada con este pictograma
+\emph{información}.
+\end{rmdnote}
+
+\section{R como calculadora}\label{r-como-calculadora}
+
+Una vez que se inicia el programa, aparece una ventana cuya apariencia
+puede variar dependiendo de su sistema operativo (Figura
+\ref{fig:screenCapConsole}). Esta ventana se llama \emph{consola}.
+
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_rConsoleFR.png}
+\caption{\label{fig:screenCapConsole}Captura de pantalla de la consola R en
+Windows.\label{fig:screenCapConsole}}
+\end{figure}
+
+La consola corresponde a la interfaz donde se interpretará el código, es
+decir, donde el código será transformado en lenguaje de máquina,
+ejecutado por la computadora y retransmitido en forma legible por
+humanos. Esto corresponde a la pantalla de una calculadora (Figura
+\ref{fig:screenCapConsoleCal}). Así es como se usará R más adelante en
+esta sección.
+
+\begin{rmdnote}
+A lo largo de este libro, los ejemplos del código R aparecerán sobre un
+fondo gris. Se pueden copiar y pegar directamente en la consola, aunque
+es mejor reproducir escribiendo los ejemplos en la consola (o más
+adelante en los scripts). El resultado de lo que se envía en la consola
+también aparecerá en un fondo gris con \texttt{\#\#} delante del código
+para hacer la distinción entre el código y el resultado del código.
+\end{rmdnote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_rConsoleCalculatrice.png}
+\caption{\label{fig:screenCapConsoleCal}Captura de pantalla de la consola R
+al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}}
+\end{figure}
+
+Si escribimos \texttt{5\ +\ 5} en la consola y luego \texttt{Enter}, el
+resultado aparece precedido por el número {[}1{]} entre corchetes. Este
+número corresponde al número del resultado (en nuestro caso, solo hay un
+resultado, volveremos a este aspecto más adelante). También podemos
+observar en este ejemplo el uso de espacios antes y después del signo
+\texttt{+}. Estos espacios no son necesarios, pero permiten que el
+código sea más legible para los humanos (es decir, más agradable de leer
+tanto para nosotros como para las personas con las que queremos
+compartir nuestro código). Los operadores aritméticos disponibles en R
+se resumen en la tabla \ref{tab:tabOpAri}.
+
+\begin{table}
+
+\caption{\label{tab:tabOpAri}Operadores aritméticos.\label{tab:tabOpAri}}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Label & Operador\\
+\hline
+adición & +\\
+\hline
+resta & -\\
+\hline
+multiplicación & *\\
+\hline
+división & /\\
+\hline
+potencia & \textasciicircum{}\\
+\hline
+módulo & \%\%\\
+\hline
+cociente decimal & \%/\%\\
+\hline
+\end{tabular}
+\end{table}
+
+Clásicamente, las multiplicaciones y divisiones tienen prioridad sobre
+las adiciones y sustracciones. Si es necesario, podemos usar paréntesis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{5} \OperatorTok{*}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{5}\NormalTok{) }\OperatorTok{*}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 20
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{5}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 40
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{5}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{((}\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{/}\StringTok{ }\DecValTok{3}\NormalTok{)}\OperatorTok{^}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 17.77778
+\end{verbatim}
+
+El operador de módulo corresponde al resto de la división euclidiana. Se
+usa en ciencias de la computación, por ejemplo, para saber si un número
+es par o impar (un número módulo 2 devolverá 1 si es impar y 0 si es
+par).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{451} \OperatorTok{%%}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{288} \OperatorTok{%%}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{5} \OperatorTok{*}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{%%}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{((}\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{5}\NormalTok{) }\OperatorTok{*}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{%%}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+R también incorpora algunas constantes que incluyen \texttt{pi}. Además,
+el signo infinito está representado por \texttt{Inf}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pi}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.141593
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pi }\OperatorTok{*}\StringTok{ }\DecValTok{5}\OperatorTok{^}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 78.53982
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\OperatorTok{/}\DecValTok{0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] Inf
+\end{verbatim}
+
+\begin{rmdstyle}
+el \emph{estilo} del código es importante porque el código está
+destinado a ser leído por nosotros y por otras personas. Para tener un
+estilo legible, se recomienda colocar espacios antes y después de los
+operadores aritméticos, excepto ``*'', ``/'' y ``\^{}'', aunque a veces
+es útil agregarlos como es el caso en nuestro ejemplos. La información
+sobre el \emph{estilo} siempre estará representada con este pictograma
+para que sea fácilmente identificable.
+\end{rmdstyle}
+
+\section{El concepto de objeto}\label{el-concepto-de-objeto}
+
+Un aspecto importante de la programación con R, pero también la
+programación en general es la noción de objeto. Como se indica en la
+página web de wikipedia
+(\url{https://ia.wikipedia.org/wiki/Objecto_(informatica)}), en ciencias
+de la computación, un objeto es un \emph{contenedor}, es decir, algo que
+contendrá información. La inforamción contenida en un objeto puede ser
+muy diversa, pero por el momento contendremos en un objeto el número 5.
+Para hacer esto (y para reutilizarlo más adelante), debemos darle un
+nombre a nuestro objeto. Con R, los nombres de los objetos no deben
+contener caracteres especiales como \emph{\^{} \$ ? \textbar{} + ()
+{[}{]} \{\}}, entre otros. No deben comenzar con un número ni contener
+espacios. El nombre del objeto debe ser representativo de lo que
+contiene, sin ser demasiado corto ni demasiado largo. Imagine que
+nuestro número 5 corresponde al número de repeticiones de un
+experimento. Nos gustaría darle un nombre que se refiera a \emph{numero}
+y \emph{repeticiones}, que podríamos reducir a \emph{nbr} y \emph{rep},
+respectivamente (\emph{nbr} para number en ingles). Hay varias
+posibilidades que son bastante comunes bajo R:
+
+\begin{itemize}
+\tightlist
+\item
+  la separación mediante \emph{guión bajo} (underscore):
+  \texttt{nbr\_rep}
+\item
+  la separación mediante el carácter \emph{punto}: \texttt{nbr.rep}
+\item
+  el uso de letras minúsculas: \texttt{nbrrep}
+\item
+  el estilo \emph{lowerCamelCase} que consiste en una primera palabra en
+  minúscula y la primera letra de las siguientes palabras con una letra
+  mayúscula: \texttt{nbrRep}
+\item
+  el estilo \emph{UpperCamelCase} donde cada palabra comienza con una
+  letra mayúscula: \texttt{NbrRep}
+\end{itemize}
+
+Todas estas formas de nombrar un objeto son equivalentes. En este libro
+usaremos el estilo \emph{lowerCamelCase}. En general, debemos evitar los
+nombres que son demasiado largos, como
+\texttt{miNumeroDeRepeticionesDeMiExperimento} o demasiado cortos como
+\texttt{nR}, y los nombres que no permiten identificar los contenidos
+como \texttt{miVariable} o \texttt{miNumero}, asi que nombres como
+\texttt{a} o \texttt{b}. El objetivo es de tener una idea de lo que hay
+en cada objeto en base a su nombre.
+
+\begin{rmdstyle}
+Hay diferentes maneras de definir un nombre para los objetos que
+crearemos con R. En este libro, utilizamos el estilo
+\emph{lowerCamelCase}. Lo importante no es la elección del estilo, sino
+la consistencia en su elección. El objetivo es tener un código
+funcional, pero también un código que sea fácil y agradable de leer para
+nosotros y para los demas.
+\end{rmdstyle}
+
+Ahora que hemos elegido un nombre para nuestro objeto, debemos crearlo y
+hacer que R entienda que nuestro objeto debe contener el número 5. Hay
+tres maneras de crear un objeto bajo R:
+
+\begin{itemize}
+\tightlist
+\item
+  con \texttt{\textless{}-}
+\item
+  con \texttt{=}
+\item
+  o con \texttt{-\textgreater{}}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5}
+\NormalTok{nbrRep =}\StringTok{ }\DecValTok{5}
+\DecValTok{5}\NormalTok{ ->}\StringTok{ }\NormalTok{nbrRep}
+\end{Highlighting}
+\end{Shaded}
+
+En este libro siempre usaremos la forma \texttt{\textless{}-} para
+coherencia y también porque es la forma más común.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+Acabamos de crear un objeto \texttt{nbrRep} y establecerlo con el valor
+\emph{5}. Este objeto ahora está disponible en nuestro entorno de
+computación y puede ser utilizado. Algunos ejemplos :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep }\OperatorTok{+}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep }\OperatorTok{*}\StringTok{ }\DecValTok{5} \OperatorTok{-}\StringTok{ }\DecValTok{45}\OperatorTok{/}\DecValTok{56}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 24.19643
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pi }\OperatorTok{*}\StringTok{ }\NormalTok{nbrRep}\OperatorTok{^}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 78.53982
+\end{verbatim}
+
+El valor asociado con nuestro objeto \texttt{nbrRep} se puede modificar
+de la misma manera que cuando se creó:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5}
+\NormalTok{nbrRep }\OperatorTok{+}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{10}
+\NormalTok{nbrRep }\OperatorTok{+}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5} \OperatorTok{*}\StringTok{ }\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{7}\OperatorTok{/}\DecValTok{3}
+\NormalTok{nbrRep }\OperatorTok{+}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14.33333
+\end{verbatim}
+
+El uso de objetos tiene sentido cuando tenemos operaciones complejas
+para realizar y hace que el código sea más agradable de leer y entender.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{9}\OperatorTok{^}\DecValTok{2} \OperatorTok{-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\DecValTok{18}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{(}\DecValTok{32} \OperatorTok{*}\StringTok{ }\DecValTok{45}\OperatorTok{/}\DecValTok{8} \OperatorTok{+}\StringTok{ }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.4696418
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{termino01 <-}\StringTok{ }\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{9}\OperatorTok{^}\DecValTok{2} \OperatorTok{-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\DecValTok{18}
+\NormalTok{termino02 <-}\StringTok{ }\DecValTok{32} \OperatorTok{*}\StringTok{ }\DecValTok{45}\OperatorTok{/}\DecValTok{8} \OperatorTok{+}\StringTok{ }\DecValTok{3}
+\NormalTok{termino01 }\OperatorTok{/}\StringTok{ }\NormalTok{termino02}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.4696418
+\end{verbatim}
+
+\section{Los scripts}\label{los-scripts}
+
+R es un lenguaje de programación denominado \emph{lenguaje de
+scripting}. Esto se refiere al hecho de que la mayoría de los usuarios
+escribirán pequeñas piezas de código en lugar de programas completos. R
+se puede usar como una simple calculadora, y en este caso no será
+necesario mantener un historial de las operaciones que se han realizado.
+Pero si las operaciones a implementar son largas y complejas, puede ser
+necesario e interesante guardar lo que se ha hecho para poder continuar
+más adelante. El archivo en el que se almacenarán las operaciones es lo
+que comúnmente se llama el \emph{script}. Un \emph{script} es, por lo
+tanto, un archivo que contiene una sucesión de información comprensible
+por R y que es posible ejecutar.
+
+\subsection{Crear un script y
+documentarlo}\label{crear-un-script-y-documentarlo}
+
+Para abrir un nuevo script, es suficiente crear un archivo de texto
+vacío que será editado por un editor de texto como el bloc de notas en
+Windows o Mac OS, o Gedit o incluso nano en Linux. Por convención, este
+archivo toma la extensión ``.r'' o ``.R'' (lo mas comun). Esta última
+convención se usará en este libro (\emph{``miArchivo.R''}). Desde la
+interfaz gráfica de R, es posible crear un nuevo script en Mac OS y
+Windows a través de \emph{file}, luego \emph{new script} y \emph{save
+as}. Al igual que el nombre de los objetos, el nombre del script es
+importante para que podamos identificar fácilmente su contenido. Por
+ejemplo, podríamos crear un archivo \texttt{formRConceptsBase.R} que
+contenga los objetos que acabamos de crear y los cálculos que hicimos.
+Pero incluso con nombres de objetos y archivos bien definidos, será
+difícil recordar el significado de este archivo sin la documentación que
+acompaña a este script. Para documentar un script utilizaremos
+\emph{comentarios}. Los \emph{comentarios} son elementos que R
+identificará como tales y no se ejecutarán. Para especificar a R que
+vamos a hacer un \emph{comentario}, debemos usar el carácter octothorpe
+(corsé o numeral) \texttt{\#}. Los comentarios se pueden insertar en una
+nueva línea o al final de la línea.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# creación objeto número de repeticiones}
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5} \CommentTok{# Comentario de fin de línea}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdstyle}
+Todo lo que hay despues del simbolo numeral \texttt{\#} no sera
+ejecutado. Significa que podriamos usar comentarios como \texttt{\#\#\#}
+o \texttt{\#comentario}, aun que se recomienda hacer comentarios con un
+solo simbolo numeral seguido por un espacio y despues su comentario:
+\texttt{\#\ mi\ comentario}.
+\end{rmdstyle}
+
+Los comentarios también se pueden usar para hacer que una línea ya no se
+ejecute. En este caso no queremos ejecutar la secunda linea:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5}
+\CommentTok{# nbrRep + 5}
+\end{Highlighting}
+\end{Shaded}
+
+Para volver a la documentación del script, se recomienda comenzar cada
+uno de nuestros scripts con una breve descripción de su contenido, luego
+cuando el script sea extenso, estructurarlo en diferentes partes para
+facilitar su lectura.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# ------------------------------------------------------------}
+\CommentTok{# Aquí hay un script para adquirir los conceptos básicos}
+\CommentTok{# con R}
+\CommentTok{# fecha de creación : 27/06/2018}
+\CommentTok{# autor : François Rebaudo}
+\CommentTok{# ------------------------------------------------------------}
+
+\CommentTok{# [1] creación del objeto número de repeticiones}
+\CommentTok{# ------------------------------------------------------------}
+
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5}
+
+\CommentTok{# [2] cálculos simples}
+\CommentTok{# ------------------------------------------------------------}
+
+\NormalTok{pi }\OperatorTok{*}\StringTok{ }\NormalTok{nbrRep}\OperatorTok{^}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 78.53982
+\end{verbatim}
+
+\begin{rmdstyle}
+Para ir más allá en el estilo del código, una guía completa de
+recomendaciones está disponible en línea en el sitio web
+\emph{tidyverse} (en ingles ; \url{http://style.tidyverse.org/}).
+\end{rmdstyle}
+
+\subsection{Ejecutar un script}\label{ejecutar-un-script}
+
+Como tenemos un script, no trabajamos directamente en la consola. Pero
+solo la consola puede \emph{entender} el código R y devolvernos los
+resultados que queremos obtener. Por ahora, la técnica más simple es
+copiar y pegar las líneas que queremos ejecutar desde nuestro script
+hasta la consola. A partir de ahora, ya no utilizaremos editores de
+texto como bloc de notas, sino editores especializados para la creación
+de scripts R. Sera es el objetivo del siguiente capítulo.
+
+\section{Conclusión}\label{conclusion}
+
+Felicitaciones, hemos llegado al final de este primer capítulo sobre la
+base de R. Sabemos:
+
+\begin{itemize}
+\tightlist
+\item
+  Instalar R
+\item
+  Usar R como una calculadora
+\item
+  Crear \textbf{objetos} y utilisarlos para los calculos aritméticos
+\item
+  Elejir nombres pertinentes para los objetos
+\item
+  Crear un nuevo \textbf{script}
+\item
+  Elejir un nombre pertinente para el archivo del script
+\item
+  Ejecutar el codigo de un script
+\item
+  Documentar los scripts con \textbf{comentarios}
+\item
+  Usar un estilo de código para que sea agradable de leer y facil de
+  entender
+\end{itemize}
+
+
+\end{document}
