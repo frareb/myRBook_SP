@@ -3,7 +3,7 @@
 ## Editores de texto y entorno de desarrollo
 
 Hay muchos editores de texto, el capítulo anterior permitió introducir algunos de los más simples como el bloc de notas de Windows. Rápidamente los límites de estos editores han hecho que la tarea de escribir un script tedioso. De hecho, incluso estructurando su script con comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran los editores de texto especializados para facilitar la escritura y la lectura de scripts.
-El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: **Notepad ++**, **Rstudio** y **Geany**.
+El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: **Notepad++**, **Rstudio** y **Geany**.
 
 ## RStudio
 
@@ -121,7 +121,7 @@ knitr::include_graphics("myFigures/screencap_Geany_02.png")
 ```
 
 Para ejecutar nuestro script, la versión de Geany para Windows no tiene un terminal incorporado, lo que hace que su uso sea limitado bajo este sistema operativo. La ejecución de un script se puede hacer abriendo R en una ventana separada y copiando y pegando las líneas que se ejecutarán. En Linux y Mac OSX, abramos R en el terminal en la parte inferior de la ventana de Geany con el comando `R`. Podemos configurar Geany para una combinación de teclas para ejecutar el código seleccionado (por ejemplo `CTRL + R`). A esto hay que permitir el envío de selección al terminal (`send_selection_unsafe = true`) in `archivo geany.conf` y elegir el comando para enviar al terminal (en *Editar*, *Preferencias*, *Combinaciones*).
-Para cambiar el tema de Geany, hay una colección de temas disponibles en GitHub (https://github.com/geany/geany-themes/). El tema se puede cambiar a través del menú *Ver*, *cambiar Esquema del color ...* (un ejemplo con el tema *Solarized* Figura \ @ref (Fig: screenCapGeany03)).
+Para cambiar el tema de Geany, hay una colección de temas disponibles en GitHub (https://github.com/geany/geany-themes/). El tema se puede cambiar a través del menú *Ver*, *cambiar Esquema del color ...* (un ejemplo con el tema *Solarized* Figura \@ref(Fig: screenCapGeany03)).
 
 ```{r screenCapGeany03, fig.cap = "Captura de pantalla de Geany en Windows: cambiar esquema de color.\\label{fig:screenCapGeany03}", echo = FALSE}
 knitr::include_graphics("myFigures/screencap_Geany_03.png")
