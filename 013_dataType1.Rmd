@@ -1,0 +1,160 @@
+# Tipos de datos {#dataType1}
+
+Vimos anteriormente cómo crear un objeto. Un objeto es como una caja en la que almacenaremos *información*. Hasta ahora solo hemos almacenado números, pero en este capítulo veremos que es posible almacenar otra información y nos detendremos en los tipos más comunes. En este capítulo utilizaremos **funciones** sobre las cuales volveremos más adelante.
+
+## El tipo `numérico`
+
+El tipo `numérico` es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números con R: enteros (*integer*) y números decimales (*double*). Por defecto, R considera todos los números como números decimales y asigna el tipo `double`.
+Para verificar el tipo de datos utilizaremos la *función* `typeof()` que toma como *argumento* un objeto (o directamente la información que queremos probar). También podemos usar la función `is.double()` que devolverá `TRUE` si el número está en formato `double` y `FALSE` en caso contrario. La función genérica `is.numeric()` devolverá `TRUE` si el objeto está en formato` numérico` y `FALSE` en caso contrario.
+
+```{r}
+nbrRep <- 5
+typeof(nbrRep)
+typeof(5.32)
+is.numeric(5)
+is.double(5)
+```
+
+Si queremos decirle a R que vamos a trabajar con un entero, entonces necesitamos convertir nuestro número decimal en un entero con la función `as.integer()`. También podemos usar la función `is.integer()` que devolverá `TRUE` si el número está en formato `integer` y `FALSE` en caso contrario.
+
+```{r}
+nbrRep <- as.integer(5)
+typeof(nbrRep)
+typeof(5.32)
+typeof(as.integer(5.32))
+as.integer(5.32)
+as.integer(5.99)
+is.numeric(nbrRep)
+```
+
+Vemos aquí que convertir un número como `5.99` a `entero` solo devolverá la parte entera, `5`.
+
+```{r}
+is.integer(5)
+is.numeric(5)
+is.integer(as.integer(5))
+is.numeric(as.integer(5))
+```
+
+La suma de un entero y un número de punto flotante devuelve un número de coma flotante.
+
+```{r}
+sumIntDou <- as.integer(5) + 5.2
+typeof(sumIntDou)
+sumIntInt <- as.integer(5) + as.integer(5)
+typeof(sumIntInt)
+```
+
+Para resumir, el tipo `numeric` contiene dos subtipos, los tipos `integer` para enteros y el tipo `double` para los números decimales. Por defecto, R asigna el tipo `double` a los números.
+
+## El tipo `character`
+
+El tipo `character` es texto. De hecho, R permite trabajar con texto. para especificar a R que la información contenida en un objeto está en formato de texto (o generalmente para todos los textos), usamos las comillas dobles (`"`) o las comillas simples (`'`).
+
+```{r}
+myText <- "azerty"
+myText2 <- 'azerty'
+myText3 <- 'azerty uiop qsdfg hjklm'
+typeof(myText3)
+```
+
+Las comillas dobles o simples son útiles si desea poner comillas en nuestro texto. También podemos *escapar* un carácter especial como comillas gracias al signo de barra invertida `\`.
+
+```{r}
+myText <- "a 'ze' 'rt' y"
+myText2 <- 'a "zert" y'
+myText3 <- 'azerty uiop qsdfg hjklm'
+myText4 <- "qwerty \" azerty "
+myText5 <- "qwerty \\ azerty "
+```
+
+De forma predeterminada, cuando creamos un objeto, su contenido no es devuelto por la consola. En Internet o en muchos libros podemos encontrar el nombre del objeto en una línea para devolver sus contenidos:
+
+```{r}
+myText <- "a 'ze' 'rt' y"
+myText
+```
+
+En este libro, no lo usaremos de esta manera y preferiremos el uso de la función `print()`, que permite mostrar en la consola el contenido de un objeto. El resultado es el mismo, pero el código es más fácil de leer y más explícito sobre lo que hace.
+
+```{r}
+myText <- "a 'ze' 'rt' y"
+print(myText)
+nbrRep <- 5
+print(nbrRep)
+```
+
+También podemos poner números en formato de texto, pero no debemos olvidar poner comillas para especificar el tipo `character` o usar la función` as.character()`. Una operación entre un texto y un número devuelve un error. Por ejemplo, si agregamos `10` a `5`, R nos dice que un **argumento** de la **función** `+` no es un tipo `numeric` y que, por lo tanto, la operación no es posible. Tampoco podemos agregar texto a texto, pero veremos más adelante cómo *concatenar* dos cadenas de texto.
+
+```{r}
+myText <- "qwerty"
+typeof(myText)
+myText2 <- 5
+typeof(myText2)
+myText3 <- "5"
+typeof(myText3)
+myText2 + 10
+as.character(5)
+# myText3 + 10 # Error in myText3 + 10 : non-numeric argument to binary operator
+# "a" + "b" # Error in "a" + "b" : non-numeric argument to binary operator
+```
+
+Para resumir, el tipo `character` permite el ingreso de texto, podemos reconocerlo con comillas simples o dobles.
+
+## El tipo `factor`
+
+El tipo `factor` corresponde a los factores. Los factores son una elección dentro de una lista finita de posibilidades. Por ejemplo, los países son factores porque existe una lista finita de países en el mundo en un momento dado. Un factor puede definirse con la función `factor()` o transformarse utilizando la función `as.factor()`. Al igual que con otros tipos de datos, podemos usar la función `is.factor()` para verificar el tipo de datos. Para obtener una lista de todas las posibilidades, existe la función `levels()` (esta función tendrá más sentido cuando nos acerquemos a los tipos de contenedores de información).
+
+```{r}
+factor01 <- factor("aaa")
+print(factor01)
+typeof(factor01)
+is.factor(factor01)
+levels(factor01)
+```
+
+Un factor se puede transformar en texto con la función `as.character()` pero también en número con `as.numeric()`. Al cambiar al tipo `numeric`, cada factor toma el valor de su posición en la lista de posibilidades. En nuestro caso, solo hay una posibilidad, por lo que la función `as.numeric()` devolverá `1`:
+
+```{r}
+factor01 <- factor("aaa")
+as.character(factor01)
+as.numeric(factor01)
+```
+
+## El tipo `logical`
+
+El tipo `logical` corresponde a los valores `TRUE` y `FALSE` (y `NA`) que ya hemos visto con los operadores de comparación.
+
+```{r}
+aLogic <- TRUE
+print(aLogic)
+typeof(aLogic)
+is.logical(aLogic)
+aLogic + 1
+as.numeric(aLogic)
+as.character(aLogic)
+```
+
+## Acerca de `NA`
+
+El valor `NA` se puede usar para especificar que no hay datos o datos faltantes. Por defecto, `NA` es `logical`, pero se puede usar para texto o números.
+
+```{r}
+print(NA)
+typeof(NA)
+typeof(as.integer(NA))
+typeof(as.character(NA))
+NA == TRUE
+NA == FALSE
+NA > 1
+NA + 1
+```
+
+## Conclusión
+
+Felicitaciones, hemos llegado al final de este capítulo sobre los tipos de datos. Ahora sabemos:
+
+* Reconocer y hacer objetos en los principales tipos de datos
+* Transformar tipos de datos de un tipo a otro
+
+Este capítulo bastante tedioso es la base para el próximo capítulo sobre contenedores de datos.
