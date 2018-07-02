@@ -1,4 +1,4 @@
-# Elejir un entorno de desarrollo {#IDE}
+# Elegir un entorno de desarrollo {#IDE}
 
 ## Editores de texto y entorno de desarrollo
 
