@@ -2,9 +2,9 @@
 
 Vimos anteriormente cómo crear un objeto. Un objeto es como una caja en la que almacenaremos *información*. Hasta ahora solo hemos almacenado números, pero en este capítulo veremos que es posible almacenar otra información y nos detendremos en los tipos más comunes. En este capítulo utilizaremos **funciones** sobre las cuales volveremos más adelante.
 
-## El tipo `numérico`
+## El tipo `numeric`
 
-El tipo `numérico` es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números con R: enteros (*integer*) y números decimales (*double*). Por defecto, R considera todos los números como números decimales y asigna el tipo `double`.
+El tipo `numeric` es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números con R: enteros (*integer*) y números decimales (*double*). Por defecto, R considera todos los números como números decimales y asigna el tipo `double`.
 Para verificar el tipo de datos utilizaremos la *función* `typeof()` que toma como *argumento* un objeto (o directamente la información que queremos probar). También podemos usar la función `is.double()` que devolverá `TRUE` si el número está en formato `double` y `FALSE` en caso contrario. La función genérica `is.numeric()` devolverá `TRUE` si el objeto está en formato` numérico` y `FALSE` en caso contrario.
 
 ```{r}
