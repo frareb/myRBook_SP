@@ -77,46 +77,21 @@ el *estilo* del código es importante porque el código está destinado a ser le
 
 ### Los operadores comparativos
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-R est cependant bien plus qu'une simple calculatrice puisque'il permet un autre type d'opérateurs : les opérateurs de comparaison. Ils servent comme leur nom l'indique à *comparer* des valeurs entre elles (Table \@ref(tab:tabOpCom)).
+Sin embargo, R es mucho más que una simple calculadora porque permite otro tipo de operadores: operadores de comparación. Sirven como su nombre sugiere *comparar* los valores (Table \@ref(tab:tabOpCom)).
 
 ```{r tabOpCom, echo = FALSE}
-opAriDf <- data.frame(Label = c("plus petit que", "plus grand que", "plus petit ou égal à",  "plus grand ou égal à", "égal à", "différent de"), 
+opAriDf <- data.frame(Label = c("más pequeño que", "mayor que", "más pequeño o igual a",  "más grande o igual a", "igual a", "diferente de"), 
   Operador = c("<", ">", "<=", ">=", "==", "!="))
-knitr::kable(opAriDf, caption = "Opérateurs de comparaison.\\label{tab:tabOpCom}")
+knitr::kable(opAriDf, caption = "Operadores de comparación.\\label{tab:tabOpCom}")
 ```
 
-Par exemple si nous voulons savoir si un chiffre est plus grand qu'un autre, nous pouvons écrire :
+Por ejemplo, si queremos saber si un numero es más grande que otro, podemos escribir:
 
 ```{r}
 5 > 3 
 ```
 
-R renvoie la valeur `TRUE` si la comparasion est vraie et `FALSE` si la comparaison est fausse.
+R devuelve `TRUE` si la comparación es verdadera y `FALSE` si la comparación es falsa.
 
 ```{r}
 5 > 3
@@ -125,24 +100,24 @@ R renvoie la valeur `TRUE` si la comparasion est vraie et `FALSE` si la comparai
 3.2 >= 1.5
 ```
 
-Nous pouvons combiner les opérateurs arithmétiques avec les opérateurs de comparasion.
+Podemos combinar operadores aritméticos con operadores de comparación.
 
 ```{r}
 (5 + 8) > (3 * 45/2) 
 ```
 
 ```{block, type='rmdstyle'}
-Dans la comparasion `(5 + 8) > (3 * 45/2)` les parenthèses ne sont pas nécessaires mais elles permettent au code d'être plus facile à lire.
+En la comparación `(5 + 8) > (3 * 45/2)` no se necesitan paréntesis, pero permiten que el código sea más fácil de leer.
 ```
 
-Un opérateur de comparaison particulier est *égal à*. Nous verrons dans la section suivante que le signe `=` est réservé à un autre usage : il permet d'affecter une valeur à un objet. L'opérateur de comparaison *égal à* doit donc être différent, c'est pour cela que R utilise `==`. 
+Un operador de comparación particular es *igual a*. Veremos en la siguiente sección que el signo `=` está reservado para otro uso: permite asignar un valor a un objeto. El operador de comparación *igual a* debe ser diferente, por eso R usa `==`.
 
 ```{r}
 42 == 53
 58 == 58
 ```
 
-Un autre opérateur particulier est *différent de*. Il est utilisé avec *un point d'intérrogation* suivi de *égal*, `!=`. Cet opérateur permet de d'obtenir la réponse inverse à `==`.
+Otro operador particular es *diferente de*. Se usa con *un signo de interrogación* seguido de *igual*, `! =`. Este operador permite obtener la respuesta opuesta a `==`.
 
 ```{r}
 42 == 53
@@ -151,7 +126,7 @@ Un autre opérateur particulier est *différent de*. Il est utilisé avec *un po
 10/2 == 5
 ```
 
-R utilise `TRUE` et `FALSE` qui sont aussi des valeurs qui peuvent être testées avec les opérateurs de comparasion. Mais R attribue également une valeur à `TRUE` et `FALSE` :
+R usa `TRUE` y `FALSE`, que también son valores que se pueden probar con operadores de comparación. Pero R también asigna un valor a `TRUE` y `FALSE`:
 
 ```{r}
 TRUE == TRUE
@@ -163,9 +138,9 @@ FALSE + 1
 (FALSE + 1) == TRUE
 ```
 
-La valeur de `TRUE` est de 1 et la valeur de `FALSE` est de 0. Nous verrons plus tard comment utiliser cette information dans les prochains chapitres.
+El valor de `TRUE` es 1 y el valor de `FALSE` es 0. Veremos más adelante cómo usar esta información en los próximos capítulos.
 
-R est aussi un langage relativement permissif, cela veut dire qu'il admet une certaine flexibilité dans la manière de rédiger le code. Débattre du bien fondé de cette flexibilité sort du cadre de ce livre mais nous pourrons trouver dans du code R sur Internet ou dans d'autres ouvrages le raccourcis `T` pour `TRUE` et `F` pour `FALSE`. 
+R es también un lenguaje relativamente permisivo, significa que admite cierta flexibilidad en la forma de escribir el código. Debatir sobre la idoneidad de esta flexibilidad está fuera del alcance de este libro, pero podemos encontrar en el código R en Internet o en otras obras el atajo `T` para `TRUE` y `F` for `FALSE`.
 
 ```{r}
 T == TRUE
@@ -175,16 +150,16 @@ F == 0
 (F + 1) == TRUE
 ```
 
-Bien que cette façon de se référer à `TRUE` et `FALSE` par `T` et `F` soit assez répandue, dans ce livre nous utiliserons toujours `TRUE` et `FALSE` afin que le code soit plus facile à lire. Encore une fois l'objectif d'un code est de non seuleument être fonctionnel mais aussi d'être facile à lire et à relire.
+Aunque esta forma de referirse a `TRUE` y `FALSE` por `T` y `F` está bastante extendida, en este libro siempre usaremos `TRUE` y `FALSE` para que el código sea más fácil de leer. Como mencionado anterioramente, el objetivo de un código no solo es ser funcional sino también fácil de leer y volver a leer.
 
-### Les opérateurs logiques
+### Los operadores lógicos
 
-Il existe un dernier type d'opérateur, les opérateurs logiques. Ils sont utiles pour combiner des opérateurs de comparaison (Table \@ref(tab:tabOpLog)). 
+Hay un último tipo de operador, los operadores lógicos. Son útiles para combinar operadores de comparación (Table \@ref(tab:tabOpLog)). 
 
 ```{r tabOpLog, echo = FALSE}
-opAriDf <- data.frame(Label = c("n'est pas", "et", "ou", "ou exclusif"), 
+opAriDf <- data.frame(Label = c("no es", "y", "o", "o exclusivo"), 
   Operador = c("!", "&", "|", "xor()"))
-knitr::kable(opAriDf, caption = "Opérateurs logiques.\\label{tab:tabOpLog}")
+knitr::kable(opAriDf, caption = "Operadores lógicos.\\label{tab:tabOpLog}")
 ```
 
 ```{r}
@@ -196,7 +171,7 @@ knitr::kable(opAriDf, caption = "Opérateurs logiques.\\label{tab:tabOpLog}")
 (3 < 5) & (5 <= 5)
 ```
 
-L'opérateur logique `xor()` correspond à un *ou exclusif*. C'est à dire que l'un des deux **arguments** de la **fonction** `xor()` doit être vrai, mais pas les deux. Nous reviendrons plus tard sur les **fonctions** et leurs **arguments**, mais retenons que l'on identifie une fonction par ses parenthèses qui contiennent des arguments séparés par des virgules.
+El operador lógico `xor()` es *o exclusivo*. Es decir, uno de los dos **argumentos** de la **función** `xor()` debe ser verdadero, pero no ambos. Más adelante volveremos a las **funciones** y sus **argumentos**, pero recuerde que identificamos una función por sus paréntesis que contienen argumentos separados por comas.
 
 ```{r}
 xor((3 + 2) == 5, (3 + 3) == 6)
@@ -206,31 +181,12 @@ xor((3 + 3) == 5, (3 + 3) == 6)
 ```
 
 ```{block, type='rmdstyle'}
-Il est recommandé que les virgules `,` soient suivies par un espace afin que le code soit plus agréable à lire.
+Se recomienda que las comas `,` sean seguidas de un espacio para que el código sea más agradable de leer.
 ```
 
-### Aide sur les opérateurs
+### Ayuda a los operadores
 
-Le fichier d'aideen anglais sur les opérateurs arithmétiques peut être obtenue avec la commande `?'+'` celui sur les opérateurs de comparaison avec la commande `?'=='` et celui sur les opérateurs logiques avec la commande `?'&'`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+El archivo de ayuda en inglés sobre operadores aritméticos se puede obtener con el comando `?'+'`. El de los operadores de comparación con el comando `?'=='` y el de los operadores lógicos con el comando `?'&'`.
 
 ## El concepto de objeto
 
