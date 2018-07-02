@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Aprender R: iniciación y perfeccionamiento</title>
+  <meta name="description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Aprender R: iniciación y perfeccionamiento" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Aprender R: iniciación y perfeccionamiento" />
+  
+  <meta name="twitter:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
+  
+
+<meta name="author" content="François Rebaudo">
+
+
+<meta name="date" content="2018-07-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="IDE.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="myStyle.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Aprender R: iniciación y perfeccionamiento</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Agradecimientos</a></li>
+<li class="chapter" data-level="2" data-path="licence.html"><a href="licence.html"><i class="fa fa-check"></i><b>2</b> Licencia</a></li>
+<li class="chapter" data-level="3" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>3</b> introducción</a><ul>
+<li class="chapter" data-level="3.1" data-path="intro.html"><a href="intro.html#por-que-apprender-r"><i class="fa fa-check"></i><b>3.1</b> Por qué apprender R</a></li>
+<li class="chapter" data-level="3.2" data-path="intro.html"><a href="intro.html#este-libro"><i class="fa fa-check"></i><b>3.2</b> Este libro</a></li>
+<li class="chapter" data-level="3.3" data-path="intro.html"><a href="intro.html#lectura-adicional-en-espanol"><i class="fa fa-check"></i><b>3.3</b> Lectura adicional en español</a></li>
+</ul></li>
+<li class="part"><span><b>I Conceptos básicos</b></span></li>
+<li class="chapter" data-level="4" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>4</b> Primeros pasos</a><ul>
+<li class="chapter" data-level="4.1" data-path="premiersPas.html"><a href="premiersPas.html#instalar-r"><i class="fa fa-check"></i><b>4.1</b> Instalar R</a></li>
+<li class="chapter" data-level="4.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>4.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="premiersPas.html"><a href="premiersPas.html#los-operadores-aritmeticos"><i class="fa fa-check"></i><b>4.2.1</b> Los operadores aritméticos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="premiersPas.html"><a href="premiersPas.html#los-operadores-comparativos"><i class="fa fa-check"></i><b>4.2.2</b> Los operadores comparativos</a></li>
+<li class="chapter" data-level="4.2.3" data-path="premiersPas.html"><a href="premiersPas.html#los-operadores-logicos"><i class="fa fa-check"></i><b>4.2.3</b> Los operadores lógicos</a></li>
+<li class="chapter" data-level="4.2.4" data-path="premiersPas.html"><a href="premiersPas.html#ayuda-a-los-operadores"><i class="fa fa-check"></i><b>4.2.4</b> Ayuda a los operadores</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="premiersPas.html"><a href="premiersPas.html#el-concepto-de-objeto"><i class="fa fa-check"></i><b>4.3</b> El concepto de objeto</a></li>
+<li class="chapter" data-level="4.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>4.4</b> Los scripts</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="premiersPas.html"><a href="premiersPas.html#crear-un-script-y-documentarlo"><i class="fa fa-check"></i><b>4.4.1</b> Crear un script y documentarlo</a></li>
+<li class="chapter" data-level="4.4.2" data-path="premiersPas.html"><a href="premiersPas.html#ejecutar-un-script"><i class="fa fa-check"></i><b>4.4.2</b> Ejecutar un script</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="premiersPas.html"><a href="premiersPas.html#conclusion"><i class="fa fa-check"></i><b>4.5</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="IDE.html"><a href="IDE.html"><i class="fa fa-check"></i><b>5</b> Elejir un entorno de desarrollo</a><ul>
+<li class="chapter" data-level="5.1" data-path="IDE.html"><a href="IDE.html#editores-de-texto-y-entorno-de-desarrollo"><i class="fa fa-check"></i><b>5.1</b> Editores de texto y entorno de desarrollo</a></li>
+<li class="chapter" data-level="5.2" data-path="IDE.html"><a href="IDE.html#rstudio"><i class="fa fa-check"></i><b>5.2</b> RStudio</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="IDE.html"><a href="IDE.html#instalar-rstudio"><i class="fa fa-check"></i><b>5.2.1</b> Instalar RStudio</a></li>
+<li class="chapter" data-level="5.2.2" data-path="IDE.html"><a href="IDE.html#un-script-con-rstudio"><i class="fa fa-check"></i><b>5.2.2</b> Un script con RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="IDE.html"><a href="IDE.html#notepad-avec-npp2r"><i class="fa fa-check"></i><b>5.3</b> Notepad++ avec Npp2R</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="IDE.html"><a href="IDE.html#instalar-notepad-solamente-para-windows"><i class="fa fa-check"></i><b>5.3.1</b> Instalar Notepad++ (solamente para Windows)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="IDE.html"><a href="IDE.html#instalar-npp2r"><i class="fa fa-check"></i><b>5.3.2</b> Instalar Npp2R</a></li>
+<li class="chapter" data-level="5.3.3" data-path="IDE.html"><a href="IDE.html#un-script-con-notepad"><i class="fa fa-check"></i><b>5.3.3</b> Un script con Notepad++</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="IDE.html"><a href="IDE.html#geany-para-linux-mac-osx-y-windows"><i class="fa fa-check"></i><b>5.4</b> Geany (para Linux, Mac OSX y Windows)</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="IDE.html"><a href="IDE.html#instalar-geany"><i class="fa fa-check"></i><b>5.4.1</b> Instalar Geany</a></li>
+<li class="chapter" data-level="5.4.2" data-path="IDE.html"><a href="IDE.html#un-script-con-geany"><i class="fa fa-check"></i><b>5.4.2</b> Un script con Geany</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="IDE.html"><a href="IDE.html#otras-soluciones"><i class="fa fa-check"></i><b>5.5</b> Otras soluciones</a></li>
+<li class="chapter" data-level="5.6" data-path="IDE.html"><a href="IDE.html#conclusion-1"><i class="fa fa-check"></i><b>5.6</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>6</b> Tipos de datos</a><ul>
+<li class="chapter" data-level="6.1" data-path="dataType1.html"><a href="dataType1.html#el-tipo-numerico"><i class="fa fa-check"></i><b>6.1</b> El tipo <code>numérico</code></a></li>
+<li class="chapter" data-level="6.2" data-path="dataType1.html"><a href="dataType1.html#el-tipo-character"><i class="fa fa-check"></i><b>6.2</b> El tipo <code>character</code></a></li>
+<li class="chapter" data-level="6.3" data-path="dataType1.html"><a href="dataType1.html#el-tipo-factor"><i class="fa fa-check"></i><b>6.3</b> El tipo <code>factor</code></a></li>
+<li class="chapter" data-level="6.4" data-path="dataType1.html"><a href="dataType1.html#el-tipo-logical"><i class="fa fa-check"></i><b>6.4</b> El tipo <code>logical</code></a></li>
+<li class="chapter" data-level="6.5" data-path="dataType1.html"><a href="dataType1.html#acerca-de-na"><i class="fa fa-check"></i><b>6.5</b> Acerca de <code>NA</code></a></li>
+<li class="chapter" data-level="6.6" data-path="IDE.html"><a href="IDE.html#conclusion-1"><i class="fa fa-check"></i><b>6.6</b> Conclusión</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aprender R: iniciación y perfeccionamiento</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dataType1" class="section level1">
+<h1><span class="header-section-number"> 6</span> Tipos de datos</h1>
+<p>Vimos anteriormente cómo crear un objeto. Un objeto es como una caja en la que almacenaremos <em>información</em>. Hasta ahora solo hemos almacenado números, pero en este capítulo veremos que es posible almacenar otra información y nos detendremos en los tipos más comunes. En este capítulo utilizaremos <strong>funciones</strong> sobre las cuales volveremos más adelante.</p>
+<div id="el-tipo-numerico" class="section level2">
+<h2><span class="header-section-number">6.1</span> El tipo <code>numérico</code></h2>
+<p>El tipo <code>numérico</code> es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números con R: enteros (<em>integer</em>) y números decimales (<em>double</em>). Por defecto, R considera todos los números como números decimales y asigna el tipo <code>double</code>. Para verificar el tipo de datos utilizaremos la <em>función</em> <code>typeof()</code> que toma como <em>argumento</em> un objeto (o directamente la información que queremos probar). También podemos usar la función <code>is.double()</code> que devolverá <code>TRUE</code> si el número está en formato <code>double</code> y <code>FALSE</code> en caso contrario. La función genérica <code>is.numeric()</code> devolverá <code>TRUE</code> si el objeto está en formato<code>numérico</code> y <code>FALSE</code> en caso contrario.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nbrRep &lt;-<span class="st"> </span><span class="dv">5</span>
+<span class="kw">typeof</span>(nbrRep)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="fl">5.32</span>)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.numeric</span>(<span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.double</span>(<span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Si queremos decirle a R que vamos a trabajar con un entero, entonces necesitamos convertir nuestro número decimal en un entero con la función <code>as.integer()</code>. También podemos usar la función <code>is.integer()</code> que devolverá <code>TRUE</code> si el número está en formato <code>integer</code> y <code>FALSE</code> en caso contrario.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nbrRep &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>)
+<span class="kw">typeof</span>(nbrRep)</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="fl">5.32</span>)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="kw">as.integer</span>(<span class="fl">5.32</span>))</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="fl">5.32</span>)</code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="fl">5.99</span>)</code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.numeric</span>(nbrRep)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Vemos aquí que convertir un número como <code>5.99</code> a <code>entero</code> solo devolverá la parte entera, <code>5</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.integer</span>(<span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.numeric</span>(<span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.integer</span>(<span class="kw">as.integer</span>(<span class="dv">5</span>))</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.numeric</span>(<span class="kw">as.integer</span>(<span class="dv">5</span>))</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>La suma de un entero y un número de punto flotante devuelve un número de coma flotante.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sumIntDou &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="fl">5.2</span>
+<span class="kw">typeof</span>(sumIntDou)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sumIntInt &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>)
+<span class="kw">typeof</span>(sumIntInt)</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<p>Para resumir, el tipo <code>numeric</code> contiene dos subtipos, los tipos <code>integer</code> para enteros y el tipo <code>double</code> para los números decimales. Por defecto, R asigna el tipo <code>double</code> a los números.</p>
+</div>
+<div id="el-tipo-character" class="section level2">
+<h2><span class="header-section-number">6.2</span> El tipo <code>character</code></h2>
+<p>El tipo <code>character</code> es texto. De hecho, R permite trabajar con texto. para especificar a R que la información contenida en un objeto está en formato de texto (o generalmente para todos los textos), usamos las comillas dobles (<code>&quot;</code>) o las comillas simples (<code>'</code>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText &lt;-<span class="st"> &quot;azerty&quot;</span>
+myText2 &lt;-<span class="st"> &#39;azerty&#39;</span>
+myText3 &lt;-<span class="st"> &#39;azerty uiop qsdfg hjklm&#39;</span>
+<span class="kw">typeof</span>(myText3)</code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>Las comillas dobles o simples son útiles si desea poner comillas en nuestro texto. También podemos <em>escapar</em> un carácter especial como comillas gracias al signo de barra invertida <code>\</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span>
+myText2 &lt;-<span class="st"> &#39;a &quot;zert&quot; y&#39;</span>
+myText3 &lt;-<span class="st"> &#39;azerty uiop qsdfg hjklm&#39;</span>
+myText4 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\&quot;</span><span class="st"> azerty &quot;</span>
+myText5 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\\</span><span class="st"> azerty &quot;</span></code></pre></div>
+<p>De forma predeterminada, cuando creamos un objeto, su contenido no es devuelto por la consola. En Internet o en muchos libros podemos encontrar el nombre del objeto en una línea para devolver sus contenidos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span>
+myText</code></pre></div>
+<pre><code>## [1] &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</code></pre>
+<p>En este libro, no lo usaremos de esta manera y preferiremos el uso de la función <code>print()</code>, que permite mostrar en la consola el contenido de un objeto. El resultado es el mismo, pero el código es más fácil de leer y más explícito sobre lo que hace.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span>
+<span class="kw">print</span>(myText)</code></pre></div>
+<pre><code>## [1] &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nbrRep &lt;-<span class="st"> </span><span class="dv">5</span>
+<span class="kw">print</span>(nbrRep)</code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>También podemos poner números en formato de texto, pero no debemos olvidar poner comillas para especificar el tipo <code>character</code> o usar la función<code>as.character()</code>. Una operación entre un texto y un número devuelve un error. Por ejemplo, si agregamos <code>10</code> a <code>5</code>, R nos dice que un <strong>argumento</strong> de la <strong>función</strong> <code>+</code> no es un tipo <code>numeric</code> y que, por lo tanto, la operación no es posible. Tampoco podemos agregar texto a texto, pero veremos más adelante cómo <em>concatenar</em> dos cadenas de texto.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText &lt;-<span class="st"> &quot;qwerty&quot;</span>
+<span class="kw">typeof</span>(myText)</code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText2 &lt;-<span class="st"> </span><span class="dv">5</span>
+<span class="kw">typeof</span>(myText2)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText3 &lt;-<span class="st"> &quot;5&quot;</span>
+<span class="kw">typeof</span>(myText3)</code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText2 <span class="op">+</span><span class="st"> </span><span class="dv">10</span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.character</span>(<span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] &quot;5&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># myText3 + 10 # Error in myText3 + 10 : non-numeric argument to binary operator</span>
+<span class="co"># &quot;a&quot; + &quot;b&quot; # Error in &quot;a&quot; + &quot;b&quot; : non-numeric argument to binary operator</span></code></pre></div>
+<p>Para resumir, el tipo <code>character</code> permite el ingreso de texto, podemos reconocerlo con comillas simples o dobles.</p>
+</div>
+<div id="el-tipo-factor" class="section level2">
+<h2><span class="header-section-number">6.3</span> El tipo <code>factor</code></h2>
+<p>El tipo <code>factor</code> corresponde a los factores. Los factores son una elección dentro de una lista finita de posibilidades. Por ejemplo, los países son factores porque existe una lista finita de países en el mundo en un momento dado. Un factor puede definirse con la función <code>factor()</code> o transformarse utilizando la función <code>as.factor()</code>. Al igual que con otros tipos de datos, podemos usar la función <code>is.factor()</code> para verificar el tipo de datos. Para obtener una lista de todas las posibilidades, existe la función <code>levels()</code> (esta función tendrá más sentido cuando nos acerquemos a los tipos de contenedores de información).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">factor01 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="st">&quot;aaa&quot;</span>)
+<span class="kw">print</span>(factor01)</code></pre></div>
+<pre><code>## [1] aaa
+## Levels: aaa</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(factor01)</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.factor</span>(factor01)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(factor01)</code></pre></div>
+<pre><code>## [1] &quot;aaa&quot;</code></pre>
+<p>Un factor se puede transformar en texto con la función <code>as.character()</code> pero también en número con <code>as.numeric()</code>. Al cambiar al tipo <code>numeric</code>, cada factor toma el valor de su posición en la lista de posibilidades. En nuestro caso, solo hay una posibilidad, por lo que la función <code>as.numeric()</code> devolverá <code>1</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">factor01 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="st">&quot;aaa&quot;</span>)
+<span class="kw">as.character</span>(factor01)</code></pre></div>
+<pre><code>## [1] &quot;aaa&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.numeric</span>(factor01)</code></pre></div>
+<pre><code>## [1] 1</code></pre>
+</div>
+<div id="el-tipo-logical" class="section level2">
+<h2><span class="header-section-number">6.4</span> El tipo <code>logical</code></h2>
+<p>El tipo <code>logical</code> corresponde a los valores <code>TRUE</code> y <code>FALSE</code> (y <code>NA</code>) que ya hemos visto con los operadores de comparación.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">aLogic &lt;-<span class="st"> </span><span class="ot">TRUE</span>
+<span class="kw">print</span>(aLogic)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(aLogic)</code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.logical</span>(aLogic)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">aLogic <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.numeric</span>(aLogic)</code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.character</span>(aLogic)</code></pre></div>
+<pre><code>## [1] &quot;TRUE&quot;</code></pre>
+</div>
+<div id="acerca-de-na" class="section level2">
+<h2><span class="header-section-number">6.5</span> Acerca de <code>NA</code></h2>
+<p>El valor <code>NA</code> se puede usar para especificar que no hay datos o datos faltantes. Por defecto, <code>NA</code> es <code>logical</code>, pero se puede usar para texto o números.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="ot">NA</span>)</code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="ot">NA</span>)</code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="kw">as.integer</span>(<span class="ot">NA</span>))</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="kw">as.character</span>(<span class="ot">NA</span>))</code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">NA</span> <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">NA</span> <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">NA</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">NA</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+</div>
+<div id="conclusion-1" class="section level2">
+<h2><span class="header-section-number">6.6</span> Conclusión</h2>
+<p>Felicitaciones, hemos llegado al final de este capítulo sobre los tipos de datos. Ahora sabemos:</p>
+<ul>
+<li>Reconocer y hacer objetos en los principales tipos de datos</li>
+<li>Transformar tipos de datos de un tipo a otro</li>
+</ul>
+<p>Este capítulo bastante tedioso es la base para el próximo capítulo sobre contenedores de datos.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="IDE.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["myRBook_SP.pdf", "myRBook_SP.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

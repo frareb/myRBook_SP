@@ -1356,7 +1356,9 @@ lectura de scripts. El editor de texto para R más común es Rstudio, pero
 hay muchos más. Hacer una lista exhaustiva de todas las soluciones
 disponibles está más allá del alcance de este libro, por lo que nos
 centraremos en las tres soluciones que utilizo a diario:
-\textbf{Notepad++}, \textbf{Rstudio} y \textbf{Geany}.
+\textbf{Notepad++}, \textbf{Rstudio} y \textbf{Geany}. No necesita
+instalar más de un editor de texto. Aquí recomendamos RStudio para
+principiantes a R.
 
 \section{RStudio}\label{rstudio}
 
@@ -1627,6 +1629,634 @@ otras más generales para programación como \textbf{Atom}
 (\url{https://www.gnu.org/software/emacs/}), o \textbf{Brackets}
 (\url{http://brackets.io/}) y \textbf{Eclipse}
 (\url{http://www.eclipse.org/}).
+
+\section{Conclusion}\label{conclusion-1}
+
+Felicitations, nous sommes arrivés au bout de ce chapitre sur
+environnements de développement pour utiliser R. Nous savons désormais :
+
+\begin{itemize}
+\tightlist
+\item
+  Installer RStudio, Geany ou Notepad++
+\item
+  Reconnaître et choisir notre environnement préféré
+\end{itemize}
+
+A partir d'ici nous allons pouvoir nous concentrer sur le language de
+programmation R dans un environnement facilitant le travail de lecture
+et d'écriture du code. C'est un grand pas en avant pour maîtriser R.
+
+\chapter{Tipos de datos}\label{dataType1}
+
+Vimos anteriormente cómo crear un objeto. Un objeto es como una caja en
+la que almacenaremos \emph{información}. Hasta ahora solo hemos
+almacenado números, pero en este capítulo veremos que es posible
+almacenar otra información y nos detendremos en los tipos más comunes.
+En este capítulo utilizaremos \textbf{funciones} sobre las cuales
+volveremos más adelante.
+
+\section{\texorpdfstring{El tipo
+\texttt{numérico}}{El tipo numérico}}\label{el-tipo-numerico}
+
+El tipo \texttt{numérico} es lo que hemos hecho hasta ahora, almacenando
+números. Hay dos tipos principales de números con R: enteros
+(\emph{integer}) y números decimales (\emph{double}). Por defecto, R
+considera todos los números como números decimales y asigna el tipo
+\texttt{double}. Para verificar el tipo de datos utilizaremos la
+\emph{función} \texttt{typeof()} que toma como \emph{argumento} un
+objeto (o directamente la información que queremos probar). También
+podemos usar la función \texttt{is.double()} que devolverá \texttt{TRUE}
+si el número está en formato \texttt{double} y \texttt{FALSE} en caso
+contrario. La función genérica \texttt{is.numeric()} devolverá
+\texttt{TRUE} si el objeto está en formato\texttt{numérico} y
+\texttt{FALSE} en caso contrario.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5}
+\KeywordTok{typeof}\NormalTok{(nbrRep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(}\FloatTok{5.32}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.numeric}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.double}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Si queremos decirle a R que vamos a trabajar con un entero, entonces
+necesitamos convertir nuestro número decimal en un entero con la función
+\texttt{as.integer()}. También podemos usar la función
+\texttt{is.integer()} que devolverá \texttt{TRUE} si el número está en
+formato \texttt{integer} y \texttt{FALSE} en caso contrario.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\KeywordTok{typeof}\NormalTok{(nbrRep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(}\FloatTok{5.32}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(}\KeywordTok{as.integer}\NormalTok{(}\FloatTok{5.32}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.integer}\NormalTok{(}\FloatTok{5.32}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.integer}\NormalTok{(}\FloatTok{5.99}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.numeric}\NormalTok{(nbrRep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Vemos aquí que convertir un número como \texttt{5.99} a \texttt{entero}
+solo devolverá la parte entera, \texttt{5}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.integer}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.numeric}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.integer}\NormalTok{(}\KeywordTok{as.integer}\NormalTok{(}\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.numeric}\NormalTok{(}\KeywordTok{as.integer}\NormalTok{(}\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+La suma de un entero y un número de punto flotante devuelve un número de
+coma flotante.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sumIntDou <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(}\DecValTok{5}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{5.2}
+\KeywordTok{typeof}\NormalTok{(sumIntDou)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sumIntInt <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(}\DecValTok{5}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\KeywordTok{typeof}\NormalTok{(sumIntInt)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+Para resumir, el tipo \texttt{numeric} contiene dos subtipos, los tipos
+\texttt{integer} para enteros y el tipo \texttt{double} para los números
+decimales. Por defecto, R asigna el tipo \texttt{double} a los números.
+
+\section{\texorpdfstring{El tipo
+\texttt{character}}{El tipo character}}\label{el-tipo-character}
+
+El tipo \texttt{character} es texto. De hecho, R permite trabajar con
+texto. para especificar a R que la información contenida en un objeto
+está en formato de texto (o generalmente para todos los textos), usamos
+las comillas dobles (\texttt{"}) o las comillas simples
+(\texttt{\textquotesingle{}}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText <-}\StringTok{ "azerty"}
+\NormalTok{myText2 <-}\StringTok{ 'azerty'}
+\NormalTok{myText3 <-}\StringTok{ 'azerty uiop qsdfg hjklm'}
+\KeywordTok{typeof}\NormalTok{(myText3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+Las comillas dobles o simples son útiles si desea poner comillas en
+nuestro texto. También podemos \emph{escapar} un carácter especial como
+comillas gracias al signo de barra invertida \texttt{\textbackslash{}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText <-}\StringTok{ "a 'ze' 'rt' y"}
+\NormalTok{myText2 <-}\StringTok{ 'a "zert" y'}
+\NormalTok{myText3 <-}\StringTok{ 'azerty uiop qsdfg hjklm'}
+\NormalTok{myText4 <-}\StringTok{ "qwerty }\CharTok{\textbackslash{}"}\StringTok{ azerty "}
+\NormalTok{myText5 <-}\StringTok{ "qwerty }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{ azerty "}
+\end{Highlighting}
+\end{Shaded}
+
+De forma predeterminada, cuando creamos un objeto, su contenido no es
+devuelto por la consola. En Internet o en muchos libros podemos
+encontrar el nombre del objeto en una línea para devolver sus
+contenidos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText <-}\StringTok{ "a 'ze' 'rt' y"}
+\NormalTok{myText}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a 'ze' 'rt' y"
+\end{verbatim}
+
+En este libro, no lo usaremos de esta manera y preferiremos el uso de la
+función \texttt{print()}, que permite mostrar en la consola el contenido
+de un objeto. El resultado es el mismo, pero el código es más fácil de
+leer y más explícito sobre lo que hace.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText <-}\StringTok{ "a 'ze' 'rt' y"}
+\KeywordTok{print}\NormalTok{(myText)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a 'ze' 'rt' y"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nbrRep <-}\StringTok{ }\DecValTok{5}
+\KeywordTok{print}\NormalTok{(nbrRep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+También podemos poner números en formato de texto, pero no debemos
+olvidar poner comillas para especificar el tipo \texttt{character} o
+usar la función\texttt{as.character()}. Una operación entre un texto y
+un número devuelve un error. Por ejemplo, si agregamos \texttt{10} a
+\texttt{5}, R nos dice que un \textbf{argumento} de la \textbf{función}
+\texttt{+} no es un tipo \texttt{numeric} y que, por lo tanto, la
+operación no es posible. Tampoco podemos agregar texto a texto, pero
+veremos más adelante cómo \emph{concatenar} dos cadenas de texto.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText <-}\StringTok{ "qwerty"}
+\KeywordTok{typeof}\NormalTok{(myText)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText2 <-}\StringTok{ }\DecValTok{5}
+\KeywordTok{typeof}\NormalTok{(myText2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText3 <-}\StringTok{ "5"}
+\KeywordTok{typeof}\NormalTok{(myText3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText2 }\OperatorTok{+}\StringTok{ }\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.character}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "5"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# myText3 + 10 # Error in myText3 + 10 : non-numeric argument to binary operator}
+\CommentTok{# "a" + "b" # Error in "a" + "b" : non-numeric argument to binary operator}
+\end{Highlighting}
+\end{Shaded}
+
+Para resumir, el tipo \texttt{character} permite el ingreso de texto,
+podemos reconocerlo con comillas simples o dobles.
+
+\section{\texorpdfstring{El tipo
+\texttt{factor}}{El tipo factor}}\label{el-tipo-factor}
+
+El tipo \texttt{factor} corresponde a los factores. Los factores son una
+elección dentro de una lista finita de posibilidades. Por ejemplo, los
+países son factores porque existe una lista finita de países en el mundo
+en un momento dado. Un factor puede definirse con la función
+\texttt{factor()} o transformarse utilizando la función
+\texttt{as.factor()}. Al igual que con otros tipos de datos, podemos
+usar la función \texttt{is.factor()} para verificar el tipo de datos.
+Para obtener una lista de todas las posibilidades, existe la función
+\texttt{levels()} (esta función tendrá más sentido cuando nos acerquemos
+a los tipos de contenedores de información).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{factor01 <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{"aaa"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(factor01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] aaa
+## Levels: aaa
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(factor01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.factor}\NormalTok{(factor01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{levels}\NormalTok{(factor01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "aaa"
+\end{verbatim}
+
+Un factor se puede transformar en texto con la función
+\texttt{as.character()} pero también en número con
+\texttt{as.numeric()}. Al cambiar al tipo \texttt{numeric}, cada factor
+toma el valor de su posición en la lista de posibilidades. En nuestro
+caso, solo hay una posibilidad, por lo que la función
+\texttt{as.numeric()} devolverá \texttt{1}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{factor01 <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{"aaa"}\NormalTok{)}
+\KeywordTok{as.character}\NormalTok{(factor01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "aaa"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.numeric}\NormalTok{(factor01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\section{\texorpdfstring{El tipo
+\texttt{logical}}{El tipo logical}}\label{el-tipo-logical}
+
+El tipo \texttt{logical} corresponde a los valores \texttt{TRUE} y
+\texttt{FALSE} (y \texttt{NA}) que ya hemos visto con los operadores de
+comparación.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aLogic <-}\StringTok{ }\OtherTok{TRUE}
+\KeywordTok{print}\NormalTok{(aLogic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(aLogic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "logical"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.logical}\NormalTok{(aLogic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aLogic }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.numeric}\NormalTok{(aLogic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.character}\NormalTok{(aLogic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "TRUE"
+\end{verbatim}
+
+\section{\texorpdfstring{Acerca de
+\texttt{NA}}{Acerca de NA}}\label{acerca-de-na}
+
+El valor \texttt{NA} se puede usar para especificar que no hay datos o
+datos faltantes. Por defecto, \texttt{NA} es \texttt{logical}, pero se
+puede usar para texto o números.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(}\OtherTok{NA}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(}\OtherTok{NA}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "logical"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(}\KeywordTok{as.integer}\NormalTok{(}\OtherTok{NA}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(}\KeywordTok{as.character}\NormalTok{(}\OtherTok{NA}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{NA} \OperatorTok{==}\StringTok{ }\OtherTok{TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{NA} \OperatorTok{==}\StringTok{ }\OtherTok{FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{NA} \OperatorTok{>}\StringTok{ }\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{NA} \OperatorTok{+}\StringTok{ }\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\section{Conclusión}\label{conclusion-1}
+
+Felicitaciones, hemos llegado al final de este capítulo sobre los tipos
+de datos. Ahora sabemos:
+
+\begin{itemize}
+\tightlist
+\item
+  Reconocer y hacer objetos en los principales tipos de datos
+\item
+  Transformar tipos de datos de un tipo a otro
+\end{itemize}
+
+Este capítulo bastante tedioso es la base para el próximo capítulo sobre
+contenedores de datos.
 
 
 \end{document}
