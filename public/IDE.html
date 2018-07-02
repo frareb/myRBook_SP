@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-06-28">
+<meta name="date" content="2018-07-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -113,7 +113,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="part"><span><b>I Conceptos básicos</b></span></li>
 <li class="chapter" data-level="4" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>4</b> Primeros pasos</a><ul>
 <li class="chapter" data-level="4.1" data-path="premiersPas.html"><a href="premiersPas.html#instalar-r"><i class="fa fa-check"></i><b>4.1</b> Instalar R</a></li>
-<li class="chapter" data-level="4.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>4.2</b> R como calculadora</a></li>
+<li class="chapter" data-level="4.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>4.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="premiersPas.html"><a href="premiersPas.html#los-operadores-aritmeticos"><i class="fa fa-check"></i><b>4.2.1</b> Los operadores aritméticos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="premiersPas.html"><a href="premiersPas.html#los-operadores-comparativos"><i class="fa fa-check"></i><b>4.2.2</b> Los operadores comparativos</a></li>
+<li class="chapter" data-level="4.2.3" data-path="premiersPas.html"><a href="premiersPas.html#los-operadores-logicos"><i class="fa fa-check"></i><b>4.2.3</b> Los operadores lógicos</a></li>
+<li class="chapter" data-level="4.2.4" data-path="premiersPas.html"><a href="premiersPas.html#ayuda-a-los-operadores"><i class="fa fa-check"></i><b>4.2.4</b> Ayuda a los operadores</a></li>
+</ul></li>
 <li class="chapter" data-level="4.3" data-path="premiersPas.html"><a href="premiersPas.html#el-concepto-de-objeto"><i class="fa fa-check"></i><b>4.3</b> El concepto de objeto</a></li>
 <li class="chapter" data-level="4.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>4.4</b> Los scripts</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="premiersPas.html"><a href="premiersPas.html#crear-un-script-y-documentarlo"><i class="fa fa-check"></i><b>4.4.1</b> Crear un script y documentarlo</a></li>
@@ -162,7 +167,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number"> 5</span> Elejir un entorno de desarrollo</h1>
 <div id="editores-de-texto-y-entorno-de-desarrollo" class="section level2">
 <h2><span class="header-section-number">5.1</span> Editores de texto y entorno de desarrollo</h2>
-<p>Hay muchos editores de texto, el capítulo anterior permitió introducir algunos de los más simples como el bloc de notas de Windows. Rápidamente los límites de estos editores han hecho que la tarea de escribir un script tedioso. De hecho, incluso estructurando su script con comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran los editores de texto especializados para facilitar la escritura y la lectura de scripts. El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: <strong>Notepad ++</strong>, <strong>Rstudio</strong> y <strong>Geany</strong>.</p>
+<p>Hay muchos editores de texto, el capítulo anterior permitió introducir algunos de los más simples como el bloc de notas de Windows. Rápidamente los límites de estos editores han hecho que la tarea de escribir un script tedioso. De hecho, incluso estructurando su script con comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran los editores de texto especializados para facilitar la escritura y la lectura de scripts. El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: <strong>Notepad++</strong>, <strong>Rstudio</strong> y <strong>Geany</strong>.</p>
 </div>
 <div id="rstudio" class="section level2">
 <h2><span class="header-section-number">5.2</span> RStudio</h2>
@@ -291,7 +296,7 @@ Figure 5.11: Captura de pantalla de Geany en Windows: pantalla por defecto.
 Figure 5.12: Captura de pantalla de Geany en Windows: abrir un script.
 </p>
 </div>
-<p>Para ejecutar nuestro script, la versión de Geany para Windows no tiene un terminal incorporado, lo que hace que su uso sea limitado bajo este sistema operativo. La ejecución de un script se puede hacer abriendo R en una ventana separada y copiando y pegando las líneas que se ejecutarán. En Linux y Mac OSX, abramos R en el terminal en la parte inferior de la ventana de Geany con el comando <code>R</code>. Podemos configurar Geany para una combinación de teclas para ejecutar el código seleccionado (por ejemplo <code>CTRL + R</code>). A esto hay que permitir el envío de selección al terminal (<code>send_selection_unsafe = true</code>) in <code>archivo geany.conf</code> y elegir el comando para enviar al terminal (en <em>Editar</em>, <em>Preferencias</em>, <em>Combinaciones</em>). Para cambiar el tema de Geany, hay una colección de temas disponibles en GitHub (<a href="https://github.com/geany/geany-themes/" class="uri">https://github.com/geany/geany-themes/</a>). El tema se puede cambiar a través del menú <em>Ver</em>, <em>cambiar Esquema del color …</em> (un ejemplo con el tema <em>Solarized</em> Figura  <span class="citation">@ref</span> (Fig: screenCapGeany03)).</p>
+<p>Para ejecutar nuestro script, la versión de Geany para Windows no tiene un terminal incorporado, lo que hace que su uso sea limitado bajo este sistema operativo. La ejecución de un script se puede hacer abriendo R en una ventana separada y copiando y pegando las líneas que se ejecutarán. En Linux y Mac OSX, abramos R en el terminal en la parte inferior de la ventana de Geany con el comando <code>R</code>. Podemos configurar Geany para una combinación de teclas para ejecutar el código seleccionado (por ejemplo <code>CTRL + R</code>). A esto hay que permitir el envío de selección al terminal (<code>send_selection_unsafe = true</code>) in <code>archivo geany.conf</code> y elegir el comando para enviar al terminal (en <em>Editar</em>, <em>Preferencias</em>, <em>Combinaciones</em>). Para cambiar el tema de Geany, hay una colección de temas disponibles en GitHub (<a href="https://github.com/geany/geany-themes/" class="uri">https://github.com/geany/geany-themes/</a>). El tema se puede cambiar a través del menú <em>Ver</em>, <em>cambiar Esquema del color …</em> (un ejemplo con el tema <em>Solarized</em> Figura @ref(Fig: screenCapGeany03)).</p>
 <div class="figure"><span id="fig:screenCapGeany03"></span>
 <img src="myFigures/screencap_Geany_03.png" alt="Captura de pantalla de Geany en Windows: cambiar esquema de color.\label{fig:screenCapGeany03}"  />
 <p class="caption">

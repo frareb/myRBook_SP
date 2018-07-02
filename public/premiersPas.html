@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-06-28">
+<meta name="date" content="2018-07-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -116,8 +116,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>4.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="premiersPas.html"><a href="premiersPas.html#los-operadores-aritmeticos"><i class="fa fa-check"></i><b>4.2.1</b> Los operadores aritméticos</a></li>
 <li class="chapter" data-level="4.2.2" data-path="premiersPas.html"><a href="premiersPas.html#los-operadores-comparativos"><i class="fa fa-check"></i><b>4.2.2</b> Los operadores comparativos</a></li>
-<li class="chapter" data-level="4.2.3" data-path="premiersPas.html"><a href="premiersPas.html#les-operateurs-logiques"><i class="fa fa-check"></i><b>4.2.3</b> Les opérateurs logiques</a></li>
-<li class="chapter" data-level="4.2.4" data-path="premiersPas.html"><a href="premiersPas.html#aide-sur-les-operateurs"><i class="fa fa-check"></i><b>4.2.4</b> Aide sur les opérateurs</a></li>
+<li class="chapter" data-level="4.2.3" data-path="premiersPas.html"><a href="premiersPas.html#los-operadores-logicos"><i class="fa fa-check"></i><b>4.2.3</b> Los operadores lógicos</a></li>
+<li class="chapter" data-level="4.2.4" data-path="premiersPas.html"><a href="premiersPas.html#ayuda-a-los-operadores"><i class="fa fa-check"></i><b>4.2.4</b> Ayuda a los operadores</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="premiersPas.html"><a href="premiersPas.html#el-concepto-de-objeto"><i class="fa fa-check"></i><b>4.3</b> El concepto de objeto</a></li>
 <li class="chapter" data-level="4.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>4.4</b> Los scripts</a><ul>
@@ -272,9 +272,9 @@ el <em>estilo</em> del código es importante porque el código está destinado a
 </div>
 <div id="los-operadores-comparativos" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Los operadores comparativos</h3>
-<p>R est cependant bien plus qu’une simple calculatrice puisque’il permet un autre type d’opérateurs : les opérateurs de comparaison. Ils servent comme leur nom l’indique à <em>comparer</em> des valeurs entre elles (Table <a href="premiersPas.html#tab:tabOpCom">4.2</a>).</p>
+<p>Sin embargo, R es mucho más que una simple calculadora porque permite otro tipo de operadores: operadores de comparación. Sirven como su nombre sugiere <em>comparar</em> los valores (Table <a href="premiersPas.html#tab:tabOpCom">4.2</a>).</p>
 <table>
-<caption><span id="tab:tabOpCom">Table 4.2: </span>Opérateurs de comparaison.</caption>
+<caption><span id="tab:tabOpCom">Table 4.2: </span>Operadores de comparación.</caption>
 <thead>
 <tr class="header">
 <th align="left">Label</th>
@@ -283,35 +283,35 @@ el <em>estilo</em> del código es importante porque el código está destinado a
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">plus petit que</td>
+<td align="left">más pequeño que</td>
 <td align="left">&lt;</td>
 </tr>
 <tr class="even">
-<td align="left">plus grand que</td>
+<td align="left">mayor que</td>
 <td align="left">&gt;</td>
 </tr>
 <tr class="odd">
-<td align="left">plus petit ou égal à</td>
+<td align="left">más pequeño o igual a</td>
 <td align="left">&lt;=</td>
 </tr>
 <tr class="even">
-<td align="left">plus grand ou égal à</td>
+<td align="left">más grande o igual a</td>
 <td align="left">&gt;=</td>
 </tr>
 <tr class="odd">
-<td align="left">égal à</td>
+<td align="left">igual a</td>
 <td align="left">==</td>
 </tr>
 <tr class="even">
-<td align="left">différent de</td>
+<td align="left">diferente de</td>
 <td align="left">!=</td>
 </tr>
 </tbody>
 </table>
-<p>Par exemple si nous voulons savoir si un chiffre est plus grand qu’un autre, nous pouvons écrire :</p>
+<p>Por ejemplo, si queremos saber si un numero es más grande que otro, podemos escribir:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span> </code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>R renvoie la valeur <code>TRUE</code> si la comparasion est vraie et <code>FALSE</code> si la comparaison est fausse.</p>
+<p>R devuelve <code>TRUE</code> si la comparación es verdadera y <code>FALSE</code> si la comparación es falsa.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> <span class="op">&lt;</span><span class="st"> </span><span class="fl">1.5</span></code></pre></div>
@@ -320,20 +320,20 @@ el <em>estilo</em> del código es importante porque el código está destinado a
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="fl">3.2</span> <span class="op">&gt;=</span><span class="st"> </span><span class="fl">1.5</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>Nous pouvons combiner les opérateurs arithmétiques avec les opérateurs de comparasion.</p>
+<p>Podemos combinar operadores aritméticos con operadores de comparación.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">8</span>) <span class="op">&gt;</span><span class="st"> </span>(<span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">45</span><span class="op">/</span><span class="dv">2</span>) </code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <div class="rmdstyle">
 <p>
-Dans la comparasion <code>(5 + 8) &gt; (3 * 45/2)</code> les parenthèses ne sont pas nécessaires mais elles permettent au code d’être plus facile à lire.
+En la comparación <code>(5 + 8) &gt; (3 * 45/2)</code> no se necesitan paréntesis, pero permiten que el código sea más fácil de leer.
 </p>
 </div>
-<p>Un opérateur de comparaison particulier est <em>égal à</em>. Nous verrons dans la section suivante que le signe <code>=</code> est réservé à un autre usage : il permet d’affecter une valeur à un objet. L’opérateur de comparaison <em>égal à</em> doit donc être différent, c’est pour cela que R utilise <code>==</code>.</p>
+<p>Un operador de comparación particular es <em>igual a</em>. Veremos en la siguiente sección que el signo <code>=</code> está reservado para otro uso: permite asignar un valor a un objeto. El operador de comparación <em>igual a</em> debe ser diferente, por eso R usa <code>==</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">42</span> <span class="op">==</span><span class="st"> </span><span class="dv">53</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">58</span> <span class="op">==</span><span class="st"> </span><span class="dv">58</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>Un autre opérateur particulier est <em>différent de</em>. Il est utilisé avec <em>un point d’intérrogation</em> suivi de <em>égal</em>, <code>!=</code>. Cet opérateur permet de d’obtenir la réponse inverse à <code>==</code>.</p>
+<p>Otro operador particular es <em>diferente de</em>. Se usa con <em>un signo de interrogación</em> seguido de <em>igual</em>, <code>! =</code>. Este operador permite obtener la respuesta opuesta a <code>==</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">42</span> <span class="op">==</span><span class="st"> </span><span class="dv">53</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">42</span> <span class="op">!=</span><span class="st"> </span><span class="dv">53</span></code></pre></div>
@@ -342,7 +342,7 @@ Dans la comparasion <code>(5 + 8) &gt; (3 * 45/2)</code> les parenthèses ne son
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">10</span><span class="op">/</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">5</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>R utilise <code>TRUE</code> et <code>FALSE</code> qui sont aussi des valeurs qui peuvent être testées avec les opérateurs de comparasion. Mais R attribue également une valeur à <code>TRUE</code> et <code>FALSE</code> :</p>
+<p>R usa <code>TRUE</code> y <code>FALSE</code>, que también son valores que se pueden probar con operadores de comparación. Pero R también asigna un valor a <code>TRUE</code> y <code>FALSE</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> <span class="op">&gt;</span><span class="st"> </span><span class="ot">FALSE</span></code></pre></div>
@@ -357,8 +357,8 @@ Dans la comparasion <code>(5 + 8) &gt; (3 * 45/2)</code> les parenthèses ne son
 <pre><code>## [1] 1</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="ot">FALSE</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span>) <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>La valeur de <code>TRUE</code> est de 1 et la valeur de <code>FALSE</code> est de 0. Nous verrons plus tard comment utiliser cette information dans les prochains chapitres.</p>
-<p>R est aussi un langage relativement permissif, cela veut dire qu’il admet une certaine flexibilité dans la manière de rédiger le code. Débattre du bien fondé de cette flexibilité sort du cadre de ce livre mais nous pourrons trouver dans du code R sur Internet ou dans d’autres ouvrages le raccourcis <code>T</code> pour <code>TRUE</code> et <code>F</code> pour <code>FALSE</code>.</p>
+<p>El valor de <code>TRUE</code> es 1 y el valor de <code>FALSE</code> es 0. Veremos más adelante cómo usar esta información en los próximos capítulos.</p>
+<p>R es también un lenguaje relativamente permisivo, significa que admite cierta flexibilidad en la forma de escribir el código. Debatir sobre la idoneidad de esta flexibilidad está fuera del alcance de este libro, pero podemos encontrar en el código R en Internet o en otras obras el atajo <code>T</code> para <code>TRUE</code> y <code>F</code> for <code>FALSE</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">T <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">F <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span></code></pre></div>
@@ -369,13 +369,13 @@ Dans la comparasion <code>(5 + 8) &gt; (3 * 45/2)</code> les parenthèses ne son
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(F <span class="op">+</span><span class="st"> </span><span class="dv">1</span>) <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>Bien que cette façon de se référer à <code>TRUE</code> et <code>FALSE</code> par <code>T</code> et <code>F</code> soit assez répandue, dans ce livre nous utiliserons toujours <code>TRUE</code> et <code>FALSE</code> afin que le code soit plus facile à lire. Encore une fois l’objectif d’un code est de non seuleument être fonctionnel mais aussi d’être facile à lire et à relire.</p>
+<p>Aunque esta forma de referirse a <code>TRUE</code> y <code>FALSE</code> por <code>T</code> y <code>F</code> está bastante extendida, en este libro siempre usaremos <code>TRUE</code> y <code>FALSE</code> para que el código sea más fácil de leer. Como mencionado anterioramente, el objetivo de un código no solo es ser funcional sino también fácil de leer y volver a leer.</p>
 </div>
-<div id="les-operateurs-logiques" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> Les opérateurs logiques</h3>
-<p>Il existe un dernier type d’opérateur, les opérateurs logiques. Ils sont utiles pour combiner des opérateurs de comparaison (Table <a href="premiersPas.html#tab:tabOpLog">4.3</a>).</p>
+<div id="los-operadores-logicos" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Los operadores lógicos</h3>
+<p>Hay un último tipo de operador, los operadores lógicos. Son útiles para combinar operadores de comparación (Table <a href="premiersPas.html#tab:tabOpLog">4.3</a>).</p>
 <table>
-<caption><span id="tab:tabOpLog">Table 4.3: </span>Opérateurs logiques.</caption>
+<caption><span id="tab:tabOpLog">Table 4.3: </span>Operadores lógicos.</caption>
 <thead>
 <tr class="header">
 <th align="left">Label</th>
@@ -384,19 +384,19 @@ Dans la comparasion <code>(5 + 8) &gt; (3 * 45/2)</code> les parenthèses ne son
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">n’est pas</td>
+<td align="left">no es</td>
 <td align="left">!</td>
 </tr>
 <tr class="even">
-<td align="left">et</td>
+<td align="left">y</td>
 <td align="left">&amp;</td>
 </tr>
 <tr class="odd">
-<td align="left">ou</td>
+<td align="left">o</td>
 <td align="left">|</td>
 </tr>
 <tr class="even">
-<td align="left">ou exclusif</td>
+<td align="left">o exclusivo</td>
 <td align="left">xor()</td>
 </tr>
 </tbody>
@@ -413,7 +413,7 @@ Dans la comparasion <code>(5 + 8) &gt; (3 * 45/2)</code> les parenthèses ne son
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>) <span class="op">&amp;</span><span class="st"> </span>(<span class="dv">5</span> <span class="op">&lt;=</span><span class="st"> </span><span class="dv">5</span>)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>L’opérateur logique <code>xor()</code> correspond à un <em>ou exclusif</em>. C’est à dire que l’un des deux <strong>arguments</strong> de la <strong>fonction</strong> <code>xor()</code> doit être vrai, mais pas les deux. Nous reviendrons plus tard sur les <strong>fonctions</strong> et leurs <strong>arguments</strong>, mais retenons que l’on identifie une fonction par ses parenthèses qui contiennent des arguments séparés par des virgules.</p>
+<p>El operador lógico <code>xor()</code> es <em>o exclusivo</em>. Es decir, uno de los dos <strong>argumentos</strong> de la <strong>función</strong> <code>xor()</code> debe ser verdadero, pero no ambos. Más adelante volveremos a las <strong>funciones</strong> y sus <strong>argumentos</strong>, pero recuerde que identificamos una función por sus paréntesis que contienen argumentos separados por comas.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xor</span>((<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>) <span class="op">==</span><span class="st"> </span><span class="dv">5</span>, (<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span>) <span class="op">==</span><span class="st"> </span><span class="dv">6</span>)</code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xor</span>((<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>) <span class="op">==</span><span class="st"> </span><span class="dv">5</span>, (<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>) <span class="op">==</span><span class="st"> </span><span class="dv">6</span>)</code></pre></div>
@@ -424,13 +424,13 @@ Dans la comparasion <code>(5 + 8) &gt; (3 * 45/2)</code> les parenthèses ne son
 <pre><code>## [1] TRUE</code></pre>
 <div class="rmdstyle">
 <p>
-Il est recommandé que les virgules <code>,</code> soient suivies par un espace afin que le code soit plus agréable à lire.
+Se recomienda que las comas <code>,</code> sean seguidas de un espacio para que el código sea más agradable de leer.
 </p>
 </div>
 </div>
-<div id="aide-sur-les-operateurs" class="section level3">
-<h3><span class="header-section-number">4.2.4</span> Aide sur les opérateurs</h3>
-<p>Le fichier d’aideen anglais sur les opérateurs arithmétiques peut être obtenue avec la commande <code>?'+'</code> celui sur les opérateurs de comparaison avec la commande <code>?'=='</code> et celui sur les opérateurs logiques avec la commande <code>?'&amp;'</code>.</p>
+<div id="ayuda-a-los-operadores" class="section level3">
+<h3><span class="header-section-number">4.2.4</span> Ayuda a los operadores</h3>
+<p>El archivo de ayuda en inglés sobre operadores aritméticos se puede obtener con el comando <code>?'+'</code>. El de los operadores de comparación con el comando <code>?'=='</code> y el de los operadores lógicos con el comando <code>?'&amp;'</code>.</p>
 </div>
 </div>
 <div id="el-concepto-de-objeto" class="section level2">

@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-06-28}
+    \date{2018-07-02}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -378,6 +378,16 @@ también aparecerá en un fondo gris con \texttt{\#\#} delante del código
 para hacer la distinción entre el código y el resultado del código.
 \end{rmdnote}
 
+\begin{figure}
+\centering
+\includegraphics{myFigures/screencap_rConsoleCalculatrice.png}
+\caption{\label{fig:screenCapConsoleCal}Captura de pantalla de la consola R
+al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}}
+\end{figure}
+
+\subsection{Los operadores
+aritméticos}\label{los-operadores-aritmeticos}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{5}
@@ -387,13 +397,6 @@ para hacer la distinción entre el código y el resultado del código.
 \begin{verbatim}
 ## [1] 10
 \end{verbatim}
-
-\begin{figure}
-\centering
-\includegraphics{myFigures/screencap_rConsoleCalculatrice.png}
-\caption{\label{fig:screenCapConsoleCal}Captura de pantalla de la consola R
-al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}}
-\end{figure}
 
 Si escribimos \texttt{5\ +\ 5} en la consola y luego \texttt{Enter}, el
 resultado aparece precedido por el número {[}1{]} entre corchetes. Este
@@ -561,6 +564,462 @@ es útil agregarlos como es el caso en nuestro ejemplos. La información
 sobre el \emph{estilo} siempre estará representada con este pictograma
 para que sea fácilmente identificable.
 \end{rmdstyle}
+
+\subsection{Los operadores
+comparativos}\label{los-operadores-comparativos}
+
+Sin embargo, R es mucho más que una simple calculadora porque permite
+otro tipo de operadores: operadores de comparación. Sirven como su
+nombre sugiere \emph{comparar} los valores (Table \ref{tab:tabOpCom}).
+
+\begin{table}
+
+\caption{\label{tab:tabOpCom}Operadores de comparación.\label{tab:tabOpCom}}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Label & Operador\\
+\hline
+más pequeño que & <\\
+\hline
+mayor que & >\\
+\hline
+más pequeño o igual a & <=\\
+\hline
+más grande o igual a & >=\\
+\hline
+igual a & ==\\
+\hline
+diferente de & !=\\
+\hline
+\end{tabular}
+\end{table}
+
+Por ejemplo, si queremos saber si un numero es más grande que otro,
+podemos escribir:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{5} \OperatorTok{>}\StringTok{ }\DecValTok{3} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+R devuelve \texttt{TRUE} si la comparación es verdadera y \texttt{FALSE}
+si la comparación es falsa.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{5} \OperatorTok{>}\StringTok{ }\DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \OperatorTok{<}\StringTok{ }\FloatTok{1.5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \OperatorTok{<=}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{3.2} \OperatorTok{>=}\StringTok{ }\FloatTok{1.5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Podemos combinar operadores aritméticos con operadores de comparación.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{8}\NormalTok{) }\OperatorTok{>}\StringTok{ }\NormalTok{(}\DecValTok{3} \OperatorTok{*}\StringTok{ }\DecValTok{45}\OperatorTok{/}\DecValTok{2}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{rmdstyle}
+En la comparación \texttt{(5\ +\ 8)\ \textgreater{}\ (3\ *\ 45/2)} no se
+necesitan paréntesis, pero permiten que el código sea más fácil de leer.
+\end{rmdstyle}
+
+Un operador de comparación particular es \emph{igual a}. Veremos en la
+siguiente sección que el signo \texttt{=} está reservado para otro uso:
+permite asignar un valor a un objeto. El operador de comparación
+\emph{igual a} debe ser diferente, por eso R usa \texttt{==}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{42} \OperatorTok{==}\StringTok{ }\DecValTok{53}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{58} \OperatorTok{==}\StringTok{ }\DecValTok{58}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Otro operador particular es \emph{diferente de}. Se usa con \emph{un
+signo de interrogación} seguido de \emph{igual}, \texttt{!\ =}. Este
+operador permite obtener la respuesta opuesta a \texttt{==}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{42} \OperatorTok{==}\StringTok{ }\DecValTok{53}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{42} \OperatorTok{!=}\StringTok{ }\DecValTok{53}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{!=}\StringTok{ }\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{10}\OperatorTok{/}\DecValTok{2} \OperatorTok{==}\StringTok{ }\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+R usa \texttt{TRUE} y \texttt{FALSE}, que también son valores que se
+pueden probar con operadores de comparación. Pero R también asigna un
+valor a \texttt{TRUE} y \texttt{FALSE}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{TRUE} \OperatorTok{==}\StringTok{ }\OtherTok{TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{TRUE} \OperatorTok{>}\StringTok{ }\OtherTok{FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \OperatorTok{==}\StringTok{ }\OtherTok{TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{0} \OperatorTok{==}\StringTok{ }\OtherTok{FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{TRUE} \OperatorTok{+}\StringTok{ }\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{FALSE} \OperatorTok{+}\StringTok{ }\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\OtherTok{FALSE} \OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{) }\OperatorTok{==}\StringTok{ }\OtherTok{TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+El valor de \texttt{TRUE} es 1 y el valor de \texttt{FALSE} es 0.
+Veremos más adelante cómo usar esta información en los próximos
+capítulos.
+
+R es también un lenguaje relativamente permisivo, significa que admite
+cierta flexibilidad en la forma de escribir el código. Debatir sobre la
+idoneidad de esta flexibilidad está fuera del alcance de este libro,
+pero podemos encontrar en el código R en Internet o en otras obras el
+atajo \texttt{T} para \texttt{TRUE} y \texttt{F} for \texttt{FALSE}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{T }\OperatorTok{==}\StringTok{ }\OtherTok{TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{F }\OperatorTok{==}\StringTok{ }\OtherTok{FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{T }\OperatorTok{==}\StringTok{ }\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{F }\OperatorTok{==}\StringTok{ }\DecValTok{0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(F }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{) }\OperatorTok{==}\StringTok{ }\OtherTok{TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Aunque esta forma de referirse a \texttt{TRUE} y \texttt{FALSE} por
+\texttt{T} y \texttt{F} está bastante extendida, en este libro siempre
+usaremos \texttt{TRUE} y \texttt{FALSE} para que el código sea más fácil
+de leer. Como mencionado anterioramente, el objetivo de un código no
+solo es ser funcional sino también fácil de leer y volver a leer.
+
+\subsection{Los operadores lógicos}\label{los-operadores-logicos}
+
+Hay un último tipo de operador, los operadores lógicos. Son útiles para
+combinar operadores de comparación (Table \ref{tab:tabOpLog}).
+
+\begin{table}
+
+\caption{\label{tab:tabOpLog}Operadores lógicos.\label{tab:tabOpLog}}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Label & Operador\\
+\hline
+no es & !\\
+\hline
+y & \&\\
+\hline
+o & |\\
+\hline
+o exclusivo & xor()\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{!}\OtherTok{TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{!}\OtherTok{FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{((}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{) }\OperatorTok{&}\StringTok{ }\NormalTok{((}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{3}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{((}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{) }\OperatorTok{&}\StringTok{ }\NormalTok{((}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{3}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{3} \OperatorTok{<}\StringTok{ }\DecValTok{5}\NormalTok{) }\OperatorTok{&}\StringTok{ }\NormalTok{(}\DecValTok{5} \OperatorTok{<}\StringTok{ }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{3} \OperatorTok{<}\StringTok{ }\DecValTok{5}\NormalTok{) }\OperatorTok{&}\StringTok{ }\NormalTok{(}\DecValTok{5} \OperatorTok{<=}\StringTok{ }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+El operador lógico \texttt{xor()} es \emph{o exclusivo}. Es decir, uno
+de los dos \textbf{argumentos} de la \textbf{función} \texttt{xor()}
+debe ser verdadero, pero no ambos. Más adelante volveremos a las
+\textbf{funciones} y sus \textbf{argumentos}, pero recuerde que
+identificamos una función por sus paréntesis que contienen argumentos
+separados por comas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{xor}\NormalTok{((}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{, (}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{3}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{xor}\NormalTok{((}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{, (}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{xor}\NormalTok{((}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{3}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{, (}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{xor}\NormalTok{((}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{3}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{, (}\DecValTok{3} \OperatorTok{+}\StringTok{ }\DecValTok{3}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{rmdstyle}
+Se recomienda que las comas \texttt{,} sean seguidas de un espacio para
+que el código sea más agradable de leer.
+\end{rmdstyle}
+
+\subsection{Ayuda a los operadores}\label{ayuda-a-los-operadores}
+
+El archivo de ayuda en inglés sobre operadores aritméticos se puede
+obtener con el comando \texttt{?\textquotesingle{}+\textquotesingle{}}.
+El de los operadores de comparación con el comando
+\texttt{?\textquotesingle{}==\textquotesingle{}} y el de los operadores
+lógicos con el comando \texttt{?\textquotesingle{}\&\textquotesingle{}}.
 
 \section{El concepto de objeto}\label{el-concepto-de-objeto}
 
@@ -865,7 +1324,8 @@ base de R. Sabemos:
 \item
   Usar R como una calculadora
 \item
-  Crear \textbf{objetos} y utilisarlos para los calculos aritméticos
+  Crear \textbf{objetos} y utilisarlos para los calculos aritméticos,
+  comparativos y logicos
 \item
   Elejir nombres pertinentes para los objetos
 \item
@@ -895,8 +1355,8 @@ los editores de texto especializados para facilitar la escritura y la
 lectura de scripts. El editor de texto para R más común es Rstudio, pero
 hay muchos más. Hacer una lista exhaustiva de todas las soluciones
 disponibles está más allá del alcance de este libro, por lo que nos
-centraremos en las tres soluciones que utilizo a diario: \textbf{Notepad
-++}, \textbf{Rstudio} y \textbf{Geany}.
+centraremos en las tres soluciones que utilizo a diario:
+\textbf{Notepad++}, \textbf{Rstudio} y \textbf{Geany}.
 
 \section{RStudio}\label{rstudio}
 
@@ -1145,8 +1605,8 @@ el envío de selección al terminal
 cambiar el tema de Geany, hay una colección de temas disponibles en
 GitHub (\url{https://github.com/geany/geany-themes/}). El tema se puede
 cambiar a través del menú \emph{Ver}, \emph{cambiar Esquema del color
-\ldots{}} (un ejemplo con el tema \emph{Solarized} Figura ~\citet{ref}
-(Fig: screenCapGeany03)).
+\ldots{}} (un ejemplo con el tema \emph{Solarized} Figura @ref(Fig:
+screenCapGeany03)).
 
 \begin{figure}
 \centering
