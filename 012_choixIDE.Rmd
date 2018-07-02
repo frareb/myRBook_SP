@@ -3,7 +3,7 @@
 ## Editores de texto y entorno de desarrollo
 
 Hay muchos editores de texto, el capítulo anterior permitió introducir algunos de los más simples como el bloc de notas de Windows. Rápidamente los límites de estos editores han hecho que la tarea de escribir un script tedioso. De hecho, incluso estructurando su script con comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran los editores de texto especializados para facilitar la escritura y la lectura de scripts.
-El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: **Notepad++**, **Rstudio** y **Geany**.
+El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: **Notepad++**, **Rstudio** y **Geany**. No necesita instalar más de un editor de texto. Aquí recomendamos RStudio para principiantes a R.
 
 ## RStudio
 
@@ -130,3 +130,12 @@ knitr::include_graphics("myFigures/screencap_Geany_03.png")
 ## Otras soluciones
 
 Hay muchas otras soluciones, algunas especializadas para R como **Tinn-R** (https://sourceforge.net/projects/tinn-r/), y otras más generales para programación como **Atom** (https://atom.io/), **Sublime Text** (https://www.sublimetext.com/), **Vim** (https://www.vim.org/), **Gedit** (https://wiki.gnome.org/Apps/Gedit), **GNU Emacs** (https://www.gnu.org/software/emacs/), o **Brackets** (http://brackets.io/) y **Eclipse** (http://www.eclipse.org/).
+
+## Conclusion
+
+Felicitations, nous sommes arrivés au bout de ce chapitre sur environnements de développement pour utiliser R. Nous savons désormais :
+
+* Installer RStudio, Geany ou Notepad++
+* Reconnaître et choisir notre environnement préféré
+
+A partir d'ici nous allons pouvoir nous concentrer sur le language de programmation R dans un environnement facilitant le travail de lecture et d'écriture du code. C'est un grand pas en avant pour maîtriser R.
