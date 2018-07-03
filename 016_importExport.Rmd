@@ -1,0 +1,15 @@
+# Importar y exportar datos {#import}
+
+## Leer datos de un archivo
+
+XXX
+
+## Guardar datos para R
+
+save
+load
+
+## Exportar datos
+
+write
+XXX

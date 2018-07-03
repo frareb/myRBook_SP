@@ -1,0 +1,5 @@
+# Manipular gráficos {#graph4}
+
+## Inkscape
+
+## The Gimp

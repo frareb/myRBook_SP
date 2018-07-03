@@ -1,0 +1,47 @@
+# Los bucles {#loops}
+
+## ¿Por qué hacer bucles?
+
+XXX algorítmico ...
+
+## El bucle `if`
+
+XXX
+
+## El bucle `switch`
+
+XXX
+
+## El bucle `for`
+
+XXX
+
+## El bucle `while`
+
+XXX
+
+## `repeat`, `next`, `break`, `stop`
+
+XXX
+
+## Los bucles de la familia `apply`
+
+### `apply`
+
+XXX
+
+### `sapply`
+
+XXX
+
+### `lapply`
+
+XXX
+
+### `tapply`
+
+XXX
+
+### `mapply`
+
+XXX

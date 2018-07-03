@@ -1,0 +1,21 @@
+# Contenedores de datos {#dataType2}
+
+## El contenedor `vector`
+
+XXX
+
+## El contenedor `list`
+
+XXX
+
+## El contenedor `data.frame`
+
+XXX
+
+## El contenedor `matrix`
+
+XXX
+
+## El contenedor `array`
+
+XXX

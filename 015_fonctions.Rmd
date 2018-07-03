@@ -1,0 +1,37 @@
+# Las funciones {#fonctions}
+
+## ¿Qué es una función?
+
+XXX
+
+## Las funciones más comunes
+
+### Ver los datos
+
+str
+head
+tail
+class
+
+### funciones matemáticas
+
+exp
+sqrt
+
+### Estadísticas descriptivas
+
+mean
+sd
+max
+min
+quartile
+summary
+meadian
+
+## Otras funciones útiles
+
+XXX
+
+## Escribe una función
+
+XXX

@@ -1,0 +1,27 @@
+# (PART) Los gráficos {-}
+
+# Gráficos simples {#graph1}
+
+## plot
+
+## hist
+
+## barplot
+
+## boxplot
+
+## image y contour
+
+# Gestión del color {#graph2}
+
+## colors()
+
+## RGB
+
+## Paletas
+
+# Gráficos compuestos {#graph3}
+
+## mfrow
+
+## layout
