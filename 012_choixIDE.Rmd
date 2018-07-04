@@ -96,13 +96,13 @@ knitr::include_graphics("myFigures/screencap_Npp_04.png")
 
 Comparado con otros editores de texto, Notepad++ tiene la ventaja de ser muy liviano, rapido y ofrece una amplia gama de opciones para personalizar la escritura de códigos.
 
-## Geany (para Linux, Mac OSX y Windows)
+## Geany
 
 ```{r logoGeany, fig.cap = "Logo Geany\\label{fig:logoGeany}", echo = FALSE}
 knitr::include_graphics("myLogos/Geany.png")
 ```
 
-### Instalar Geany
+### Instalar Geany (para Linux, Mac OSX y Windows)
 
 El programa para instalar Geany se puede encontrar en la pestaña *Downloads* en el menú de la izquierda *Releases* de la página web (https://www.geany.org/). Luego solo descargamos el ejecutable para Windows o el dmg para Mac OSX. Los usuarios de Linux preferirán un `sudo apt-get install geany`.
 
