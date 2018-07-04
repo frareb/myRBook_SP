@@ -12,10 +12,26 @@ biblio-style: apalike
 description: "Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos."
 ---
 
+# Preámbulo
+
+Este libro está incompleto por el momento y está viendo su versión preliminar. Si tiene algún comentario, sugerencia o si identifica errores, no dude en enviarme un correo electrónico (francois.rebaudo@ird.fr), o si está familiarizado con GitHub en el sitio del proyecto (https://github.com/frareb/myRBook_SP).
+
+Últimas modificaciones:
+
+**04/07/2018**
+
+* tabla de contenidos con los próximos capítulos
+* error de tipografía en *Elegir un entorno de desarrollo*
+
+**02/07/2018**
+
+* tres capítulos en línea (*primeros pasos*, *elegir un entorno de desarrollo*, *tipos de datos*)
+
+
 # Agradecimientos {#remerciements}
 
 Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones:
 
-=> lista para actualizar en la publicación.
+=> lista para actualizar con autorizaciones de contribuyentes.
 
 Las versiones de gitbook, html y epub de este libro usan los iconos de fuente abierta de Font Awesome (https://fontawesome.com). La versión en PDF utiliza los iconos del proyecto Tango disponibles en openclipart (https://openclipart.org/). Este libro fue escrito con el paquete R bookdown (https://bookdown.org/). El código fuente está disponible en GitHub (https://github.com/frareb/myRBook_SP). La compilación usa Travis CI (https://travis-ci.org). La versión en línea se aloja y actualiza a través de Netlify (http://myrbooksp.netlify.com/).
