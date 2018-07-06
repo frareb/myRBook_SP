@@ -1,8 +1,200 @@
 # Contenedores de datos {#dataType2}
 
+Hasta ahora hemos creado objetos simples que contienen solo un valor. Sin embargo, pudimos ver que un objeto tenía atributos diferentes, como su valor, pero también el tipo de datos contenidos (e.g., `numeric`, `character`). Ahora vamos a ver que hay diferentes tipos de contenedores para almacenar datos múltiples.
+
 ## El contenedor `vector`
 
-XXX
+En R, un `vector` es una combinación de datos con la particularidad de que todos los datos contenidos en un `vector` son del mismo tipo. Podemos almacenar por ejemplo múltiples elementos del tipo `character` o `numeric` en un `vector`, pero no ambos. El contenedor `vector` es importante porque es el elemento básico de R. 
+
+### Crear un `vector`
+
+Para crear un `vector` utilizaremos la función `c()` que permite combinar elementos en un `vector`. Los elementos para combinar deben estar separados por comas.
+
+```{r}
+miVec01 <- c(1, 2, 3, 4) # un vector de 4 elementos de tipo numeric ; double
+print(miVec01)
+typeof(miVec01)
+is.vector(miVec01)
+```
+
+La funcion `is.vector()` permite verificar el tipo de contenedor.
+
+```{r}
+miVec02 <- c("a", "b", "c") 
+print(miVec02)
+typeof(miVec02)
+is.vector(miVec02)
+
+miVec03 <- c(TRUE, FALSE, FALSE, TRUE)
+print(miVec03)
+typeof(miVec03)
+is.vector(miVec03)
+
+miVecNA <- c(1, NA, 3, NA, 5)
+print(miVecNA)
+typeof(miVecNA)
+is.vector(miVecNA)
+
+miVec04 <- c(1, "a")
+print(miVec04)
+typeof(miVec04)
+is.vector(miVec04)
+```
+
+Si combinamos diferentes tipos de datos, de forma predeterminada R intentará transformar los elementos en un tipo. Si como aquí en el objeto `miVec03` tenemos los tipos `character` y `numeric`, R convertirá todos los elementos en `character`.
+
+```{r}
+miVec05 <- c(factor("abc"), "def")
+print(miVec05)
+typeof(miVec05)
+miVec06 <- c(TRUE, "def")
+print(miVec06)
+typeof(miVec06)
+miVec07 <- c(factor("abc"), 55)
+print(miVec07)
+typeof(miVec07)
+miVec08 <- c(TRUE, 55)
+print(miVec08)
+typeof(miVec08)
+```
+
+También podemos combinar objetos existentes dentro de un `vector`.
+
+```{r}
+miVec09 <- c(miVec02, "d", "e", "f")
+print(miVec09)
+miVec10 <- c("aaa", "aa", miVec09, "d", "e", "f")
+print(miVec10)
+miVec11 <- c(789, miVec01 , 564)
+print(miVec11)
+```
+
+### Hacer operaciones con un `vector`
+
+También podemos realizar operaciones en un `vector`.
+
+```{r}
+print(miVec01)
+miVec01 + 1
+miVec01 - 1
+miVec01 * 2
+miVec01 /10
+```
+
+Las operaciones de un `vector` a otro también son posibles, pero se debe tener cuidado para asegurar que el número de elementos en un `vector` sea el mismo que el otro, de lo contrario R realizará el cálculo comenzando desde el inicio del `vector` mas pequeño. Aquí hay un ejemplo para ilustrar lo que R hace:
+
+```{r}
+miVec12 <- c(1, 1, 1, 1, 1, 1, 1, 1, 1)
+print(miVec12)
+miVec13 <- c(10, 20, 30)
+print(miVec13)
+miVec12 + miVec13 # vectores de diferentes tamaños: atención al resultado
+miVec14 <- c(10, 20, 30, 40, 50, 60, 70, 80, 90)
+print(miVec14)
+miVec12 + miVec14 # los vectores tienen el mismo tamaño
+miVec15 <- c(1, 1, 1, 1)
+print(miVec15)
+miVec15 + miVec13 # vectores de diferentes tamaños y no múltiples
+```
+
+### Acceder a los valores de un `vector`
+
+Suele pasar que sea necesario poder acceder a los valores de un `vector`, es decir, recuperar un valor o un grupo de valores dentro de un `vector`. Para acceder a un elemento de un `vector` usamos los corchetes `[]`. Entre los corchetes, podemos usar un número correspondiente al número del elemento en el `vector`.
+
+```{r}
+miVec20 <- c(10, 20, 30, 40, 50, 60, 70, 80, 90)
+miVec21 <- c("a", "b", "c", "d", "e", "f", "g", "h", "i")
+print(miVec20)
+print(miVec21)
+
+print(miVec20[1])
+print(miVec21[3])
+```
+
+También podemos usar la combinación de diferentes elementos (otro `vector`).
+
+```{r}
+print(miVec20[c(1, 5, 9)])
+print(miVec21[c(4, 3, 1)])
+print(miVec21[c(4, 4, 3, 4, 3, 2, 5)])
+```
+
+También podemos seleccionar elementos usando un operador de comparación o un operador lógico.
+
+```{r}
+print(miVec20[miVec20 >= 50])
+print(miVec20[(miVec20 >= 50) & ((miVec20 < 80))])
+print(miVec20[miVec20 != 50])
+print(miVec20[miVec20 == 30])
+print(miVec20[(miVec20 == 30) | (miVec20 == 50)])
+
+print(miVec21[miVec21 == "a"])
+```
+
+Otra característica interesante es la posibilidad de condicionar los elementos a seleccionar en base a otro `vector`.
+
+```{r}
+print(miVec21[miVec20 >= 50])
+print(miVec21[(miVec20 >= 50) & ((miVec20 < 80))])
+print(miVec21[miVec20 != 50])
+print(miVec21[miVec20 == 30])
+print(miVec21[(miVec20 == 30) | (miVec20 == 50)])
+print(miVec21[(miVec20 == 30) | (miVec21 == "h")])
+```
+
+También es posible excluir ciertos elementos en lugar de seleccionarlos.
+
+```{r}
+print(miVec20[-1])
+print(miVec21[-5])
+print(miVec20[-c(1, 2, 5)])
+print(miVec21[-c(1, 2, 5)])
+```
+
+Los elementos de un `vector` también se pueden seleccionar sobre la base de un `vector` tipo `logical`. En este caso, solo se seleccionarán elementos con un valor `TRUE`.
+
+```{r}
+miVec22 <- c(TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE)
+print(miVec21[miVec22])
+```
+
+### Dar nombres a los elementos de un `vector`
+
+Los elementos de un `vector` se pueden nombrar para referenciarlos y luego selectionarlos. La función `names()` recupera los nombres de los elementos de un vector.
+
+```{r}
+miVec23 <- c(aaa = 10, bbb = 20, ccc = 30, ddd = 40, eee = 50)
+print(miVec23)
+print(miVec23["bbb"])
+print(miVec23[c("bbb", "ccc", "bbb")])
+names(miVec23)
+```
+
+### Editar los elementos de un `vector`
+
+Para modificar un `vector`, operamos de la misma manera que para modificar un objeto simple, con el signo `<-` y el elemento o los elementos a modificar entre corchetes.
+
+```{r}
+print(miVec21)
+miVec21[3] <- "zzz"
+print(miVec21)
+miVec21[(miVec20 >= 50) & ((miVec20 < 80))] <- "qwerty"
+print(miVec21)
+
+print(miVec23)
+miVec23["ccc"] <- miVec23["ccc"] + 100
+print(miVec23)
+```
+
+También podemos cambiar los nombres asociados con los elementos de un `vector`.
+
+```{r}
+print(miVec23)
+names(miVec23)[2] <- "bb_bb"
+print(miVec23)
+```
+
+Podemos hacer mucho más con un `vector` y volveremos a su manejo y operaciones posibles en el capítulo sobre funciones.
 
 ## El contenedor `list`
 
