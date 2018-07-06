@@ -11,7 +11,15 @@ XXX
 str
 head
 tail
-class
+names
+%in%
+
+### manipular los datos
+
+rank
+order
+sort
+t
 
 ### funciones matemáticas
 
@@ -27,11 +35,19 @@ min
 quartile
 summary
 meadian
+length
+round
+ceiling
+floor
 
 ## Otras funciones útiles
 
-XXX
+seq_along
+:
+rep
+seq
+
 
 ## Escribe una función
 
-XXX
+XXX argumentos
