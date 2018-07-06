@@ -21,6 +21,7 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 **06/07/2018**
 
 * edición y corrección del español (Camila B.) 
+* primera parte del capítulo *Contenedores de datos*: *El contenedor vector*
 
 **04/07/2018**
 
