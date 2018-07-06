@@ -4,8 +4,8 @@ Vimos anteriormente cómo crear un objeto. Un objeto es como una caja en la que 
 
 ## El tipo `numeric`
 
-El tipo `numeric` es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números con R: enteros (*integer*) y números decimales (*double*). Por defecto, R considera todos los números como números decimales y asigna el tipo `double`.
-Para verificar el tipo de datos utilizaremos la *función* `typeof()` que toma como *argumento* un objeto (o directamente la información que queremos probar). También podemos usar la función `is.double()` que devolverá `TRUE` si el número está en formato `double` y `FALSE` en caso contrario. La función genérica `is.numeric()` devolverá `TRUE` si el objeto está en formato` numérico` y `FALSE` en caso contrario.
+El tipo `numeric` es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números en R: enteros (*integer*) y números decimales (*double*). Por defecto, R considera todos los números como números decimales y asigna el tipo `double`.
+Para verificar el tipo de datos utilizaremos la *función* `typeof()` que toma como *argumento* un objeto (o directamente la información que queremos probar). También podemos usar la función `is.double()` que devolverá `TRUE` si el número está en formato `double` y `FALSE` en caso contrario. La función genérica `is.numeric()` devolverá `TRUE` si el objeto está en formato `numeric` y `FALSE` en caso contrario.
 
 ```{r}
 nbrRep <- 5
@@ -27,7 +27,7 @@ as.integer(5.99)
 is.numeric(nbrRep)
 ```
 
-Vemos aquí que convertir un número como `5.99` a `entero` solo devolverá la parte entera, `5`.
+Vemos aquí que convertir un número como `5.99` a `integer` solo devolverá la parte entera, `5`.
 
 ```{r}
 is.integer(5)
@@ -36,7 +36,7 @@ is.integer(as.integer(5))
 is.numeric(as.integer(5))
 ```
 
-La suma de un entero y un número de punto flotante devuelve un número de coma flotante.
+La suma de un número entero `integer` y un número decimal `double` devuelve un número decimal.
 
 ```{r}
 sumIntDou <- as.integer(5) + 5.2
@@ -58,14 +58,19 @@ myText3 <- 'azerty uiop qsdfg hjklm'
 typeof(myText3)
 ```
 
-Las comillas dobles o simples son útiles si desea poner comillas en nuestro texto. También podemos *escapar* un carácter especial como comillas gracias al signo de barra invertida `\`.
+Tanto las comillas dobles y simples son útiles en nuestro texto. También podemos *escapar* un carácter especial como comillas gracias al signo de barra invertida `\`.
 
 ```{r}
 myText <- "a 'ze' 'rt' y"
+print(myText)
 myText2 <- 'a "zert" y'
+print(myText2)
 myText3 <- 'azerty uiop qsdfg hjklm'
+print(myText3)
 myText4 <- "qwerty \" azerty "
+print(myText4)
 myText5 <- "qwerty \\ azerty "
+print(myText5)
 ```
 
 De forma predeterminada, cuando creamos un objeto, su contenido no es devuelto por la consola. En Internet o en muchos libros podemos encontrar el nombre del objeto en una línea para devolver sus contenidos:

@@ -4,10 +4,10 @@
 
 ## Instalar R
 
-El programa para instalar el software R se puede descargar desde el sitio web de R: https://www.r-project.org/. En el sitio web de R, primero es necesario elegir un espejo CRAN (servidor desde el que descargar R, el más cercano a su ubicación geográfica), luego descargue el archivo *base*. Los usuarios de Linux pueden preferir un `sudo apt-get install r-base`. 
+El programa para instalar el software R se puede descargar desde el sitio web de R: https://www.r-project.org/. En el sitio web de R, primero es necesario elegir un espejo CRAN (servidor desde el cual descargar R, el más cercano a su ubicación geográfica), luego descargue el archivo *base*. Los usuarios de Linux pueden preferir un `sudo apt-get install r-base`. 
 
 ```{block, type='rmdnote'}
-El software R se puede descargar de muchos servidores CRAN (Comprehensive R Archive Network) de todo el mundo. Estos servidores se llaman espejos. La elección del espejo es manual. Información adicional como esta nota siempre estará representada con este pictograma *información*.
+El software R se puede descargar de muchos servidores CRAN (Comprehensive R Archive Network) de todo el mundo. Estos servidores se llaman espejos. La elección del espejo es manual. La información adicional como esta nota siempre estará representada con este pictograma *información*.
 ```
 
 ## R como calculadora
@@ -18,10 +18,10 @@ Una vez que se inicia el programa, aparece una ventana cuya apariencia puede var
 knitr::include_graphics("myFigures/screencap_rConsoleFR.png")
 ```
 
-La consola corresponde a la interfaz donde se interpretará el código, es decir, donde el código será transformado en lenguaje de máquina, ejecutado por la computadora y retransmitido en forma legible por humanos. Esto corresponde a la pantalla de una calculadora (Figura \@ref(fig:screenCapConsoleCal)). Así es como se usará R más adelante en esta sección.
+La consola corresponde a la interfaz donde se interpretará el código, es decir, donde el código será transformado en lenguaje de máquina, ejecutado por la computadora y retransmitido en forma legible por humanos. Esto es análogo a lo que sucede en una calculadora (Figura \@ref(fig:screenCapConsoleCal)). Así es como se usará R más adelante en esta sección.
 
 ```{block, type='rmdnote'}
-A lo largo de este libro, los ejemplos del código R aparecerán sobre un fondo gris. Se pueden copiar y pegar directamente en la consola, aunque es mejor reproducir escribiendo los ejemplos en la consola (o más adelante en los scripts). El resultado de lo que se envía en la consola también aparecerá en un fondo gris con `##` delante del código para hacer la distinción entre el código y el resultado del código.
+A lo largo de este libro, los ejemplos del código R aparecerán sobre un fondo gris. Se pueden copiar y pegar directamente en la consola, aunque es mejor reproducir los ejemplos escribiéndolos en la consola (o más adelante en los scripts). El resultado de lo que se envía en la consola también aparecerá en un fondo gris con `##` delante del código para hacer la distinción entre el código y el resultado del código.
 ```
 
 
@@ -54,7 +54,7 @@ Clásicamente, las multiplicaciones y divisiones tienen prioridad sobre las adic
 (5 + 5) * ((2 + 2) / 3)^2
 ```
 
-El operador de módulo corresponde al resto de la división euclidiana. Se usa en ciencias de la computación, por ejemplo, para saber si un número es par o impar (un número módulo 2 devolverá 1 si es impar y 0 si es par).
+El operador *módulo* corresponde al resto de la división euclidiana. Se usa en ciencias de la computación, por ejemplo, para saber si un número es par o impar (un número módulo 2 devolverá 1 si es impar y 0 si es par).
 
 ```{r}
 451 %% 2
@@ -77,7 +77,7 @@ el *estilo* del código es importante porque el código está destinado a ser le
 
 ### Los operadores comparativos
 
-Sin embargo, R es mucho más que una simple calculadora porque permite otro tipo de operadores: operadores de comparación. Sirven como su nombre sugiere *comparar* los valores (Table \@ref(tab:tabOpCom)).
+Sin embargo, R es mucho más que una simple calculadora porque permite otro tipo de operadores: operadores de comparación, para *comparar* los valores (Table \@ref(tab:tabOpCom)).
 
 ```{r tabOpCom, echo = FALSE}
 opAriDf <- data.frame(Label = c("más pequeño que", "mayor que", "más pequeño o igual a",  "más grande o igual a", "igual a", "diferente de"), 
@@ -117,7 +117,7 @@ Un operador de comparación particular es *igual a*. Veremos en la siguiente sec
 58 == 58
 ```
 
-Otro operador particular es *diferente de*. Se usa con *un signo de interrogación* seguido de *igual*, `! =`. Este operador permite obtener la respuesta opuesta a `==`.
+Otro operador particular es *diferente de*. Se usa con *un signo de admiración* seguido de *igual*, `!=`. Este operador permite obtener la respuesta opuesta a `==`.
 
 ```{r}
 42 == 53
@@ -154,7 +154,7 @@ Aunque esta forma de referirse a `TRUE` y `FALSE` por `T` y `F` está bastante e
 
 ### Los operadores lógicos
 
-Hay un último tipo de operador, los operadores lógicos. Son útiles para combinar operadores de comparación (Table \@ref(tab:tabOpLog)). 
+Hay un último tipo de operador, los operadores lógicos. Estos son útiles para combinar operadores de comparación (Table \@ref(tab:tabOpLog)). 
 
 ```{r tabOpLog, echo = FALSE}
 opAriDf <- data.frame(Label = c("no es", "y", "o", "o exclusivo"), 
@@ -190,7 +190,7 @@ El archivo de ayuda en inglés sobre operadores aritméticos se puede obtener co
 
 ## El concepto de objeto
 
-Un aspecto importante de la programación con R, pero también la programación en general es la noción de objeto. Como se indica en la página web de wikipedia (https://ia.wikipedia.org/wiki/Objecto_(informatica)), en ciencias de la computación, un objeto es un *contenedor*, es decir, algo que contendrá información. La inforamción contenida en un objeto puede ser muy diversa, pero por el momento contendremos en un objeto el número 5. Para hacer esto (y para reutilizarlo más adelante), debemos darle un nombre a nuestro objeto. Con R, los nombres de los objetos no deben contener caracteres especiales como *^ $ ? | + () [] {}*, entre otros. No deben comenzar con un número ni contener espacios. El nombre del objeto debe ser representativo de lo que contiene, sin ser demasiado corto ni demasiado largo. Imagine que nuestro número 5 corresponde al número de repeticiones de un experimento. Nos gustaría darle un nombre que se refiera a *numero* y *repeticiones*, que podríamos reducir a *nbr* y *rep*, respectivamente (*nbr* para number en ingles). Hay varias posibilidades que son bastante comunes bajo R:
+Un aspecto importante de la programación con R, pero también la programación en general es la noción de objeto. Como se indica en la página web de wikipedia (https://ia.wikipedia.org/wiki/Objecto_(informatica)), en ciencias de la computación, un objeto es un *contenedor*, es decir, algo que contendrá información. La información contenida en un objeto puede ser muy diversa, pero por el momento contendremos en un objeto el número 5. Para hacer esto (y para reutilizarlo más adelante), debemos darle un nombre a nuestro objeto. En R, los nombres de los objetos no deben contener caracteres especiales como *^ $ ? | + () [] {}*, entre otros. No deben comenzar con un número ni contener espacios. El nombre del objeto debe ser representativo de lo que contiene, sin ser demasiado corto ni demasiado largo. Imagine que nuestro número 5 corresponde al número de repeticiones de un experimento. Nos gustaría darle un nombre que se refiera a *numero* y *repeticiones*, que podríamos reducir a *nbr* y *rep*, respectivamente (*nbr* para number en ingles). Hay varias posibilidades que son bastante comunes bajo R:
 
 * la separación mediante *guión bajo* (underscore):  `nbr_rep`
 * la separación mediante el carácter *punto*: `nbr.rep`
@@ -256,7 +256,7 @@ R es un lenguaje de programación denominado *lenguaje de scripting*. Esto se re
 
 ### Crear un script y documentarlo
 
-Para abrir un nuevo script, es suficiente crear un archivo de texto vacío que será editado por un editor de texto como el bloc de notas en Windows o Mac OS, o Gedit o incluso nano en Linux. Por convención, este archivo toma la extensión ".r" o ".R" (lo mas comun). Esta última convención se usará en este libro (*"miArchivo.R"*). Desde la interfaz gráfica de R, es posible crear un nuevo script en Mac OS y Windows a través de *file*, luego *new script* y *save as*.
+Para crear un nuevo script basta con abrir un documento vacío de texto, que será editado por un editor de texto como el bloc de notas en Windows o Mac OSX, o Gedit o incluso nano en Linux. Por convención, este archivo toma la extensión ".r" o ".R" (lo mas comun). Esta última convención se usará en este libro (*"miArchivo.R"*). Desde la interfaz gráfica de R, es posible crear un nuevo script en Mac OS y Windows a través de *file*, luego *new script* y *save as*.
 Al igual que el nombre de los objetos, el nombre del script es importante para que podamos identificar fácilmente su contenido. Por ejemplo, podríamos crear un archivo `formRConceptsBase.R` que contenga los objetos que acabamos de crear y los cálculos que hicimos. Pero incluso con nombres de objetos y archivos bien definidos, será difícil recordar el significado de este archivo sin la documentación que acompaña a este script. Para documentar un script utilizaremos *comentarios*. Los *comentarios* son elementos que R identificará como tales y no se ejecutarán. Para especificar a R que vamos a hacer un *comentario*, debemos usar el carácter octothorpe (corsé o numeral) `#`. Los comentarios se pueden insertar en una nueva línea o al final de la línea.
 
 ```{r}

@@ -2,7 +2,7 @@
 
 ## Editores de texto y entorno de desarrollo
 
-Hay muchos editores de texto, el capítulo anterior permitió introducir algunos de los más simples como el bloc de notas de Windows. Rápidamente los límites de estos editores han hecho que la tarea de escribir un script tedioso. De hecho, incluso estructurando su script con comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran los editores de texto especializados para facilitar la escritura y la lectura de scripts.
+Hay muchos editores de texto, el capítulo anterior permitió introducir algunos de los más simples como el bloc de notas de Windows. Sin embargo, los límites de estos editores han hecho tediosa la tarea de escribir un script. De hecho, incluso estructurando su script con comentarios, sigue siendo difícil entenderlo. Aquí es donde entran los editores de texto especializados para facilitar la escritura y la lectura de scripts.
 El editor de texto para R más común es Rstudio, pero hay muchos más. Hacer una lista exhaustiva de todas las soluciones disponibles está más allá del alcance de este libro, por lo que nos centraremos en las tres soluciones que utilizo a diario: **Notepad++**, **Rstudio** y **Geany**. No necesita instalar más de un editor de texto. Aquí recomendamos RStudio para principiantes a R.
 
 ## RStudio
@@ -13,18 +13,18 @@ knitr::include_graphics("myLogos/RStudio.png")
 
 ### Instalar RStudio
 
-El programa para instalar el software RStudio se encuentra en la parte *Products* del sitio web de RStudio (https://www.rstudio.com/). Instalaremos RStudio para uso local (en nuestra computadora), por lo que la versión que nos interesa es *Desktop*. Usaremos la versión *Open Source* que es gratis. Luego, seleccionamos la versión que corresponde a nuestro sistema operativo (Windows, Mac OS, Linux), descargamos el archivo correspondiente y lo ejecutamos para comenzar la instalación. Podemos mantener las opciones predeterminadas durante la instalación.
+El programa para instalar el software RStudio se encuentra en la parte *Products* del sitio web de RStudio (https://www.rstudio.com/). Instalaremos RStudio para uso local (en nuestra computadora), por lo que la versión que nos interesa es *Desktop*. Usaremos la versión *Open Source* que es gratuita. Luego, seleccionamos la versión que corresponde a nuestro sistema operativo (Windows, Mac OS, Linux), descargamos el archivo correspondiente y lo ejecutamos para comenzar la instalación. Podemos mantener las opciones predeterminadas durante la instalación.
 
 ### Un script con RStudio
 
 Podemos abrir RStudio. En la primera apertura, la interfaz se divide en dos con la consola R a la izquierda que vimos en el capítulo anterior (Figura \@ref(fig:screenCapRStudio01)). Para abrir un nuevo script, vamos al menú *Archivo* (o *File*), *Nuevo archivo* (o *New File*), *R script*. Por defecto, este archivo tiene el nombre *Untitled1*. Hemos visto en el capítulo anterior la importancia de dar un nombre pertinente a nuestros scripts, por lo que lo cambiaremos de nombre a *selecEnvDev.R*, en el menú *Archivo* (o *File*), con la opción *Guardar como ...* (o *Save As...*).
-Podríamos notar que el lado izquierdo de RStudio ahora está dividido en dos, con la consola en la parte inferior de la pantalla y el script en la parte superior.
+Podemos notar que el lado izquierdo de RStudio ahora está dividido en dos, con la consola en la parte inferior de la pantalla y el script en la parte superior.
 
 ```{r screenCapRStudio01, fig.cap = "Captura de pantalla de RStudio en Windows: pantalla por defecto.\\label{fig:screenCapRStudio01}", echo = FALSE}
 knitr::include_graphics("myFigures/screencap_RStudio_01.png")
 ```
 
-Luego podemos comenzar a escribir nuestro script con los comentarios que describan lo que vamos a encontrar allí, y agregar un cálculo simple. Una vez que hayamos copiado el siguiente código, podemos guardar nuestro script con el comando `CTRL + S` o yendo a *Archivo* (o *File*, luego *Guardar* (o *Save*).
+Luego podemos comenzar a escribir nuestro script con los comentarios que describan lo que vamos a encontrar allí, y agregar un cálculo simple. Una vez que hayamos copiado o escrito un código, podemos guardar nuestro script con el comando `CTRL + S` o yendo a *Archivo* (o *File*, luego *Guardar* (o *Save*).
 
 ```{r}
 # ------------------------------------------------------------
@@ -120,7 +120,7 @@ Podemos abrir nuestro script con *Archivo*, *Abrir* (Figura \@ref(fig:screenCapG
 knitr::include_graphics("myFigures/screencap_Geany_02.png")
 ```
 
-Para ejecutar nuestro script, la versión de Geany para Windows no tiene un terminal incorporado, lo que hace que su uso sea limitado bajo este sistema operativo. La ejecución de un script se puede hacer abriendo R en una ventana separada y copiando y pegando las líneas que se ejecutarán. En Linux y Mac OSX, abramos R en el terminal en la parte inferior de la ventana de Geany con el comando `R`. Podemos configurar Geany para una combinación de teclas para ejecutar el código seleccionado (por ejemplo `CTRL + R`). A esto hay que permitir el envío de selección al terminal (`send_selection_unsafe = true`) in `archivo geany.conf` y elegir el comando para enviar al terminal (en *Editar*, *Preferencias*, *Combinaciones*).
+Para ejecutar nuestro script, la versión de Geany para Windows no tiene un terminal incorporado, lo que hace que su uso sea limitado bajo este sistema operativo. La ejecución de un script se puede hacer abriendo R en una ventana separada y copiando y pegando las líneas que se ejecutarán. En Linux y Mac OSX, podemos abrir R en el terminal en la parte inferior de la ventana de Geany con el comando `R`. Podemos configurar Geany para una combinación de teclas para ejecutar el código seleccionado (por ejemplo `CTRL + R`). Para esto hay que permitir el envío de selección al terminal (`send_selection_unsafe = true`) in `archivo geany.conf` y elegir el comando para enviar al terminal (en *Editar*, *Preferencias*, *Combinaciones*).
 Para cambiar el tema de Geany, hay una colección de temas disponibles en GitHub (https://github.com/geany/geany-themes/). El tema se puede cambiar a través del menú *Ver*, *cambiar Esquema del color ...* (un ejemplo con el tema *Solarized* Figura \@ref(Fig: screenCapGeany03)).
 
 ```{r screenCapGeany03, fig.cap = "Captura de pantalla de Geany en Windows: cambiar esquema de color.\\label{fig:screenCapGeany03}", echo = FALSE}
@@ -131,11 +131,11 @@ knitr::include_graphics("myFigures/screencap_Geany_03.png")
 
 Hay muchas otras soluciones, algunas especializadas para R como **Tinn-R** (https://sourceforge.net/projects/tinn-r/), y otras más generales para programación como **Atom** (https://atom.io/), **Sublime Text** (https://www.sublimetext.com/), **Vim** (https://www.vim.org/), **Gedit** (https://wiki.gnome.org/Apps/Gedit), **GNU Emacs** (https://www.gnu.org/software/emacs/), o **Brackets** (http://brackets.io/) y **Eclipse** (http://www.eclipse.org/).
 
-## Conclusion
+## Conclusión
 
-Felicitations, nous sommes arrivés au bout de ce chapitre sur environnements de développement pour utiliser R. Nous savons désormais :
+Felicitaciones, llegamos al final de este capítulo sobre el entorno de desarrollo para el uso de R. Hasta ahora sabemos:
 
-* Installer RStudio, Geany ou Notepad++
-* Reconnaître et choisir notre environnement préféré
+*	Instalar RStudio, Geany o Notepad++
+*	Reconocer y elegir nuestro entorno de preferencia
 
-A partir d'ici nous allons pouvoir nous concentrer sur le language de programmation R dans un environnement facilitant le travail de lecture et d'écriture du code. C'est un grand pas en avant pour maîtriser R.
+A partir de acá podremos concentrarnos en el lenguaje de programación R en un ambiente, facilitando el trabajo de lectura y de escritura del código. Es un gran paso para manejar R.
