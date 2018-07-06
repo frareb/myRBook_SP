@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-07-04}
+    \date{2018-07-06}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -243,14 +243,22 @@
 }
 \chapter{Preámbulo}\label{preambulo}
 
-Este libro está incompleto por el momento y está viendo su versión
+Este libro está incompleto por el momento y está leyendo su versión
 preliminar. Si tiene algún comentario, sugerencia o si identifica
 errores, no dude en enviarme un correo electrónico
 (\href{mailto:francois.rebaudo@ird.fr}{\nolinkurl{francois.rebaudo@ird.fr}}),
-o si está familiarizado con GitHub en el sitio del proyecto
+o si está familiarizado con GitHub en el sitio web del proyecto
 (\url{https://github.com/frareb/myRBook_SP}).
 
 Últimas modificaciones:
+
+\textbf{06/07/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  edición y corrección del español (Camila B.)
+\end{itemize}
 
 \textbf{04/07/2018}
 
@@ -277,7 +285,13 @@ Agradezco a todos los colaboradores que ayudaron a mejorar este libro
 con sus consejos, sugerencias de cambios y correcciones:
 
 =\textgreater{} lista para actualizar con autorizaciones de
-contribuyentes.
+contribuyentes:
+
+\begin{itemize}
+\tightlist
+\item
+  Camila Benavides Frias (Bolivia)
+\end{itemize}
 
 Las versiones de gitbook, html y epub de este libro usan los iconos de
 fuente abierta de Font Awesome (\url{https://fontawesome.com}). La
@@ -367,7 +381,7 @@ español}\label{lectura-adicional-en-espanol}
 
 El programa para instalar el software R se puede descargar desde el
 sitio web de R: \url{https://www.r-project.org/}. En el sitio web de R,
-primero es necesario elegir un espejo CRAN (servidor desde el que
+primero es necesario elegir un espejo CRAN (servidor desde el cual
 descargar R, el más cercano a su ubicación geográfica), luego descargue
 el archivo \emph{base}. Los usuarios de Linux pueden preferir un
 \texttt{sudo\ apt-get\ install\ r-base}.
@@ -375,8 +389,8 @@ el archivo \emph{base}. Los usuarios de Linux pueden preferir un
 \begin{rmdnote}
 El software R se puede descargar de muchos servidores CRAN
 (Comprehensive R Archive Network) de todo el mundo. Estos servidores se
-llaman espejos. La elección del espejo es manual. Información adicional
-como esta nota siempre estará representada con este pictograma
+llaman espejos. La elección del espejo es manual. La información
+adicional como esta nota siempre estará representada con este pictograma
 \emph{información}.
 \end{rmdnote}
 
@@ -396,14 +410,14 @@ Windows.\label{fig:screenCapConsole}}
 La consola corresponde a la interfaz donde se interpretará el código, es
 decir, donde el código será transformado en lenguaje de máquina,
 ejecutado por la computadora y retransmitido en forma legible por
-humanos. Esto corresponde a la pantalla de una calculadora (Figura
+humanos. Esto es análogo a lo que sucede en una calculadora (Figura
 \ref{fig:screenCapConsoleCal}). Así es como se usará R más adelante en
 esta sección.
 
 \begin{rmdnote}
 A lo largo de este libro, los ejemplos del código R aparecerán sobre un
 fondo gris. Se pueden copiar y pegar directamente en la consola, aunque
-es mejor reproducir escribiendo los ejemplos en la consola (o más
+es mejor reproducir los ejemplos escribiéndolos en la consola (o más
 adelante en los scripts). El resultado de lo que se envía en la consola
 también aparecerá en un fondo gris con \texttt{\#\#} delante del código
 para hacer la distinción entre el código y el resultado del código.
@@ -508,10 +522,10 @@ las adiciones y sustracciones. Si es necesario, podemos usar paréntesis.
 ## [1] 17.77778
 \end{verbatim}
 
-El operador de módulo corresponde al resto de la división euclidiana. Se
-usa en ciencias de la computación, por ejemplo, para saber si un número
-es par o impar (un número módulo 2 devolverá 1 si es impar y 0 si es
-par).
+El operador \emph{módulo} corresponde al resto de la división
+euclidiana. Se usa en ciencias de la computación, por ejemplo, para
+saber si un número es par o impar (un número módulo 2 devolverá 1 si es
+impar y 0 si es par).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -600,8 +614,8 @@ para que sea fácilmente identificable.
 comparativos}\label{los-operadores-comparativos}
 
 Sin embargo, R es mucho más que una simple calculadora porque permite
-otro tipo de operadores: operadores de comparación. Sirven como su
-nombre sugiere \emph{comparar} los valores (Table \ref{tab:tabOpCom}).
+otro tipo de operadores: operadores de comparación, para \emph{comparar}
+los valores (Table \ref{tab:tabOpCom}).
 
 \begin{table}
 
@@ -725,8 +739,8 @@ permite asignar un valor a un objeto. El operador de comparación
 \end{verbatim}
 
 Otro operador particular es \emph{diferente de}. Se usa con \emph{un
-signo de interrogación} seguido de \emph{igual}, \texttt{!\ =}. Este
-operador permite obtener la respuesta opuesta a \texttt{==}.
+signo de admiración} seguido de \emph{igual}, \texttt{!=}. Este operador
+permite obtener la respuesta opuesta a \texttt{==}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -910,8 +924,8 @@ solo es ser funcional sino también fácil de leer y volver a leer.
 
 \subsection{Los operadores lógicos}\label{los-operadores-logicos}
 
-Hay un último tipo de operador, los operadores lógicos. Son útiles para
-combinar operadores de comparación (Table \ref{tab:tabOpLog}).
+Hay un último tipo de operador, los operadores lógicos. Estos son útiles
+para combinar operadores de comparación (Table \ref{tab:tabOpLog}).
 
 \begin{table}
 
@@ -1059,10 +1073,10 @@ programación en general es la noción de objeto. Como se indica en la
 página web de wikipedia
 (\url{https://ia.wikipedia.org/wiki/Objecto_(informatica)}), en ciencias
 de la computación, un objeto es un \emph{contenedor}, es decir, algo que
-contendrá información. La inforamción contenida en un objeto puede ser
+contendrá información. La información contenida en un objeto puede ser
 muy diversa, pero por el momento contendremos en un objeto el número 5.
 Para hacer esto (y para reutilizarlo más adelante), debemos darle un
-nombre a nuestro objeto. Con R, los nombres de los objetos no deben
+nombre a nuestro objeto. En R, los nombres de los objetos no deben
 contener caracteres especiales como \emph{\^{} \$ ? \textbar{} + ()
 {[}{]} \{\}}, entre otros. No deben comenzar con un número ni contener
 espacios. El nombre del objeto debe ser representativo de lo que
@@ -1252,25 +1266,25 @@ por R y que es posible ejecutar.
 \subsection{Crear un script y
 documentarlo}\label{crear-un-script-y-documentarlo}
 
-Para abrir un nuevo script, es suficiente crear un archivo de texto
-vacío que será editado por un editor de texto como el bloc de notas en
-Windows o Mac OS, o Gedit o incluso nano en Linux. Por convención, este
-archivo toma la extensión ``.r'' o ``.R'' (lo mas comun). Esta última
-convención se usará en este libro (\emph{``miArchivo.R''}). Desde la
-interfaz gráfica de R, es posible crear un nuevo script en Mac OS y
-Windows a través de \emph{file}, luego \emph{new script} y \emph{save
-as}. Al igual que el nombre de los objetos, el nombre del script es
-importante para que podamos identificar fácilmente su contenido. Por
-ejemplo, podríamos crear un archivo \texttt{formRConceptsBase.R} que
-contenga los objetos que acabamos de crear y los cálculos que hicimos.
-Pero incluso con nombres de objetos y archivos bien definidos, será
-difícil recordar el significado de este archivo sin la documentación que
-acompaña a este script. Para documentar un script utilizaremos
-\emph{comentarios}. Los \emph{comentarios} son elementos que R
-identificará como tales y no se ejecutarán. Para especificar a R que
-vamos a hacer un \emph{comentario}, debemos usar el carácter octothorpe
-(corsé o numeral) \texttt{\#}. Los comentarios se pueden insertar en una
-nueva línea o al final de la línea.
+Para crear un nuevo script basta con abrir un documento vacío de texto,
+que será editado por un editor de texto como el bloc de notas en Windows
+o Mac OSX, o Gedit o incluso nano en Linux. Por convención, este archivo
+toma la extensión ``.r'' o ``.R'' (lo mas comun). Esta última convención
+se usará en este libro (\emph{``miArchivo.R''}). Desde la interfaz
+gráfica de R, es posible crear un nuevo script en Mac OS y Windows a
+través de \emph{file}, luego \emph{new script} y \emph{save as}. Al
+igual que el nombre de los objetos, el nombre del script es importante
+para que podamos identificar fácilmente su contenido. Por ejemplo,
+podríamos crear un archivo \texttt{formRConceptsBase.R} que contenga los
+objetos que acabamos de crear y los cálculos que hicimos. Pero incluso
+con nombres de objetos y archivos bien definidos, será difícil recordar
+el significado de este archivo sin la documentación que acompaña a este
+script. Para documentar un script utilizaremos \emph{comentarios}. Los
+\emph{comentarios} son elementos que R identificará como tales y no se
+ejecutarán. Para especificar a R que vamos a hacer un \emph{comentario},
+debemos usar el carácter octothorpe (corsé o numeral) \texttt{\#}. Los
+comentarios se pueden insertar en una nueva línea o al final de la
+línea.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1378,11 +1392,11 @@ base de R. Sabemos:
 desarrollo}\label{editores-de-texto-y-entorno-de-desarrollo}
 
 Hay muchos editores de texto, el capítulo anterior permitió introducir
-algunos de los más simples como el bloc de notas de Windows. Rápidamente
-los límites de estos editores han hecho que la tarea de escribir un
-script tedioso. De hecho, incluso estructurando su script con
-comentarios, sigue siendo difícil ubicarse en este. Aquí es donde entran
-los editores de texto especializados para facilitar la escritura y la
+algunos de los más simples como el bloc de notas de Windows. Sin
+embargo, los límites de estos editores han hecho tediosa la tarea de
+escribir un script. De hecho, incluso estructurando su script con
+comentarios, sigue siendo difícil entenderlo. Aquí es donde entran los
+editores de texto especializados para facilitar la escritura y la
 lectura de scripts. El editor de texto para R más común es Rstudio, pero
 hay muchos más. Hacer una lista exhaustiva de todas las soluciones
 disponibles está más allá del alcance de este libro, por lo que nos
@@ -1405,7 +1419,7 @@ El programa para instalar el software RStudio se encuentra en la parte
 \emph{Products} del sitio web de RStudio
 (\url{https://www.rstudio.com/}). Instalaremos RStudio para uso local
 (en nuestra computadora), por lo que la versión que nos interesa es
-\emph{Desktop}. Usaremos la versión \emph{Open Source} que es gratis.
+\emph{Desktop}. Usaremos la versión \emph{Open Source} que es gratuita.
 Luego, seleccionamos la versión que corresponde a nuestro sistema
 operativo (Windows, Mac OS, Linux), descargamos el archivo
 correspondiente y lo ejecutamos para comenzar la instalación. Podemos
@@ -1422,7 +1436,7 @@ nombre \emph{Untitled1}. Hemos visto en el capítulo anterior la
 importancia de dar un nombre pertinente a nuestros scripts, por lo que
 lo cambiaremos de nombre a \emph{selecEnvDev.R}, en el menú
 \emph{Archivo} (o \emph{File}), con la opción \emph{Guardar como
-\ldots{}} (o \emph{Save As\ldots{}}). Podríamos notar que el lado
+\ldots{}} (o \emph{Save As\ldots{}}). Podemos notar que el lado
 izquierdo de RStudio ahora está dividido en dos, con la consola en la
 parte inferior de la pantalla y el script en la parte superior.
 
@@ -1435,7 +1449,7 @@ Windows: pantalla por defecto.\label{fig:screenCapRStudio01}}
 
 Luego podemos comenzar a escribir nuestro script con los comentarios que
 describan lo que vamos a encontrar allí, y agregar un cálculo simple.
-Una vez que hayamos copiado el siguiente código, podemos guardar nuestro
+Una vez que hayamos copiado o escrito un código, podemos guardar nuestro
 script con el comando \texttt{CTRL\ +\ S} o yendo a \emph{Archivo} (o
 \emph{File}, luego \emph{Guardar} (o \emph{Save}).
 
@@ -1627,11 +1641,11 @@ Para ejecutar nuestro script, la versión de Geany para Windows no tiene
 un terminal incorporado, lo que hace que su uso sea limitado bajo este
 sistema operativo. La ejecución de un script se puede hacer abriendo R
 en una ventana separada y copiando y pegando las líneas que se
-ejecutarán. En Linux y Mac OSX, abramos R en el terminal en la parte
-inferior de la ventana de Geany con el comando \texttt{R}. Podemos
+ejecutarán. En Linux y Mac OSX, podemos abrir R en el terminal en la
+parte inferior de la ventana de Geany con el comando \texttt{R}. Podemos
 configurar Geany para una combinación de teclas para ejecutar el código
-seleccionado (por ejemplo \texttt{CTRL\ +\ R}). A esto hay que permitir
-el envío de selección al terminal
+seleccionado (por ejemplo \texttt{CTRL\ +\ R}). Para esto hay que
+permitir el envío de selección al terminal
 (\texttt{send\_selection\_unsafe\ =\ true}) in
 \texttt{archivo\ geany.conf} y elegir el comando para enviar al terminal
 (en \emph{Editar}, \emph{Preferencias}, \emph{Combinaciones}). Para
@@ -1661,22 +1675,22 @@ otras más generales para programación como \textbf{Atom}
 (\url{http://brackets.io/}) y \textbf{Eclipse}
 (\url{http://www.eclipse.org/}).
 
-\section{Conclusion}\label{conclusion-1}
+\section{Conclusión}\label{conclusion-1}
 
-Felicitations, nous sommes arrivés au bout de ce chapitre sur
-environnements de développement pour utiliser R. Nous savons désormais :
+Felicitaciones, llegamos al final de este capítulo sobre el entorno de
+desarrollo para el uso de R. Hasta ahora sabemos:
 
 \begin{itemize}
 \tightlist
 \item
-  Installer RStudio, Geany ou Notepad++
+  Instalar RStudio, Geany o Notepad++
 \item
-  Reconnaître et choisir notre environnement préféré
+  Reconocer y elegir nuestro entorno de preferencia
 \end{itemize}
 
-A partir d'ici nous allons pouvoir nous concentrer sur le language de
-programmation R dans un environnement facilitant le travail de lecture
-et d'écriture du code. C'est un grand pas en avant pour maîtriser R.
+A partir de acá podremos concentrarnos en el lenguaje de programación R
+en un ambiente, facilitando el trabajo de lectura y de escritura del
+código. Es un gran paso para manejar R.
 
 \chapter{Tipos de datos}\label{dataType1}
 
@@ -1691,7 +1705,7 @@ volveremos más adelante.
 \texttt{numeric}}{El tipo numeric}}\label{el-tipo-numeric}
 
 El tipo \texttt{numeric} es lo que hemos hecho hasta ahora, almacenando
-números. Hay dos tipos principales de números con R: enteros
+números. Hay dos tipos principales de números en R: enteros
 (\emph{integer}) y números decimales (\emph{double}). Por defecto, R
 considera todos los números como números decimales y asigna el tipo
 \texttt{double}. Para verificar el tipo de datos utilizaremos la
@@ -1700,7 +1714,7 @@ objeto (o directamente la información que queremos probar). También
 podemos usar la función \texttt{is.double()} que devolverá \texttt{TRUE}
 si el número está en formato \texttt{double} y \texttt{FALSE} en caso
 contrario. La función genérica \texttt{is.numeric()} devolverá
-\texttt{TRUE} si el objeto está en formato\texttt{numérico} y
+\texttt{TRUE} si el objeto está en formato \texttt{numeric} y
 \texttt{FALSE} en caso contrario.
 
 \begin{Shaded}
@@ -1811,7 +1825,7 @@ formato \texttt{integer} y \texttt{FALSE} en caso contrario.
 ## [1] TRUE
 \end{verbatim}
 
-Vemos aquí que convertir un número como \texttt{5.99} a \texttt{entero}
+Vemos aquí que convertir un número como \texttt{5.99} a \texttt{integer}
 solo devolverá la parte entera, \texttt{5}.
 
 \begin{Shaded}
@@ -1854,8 +1868,8 @@ solo devolverá la parte entera, \texttt{5}.
 ## [1] TRUE
 \end{verbatim}
 
-La suma de un entero y un número de punto flotante devuelve un número de
-coma flotante.
+La suma de un número entero \texttt{integer} y un número decimal
+\texttt{double} devuelve un número decimal.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1905,19 +1919,64 @@ las comillas dobles (\texttt{"}) o las comillas simples
 ## [1] "character"
 \end{verbatim}
 
-Las comillas dobles o simples son útiles si desea poner comillas en
-nuestro texto. También podemos \emph{escapar} un carácter especial como
-comillas gracias al signo de barra invertida \texttt{\textbackslash{}}.
+Tanto las comillas dobles y simples son útiles en nuestro texto. También
+podemos \emph{escapar} un carácter especial como comillas gracias al
+signo de barra invertida \texttt{\textbackslash{}}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{myText <-}\StringTok{ "a 'ze' 'rt' y"}
-\NormalTok{myText2 <-}\StringTok{ 'a "zert" y'}
-\NormalTok{myText3 <-}\StringTok{ 'azerty uiop qsdfg hjklm'}
-\NormalTok{myText4 <-}\StringTok{ "qwerty }\CharTok{\textbackslash{}"}\StringTok{ azerty "}
-\NormalTok{myText5 <-}\StringTok{ "qwerty }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{ azerty "}
+\KeywordTok{print}\NormalTok{(myText)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] "a 'ze' 'rt' y"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText2 <-}\StringTok{ 'a "zert" y'}
+\KeywordTok{print}\NormalTok{(myText2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a \"zert\" y"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText3 <-}\StringTok{ 'azerty uiop qsdfg hjklm'}
+\KeywordTok{print}\NormalTok{(myText3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "azerty uiop qsdfg hjklm"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText4 <-}\StringTok{ "qwerty }\CharTok{\textbackslash{}"}\StringTok{ azerty "}
+\KeywordTok{print}\NormalTok{(myText4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "qwerty \" azerty "
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myText5 <-}\StringTok{ "qwerty }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{ azerty "}
+\KeywordTok{print}\NormalTok{(myText5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "qwerty \\ azerty "
+\end{verbatim}
 
 De forma predeterminada, cuando creamos un objeto, su contenido no es
 devuelto por la consola. En Internet o en muchos libros podemos
@@ -2273,7 +2332,7 @@ puede usar para texto o números.
 ## [1] NA
 \end{verbatim}
 
-\section{Conclusión}\label{conclusion-1}
+\section{Conclusión}\label{conclusion-2}
 
 Felicitaciones, hemos llegado al final de este capítulo sobre los tipos
 de datos. Ahora sabemos:

@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-07-04">
+<meta name="date" content="2018-07-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -143,7 +143,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.4.2" data-path="IDE.html"><a href="IDE.html#un-script-con-geany"><i class="fa fa-check"></i><b>6.4.2</b> Un script con Geany</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="IDE.html"><a href="IDE.html#otras-soluciones"><i class="fa fa-check"></i><b>6.5</b> Otras soluciones</a></li>
-<li class="chapter" data-level="6.6" data-path="IDE.html"><a href="IDE.html#conclusion-1"><i class="fa fa-check"></i><b>6.6</b> Conclusion</a></li>
+<li class="chapter" data-level="6.6" data-path="IDE.html"><a href="IDE.html#conclusion-1"><i class="fa fa-check"></i><b>6.6</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>7</b> Tipos de datos</a><ul>
 <li class="chapter" data-level="7.1" data-path="dataType1.html"><a href="dataType1.html#el-tipo-numeric"><i class="fa fa-check"></i><b>7.1</b> El tipo <code>numeric</code></a></li>
@@ -151,7 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.3" data-path="dataType1.html"><a href="dataType1.html#el-tipo-factor"><i class="fa fa-check"></i><b>7.3</b> El tipo <code>factor</code></a></li>
 <li class="chapter" data-level="7.4" data-path="dataType1.html"><a href="dataType1.html#el-tipo-logical"><i class="fa fa-check"></i><b>7.4</b> El tipo <code>logical</code></a></li>
 <li class="chapter" data-level="7.5" data-path="dataType1.html"><a href="dataType1.html#acerca-de-na"><i class="fa fa-check"></i><b>7.5</b> Acerca de <code>NA</code></a></li>
-<li class="chapter" data-level="7.6" data-path="IDE.html"><a href="IDE.html#conclusion-1"><i class="fa fa-check"></i><b>7.6</b> Conclusión</a></li>
+<li class="chapter" data-level="7.6" data-path="dataType1.html"><a href="dataType1.html#conclusion-2"><i class="fa fa-check"></i><b>7.6</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="dataType2.html"><a href="dataType2.html"><i class="fa fa-check"></i><b>8</b> Contenedores de datos</a><ul>
 <li class="chapter" data-level="8.1" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-vector"><i class="fa fa-check"></i><b>8.1</b> El contenedor <code>vector</code></a></li>
@@ -240,7 +240,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Vimos anteriormente cómo crear un objeto. Un objeto es como una caja en la que almacenaremos <em>información</em>. Hasta ahora solo hemos almacenado números, pero en este capítulo veremos que es posible almacenar otra información y nos detendremos en los tipos más comunes. En este capítulo utilizaremos <strong>funciones</strong> sobre las cuales volveremos más adelante.</p>
 <div id="el-tipo-numeric" class="section level2">
 <h2><span class="header-section-number">7.1</span> El tipo <code>numeric</code></h2>
-<p>El tipo <code>numeric</code> es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números con R: enteros (<em>integer</em>) y números decimales (<em>double</em>). Por defecto, R considera todos los números como números decimales y asigna el tipo <code>double</code>. Para verificar el tipo de datos utilizaremos la <em>función</em> <code>typeof()</code> que toma como <em>argumento</em> un objeto (o directamente la información que queremos probar). También podemos usar la función <code>is.double()</code> que devolverá <code>TRUE</code> si el número está en formato <code>double</code> y <code>FALSE</code> en caso contrario. La función genérica <code>is.numeric()</code> devolverá <code>TRUE</code> si el objeto está en formato<code>numérico</code> y <code>FALSE</code> en caso contrario.</p>
+<p>El tipo <code>numeric</code> es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números en R: enteros (<em>integer</em>) y números decimales (<em>double</em>). Por defecto, R considera todos los números como números decimales y asigna el tipo <code>double</code>. Para verificar el tipo de datos utilizaremos la <em>función</em> <code>typeof()</code> que toma como <em>argumento</em> un objeto (o directamente la información que queremos probar). También podemos usar la función <code>is.double()</code> que devolverá <code>TRUE</code> si el número está en formato <code>double</code> y <code>FALSE</code> en caso contrario. La función genérica <code>is.numeric()</code> devolverá <code>TRUE</code> si el objeto está en formato <code>numeric</code> y <code>FALSE</code> en caso contrario.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nbrRep &lt;-<span class="st"> </span><span class="dv">5</span>
 <span class="kw">typeof</span>(nbrRep)</code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
@@ -264,7 +264,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>## [1] 5</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.numeric</span>(nbrRep)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>Vemos aquí que convertir un número como <code>5.99</code> a <code>entero</code> solo devolverá la parte entera, <code>5</code>.</p>
+<p>Vemos aquí que convertir un número como <code>5.99</code> a <code>integer</code> solo devolverá la parte entera, <code>5</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.integer</span>(<span class="dv">5</span>)</code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.numeric</span>(<span class="dv">5</span>)</code></pre></div>
@@ -273,7 +273,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.numeric</span>(<span class="kw">as.integer</span>(<span class="dv">5</span>))</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>La suma de un entero y un número de punto flotante devuelve un número de coma flotante.</p>
+<p>La suma de un número entero <code>integer</code> y un número decimal <code>double</code> devuelve un número decimal.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sumIntDou &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="fl">5.2</span>
 <span class="kw">typeof</span>(sumIntDou)</code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
@@ -290,12 +290,22 @@ myText2 &lt;-<span class="st"> &#39;azerty&#39;</span>
 myText3 &lt;-<span class="st"> &#39;azerty uiop qsdfg hjklm&#39;</span>
 <span class="kw">typeof</span>(myText3)</code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<p>Las comillas dobles o simples son útiles si desea poner comillas en nuestro texto. También podemos <em>escapar</em> un carácter especial como comillas gracias al signo de barra invertida <code>\</code>.</p>
+<p>Tanto las comillas dobles y simples son útiles en nuestro texto. También podemos <em>escapar</em> un carácter especial como comillas gracias al signo de barra invertida <code>\</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span>
-myText2 &lt;-<span class="st"> &#39;a &quot;zert&quot; y&#39;</span>
-myText3 &lt;-<span class="st"> &#39;azerty uiop qsdfg hjklm&#39;</span>
-myText4 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\&quot;</span><span class="st"> azerty &quot;</span>
-myText5 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\\</span><span class="st"> azerty &quot;</span></code></pre></div>
+<span class="kw">print</span>(myText)</code></pre></div>
+<pre><code>## [1] &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText2 &lt;-<span class="st"> &#39;a &quot;zert&quot; y&#39;</span>
+<span class="kw">print</span>(myText2)</code></pre></div>
+<pre><code>## [1] &quot;a \&quot;zert\&quot; y&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText3 &lt;-<span class="st"> &#39;azerty uiop qsdfg hjklm&#39;</span>
+<span class="kw">print</span>(myText3)</code></pre></div>
+<pre><code>## [1] &quot;azerty uiop qsdfg hjklm&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText4 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\&quot;</span><span class="st"> azerty &quot;</span>
+<span class="kw">print</span>(myText4)</code></pre></div>
+<pre><code>## [1] &quot;qwerty \&quot; azerty &quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText5 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\\</span><span class="st"> azerty &quot;</span>
+<span class="kw">print</span>(myText5)</code></pre></div>
+<pre><code>## [1] &quot;qwerty \\ azerty &quot;</code></pre>
 <p>De forma predeterminada, cuando creamos un objeto, su contenido no es devuelto por la consola. En Internet o en muchos libros podemos encontrar el nombre del objeto en una línea para devolver sus contenidos:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span>
 myText</code></pre></div>
@@ -382,7 +392,7 @@ myText</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">NA</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
 </div>
-<div id="conclusion-1" class="section level2">
+<div id="conclusion-2" class="section level2">
 <h2><span class="header-section-number">7.6</span> Conclusión</h2>
 <p>Felicitaciones, hemos llegado al final de este capítulo sobre los tipos de datos. Ahora sabemos:</p>
 <ul>
