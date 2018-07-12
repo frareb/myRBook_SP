@@ -198,7 +198,185 @@ Podemos hacer mucho más con un `vector` y volveremos a su manejo y operaciones 
 
 ## El contenedor `list`
 
-XXX
+El segundo tipo de contenedor que vamos a presentar es el contenedor `list`, que es también el segundo contenedor después del tipo` vector` debido a su importancia en la programación con R. El contenedor de tipo `list` le permite almacenar **listas** de elementos. Contrariamente a lo que vimos antes con el tipo `vector`, los elementos del tipo `list` pueden ser diferentes (por ejemplo, un `vector` de tipo `numeric`, luego un `vector` de tipo `character`). Los elementos del tipo `list` también pueden ser contenedores diferentes (por ejemplo, un `vector`, luego una `list`). El tipo de contenedor `list` tendrá mas sentido cuando hayamos estudiado los **bucles** y **funciones** de la familia `apply`.
+
+### Crear una `list`
+
+Para crear una `list` usaremos la función `list()`, que toma elementos (objetos) como argumentos.
+
+```{r}
+miList01 <- list()
+print(miList01)
+miList02 <- list(5, "qwerty", c(4, 5, 6), c("a", "b", "c"))
+print(miList02)
+miList03 <- list(5, "qwerty", list(c(4, 5, 6), c("a", "b", "c")))
+print(miList03)
+```
+
+La función `is.list()` se usa para probar si hemos creado un objeto de tipo `list`.
+
+```{r}
+is.list(miList02)
+typeof(miList02)
+```
+
+### Acceder a los valores de una `list`
+
+Los elementos del contenedor `list` son identificables por los corchetes dobles `[[ ]]`. 
+
+```{r}
+print(miList02)
+```
+
+En el objeto de tipo `list` `miList02`, hay cuatro elementos identificables con `[[1]]`, `[[2]]`, `[[3]]` y `[[4]]`. Cada uno de los elementos es de tipo `vector`.  El primer elemento tiene un tamaño de 1 con elementos del tipo `double`, el segundo elemento tiene un tamaño de 1 con elementos del tipo `character`, el tercero elemento tiene un tamaño de 3 con elementos del tipo `double`, y el cuarto elemento tiene un tamaño de 3 con elementos del tipo `character`.
+
+```{r}
+typeof(miList02)
+print(miList02[[1]])
+typeof(miList02[[1]])
+print(miList02[[2]])
+typeof(miList02[[2]])
+print(miList02[[3]])
+typeof(miList02[[3]])
+print(miList02[[4]])
+typeof(miList02[[4]])
+```
+
+El acceso al segundo elemento del `vector` ubicado en la cuarta posición de la `list` se hace con `miList02[[4]][2]`. Usamos doble corchetes para el cuarto elemento de la `list`, luego corchetes simples para el segundo elemento del `vector`.
+
+```{r}
+print(miList02[[4]][2])
+```
+
+Como una `list` puede contener una o más `list`, podemos acceder a la información buscada combinando corchetes dobles. el objeto `miList04` es una `list` de dos elementos: la `list` `miList02` y la `list` `miList03`. El objeto `miList03` en sí contiene una `list` como tercer elemento. Para acceder al primer elemento del `vector` en la primera posición del elemento en la tercera posición del segundo elemento del `list` `miList04`, podemos usar `miList04[[2]][[3]][[1]][1]`. No hay límite en cuanto a la profundidad de `list` pero en la práctica raramente hay necesidad de hacer `list` de `list` de `list`.
+
+```{r}
+miList04 <- list(miList02, miList03)
+print(miList04)
+print(miList04[[2]][[3]][[1]][1])
+```
+
+Para concretar el ejemplo anterior, podemos imaginar especies de barrenadores del maíz (*Sesamia nonagrioides* y *Ostrinia nubilalis*), muestreados en diferentes sitios, con diferentes abundancias en cuatro fechas. Aquí daremos nombres a los elementos de las `list`.
+
+```{r}
+bddInsect <- list(Snonagrioides = list(site01 = c(12, 5, 8, 7), site02 = c(5, 23, 4, 41), site03 = c(12, 0, 0, 0)), Onubilalis = list(site01 = c(12, 1, 2, 3), site02 = c(0, 0, 0, 1), site03 = c(1, 1, 2, 3)))
+print(bddInsect)
+```
+
+```{block, type='rmdstyle'}
+Leer una larga línea de código como la línea para crear el objeto `bddInsect` resulta difícil porque la profundidad de los elementos solo se puede deducir de los paréntesis. Es por eso que vamos a reorganizar el código para que sea más legible con **margen adicional**. La margen adicional implica poner información en diferentes niveles para que podamos identificar rápidamente los diferentes niveles de un código. La margen adicional se realiza con la tecla de tabulación del teclado. Volveremos a la margen adicional con más detalles en el capítulo sobre **bucles**. Recordaremos por el momento que si una línea de código es demasiado larga, obtenemos legibilidad yendo a la línea y que R leerá todo como una sola línea de código.
+```
+
+```{r}
+bddInsect <- list(
+  Snonagrioides = list(
+    site01 = c(12, 5, 8, 7), 
+    site02 = c(5, 23, 4, 41), 
+    site03 = c(12, 0, 0, 0)
+  ), 
+  Onubilalis = list(
+    site01 = c(12, 1, 2, 3), 
+    site02 = c(0, 0, 0, 1), 
+    site03 = c(1, 1, 2, 3)
+  )
+)
+```
+
+Podemos seleccionar los datos de abundancia del segundo sitio de la primera especie como previamente `bddInsect[[1]][[2]]`, o alternativamente usando los nombres de los elementos `bddInsect$Snonagrioides$site02`. Para hacer esto usamos el signo `$`, o como alternativa el nombre de los elementos con comillas simples o dobles `bddInsect[['Snonagrioides']][['sitio02']]`.
+
+```{r}
+print(bddInsect[[1]][[2]])
+print(bddInsect$Snonagrioides$site02)
+print(bddInsect[['Snonagrioides']][['site02']])
+```
+
+En cuanto a los vectores, podemos recuperar los nombres de los elementos con la función `names()`.
+
+```{r}
+names(bddInsect)
+names(bddInsect[[1]])
+```
+
+Cuando usamos los corchetes dobles `[[]]` o el signo `$`, R devuelve el contenido del elemento seleccionado. En nuestro ejemplo, los datos de abundancia están contenidos como un `vector`, por lo que R devuelve un elemento del tipo `vector`. Si queremos seleccionar un elemento de una `list` pero manteniendo el formato `list`, entonces podemos usar corchetes simples `[]`.
+
+```{r}
+print(bddInsect[[1]][[2]])
+typeof(bddInsect[[1]][[2]])
+is.list(bddInsect[[1]][[2]])
+
+print(bddInsect[[1]][2])
+typeof(bddInsect[[1]][2])
+is.list(bddInsect[[1]][2])
+```
+
+El uso de corchetes simples `[]` es útil cuando queremos recuperar varios elementos de una `list`. Por ejemplo, para seleccionar las abundancias de insectos de los primeros dos sitios de la primera especie, usaremos `bddInsect [[1]][c(1, 2)]` o alternativamente `bddInsect[[1]][c("site01", "sitio02")]`.
+
+```{r}
+print(bddInsect[[1]][c(1, 2)])
+print(bddInsect[[1]][c("site01", "site02")])
+```
+
+### Editar una `list`
+
+Una `list` se puede modificar de la misma manera que para el contenedor `vector`, es decir, haciendo referencia con corchetes al elemento que queremos modificar.
+
+```{r}
+print(miList02)
+miList02[[1]] <- 12
+print(miList02)
+miList02[[4]] <- c("d", "e", "f")
+print(miList02)
+miList02[[4]] <- c("a", "b", "c", miList02[[4]], "g", "h", "i")
+print(miList02)
+miList02[[4]][5] <- "eee"
+print(miList02)
+miList02[[3]] <- miList02[[3]] * 10 - 1
+print(miList02)
+miList02[[3]][2] <- miList02[[1]] * 100
+print(miList02)
+
+print(bddInsect)
+bddInsect[['Snonagrioides']][['site02']] <- c(2, 4, 6, 8)
+print(bddInsect)
+```
+
+Para combinar dos `list`, simplemente usamos la función `c()` que hemos usado para crear un `vector`.
+
+```{r}
+miList0203 <- c(miList02, miList03)
+print(miList0203)
+```
+
+Un objeto de tipo `list` se puede transformar en `vector` con la función `unlist()` si el formato de los elementos de la lista lo permite (un `vector` solo puede contener elementos del mismo tipo).
+
+```{r}
+miList05 <- list("a", c("b", "c"), "d")
+print(miList05)
+miVec24 <- unlist(miList05)
+print(miVec24)
+miList06 <- list(c(1, 2, 3), c(4, 5, 6, 7), 8, 9, c(10, 11))
+print(miList06)
+miVec25 <- unlist(miList06)
+print(miVec25)
+```
+
+Para agregar un elemento a una `list`, podemos usar la función `c()` o los corchetes dobles `[[ ]]`.
+
+```{r}
+print(miList05)
+miList05 <- c(miList05, "e")
+print(miList05)
+miList05[[5]] <- c("fgh", "ijk")
+print(miList05)
+```
+
+Para eliminar un elemento de una `list`, la técnica más rápida es establecer `NULL` en el elemento que deseamos eliminar.
+
+```{r}
+print(miList05)
+miList05[[2]] <- NULL
+print(miList05)
+```
 
 ## El contenedor `data.frame`
 
