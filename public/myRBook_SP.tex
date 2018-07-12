@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-07-06}
+    \date{2018-07-12}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -252,6 +252,15 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 
 Últimas modificaciones:
 
+\textbf{12/07/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  segunda parte del capítulo \emph{Contenedores de datos}: \emph{El
+  contenedor list}
+\end{itemize}
+
 \textbf{06/07/2018}
 
 \begin{itemize}
@@ -259,7 +268,7 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 \item
   edición y corrección del español (Camila B.)
 \item
-  primera parte del capitulo \emph{Contenedores de datos}: \emph{El
+  primera parte del capítulo \emph{Contenedores de datos}: \emph{El
   contenedor vector}
 \end{itemize}
 
@@ -3213,7 +3222,965 @@ y operaciones posibles en el capítulo sobre funciones.
 \section{\texorpdfstring{El contenedor
 \texttt{list}}{El contenedor list}}\label{el-contenedor-list}
 
-XXX
+El segundo tipo de contenedor que vamos a presentar es el contenedor
+\texttt{list}, que es también el segundo contenedor después del
+tipo\texttt{vector} debido a su importancia en la programación con R. El
+contenedor de tipo \texttt{list} le permite almacenar \textbf{listas} de
+elementos. Contrariamente a lo que vimos antes con el tipo
+\texttt{vector}, los elementos del tipo \texttt{list} pueden ser
+diferentes (por ejemplo, un \texttt{vector} de tipo \texttt{numeric},
+luego un \texttt{vector} de tipo \texttt{character}). Los elementos del
+tipo \texttt{list} también pueden ser contenedores diferentes (por
+ejemplo, un \texttt{vector}, luego una \texttt{list}). El tipo de
+contenedor \texttt{list} tendrá mas sentido cuando hayamos estudiado los
+\textbf{bucles} y \textbf{funciones} de la familia \texttt{apply}.
+
+\subsection{\texorpdfstring{Crear una
+\texttt{list}}{Crear una list}}\label{crear-una-list}
+
+Para crear una \texttt{list} usaremos la función \texttt{list()}, que
+toma elementos (objetos) como argumentos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList01 <-}\StringTok{ }\KeywordTok{list}\NormalTok{()}
+\KeywordTok{print}\NormalTok{(miList01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## list()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList02 <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DecValTok{5}\NormalTok{, }\StringTok{"qwerty"}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{))}
+\KeywordTok{print}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 5
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] "a" "b" "c"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList03 <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DecValTok{5}\NormalTok{, }\StringTok{"qwerty"}\NormalTok{, }\KeywordTok{list}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{)))}
+\KeywordTok{print}\NormalTok{(miList03)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 5
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [[3]][[1]]
+## [1] 4 5 6
+## 
+## [[3]][[2]]
+## [1] "a" "b" "c"
+\end{verbatim}
+
+La función \texttt{is.list()} se usa para probar si hemos creado un
+objeto de tipo \texttt{list}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.list}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "list"
+\end{verbatim}
+
+\subsection{\texorpdfstring{Acceder a los valores de una
+\texttt{lista}}{Acceder a los valores de una lista}}\label{acceder-a-los-valores-de-una-lista}
+
+Los elementos del contenedor \texttt{list} son identificables por los
+corchetes dobles \texttt{{[}{[}\ {]}{]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 5
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] "a" "b" "c"
+\end{verbatim}
+
+En el objeto de tipo \texttt{list} \texttt{miList02}, hay cuatro
+elementos identificables con \texttt{{[}{[}1{]}{]}},
+\texttt{{[}{[}2{]}{]}}, \texttt{{[}{[}3{]}{]}} y \texttt{{[}{[}4{]}{]}}.
+Cada uno de los elementos es de tipo \texttt{vector}. El primer elemento
+tiene un tamaño de 1 con elementos del tipo \texttt{double}, el segundo
+elemento tiene un tamaño de 1 con elementos del tipo \texttt{character},
+el tercero elemento tiene un tamaño de 3 con elementos del tipo
+\texttt{double}, y el cuarto elemento tiene un tamaño de 3 con elementos
+del tipo \texttt{character}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "list"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList02[[}\DecValTok{1}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(miList02[[}\DecValTok{1}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList02[[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "qwerty"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(miList02[[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList02[[}\DecValTok{3}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 5 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(miList02[[}\DecValTok{3}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList02[[}\DecValTok{4}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a" "b" "c"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(miList02[[}\DecValTok{4}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+El acceso al segundo elemento del \texttt{vector} ubicado en la cuarta
+posición de la \texttt{list} se hace con
+\texttt{miList02{[}{[}4{]}{]}{[}2{]}}. Usamos doble corchetes para el
+cuarto elemento de la \texttt{list}, luego corchetes simples para el
+segundo elemento del \texttt{vector}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList02[[}\DecValTok{4}\NormalTok{]][}\DecValTok{2}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "b"
+\end{verbatim}
+
+Como una \texttt{list} puede contener una o más \texttt{list}, podemos
+acceder a la información buscada combinando corchetes dobles. el objeto
+\texttt{miList04} es una \texttt{list} de dos elementos: la
+\texttt{list} \texttt{miList02} y la \texttt{list} \texttt{miList03}. El
+objeto \texttt{miList03} en sí contiene una \texttt{list} como tercer
+elemento. Para acceder al primer elemento del \texttt{vector} en la
+primera posición del elemento en la tercera posición del segundo
+elemento del \texttt{list} \texttt{miList04}, podemos usar
+\texttt{miList04{[}{[}2{]}{]}{[}{[}3{]}{]}{[}{[}1{]}{]}{[}1{]}}. No hay
+límite en cuanto a la profundidad de \texttt{list} pero en la práctica
+raramente hay necesidad de hacer \texttt{list} de \texttt{list} de
+\texttt{list}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList04 <-}\StringTok{ }\KeywordTok{list}\NormalTok{(miList02, miList03)}
+\KeywordTok{print}\NormalTok{(miList04)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [[1]][[1]]
+## [1] 5
+## 
+## [[1]][[2]]
+## [1] "qwerty"
+## 
+## [[1]][[3]]
+## [1] 4 5 6
+## 
+## [[1]][[4]]
+## [1] "a" "b" "c"
+## 
+## 
+## [[2]]
+## [[2]][[1]]
+## [1] 5
+## 
+## [[2]][[2]]
+## [1] "qwerty"
+## 
+## [[2]][[3]]
+## [[2]][[3]][[1]]
+## [1] 4 5 6
+## 
+## [[2]][[3]][[2]]
+## [1] "a" "b" "c"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList04[[}\DecValTok{2}\NormalTok{]][[}\DecValTok{3}\NormalTok{]][[}\DecValTok{1}\NormalTok{]][}\DecValTok{1}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+Para concretar el ejemplo anterior, podemos imaginar especies de
+barrenadores del maíz (\emph{Sesamia nonagrioides} y \emph{Ostrinia
+nubilalis}), muestreados en diferentes sitios, con diferentes
+abundancias en cuatro fechas. Aquí daremos nombres a los elementos de
+las \texttt{list}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bddInsect <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Snonagrioides =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{site01 =} \KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{), }\DataTypeTok{site02 =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{41}\NormalTok{), }\DataTypeTok{site03 =} \KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{)), }\DataTypeTok{Onubilalis =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{site01 =} \KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\DataTypeTok{site02 =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{site03 =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)))}
+\KeywordTok{print}\NormalTok{(bddInsect)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $Snonagrioides
+## $Snonagrioides$site01
+## [1] 12  5  8  7
+## 
+## $Snonagrioides$site02
+## [1]  5 23  4 41
+## 
+## $Snonagrioides$site03
+## [1] 12  0  0  0
+## 
+## 
+## $Onubilalis
+## $Onubilalis$site01
+## [1] 12  1  2  3
+## 
+## $Onubilalis$site02
+## [1] 0 0 0 1
+## 
+## $Onubilalis$site03
+## [1] 1 1 2 3
+\end{verbatim}
+
+\begin{rmdstyle}
+Leer una larga línea de código como la línea para crear el objeto
+\texttt{bddInsect} resulta difícil porque la profundidad de los
+elementos solo se puede deducir de los paréntesis. Es por eso que vamos
+a reorganizar el código para que sea más legible con \textbf{margen
+adicional}. La margen adicional implica poner información en diferentes
+niveles para que podamos identificar rápidamente los diferentes niveles
+de un código. La margen adicional se realiza con la tecla de tabulación
+del teclado. Volveremos a la margen adicional con más detalles en el
+capítulo sobre \textbf{bucles}. Recordaremos por el momento que si una
+línea de código es demasiado larga, obtenemos legibilidad yendo a la
+línea y que R leerá todo como una sola línea de código.
+\end{rmdstyle}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bddInsect <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+  \DataTypeTok{Snonagrioides =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{site01 =} \KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{), }
+    \DataTypeTok{site02 =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{41}\NormalTok{), }
+    \DataTypeTok{site03 =} \KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{Onubilalis =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{site01 =} \KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }
+    \DataTypeTok{site02 =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+    \DataTypeTok{site03 =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Podemos seleccionar los datos de abundancia del segundo sitio de la
+primera especie como previamente
+\texttt{bddInsect{[}{[}1{]}{]}{[}{[}2{]}{]}}, o alternativamente usando
+los nombres de los elementos \texttt{bddInsect\$Snonagrioides\$site02}.
+Para hacer esto usamos el signo \texttt{\$}, o como alternativa el
+nombre de los elementos con comillas simples o dobles
+\texttt{bddInsect{[}{[}\textquotesingle{}Snonagrioides\textquotesingle{}{]}{]}{[}{[}\textquotesingle{}sitio02\textquotesingle{}{]}{]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]][[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  5 23  4 41
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(bddInsect}\OperatorTok{$}\NormalTok{Snonagrioides}\OperatorTok{$}\NormalTok{site02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  5 23  4 41
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(bddInsect[[}\StringTok{'Snonagrioides'}\NormalTok{]][[}\StringTok{'site02'}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  5 23  4 41
+\end{verbatim}
+
+En cuanto a los vectores, podemos recuperar los nombres de los elementos
+con la función \texttt{names()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{names}\NormalTok{(bddInsect)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Snonagrioides" "Onubilalis"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{names}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "site01" "site02" "site03"
+\end{verbatim}
+
+Cuando usamos los corchetes dobles \texttt{{[}{[}{]}{]}} o el signo
+\texttt{\$}, R devuelve el contenido del elemento seleccionado. En
+nuestro ejemplo, los datos de abundancia están contenidos como un
+\texttt{vector}, por lo que R devuelve un elemento del tipo
+\texttt{vector}. Si queremos seleccionar un elemento de una
+\texttt{list} pero manteniendo el formato \texttt{list}, entonces
+podemos usar corchetes simples \texttt{{[}{]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]][[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  5 23  4 41
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]][[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.list}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]][[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]][}\DecValTok{2}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $site02
+## [1]  5 23  4 41
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]][}\DecValTok{2}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "list"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.list}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]][}\DecValTok{2}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+El uso de corchetes simples \texttt{{[}{]}} es útil cuando queremos
+recuperar varios elementos de una \texttt{list}. Por ejemplo, para
+seleccionar las abundancias de insectos de los primeros dos sitios de la
+primera especie, usaremos
+\texttt{bddInsect\ {[}{[}1{]}{]}{[}c(1,\ 2){]}} o alternativamente
+\texttt{bddInsect{[}{[}1{]}{]}{[}c("site01",\ "sitio02"){]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]][}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $site01
+## [1] 12  5  8  7
+## 
+## $site02
+## [1]  5 23  4 41
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(bddInsect[[}\DecValTok{1}\NormalTok{]][}\KeywordTok{c}\NormalTok{(}\StringTok{"site01"}\NormalTok{, }\StringTok{"site02"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $site01
+## [1] 12  5  8  7
+## 
+## $site02
+## [1]  5 23  4 41
+\end{verbatim}
+
+\subsection{\texorpdfstring{Editar una
+\texttt{list}}{Editar una list}}\label{editar-una-list}
+
+Una \texttt{list} se puede modificar de la misma manera que para el
+contenedor \texttt{vector}, es decir, haciendo referencia con corchetes
+al elemento que queremos modificar.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 5
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] "a" "b" "c"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList02[[}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\DecValTok{12}
+\KeywordTok{print}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] "a" "b" "c"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList02[[}\DecValTok{4}\NormalTok{]] <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"d"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"f"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] "d" "e" "f"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList02[[}\DecValTok{4}\NormalTok{]] <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, miList02[[}\DecValTok{4}\NormalTok{]], }\StringTok{"g"}\NormalTok{, }\StringTok{"h"}\NormalTok{, }\StringTok{"i"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] "a" "b" "c" "d" "e" "f" "g" "h" "i"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList02[[}\DecValTok{4}\NormalTok{]][}\DecValTok{5}\NormalTok{] <-}\StringTok{ "eee"}
+\KeywordTok{print}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] "a"   "b"   "c"   "d"   "eee" "f"   "g"   "h"   "i"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList02[[}\DecValTok{3}\NormalTok{]] <-}\StringTok{ }\NormalTok{miList02[[}\DecValTok{3}\NormalTok{]] }\OperatorTok{*}\StringTok{ }\DecValTok{10} \OperatorTok{-}\StringTok{ }\DecValTok{1}
+\KeywordTok{print}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1] 39 49 59
+## 
+## [[4]]
+## [1] "a"   "b"   "c"   "d"   "eee" "f"   "g"   "h"   "i"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList02[[}\DecValTok{3}\NormalTok{]][}\DecValTok{2}\NormalTok{] <-}\StringTok{ }\NormalTok{miList02[[}\DecValTok{1}\NormalTok{]] }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\KeywordTok{print}\NormalTok{(miList02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1]   39 1200   59
+## 
+## [[4]]
+## [1] "a"   "b"   "c"   "d"   "eee" "f"   "g"   "h"   "i"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(bddInsect)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $Snonagrioides
+## $Snonagrioides$site01
+## [1] 12  5  8  7
+## 
+## $Snonagrioides$site02
+## [1]  5 23  4 41
+## 
+## $Snonagrioides$site03
+## [1] 12  0  0  0
+## 
+## 
+## $Onubilalis
+## $Onubilalis$site01
+## [1] 12  1  2  3
+## 
+## $Onubilalis$site02
+## [1] 0 0 0 1
+## 
+## $Onubilalis$site03
+## [1] 1 1 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bddInsect[[}\StringTok{'Snonagrioides'}\NormalTok{]][[}\StringTok{'site02'}\NormalTok{]] <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(bddInsect)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $Snonagrioides
+## $Snonagrioides$site01
+## [1] 12  5  8  7
+## 
+## $Snonagrioides$site02
+## [1] 2 4 6 8
+## 
+## $Snonagrioides$site03
+## [1] 12  0  0  0
+## 
+## 
+## $Onubilalis
+## $Onubilalis$site01
+## [1] 12  1  2  3
+## 
+## $Onubilalis$site02
+## [1] 0 0 0 1
+## 
+## $Onubilalis$site03
+## [1] 1 1 2 3
+\end{verbatim}
+
+Para combinar dos \texttt{list}, simplemente usamos la función
+\texttt{c()} que hemos usado para crear un \texttt{vector}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList0203 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(miList02, miList03)}
+\KeywordTok{print}\NormalTok{(miList0203)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] "qwerty"
+## 
+## [[3]]
+## [1]   39 1200   59
+## 
+## [[4]]
+## [1] "a"   "b"   "c"   "d"   "eee" "f"   "g"   "h"   "i"  
+## 
+## [[5]]
+## [1] 5
+## 
+## [[6]]
+## [1] "qwerty"
+## 
+## [[7]]
+## [[7]][[1]]
+## [1] 4 5 6
+## 
+## [[7]][[2]]
+## [1] "a" "b" "c"
+\end{verbatim}
+
+Un objeto de tipo \texttt{list} se puede transformar en \texttt{vector}
+con la función \texttt{unlist()} si el formato de los elementos de la
+lista lo permite (un \texttt{vector} solo puede contener elementos del
+mismo tipo).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList05 <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{), }\StringTok{"d"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miList05)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "a"
+## 
+## [[2]]
+## [1] "b" "c"
+## 
+## [[3]]
+## [1] "d"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miVec24 <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(miList05)}
+\KeywordTok{print}\NormalTok{(miVec24)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a" "b" "c" "d"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList06 <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{), }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{11}\NormalTok{))}
+\KeywordTok{print}\NormalTok{(miList06)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 1 2 3
+## 
+## [[2]]
+## [1] 4 5 6 7
+## 
+## [[3]]
+## [1] 8
+## 
+## [[4]]
+## [1] 9
+## 
+## [[5]]
+## [1] 10 11
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miVec25 <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(miList06)}
+\KeywordTok{print}\NormalTok{(miVec25)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]  1  2  3  4  5  6  7  8  9 10 11
+\end{verbatim}
+
+Para agregar un elemento a una \texttt{list}, podemos usar la función
+\texttt{c()} o los corchetes dobles \texttt{{[}{[}\ {]}{]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList05)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "a"
+## 
+## [[2]]
+## [1] "b" "c"
+## 
+## [[3]]
+## [1] "d"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList05 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(miList05, }\StringTok{"e"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miList05)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "a"
+## 
+## [[2]]
+## [1] "b" "c"
+## 
+## [[3]]
+## [1] "d"
+## 
+## [[4]]
+## [1] "e"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList05[[}\DecValTok{5}\NormalTok{]] <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"fgh"}\NormalTok{, }\StringTok{"ijk"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miList05)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "a"
+## 
+## [[2]]
+## [1] "b" "c"
+## 
+## [[3]]
+## [1] "d"
+## 
+## [[4]]
+## [1] "e"
+## 
+## [[5]]
+## [1] "fgh" "ijk"
+\end{verbatim}
+
+Para eliminar un elemento de una \texttt{list}, la técnica más rápida es
+establecer \texttt{NULL} en el elemento que deseamos eliminar.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miList05)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "a"
+## 
+## [[2]]
+## [1] "b" "c"
+## 
+## [[3]]
+## [1] "d"
+## 
+## [[4]]
+## [1] "e"
+## 
+## [[5]]
+## [1] "fgh" "ijk"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miList05[[}\DecValTok{2}\NormalTok{]] <-}\StringTok{ }\OtherTok{NULL}
+\KeywordTok{print}\NormalTok{(miList05)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "a"
+## 
+## [[2]]
+## [1] "d"
+## 
+## [[3]]
+## [1] "e"
+## 
+## [[4]]
+## [1] "fgh" "ijk"
+\end{verbatim}
 
 \section{\texorpdfstring{El contenedor
 \texttt{data.frame}}{El contenedor data.frame}}\label{el-contenedor-data.frame}

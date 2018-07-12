@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-07-06">
+<meta name="date" content="2018-07-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -161,7 +161,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.1.4" data-path="dataType2.html"><a href="dataType2.html#dar-nombres-a-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>8.1.4</b> Dar nombres a los elementos de un <code>vector</code></a></li>
 <li class="chapter" data-level="8.1.5" data-path="dataType2.html"><a href="dataType2.html#editar-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>8.1.5</b> Editar los elementos de un <code>vector</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-list"><i class="fa fa-check"></i><b>8.2</b> El contenedor <code>list</code></a></li>
+<li class="chapter" data-level="8.2" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-list"><i class="fa fa-check"></i><b>8.2</b> El contenedor <code>list</code></a><ul>
+<li class="chapter" data-level="8.2.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-list"><i class="fa fa-check"></i><b>8.2.1</b> Crear una <code>list</code></a></li>
+<li class="chapter" data-level="8.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-lista"><i class="fa fa-check"></i><b>8.2.2</b> Acceder a los valores de una <code>lista</code></a></li>
+<li class="chapter" data-level="8.2.3" data-path="dataType2.html"><a href="dataType2.html#editar-una-list"><i class="fa fa-check"></i><b>8.2.3</b> Editar una <code>list</code></a></li>
+</ul></li>
 <li class="chapter" data-level="8.3" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-data.frame"><i class="fa fa-check"></i><b>8.3</b> El contenedor <code>data.frame</code></a></li>
 <li class="chapter" data-level="8.4" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-matrix"><i class="fa fa-check"></i><b>8.4</b> El contenedor <code>matrix</code></a></li>
 <li class="chapter" data-level="8.5" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-array"><i class="fa fa-check"></i><b>8.5</b> El contenedor <code>array</code></a></li>
@@ -462,7 +466,460 @@ miVec21 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st"
 </div>
 <div id="el-contenedor-list" class="section level2">
 <h2><span class="header-section-number">8.2</span> El contenedor <code>list</code></h2>
-<p>XXX</p>
+<p>El segundo tipo de contenedor que vamos a presentar es el contenedor <code>list</code>, que es también el segundo contenedor después del tipo<code>vector</code> debido a su importancia en la programación con R. El contenedor de tipo <code>list</code> le permite almacenar <strong>listas</strong> de elementos. Contrariamente a lo que vimos antes con el tipo <code>vector</code>, los elementos del tipo <code>list</code> pueden ser diferentes (por ejemplo, un <code>vector</code> de tipo <code>numeric</code>, luego un <code>vector</code> de tipo <code>character</code>). Los elementos del tipo <code>list</code> también pueden ser contenedores diferentes (por ejemplo, un <code>vector</code>, luego una <code>list</code>). El tipo de contenedor <code>list</code> tendrá mas sentido cuando hayamos estudiado los <strong>bucles</strong> y <strong>funciones</strong> de la familia <code>apply</code>.</p>
+<div id="crear-una-list" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Crear una <code>list</code></h3>
+<p>Para crear una <code>list</code> usaremos la función <code>list()</code>, que toma elementos (objetos) como argumentos.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList01 &lt;-<span class="st"> </span><span class="kw">list</span>()
+<span class="kw">print</span>(miList01)</code></pre></div>
+<pre><code>## list()</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList02 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">5</span>, <span class="st">&quot;qwerty&quot;</span>, <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>))
+<span class="kw">print</span>(miList02)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 5
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList03 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">5</span>, <span class="st">&quot;qwerty&quot;</span>, <span class="kw">list</span>(<span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)))
+<span class="kw">print</span>(miList03)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 5
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [[3]][[1]]
+## [1] 4 5 6
+## 
+## [[3]][[2]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<p>La función <code>is.list()</code> se usa para probar si hemos creado un objeto de tipo <code>list</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.list</span>(miList02)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(miList02)</code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+</div>
+<div id="acceder-a-los-valores-de-una-lista" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> Acceder a los valores de una <code>lista</code></h3>
+<p>Los elementos del contenedor <code>list</code> son identificables por los corchetes dobles <code>[[ ]]</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList02)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 5
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<p>En el objeto de tipo <code>list</code> <code>miList02</code>, hay cuatro elementos identificables con <code>[[1]]</code>, <code>[[2]]</code>, <code>[[3]]</code> y <code>[[4]]</code>. Cada uno de los elementos es de tipo <code>vector</code>. El primer elemento tiene un tamaño de 1 con elementos del tipo <code>double</code>, el segundo elemento tiene un tamaño de 1 con elementos del tipo <code>character</code>, el tercero elemento tiene un tamaño de 3 con elementos del tipo <code>double</code>, y el cuarto elemento tiene un tamaño de 3 con elementos del tipo <code>character</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(miList02)</code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList02[[<span class="dv">1</span>]])</code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(miList02[[<span class="dv">1</span>]])</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList02[[<span class="dv">2</span>]])</code></pre></div>
+<pre><code>## [1] &quot;qwerty&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(miList02[[<span class="dv">2</span>]])</code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList02[[<span class="dv">3</span>]])</code></pre></div>
+<pre><code>## [1] 4 5 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(miList02[[<span class="dv">3</span>]])</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList02[[<span class="dv">4</span>]])</code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(miList02[[<span class="dv">4</span>]])</code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>El acceso al segundo elemento del <code>vector</code> ubicado en la cuarta posición de la <code>list</code> se hace con <code>miList02[[4]][2]</code>. Usamos doble corchetes para el cuarto elemento de la <code>list</code>, luego corchetes simples para el segundo elemento del <code>vector</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList02[[<span class="dv">4</span>]][<span class="dv">2</span>])</code></pre></div>
+<pre><code>## [1] &quot;b&quot;</code></pre>
+<p>Como una <code>list</code> puede contener una o más <code>list</code>, podemos acceder a la información buscada combinando corchetes dobles. el objeto <code>miList04</code> es una <code>list</code> de dos elementos: la <code>list</code> <code>miList02</code> y la <code>list</code> <code>miList03</code>. El objeto <code>miList03</code> en sí contiene una <code>list</code> como tercer elemento. Para acceder al primer elemento del <code>vector</code> en la primera posición del elemento en la tercera posición del segundo elemento del <code>list</code> <code>miList04</code>, podemos usar <code>miList04[[2]][[3]][[1]][1]</code>. No hay límite en cuanto a la profundidad de <code>list</code> pero en la práctica raramente hay necesidad de hacer <code>list</code> de <code>list</code> de <code>list</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList04 &lt;-<span class="st"> </span><span class="kw">list</span>(miList02, miList03)
+<span class="kw">print</span>(miList04)</code></pre></div>
+<pre><code>## [[1]]
+## [[1]][[1]]
+## [1] 5
+## 
+## [[1]][[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[1]][[3]]
+## [1] 4 5 6
+## 
+## [[1]][[4]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;
+## 
+## 
+## [[2]]
+## [[2]][[1]]
+## [1] 5
+## 
+## [[2]][[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[2]][[3]]
+## [[2]][[3]][[1]]
+## [1] 4 5 6
+## 
+## [[2]][[3]][[2]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList04[[<span class="dv">2</span>]][[<span class="dv">3</span>]][[<span class="dv">1</span>]][<span class="dv">1</span>])</code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<p>Para concretar el ejemplo anterior, podemos imaginar especies de barrenadores del maíz (<em>Sesamia nonagrioides</em> y <em>Ostrinia nubilalis</em>), muestreados en diferentes sitios, con diferentes abundancias en cuatro fechas. Aquí daremos nombres a los elementos de las <code>list</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bddInsect &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">Snonagrioides =</span> <span class="kw">list</span>(<span class="dt">site01 =</span> <span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">7</span>), <span class="dt">site02 =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">23</span>, <span class="dv">4</span>, <span class="dv">41</span>), <span class="dt">site03 =</span> <span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)), <span class="dt">Onubilalis =</span> <span class="kw">list</span>(<span class="dt">site01 =</span> <span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">site02 =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">site03 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)))
+<span class="kw">print</span>(bddInsect)</code></pre></div>
+<pre><code>## $Snonagrioides
+## $Snonagrioides$site01
+## [1] 12  5  8  7
+## 
+## $Snonagrioides$site02
+## [1]  5 23  4 41
+## 
+## $Snonagrioides$site03
+## [1] 12  0  0  0
+## 
+## 
+## $Onubilalis
+## $Onubilalis$site01
+## [1] 12  1  2  3
+## 
+## $Onubilalis$site02
+## [1] 0 0 0 1
+## 
+## $Onubilalis$site03
+## [1] 1 1 2 3</code></pre>
+<div class="rmdstyle">
+<p>
+Leer una larga línea de código como la línea para crear el objeto <code>bddInsect</code> resulta difícil porque la profundidad de los elementos solo se puede deducir de los paréntesis. Es por eso que vamos a reorganizar el código para que sea más legible con <strong>margen adicional</strong>. La margen adicional implica poner información en diferentes niveles para que podamos identificar rápidamente los diferentes niveles de un código. La margen adicional se realiza con la tecla de tabulación del teclado. Volveremos a la margen adicional con más detalles en el capítulo sobre <strong>bucles</strong>. Recordaremos por el momento que si una línea de código es demasiado larga, obtenemos legibilidad yendo a la línea y que R leerá todo como una sola línea de código.
+</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bddInsect &lt;-<span class="st"> </span><span class="kw">list</span>(
+  <span class="dt">Snonagrioides =</span> <span class="kw">list</span>(
+    <span class="dt">site01 =</span> <span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">7</span>), 
+    <span class="dt">site02 =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">23</span>, <span class="dv">4</span>, <span class="dv">41</span>), 
+    <span class="dt">site03 =</span> <span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)
+  ), 
+  <span class="dt">Onubilalis =</span> <span class="kw">list</span>(
+    <span class="dt">site01 =</span> <span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), 
+    <span class="dt">site02 =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>), 
+    <span class="dt">site03 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+  )
+)</code></pre></div>
+<p>Podemos seleccionar los datos de abundancia del segundo sitio de la primera especie como previamente <code>bddInsect[[1]][[2]]</code>, o alternativamente usando los nombres de los elementos <code>bddInsect$Snonagrioides$site02</code>. Para hacer esto usamos el signo <code>$</code>, o como alternativa el nombre de los elementos con comillas simples o dobles <code>bddInsect[['Snonagrioides']][['sitio02']]</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bddInsect[[<span class="dv">1</span>]][[<span class="dv">2</span>]])</code></pre></div>
+<pre><code>## [1]  5 23  4 41</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bddInsect<span class="op">$</span>Snonagrioides<span class="op">$</span>site02)</code></pre></div>
+<pre><code>## [1]  5 23  4 41</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bddInsect[[<span class="st">&#39;Snonagrioides&#39;</span>]][[<span class="st">&#39;site02&#39;</span>]])</code></pre></div>
+<pre><code>## [1]  5 23  4 41</code></pre>
+<p>En cuanto a los vectores, podemos recuperar los nombres de los elementos con la función <code>names()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(bddInsect)</code></pre></div>
+<pre><code>## [1] &quot;Snonagrioides&quot; &quot;Onubilalis&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(bddInsect[[<span class="dv">1</span>]])</code></pre></div>
+<pre><code>## [1] &quot;site01&quot; &quot;site02&quot; &quot;site03&quot;</code></pre>
+<p>Cuando usamos los corchetes dobles <code>[[]]</code> o el signo <code>$</code>, R devuelve el contenido del elemento seleccionado. En nuestro ejemplo, los datos de abundancia están contenidos como un <code>vector</code>, por lo que R devuelve un elemento del tipo <code>vector</code>. Si queremos seleccionar un elemento de una <code>list</code> pero manteniendo el formato <code>list</code>, entonces podemos usar corchetes simples <code>[]</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bddInsect[[<span class="dv">1</span>]][[<span class="dv">2</span>]])</code></pre></div>
+<pre><code>## [1]  5 23  4 41</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(bddInsect[[<span class="dv">1</span>]][[<span class="dv">2</span>]])</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.list</span>(bddInsect[[<span class="dv">1</span>]][[<span class="dv">2</span>]])</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bddInsect[[<span class="dv">1</span>]][<span class="dv">2</span>])</code></pre></div>
+<pre><code>## $site02
+## [1]  5 23  4 41</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(bddInsect[[<span class="dv">1</span>]][<span class="dv">2</span>])</code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.list</span>(bddInsect[[<span class="dv">1</span>]][<span class="dv">2</span>])</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>El uso de corchetes simples <code>[]</code> es útil cuando queremos recuperar varios elementos de una <code>list</code>. Por ejemplo, para seleccionar las abundancias de insectos de los primeros dos sitios de la primera especie, usaremos <code>bddInsect [[1]][c(1, 2)]</code> o alternativamente <code>bddInsect[[1]][c(&quot;site01&quot;, &quot;sitio02&quot;)]</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bddInsect[[<span class="dv">1</span>]][<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)])</code></pre></div>
+<pre><code>## $site01
+## [1] 12  5  8  7
+## 
+## $site02
+## [1]  5 23  4 41</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bddInsect[[<span class="dv">1</span>]][<span class="kw">c</span>(<span class="st">&quot;site01&quot;</span>, <span class="st">&quot;site02&quot;</span>)])</code></pre></div>
+<pre><code>## $site01
+## [1] 12  5  8  7
+## 
+## $site02
+## [1]  5 23  4 41</code></pre>
+</div>
+<div id="editar-una-list" class="section level3">
+<h3><span class="header-section-number">8.2.3</span> Editar una <code>list</code></h3>
+<p>Una <code>list</code> se puede modificar de la misma manera que para el contenedor <code>vector</code>, es decir, haciendo referencia con corchetes al elemento que queremos modificar.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList02)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 5
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList02[[<span class="dv">1</span>]] &lt;-<span class="st"> </span><span class="dv">12</span>
+<span class="kw">print</span>(miList02)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList02[[<span class="dv">4</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>)
+<span class="kw">print</span>(miList02)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] &quot;d&quot; &quot;e&quot; &quot;f&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList02[[<span class="dv">4</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, miList02[[<span class="dv">4</span>]], <span class="st">&quot;g&quot;</span>, <span class="st">&quot;h&quot;</span>, <span class="st">&quot;i&quot;</span>)
+<span class="kw">print</span>(miList02)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList02[[<span class="dv">4</span>]][<span class="dv">5</span>] &lt;-<span class="st"> &quot;eee&quot;</span>
+<span class="kw">print</span>(miList02)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1] 4 5 6
+## 
+## [[4]]
+## [1] &quot;a&quot;   &quot;b&quot;   &quot;c&quot;   &quot;d&quot;   &quot;eee&quot; &quot;f&quot;   &quot;g&quot;   &quot;h&quot;   &quot;i&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList02[[<span class="dv">3</span>]] &lt;-<span class="st"> </span>miList02[[<span class="dv">3</span>]] <span class="op">*</span><span class="st"> </span><span class="dv">10</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
+<span class="kw">print</span>(miList02)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1] 39 49 59
+## 
+## [[4]]
+## [1] &quot;a&quot;   &quot;b&quot;   &quot;c&quot;   &quot;d&quot;   &quot;eee&quot; &quot;f&quot;   &quot;g&quot;   &quot;h&quot;   &quot;i&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList02[[<span class="dv">3</span>]][<span class="dv">2</span>] &lt;-<span class="st"> </span>miList02[[<span class="dv">1</span>]] <span class="op">*</span><span class="st"> </span><span class="dv">100</span>
+<span class="kw">print</span>(miList02)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1]   39 1200   59
+## 
+## [[4]]
+## [1] &quot;a&quot;   &quot;b&quot;   &quot;c&quot;   &quot;d&quot;   &quot;eee&quot; &quot;f&quot;   &quot;g&quot;   &quot;h&quot;   &quot;i&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bddInsect)</code></pre></div>
+<pre><code>## $Snonagrioides
+## $Snonagrioides$site01
+## [1] 12  5  8  7
+## 
+## $Snonagrioides$site02
+## [1]  5 23  4 41
+## 
+## $Snonagrioides$site03
+## [1] 12  0  0  0
+## 
+## 
+## $Onubilalis
+## $Onubilalis$site01
+## [1] 12  1  2  3
+## 
+## $Onubilalis$site02
+## [1] 0 0 0 1
+## 
+## $Onubilalis$site03
+## [1] 1 1 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bddInsect[[<span class="st">&#39;Snonagrioides&#39;</span>]][[<span class="st">&#39;site02&#39;</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)
+<span class="kw">print</span>(bddInsect)</code></pre></div>
+<pre><code>## $Snonagrioides
+## $Snonagrioides$site01
+## [1] 12  5  8  7
+## 
+## $Snonagrioides$site02
+## [1] 2 4 6 8
+## 
+## $Snonagrioides$site03
+## [1] 12  0  0  0
+## 
+## 
+## $Onubilalis
+## $Onubilalis$site01
+## [1] 12  1  2  3
+## 
+## $Onubilalis$site02
+## [1] 0 0 0 1
+## 
+## $Onubilalis$site03
+## [1] 1 1 2 3</code></pre>
+<p>Para combinar dos <code>list</code>, simplemente usamos la función <code>c()</code> que hemos usado para crear un <code>vector</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList0203 &lt;-<span class="st"> </span><span class="kw">c</span>(miList02, miList03)
+<span class="kw">print</span>(miList0203)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] &quot;qwerty&quot;
+## 
+## [[3]]
+## [1]   39 1200   59
+## 
+## [[4]]
+## [1] &quot;a&quot;   &quot;b&quot;   &quot;c&quot;   &quot;d&quot;   &quot;eee&quot; &quot;f&quot;   &quot;g&quot;   &quot;h&quot;   &quot;i&quot;  
+## 
+## [[5]]
+## [1] 5
+## 
+## [[6]]
+## [1] &quot;qwerty&quot;
+## 
+## [[7]]
+## [[7]][[1]]
+## [1] 4 5 6
+## 
+## [[7]][[2]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<p>Un objeto de tipo <code>list</code> se puede transformar en <code>vector</code> con la función <code>unlist()</code> si el formato de los elementos de la lista lo permite (un <code>vector</code> solo puede contener elementos del mismo tipo).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList05 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>), <span class="st">&quot;d&quot;</span>)
+<span class="kw">print</span>(miList05)</code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;a&quot;
+## 
+## [[2]]
+## [1] &quot;b&quot; &quot;c&quot;
+## 
+## [[3]]
+## [1] &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miVec24 &lt;-<span class="st"> </span><span class="kw">unlist</span>(miList05)
+<span class="kw">print</span>(miVec24)</code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList06 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>), <span class="dv">8</span>, <span class="dv">9</span>, <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">11</span>))
+<span class="kw">print</span>(miList06)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 1 2 3
+## 
+## [[2]]
+## [1] 4 5 6 7
+## 
+## [[3]]
+## [1] 8
+## 
+## [[4]]
+## [1] 9
+## 
+## [[5]]
+## [1] 10 11</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miVec25 &lt;-<span class="st"> </span><span class="kw">unlist</span>(miList06)
+<span class="kw">print</span>(miVec25)</code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11</code></pre>
+<p>Para agregar un elemento a una <code>list</code>, podemos usar la función <code>c()</code> o los corchetes dobles <code>[[ ]]</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList05)</code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;a&quot;
+## 
+## [[2]]
+## [1] &quot;b&quot; &quot;c&quot;
+## 
+## [[3]]
+## [1] &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList05 &lt;-<span class="st"> </span><span class="kw">c</span>(miList05, <span class="st">&quot;e&quot;</span>)
+<span class="kw">print</span>(miList05)</code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;a&quot;
+## 
+## [[2]]
+## [1] &quot;b&quot; &quot;c&quot;
+## 
+## [[3]]
+## [1] &quot;d&quot;
+## 
+## [[4]]
+## [1] &quot;e&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList05[[<span class="dv">5</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;fgh&quot;</span>, <span class="st">&quot;ijk&quot;</span>)
+<span class="kw">print</span>(miList05)</code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;a&quot;
+## 
+## [[2]]
+## [1] &quot;b&quot; &quot;c&quot;
+## 
+## [[3]]
+## [1] &quot;d&quot;
+## 
+## [[4]]
+## [1] &quot;e&quot;
+## 
+## [[5]]
+## [1] &quot;fgh&quot; &quot;ijk&quot;</code></pre>
+<p>Para eliminar un elemento de una <code>list</code>, la técnica más rápida es establecer <code>NULL</code> en el elemento que deseamos eliminar.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList05)</code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;a&quot;
+## 
+## [[2]]
+## [1] &quot;b&quot; &quot;c&quot;
+## 
+## [[3]]
+## [1] &quot;d&quot;
+## 
+## [[4]]
+## [1] &quot;e&quot;
+## 
+## [[5]]
+## [1] &quot;fgh&quot; &quot;ijk&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList05[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="ot">NULL</span>
+<span class="kw">print</span>(miList05)</code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;a&quot;
+## 
+## [[2]]
+## [1] &quot;d&quot;
+## 
+## [[3]]
+## [1] &quot;e&quot;
+## 
+## [[4]]
+## [1] &quot;fgh&quot; &quot;ijk&quot;</code></pre>
+</div>
 </div>
 <div id="el-contenedor-data.frame" class="section level2">
 <h2><span class="header-section-number">8.3</span> El contenedor <code>data.frame</code></h2>
