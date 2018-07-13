@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-07-12">
+<meta name="date" content="2018-07-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -106,8 +106,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a></li>
 <li class="chapter" data-level="2" data-path="remerciements.html"><a href="remerciements.html"><i class="fa fa-check"></i><b>2</b> Agradecimientos</a></li>
 <li class="chapter" data-level="3" data-path="licence.html"><a href="licence.html"><i class="fa fa-check"></i><b>3</b> Licencia</a></li>
-<li class="chapter" data-level="4" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>4</b> introducción</a><ul>
-<li class="chapter" data-level="4.1" data-path="intro.html"><a href="intro.html#por-que-apprender-r"><i class="fa fa-check"></i><b>4.1</b> Por qué apprender R</a></li>
+<li class="chapter" data-level="4" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>4</b> Introducción</a><ul>
+<li class="chapter" data-level="4.1" data-path="intro.html"><a href="intro.html#por-que-aprender-r"><i class="fa fa-check"></i><b>4.1</b> ¿Por qué aprender R?</a></li>
 <li class="chapter" data-level="4.2" data-path="intro.html"><a href="intro.html#este-libro"><i class="fa fa-check"></i><b>4.2</b> Este libro</a></li>
 <li class="chapter" data-level="4.3" data-path="intro.html"><a href="intro.html#lectura-adicional-en-espanol"><i class="fa fa-check"></i><b>4.3</b> Lectura adicional en español</a></li>
 </ul></li>
@@ -163,7 +163,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-list"><i class="fa fa-check"></i><b>8.2</b> El contenedor <code>list</code></a><ul>
 <li class="chapter" data-level="8.2.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-list"><i class="fa fa-check"></i><b>8.2.1</b> Crear una <code>list</code></a></li>
-<li class="chapter" data-level="8.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-lista"><i class="fa fa-check"></i><b>8.2.2</b> Acceder a los valores de una <code>lista</code></a></li>
+<li class="chapter" data-level="8.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-list"><i class="fa fa-check"></i><b>8.2.2</b> Acceder a los valores de una <code>list</code></a></li>
 <li class="chapter" data-level="8.2.3" data-path="dataType2.html"><a href="dataType2.html#editar-una-list"><i class="fa fa-check"></i><b>8.2.3</b> Editar una <code>list</code></a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-data.frame"><i class="fa fa-check"></i><b>8.3</b> El contenedor <code>data.frame</code></a></li>
@@ -250,7 +250,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number"> 5</span> Primeros pasos</h1>
 <div id="instalar-r" class="section level2">
 <h2><span class="header-section-number">5.1</span> Instalar R</h2>
-<p>El programa para instalar el software R se puede descargar desde el sitio web de R: <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>. En el sitio web de R, primero es necesario elegir un espejo CRAN (servidor desde el cual descargar R, el más cercano a su ubicación geográfica), luego descargue el archivo <em>base</em>. Los usuarios de Linux pueden preferir un <code>sudo apt-get install r-base</code>.</p>
+<p>El programa para instalar el software R se puede descargar desde el sitio web de R: <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>. En el sitio web de R, primero es necesario elegir un espejo CRAN (servidor desde el cual se debe descargar R, y desde el más cercano a su ubicación geográfica), luego descargue el archivo <em>base</em>. Los usuarios de Linux pueden preferir un <code>sudo apt-get install r-base</code>.</p>
 <div class="rmdnote">
 <p>
 El software R se puede descargar de muchos servidores CRAN (Comprehensive R Archive Network) de todo el mundo. Estos servidores se llaman espejos. La elección del espejo es manual. La información adicional como esta nota siempre estará representada con este pictograma <em>información</em>.
@@ -269,7 +269,7 @@ Figure 5.1: Captura de pantalla de la consola R en Windows.
 <p>La consola corresponde a la interfaz donde se interpretará el código, es decir, donde el código será transformado en lenguaje de máquina, ejecutado por la computadora y retransmitido en forma legible por humanos. Esto es análogo a lo que sucede en una calculadora (Figura <a href="premiersPas.html#fig:screenCapConsoleCal">5.2</a>). Así es como se usará R más adelante en esta sección.</p>
 <div class="rmdnote">
 <p>
-A lo largo de este libro, los ejemplos del código R aparecerán sobre un fondo gris. Se pueden copiar y pegar directamente en la consola, aunque es mejor reproducir los ejemplos escribiéndolos en la consola (o más adelante en los scripts). El resultado de lo que se envía en la consola también aparecerá en un fondo gris con <code>##</code> delante del código para hacer la distinción entre el código y el resultado del código.
+A lo largo de este libro, los ejemplos del código R aparecerán sobre un fondo gris. Se pueden copiar y pegar directamente en la consola, aunque es mejor reproducir los ejemplos escribiéndolos en la consola (o más adelante en los scripts) para una mejor comprensión del manejo del programa R. El resultado de lo que se envía en la consola también aparecerá en un fondo gris con <code>##</code> delante del código para hacer la distinción entre el código y el resultado del código.
 </p>
 </div>
 <div class="figure"><span id="fig:screenCapConsoleCal"></span>
@@ -529,7 +529,7 @@ Se recomienda que las comas <code>,</code> sean seguidas de un espacio para que 
 <p>Todas estas formas de nombrar un objeto son equivalentes. En este libro usaremos el estilo <em>lowerCamelCase</em>. En general, debemos evitar los nombres que son demasiado largos, como <code>miNumeroDeRepeticionesDeMiExperimento</code> o demasiado cortos como <code>nR</code>, y los nombres que no permiten identificar los contenidos como <code>miVariable</code> o <code>miNumero</code>, asi que nombres como <code>a</code> o <code>b</code>. El objetivo es de tener una idea de lo que hay en cada objeto en base a su nombre.</p>
 <div class="rmdstyle">
 <p>
-Hay diferentes maneras de definir un nombre para los objetos que crearemos con R. En este libro, utilizamos el estilo <em>lowerCamelCase</em>. Lo importante no es la elección del estilo, sino la consistencia en su elección. El objetivo es tener un código funcional, pero también un código que sea fácil y agradable de leer para nosotros y para los demas.
+Hay diferentes maneras de definir un nombre para los objetos que crearemos con R. En este libro, utilizamos el estilo <em>lowerCamelCase</em>. Lo importante no es la elección del estilo, sino la consistencia en su elección. El objetivo es tener un código funcional, pero también un código que sea fácil y agradable de leer para nosotros y para los demás.
 </p>
 </div>
 <p>Ahora que hemos elegido un nombre para nuestro objeto, debemos crearlo y hacer que R entienda que nuestro objeto debe contener el número 5. Hay tres maneras de crear un objeto bajo R:</p>
@@ -570,7 +570,7 @@ termino01 <span class="op">/</span><span class="st"> </span>termino02</code></pr
 </div>
 <div id="los-scripts" class="section level2">
 <h2><span class="header-section-number">5.4</span> Los scripts</h2>
-<p>R es un lenguaje de programación denominado <em>lenguaje de scripting</em>. Esto se refiere al hecho de que la mayoría de los usuarios escribirán pequeñas piezas de código en lugar de programas completos. R se puede usar como una simple calculadora, y en este caso no será necesario mantener un historial de las operaciones que se han realizado. Pero si las operaciones a implementar son largas y complejas, puede ser necesario e interesante guardar lo que se ha hecho para poder continuar más adelante. El archivo en el que se almacenarán las operaciones es lo que comúnmente se llama el <em>script</em>. Un <em>script</em> es, por lo tanto, un archivo que contiene una sucesión de información comprensible por R y que es posible ejecutar.</p>
+<p>R es un lenguaje de programación denominado <em>lenguaje de scripting</em>. Esto se refiere al hecho de que la mayoría de los usuarios escribirán pequeñas piezas de código en lugar de programas completos. R se puede usar como una simple calculadora, y en este caso no será necesario mantener un historial de las operaciones que se han realizado. Pero si las operaciones a implementar son largas y complejas, puede ser necesario e interesante guardar lo que se ha hecho para poder continuar más adelante. El archivo en el que se almacenarán las operaciones es lo que comúnmente se llama el <em>script</em>. Un <em>script</em>, por lo tanto, es un archivo que contiene una sucesión de información comprensible por R y que es posible ejecutar.</p>
 <div id="crear-un-script-y-documentarlo" class="section level3">
 <h3><span class="header-section-number">5.4.1</span> Crear un script y documentarlo</h3>
 <p>Para crear un nuevo script basta con abrir un documento vacío de texto, que será editado por un editor de texto como el bloc de notas en Windows o Mac OSX, o Gedit o incluso nano en Linux. Por convención, este archivo toma la extensión “.r” o “.R” (lo mas comun). Esta última convención se usará en este libro (<em>“miArchivo.R”</em>). Desde la interfaz gráfica de R, es posible crear un nuevo script en Mac OS y Windows a través de <em>file</em>, luego <em>new script</em> y <em>save as</em>. Al igual que el nombre de los objetos, el nombre del script es importante para que podamos identificar fácilmente su contenido. Por ejemplo, podríamos crear un archivo <code>formRConceptsBase.R</code> que contenga los objetos que acabamos de crear y los cálculos que hicimos. Pero incluso con nombres de objetos y archivos bien definidos, será difícil recordar el significado de este archivo sin la documentación que acompaña a este script. Para documentar un script utilizaremos <em>comentarios</em>. Los <em>comentarios</em> son elementos que R identificará como tales y no se ejecutarán. Para especificar a R que vamos a hacer un <em>comentario</em>, debemos usar el carácter octothorpe (corsé o numeral) <code>#</code>. Los comentarios se pueden insertar en una nueva línea o al final de la línea.</p>

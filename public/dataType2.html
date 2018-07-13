@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-07-12">
+<meta name="date" content="2018-07-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -106,8 +106,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a></li>
 <li class="chapter" data-level="2" data-path="remerciements.html"><a href="remerciements.html"><i class="fa fa-check"></i><b>2</b> Agradecimientos</a></li>
 <li class="chapter" data-level="3" data-path="licence.html"><a href="licence.html"><i class="fa fa-check"></i><b>3</b> Licencia</a></li>
-<li class="chapter" data-level="4" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>4</b> introducción</a><ul>
-<li class="chapter" data-level="4.1" data-path="intro.html"><a href="intro.html#por-que-apprender-r"><i class="fa fa-check"></i><b>4.1</b> Por qué apprender R</a></li>
+<li class="chapter" data-level="4" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>4</b> Introducción</a><ul>
+<li class="chapter" data-level="4.1" data-path="intro.html"><a href="intro.html#por-que-aprender-r"><i class="fa fa-check"></i><b>4.1</b> ¿Por qué aprender R?</a></li>
 <li class="chapter" data-level="4.2" data-path="intro.html"><a href="intro.html#este-libro"><i class="fa fa-check"></i><b>4.2</b> Este libro</a></li>
 <li class="chapter" data-level="4.3" data-path="intro.html"><a href="intro.html#lectura-adicional-en-espanol"><i class="fa fa-check"></i><b>4.3</b> Lectura adicional en español</a></li>
 </ul></li>
@@ -163,7 +163,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-list"><i class="fa fa-check"></i><b>8.2</b> El contenedor <code>list</code></a><ul>
 <li class="chapter" data-level="8.2.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-list"><i class="fa fa-check"></i><b>8.2.1</b> Crear una <code>list</code></a></li>
-<li class="chapter" data-level="8.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-lista"><i class="fa fa-check"></i><b>8.2.2</b> Acceder a los valores de una <code>lista</code></a></li>
+<li class="chapter" data-level="8.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-list"><i class="fa fa-check"></i><b>8.2.2</b> Acceder a los valores de una <code>list</code></a></li>
 <li class="chapter" data-level="8.2.3" data-path="dataType2.html"><a href="dataType2.html#editar-una-list"><i class="fa fa-check"></i><b>8.2.3</b> Editar una <code>list</code></a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-data.frame"><i class="fa fa-check"></i><b>8.3</b> El contenedor <code>data.frame</code></a></li>
@@ -291,7 +291,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.vector</span>(miVec04)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>Si combinamos diferentes tipos de datos, de forma predeterminada R intentará transformar los elementos en un tipo. Si como aquí en el objeto <code>miVec03</code> tenemos los tipos <code>character</code> y <code>numeric</code>, R convertirá todos los elementos en <code>character</code>.</p>
+<p>Si combinamos diferentes tipos de datos, R intentará transformar los elementos en un tipo de forma predeterminada. Si como aquí en el objeto <code>miVec03</code> tenemos los tipos <code>character</code> y <code>numeric</code>, R convertirá todos los elementos en <code>character</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miVec05 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">factor</span>(<span class="st">&quot;abc&quot;</span>), <span class="st">&quot;def&quot;</span>)
 <span class="kw">print</span>(miVec05)</code></pre></div>
 <pre><code>## [1] &quot;1&quot;   &quot;def&quot;</code></pre>
@@ -506,8 +506,8 @@ miVec21 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st"
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(miList02)</code></pre></div>
 <pre><code>## [1] &quot;list&quot;</code></pre>
 </div>
-<div id="acceder-a-los-valores-de-una-lista" class="section level3">
-<h3><span class="header-section-number">8.2.2</span> Acceder a los valores de una <code>lista</code></h3>
+<div id="acceder-a-los-valores-de-una-list" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> Acceder a los valores de una <code>list</code></h3>
 <p>Los elementos del contenedor <code>list</code> son identificables por los corchetes dobles <code>[[ ]]</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList02)</code></pre></div>
 <pre><code>## [[1]]
@@ -543,7 +543,7 @@ miVec21 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st"
 <p>El acceso al segundo elemento del <code>vector</code> ubicado en la cuarta posición de la <code>list</code> se hace con <code>miList02[[4]][2]</code>. Usamos doble corchetes para el cuarto elemento de la <code>list</code>, luego corchetes simples para el segundo elemento del <code>vector</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miList02[[<span class="dv">4</span>]][<span class="dv">2</span>])</code></pre></div>
 <pre><code>## [1] &quot;b&quot;</code></pre>
-<p>Como una <code>list</code> puede contener una o más <code>list</code>, podemos acceder a la información buscada combinando corchetes dobles. el objeto <code>miList04</code> es una <code>list</code> de dos elementos: la <code>list</code> <code>miList02</code> y la <code>list</code> <code>miList03</code>. El objeto <code>miList03</code> en sí contiene una <code>list</code> como tercer elemento. Para acceder al primer elemento del <code>vector</code> en la primera posición del elemento en la tercera posición del segundo elemento del <code>list</code> <code>miList04</code>, podemos usar <code>miList04[[2]][[3]][[1]][1]</code>. No hay límite en cuanto a la profundidad de <code>list</code> pero en la práctica raramente hay necesidad de hacer <code>list</code> de <code>list</code> de <code>list</code>.</p>
+<p>Como una <code>list</code> puede contener una o más <code>list</code>, podemos acceder a la información buscada combinando corchetes dobles. El objeto <code>miList04</code> es una <code>list</code> de dos elementos: la <code>list</code> <code>miList02</code> y la <code>list</code> <code>miList03</code>. El objeto <code>miList03</code> en sí contiene una <code>list</code> como tercer elemento. Para acceder al primer elemento del <code>vector</code> en la primera posición del elemento en la tercera posición del segundo elemento del <code>list</code> <code>miList04</code>, podemos usar <code>miList04[[2]][[3]][[1]][1]</code>. No hay límite en cuanto a la profundidad de <code>list</code> pero en la práctica raramente hay necesidad de hacer <code>list</code> de <code>list</code> de <code>list</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miList04 &lt;-<span class="st"> </span><span class="kw">list</span>(miList02, miList03)
 <span class="kw">print</span>(miList04)</code></pre></div>
 <pre><code>## [[1]]

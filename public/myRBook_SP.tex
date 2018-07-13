@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-07-12}
+    \date{2018-07-13}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -252,6 +252,14 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 
 Últimas modificaciones:
 
+\textbf{13/07/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  edición y corrección del español (Estefanía Q.)
+\end{itemize}
+
 \textbf{12/07/2018}
 
 \begin{itemize}
@@ -367,9 +375,9 @@ utilización prevista. Por ejemplo, otros derechos como los de
 publicidad, privacidad, o los derechos morales pueden limitar el uso del
 material.
 
-\chapter{introducción}\label{intro}
+\chapter{Introducción}\label{intro}
 
-\section{Por qué apprender R}\label{por-que-apprender-r}
+\section{¿Por qué aprender R?}\label{por-que-aprender-r}
 
 \section{Este libro}\label{este-libro}
 
@@ -393,10 +401,10 @@ español}\label{lectura-adicional-en-espanol}
 
 El programa para instalar el software R se puede descargar desde el
 sitio web de R: \url{https://www.r-project.org/}. En el sitio web de R,
-primero es necesario elegir un espejo CRAN (servidor desde el cual
-descargar R, el más cercano a su ubicación geográfica), luego descargue
-el archivo \emph{base}. Los usuarios de Linux pueden preferir un
-\texttt{sudo\ apt-get\ install\ r-base}.
+primero es necesario elegir un espejo CRAN (servidor desde el cual se
+debe descargar R, y desde el más cercano a su ubicación geográfica),
+luego descargue el archivo \emph{base}. Los usuarios de Linux pueden
+preferir un \texttt{sudo\ apt-get\ install\ r-base}.
 
 \begin{rmdnote}
 El software R se puede descargar de muchos servidores CRAN
@@ -430,9 +438,10 @@ esta sección.
 A lo largo de este libro, los ejemplos del código R aparecerán sobre un
 fondo gris. Se pueden copiar y pegar directamente en la consola, aunque
 es mejor reproducir los ejemplos escribiéndolos en la consola (o más
-adelante en los scripts). El resultado de lo que se envía en la consola
-también aparecerá en un fondo gris con \texttt{\#\#} delante del código
-para hacer la distinción entre el código y el resultado del código.
+adelante en los scripts) para una mejor comprensión del manejo del
+programa R. El resultado de lo que se envía en la consola también
+aparecerá en un fondo gris con \texttt{\#\#} delante del código para
+hacer la distinción entre el código y el resultado del código.
 \end{rmdnote}
 
 \begin{figure}
@@ -1132,7 +1141,7 @@ crearemos con R. En este libro, utilizamos el estilo
 \emph{lowerCamelCase}. Lo importante no es la elección del estilo, sino
 la consistencia en su elección. El objetivo es tener un código
 funcional, pero también un código que sea fácil y agradable de leer para
-nosotros y para los demas.
+nosotros y para los demás.
 \end{rmdstyle}
 
 Ahora que hemos elegido un nombre para nuestro objeto, debemos crearlo y
@@ -1271,9 +1280,9 @@ necesario mantener un historial de las operaciones que se han realizado.
 Pero si las operaciones a implementar son largas y complejas, puede ser
 necesario e interesante guardar lo que se ha hecho para poder continuar
 más adelante. El archivo en el que se almacenarán las operaciones es lo
-que comúnmente se llama el \emph{script}. Un \emph{script} es, por lo
-tanto, un archivo que contiene una sucesión de información comprensible
-por R y que es posible ejecutar.
+que comúnmente se llama el \emph{script}. Un \emph{script}, por lo
+tanto, es un archivo que contiene una sucesión de información
+comprensible por R y que es posible ejecutar.
 
 \subsection{Crear un script y
 documentarlo}\label{crear-un-script-y-documentarlo}
@@ -1581,12 +1590,12 @@ Windows: ejecutar nuestro script con F8.\label{fig:screenCapNpp02}}
 La ejecución del script solo se puede realizar si se está ejecutando
 Npp2R. Para hacerlo, es necesario ejecutar el programa Npp2R desde el
 prompt de Windows. Un icono debe aparecer en la parte inferior de su
-pantalla demostrando que Npp2R esta prendido. La ejecución automática
+pantalla demostrando que Npp2R está prendido. La ejecución automática
 del código de Notepad++ se realiza seleccionando el código para ejecutar
 y luego usando el comando \texttt{F8}. Si el comando no funciona, puede
 ser necesario reiniciar la computadora. Si el comando funciona, se
 abrirá una nueva ventana con una consola que ejecuta las líneas deseadas
-(Figura \ref{fig:screenCapNpp03}.
+(Figura \ref{fig:screenCapNpp03}).
 
 \begin{figure}
 \centering
@@ -1702,7 +1711,7 @@ desarrollo para el uso de R. Hasta ahora sabemos:
 
 A partir de acá podremos concentrarnos en el lenguaje de programación R
 en un ambiente, facilitando el trabajo de lectura y de escritura del
-código. Es un gran paso para manejar R.
+código. Esto ya es un gran paso para manejar R.
 
 \chapter{Tipos de datos}\label{dataType1}
 
@@ -1913,7 +1922,7 @@ decimales. Por defecto, R asigna el tipo \texttt{double} a los números.
 \texttt{character}}{El tipo character}}\label{el-tipo-character}
 
 El tipo \texttt{character} es texto. De hecho, R permite trabajar con
-texto. para especificar a R que la información contenida en un objeto
+texto. Para especificar a R que la información contenida en un objeto
 está en formato de texto (o generalmente para todos los textos), usamos
 las comillas dobles (\texttt{"}) o las comillas simples
 (\texttt{\textquotesingle{}}).
@@ -2357,8 +2366,8 @@ de datos. Ahora sabemos:
   Transformar tipos de datos de un tipo a otro
 \end{itemize}
 
-Este capítulo bastante tedioso es la base para el próximo capítulo sobre
-contenedores de datos.
+Este capítulo es la base para el próximo capítulo sobre contenedores de
+datos.
 
 \chapter{Contenedores de datos}\label{dataType2}
 
@@ -2542,9 +2551,9 @@ La funcion \texttt{is.vector()} permite verificar el tipo de contenedor.
 ## [1] TRUE
 \end{verbatim}
 
-Si combinamos diferentes tipos de datos, de forma predeterminada R
-intentará transformar los elementos en un tipo. Si como aquí en el
-objeto \texttt{miVec03} tenemos los tipos \texttt{character} y
+Si combinamos diferentes tipos de datos, R intentará transformar los
+elementos en un tipo de forma predeterminada. Si como aquí en el objeto
+\texttt{miVec03} tenemos los tipos \texttt{character} y
 \texttt{numeric}, R convertirá todos los elementos en
 \texttt{character}.
 
@@ -3319,7 +3328,7 @@ objeto de tipo \texttt{list}.
 \end{verbatim}
 
 \subsection{\texorpdfstring{Acceder a los valores de una
-\texttt{lista}}{Acceder a los valores de una lista}}\label{acceder-a-los-valores-de-una-lista}
+\texttt{list}}{Acceder a los valores de una list}}\label{acceder-a-los-valores-de-una-list}
 
 Los elementos del contenedor \texttt{list} son identificables por los
 corchetes dobles \texttt{{[}{[}\ {]}{]}}.
@@ -3461,7 +3470,7 @@ segundo elemento del \texttt{vector}.
 \end{verbatim}
 
 Como una \texttt{list} puede contener una o más \texttt{list}, podemos
-acceder a la información buscada combinando corchetes dobles. el objeto
+acceder a la información buscada combinando corchetes dobles. El objeto
 \texttt{miList04} es una \texttt{list} de dos elementos: la
 \texttt{list} \texttt{miList02} y la \texttt{list} \texttt{miList03}. El
 objeto \texttt{miList03} en sí contiene una \texttt{list} como tercer
