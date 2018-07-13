@@ -49,7 +49,7 @@ Para resumir, el tipo `numeric` contiene dos subtipos, los tipos `integer` para 
 
 ## El tipo `character`
 
-El tipo `character` es texto. De hecho, R permite trabajar con texto. para especificar a R que la información contenida en un objeto está en formato de texto (o generalmente para todos los textos), usamos las comillas dobles (`"`) o las comillas simples (`'`).
+El tipo `character` es texto. De hecho, R permite trabajar con texto. Para especificar a R que la información contenida en un objeto está en formato de texto (o generalmente para todos los textos), usamos las comillas dobles (`"`) o las comillas simples (`'`).
 
 ```{r}
 myText <- "azerty"
@@ -162,4 +162,4 @@ Felicitaciones, hemos llegado al final de este capítulo sobre los tipos de dato
 * Reconocer y hacer objetos en los principales tipos de datos
 * Transformar tipos de datos de un tipo a otro
 
-Este capítulo bastante tedioso es la base para el próximo capítulo sobre contenedores de datos.
+Este capítulo es la base para el próximo capítulo sobre contenedores de datos.

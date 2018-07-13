@@ -1,6 +1,6 @@
-# introducción {#intro}
+# Introducción {#intro}
 
-## Por qué apprender R
+## ¿Por qué aprender R?
 
 ## Este libro
 

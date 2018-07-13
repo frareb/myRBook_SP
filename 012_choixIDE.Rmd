@@ -82,7 +82,7 @@ Como ya hemos creado un script para probarlo con RStudio, lo abriremos de nuevo 
 knitr::include_graphics("myFigures/screencap_Npp_02.png")
 ```
 
-La ejecución del script solo se puede realizar si se está ejecutando Npp2R. Para hacerlo, es necesario ejecutar el programa Npp2R desde el prompt de Windows. Un icono debe aparecer en la parte inferior de su pantalla demostrando que Npp2R esta prendido. La ejecución automática del código de Notepad++ se realiza seleccionando el código para ejecutar y luego usando el comando `F8`. Si el comando no funciona, puede ser necesario reiniciar la computadora. Si el comando funciona, se abrirá una nueva ventana con una consola que ejecuta las líneas deseadas (Figura \@ref(fig:screenCapNpp03).
+La ejecución del script solo se puede realizar si se está ejecutando Npp2R. Para hacerlo, es necesario ejecutar el programa Npp2R desde el prompt de Windows. Un icono debe aparecer en la parte inferior de su pantalla demostrando que Npp2R está prendido. La ejecución automática del código de Notepad++ se realiza seleccionando el código para ejecutar y luego usando el comando `F8`. Si el comando no funciona, puede ser necesario reiniciar la computadora. Si el comando funciona, se abrirá una nueva ventana con una consola que ejecuta las líneas deseadas (Figura \@ref(fig:screenCapNpp03)).
 
 ```{r screenCapNpp03, fig.cap = "Captura de pantalla de Notepad++ en Windows: la consola con F8.\\label{fig:screenCapNpp03}", echo = FALSE}
 knitr::include_graphics("myFigures/screencap_Npp_03.png")
@@ -138,4 +138,4 @@ Felicitaciones, llegamos al final de este capítulo sobre el entorno de desarrol
 *	Instalar RStudio, Geany o Notepad++
 *	Reconocer y elegir nuestro entorno de preferencia
 
-A partir de acá podremos concentrarnos en el lenguaje de programación R en un ambiente, facilitando el trabajo de lectura y de escritura del código. Es un gran paso para manejar R.
+A partir de acá podremos concentrarnos en el lenguaje de programación R en un ambiente, facilitando el trabajo de lectura y de escritura del código. Esto ya es un gran paso para manejar R.

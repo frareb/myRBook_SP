@@ -18,6 +18,10 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 Últimas modificaciones:
 
+**13/07/2018**
+
+* edición y corrección del español (Estefanía Q.) 
+
 **12/07/2018**
 
 * segunda parte del capítulo *Contenedores de datos*: *El contenedor list*

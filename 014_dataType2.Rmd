@@ -41,7 +41,7 @@ typeof(miVec04)
 is.vector(miVec04)
 ```
 
-Si combinamos diferentes tipos de datos, de forma predeterminada R intentará transformar los elementos en un tipo. Si como aquí en el objeto `miVec03` tenemos los tipos `character` y `numeric`, R convertirá todos los elementos en `character`.
+Si combinamos diferentes tipos de datos, R intentará transformar los elementos en un tipo de forma predeterminada. Si como aquí en el objeto `miVec03` tenemos los tipos `character` y `numeric`, R convertirá todos los elementos en `character`.
 
 ```{r}
 miVec05 <- c(factor("abc"), "def")
@@ -248,7 +248,7 @@ El acceso al segundo elemento del `vector` ubicado en la cuarta posición de la 
 print(miList02[[4]][2])
 ```
 
-Como una `list` puede contener una o más `list`, podemos acceder a la información buscada combinando corchetes dobles. el objeto `miList04` es una `list` de dos elementos: la `list` `miList02` y la `list` `miList03`. El objeto `miList03` en sí contiene una `list` como tercer elemento. Para acceder al primer elemento del `vector` en la primera posición del elemento en la tercera posición del segundo elemento del `list` `miList04`, podemos usar `miList04[[2]][[3]][[1]][1]`. No hay límite en cuanto a la profundidad de `list` pero en la práctica raramente hay necesidad de hacer `list` de `list` de `list`.
+Como una `list` puede contener una o más `list`, podemos acceder a la información buscada combinando corchetes dobles. El objeto `miList04` es una `list` de dos elementos: la `list` `miList02` y la `list` `miList03`. El objeto `miList03` en sí contiene una `list` como tercer elemento. Para acceder al primer elemento del `vector` en la primera posición del elemento en la tercera posición del segundo elemento del `list` `miList04`, podemos usar `miList04[[2]][[3]][[1]][1]`. No hay límite en cuanto a la profundidad de `list` pero en la práctica raramente hay necesidad de hacer `list` de `list` de `list`.
 
 ```{r}
 miList04 <- list(miList02, miList03)
