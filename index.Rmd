@@ -18,7 +18,7 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 Últimas modificaciones:
 
-**13/07/2018**
+**16/07/2018**
 
 * edición y corrección del español (Estefanía Q.) 
 
@@ -43,10 +43,16 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 # Agradecimientos {#remerciements}
 
-Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones:
+Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones (en orden alfabético):
 
 => lista para actualizar con autorizaciones de contribuyentes:
 
-* Camila Benavides Frias (Bolivia)
+```{r echo = FALSE}
+contrib <- t(data.frame(c("Camila", "Benavides Frias", "Bolivia"), c("Estefania", "Quenta Herrera",  "Bolivia")))
+contrib <- contrib[order(contrib[, 2]),]
+for(i in seq_along(contrib[, 2])){
+  cat(contrib[i, 1], " ",contrib[i, 2], " (", contrib[i, 3],"); ", sep = "")
+}
+```
 
 Las versiones de gitbook, html y epub de este libro usan los iconos de fuente abierta de Font Awesome (https://fontawesome.com). La versión en PDF utiliza los iconos del proyecto Tango disponibles en openclipart (https://openclipart.org/). Este libro fue escrito con el paquete R bookdown (https://bookdown.org/). El código fuente está disponible en GitHub (https://github.com/frareb/myRBook_SP). La compilación usa Travis CI (https://travis-ci.org). La versión en línea se aloja y actualiza a través de Netlify (http://myrbooksp.netlify.com/).
