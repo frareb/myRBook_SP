@@ -14,17 +14,17 @@ tail
 names
 %in%
 
-### manipular los datos
+### Manipular los datos
 
 rank
 order
 sort
-t
 
-### funciones matemáticas
+### Funciones matemáticas
 
 exp
 sqrt
+t
 
 ### Estadísticas descriptivas
 
@@ -34,7 +34,7 @@ max
 min
 quartile
 summary
-meadian
+median
 length
 round
 ceiling
@@ -46,7 +46,6 @@ seq_along
 :
 rep
 seq
-
 
 ## Escribe una función
 
