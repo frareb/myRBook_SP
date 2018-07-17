@@ -39,6 +39,11 @@ length
 round
 ceiling
 floor
+rowSums
+colSums
+rowMeans
+colMeans
+aggregate
 
 ## Otras funciones útiles
 
