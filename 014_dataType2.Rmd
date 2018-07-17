@@ -380,12 +380,289 @@ print(miList05)
 
 ## El contenedor `data.frame`
 
-XXX
+El contenedor `data.frame` se puede comparar a una *tabla*. Este es en realidad un caso especial de `list` donde todos los elementos de la `list` tienen el mismo tamaño.
+
+### Crear un `data.frame`
+
+Para crear un `data.frame` usamos la función `data.frame()` que toma como argumentos los elementos de la tabla que queremos crear. Los elementos son del tipo `vector` y son todos del mismo tamaño. Podemos dar un nombre a cada *columna* (`vector`) de nuestra *tabla* (`data.frame`).
+
+```{r}
+# crear un data.frame 
+miDf01 <- data.frame(
+  numbers = c(1, 2, 3, 4), 
+  logicals = c(TRUE, TRUE, FALSE, TRUE), 
+  characters = c("a", "b", "c", "d")
+)
+print(miDf01)
+
+# crear vectores, y el data.frame
+numbers <- c(1, 2, 3, 4)
+logicals <- c(TRUE, TRUE, FALSE, TRUE)
+characters <- c("a", "b", "c", "d")
+miDf01 <- data.frame(numbers, logicals, characters)
+print(miDf01)
+```
+
+### Acceder a los elementos de un `data.frame`
+
+El acceso a los diferentes valores de un `data.frame` se puede hacer de la misma manera que para un contenedor de tipo `list`.
+
+```{r}
+print(miDf01$numbers) # vector
+print(miDf01[[1]]) # vector
+print(miDf01[1]) # list
+print(miDf01["numbers"]) # list
+print(miDf01[["numbers"]]) # vector
+```
+
+También podemos usar otra forma que consiste en especificar la línea o las líneas seguidas de una coma (con un espacio después de la coma), y luego la columna o columnas entre corchetes. Si se omite la información de línea o columna, R mostrará todas las líneas o columnas. Nuevamente podemos usar el número correspondiente a un elemento o el nombre del elemento que queremos seleccionar.
+
+```{r}
+myRow <- 2
+myCol <- 1
+print(miDf01[myRow, myCol])
+print(miDf01[myRow, ])
+print(miDf01[, myCol])
+myCol <- "numbers"
+print(miDf01[, myCol])
+```
+
+Es posible seleccionar múltiples líneas o columnas.
+
+```{r}
+print(miDf01[, c(1, 2)])
+print(miDf01[c(2, 1), ])
+```
+
+Como cada columna está en formato `vector`, también podemos hacer una selección que depende del contenido con operadores de comparación y operadores lógicos.
+
+```{r}
+miDfSub01 <- miDf01[miDf01$numbers > 2, ]
+print(miDfSub01)
+miDfSub02 <- miDf01[(miDf01$logicals == TRUE) & (miDf01$numbers < 2), ]
+print(miDfSub02)
+miDfSub03 <- miDf01[(miDf01$numbers %% 2) == 0, ]
+print(miDfSub03)
+miDfSub04 <- miDf01[((miDf01$numbers %% 2) == 0) | (miDf01$logicals == TRUE), ]
+print(miDfSub04)
+```
+
+### Modificar un `data.frame`
+
+Para agregar un elemento a un `data.frame`, procedemos como para un contenedor de tipo `list`. Es necesario asegurarse de que el nuevo elemento sea del mismo tamaño que los otros elementos de nuestro `data.frame`. Por defecto, un nuevo elemento en `data.frame` toma el nombre de la letra *V* seguido del número de la columna. Podemos cambiar los nombres de las columnas con la función `colnames()`. Podemos nombrar las líneas con la función `rownames()`.
+
+```{r}
+newVec <- c(4, 5, 6, 7)
+miDf01[[4]] <- newVec
+print(miDf01)
+print(colnames(miDf01))
+colnames(miDf01)[4] <- "newVec"
+print(miDf01)
+print(rownames(miDf01))
+rownames(miDf01) <- c("row1", "row2", "row3", "row4")
+print(miDf01)
+newVec2 <- c(40, 50, 60, 70)
+miDf01$newVec2 <- newVec2
+print(miDf01)
+```
+
+Como el contenedor de tipo `data.frame` es un caso especial de `list`, la selección y modificación se realiza como un contenedor de tipo `list`. Dado que los elementos de un `data.frame` son del tipo `vector`, la selección y la modificación de los elementos de un `data.frame` se hace como para un contenedor `vector`.
+
+```{r}
+miDf01$newVec2 <- miDf01$newVec2 * 2
+print(miDf01)
+miDf01$newVec2 + miDf01$newVec
+miDf01$newVec2[2] <- 0
+print(miDf01)
+```
+
+Un `vector` se puede transformar en `data.frame` con la función `as.data.frame()`.
+
+```{r}
+print(newVec2)
+print(as.data.frame(newVec2))
+is.data.frame(newVec2)
+is.data.frame(as.data.frame(newVec2))
+```
 
 ## El contenedor `matrix`
 
-XXX
+El contenedor `matrix` se puede ver como un `vector` de dos dimensiones: líneas y columnas. Corresponde a una matriz en matemáticas, y puede contener solo un tipo de datos (`logical`, `numeric`, `character`, ...).
+
+### Crear una `matrix`
+
+Para crear una `matrix` primero creamos un `vector`, luego especificamos el número deseado de líneas y columnas en la función `matrix()`.
+
+```{r}
+vecForMatrix <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+miMat <- matrix(vecForMatrix, nrow = 3, ncol = 4)
+print(miMat)
+```
+
+No tenemos que especificar el número de líneas `nrow` y el número de columnas `ncol`. Si usamos uno u otro de estos argumentos, R calculará automáticamente el número correspondiente.
+
+```{r}
+miMat <- matrix(vecForMatrix, nrow = 3)
+print(miMat)
+miMat <- matrix(vecForMatrix, ncol = 4)
+print(miMat)
+```
+
+Observamos que los diferentes elementos del `vector` inicial aparecen por columna. Si queremos llenar la `matrix` empezando por línea, entonces tenemos que dar como valor `TRUE` al argumento `byrow`.
+
+```{r}
+miMat <- matrix(vecForMatrix, nrow = 3, byrow = TRUE)
+print(miMat)
+```
+
+También podemos dar un nombre a las líneas y columnas de nuestra `matrix` cuando se crea con el argumento `dimnames` que toma como valor una `list` de dos elementos: el nombre de las líneas y luego el nombre de las columnas. También podemos cambiar el nombre de las líneas y columnas a posteriori con las funciones `rownames()` y `colnames()`.
+
+```{r}
+miMat <- matrix(
+  vecForMatrix, 
+  nrow = 3, 
+  byrow = TRUE, 
+  dimnames = list(c("r1", "r2", "r3"), c("c1", "c2", "c3", "c4"))
+)
+print(miMat)
+colnames(miMat) <- c("col1", "col2", "col3", "col4")
+rownames(miMat) <- c("row1", "row2", "row3")
+print(miMat)
+```
+
+Es posible crear una `matrix` desde un `data.frame` con la función `as.matrix()`. Tenemos que verificar que nuestra `data.frame` contenga solo elementos del mismo tipo (por ejemplo, elementos de tipo `numeric`).
+
+```{r}
+vecForMat01 <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+vecForMat02 <- vecForMat01 * 10
+vecForMat03 <- vecForMat01 / 10
+dfForMat <- data.frame(vecForMat01, vecForMat02, vecForMat03)
+print(dfForMat)
+is.matrix(dfForMat)
+as.matrix(dfForMat)
+is.matrix(as.matrix(dfForMat))
+```
+
+También podemos crear una `matrix` desde un `vector` con la función `as.matrix()` (matriz de una sola columna).
+
+```{r}
+as.matrix(vecForMat01)
+```
+
+### Manipular y hacer operaciones en una `matrix`
+
+Todas las operaciones término a término son posibles con una `matrix`.
+
+```{r}
+# operaciones término a término
+miMat01 <- matrix(vecForMat01, ncol = 3)
+miVecOp <- c(1, 10, 100, 1000)
+miMat01 * miVecOp
+miMat01 + miVecOp
+miMat01 / miMat01
+miMat01 - 10
+```
+
+Para realizar operaciones algebraicas, podemos usar la función `%*%`.
+
+```{r}
+# operaciones algebraicas
+miVecConf <- c(1, 10, 100)
+miMat01 %*% miVecConf
+miMat02 <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3)
+print(miMat02)
+miMat02 %*% miMat02
+```
+
+La diagonal de una `matrix` se puede obtener con la función `diag()` y el determinante de una `matrix` con la función `det()`.
+
+```{r}
+print(miMat02)
+diag(miMat02)
+det(miMat02)
+```
+
+Suele ser útil poder hacer una transposición de `matrix` (columnas en líneas o líneas en columnas). Para eso, están las funciones `aperm()` o `t()`. la función `t()` es más genérica y también funciona con `data.frame`.
+
+```{r}
+aperm(miMat01)
+t(miMat01)
+```
+
+### Acceder a los elementos de una `matrix`
+
+Tal como hemos hecho con los `data.frame`, podemos acceder a los elementos de una `matrix` especificando un número de línea y un número de columna entre corchetes simples `[ ]`, y separados por una coma. Si `i` es el número de línea y `j` es el número de columna, entonces `miMat01[i, j]` devuelve el elemento en la línea `i` y en la columna` j`. `miMat01[i,]` devuelve todos los elementos de la línea `i`, y `miMat01[, j]` todos los elementos de la columna `j`. Múltiples selecciones son posibles. También podemos acceder a un elemento de acuerdo con su posición en la `matrix` entre corchetes simples `[ ]` contando por columna y luego por línea. En nuestro ejemplo, el valor del décimo elemento es 10.
+
+```{r}
+i <- 2
+j <- 1
+print(miMat01[i, j])
+print(miMat01[i, ])
+print(miMat01[, j])
+print(miMat01[c(1, 2), c(2, 3)])
+print(miMat01[10])
+```
 
 ## El contenedor `array`
 
-XXX
+El contenedor `array` es una generalización del contenedor de tipo `matrix`. Donde el tipo `matrix` tiene dos dimensiones (líneas y columnas), el tipo `array` tiene un número indefinido de dimensiones. Podemos saber el número de dimensiones de un `array` (y por lo tanto una `matrix`) con la función `dim()`.
+
+```{r}
+dim(miMat01)
+```
+
+### Crear un `array`
+
+La creación de una `array` es similar a la de una `matrix` con una dimensión extra.
+
+```{r}
+miVecArr <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)
+miArray <- array(miVecArr, dim = c(3, 3, 2))
+print(miArray)
+dim(miArray)
+is.array(miArray)
+miVecArr02 <- 10 * miVecArr
+miArray02 <- array(c(miVecArr, miVecArr02), dim = c(3, 3, 2))
+print(miArray02)
+dim(miArray02)
+is.array(miArray02)
+```
+
+Podemos dar nombres a líneas y columnas, pero también a elementos.
+
+```{r}
+miArray02 <- array(
+  c(miVecArr, miVecArr02), 
+  dim = c(3, 3, 2), 
+  dimnames = list(
+    c("r1", "r2", "r3"), 
+    c("c1", "c2", "c3"), 
+    c("matrix1", "matrix2")
+  )
+)
+print(miArray02)
+```
+
+### Manipular un `array`
+
+La manipulación de un `array` se hace de la misma manera que para una `matrix`. Para acceder a los diferentes elementos de un `array`, simplemente hay que especificar la línea `i`, la columna `j`, y la `matrix` `k`.
+
+```{r}
+i <- 2
+j <- 1
+k <- 1
+print(miArray02[i, j, k])
+print(miArray02[, j, k])
+print(miArray02[i, , k])
+print(miArray02[i, j, ])
+```
+
+## Conclusión
+
+Felicitaciones! Ahora conocemos los principales tipos de objetos que usaremos con R. Un objeto se caracteriza por sus atributos:
+
+* el tipo de contenedor (`vector`, `data.frame`, `matrix`, `array`)
+* el tipo de contenido de cada elemento (`numeric`, `logical`, `character`, ...)
+* el valor de cada uno de los elementos (5, "qwerty", TRUE, ...)
+
+Todos estos objetos se almacenan temporalmente en el entorno global de R (en la memoria RAM de nuestra computadora). El siguiente capítulo tratará las funciones y resaltará uno de los aspectos que hace que R sea tan poderoso para analizar y administrar nuestros datos.
