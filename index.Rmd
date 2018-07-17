@@ -21,6 +21,9 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 **17/07/2018**
 
 * edición y corrección del español (Susi L.) 
+* tercera parte del capítulo *Contenedores de datos*: El contenedor *data.frame*
+* cuarta parte del capítulo *Contenedores de datos*: El contenedor *matrix*
+* quinta parte del capítulo *Contenedores de datos*: El contenedor *array*
 
 **16/07/2018**
 
@@ -28,12 +31,12 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 **12/07/2018**
 
-* segunda parte del capítulo *Contenedores de datos*: *El contenedor list*
+* segunda parte del capítulo *Contenedores de datos*: El contenedor *list*
 
 **06/07/2018**
 
 * edición y corrección del español (Camila B.) 
-* primera parte del capítulo *Contenedores de datos*: *El contenedor vector*
+* primera parte del capítulo *Contenedores de datos*: El contenedor *vector*
 
 **04/07/2018**
 
@@ -52,9 +55,11 @@ Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus co
 ```{r echo = FALSE}
 contrib <- t(data.frame(c("Camila", "Benavides Frias", "Bolivia"), c("Estefania", "Quenta Herrera",  "Bolivia"), c("Susi", "Loza Herrera", "Bolivia")))
 contrib <- contrib[order(contrib[, 2]),]
+msg <- "Colaboradores :\r"
 for(i in seq_along(contrib[, 2])){
-  cat(contrib[i, 1], " ",contrib[i, 2], " (", contrib[i, 3],"); ", sep = "")
+  msg <- c(msg, paste0(contrib[i, 1], " ",contrib[i, 2], " (", contrib[i, 3],")\r"))
 }
+for(i in msg){cat(i, sep = "")}
 ```
 
 Las versiones de gitbook, html y epub de este libro usan los iconos de fuente abierta de Font Awesome (https://fontawesome.com). La versión en PDF utiliza los iconos del proyecto Tango disponibles en openclipart (https://openclipart.org/). Este libro fue escrito con el paquete R bookdown (https://bookdown.org/). El código fuente está disponible en GitHub (https://github.com/frareb/myRBook_SP). La compilación usa Travis CI (https://travis-ci.org). La versión en línea se aloja y actualiza a través de Netlify (http://myrbooksp.netlify.com/).
