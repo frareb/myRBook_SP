@@ -166,9 +166,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-list"><i class="fa fa-check"></i><b>8.2.2</b> Acceder a los valores de una <code>list</code></a></li>
 <li class="chapter" data-level="8.2.3" data-path="dataType2.html"><a href="dataType2.html#editar-una-list"><i class="fa fa-check"></i><b>8.2.3</b> Editar una <code>list</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-data.frame"><i class="fa fa-check"></i><b>8.3</b> El contenedor <code>data.frame</code></a></li>
-<li class="chapter" data-level="8.4" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-matrix"><i class="fa fa-check"></i><b>8.4</b> El contenedor <code>matrix</code></a></li>
-<li class="chapter" data-level="8.5" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-array"><i class="fa fa-check"></i><b>8.5</b> El contenedor <code>array</code></a></li>
+<li class="chapter" data-level="8.3" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-data.frame"><i class="fa fa-check"></i><b>8.3</b> El contenedor <code>data.frame</code></a><ul>
+<li class="chapter" data-level="8.3.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-data.frame"><i class="fa fa-check"></i><b>8.3.1</b> Crear un <code>data.frame</code></a></li>
+<li class="chapter" data-level="8.3.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-un-data.frame"><i class="fa fa-check"></i><b>8.3.2</b> Acceder a los elementos de un <code>data.frame</code></a></li>
+<li class="chapter" data-level="8.3.3" data-path="dataType2.html"><a href="dataType2.html#modificar-un-data.frame"><i class="fa fa-check"></i><b>8.3.3</b> Modificar un <code>data.frame</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-matrix"><i class="fa fa-check"></i><b>8.4</b> El contenedor <code>matrix</code></a><ul>
+<li class="chapter" data-level="8.4.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-matrix"><i class="fa fa-check"></i><b>8.4.1</b> Crear una <code>matrix</code></a></li>
+<li class="chapter" data-level="8.4.2" data-path="dataType2.html"><a href="dataType2.html#manipular-y-hacer-operaciones-en-una-matrix"><i class="fa fa-check"></i><b>8.4.2</b> Manipular y hacer operaciones en una <code>matrix</code></a></li>
+<li class="chapter" data-level="8.4.3" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-una-matrix"><i class="fa fa-check"></i><b>8.4.3</b> Acceder a los elementos de una <code>matrix</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="dataType2.html"><a href="dataType2.html#el-contenedor-array"><i class="fa fa-check"></i><b>8.5</b> El contenedor <code>array</code></a><ul>
+<li class="chapter" data-level="8.5.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-array"><i class="fa fa-check"></i><b>8.5.1</b> Crear un <code>array</code></a></li>
+<li class="chapter" data-level="8.5.2" data-path="dataType2.html"><a href="dataType2.html#manipular-un-array"><i class="fa fa-check"></i><b>8.5.2</b> Manipular un <code>array</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="dataType2.html"><a href="dataType2.html#conclusion-3"><i class="fa fa-check"></i><b>8.6</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="fonctions.html"><a href="fonctions.html"><i class="fa fa-check"></i><b>9</b> Las funciones</a><ul>
 <li class="chapter" data-level="9.1" data-path="fonctions.html"><a href="fonctions.html#que-es-una-funcion"><i class="fa fa-check"></i><b>9.1</b> ¿Qué es una función?</a></li>
@@ -923,15 +935,467 @@ Leer una larga línea de código como la línea para crear el objeto <code>bddIn
 </div>
 <div id="el-contenedor-data.frame" class="section level2">
 <h2><span class="header-section-number">8.3</span> El contenedor <code>data.frame</code></h2>
-<p>XXX</p>
+<p>El contenedor <code>data.frame</code> se puede comparar a una <em>tabla</em>. Este es en realidad un caso especial de <code>list</code> donde todos los elementos de la <code>list</code> tienen el mismo tamaño.</p>
+<div id="crear-un-data.frame" class="section level3">
+<h3><span class="header-section-number">8.3.1</span> Crear un <code>data.frame</code></h3>
+<p>Para crear un <code>data.frame</code> usamos la función <code>data.frame()</code> que toma como argumentos los elementos de la tabla que queremos crear. Los elementos son del tipo <code>vector</code> y son todos del mismo tamaño. Podemos dar un nombre a cada <em>columna</em> (<code>vector</code>) de nuestra <em>tabla</em> (<code>data.frame</code>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># crear un data.frame </span>
+miDf01 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
+  <span class="dt">numbers =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), 
+  <span class="dt">logicals =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>), 
+  <span class="dt">characters =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>)
+)
+<span class="kw">print</span>(miDf01)</code></pre></div>
+<pre><code>##   numbers logicals characters
+## 1       1     TRUE          a
+## 2       2     TRUE          b
+## 3       3    FALSE          c
+## 4       4     TRUE          d</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># crear vectores, y el data.frame</span>
+numbers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)
+logicals &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)
+characters &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>)
+miDf01 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(numbers, logicals, characters)
+<span class="kw">print</span>(miDf01)</code></pre></div>
+<pre><code>##   numbers logicals characters
+## 1       1     TRUE          a
+## 2       2     TRUE          b
+## 3       3    FALSE          c
+## 4       4     TRUE          d</code></pre>
+</div>
+<div id="acceder-a-los-elementos-de-un-data.frame" class="section level3">
+<h3><span class="header-section-number">8.3.2</span> Acceder a los elementos de un <code>data.frame</code></h3>
+<p>El acceso a los diferentes valores de un <code>data.frame</code> se puede hacer de la misma manera que para un contenedor de tipo <code>list</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miDf01<span class="op">$</span>numbers) <span class="co"># vector</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miDf01[[<span class="dv">1</span>]]) <span class="co"># vector</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miDf01[<span class="dv">1</span>]) <span class="co"># list</span></code></pre></div>
+<pre><code>##   numbers
+## 1       1
+## 2       2
+## 3       3
+## 4       4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miDf01[<span class="st">&quot;numbers&quot;</span>]) <span class="co"># list</span></code></pre></div>
+<pre><code>##   numbers
+## 1       1
+## 2       2
+## 3       3
+## 4       4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miDf01[[<span class="st">&quot;numbers&quot;</span>]]) <span class="co"># vector</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<p>También podemos usar otra forma que consiste en especificar la línea o las líneas seguidas de una coma (con un espacio después de la coma), y luego la columna o columnas entre corchetes. Si se omite la información de línea o columna, R mostrará todas las líneas o columnas. Nuevamente podemos usar el número correspondiente a un elemento o el nombre del elemento que queremos seleccionar.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myRow &lt;-<span class="st"> </span><span class="dv">2</span>
+myCol &lt;-<span class="st"> </span><span class="dv">1</span>
+<span class="kw">print</span>(miDf01[myRow, myCol])</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miDf01[myRow, ])</code></pre></div>
+<pre><code>##   numbers logicals characters
+## 2       2     TRUE          b</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miDf01[, myCol])</code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myCol &lt;-<span class="st"> &quot;numbers&quot;</span>
+<span class="kw">print</span>(miDf01[, myCol])</code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<p>Es posible seleccionar múltiples líneas o columnas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miDf01[, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)])</code></pre></div>
+<pre><code>##   numbers logicals
+## 1       1     TRUE
+## 2       2     TRUE
+## 3       3    FALSE
+## 4       4     TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miDf01[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), ])</code></pre></div>
+<pre><code>##   numbers logicals characters
+## 2       2     TRUE          b
+## 1       1     TRUE          a</code></pre>
+<p>Como cada columna está en formato <code>vector</code>, también podemos hacer una selección que depende del contenido con operadores de comparación y operadores lógicos.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miDfSub01 &lt;-<span class="st"> </span>miDf01[miDf01<span class="op">$</span>numbers <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span>, ]
+<span class="kw">print</span>(miDfSub01)</code></pre></div>
+<pre><code>##   numbers logicals characters
+## 3       3    FALSE          c
+## 4       4     TRUE          d</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miDfSub02 &lt;-<span class="st"> </span>miDf01[(miDf01<span class="op">$</span>logicals <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) <span class="op">&amp;</span><span class="st"> </span>(miDf01<span class="op">$</span>numbers <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span>), ]
+<span class="kw">print</span>(miDfSub02)</code></pre></div>
+<pre><code>##   numbers logicals characters
+## 1       1     TRUE          a</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miDfSub03 &lt;-<span class="st"> </span>miDf01[(miDf01<span class="op">$</span>numbers <span class="op">%%</span><span class="st"> </span><span class="dv">2</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, ]
+<span class="kw">print</span>(miDfSub03)</code></pre></div>
+<pre><code>##   numbers logicals characters
+## 2       2     TRUE          b
+## 4       4     TRUE          d</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miDfSub04 &lt;-<span class="st"> </span>miDf01[((miDf01<span class="op">$</span>numbers <span class="op">%%</span><span class="st"> </span><span class="dv">2</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) <span class="op">|</span><span class="st"> </span>(miDf01<span class="op">$</span>logicals <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>), ]
+<span class="kw">print</span>(miDfSub04)</code></pre></div>
+<pre><code>##   numbers logicals characters
+## 1       1     TRUE          a
+## 2       2     TRUE          b
+## 4       4     TRUE          d</code></pre>
+</div>
+<div id="modificar-un-data.frame" class="section level3">
+<h3><span class="header-section-number">8.3.3</span> Modificar un <code>data.frame</code></h3>
+<p>Para agregar un elemento a un <code>data.frame</code>, procedemos como para un contenedor de tipo <code>list</code>. Es necesario asegurarse de que el nuevo elemento sea del mismo tamaño que los otros elementos de nuestro <code>data.frame</code>. Por defecto, un nuevo elemento en <code>data.frame</code> toma el nombre de la letra <em>V</em> seguido del número de la columna. Podemos cambiar los nombres de las columnas con la función <code>colnames()</code>. Podemos nombrar las líneas con la función <code>rownames()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">newVec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>)
+miDf01[[<span class="dv">4</span>]] &lt;-<span class="st"> </span>newVec
+<span class="kw">print</span>(miDf01)</code></pre></div>
+<pre><code>##   numbers logicals characters V4
+## 1       1     TRUE          a  4
+## 2       2     TRUE          b  5
+## 3       3    FALSE          c  6
+## 4       4     TRUE          d  7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">colnames</span>(miDf01))</code></pre></div>
+<pre><code>## [1] &quot;numbers&quot;    &quot;logicals&quot;   &quot;characters&quot; &quot;V4&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(miDf01)[<span class="dv">4</span>] &lt;-<span class="st"> &quot;newVec&quot;</span>
+<span class="kw">print</span>(miDf01)</code></pre></div>
+<pre><code>##   numbers logicals characters newVec
+## 1       1     TRUE          a      4
+## 2       2     TRUE          b      5
+## 3       3    FALSE          c      6
+## 4       4     TRUE          d      7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">rownames</span>(miDf01))</code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(miDf01) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;row1&quot;</span>, <span class="st">&quot;row2&quot;</span>, <span class="st">&quot;row3&quot;</span>, <span class="st">&quot;row4&quot;</span>)
+<span class="kw">print</span>(miDf01)</code></pre></div>
+<pre><code>##      numbers logicals characters newVec
+## row1       1     TRUE          a      4
+## row2       2     TRUE          b      5
+## row3       3    FALSE          c      6
+## row4       4     TRUE          d      7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">newVec2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>)
+miDf01<span class="op">$</span>newVec2 &lt;-<span class="st"> </span>newVec2
+<span class="kw">print</span>(miDf01)</code></pre></div>
+<pre><code>##      numbers logicals characters newVec newVec2
+## row1       1     TRUE          a      4      40
+## row2       2     TRUE          b      5      50
+## row3       3    FALSE          c      6      60
+## row4       4     TRUE          d      7      70</code></pre>
+<p>Como el contenedor de tipo <code>data.frame</code> es un caso especial de <code>list</code>, la selección y modificación se realiza como un contenedor de tipo <code>list</code>. Dado que los elementos de un <code>data.frame</code> son del tipo <code>vector</code>, la selección y la modificación de los elementos de un <code>data.frame</code> se hace como para un contenedor <code>vector</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miDf01<span class="op">$</span>newVec2 &lt;-<span class="st"> </span>miDf01<span class="op">$</span>newVec2 <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
+<span class="kw">print</span>(miDf01)</code></pre></div>
+<pre><code>##      numbers logicals characters newVec newVec2
+## row1       1     TRUE          a      4      80
+## row2       2     TRUE          b      5     100
+## row3       3    FALSE          c      6     120
+## row4       4     TRUE          d      7     140</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miDf01<span class="op">$</span>newVec2 <span class="op">+</span><span class="st"> </span>miDf01<span class="op">$</span>newVec</code></pre></div>
+<pre><code>## [1]  84 105 126 147</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miDf01<span class="op">$</span>newVec2[<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="dv">0</span>
+<span class="kw">print</span>(miDf01)</code></pre></div>
+<pre><code>##      numbers logicals characters newVec newVec2
+## row1       1     TRUE          a      4      80
+## row2       2     TRUE          b      5       0
+## row3       3    FALSE          c      6     120
+## row4       4     TRUE          d      7     140</code></pre>
+<p>Un <code>vector</code> se puede transformar en <code>data.frame</code> con la función <code>as.data.frame()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(newVec2)</code></pre></div>
+<pre><code>## [1] 40 50 60 70</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">as.data.frame</span>(newVec2))</code></pre></div>
+<pre><code>##   newVec2
+## 1      40
+## 2      50
+## 3      60
+## 4      70</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.data.frame</span>(newVec2)</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.data.frame</span>(<span class="kw">as.data.frame</span>(newVec2))</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
 </div>
 <div id="el-contenedor-matrix" class="section level2">
 <h2><span class="header-section-number">8.4</span> El contenedor <code>matrix</code></h2>
-<p>XXX</p>
+<p>El contenedor <code>matrix</code> se puede ver como un <code>vector</code> de dos dimensiones: líneas y columnas. Corresponde a una matriz en matemáticas, y puede contener solo un tipo de datos (<code>logical</code>, <code>numeric</code>, <code>character</code>, …).</p>
+<div id="crear-una-matrix" class="section level3">
+<h3><span class="header-section-number">8.4.1</span> Crear una <code>matrix</code></h3>
+<p>Para crear una <code>matrix</code> primero creamos un <code>vector</code>, luego especificamos el número deseado de líneas y columnas en la función <code>matrix()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vecForMatrix &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>)
+miMat &lt;-<span class="st"> </span><span class="kw">matrix</span>(vecForMatrix, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)
+<span class="kw">print</span>(miMat)</code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12</code></pre>
+<p>No tenemos que especificar el número de líneas <code>nrow</code> y el número de columnas <code>ncol</code>. Si usamos uno u otro de estos argumentos, R calculará automáticamente el número correspondiente.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miMat &lt;-<span class="st"> </span><span class="kw">matrix</span>(vecForMatrix, <span class="dt">nrow =</span> <span class="dv">3</span>)
+<span class="kw">print</span>(miMat)</code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miMat &lt;-<span class="st"> </span><span class="kw">matrix</span>(vecForMatrix, <span class="dt">ncol =</span> <span class="dv">4</span>)
+<span class="kw">print</span>(miMat)</code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12</code></pre>
+<p>Observamos que los diferentes elementos del <code>vector</code> inicial aparecen por columna. Si queremos llenar la <code>matrix</code> empezando por línea, entonces tenemos que dar como valor <code>TRUE</code> al argumento <code>byrow</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miMat &lt;-<span class="st"> </span><span class="kw">matrix</span>(vecForMatrix, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
+<span class="kw">print</span>(miMat)</code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3    4
+## [2,]    5    6    7    8
+## [3,]    9   10   11   12</code></pre>
+<p>También podemos dar un nombre a las líneas y columnas de nuestra <code>matrix</code> cuando se crea con el argumento <code>dimnames</code> que toma como valor una <code>list</code> de dos elementos: el nombre de las líneas y luego el nombre de las columnas. También podemos cambiar el nombre de las líneas y columnas a posteriori con las funciones <code>rownames()</code> y <code>colnames()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miMat &lt;-<span class="st"> </span><span class="kw">matrix</span>(
+  vecForMatrix, 
+  <span class="dt">nrow =</span> <span class="dv">3</span>, 
+  <span class="dt">byrow =</span> <span class="ot">TRUE</span>, 
+  <span class="dt">dimnames =</span> <span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;r1&quot;</span>, <span class="st">&quot;r2&quot;</span>, <span class="st">&quot;r3&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;c1&quot;</span>, <span class="st">&quot;c2&quot;</span>, <span class="st">&quot;c3&quot;</span>, <span class="st">&quot;c4&quot;</span>))
+)
+<span class="kw">print</span>(miMat)</code></pre></div>
+<pre><code>##    c1 c2 c3 c4
+## r1  1  2  3  4
+## r2  5  6  7  8
+## r3  9 10 11 12</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(miMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;col1&quot;</span>, <span class="st">&quot;col2&quot;</span>, <span class="st">&quot;col3&quot;</span>, <span class="st">&quot;col4&quot;</span>)
+<span class="kw">rownames</span>(miMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;row1&quot;</span>, <span class="st">&quot;row2&quot;</span>, <span class="st">&quot;row3&quot;</span>)
+<span class="kw">print</span>(miMat)</code></pre></div>
+<pre><code>##      col1 col2 col3 col4
+## row1    1    2    3    4
+## row2    5    6    7    8
+## row3    9   10   11   12</code></pre>
+<p>Es posible crear una <code>matrix</code> desde un <code>data.frame</code> con la función <code>as.matrix()</code>. Tenemos que verificar que nuestra <code>data.frame</code> contenga solo elementos del mismo tipo (por ejemplo, elementos de tipo <code>numeric</code>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vecForMat01 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>)
+vecForMat02 &lt;-<span class="st"> </span>vecForMat01 <span class="op">*</span><span class="st"> </span><span class="dv">10</span>
+vecForMat03 &lt;-<span class="st"> </span>vecForMat01 <span class="op">/</span><span class="st"> </span><span class="dv">10</span>
+dfForMat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(vecForMat01, vecForMat02, vecForMat03)
+<span class="kw">print</span>(dfForMat)</code></pre></div>
+<pre><code>##    vecForMat01 vecForMat02 vecForMat03
+## 1            1          10         0.1
+## 2            2          20         0.2
+## 3            3          30         0.3
+## 4            4          40         0.4
+## 5            5          50         0.5
+## 6            6          60         0.6
+## 7            7          70         0.7
+## 8            8          80         0.8
+## 9            9          90         0.9
+## 10          10         100         1.0
+## 11          11         110         1.1
+## 12          12         120         1.2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.matrix</span>(dfForMat)</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.matrix</span>(dfForMat)</code></pre></div>
+<pre><code>##       vecForMat01 vecForMat02 vecForMat03
+##  [1,]           1          10         0.1
+##  [2,]           2          20         0.2
+##  [3,]           3          30         0.3
+##  [4,]           4          40         0.4
+##  [5,]           5          50         0.5
+##  [6,]           6          60         0.6
+##  [7,]           7          70         0.7
+##  [8,]           8          80         0.8
+##  [9,]           9          90         0.9
+## [10,]          10         100         1.0
+## [11,]          11         110         1.1
+## [12,]          12         120         1.2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.matrix</span>(<span class="kw">as.matrix</span>(dfForMat))</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>También podemos crear una <code>matrix</code> desde un <code>vector</code> con la función <code>as.matrix()</code> (matriz de una sola columna).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.matrix</span>(vecForMat01)</code></pre></div>
+<pre><code>##       [,1]
+##  [1,]    1
+##  [2,]    2
+##  [3,]    3
+##  [4,]    4
+##  [5,]    5
+##  [6,]    6
+##  [7,]    7
+##  [8,]    8
+##  [9,]    9
+## [10,]   10
+## [11,]   11
+## [12,]   12</code></pre>
+</div>
+<div id="manipular-y-hacer-operaciones-en-una-matrix" class="section level3">
+<h3><span class="header-section-number">8.4.2</span> Manipular y hacer operaciones en una <code>matrix</code></h3>
+<p>Todas las operaciones término a término son posibles con una <code>matrix</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># operaciones término a término</span>
+miMat01 &lt;-<span class="st"> </span><span class="kw">matrix</span>(vecForMat01, <span class="dt">ncol =</span> <span class="dv">3</span>)
+miVecOp &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>)
+miMat01 <span class="op">*</span><span class="st"> </span>miVecOp</code></pre></div>
+<pre><code>##      [,1] [,2]  [,3]
+## [1,]    1    5     9
+## [2,]   20   60   100
+## [3,]  300  700  1100
+## [4,] 4000 8000 12000</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miMat01 <span class="op">+</span><span class="st"> </span>miVecOp</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    2    6   10
+## [2,]   12   16   20
+## [3,]  103  107  111
+## [4,] 1004 1008 1012</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miMat01 <span class="op">/</span><span class="st"> </span>miMat01</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    1    1
+## [2,]    1    1    1
+## [3,]    1    1    1
+## [4,]    1    1    1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miMat01 <span class="op">-</span><span class="st"> </span><span class="dv">10</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   -9   -5   -1
+## [2,]   -8   -4    0
+## [3,]   -7   -3    1
+## [4,]   -6   -2    2</code></pre>
+<p>Para realizar operaciones algebraicas, podemos usar la función <code>%*%</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># operaciones algebraicas</span>
+miVecConf &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>)
+miMat01 <span class="op">%*%</span><span class="st"> </span>miVecConf</code></pre></div>
+<pre><code>##      [,1]
+## [1,]  951
+## [2,] 1062
+## [3,] 1173
+## [4,] 1284</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miMat02 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>), <span class="dt">ncol =</span> <span class="dv">3</span>)
+<span class="kw">print</span>(miMat02)</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miMat02 <span class="op">%*%</span><span class="st"> </span>miMat02</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   30   66  102
+## [2,]   36   81  126
+## [3,]   42   96  150</code></pre>
+<p>La diagonal de una <code>matrix</code> se puede obtener con la función <code>diag()</code> y el determinante de una <code>matrix</code> con la función <code>det()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miMat02)</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">diag</span>(miMat02)</code></pre></div>
+<pre><code>## [1] 1 5 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">det</span>(miMat02)</code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p>Suele ser útil poder hacer una transposición de <code>matrix</code> (columnas en líneas o líneas en columnas). Para eso, están las funciones <code>aperm()</code> o <code>t()</code>. la función <code>t()</code> es más genérica y también funciona con <code>data.frame</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aperm</span>(miMat01)</code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3    4
+## [2,]    5    6    7    8
+## [3,]    9   10   11   12</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t</span>(miMat01)</code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3    4
+## [2,]    5    6    7    8
+## [3,]    9   10   11   12</code></pre>
+</div>
+<div id="acceder-a-los-elementos-de-una-matrix" class="section level3">
+<h3><span class="header-section-number">8.4.3</span> Acceder a los elementos de una <code>matrix</code></h3>
+<p>Tal como hemos hecho con los <code>data.frame</code>, podemos acceder a los elementos de una <code>matrix</code> especificando un número de línea y un número de columna entre corchetes simples <code>[ ]</code>, y separados por una coma. Si <code>i</code> es el número de línea y <code>j</code> es el número de columna, entonces <code>miMat01[i, j]</code> devuelve el elemento en la línea <code>i</code> y en la columna<code>j</code>. <code>miMat01[i,]</code> devuelve todos los elementos de la línea <code>i</code>, y <code>miMat01[, j]</code> todos los elementos de la columna <code>j</code>. Múltiples selecciones son posibles. También podemos acceder a un elemento de acuerdo con su posición en la <code>matrix</code> entre corchetes simples <code>[ ]</code> contando por columna y luego por línea. En nuestro ejemplo, el valor del décimo elemento es 10.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">i &lt;-<span class="st"> </span><span class="dv">2</span>
+j &lt;-<span class="st"> </span><span class="dv">1</span>
+<span class="kw">print</span>(miMat01[i, j])</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miMat01[i, ])</code></pre></div>
+<pre><code>## [1]  2  6 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miMat01[, j])</code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miMat01[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)])</code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    5    9
+## [2,]    6   10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miMat01[<span class="dv">10</span>])</code></pre></div>
+<pre><code>## [1] 10</code></pre>
+</div>
 </div>
 <div id="el-contenedor-array" class="section level2">
 <h2><span class="header-section-number">8.5</span> El contenedor <code>array</code></h2>
-<p>XXX</p>
+<p>El contenedor <code>array</code> es una generalización del contenedor de tipo <code>matrix</code>. Donde el tipo <code>matrix</code> tiene dos dimensiones (líneas y columnas), el tipo <code>array</code> tiene un número indefinido de dimensiones. Podemos saber el número de dimensiones de un <code>array</code> (y por lo tanto una <code>matrix</code>) con la función <code>dim()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(miMat01)</code></pre></div>
+<pre><code>## [1] 4 3</code></pre>
+<div id="crear-un-array" class="section level3">
+<h3><span class="header-section-number">8.5.1</span> Crear un <code>array</code></h3>
+<p>La creación de una <code>array</code> es similar a la de una <code>matrix</code> con una dimensión extra.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miVecArr &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>)
+miArray &lt;-<span class="st"> </span><span class="kw">array</span>(miVecArr, <span class="dt">dim =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>))
+<span class="kw">print</span>(miArray)</code></pre></div>
+<pre><code>## , , 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(miArray)</code></pre></div>
+<pre><code>## [1] 3 3 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.array</span>(miArray)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miVecArr02 &lt;-<span class="st"> </span><span class="dv">10</span> <span class="op">*</span><span class="st"> </span>miVecArr
+miArray02 &lt;-<span class="st"> </span><span class="kw">array</span>(<span class="kw">c</span>(miVecArr, miVecArr02), <span class="dt">dim =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>))
+<span class="kw">print</span>(miArray02)</code></pre></div>
+<pre><code>## , , 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3]
+## [1,]   10   40   70
+## [2,]   20   50   80
+## [3,]   30   60   90</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(miArray02)</code></pre></div>
+<pre><code>## [1] 3 3 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.array</span>(miArray02)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Podemos dar nombres a líneas y columnas, pero también a elementos.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">miArray02 &lt;-<span class="st"> </span><span class="kw">array</span>(
+  <span class="kw">c</span>(miVecArr, miVecArr02), 
+  <span class="dt">dim =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>), 
+  <span class="dt">dimnames =</span> <span class="kw">list</span>(
+    <span class="kw">c</span>(<span class="st">&quot;r1&quot;</span>, <span class="st">&quot;r2&quot;</span>, <span class="st">&quot;r3&quot;</span>), 
+    <span class="kw">c</span>(<span class="st">&quot;c1&quot;</span>, <span class="st">&quot;c2&quot;</span>, <span class="st">&quot;c3&quot;</span>), 
+    <span class="kw">c</span>(<span class="st">&quot;matrix1&quot;</span>, <span class="st">&quot;matrix2&quot;</span>)
+  )
+)
+<span class="kw">print</span>(miArray02)</code></pre></div>
+<pre><code>## , , matrix1
+## 
+##    c1 c2 c3
+## r1  1  4  7
+## r2  2  5  8
+## r3  3  6  9
+## 
+## , , matrix2
+## 
+##    c1 c2 c3
+## r1 10 40 70
+## r2 20 50 80
+## r3 30 60 90</code></pre>
+</div>
+<div id="manipular-un-array" class="section level3">
+<h3><span class="header-section-number">8.5.2</span> Manipular un <code>array</code></h3>
+<p>La manipulación de un <code>array</code> se hace de la misma manera que para una <code>matrix</code>. Para acceder a los diferentes elementos de un <code>array</code>, simplemente hay que especificar la línea <code>i</code>, la columna <code>j</code>, y la <code>matrix</code> <code>k</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">i &lt;-<span class="st"> </span><span class="dv">2</span>
+j &lt;-<span class="st"> </span><span class="dv">1</span>
+k &lt;-<span class="st"> </span><span class="dv">1</span>
+<span class="kw">print</span>(miArray02[i, j, k])</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miArray02[, j, k])</code></pre></div>
+<pre><code>## r1 r2 r3 
+##  1  2  3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miArray02[i, , k])</code></pre></div>
+<pre><code>## c1 c2 c3 
+##  2  5  8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(miArray02[i, j, ])</code></pre></div>
+<pre><code>## matrix1 matrix2 
+##       2      20</code></pre>
+</div>
+</div>
+<div id="conclusion-3" class="section level2">
+<h2><span class="header-section-number">8.6</span> Conclusión</h2>
+<p>Felicitaciones! Ahora conocemos los principales tipos de objetos que usaremos con R. Un objeto se caracteriza por sus atributos:</p>
+<ul>
+<li>el tipo de contenedor (<code>vector</code>, <code>data.frame</code>, <code>matrix</code>, <code>array</code>)</li>
+<li>el tipo de contenido de cada elemento (<code>numeric</code>, <code>logical</code>, <code>character</code>, …)</li>
+<li>el valor de cada uno de los elementos (5, “qwerty”, TRUE, …)</li>
+</ul>
+<p>Todos estos objetos se almacenan temporalmente en el entorno global de R (en la memoria RAM de nuestra computadora). El siguiente capítulo tratará las funciones y resaltará uno de los aspectos que hace que R sea tan poderoso para analizar y administrar nuestros datos.</p>
 
 </div>
 </div>

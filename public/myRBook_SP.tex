@@ -258,6 +258,15 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 \tightlist
 \item
   edición y corrección del español (Susi L.)
+\item
+  tercera parte del capítulo \emph{Contenedores de datos}: El contenedor
+  \emph{data.frame}
+\item
+  cuarta parte del capítulo \emph{Contenedores de datos}: El contenedor
+  \emph{matrix}
+\item
+  quinta parte del capítulo \emph{Contenedores de datos}: El contenedor
+  \emph{array}
 \end{itemize}
 
 \textbf{16/07/2018}
@@ -273,8 +282,8 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 \begin{itemize}
 \tightlist
 \item
-  segunda parte del capítulo \emph{Contenedores de datos}: \emph{El
-  contenedor list}
+  segunda parte del capítulo \emph{Contenedores de datos}: El contenedor
+  \emph{list}
 \end{itemize}
 
 \textbf{06/07/2018}
@@ -284,8 +293,8 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 \item
   edición y corrección del español (Camila B.)
 \item
-  primera parte del capítulo \emph{Contenedores de datos}: \emph{El
-  contenedor vector}
+  primera parte del capítulo \emph{Contenedores de datos}: El contenedor
+  \emph{vector}
 \end{itemize}
 
 \textbf{04/07/2018}
@@ -314,7 +323,10 @@ con sus consejos, sugerencias de cambios y correcciones (en orden
 alfabético):
 
 \begin{verbatim}
-## Camila Benavides Frias (Bolivia); Susi Loza Herrera (Bolivia); Estefania Quenta Herrera (Bolivia);
+## Colaboradores :
+Camila Benavides Frias (Bolivia)
+Susi Loza Herrera (Bolivia)
+Estefania Quenta Herrera (Bolivia)
 \end{verbatim}
 
 Las versiones de gitbook, html y epub de este libro usan los iconos de
@@ -4198,17 +4210,1136 @@ establecer \texttt{NULL} en el elemento que deseamos eliminar.
 \section{\texorpdfstring{El contenedor
 \texttt{data.frame}}{El contenedor data.frame}}\label{el-contenedor-data.frame}
 
-XXX
+El contenedor \texttt{data.frame} se puede comparar a una \emph{tabla}.
+Este es en realidad un caso especial de \texttt{list} donde todos los
+elementos de la \texttt{list} tienen el mismo tamaño.
+
+\subsection{\texorpdfstring{Crear un
+\texttt{data.frame}}{Crear un data.frame}}\label{crear-un-data.frame}
+
+Para crear un \texttt{data.frame} usamos la función
+\texttt{data.frame()} que toma como argumentos los elementos de la tabla
+que queremos crear. Los elementos son del tipo \texttt{vector} y son
+todos del mismo tamaño. Podemos dar un nombre a cada \emph{columna}
+(\texttt{vector}) de nuestra \emph{tabla} (\texttt{data.frame}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# crear un data.frame }
+\NormalTok{miDf01 <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}
+  \DataTypeTok{numbers =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{), }
+  \DataTypeTok{logicals =} \KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{), }
+  \DataTypeTok{characters =} \KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{)}
+\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miDf01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters
+## 1       1     TRUE          a
+## 2       2     TRUE          b
+## 3       3    FALSE          c
+## 4       4     TRUE          d
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# crear vectores, y el data.frame}
+\NormalTok{numbers <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+\NormalTok{logicals <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{characters <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{)}
+\NormalTok{miDf01 <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(numbers, logicals, characters)}
+\KeywordTok{print}\NormalTok{(miDf01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters
+## 1       1     TRUE          a
+## 2       2     TRUE          b
+## 3       3    FALSE          c
+## 4       4     TRUE          d
+\end{verbatim}
+
+\subsection{\texorpdfstring{Acceder a los elementos de un
+\texttt{data.frame}}{Acceder a los elementos de un data.frame}}\label{acceder-a-los-elementos-de-un-data.frame}
+
+El acceso a los diferentes valores de un \texttt{data.frame} se puede
+hacer de la misma manera que para un contenedor de tipo \texttt{list}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miDf01}\OperatorTok{$}\NormalTok{numbers) }\CommentTok{# vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miDf01[[}\DecValTok{1}\NormalTok{]]) }\CommentTok{# vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miDf01[}\DecValTok{1}\NormalTok{]) }\CommentTok{# list}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers
+## 1       1
+## 2       2
+## 3       3
+## 4       4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miDf01[}\StringTok{"numbers"}\NormalTok{]) }\CommentTok{# list}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers
+## 1       1
+## 2       2
+## 3       3
+## 4       4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miDf01[[}\StringTok{"numbers"}\NormalTok{]]) }\CommentTok{# vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+\end{verbatim}
+
+También podemos usar otra forma que consiste en especificar la línea o
+las líneas seguidas de una coma (con un espacio después de la coma), y
+luego la columna o columnas entre corchetes. Si se omite la información
+de línea o columna, R mostrará todas las líneas o columnas. Nuevamente
+podemos usar el número correspondiente a un elemento o el nombre del
+elemento que queremos seleccionar.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myRow <-}\StringTok{ }\DecValTok{2}
+\NormalTok{myCol <-}\StringTok{ }\DecValTok{1}
+\KeywordTok{print}\NormalTok{(miDf01[myRow, myCol])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miDf01[myRow, ])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters
+## 2       2     TRUE          b
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miDf01[, myCol])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myCol <-}\StringTok{ "numbers"}
+\KeywordTok{print}\NormalTok{(miDf01[, myCol])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+\end{verbatim}
+
+Es posible seleccionar múltiples líneas o columnas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miDf01[, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals
+## 1       1     TRUE
+## 2       2     TRUE
+## 3       3    FALSE
+## 4       4     TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miDf01[}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{), ])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters
+## 2       2     TRUE          b
+## 1       1     TRUE          a
+\end{verbatim}
+
+Como cada columna está en formato \texttt{vector}, también podemos hacer
+una selección que depende del contenido con operadores de comparación y
+operadores lógicos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miDfSub01 <-}\StringTok{ }\NormalTok{miDf01[miDf01}\OperatorTok{$}\NormalTok{numbers }\OperatorTok{>}\StringTok{ }\DecValTok{2}\NormalTok{, ]}
+\KeywordTok{print}\NormalTok{(miDfSub01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters
+## 3       3    FALSE          c
+## 4       4     TRUE          d
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miDfSub02 <-}\StringTok{ }\NormalTok{miDf01[(miDf01}\OperatorTok{$}\NormalTok{logicals }\OperatorTok{==}\StringTok{ }\OtherTok{TRUE}\NormalTok{) }\OperatorTok{&}\StringTok{ }\NormalTok{(miDf01}\OperatorTok{$}\NormalTok{numbers }\OperatorTok{<}\StringTok{ }\DecValTok{2}\NormalTok{), ]}
+\KeywordTok{print}\NormalTok{(miDfSub02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters
+## 1       1     TRUE          a
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miDfSub03 <-}\StringTok{ }\NormalTok{miDf01[(miDf01}\OperatorTok{$}\NormalTok{numbers }\OperatorTok{%%}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{, ]}
+\KeywordTok{print}\NormalTok{(miDfSub03)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters
+## 2       2     TRUE          b
+## 4       4     TRUE          d
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miDfSub04 <-}\StringTok{ }\NormalTok{miDf01[((miDf01}\OperatorTok{$}\NormalTok{numbers }\OperatorTok{%%}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{) }\OperatorTok{|}\StringTok{ }\NormalTok{(miDf01}\OperatorTok{$}\NormalTok{logicals }\OperatorTok{==}\StringTok{ }\OtherTok{TRUE}\NormalTok{), ]}
+\KeywordTok{print}\NormalTok{(miDfSub04)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters
+## 1       1     TRUE          a
+## 2       2     TRUE          b
+## 4       4     TRUE          d
+\end{verbatim}
+
+\subsection{\texorpdfstring{Modificar un
+\texttt{data.frame}}{Modificar un data.frame}}\label{modificar-un-data.frame}
+
+Para agregar un elemento a un \texttt{data.frame}, procedemos como para
+un contenedor de tipo \texttt{list}. Es necesario asegurarse de que el
+nuevo elemento sea del mismo tamaño que los otros elementos de nuestro
+\texttt{data.frame}. Por defecto, un nuevo elemento en
+\texttt{data.frame} toma el nombre de la letra \emph{V} seguido del
+número de la columna. Podemos cambiar los nombres de las columnas con la
+función \texttt{colnames()}. Podemos nombrar las líneas con la función
+\texttt{rownames()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{newVec <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{)}
+\NormalTok{miDf01[[}\DecValTok{4}\NormalTok{]] <-}\StringTok{ }\NormalTok{newVec}
+\KeywordTok{print}\NormalTok{(miDf01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters V4
+## 1       1     TRUE          a  4
+## 2       2     TRUE          b  5
+## 3       3    FALSE          c  6
+## 4       4     TRUE          d  7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(}\KeywordTok{colnames}\NormalTok{(miDf01))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numbers"    "logicals"   "characters" "V4"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{colnames}\NormalTok{(miDf01)[}\DecValTok{4}\NormalTok{] <-}\StringTok{ "newVec"}
+\KeywordTok{print}\NormalTok{(miDf01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   numbers logicals characters newVec
+## 1       1     TRUE          a      4
+## 2       2     TRUE          b      5
+## 3       3    FALSE          c      6
+## 4       4     TRUE          d      7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(}\KeywordTok{rownames}\NormalTok{(miDf01))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "1" "2" "3" "4"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rownames}\NormalTok{(miDf01) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"row1"}\NormalTok{, }\StringTok{"row2"}\NormalTok{, }\StringTok{"row3"}\NormalTok{, }\StringTok{"row4"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miDf01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      numbers logicals characters newVec
+## row1       1     TRUE          a      4
+## row2       2     TRUE          b      5
+## row3       3    FALSE          c      6
+## row4       4     TRUE          d      7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{newVec2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{40}\NormalTok{, }\DecValTok{50}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{70}\NormalTok{)}
+\NormalTok{miDf01}\OperatorTok{$}\NormalTok{newVec2 <-}\StringTok{ }\NormalTok{newVec2}
+\KeywordTok{print}\NormalTok{(miDf01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      numbers logicals characters newVec newVec2
+## row1       1     TRUE          a      4      40
+## row2       2     TRUE          b      5      50
+## row3       3    FALSE          c      6      60
+## row4       4     TRUE          d      7      70
+\end{verbatim}
+
+Como el contenedor de tipo \texttt{data.frame} es un caso especial de
+\texttt{list}, la selección y modificación se realiza como un contenedor
+de tipo \texttt{list}. Dado que los elementos de un \texttt{data.frame}
+son del tipo \texttt{vector}, la selección y la modificación de los
+elementos de un \texttt{data.frame} se hace como para un contenedor
+\texttt{vector}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miDf01}\OperatorTok{$}\NormalTok{newVec2 <-}\StringTok{ }\NormalTok{miDf01}\OperatorTok{$}\NormalTok{newVec2 }\OperatorTok{*}\StringTok{ }\DecValTok{2}
+\KeywordTok{print}\NormalTok{(miDf01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      numbers logicals characters newVec newVec2
+## row1       1     TRUE          a      4      80
+## row2       2     TRUE          b      5     100
+## row3       3    FALSE          c      6     120
+## row4       4     TRUE          d      7     140
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miDf01}\OperatorTok{$}\NormalTok{newVec2 }\OperatorTok{+}\StringTok{ }\NormalTok{miDf01}\OperatorTok{$}\NormalTok{newVec}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  84 105 126 147
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miDf01}\OperatorTok{$}\NormalTok{newVec2[}\DecValTok{2}\NormalTok{] <-}\StringTok{ }\DecValTok{0}
+\KeywordTok{print}\NormalTok{(miDf01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      numbers logicals characters newVec newVec2
+## row1       1     TRUE          a      4      80
+## row2       2     TRUE          b      5       0
+## row3       3    FALSE          c      6     120
+## row4       4     TRUE          d      7     140
+\end{verbatim}
+
+Un \texttt{vector} se puede transformar en \texttt{data.frame} con la
+función \texttt{as.data.frame()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(newVec2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 40 50 60 70
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(newVec2))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   newVec2
+## 1      40
+## 2      50
+## 3      60
+## 4      70
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.data.frame}\NormalTok{(newVec2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.data.frame}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(newVec2))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
 
 \section{\texorpdfstring{El contenedor
 \texttt{matrix}}{El contenedor matrix}}\label{el-contenedor-matrix}
 
-XXX
+El contenedor \texttt{matrix} se puede ver como un \texttt{vector} de
+dos dimensiones: líneas y columnas. Corresponde a una matriz en
+matemáticas, y puede contener solo un tipo de datos (\texttt{logical},
+\texttt{numeric}, \texttt{character}, \ldots{}).
+
+\subsection{\texorpdfstring{Crear una
+\texttt{matrix}}{Crear una matrix}}\label{crear-una-matrix}
+
+Para crear una \texttt{matrix} primero creamos un \texttt{vector}, luego
+especificamos el número deseado de líneas y columnas en la función
+\texttt{matrix()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vecForMatrix <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{12}\NormalTok{)}
+\NormalTok{miMat <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(vecForMatrix, }\DataTypeTok{nrow =} \DecValTok{3}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{4}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miMat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+\end{verbatim}
+
+No tenemos que especificar el número de líneas \texttt{nrow} y el número
+de columnas \texttt{ncol}. Si usamos uno u otro de estos argumentos, R
+calculará automáticamente el número correspondiente.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miMat <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(vecForMatrix, }\DataTypeTok{nrow =} \DecValTok{3}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miMat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miMat <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(vecForMatrix, }\DataTypeTok{ncol =} \DecValTok{4}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miMat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+\end{verbatim}
+
+Observamos que los diferentes elementos del \texttt{vector} inicial
+aparecen por columna. Si queremos llenar la \texttt{matrix} empezando
+por línea, entonces tenemos que dar como valor \texttt{TRUE} al
+argumento \texttt{byrow}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miMat <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(vecForMatrix, }\DataTypeTok{nrow =} \DecValTok{3}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miMat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3    4
+## [2,]    5    6    7    8
+## [3,]    9   10   11   12
+\end{verbatim}
+
+También podemos dar un nombre a las líneas y columnas de nuestra
+\texttt{matrix} cuando se crea con el argumento \texttt{dimnames} que
+toma como valor una \texttt{list} de dos elementos: el nombre de las
+líneas y luego el nombre de las columnas. También podemos cambiar el
+nombre de las líneas y columnas a posteriori con las funciones
+\texttt{rownames()} y \texttt{colnames()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miMat <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}
+\NormalTok{  vecForMatrix, }
+  \DataTypeTok{nrow =} \DecValTok{3}\NormalTok{, }
+  \DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{, }
+  \DataTypeTok{dimnames =} \KeywordTok{list}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"r1"}\NormalTok{, }\StringTok{"r2"}\NormalTok{, }\StringTok{"r3"}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\StringTok{"c1"}\NormalTok{, }\StringTok{"c2"}\NormalTok{, }\StringTok{"c3"}\NormalTok{, }\StringTok{"c4"}\NormalTok{))}
+\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miMat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    c1 c2 c3 c4
+## r1  1  2  3  4
+## r2  5  6  7  8
+## r3  9 10 11 12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{colnames}\NormalTok{(miMat) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"col1"}\NormalTok{, }\StringTok{"col2"}\NormalTok{, }\StringTok{"col3"}\NormalTok{, }\StringTok{"col4"}\NormalTok{)}
+\KeywordTok{rownames}\NormalTok{(miMat) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"row1"}\NormalTok{, }\StringTok{"row2"}\NormalTok{, }\StringTok{"row3"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miMat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      col1 col2 col3 col4
+## row1    1    2    3    4
+## row2    5    6    7    8
+## row3    9   10   11   12
+\end{verbatim}
+
+Es posible crear una \texttt{matrix} desde un \texttt{data.frame} con la
+función \texttt{as.matrix()}. Tenemos que verificar que nuestra
+\texttt{data.frame} contenga solo elementos del mismo tipo (por ejemplo,
+elementos de tipo \texttt{numeric}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vecForMat01 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{12}\NormalTok{)}
+\NormalTok{vecForMat02 <-}\StringTok{ }\NormalTok{vecForMat01 }\OperatorTok{*}\StringTok{ }\DecValTok{10}
+\NormalTok{vecForMat03 <-}\StringTok{ }\NormalTok{vecForMat01 }\OperatorTok{/}\StringTok{ }\DecValTok{10}
+\NormalTok{dfForMat <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(vecForMat01, vecForMat02, vecForMat03)}
+\KeywordTok{print}\NormalTok{(dfForMat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    vecForMat01 vecForMat02 vecForMat03
+## 1            1          10         0.1
+## 2            2          20         0.2
+## 3            3          30         0.3
+## 4            4          40         0.4
+## 5            5          50         0.5
+## 6            6          60         0.6
+## 7            7          70         0.7
+## 8            8          80         0.8
+## 9            9          90         0.9
+## 10          10         100         1.0
+## 11          11         110         1.1
+## 12          12         120         1.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.matrix}\NormalTok{(dfForMat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.matrix}\NormalTok{(dfForMat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       vecForMat01 vecForMat02 vecForMat03
+##  [1,]           1          10         0.1
+##  [2,]           2          20         0.2
+##  [3,]           3          30         0.3
+##  [4,]           4          40         0.4
+##  [5,]           5          50         0.5
+##  [6,]           6          60         0.6
+##  [7,]           7          70         0.7
+##  [8,]           8          80         0.8
+##  [9,]           9          90         0.9
+## [10,]          10         100         1.0
+## [11,]          11         110         1.1
+## [12,]          12         120         1.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.matrix}\NormalTok{(}\KeywordTok{as.matrix}\NormalTok{(dfForMat))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+También podemos crear una \texttt{matrix} desde un \texttt{vector} con
+la función \texttt{as.matrix()} (matriz de una sola columna).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.matrix}\NormalTok{(vecForMat01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       [,1]
+##  [1,]    1
+##  [2,]    2
+##  [3,]    3
+##  [4,]    4
+##  [5,]    5
+##  [6,]    6
+##  [7,]    7
+##  [8,]    8
+##  [9,]    9
+## [10,]   10
+## [11,]   11
+## [12,]   12
+\end{verbatim}
+
+\subsection{\texorpdfstring{Manipular y hacer operaciones en una
+\texttt{matrix}}{Manipular y hacer operaciones en una matrix}}\label{manipular-y-hacer-operaciones-en-una-matrix}
+
+Todas las operaciones término a término son posibles con una
+\texttt{matrix}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# operaciones término a término}
+\NormalTok{miMat01 <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(vecForMat01, }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{)}
+\NormalTok{miVecOp <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{1000}\NormalTok{)}
+\NormalTok{miMat01 }\OperatorTok{*}\StringTok{ }\NormalTok{miVecOp}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]  [,3]
+## [1,]    1    5     9
+## [2,]   20   60   100
+## [3,]  300  700  1100
+## [4,] 4000 8000 12000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miMat01 }\OperatorTok{+}\StringTok{ }\NormalTok{miVecOp}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    2    6   10
+## [2,]   12   16   20
+## [3,]  103  107  111
+## [4,] 1004 1008 1012
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miMat01 }\OperatorTok{/}\StringTok{ }\NormalTok{miMat01}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    1    1
+## [2,]    1    1    1
+## [3,]    1    1    1
+## [4,]    1    1    1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miMat01 }\OperatorTok{-}\StringTok{ }\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]   -9   -5   -1
+## [2,]   -8   -4    0
+## [3,]   -7   -3    1
+## [4,]   -6   -2    2
+\end{verbatim}
+
+Para realizar operaciones algebraicas, podemos usar la función
+\texttt{\%*\%}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# operaciones algebraicas}
+\NormalTok{miVecConf <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{100}\NormalTok{)}
+\NormalTok{miMat01 }\OperatorTok{%*%}\StringTok{ }\NormalTok{miVecConf}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]
+## [1,]  951
+## [2,] 1062
+## [3,] 1173
+## [4,] 1284
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miMat02 <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miMat02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miMat02 }\OperatorTok{%*%}\StringTok{ }\NormalTok{miMat02}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]   30   66  102
+## [2,]   36   81  126
+## [3,]   42   96  150
+\end{verbatim}
+
+La diagonal de una \texttt{matrix} se puede obtener con la función
+\texttt{diag()} y el determinante de una \texttt{matrix} con la función
+\texttt{det()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miMat02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{diag}\NormalTok{(miMat02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 5 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{det}\NormalTok{(miMat02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+Suele ser útil poder hacer una transposición de \texttt{matrix}
+(columnas en líneas o líneas en columnas). Para eso, están las funciones
+\texttt{aperm()} o \texttt{t()}. la función \texttt{t()} es más genérica
+y también funciona con \texttt{data.frame}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{aperm}\NormalTok{(miMat01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3    4
+## [2,]    5    6    7    8
+## [3,]    9   10   11   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{t}\NormalTok{(miMat01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3    4
+## [2,]    5    6    7    8
+## [3,]    9   10   11   12
+\end{verbatim}
+
+\subsection{\texorpdfstring{Acceder a los elementos de una
+\texttt{matrix}}{Acceder a los elementos de una matrix}}\label{acceder-a-los-elementos-de-una-matrix}
+
+Tal como hemos hecho con los \texttt{data.frame}, podemos acceder a los
+elementos de una \texttt{matrix} especificando un número de línea y un
+número de columna entre corchetes simples \texttt{{[}\ {]}}, y separados
+por una coma. Si \texttt{i} es el número de línea y \texttt{j} es el
+número de columna, entonces \texttt{miMat01{[}i,\ j{]}} devuelve el
+elemento en la línea \texttt{i} y en la columna\texttt{j}.
+\texttt{miMat01{[}i,{]}} devuelve todos los elementos de la línea
+\texttt{i}, y \texttt{miMat01{[},\ j{]}} todos los elementos de la
+columna \texttt{j}. Múltiples selecciones son posibles. También podemos
+acceder a un elemento de acuerdo con su posición en la \texttt{matrix}
+entre corchetes simples \texttt{{[}\ {]}} contando por columna y luego
+por línea. En nuestro ejemplo, el valor del décimo elemento es 10.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{i <-}\StringTok{ }\DecValTok{2}
+\NormalTok{j <-}\StringTok{ }\DecValTok{1}
+\KeywordTok{print}\NormalTok{(miMat01[i, j])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miMat01[i, ])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  2  6 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miMat01[, j])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miMat01[}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    5    9
+## [2,]    6   10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miMat01[}\DecValTok{10}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
 
 \section{\texorpdfstring{El contenedor
 \texttt{array}}{El contenedor array}}\label{el-contenedor-array}
 
-XXX
+El contenedor \texttt{array} es una generalización del contenedor de
+tipo \texttt{matrix}. Donde el tipo \texttt{matrix} tiene dos
+dimensiones (líneas y columnas), el tipo \texttt{array} tiene un número
+indefinido de dimensiones. Podemos saber el número de dimensiones de un
+\texttt{array} (y por lo tanto una \texttt{matrix}) con la función
+\texttt{dim()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dim}\NormalTok{(miMat01)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 3
+\end{verbatim}
+
+\subsection{\texorpdfstring{Crear un
+\texttt{array}}{Crear un array}}\label{crear-un-array}
+
+La creación de una \texttt{array} es similar a la de una \texttt{matrix}
+con una dimensión extra.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miVecArr <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{)}
+\NormalTok{miArray <-}\StringTok{ }\KeywordTok{array}\NormalTok{(miVecArr, }\DataTypeTok{dim =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+\KeywordTok{print}\NormalTok{(miArray)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## , , 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dim}\NormalTok{(miArray)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3 3 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.array}\NormalTok{(miArray)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miVecArr02 <-}\StringTok{ }\DecValTok{10} \OperatorTok{*}\StringTok{ }\NormalTok{miVecArr}
+\NormalTok{miArray02 <-}\StringTok{ }\KeywordTok{array}\NormalTok{(}\KeywordTok{c}\NormalTok{(miVecArr, miVecArr02), }\DataTypeTok{dim =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+\KeywordTok{print}\NormalTok{(miArray02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## , , 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3]
+## [1,]   10   40   70
+## [2,]   20   50   80
+## [3,]   30   60   90
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dim}\NormalTok{(miArray02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3 3 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.array}\NormalTok{(miArray02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Podemos dar nombres a líneas y columnas, pero también a elementos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{miArray02 <-}\StringTok{ }\KeywordTok{array}\NormalTok{(}
+  \KeywordTok{c}\NormalTok{(miVecArr, miVecArr02), }
+  \DataTypeTok{dim =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{), }
+  \DataTypeTok{dimnames =} \KeywordTok{list}\NormalTok{(}
+    \KeywordTok{c}\NormalTok{(}\StringTok{"r1"}\NormalTok{, }\StringTok{"r2"}\NormalTok{, }\StringTok{"r3"}\NormalTok{), }
+    \KeywordTok{c}\NormalTok{(}\StringTok{"c1"}\NormalTok{, }\StringTok{"c2"}\NormalTok{, }\StringTok{"c3"}\NormalTok{), }
+    \KeywordTok{c}\NormalTok{(}\StringTok{"matrix1"}\NormalTok{, }\StringTok{"matrix2"}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+\KeywordTok{print}\NormalTok{(miArray02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## , , matrix1
+## 
+##    c1 c2 c3
+## r1  1  4  7
+## r2  2  5  8
+## r3  3  6  9
+## 
+## , , matrix2
+## 
+##    c1 c2 c3
+## r1 10 40 70
+## r2 20 50 80
+## r3 30 60 90
+\end{verbatim}
+
+\subsection{\texorpdfstring{Manipular un
+\texttt{array}}{Manipular un array}}\label{manipular-un-array}
+
+La manipulación de un \texttt{array} se hace de la misma manera que para
+una \texttt{matrix}. Para acceder a los diferentes elementos de un
+\texttt{array}, simplemente hay que especificar la línea \texttt{i}, la
+columna \texttt{j}, y la \texttt{matrix} \texttt{k}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{i <-}\StringTok{ }\DecValTok{2}
+\NormalTok{j <-}\StringTok{ }\DecValTok{1}
+\NormalTok{k <-}\StringTok{ }\DecValTok{1}
+\KeywordTok{print}\NormalTok{(miArray02[i, j, k])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miArray02[, j, k])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## r1 r2 r3 
+##  1  2  3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miArray02[i, , k])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## c1 c2 c3 
+##  2  5  8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(miArray02[i, j, ])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## matrix1 matrix2 
+##       2      20
+\end{verbatim}
+
+\section{Conclusión}\label{conclusion-3}
+
+Felicitaciones! Ahora conocemos los principales tipos de objetos que
+usaremos con R. Un objeto se caracteriza por sus atributos:
+
+\begin{itemize}
+\tightlist
+\item
+  el tipo de contenedor (\texttt{vector}, \texttt{data.frame},
+  \texttt{matrix}, \texttt{array})
+\item
+  el tipo de contenido de cada elemento (\texttt{numeric},
+  \texttt{logical}, \texttt{character}, \ldots{})
+\item
+  el valor de cada uno de los elementos (5, ``qwerty'', TRUE, \ldots{})
+\end{itemize}
+
+Todos estos objetos se almacenan temporalmente en el entorno global de R
+(en la memoria RAM de nuestra computadora). El siguiente capítulo
+tratará las funciones y resaltará uno de los aspectos que hace que R sea
+tan poderoso para analizar y administrar nuestros datos.
 
 \chapter{Las funciones}\label{fonctions}
 
@@ -4233,6 +5364,7 @@ exp sqrt t
 \subsection{Estadísticas descriptivas}\label{estadisticas-descriptivas}
 
 mean sd max min quartile summary median length round ceiling floor
+rowSums colSums rowMeans colMeans aggregate
 
 \section{Otras funciones útiles}\label{otras-funciones-utiles}
 
