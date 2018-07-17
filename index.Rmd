@@ -18,6 +18,10 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 Últimas modificaciones:
 
+**17/07/2018**
+
+* edición y corrección del español (Susi L.) 
+
 **16/07/2018**
 
 * edición y corrección del español (Estefanía Q.) 
@@ -45,10 +49,8 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones (en orden alfabético):
 
-=> lista para actualizar con autorizaciones de contribuyentes:
-
 ```{r echo = FALSE}
-contrib <- t(data.frame(c("Camila", "Benavides Frias", "Bolivia"), c("Estefania", "Quenta Herrera",  "Bolivia")))
+contrib <- t(data.frame(c("Camila", "Benavides Frias", "Bolivia"), c("Estefania", "Quenta Herrera",  "Bolivia"), c("Susi", "Loza Herrera", "Bolivia")))
 contrib <- contrib[order(contrib[, 2]),]
 for(i in seq_along(contrib[, 2])){
   cat(contrib[i, 1], " ",contrib[i, 2], " (", contrib[i, 3],"); ", sep = "")
