@@ -29,7 +29,7 @@ A lo largo de este libro, los ejemplos del código R aparecerán sobre un fondo 
 knitr::include_graphics("myFigures/screencap_rConsoleCalculatrice.png")
 ```
 
-### Los operadores aritméticos
+### Los operadores aritméticos {#l011opari}
 
 ```{r}
 5 + 5
@@ -75,7 +75,7 @@ pi * 5^2
 el *estilo* del código es importante porque el código está destinado a ser leído por nosotros y por otras personas. Para tener un estilo legible, se recomienda colocar espacios antes y después de los operadores aritméticos, excepto "\*", "/" y "^", aunque a veces es útil agregarlos como es el caso en nuestro ejemplos. La información sobre el *estilo* siempre estará representada con este pictograma para que sea fácilmente identificable.
 ```
 
-### Los operadores comparativos
+### Los operadores comparativos {#l011opcomp}
 
 Sin embargo, R es mucho más que una simple calculadora porque permite otro tipo de operadores: operadores de comparación, para *comparar* los valores (Table \@ref(tab:tabOpCom)).
 
@@ -152,7 +152,7 @@ F == 0
 
 Aunque esta forma de referirse a `TRUE` y `FALSE` por `T` y `F` está bastante extendida, en este libro siempre usaremos `TRUE` y `FALSE` para que el código sea más fácil de leer. Como mencionado anterioramente, el objetivo de un código no solo es ser funcional sino también fácil de leer y volver a leer.
 
-### Los operadores lógicos
+### Los operadores lógicos {#l011oplog}
 
 Hay un último tipo de operador, los operadores lógicos. Estos son útiles para combinar operadores de comparación (Table \@ref(tab:tabOpLog)). 
 
