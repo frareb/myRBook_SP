@@ -18,6 +18,14 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 Últimas modificaciones:
 
+**27/07/2018**
+
+* Capítulo sobre las funciones (2/3)
+
+**25/07/2018**
+
+* Capítulo sobre las funciones (1/3)
+
 **17/07/2018**
 
 * edición y corrección del español (Susi L.) 
@@ -53,7 +61,11 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones (en orden alfabético):
 
 ```{r echo = FALSE}
-contrib <- t(data.frame(c("Camila", "Benavides Frias", "Bolivia"), c("Estefania", "Quenta Herrera",  "Bolivia"), c("Susi", "Loza Herrera", "Bolivia")))
+contrib <- unname(t(data.frame(
+  c("Camila", "Benavides Frias", "Bolivia"), 
+  c("Estefania", "Quenta Herrera",  "Bolivia"), 
+  c("Susi", "Loza Herrera", "Bolivia")
+)))
 contrib <- contrib[order(contrib[, 2]),]
 msg <- "Colaboradores :\r"
 for(i in seq_along(contrib[, 2])){
