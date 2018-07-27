@@ -2,7 +2,7 @@
 
 Hasta ahora hemos creado objetos simples que contienen solo un valor. Sin embargo, pudimos ver que un objeto tenía atributos diferentes, como su valor, pero también el tipo de datos contenidos (e.g., `numeric`, `character`). Ahora vamos a ver que hay diferentes tipos de contenedores para almacenar datos múltiples.
 
-## El contenedor `vector`
+## El contenedor `vector` {#l014vector}
 
 En R, un `vector` es una combinación de datos con la particularidad de que todos los datos contenidos en un `vector` son del mismo tipo. Podemos almacenar por ejemplo múltiples elementos del tipo `character` o `numeric` en un `vector`, pero no ambos. El contenedor `vector` es importante porque es el elemento básico de R. 
 
@@ -196,7 +196,7 @@ print(miVec23)
 
 Podemos hacer mucho más con un `vector` y volveremos a su manejo y operaciones posibles en el capítulo sobre funciones.
 
-## El contenedor `list`
+## El contenedor `list` {#l014list}
 
 El segundo tipo de contenedor que vamos a presentar es el contenedor `list`, que es también el segundo contenedor después del tipo` vector` debido a su importancia en la programación con R. El contenedor de tipo `list` le permite almacenar **listas** de elementos. Contrariamente a lo que vimos antes con el tipo `vector`, los elementos del tipo `list` pueden ser diferentes (por ejemplo, un `vector` de tipo `numeric`, luego un `vector` de tipo `character`). Los elementos del tipo `list` también pueden ser contenedores diferentes (por ejemplo, un `vector`, luego una `list`). El tipo de contenedor `list` tendrá mas sentido cuando hayamos estudiado los **bucles** y **funciones** de la familia `apply`.
 
@@ -378,7 +378,7 @@ miList05[[2]] <- NULL
 print(miList05)
 ```
 
-## El contenedor `data.frame`
+## El contenedor `data.frame` {#l014dataframe}
 
 El contenedor `data.frame` se puede comparar a una *tabla*. Este es en realidad un caso especial de `list` donde todos los elementos de la `list` tienen el mismo tamaño.
 
@@ -485,7 +485,7 @@ is.data.frame(newVec2)
 is.data.frame(as.data.frame(newVec2))
 ```
 
-## El contenedor `matrix`
+## El contenedor `matrix` {#l014matrix}
 
 El contenedor `matrix` se puede ver como un `vector` de dos dimensiones: líneas y columnas. Corresponde a una matriz en matemáticas, y puede contener solo un tipo de datos (`logical`, `numeric`, `character`, ...).
 
@@ -603,7 +603,7 @@ print(miMat01[c(1, 2), c(2, 3)])
 print(miMat01[10])
 ```
 
-## El contenedor `array`
+## El contenedor `array` {#l014array}
 
 El contenedor `array` es una generalización del contenedor de tipo `matrix`. Donde el tipo `matrix` tiene dos dimensiones (líneas y columnas), el tipo `array` tiene un número indefinido de dimensiones. Podemos saber el número de dimensiones de un `array` (y por lo tanto una `matrix`) con la función `dim()`.
 
