@@ -126,7 +126,7 @@ as.character(factor01)
 as.numeric(factor01)
 ```
 
-## El tipo `logical`
+## El tipo `logical` {#l013logi}
 
 El tipo `logical` corresponde a los valores `TRUE` y `FALSE` (y `NA`) que ya hemos visto con los operadores de comparación.
 
