@@ -188,7 +188,7 @@ Se recomienda que las comas `,` sean seguidas de un espacio para que el código 
 
 El archivo de ayuda en inglés sobre operadores aritméticos se puede obtener con el comando `?'+'`. El de los operadores de comparación con el comando `?'=='` y el de los operadores lógicos con el comando `?'&'`.
 
-## El concepto de objeto
+## El concepto de objeto {#l011object}
 
 Un aspecto importante de la programación con R, pero también la programación en general es la noción de objeto. Como se indica en la página web de wikipedia (https://ia.wikipedia.org/wiki/Objecto_(informatica)), en ciencias de la computación, un objeto es un *contenedor*, es decir, algo que contendrá información. La información contenida en un objeto puede ser muy diversa, pero por el momento contendremos en un objeto el número 5. Para hacer esto (y para reutilizarlo más adelante), debemos darle un nombre a nuestro objeto. En R, los nombres de los objetos no deben contener caracteres especiales como *^ $ ? | + () [] {}*, entre otros. No deben comenzar con un número ni contener espacios. El nombre del objeto debe ser representativo de lo que contiene, sin ser demasiado corto ni demasiado largo. Imagine que nuestro número 5 corresponde al número de repeticiones de un experimento. Nos gustaría darle un nombre que se refiera a *numero* y *repeticiones*, que podríamos reducir a *nbr* y *rep*, respectivamente (*nbr* para number en ingles). Hay varias posibilidades que son bastante comunes bajo R:
 
