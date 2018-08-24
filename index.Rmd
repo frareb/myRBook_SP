@@ -18,20 +18,24 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 Últimas modificaciones:
 
+**24/08/2018**
+
+* Capítulo sobre [las funciones (3/3)](#fonctions)
+
 **27/07/2018**
 
-* Capítulo sobre las funciones (2/3)
+* Capítulo sobre [las funciones (2/3)](#fonctions)
 
 **25/07/2018**
 
-* Capítulo sobre las funciones (1/3)
+* Capítulo sobre [las funciones (1/3)](#fonctions)
 
 **17/07/2018**
 
 * edición y corrección del español (Susi L.) 
-* tercera parte del capítulo *Contenedores de datos*: El contenedor *data.frame*
-* cuarta parte del capítulo *Contenedores de datos*: El contenedor *matrix*
-* quinta parte del capítulo *Contenedores de datos*: El contenedor *array*
+* tercera parte del capítulo [*Contenedores de datos*](#dataType2): El contenedor [*data.frame*](#l014dataframe)
+* cuarta parte del capítulo [*Contenedores de datos*](#dataType2): El contenedor [*matrix*](#l014matrix)
+* quinta parte del capítulo [*Contenedores de datos*](#dataType2): El contenedor [*array*](#l014array)
 
 **16/07/2018**
 
@@ -39,12 +43,12 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 **12/07/2018**
 
-* segunda parte del capítulo *Contenedores de datos*: El contenedor *list*
+* segunda parte del capítulo [*Contenedores de datos*](#dataType2): El contenedor [*list*](#l014list)
 
 **06/07/2018**
 
 * edición y corrección del español (Camila B.) 
-* primera parte del capítulo *Contenedores de datos*: El contenedor *vector*
+* primera parte del capítulo [*Contenedores de datos*](#dataType2): El contenedor [*vector*](#l014vector)
 
 **04/07/2018**
 
