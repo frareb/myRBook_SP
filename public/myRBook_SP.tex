@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-07-27}
+    \date{2018-08-24}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -252,12 +252,20 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 
 Últimas modificaciones:
 
+\textbf{24/08/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  Capítulo sobre \protect\hyperlink{fonctions}{las funciones (3/3)}
+\end{itemize}
+
 \textbf{27/07/2018}
 
 \begin{itemize}
 \tightlist
 \item
-  Capítulo sobre las funciones (2/3)
+  Capítulo sobre \protect\hyperlink{fonctions}{las funciones (2/3)}
 \end{itemize}
 
 \textbf{25/07/2018}
@@ -265,7 +273,7 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 \begin{itemize}
 \tightlist
 \item
-  Capítulo sobre las funciones (1/3)
+  Capítulo sobre \protect\hyperlink{fonctions}{las funciones (1/3)}
 \end{itemize}
 
 \textbf{17/07/2018}
@@ -275,14 +283,17 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 \item
   edición y corrección del español (Susi L.)
 \item
-  tercera parte del capítulo \emph{Contenedores de datos}: El contenedor
-  \emph{data.frame}
+  tercera parte del capítulo
+  \protect\hyperlink{dataType2}{\emph{Contenedores de datos}}: El
+  contenedor \protect\hyperlink{l014dataframe}{\emph{data.frame}}
 \item
-  cuarta parte del capítulo \emph{Contenedores de datos}: El contenedor
-  \emph{matrix}
+  cuarta parte del capítulo
+  \protect\hyperlink{dataType2}{\emph{Contenedores de datos}}: El
+  contenedor \protect\hyperlink{l014matrix}{\emph{matrix}}
 \item
-  quinta parte del capítulo \emph{Contenedores de datos}: El contenedor
-  \emph{array}
+  quinta parte del capítulo
+  \protect\hyperlink{dataType2}{\emph{Contenedores de datos}}: El
+  contenedor \protect\hyperlink{l014array}{\emph{array}}
 \end{itemize}
 
 \textbf{16/07/2018}
@@ -298,8 +309,9 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 \begin{itemize}
 \tightlist
 \item
-  segunda parte del capítulo \emph{Contenedores de datos}: El contenedor
-  \emph{list}
+  segunda parte del capítulo
+  \protect\hyperlink{dataType2}{\emph{Contenedores de datos}}: El
+  contenedor \protect\hyperlink{l014list}{\emph{list}}
 \end{itemize}
 
 \textbf{06/07/2018}
@@ -309,8 +321,9 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 \item
   edición y corrección del español (Camila B.)
 \item
-  primera parte del capítulo \emph{Contenedores de datos}: El contenedor
-  \emph{vector}
+  primera parte del capítulo
+  \protect\hyperlink{dataType2}{\emph{Contenedores de datos}}: El
+  contenedor \protect\hyperlink{l014vector}{\emph{vector}}
 \end{itemize}
 
 \textbf{04/07/2018}
@@ -1113,7 +1126,8 @@ El de los operadores de comparación con el comando
 \texttt{?\textquotesingle{}==\textquotesingle{}} y el de los operadores
 lógicos con el comando \texttt{?\textquotesingle{}\&\textquotesingle{}}.
 
-\section{El concepto de objeto}\label{el-concepto-de-objeto}
+\hypertarget{l011object}{\section{El concepto de
+objeto}\label{l011object}}
 
 Un aspecto importante de la programación con R, pero también la
 programación en general es la noción de objeto. Como se indica en la
@@ -2186,8 +2200,8 @@ caso, solo hay una posibilidad, por lo que la función
 ## [1] 1
 \end{verbatim}
 
-\section{\texorpdfstring{El tipo
-\texttt{logical}}{El tipo logical}}\label{el-tipo-logical}
+\hypertarget{l013logi}{\section{\texorpdfstring{El tipo
+\texttt{logical}}{El tipo logical}}\label{l013logi}}
 
 El tipo \texttt{logical} corresponde a los valores \texttt{TRUE} y
 \texttt{FALSE} (y \texttt{NA}) que ya hemos visto con los operadores de
@@ -2357,7 +2371,8 @@ de datos. Ahora sabemos:
 Este capítulo es la base para el próximo capítulo sobre contenedores de
 datos.
 
-\chapter{Contenedores de datos}\label{dataType2}
+\hypertarget{dataType2}{\chapter{Contenedores de
+datos}\label{dataType2}}
 
 Hasta ahora hemos creado objetos simples que contienen solo un valor.
 Sin embargo, pudimos ver que un objeto tenía atributos diferentes, como
@@ -5090,8 +5105,8 @@ por línea. En nuestro ejemplo, el valor del décimo elemento es 10.
 ## [1] 10
 \end{verbatim}
 
-\section{\texorpdfstring{El contenedor
-\texttt{array}}{El contenedor array}}\label{l014array}
+\hypertarget{l014array}{\section{\texorpdfstring{El contenedor
+\texttt{array}}{El contenedor array}}\label{l014array}}
 
 El contenedor \texttt{array} es una generalización del contenedor de
 tipo \texttt{matrix}. Donde el tipo \texttt{matrix} tiene dos
@@ -5313,7 +5328,7 @@ Todos estos objetos se almacenan temporalmente en el entorno global de R
 tratará las funciones y resaltará uno de los aspectos que hace que R sea
 tan poderoso para analizar y administrar nuestros datos.
 
-\chapter{Las funciones}\label{fonctions}
+\hypertarget{fonctions}{\chapter{Las funciones}\label{fonctions}}
 
 \section{¿Qué es una función?}\label{que-es-una-funcion}
 
@@ -6127,7 +6142,7 @@ inverso.
 ## [1] 40 10 50 10 30 20 10
 \end{verbatim}
 
-\subsubsection{\texorpdfstring{\texttt{\%in\%()}}{\%in\%()}}\label{l015in}
+\hypertarget{l015in}{\subsubsection{\texorpdfstring{\texttt{\%in\%()}}{\%in\%()}}\label{l015in}}
 
 La función \texttt{\%in\%()} se puede comparar con un
 \protect\hyperlink{l011opcomp}{operador de comparación}. Esta función
@@ -6575,7 +6590,7 @@ La función \texttt{median()} devuelve la mediana.
 ## [1] 7
 \end{verbatim}
 
-\subsubsection{\texorpdfstring{\texttt{length()}}{length()}}\label{l015length}
+\hypertarget{l015length}{\subsubsection{\texorpdfstring{\texttt{length()}}{length()}}\label{l015length}}
 
 La función \texttt{length()} devuelve el tamaño de un objeto (número de
 elementos).
@@ -7507,11 +7522,512 @@ Soluciones:
 ## [1] 2.340397 3.774270
 \end{verbatim}
 
-\section{Escribir una función}\label{escribir-una-funcion}
+\section{Escribir una función}\label{l015function}
 
-XXX
+Cuando reproducimos las mismas operaciones varias veces, el código se
+vuelve difícil de escribir y de mantener porque si tenemos que hacer una
+modificación, tendremos que repetirla cada vez que la usemos. Esto es un
+signo de la necesidad de usar una \textbf{función}. En el siguiente
+ejemplo, sera largo modificar el código si queremos agregar +45 en lugar
+de +20 para cada línea.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{35} \OperatorTok{+}\StringTok{ }\DecValTok{20}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 55
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{758} \OperatorTok{+}\StringTok{ }\DecValTok{20}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 778
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{862} \OperatorTok{+}\StringTok{ }\DecValTok{20}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 882
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{782} \OperatorTok{+}\StringTok{ }\DecValTok{20}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 802
+\end{verbatim}
+
+Como todas las funciones básicas de R, nuestras funciones tendrán un
+\textbf{nombre} y \textbf{argumentos}. Al igual que con los nombres de
+los objetos y los nombres de los archivos, es importante elegir bien el
+nombre de nuestra función (ver la \protect\hyperlink{l011object}{sección
+sobre objetos}). Para crear una función utilizaremos la función
+\texttt{function()} que toma como argumento los argumentos de nuestra
+función. La función devolverá el resultado deseado. Por defecto, el
+resultado devuelto es el último utilizado, pero es mejor usar la función
+\texttt{return()}. La siguiente función \texttt{addX()} toma como
+argumento \texttt{x} y devuelve \texttt{x\ +\ 20}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{addX <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \KeywordTok{return}\NormalTok{(x }\OperatorTok{+}\StringTok{ }\DecValTok{20}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Nuestro código se convierte en:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{addX}\NormalTok{(}\DecValTok{35}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 55
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{addX}\NormalTok{(}\DecValTok{758}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 778
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{addX}\NormalTok{(}\DecValTok{862}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 882
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{addX}\NormalTok{(}\DecValTok{782}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 802
+\end{verbatim}
+
+Si queremos cambiar el código para agregar 45 en lugar de 20,
+simplemente cambiamos la función \texttt{addX()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{addX <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \KeywordTok{return}\NormalTok{(x }\OperatorTok{+}\StringTok{ }\DecValTok{45}\NormalTok{)}
+\NormalTok{\}}
+\KeywordTok{addX}\NormalTok{(}\DecValTok{35}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 80
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{addX}\NormalTok{(}\DecValTok{758}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 803
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{addX}\NormalTok{(}\DecValTok{862}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 907
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{addX}\NormalTok{(}\DecValTok{782}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 827
+\end{verbatim}
+
+Aquí podríamos haber usado el formato \texttt{vector} para evitar la
+repetición, pero eso no siempre es posible.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{c}\NormalTok{(}\DecValTok{35}\NormalTok{, }\DecValTok{758}\NormalTok{, }\DecValTok{862}\NormalTok{, }\DecValTok{782}\NormalTok{) }\OperatorTok{+}\StringTok{ }\DecValTok{20}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  55 778 882 802
+\end{verbatim}
+
+Vamos a esribir una nueva función que contará el número de consonantes y
+vocales en minúsculas en una palabra. Primero separaremos todas las
+letras de la palabra con la función \texttt{strsplit} (podemos consultar
+la ayuda para saber más acerca de esta función). Luego contaremos las
+vocales y las consonantes con la función
+\protect\hyperlink{l015length}{\texttt{length()}}. Para la lista de
+letras, usaremos el objeto \texttt{letters} incluido en R que contiene
+las 26 letras en minuscula (consulte la ayuda con \texttt{?letters}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(letters) }\CommentTok{# las 26 letras}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
+## [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{countVowelConso <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(word)\{ }\CommentTok{# nombre: countVowelConso ; argumento: word}
+\NormalTok{  wordSplit <-}\StringTok{ }\KeywordTok{strsplit}\NormalTok{(word, }\DataTypeTok{split =} \StringTok{""}\NormalTok{)[[}\DecValTok{1}\NormalTok{]] }\CommentTok{# separar letras de word}
+\NormalTok{  vowels <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"i"}\NormalTok{, }\StringTok{"o"}\NormalTok{, }\StringTok{"u"}\NormalTok{, }\StringTok{"y"}\NormalTok{) }\CommentTok{# las vocales}
+\NormalTok{  numVowel <-}\StringTok{ }\KeywordTok{length}\NormalTok{(wordSplit[wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels]) }\CommentTok{# numero de vocales}
+\NormalTok{  consonants <-}\StringTok{ }\NormalTok{letters[}\OperatorTok{!}\NormalTok{letters }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels] }\CommentTok{# las consonantes}
+\NormalTok{  numConso <-}\StringTok{ }\KeywordTok{length}\NormalTok{(wordSplit[wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{consonants]) }\CommentTok{# numero de consonantes}
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{c}\NormalTok{(numVowel, numConso)) }\CommentTok{# el resultado de la funcion}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Ahora podemos usar nuestra función.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{countVowelConso}\NormalTok{(}\DataTypeTok{word =} \StringTok{"qwertyuiop azertyuiop"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 11  9
+\end{verbatim}
+
+Esta función se puede modificar mostrando un mensaje más explícito.
+Aunque en general se debe evitar este tipo de mensaje para evitar
+sobrecargar las funciones, puede ser útil verificar que todo esté
+funcionando correctamente (luego lo borraremos).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{countVowelConso <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(word)\{}
+\NormalTok{  wordSplit <-}\StringTok{ }\KeywordTok{strsplit}\NormalTok{(word, }\DataTypeTok{split =} \StringTok{""}\NormalTok{)[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{  vowels <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"i"}\NormalTok{, }\StringTok{"o"}\NormalTok{, }\StringTok{"u"}\NormalTok{, }\StringTok{"y"}\NormalTok{)}
+\NormalTok{  numVowel <-}\StringTok{ }\KeywordTok{length}\NormalTok{(wordSplit[wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels])}
+\NormalTok{  consonants <-}\StringTok{ }\NormalTok{letters[}\OperatorTok{!}\NormalTok{letters }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels]}
+\NormalTok{  numConso <-}\StringTok{ }\KeywordTok{length}\NormalTok{(wordSplit[wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{consonants])}
+  \KeywordTok{print}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Hay "}\NormalTok{, numVowel, }\StringTok{" vocales y "}\NormalTok{, }
+\NormalTok{    numConso, }\StringTok{" consonantes en la palabra '"}\NormalTok{, word, }\StringTok{"'."}\NormalTok{))}
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{c}\NormalTok{(numVowel, numConso))}
+\NormalTok{\}}
+\KeywordTok{countVowelConso}\NormalTok{(}\DataTypeTok{word =} \StringTok{"qwertyuiop azertyuiop"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Hay 11 vocales y 9 consonantes en la palabra 'qwertyuiop azertyuiop'."
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 11  9
+\end{verbatim}
+
+Por otro lado, si usamos \texttt{countVowelConso(word\ =\ 5)}, se
+devolverá un error porque nuestra función espera un objeto de tipo
+\texttt{character}. En general, se recomienda \emph{manejar los errores}
+devueltos por nuestras funciones para que nuestro código sea más fácil
+de mantener. Aquí simplemente comprobaremos que el argumento sea de tipo
+\texttt{character}, en un \texttt{vector} de tamaño 1. También
+comentaremos nuestra función para encontrar rápidamente lo que hace
+(comentario insertado en la primera línea, que a veces encontramos en la
+última línea de las funciones).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{countVowelConso <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(word)\{ }\CommentTok{# número de vocales y consonantes}
+  \ControlFlowTok{if}\NormalTok{(}\KeywordTok{is.vector}\NormalTok{(word) }\OperatorTok{&}\StringTok{ }\KeywordTok{is.character}\NormalTok{(word) }\OperatorTok{&}\StringTok{ }\KeywordTok{length}\NormalTok{(word) }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)\{}
+\NormalTok{    wordSplit <-}\StringTok{ }\KeywordTok{strsplit}\NormalTok{(word, }\DataTypeTok{split =} \StringTok{""}\NormalTok{)[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{    vowels <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"i"}\NormalTok{, }\StringTok{"o"}\NormalTok{, }\StringTok{"u"}\NormalTok{, }\StringTok{"y"}\NormalTok{)}
+\NormalTok{    numVowel <-}\StringTok{ }\KeywordTok{length}\NormalTok{(wordSplit[wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels])}
+\NormalTok{    consonants <-}\StringTok{ }\NormalTok{letters[}\OperatorTok{!}\NormalTok{letters }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels]}
+\NormalTok{    numConso <-}\StringTok{ }\KeywordTok{length}\NormalTok{(wordSplit[wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{consonants])}
+    \KeywordTok{return}\NormalTok{(}\KeywordTok{c}\NormalTok{(numVowel, numConso))}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{print}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Error: "}\NormalTok{, }
+      \StringTok{"argumento 'word' incorrecto ("}\NormalTok{, word, }\StringTok{")"}\NormalTok{))}
+\NormalTok{  \}}
+\NormalTok{\} }
+\KeywordTok{countVowelConso}\NormalTok{(}\DataTypeTok{word =} \StringTok{"qwertyuiop azertyuiop"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 11  9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{countVowelConso}\NormalTok{(}\DataTypeTok{word =} \DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Error: argumento 'word' incorrecto (5)"
+\end{verbatim}
+
+Con R como para cualquier lenguaje de programación, para un problema
+siempre hay múltiples soluciones. Recordamos la sección sobre tipos de
+datos (\protect\hyperlink{l013logi}{tipo de datos \texttt{logical}}),
+así como la sección sobre \protect\hyperlink{l011opcomp}{operadores de
+comparación} que el valor de \texttt{TRUE} es 1 y el valor de
+\texttt{FALSE} es 0. Hemos visto anteriormente que la función
+\protect\hyperlink{l015in}{\texttt{\%\ in\%}} devuelve \texttt{TRUE} o
+\texttt{FALSE} para cada elemento del primer objeto dependiendo de su
+presencia o ausencia en el segundo objeto. Nuestra función podría haber
+usado otra función en lugar de \texttt{length()} para contar vocales y
+consonantes (función \texttt{sum()}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{countVowelConsoAlt <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(word)\{ }\CommentTok{# número de vocales y consonantes}
+  \ControlFlowTok{if}\NormalTok{(}\KeywordTok{is.vector}\NormalTok{(word) }\OperatorTok{&}\StringTok{ }\KeywordTok{is.character}\NormalTok{(word) }\OperatorTok{&}\StringTok{ }\KeywordTok{length}\NormalTok{(word) }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)\{}
+\NormalTok{    wordSplit <-}\StringTok{ }\KeywordTok{strsplit}\NormalTok{(word, }\DataTypeTok{split =} \StringTok{""}\NormalTok{)[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{    vowels <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"i"}\NormalTok{, }\StringTok{"o"}\NormalTok{, }\StringTok{"u"}\NormalTok{, }\StringTok{"y"}\NormalTok{)}
+\NormalTok{    numVowel <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels) }\CommentTok{# <- cambio aqui}
+\NormalTok{    consonants <-}\StringTok{ }\NormalTok{letters[}\OperatorTok{!}\NormalTok{letters }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels]}
+\NormalTok{    numConso <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{consonants) }\CommentTok{# <- cambio aqui}
+    \KeywordTok{return}\NormalTok{(}\KeywordTok{c}\NormalTok{(numVowel, numConso))}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{print}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Error: "}\NormalTok{, }
+      \StringTok{"argumento 'word' incorrecto ("}\NormalTok{, word, }\StringTok{")"}\NormalTok{))}
+\NormalTok{  \}}
+\NormalTok{\} }
+\KeywordTok{countVowelConsoAlt}\NormalTok{(}\DataTypeTok{word =} \StringTok{"qwertyuiop azertyuiop"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 11  9
+\end{verbatim}
+
+No existe una solución óptima en absoluto, todo depende de los objetivos
+deseados. La primera solución puede ser más fácil de entender, y la
+segunda puede ser más rápida en términos de velocidad de ejecución
+(repitiendo el uso de la función 10000 veces, el ahorro de tiempo es
+casi cero en nuestro caso).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{system.time}\NormalTok{(}\KeywordTok{replicate}\NormalTok{(}\DataTypeTok{n =} \DecValTok{10000}\NormalTok{, }\KeywordTok{countVowelConso}\NormalTok{(}\DataTypeTok{word =} \StringTok{"qwertyuiop azertyuiop"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    user  system elapsed 
+##    0.14    0.00    0.16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{system.time}\NormalTok{(}\KeywordTok{replicate}\NormalTok{(}\DataTypeTok{n =} \DecValTok{10000}\NormalTok{, }\KeywordTok{countVowelConsoAlt}\NormalTok{(}\DataTypeTok{word =} \StringTok{"qwertyuiop azertyuiop"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    user  system elapsed 
+##    0.17    0.00    0.17
+\end{verbatim}
+
+Una función puede tener \textbf{valores predeterminados} para sus
+argumentos. Este es el caso para la mayoría de las funciones existentes.
+Por defecto, nuestra función ahora contará el número de vocales y
+consonantes en la palabra \texttt{qwerty} (los paréntesis son necesarios
+incluso en ausencia de argumentos).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{countVowelConsoAlt <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}\DataTypeTok{word =} \StringTok{"qwerty"}\NormalTok{)\{ }\CommentTok{# número de vocales y consonantes}
+  \ControlFlowTok{if}\NormalTok{(}\KeywordTok{is.vector}\NormalTok{(word) }\OperatorTok{&}\StringTok{ }\KeywordTok{is.character}\NormalTok{(word) }\OperatorTok{&}\StringTok{ }\KeywordTok{length}\NormalTok{(word) }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)\{}
+\NormalTok{    wordSplit <-}\StringTok{ }\KeywordTok{strsplit}\NormalTok{(word, }\DataTypeTok{split =} \StringTok{""}\NormalTok{)[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{    vowels <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"i"}\NormalTok{, }\StringTok{"o"}\NormalTok{, }\StringTok{"u"}\NormalTok{, }\StringTok{"y"}\NormalTok{)}
+\NormalTok{    numVowel <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels)}
+\NormalTok{    consonants <-}\StringTok{ }\NormalTok{letters[}\OperatorTok{!}\NormalTok{letters }\OperatorTok{%in%}\StringTok{ }\NormalTok{vowels]}
+\NormalTok{    numConso <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(wordSplit }\OperatorTok{%in%}\StringTok{ }\NormalTok{consonants)}
+    \KeywordTok{return}\NormalTok{(}\KeywordTok{c}\NormalTok{(numVowel, numConso))}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{print}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Error: "}\NormalTok{, }
+      \StringTok{"argumento 'word' incorrecto ("}\NormalTok{, word, }\StringTok{")"}\NormalTok{))}
+\NormalTok{  \}}
+\NormalTok{\} }
+\KeywordTok{countVowelConsoAlt}\NormalTok{() }\CommentTok{# no hay que olvidar los paréntesis}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 4
+\end{verbatim}
+
+R tiene muchas funciones, por lo tanto, antes de comenzar a escribir una
+nueva función, siempre debemos verificar que ya no exista en la versión
+básica de R o en los \textbf{packages} desarrollado por la comunidad de
+usuarios. Para esto podemos usar la ayuda con la función
+\texttt{??miBusqueda}, pero también nuestro navegador de Internet.
+
+\section{\texorpdfstring{Otras funciones desarrolladas por la comunidad
+de usuarios: los
+\emph{packages}}{Otras funciones desarrolladas por la comunidad de usuarios: los packages}}\label{otras-funciones-desarrolladas-por-la-comunidad-de-usuarios-los-packages}
+
+Un package (o paquete) es un conjunto de archivos que agregaremos a R
+para usar funciones (o conjuntos de datos) que otras personas hayan
+desarrollado. Actualmente hay más de 10,000 paquetes en los servidores
+CRAN de R (CRAN; \url{https://cran.r-project.org/web/packages/}), más de
+1000 en los servidores de BioConductor (para análisis genómicos) y
+varios cientos en GitHub. Cada paquete hace posible usar nuevas
+funciones para casi todo \ldots{} Por lo tanto, puede ser difícil
+encontrar el paquete adecuado para lo que queremos lograr, y es
+importante dedicar tiempo a la busqueda del paquete adecuado y probar
+varios soluciones.
+
+Para usar un paquete, primero debemos \textbf{instalarlo}, y luego
+\textbf{cargarlo} en nuestra sesión R.
+
+\subsection{Instalar un paquete}\label{instalar-un-paquete}
+
+Una vez que hemos seleccionado nuestro paquete, podemos descargarlo e
+instalarlo con la función \texttt{install.packages()}, que toma el
+nombre del paquete entre comillas como argumento (la función tolera la
+ausencia de comillas, pero es mejor usarlas para que el código sea más
+legible). Algunos paquetes ya son instalados por defecto con R, como
+\texttt{stats} (que también se carga de forma predeterminada).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"stats"}\NormalTok{) }\CommentTok{# R statistical functions}
+\end{Highlighting}
+\end{Shaded}
+
+La instalación de un paquete debe hacerse una vez, luego el paquete está
+en nuestra computadora.
+
+\subsection{Cargar un paquete}\label{cargar-un-paquete}
+
+Para poder usar las funciones de un paquete, tenemos que cargarlo en
+nuestra sesión R. Hay tantos paquetes disponibles que R no cargará todos
+los que tenemos instalados por defecto, sino solo los que necesitaremos
+para nuestro estudio actual. Para cargar un paquete usamos la función
+\texttt{library()} o \texttt{require()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"stats"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+La carga del paquete debe hacerse cada vez que queremos ejecutar nuestro
+código, por lo tanto, es una parte integral de nuestro script.
+
+\subsection{Portabilidad del código}\label{portabilidad-del-codigo}
+
+Acabamos de ver que la instalación de un paquete solo se debe hacer una
+vez por computadora, y que la carga de un paquete se debe lograr para
+cada nueva sesión de R. Si uno cambia de computadora o si compartimos un
+script con colegas, puede haber errores de ejecución relacionados con la
+falta de instalación de un paquete. Para superar este problema, se
+recomienda utilizar una función que verifique si los paquetes necesarios
+para ejecutar un script están instalados; si es necesario, instálelos y
+luego cárguelos. Hay muchas funciones para hacer esto en Internet. La
+solución que proponemos aquí es una mezcla adaptada de diferentes
+fuentes. No es necesario comprender los detalles de este script por el
+momento, sino simplemente comprender lo que hace. Este es un ejemplo
+para el paquete \texttt{stats} y \texttt{graphics}, dos paquetes que ya
+estan presente con la versión básica de R, pero podemos tratar todos los
+paquetes disponibles en CRAN; la lista se puede encontrar aquí:
+\url{https://cran.r-project.org/web/packages/available_packages_by_name.html}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pkgCheck <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(packages)\{}
+    \ControlFlowTok{for}\NormalTok{(x }\ControlFlowTok{in}\NormalTok{ packages)\{}
+        \KeywordTok{try}\NormalTok{(}\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(x, }\DataTypeTok{character.only =} \OtherTok{TRUE}\NormalTok{))\{}
+            \KeywordTok{install.packages}\NormalTok{(x, }\DataTypeTok{dependencies =} \OtherTok{TRUE}\NormalTok{)}
+            \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(x, }\DataTypeTok{character.only =} \OtherTok{TRUE}\NormalTok{))\{}
+                \KeywordTok{stop}\NormalTok{()}
+\NormalTok{            \}}
+\NormalTok{        \})}
+\NormalTok{    \}}
+\NormalTok{\}}
+\KeywordTok{pkgCheck}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"stats"}\NormalTok{, }\StringTok{"graphics"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Alternativamente, podemos usar la función \texttt{.packages()} para
+listar los paquetes disponibles en el CRAN en orden alfabético.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(}\KeywordTok{.packages}\NormalTok{(}\DataTypeTok{all.available =} \OtherTok{TRUE}\NormalTok{), }\DataTypeTok{n =} \DecValTok{30}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "abind"       "assertthat"  "backports"   "base64enc"   "BH"         
+##  [6] "bindr"       "bindrcpp"    "bitops"      "bookdown"    "brew"       
+## [11] "broom"       "caret"       "cartography" "caTools"     "CircStats"  
+## [16] "classInt"    "cli"         "colorRamps"  "colorspace"  "commonmark" 
+## [21] "cranlogs"    "crayon"      "crul"        "curl"        "CVST"       
+## [26] "data.table"  "DBI"         "dbscan"      "ddalpha"     "DEoptimR"
+\end{verbatim}
+
+La función \texttt{pkgCheck()} asegura la \textbf{portabilidad} de
+nuestros scripts: funcionarán en todas las computadoras sin tener que
+realizar ningún cambio. Por lo tanto, nuestros scipts pueden adjuntarse,
+por ejemplo, a nuestros artículos científicos y así garantizar la
+\textbf{reproducibilidad} de nuestros resultados.
 
 \section{Conclusión}\label{conclusion-4}
+
+Felicitaciones! Ahora sabemos reconocer y usar una función, sabemos cómo
+buscar ayuda para una función e incluso sabemos escribir nuestras
+propias funciones. También sabemos que hay muchas funciones
+desarrolladas por la comunidad de usuarios de R dentro de paquetes
+(\emph{packages}) que sabemos cómo instalar y cargar, y asegurar la
+\textbf{portabilidad} de nuestros scripts de una computadora a otra
+(importante para la \textbf{reproducibilidad de los resultados}). El
+próximo capítulo se enfocará en leer y escribir archivos porque nuestros
+datos suelen estar en archivos de texto u hojas de cálculo.
 
 \chapter{Importar y exportar datos}\label{import}
 
