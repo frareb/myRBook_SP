@@ -7,9 +7,10 @@ documentclass: book
 #bibliography: [book.bib]
 biblio-style: apalike
 #link-citations: yes
-#github-repo: https://github.com/frareb/myRBook_FR
+github-repo: "frareb/myRBook_SP"
 #url: 'http://myrbookfr.netlify.com/'
 description: "Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos."
+cover-image: "myFigures/cover.png"
 ---
 
 # Preámbulo
