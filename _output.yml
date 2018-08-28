@@ -6,7 +6,7 @@ bookdown::gitbook:
   split_by: 'chapter'
   config:
     toc:
-      collapse: subsection
+      collapse: section
       before: |
         <li><a href="./">Aprender R: iniciación y perfeccionamiento</a></li>
       after: |
