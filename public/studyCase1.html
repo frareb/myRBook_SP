@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-08-28">
+<meta name="date" content="2018-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -290,6 +290,175 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="studyCase1" class="section level1">
 <h1><span class="header-section-number"> 17</span> Analizar datos de loggers de temperatura</h1>
+<p>En estudios de biología, ecología, o agronomía, frecuentemente usamos datos de temperatura de dataloggers. En este estudio vamos a ver como analizar esos datos usando datos de temperatura del altiplano Boliviano cerca de la ciudad de El Alto. El primer paso es transformar los datos del datalogger en un formato que sea fácil de leer para R. Usaremos un archivo CSV y la función <a href="import.html#import"><code>read.table()</code></a>. El archivo se puede descargar desde el sitio web del libro en GitHub (<a href="https://github.com/frareb/myRBook_SP/blob/master/myFiles/E05C13.csv" class="uri">https://github.com/frareb/myRBook_SP/blob/master/myFiles/E05C13.csv</a> ; clic derecho sobre el enlace y seleccionar “Guardar destino como”).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bdd &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;myFiles/E05C13.csv&quot;</span>, <span class="dt">skip =</span> <span class="dv">1</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, 
+  <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+<span class="kw">colnames</span>(bdd) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;temp&quot;</span>)
+<span class="kw">head</span>(bdd)</code></pre></div>
+<pre><code>##   id              date  temp
+## 1  1 11/12/15 23:00:00 4.973
+## 2  2 11/12/15 23:30:00 4.766
+## 3  3 11/13/15 00:00:00 4.844
+## 4  4 11/13/15 00:30:00 4.844
+## 5  5 11/13/15 01:00:00 5.076
+## 6  6 11/13/15 01:30:00 5.282</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(bdd)</code></pre></div>
+<pre><code>##          id              date  temp
+## 32781 32781 09/25/17 21:00:00 7.091
+## 32782 32782 09/25/17 21:30:00 6.914
+## 32783 32783 09/25/17 22:00:00 6.813
+## 32784 32784 09/25/17 22:30:00 6.611
+## 32785 32785 09/25/17 23:00:00 6.331
+## 32786 32786 09/25/17 23:30:00 5.385</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(bdd)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    32786 obs. of  3 variables:
+##  $ id  : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ date: chr  &quot;11/12/15 23:00:00&quot; &quot;11/12/15 23:30:00&quot; &quot;11/13/15 00:00:00&quot; &quot;11/13/15 00:30:00&quot; ...
+##  $ temp: num  4.97 4.77 4.84 4.84 5.08 ...</code></pre>
+<p>Podemos observar que la fecha esta al formato <code>character</code>, y que contiene la fecha con el mes, el día, y el año separados con <code>/</code>, un espacio, y la hora con horas de 0 a 24, minutos, y segundos, separados con <code>:</code> (ejemplo: <code>11/12/15 23:00:00</code> para el 12 de Noviembre de 2015 a las 11 de la noche). Vamos a separar la información en varios objetos. Primero vamos a separar la fecha de la hora. Para esto vamos a usar la función <code>strsplit()</code> usando como separador el espacio entre la fecha y la hora.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">strsplit</span>(<span class="st">&quot;11/12/15 23:00:00&quot;</span>, <span class="dt">split =</span> <span class="st">&quot; &quot;</span>)</code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;11/12/15&quot; &quot;23:00:00&quot;</code></pre>
+<p>Como indican los corchetes dobles, la función devuelve un objeto en el formato <code>list</code>. Nosotros queremos el <code>vector</code> que corresponde al primer elemento de la <code>list</code> entonces vamos a añadir <code>[[1]]</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">strsplit</span>(<span class="st">&quot;11/12/15 23:00:00&quot;</span>, <span class="dt">split =</span> <span class="st">&quot; &quot;</span>)[[<span class="dv">1</span>]]</code></pre></div>
+<pre><code>## [1] &quot;11/12/15&quot; &quot;23:00:00&quot;</code></pre>
+<p>El primer elemento del <code>vector</code> es la fecha. Para tener todas las fechas vamos a hacer un bucle con la función <code>sapply()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bddDay &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="kw">strsplit</span>(bdd[, <span class="dv">2</span>], <span class="dt">split =</span> <span class="st">&quot; &quot;</span>), <span class="st">&quot;[[&quot;</span>, <span class="dv">1</span>)
+<span class="kw">head</span>(bddDay)</code></pre></div>
+<pre><code>## [1] &quot;11/12/15&quot; &quot;11/12/15&quot; &quot;11/13/15&quot; &quot;11/13/15&quot; &quot;11/13/15&quot; &quot;11/13/15&quot;</code></pre>
+<p>A continuación vamos a necesitar las fechas en el formato <code>factor</code> (función <code>aggregate()</code> para sacar la información por día). Entonces necesitamos transformar el objeto en el formato <code>factor</code> con la función <code>as.factor()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bddDay &lt;-<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">sapply</span>(<span class="kw">strsplit</span>(bdd[, <span class="dv">2</span>], <span class="dt">split =</span> <span class="st">&quot; &quot;</span>), <span class="st">&quot;[[&quot;</span>, <span class="dv">1</span>))
+<span class="kw">head</span>(bddDay)</code></pre></div>
+<pre><code>## [1] 11/12/15 11/12/15 11/13/15 11/13/15 11/13/15 11/13/15
+## 684 Levels: 01/01/16 01/01/17 01/02/16 01/02/17 01/03/16 ... 12/31/16</code></pre>
+<p>Haciendo la transformación hacia el formato <code>factor</code>, los niveles de nuestro objeto están en orden alfabético como si las fechas estuvieran texto. Nosotros querremos ordenar las fechas usando las fechas. Para esto vamos a hacer un <code>vector</code> con todas las fechas únicas con la función <code>unique()</code>, y después ordenar las fechas con la función <code>sort.list()</code> usando las fechas con la función <code>as.POSIXct()</code>. Vamos a usar el vector llamado <code>lev</code> para especificar como deben estar los niveles de <code>factor</code> de nuestras fechas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bddDay &lt;-<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">sapply</span>(<span class="kw">strsplit</span>(bdd[, <span class="dv">2</span>], <span class="dt">split =</span> <span class="st">&quot; &quot;</span>), <span class="st">&quot;[[&quot;</span>, <span class="dv">1</span>))
+udate &lt;-<span class="st"> </span><span class="kw">unique</span>(bddDay)
+lev &lt;-<span class="st"> </span>udate[<span class="kw">sort.list</span>(<span class="kw">as.POSIXct</span>(<span class="kw">strptime</span>(udate, <span class="st">&quot;%m/%d/%y&quot;</span>)))]
+bddDay &lt;-<span class="st"> </span><span class="kw">factor</span>(bddDay, <span class="dt">levels =</span> lev)
+<span class="kw">head</span>(bddDay)</code></pre></div>
+<pre><code>## [1] 11/12/15 11/12/15 11/13/15 11/13/15 11/13/15 11/13/15
+## 684 Levels: 11/12/15 11/13/15 11/14/15 11/15/15 11/16/15 ... 09/25/17</code></pre>
+<p>Ahora podemos añadir las fechas como nueva columna del objeto <code>bdd</code> y hacer lo mismo para las horas (no hay que reordenar los niveles de hora ya que el orden por defecto corresponde a lo que queremos).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bdd<span class="op">$</span>bddDay &lt;-<span class="st"> </span>bddDay
+bdd<span class="op">$</span>bddHour &lt;-<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">sapply</span>(<span class="kw">strsplit</span>(bdd[, <span class="dv">2</span>], <span class="dt">split =</span> <span class="st">&quot; &quot;</span>), <span class="st">&quot;[[&quot;</span>, <span class="dv">2</span>))
+<span class="kw">head</span>(bdd)</code></pre></div>
+<pre><code>##   id              date  temp   bddDay  bddHour
+## 1  1 11/12/15 23:00:00 4.973 11/12/15 23:00:00
+## 2  2 11/12/15 23:30:00 4.766 11/12/15 23:30:00
+## 3  3 11/13/15 00:00:00 4.844 11/13/15 00:00:00
+## 4  4 11/13/15 00:30:00 4.844 11/13/15 00:30:00
+## 5  5 11/13/15 01:00:00 5.076 11/13/15 01:00:00
+## 6  6 11/13/15 01:30:00 5.282 11/13/15 01:30:00</code></pre>
+<p>Podemos visualizar los datos con la función <code>plot()</code>, especificando el formato de las fechas con la función <code>as.Date()</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(bdd<span class="op">$</span>bddDay, <span class="dt">format =</span> <span class="st">&quot;%m/%d/%y&quot;</span>), <span class="dt">y =</span> bdd<span class="op">$</span>temp, 
+    <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">40</span>), 
+    <span class="dt">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>)</code></pre></div>
+<p><img src="myRBook_SP_files/figure-html/unnamed-chunk-175-1.png" width="672" /></p>
+<p>Podemos simplificar la información calculando únicamente las temperaturas mínimas, promedias, y máximas con la función <code>aggregate()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tempDayMean &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bdd[, <span class="dv">3</span>], <span class="dt">by =</span> <span class="kw">list</span>(bdd[, <span class="dv">4</span>]), <span class="dt">FUN =</span> mean)
+tempDayMin &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bdd[, <span class="dv">3</span>], <span class="dt">by =</span> <span class="kw">list</span>(bdd[, <span class="dv">4</span>]), <span class="dt">FUN =</span> min)
+tempDayMax &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bdd[, <span class="dv">3</span>], <span class="dt">by =</span> <span class="kw">list</span>(bdd[, <span class="dv">4</span>]), <span class="dt">FUN =</span> max)
+<span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(tempDayMean[, <span class="dv">1</span>], <span class="dt">format =</span> <span class="st">&quot;%m/%d/%y&quot;</span>), 
+    <span class="dt">y =</span> tempDayMean[, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">40</span>), 
+    <span class="dt">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>)
+<span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(tempDayMin[, <span class="dv">1</span>], <span class="dt">format =</span> <span class="st">&quot;%m/%d/%y&quot;</span>), 
+    <span class="dt">y =</span> tempDayMin[, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">4</span>)
+<span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(tempDayMax[, <span class="dv">1</span>], <span class="dt">format =</span> <span class="st">&quot;%m/%d/%y&quot;</span>), 
+    <span class="dt">y =</span> tempDayMax[, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">2</span>)
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>, <span class="st">&quot;promedio&quot;</span>), 
+  <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>))</code></pre></div>
+<p><img src="myRBook_SP_files/figure-html/unnamed-chunk-176-1.png" width="672" /></p>
+<p>También podemos calcular la diferencia entre la temperatura máxima y la temperatura mínima (variación de temperatura diurna).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tempDayTR &lt;-<span class="st"> </span>tempDayMax[, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>tempDayMin[, <span class="dv">2</span>]
+<span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(tempDayMean[, <span class="dv">1</span>], <span class="dt">format =</span> <span class="st">&quot;%m/%d/%y&quot;</span>), 
+    <span class="dt">y =</span> tempDayTR, <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">45</span>), 
+    <span class="dt">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Variación de temperatura diurna (°C)&quot;</span>)</code></pre></div>
+<p><img src="myRBook_SP_files/figure-html/unnamed-chunk-177-1.png" width="672" /></p>
+<p>Otra posibilidad es de agrupar los datos para tener la temperatura promedia de un día con la función <code>aggregate()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tempHourMean &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bdd[, <span class="dv">3</span>], <span class="dt">by =</span> <span class="kw">list</span>(bdd[, <span class="dv">5</span>]), <span class="dt">FUN =</span> mean)
+tempHourMin &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bdd[, <span class="dv">3</span>], <span class="dt">by =</span> <span class="kw">list</span>(bdd[, <span class="dv">5</span>]), <span class="dt">FUN =</span> min)
+tempHourMax &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bdd[, <span class="dv">3</span>], <span class="dt">by =</span> <span class="kw">list</span>(bdd[, <span class="dv">5</span>]), <span class="dt">FUN =</span> max)
+hours &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="fl">23.5</span>, <span class="dt">by =</span> <span class="fl">0.5</span>)
+<span class="kw">plot</span>(<span class="dt">x =</span> hours, 
+    <span class="dt">y =</span> tempHourMean[, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">40</span>), 
+    <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, 
+    <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">panel.first =</span> {
+        <span class="kw">abline</span>(<span class="dt">v =</span> hours, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)
+        <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>)  
+    })
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> hours, <span class="dt">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="dt">las =</span> <span class="dv">2</span>)
+<span class="kw">points</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempHourMin[, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">4</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">points</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempHourMax[, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</code></pre></div>
+<p><img src="myRBook_SP_files/figure-html/unnamed-chunk-178-1.png" width="672" /></p>
+<p>Tambien podemos calcular las temperaturas de los dias para cada mes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">meses &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Enero&quot;</span>, <span class="st">&quot;Febrero&quot;</span>, <span class="st">&quot;Marzo&quot;</span>, <span class="st">&quot;Abril&quot;</span>, <span class="st">&quot;Mayo&quot;</span>, <span class="st">&quot;Junio&quot;</span>, 
+    <span class="st">&quot;Julio&quot;</span>, <span class="st">&quot;Agosto&quot;</span>, <span class="st">&quot;Septiembre&quot;</span>, <span class="st">&quot;Octubre&quot;</span>, <span class="st">&quot;Noviembre&quot;</span>, <span class="st">&quot;Diciembre&quot;</span>)
+hours &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="fl">23.5</span>, <span class="dt">by =</span> <span class="fl">0.5</span>)
+bddMonth &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="kw">strsplit</span>(<span class="kw">as.character</span>(bdd<span class="op">$</span>bddDay), <span class="dt">split =</span> <span class="st">&quot;/&quot;</span>), <span class="st">&quot;[[&quot;</span>, <span class="dv">1</span>)
+tempDayEachMonth &lt;-<span class="st"> </span><span class="kw">lapply</span>(<span class="kw">sort</span>(<span class="kw">unique</span>(bddMonth)), <span class="cf">function</span>(myMonth){
+    bddX &lt;-<span class="st"> </span>bdd[bddMonth <span class="op">==</span><span class="st"> </span>myMonth, ]
+    tempHourMean &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bddX[, <span class="dv">3</span>], <span class="dt">by =</span> <span class="kw">list</span>(bddX[, <span class="dv">5</span>]), <span class="dt">FUN =</span> mean)
+    tempHourMin &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bddX[, <span class="dv">3</span>], <span class="dt">by =</span> <span class="kw">list</span>(bddX[, <span class="dv">5</span>]), <span class="dt">FUN =</span> min)
+    tempHourMax &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bddX[, <span class="dv">3</span>], <span class="dt">by =</span> <span class="kw">list</span>(bddX[, <span class="dv">5</span>]), <span class="dt">FUN =</span> max)
+    <span class="kw">return</span>(<span class="kw">data.frame</span>(tempHourMean, tempHourMin, tempHourMax))
+})
+
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(tempDayEachMonth)){
+    <span class="kw">plot</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">2</span>], 
+        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">40</span>), 
+        <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, 
+        <span class="dt">main =</span> meses[i],
+        <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">panel.first =</span> {
+            <span class="kw">abline</span>(<span class="dt">v =</span> hours, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)
+            <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>)  
+        })
+    <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> hours, <span class="dt">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="dt">las =</span> <span class="dv">2</span>)
+    <span class="kw">points</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">4</span>], 
+        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">4</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+    <span class="kw">points</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">6</span>], 
+        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+}</code></pre></div>
+<p><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-1.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-2.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-3.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-4.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-5.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-6.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-7.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-8.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-9.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-10.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-11.png" width="672" /><img src="myRBook_SP_files/figure-html/unnamed-chunk-179-12.png" width="672" /></p>
+<p>O todo en un mismo grafico, y la variación de temperatura diurna para cada mes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[<span class="dv">1</span>]][, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">35</span>),
+    <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura promedia (°C)&quot;</span>,
+    <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, 
+    <span class="dt">panel.first =</span> {
+        <span class="kw">abline</span>(<span class="dt">v =</span> hours, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)
+        <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>)  
+    })
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> hours, <span class="dt">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="dt">las =</span> <span class="dv">2</span>)
+myColors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#A6CEE3&quot;</span>, <span class="st">&quot;#1F78B4&quot;</span>, <span class="st">&quot;#B2DF8A&quot;</span>, <span class="st">&quot;#33A02C&quot;</span>, <span class="st">&quot;#FB9A99&quot;</span>, 
+    <span class="st">&quot;#E31A1C&quot;</span>, <span class="st">&quot;#FDBF6F&quot;</span>, <span class="st">&quot;#FF7F00&quot;</span>, <span class="st">&quot;#CAB2D6&quot;</span>, <span class="st">&quot;#6A3D9A&quot;</span>, <span class="st">&quot;#FFFF99&quot;</span>, 
+    <span class="st">&quot;#B15928&quot;</span>)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(tempDayEachMonth)){
+    <span class="kw">points</span>(<span class="dt">x =</span> hours, 
+        <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">2</span>], 
+        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> myColors[i], <span class="dt">lwd =</span> <span class="dv">2</span>)
+}
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">legend =</span> meses, <span class="dt">col =</span> myColors, 
+    <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">cex =</span> <span class="fl">0.8</span>)</code></pre></div>
+<p><img src="myRBook_SP_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[<span class="dv">1</span>]][, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">30</span>),
+    <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Variación de temperatura diurna (°C)&quot;</span>,
+    <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, 
+    <span class="dt">panel.first =</span> {
+        <span class="kw">abline</span>(<span class="dt">v =</span> hours, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)
+        <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>)  
+    })
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> hours, <span class="dt">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="dt">las =</span> <span class="dv">2</span>)
+myColors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#A6CEE3&quot;</span>, <span class="st">&quot;#1F78B4&quot;</span>, <span class="st">&quot;#B2DF8A&quot;</span>, <span class="st">&quot;#33A02C&quot;</span>, <span class="st">&quot;#FB9A99&quot;</span>, 
+    <span class="st">&quot;#E31A1C&quot;</span>, <span class="st">&quot;#FDBF6F&quot;</span>, <span class="st">&quot;#FF7F00&quot;</span>, <span class="st">&quot;#CAB2D6&quot;</span>, <span class="st">&quot;#6A3D9A&quot;</span>, <span class="st">&quot;#FFFF99&quot;</span>, 
+    <span class="st">&quot;#B15928&quot;</span>)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(tempDayEachMonth)){
+    <span class="kw">points</span>(<span class="dt">x =</span> hours, 
+        <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">6</span>] <span class="op">-</span><span class="st"> </span>tempDayEachMonth[[i]][, <span class="dv">4</span>], 
+        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> myColors[i], <span class="dt">lwd =</span> <span class="dv">2</span>)
+}
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">legend =</span> meses, <span class="dt">col =</span> myColors, 
+    <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">cex =</span> <span class="fl">0.8</span>)</code></pre></div>
+<p><img src="myRBook_SP_files/figure-html/unnamed-chunk-180-2.png" width="672" /></p>
 
 </div>
             </section>
@@ -328,8 +497,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
+"link": "https://github.com/frareb/myRBook_SP/edit/master/041_studyCase.Rmd",
+"text": "Edit"
 },
 "download": ["myRBook_SP.pdf", "myRBook_SP.epub"],
 "toc": {
