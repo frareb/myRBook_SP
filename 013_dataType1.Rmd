@@ -47,6 +47,17 @@ typeof(sumIntInt)
 
 Para resumir, el tipo `numeric` contiene dos subtipos, los tipos `integer` para enteros y el tipo `double` para los números decimales. Por defecto, R asigna el tipo `double` a los números.
 
+Tenga cuidado, hay una trampa para usar la función `is.integer()`. No nos dice si el número es un número entero, pero si es de tipo `integer`. De hecho, uno puede almacenar un entero en una variable de tipo `doble`.
+
+Los números almacenados en una variable de tipo `integer` son codificados en 32 bits y, por lo tanto, pueden tomar valores entre 0 y 2^32-1 = 4294967295. Hay otra forma de decirle a R que un número es un número entero, usando el sufijo `L`. Por ejemplo, `5L` es lo mismo que `as.integer(5)`. El origen del sufijo `L`, que se remonta a una época en que las computadoras usaban palabras de 16 bits y 32 bits, era un tipo `Largo`. ¡Ahora las computadoras usan palabras de 64 bits y 32 bits es bastante corta!
+
+No podemos dejar esta sección sin mencionar las funciones [`round()`](#l015round) [`ceiling()`](#l015round) [`trunc()`](#l015round) o [`floor()`](#l015round) que devuelven la parte entera de un número, pero déjelo en el tipo `double`. Para obtener más información, podemos usar la [ayuda de R](#l015ayuda) con `? Ronda`.
+
+`` {R}
+roundDou <- round (5.2)
+typeof (roundDou)
+`` `
+
 ## El tipo `character`
 
 El tipo `character` es texto. De hecho, R permite trabajar con texto. Para especificar a R que la información contenida en un objeto está en formato de texto (o generalmente para todos los textos), usamos las comillas dobles (`"`) o las comillas simples (`'`).
