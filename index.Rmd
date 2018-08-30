@@ -19,6 +19,11 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 Últimas modificaciones:
 
+**30/08/2018**
+
+* Nuevo estudio de caso: [dataloggers](#studyCase1)
+* Modificaciones de Marc G. sobre el [tipo de datos numeric](#dataType1)
+
 **24/08/2018**
 
 * Capítulo sobre [las funciones (3/3)](#fonctions)
@@ -69,7 +74,8 @@ Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus co
 contrib <- unname(t(data.frame(
   c("Camila", "Benavides Frias", "Bolivia"), 
   c("Estefania", "Quenta Herrera",  "Bolivia"), 
-  c("Susi", "Loza Herrera", "Bolivia")
+  c("Susi", "Loza Herrera", "Bolivia"),
+  c("Marc", "Girondot", "France ; UMR 8079 ESE")
 )))
 contrib <- contrib[order(contrib[, 2]),]
 msg <- "Colaboradores :\r"
