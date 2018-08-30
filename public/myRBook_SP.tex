@@ -252,6 +252,17 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 
 Últimas modificaciones:
 
+\textbf{30/08/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  Nuevo estudio de caso: \protect\hyperlink{studyCase1}{dataloggers}
+\item
+  Modificaciones de Marc G. sobre el \protect\hyperlink{dataType1}{tipo
+  de datos numeric}
+\end{itemize}
+
 \textbf{24/08/2018}
 
 \begin{itemize}
@@ -354,6 +365,7 @@ alfabético):
 \begin{verbatim}
 ## Colaboradores :
 Camila Benavides Frias (Bolivia)
+Marc Girondot (France ; UMR 8079 ESE)
 Susi Loza Herrera (Bolivia)
 Estefania Quenta Herrera (Bolivia)
 \end{verbatim}
@@ -1715,7 +1727,7 @@ A partir de acá podremos concentrarnos en el lenguaje de programación R
 en un ambiente, facilitando el trabajo de lectura y de escritura del
 código. Esto ya es un gran paso para manejar R.
 
-\chapter{Tipos de datos}\label{dataType1}
+\hypertarget{dataType1}{\chapter{Tipos de datos}\label{dataType1}}
 
 Vimos anteriormente cómo crear un objeto. Un objeto es como una caja en
 la que almacenaremos \emph{información}. Hasta ahora solo hemos
@@ -1919,6 +1931,32 @@ La suma de un número entero \texttt{integer} y un número decimal
 Para resumir, el tipo \texttt{numeric} contiene dos subtipos, los tipos
 \texttt{integer} para enteros y el tipo \texttt{double} para los números
 decimales. Por defecto, R asigna el tipo \texttt{double} a los números.
+
+Tenga cuidado, hay una trampa para usar la función
+\texttt{is.integer()}. No nos dice si el número es un número entero,
+pero si es de tipo \texttt{integer}. De hecho, uno puede almacenar un
+entero en una variable de tipo \texttt{doble}.
+
+Los números almacenados en una variable de tipo \texttt{integer} son
+codificados en 32 bits y, por lo tanto, pueden tomar valores entre 0 y
+2\^{}32-1 = 4294967295. Hay otra forma de decirle a R que un número es
+un número entero, usando el sufijo \texttt{L}. Por ejemplo, \texttt{5L}
+es lo mismo que \texttt{as.integer(5)}. El origen del sufijo \texttt{L},
+que se remonta a una época en que las computadoras usaban palabras de 16
+bits y 32 bits, era un tipo \texttt{Largo}. ¡Ahora las computadoras usan
+palabras de 64 bits y 32 bits es bastante corta!
+
+No podemos dejar esta sección sin mencionar las funciones
+\protect\hyperlink{l015round}{\texttt{round()}}
+\protect\hyperlink{l015round}{\texttt{ceiling()}}
+\protect\hyperlink{l015round}{\texttt{trunc()}} o
+\protect\hyperlink{l015round}{\texttt{floor()}} que devuelven la parte
+entera de un número, pero déjelo en el tipo \texttt{double}. Para
+obtener más información, podemos usar la
+\protect\hyperlink{l015ayuda}{ayuda de R} con \texttt{?\ Ronda}.
+
+\texttt{\{R\}\ roundDou\ \textless{}-\ round\ (5.2)\ typeof\ (roundDou)}
+`
 
 \section{\texorpdfstring{El tipo
 \texttt{character}}{El tipo character}}\label{el-tipo-character}
@@ -6651,9 +6689,9 @@ La función \texttt{nrow()} devuelve el número de líneas y la función
 ## [1] 5
 \end{verbatim}
 
-\subsubsection{\texorpdfstring{\texttt{round()}, \texttt{ceiling()},
-\texttt{floor()}, et
-\texttt{trunc()}}{round(), ceiling(), floor(), et trunc()}}\label{l015round}
+\hypertarget{l015round}{\subsubsection{\texorpdfstring{\texttt{round()},
+\texttt{ceiling()}, \texttt{floor()}, et
+\texttt{trunc()}}{round(), ceiling(), floor(), et trunc()}}\label{l015round}}
 
 La función \texttt{round()} le permite seleccionar una cierta cantidad
 de decimales (0 por defecto)
@@ -7857,7 +7895,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.17    0.00    0.18
+##    0.17    0.00    0.17
 \end{verbatim}
 
 \begin{Shaded}
@@ -7868,7 +7906,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.16    0.00    0.17
+##    0.17    0.00    0.17
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus
@@ -8137,7 +8175,8 @@ XXX
 
 \part{Estudio de caso}\label{part-estudio-de-caso}
 
-\chapter{Analizar datos de loggers de temperatura}\label{studyCase1}
+\hypertarget{studyCase1}{\chapter{Analizar datos de loggers de
+temperatura}\label{studyCase1}}
 
 En estudios de biología, ecología, o agronomía, frecuentemente usamos
 datos de temperatura de dataloggers. En este estudio vamos a ver como
