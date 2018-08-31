@@ -4,5 +4,5 @@ if [ ! -z "$ACCESS_TOKEN" ]
 then
 	netlify deploy --access-token $NETLIFY_TOKEN
 else
-	netlify deploy
+	# netlify deploy
 fi
