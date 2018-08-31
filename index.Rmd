@@ -22,7 +22,7 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 **30/08/2018**
 
 * Nuevo estudio de caso: [dataloggers](#studyCase1)
-* Modificaciones de Marc G. sobre el [tipo de datos numeric](#dataType1)
+* Modificaciones de Marc G. sobre el [tipo de datos numeric](#dataType1) y los [entornos de desarrollo](#IDE)
 
 **24/08/2018**
 
