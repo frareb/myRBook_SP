@@ -129,7 +129,7 @@ knitr::include_graphics("myFigures/screencap_Geany_03.png")
 
 ## Otras soluciones
 
-Hay muchas otras soluciones, algunas especializadas para R como **Tinn-R** (https://sourceforge.net/projects/tinn-r/), y otras más generales para programación como **Atom** (https://atom.io/), **Sublime Text** (https://www.sublimetext.com/), **Vim** (https://www.vim.org/), **Gedit** (https://wiki.gnome.org/Apps/Gedit), **GNU Emacs** (https://www.gnu.org/software/emacs/), o **Brackets** (http://brackets.io/) y **Eclipse** (http://www.eclipse.org/).
+Hay muchas otras soluciones, algunas especializadas para R como **Tinn-R** (https://sourceforge.net/projects/tinn-r/), y otras más generales para programación como **Atom** (https://atom.io/), **Sublime Text** (https://www.sublimetext.com/), **Vim** (https://www.vim.org/), **Gedit** (https://wiki.gnome.org/Apps/Gedit), **GNU Emacs** (https://www.gnu.org/software/emacs/), **Jupyter** (http://jupyter.org), o **Brackets** (http://brackets.io/) y **Eclipse** (http://www.eclipse.org/).
 
 ## Conclusión
 
