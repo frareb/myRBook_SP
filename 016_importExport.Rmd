@@ -1,8 +1,149 @@
 # Importar y exportar datos {#import}
 
-## Leer datos de un archivo
+## Leer datos de un archivo {#l016read}
 
-XXX
+### Transformar datos en formato TXT o CSV {#l016transfo}
+
+Hay muchas maneras de leer el contenido de un archivo con R. Sin embargo, nos enfocaremos en leer los archivos TXT y CSV que son los más comunes y los más confiables. Con raras excepciones, todos los archivos de datos se pueden transformar fácilmente en formatos TXT y CSV. Esta es la práctica preferida para el análisis de datos con R.
+
+En concreto, desde Microsoft Excel, simplemente vamos a *Archivo*, luego *Guardar como*, seleccionamos el lugar donde queremos guardar nuestro archivo (hablaremos en el siguiente capítulo sobre la gestión de un proyecto R) y luego en el la ventana de copia de seguridad cambiamos el *Tipo* desde XLSX hacia CSV. Desde LibreOffice Calc, simplemente vamos a *Archivo*, luego *Guardar como*, luego seleccionamos el tipo *CSV*. Es importante saber que el archivo CSV no admite el formato de archivos de hoja de cálculo con, por ejemplo, colores, y que el archivo CSV contiene solo una pestaña. Si tenemos un archivo de hoja de cálculo con varias pestañas, tendremos que guardar tantos archivos CSV como pestañas.
+
+CSV viene del Inglés *Comma-separated values* (https://es.wikipedia.org/wiki/Valores_separados_por_comas) y representa los datos de hoja de cálculo en un formato de texto separado por comas (o punto y coma según el país). Siempre se puede abrir un archivo CSV con software de hoja de cálculo, pero también con un editor de texto simple como el bloc de notas de Windows o con Notepad++. Es preferible abrir archivos CSV con un editor de texto porque las hojas de cálculo tienden a querer cambiar automáticamente los archivos CSV y esto tiene el efecto de dificultar su lectura.
+
+Una vez que se obtiene el archivo TXT o CSV, la lectura del contenido desde R es fácil, aun que requiere un poco de rigor.
+
+### Leer un archivo CSV  {#l016readCSV}
+
+Esta es la fuente de error más común para los principiantes en R. Es por eso que es importante leer y volver a leer este capítulo y lo siguiente sobre la gestión de un proyecto R con mucha atención.
+
+R funciona en un directorio definido por defecto. Los usuarios de Rstudio u otro [entorno de desarrollo](#IDE) especializado para R intentarán usar las opciones disponibles a través de los menús para establecer su directorio de trabajo o cargar el contenido de un archivo. En este libro, estas técnicas nunca se usarán porque no permiten la reproducibilidad de los resultados. Un script debe poder funcionar para todos los sistemas operativos y sin tener en cuenta el [entorno de desarrollo](#IDE) del usuario.
+
+El directorio de trabajo por defecto se puede obtener con la función [`getwd()`](#l015getwd) y cambiar con la función [`setwd()`](#l015setwd).
+
+```{r}
+oldWd <- getwd()
+print(oldWd)
+setwd("..")
+getwd()
+setwd(oldWd)
+getwd()
+```
+
+Entonces tenemos cuatro opciones:
+
+* podemos leer el contenido de un archivo indicando a R su ruta completa (limitacion para la reproducibilidad de los resultados)
+* podemos leer el contenido de un archivo indicando a R su ruta relativa
+* podemos mover el archivo en el directorio de trabajo de R
+* podemos modificar el directorio de trabajo de R para que coincida con la ubicación de nuestro archivo (con su ruta relativa)
+
+Un ejemplo de una ruta completa sería:
+
+* `/home/myName/myFile.csv` en un entorno UNIX
+* `C:/users/myName/myFile.csv` bajo un entorno de Windows (tenga cuidado, bajo R utilizamos `/` y no `\` como es el caso por defecto en Windows)
+
+Un camino relativo sería:
+
+* `myName/myFiles.csv`
+
+Para navegar por las rutas relativas, podemos usar `..` que permite volver al directorio de origen. Por ejemplo, si el directorio de trabajo es `myScripts` y el árbol de mis archivos es:
+
+```{r, echo = FALSE}
+cat("-myProject
+|-myFiles
+|-|-data01.csv
+|-|-data02.csv
+|-myScripts
+|-|-myFirstScript.R")
+```
+
+La ruta relativa al archivo `data01.csv` sería `../myFiles/data01.csv`
+
+Entonces, para leer el contenido del archivo `data01.csv`, privilegiaremos la opción 2 (leer el contenido de un archivo que indicando su ruta relativa) o la opción 4 (modificar el directorio de trabajo de R para que coincida con la ubicación de nuestro archivo). En el último caso:
+
+```{r, eval = FALSE}
+myWD <- "../myFiles/"
+setwd(myWd)
+getwd() # para verificar que estamos en el directorio correcto
+list.files() # para verificar que el archivo está aquí
+```
+
+El error más común:
+
+```{r, echo = FALSE}
+cat("Error in setwd(\"../myFiles/\") : 
+no se puede cambiar el directorio de trabajo")
+```
+
+Esto significa que el directorio no existe (se debe verificar que la sintaxis sea correcta y que el directorio exista con esta ruta).
+
+Una vez que el directorio de trabajo está definido correctamente o la ruta relativa al archivo está establecida correctamente, podemos leer el archivo con la función `read.table()`. Algunos usan la función `read.csv()` pero este es solo un caso especial de `read.table()`.
+
+```{r, eval = FALSE}
+myWD <- "../myFiles/"
+setwd(myWd)
+read.table(file = "data01.csv")
+```
+
+o alternativamente:
+
+```{r, eval = FALSE}
+read.table(file = "../myFiles/data01.csv")
+```
+
+Si la ruta no se llena correctamente o si el archivo de datos no existe, R devolverá el siguiente error:
+
+```{r, echo = FALSE}
+cat("Error in file(file, \"rt\") : incapaz de abrir la conexión
+De más : Warning message:
+In file(file, \"rt\") :
+  incapaz de abrir el archivo '../myFiles/data01.csv' : No such file or directory")
+```
+
+Si todo está bien, R muestra el contenido del archivo `data01.csv`. Advertencia a los usuarios de Windows porque por defecto no aparece la extensión de los archivos... Así que cuando navegamos a través de directorios con el explorador de archivos, no hay `data01.csv`, pero sólo un archivo `data01`. Es esencial remediar este problema para evitar errores. Para hacer esto, simplemente abrimos las 'Opciones del Explorador de archivos' a través de la tecla 'Windows', luego en la pestaña 'Ver', verificamos que la opción 'Ocultar extensiones de archivos cuyo tipo es conocido' no está marcado.
+
+Consultando la ayuda sobre la función `read.table()`, podemos ver que tiene muchos argumentos. Los principales son:
+
+* `header = FALSE`: ¿el archivo contiene nombres de columna? Si es así, cambiamos el valor a `header = TRUE`
+* `sep =" "`: ¿cómo se separan los datos de la tabla? En un archivo CSV es la coma o el punto y coma, así que cambiamos a `sep = ","` o `sep = ";"`
+* `dec =". "`: ¿cuál es el separador de los números decimales? Si es la coma, entonces debes cambiar a `dec = ","`
+
+Con estos tres argumentos, la mayoría de los archivos se pueden leer sin ningún problema. En caso de necesidad, la ayuda de esta función es muy completa.
+
+La función `read.table ()` devuelve el contenido del archivo como `data.frame`. Para poder usar el contenido del archivo, almacenaremos el `data.frame` en un objeto.
+
+```{r, eval = FALSE}
+myWD <- "../myFiles/"
+setwd(myWd)
+data01 <- read.table(file = "data01.csv")
+str(data01) # verificar el formato de los datos
+head(data01) # vverificar los primeros datos
+```
+
+[El estudio de caso sobre el análisis de datos de datalogger](#studyCase001) se basa en un archivo CSV. Aquí hay un extracto:
+
+```{r}
+bdd <- read.table("myFiles/E05C13.csv", skip = 1, header = TRUE, 
+  sep = ",", dec = ".", stringsAsFactors = FALSE)
+colnames(bdd) <- c("id", "date", "temp")
+head(bdd)
+tail(bdd)
+str(bdd)
+```
+
+### Leer un archivo de texto  {#l016readTXT}
+
+La función más simple para leer un archivo que contiene texto es `readlines()`. Aquí hay un ejemplo con el archivo README.md de este libro, que se encuentra en GitHub.
+
+```{r}
+readmeGitHub <- "https://raw.githubusercontent.com/frareb/myRBook_SP/master/README.md"
+readLines(readmeGitHub)
+```
+
+También está la función `scan()` que devolve todas las palabras separadas por espacios. Podemos consultar la ayuda para obtener más información.
+
+```{r}
+scan(readmeGitHub, what = "character")
+```
 
 ## Guardar datos para R
 
@@ -12,4 +153,3 @@ load
 ## Exportar datos
 
 write
-XXX
