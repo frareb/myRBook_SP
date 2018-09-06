@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-08-31">
+<meta name="date" content="2018-09-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -224,7 +224,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.7" data-path="fonctions.html"><a href="fonctions.html#conclusion-4"><i class="fa fa-check"></i><b>9.7</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>10</b> Importar y exportar datos</a><ul>
-<li class="chapter" data-level="10.1" data-path="import.html"><a href="import.html#leer-datos-de-un-archivo"><i class="fa fa-check"></i><b>10.1</b> Leer datos de un archivo</a></li>
+<li class="chapter" data-level="10.1" data-path="import.html"><a href="import.html#l016read"><i class="fa fa-check"></i><b>10.1</b> Leer datos de un archivo</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="import.html"><a href="import.html#l016transfo"><i class="fa fa-check"></i><b>10.1.1</b> Transformar datos en formato TXT o CSV</a></li>
+<li class="chapter" data-level="10.1.2" data-path="import.html"><a href="import.html#l016readCSV"><i class="fa fa-check"></i><b>10.1.2</b> Leer un archivo CSV</a></li>
+<li class="chapter" data-level="10.1.3" data-path="import.html"><a href="import.html#l016readTXT"><i class="fa fa-check"></i><b>10.1.3</b> Leer un archivo de texto</a></li>
+</ul></li>
 <li class="chapter" data-level="10.2" data-path="import.html"><a href="import.html#guardar-datos-para-r"><i class="fa fa-check"></i><b>10.2</b> Guardar datos para R</a></li>
 <li class="chapter" data-level="10.3" data-path="import.html"><a href="import.html#exportar-datos"><i class="fa fa-check"></i><b>10.3</b> Exportar datos</a></li>
 </ul></li>
@@ -290,9 +294,129 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="import" class="section level1">
 <h1><span class="header-section-number"> 10</span> Importar y exportar datos</h1>
-<div id="leer-datos-de-un-archivo" class="section level2">
+<div id="l016read" class="section level2">
 <h2><span class="header-section-number">10.1</span> Leer datos de un archivo</h2>
-<p>XXX</p>
+<div id="l016transfo" class="section level3">
+<h3><span class="header-section-number">10.1.1</span> Transformar datos en formato TXT o CSV</h3>
+<p>Hay muchas maneras de leer el contenido de un archivo con R. Sin embargo, nos enfocaremos en leer los archivos TXT y CSV que son los más comunes y los más confiables. Con raras excepciones, todos los archivos de datos se pueden transformar fácilmente en formatos TXT y CSV. Esta es la práctica preferida para el análisis de datos con R.</p>
+<p>En concreto, desde Microsoft Excel, simplemente vamos a <em>Archivo</em>, luego <em>Guardar como</em>, seleccionamos el lugar donde queremos guardar nuestro archivo (hablaremos en el siguiente capítulo sobre la gestión de un proyecto R) y luego en el la ventana de copia de seguridad cambiamos el <em>Tipo</em> desde XLSX hacia CSV. Desde LibreOffice Calc, simplemente vamos a <em>Archivo</em>, luego <em>Guardar como</em>, luego seleccionamos el tipo <em>CSV</em>. Es importante saber que el archivo CSV no admite el formato de archivos de hoja de cálculo con, por ejemplo, colores, y que el archivo CSV contiene solo una pestaña. Si tenemos un archivo de hoja de cálculo con varias pestañas, tendremos que guardar tantos archivos CSV como pestañas.</p>
+<p>CSV viene del Inglés <em>Comma-separated values</em> (<a href="https://es.wikipedia.org/wiki/Valores_separados_por_comas" class="uri">https://es.wikipedia.org/wiki/Valores_separados_por_comas</a>) y representa los datos de hoja de cálculo en un formato de texto separado por comas (o punto y coma según el país). Siempre se puede abrir un archivo CSV con software de hoja de cálculo, pero también con un editor de texto simple como el bloc de notas de Windows o con Notepad++. Es preferible abrir archivos CSV con un editor de texto porque las hojas de cálculo tienden a querer cambiar automáticamente los archivos CSV y esto tiene el efecto de dificultar su lectura.</p>
+<p>Una vez que se obtiene el archivo TXT o CSV, la lectura del contenido desde R es fácil, aun que requiere un poco de rigor.</p>
+</div>
+<div id="l016readCSV" class="section level3">
+<h3><span class="header-section-number">10.1.2</span> Leer un archivo CSV</h3>
+<p>Esta es la fuente de error más común para los principiantes en R. Es por eso que es importante leer y volver a leer este capítulo y lo siguiente sobre la gestión de un proyecto R con mucha atención.</p>
+<p>R funciona en un directorio definido por defecto. Los usuarios de Rstudio u otro <a href="IDE.html#IDE">entorno de desarrollo</a> especializado para R intentarán usar las opciones disponibles a través de los menús para establecer su directorio de trabajo o cargar el contenido de un archivo. En este libro, estas técnicas nunca se usarán porque no permiten la reproducibilidad de los resultados. Un script debe poder funcionar para todos los sistemas operativos y sin tener en cuenta el <a href="IDE.html#IDE">entorno de desarrollo</a> del usuario.</p>
+<p>El directorio de trabajo por defecto se puede obtener con la función <a href="fonctions.html#l015getwd"><code>getwd()</code></a> y cambiar con la función <a href="fonctions.html#l015setwd"><code>setwd()</code></a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">oldWd &lt;-<span class="st"> </span><span class="kw">getwd</span>()
+<span class="kw">print</span>(oldWd)</code></pre></div>
+<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;..&quot;</span>)
+<span class="kw">getwd</span>()</code></pre></div>
+<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(oldWd)
+<span class="kw">getwd</span>()</code></pre></div>
+<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP&quot;</code></pre>
+<p>Entonces tenemos cuatro opciones:</p>
+<ul>
+<li>podemos leer el contenido de un archivo indicando a R su ruta completa (limitacion para la reproducibilidad de los resultados)</li>
+<li>podemos leer el contenido de un archivo indicando a R su ruta relativa</li>
+<li>podemos mover el archivo en el directorio de trabajo de R</li>
+<li>podemos modificar el directorio de trabajo de R para que coincida con la ubicación de nuestro archivo (con su ruta relativa)</li>
+</ul>
+<p>Un ejemplo de una ruta completa sería:</p>
+<ul>
+<li><code>/home/myName/myFile.csv</code> en un entorno UNIX</li>
+<li><code>C:/users/myName/myFile.csv</code> bajo un entorno de Windows (tenga cuidado, bajo R utilizamos <code>/</code> y no <code>\</code> como es el caso por defecto en Windows)</li>
+</ul>
+<p>Un camino relativo sería:</p>
+<ul>
+<li><code>myName/myFiles.csv</code></li>
+</ul>
+<p>Para navegar por las rutas relativas, podemos usar <code>..</code> que permite volver al directorio de origen. Por ejemplo, si el directorio de trabajo es <code>myScripts</code> y el árbol de mis archivos es:</p>
+<pre><code>## -myProject
+## |-myFiles
+## |-|-data01.csv
+## |-|-data02.csv
+## |-myScripts
+## |-|-myFirstScript.R</code></pre>
+<p>La ruta relativa al archivo <code>data01.csv</code> sería <code>../myFiles/data01.csv</code></p>
+<p>Entonces, para leer el contenido del archivo <code>data01.csv</code>, privilegiaremos la opción 2 (leer el contenido de un archivo que indicando su ruta relativa) o la opción 4 (modificar el directorio de trabajo de R para que coincida con la ubicación de nuestro archivo). En el último caso:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span>
+<span class="kw">setwd</span>(myWd)
+<span class="kw">getwd</span>() <span class="co"># para verificar que estamos en el directorio correcto</span>
+<span class="kw">list.files</span>() <span class="co"># para verificar que el archivo está aquí</span></code></pre></div>
+<p>El error más común:</p>
+<pre><code>## Error in setwd(&quot;../myFiles/&quot;) : 
+## no se puede cambiar el directorio de trabajo</code></pre>
+<p>Esto significa que el directorio no existe (se debe verificar que la sintaxis sea correcta y que el directorio exista con esta ruta).</p>
+<p>Una vez que el directorio de trabajo está definido correctamente o la ruta relativa al archivo está establecida correctamente, podemos leer el archivo con la función <code>read.table()</code>. Algunos usan la función <code>read.csv()</code> pero este es solo un caso especial de <code>read.table()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span>
+<span class="kw">setwd</span>(myWd)
+<span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;data01.csv&quot;</span>)</code></pre></div>
+<p>o alternativamente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;../myFiles/data01.csv&quot;</span>)</code></pre></div>
+<p>Si la ruta no se llena correctamente o si el archivo de datos no existe, R devolverá el siguiente error:</p>
+<pre><code>## Error in file(file, &quot;rt&quot;) : incapaz de abrir la conexión
+## De más : Warning message:
+## In file(file, &quot;rt&quot;) :
+##   incapaz de abrir el archivo &#39;../myFiles/data01.csv&#39; : No such file or directory</code></pre>
+<p>Si todo está bien, R muestra el contenido del archivo <code>data01.csv</code>. Advertencia a los usuarios de Windows porque por defecto no aparece la extensión de los archivos… Así que cuando navegamos a través de directorios con el explorador de archivos, no hay <code>data01.csv</code>, pero sólo un archivo <code>data01</code>. Es esencial remediar este problema para evitar errores. Para hacer esto, simplemente abrimos las ‘Opciones del Explorador de archivos’ a través de la tecla ‘Windows’, luego en la pestaña ‘Ver’, verificamos que la opción ‘Ocultar extensiones de archivos cuyo tipo es conocido’ no está marcado.</p>
+<p>Consultando la ayuda sobre la función <code>read.table()</code>, podemos ver que tiene muchos argumentos. Los principales son:</p>
+<ul>
+<li><code>header = FALSE</code>: ¿el archivo contiene nombres de columna? Si es así, cambiamos el valor a <code>header = TRUE</code></li>
+<li><code>sep =&quot; &quot;</code>: ¿cómo se separan los datos de la tabla? En un archivo CSV es la coma o el punto y coma, así que cambiamos a <code>sep = &quot;,&quot;</code> o <code>sep = &quot;;&quot;</code></li>
+<li><code>dec =&quot;. &quot;</code>: ¿cuál es el separador de los números decimales? Si es la coma, entonces debes cambiar a <code>dec = &quot;,&quot;</code></li>
+</ul>
+<p>Con estos tres argumentos, la mayoría de los archivos se pueden leer sin ningún problema. En caso de necesidad, la ayuda de esta función es muy completa.</p>
+<p>La función <code>read.table ()</code> devuelve el contenido del archivo como <code>data.frame</code>. Para poder usar el contenido del archivo, almacenaremos el <code>data.frame</code> en un objeto.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span>
+<span class="kw">setwd</span>(myWd)
+data01 &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;data01.csv&quot;</span>)
+<span class="kw">str</span>(data01) <span class="co"># verificar el formato de los datos</span>
+<span class="kw">head</span>(data01) <span class="co"># vverificar los primeros datos</span></code></pre></div>
+<p><a href="#studyCase001">El estudio de caso sobre el análisis de datos de datalogger</a> se basa en un archivo CSV. Aquí hay un extracto:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bdd &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;myFiles/E05C13.csv&quot;</span>, <span class="dt">skip =</span> <span class="dv">1</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, 
+  <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+<span class="kw">colnames</span>(bdd) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;temp&quot;</span>)
+<span class="kw">head</span>(bdd)</code></pre></div>
+<pre><code>##   id              date  temp
+## 1  1 11/12/15 23:00:00 4.973
+## 2  2 11/12/15 23:30:00 4.766
+## 3  3 11/13/15 00:00:00 4.844
+## 4  4 11/13/15 00:30:00 4.844
+## 5  5 11/13/15 01:00:00 5.076
+## 6  6 11/13/15 01:30:00 5.282</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(bdd)</code></pre></div>
+<pre><code>##          id              date  temp
+## 32781 32781 09/25/17 21:00:00 7.091
+## 32782 32782 09/25/17 21:30:00 6.914
+## 32783 32783 09/25/17 22:00:00 6.813
+## 32784 32784 09/25/17 22:30:00 6.611
+## 32785 32785 09/25/17 23:00:00 6.331
+## 32786 32786 09/25/17 23:30:00 5.385</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(bdd)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    32786 obs. of  3 variables:
+##  $ id  : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ date: chr  &quot;11/12/15 23:00:00&quot; &quot;11/12/15 23:30:00&quot; &quot;11/13/15 00:00:00&quot; &quot;11/13/15 00:30:00&quot; ...
+##  $ temp: num  4.97 4.77 4.84 4.84 5.08 ...</code></pre>
+</div>
+<div id="l016readTXT" class="section level3">
+<h3><span class="header-section-number">10.1.3</span> Leer un archivo de texto</h3>
+<p>La función más simple para leer un archivo que contiene texto es <code>readlines()</code>. Aquí hay un ejemplo con el archivo README.md de este libro, que se encuentra en GitHub.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">readmeGitHub &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/frareb/myRBook_SP/master/README.md&quot;</span>
+<span class="kw">readLines</span>(readmeGitHub)</code></pre></div>
+<pre><code>## [1] &quot;# myRBook_SP&quot;                                                                                                          
+## [2] &quot;Aqui se encuentra el cÃ³digo fuente del libro  *Aprender R: iniciaciÃ³n y perfeccionamiento*, construido con bookdown.&quot;</code></pre>
+<p>También está la función <code>scan()</code> que devolve todas las palabras separadas por espacios. Podemos consultar la ayuda para obtener más información.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">scan</span>(readmeGitHub, <span class="dt">what =</span> <span class="st">&quot;character&quot;</span>)</code></pre></div>
+<pre><code>##  [1] &quot;#&quot;                   &quot;myRBook_SP&quot;          &quot;Aqui&quot;               
+##  [4] &quot;se&quot;                  &quot;encuentra&quot;           &quot;el&quot;                 
+##  [7] &quot;cÃ³digo&quot;             &quot;fuente&quot;              &quot;del&quot;                
+## [10] &quot;libro&quot;               &quot;*Aprender&quot;           &quot;R:&quot;                 
+## [13] &quot;iniciaciÃ³n&quot;         &quot;y&quot;                   &quot;perfeccionamiento*,&quot;
+## [16] &quot;construido&quot;          &quot;con&quot;                 &quot;bookdown.&quot;</code></pre>
+</div>
 </div>
 <div id="guardar-datos-para-r" class="section level2">
 <h2><span class="header-section-number">10.2</span> Guardar datos para R</h2>
@@ -300,7 +424,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="exportar-datos" class="section level2">
 <h2><span class="header-section-number">10.3</span> Exportar datos</h2>
-<p>write XXX</p>
+<p>write</p>
 
 </div>
 </div>

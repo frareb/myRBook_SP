@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-31}
+    \date{2018-09-06}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -251,6 +251,15 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 (\url{https://github.com/frareb/myRBook_SP}).
 
 Últimas modificaciones:
+
+\textbf{06/09/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  Importar y exportar datos (parte 1/3):
+  \protect\hyperlink{l016read}{Leer datos desde un archivo}
+\end{itemize}
 
 \textbf{30/08/2018}
 
@@ -7198,7 +7207,7 @@ La función \texttt{seq()} permite crear una secuencia personalizada.
 ## [1] 1.0 1.5 2.0 1.0 1.5 2.0 1.0 1.5 2.0
 \end{verbatim}
 
-\subsection{\texorpdfstring{\texttt{getwd()}}{getwd()}}\label{l015getwd}
+\hypertarget{l015getwd}{\subsection{\texorpdfstring{\texttt{getwd()}}{getwd()}}\label{l015getwd}}
 
 La función \texttt{getwd()} establece la carpeta de trabajo. Esto
 corresponde a la ubicación relativa desde la cual R se posiciona para
@@ -7215,7 +7224,7 @@ cómo importar y exportar datos.
 ## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
 \end{verbatim}
 
-\subsection{\texorpdfstring{\texttt{setwd()}}{setwd()}}\label{l015setwd}
+\hypertarget{l015setwd}{\subsection{\texorpdfstring{\texttt{setwd()}}{setwd()}}\label{l015setwd}}
 
 La función \texttt{setwd()} se usa para definir un nuevo directorio de
 trabajo (carpeta de trabajo).
@@ -7897,7 +7906,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.17    0.00    0.17
+##    0.19    0.00    0.18
 \end{verbatim}
 
 \begin{Shaded}
@@ -7908,7 +7917,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.17    0.00    0.18
+##    0.21    0.00    0.20
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus
@@ -8071,9 +8080,335 @@ datos suelen estar en archivos de texto u hojas de cálculo.
 
 \hypertarget{import}{\chapter{Importar y exportar datos}\label{import}}
 
-\section{Leer datos de un archivo}\label{leer-datos-de-un-archivo}
+\hypertarget{l016read}{\section{Leer datos de un
+archivo}\label{l016read}}
 
-XXX
+\subsection{Transformar datos en formato TXT o CSV}\label{l016transfo}
+
+Hay muchas maneras de leer el contenido de un archivo con R. Sin
+embargo, nos enfocaremos en leer los archivos TXT y CSV que son los más
+comunes y los más confiables. Con raras excepciones, todos los archivos
+de datos se pueden transformar fácilmente en formatos TXT y CSV. Esta es
+la práctica preferida para el análisis de datos con R.
+
+En concreto, desde Microsoft Excel, simplemente vamos a \emph{Archivo},
+luego \emph{Guardar como}, seleccionamos el lugar donde queremos guardar
+nuestro archivo (hablaremos en el siguiente capítulo sobre la gestión de
+un proyecto R) y luego en el la ventana de copia de seguridad cambiamos
+el \emph{Tipo} desde XLSX hacia CSV. Desde LibreOffice Calc, simplemente
+vamos a \emph{Archivo}, luego \emph{Guardar como}, luego seleccionamos
+el tipo \emph{CSV}. Es importante saber que el archivo CSV no admite el
+formato de archivos de hoja de cálculo con, por ejemplo, colores, y que
+el archivo CSV contiene solo una pestaña. Si tenemos un archivo de hoja
+de cálculo con varias pestañas, tendremos que guardar tantos archivos
+CSV como pestañas.
+
+CSV viene del Inglés \emph{Comma-separated values}
+(\url{https://es.wikipedia.org/wiki/Valores_separados_por_comas}) y
+representa los datos de hoja de cálculo en un formato de texto separado
+por comas (o punto y coma según el país). Siempre se puede abrir un
+archivo CSV con software de hoja de cálculo, pero también con un editor
+de texto simple como el bloc de notas de Windows o con Notepad++. Es
+preferible abrir archivos CSV con un editor de texto porque las hojas de
+cálculo tienden a querer cambiar automáticamente los archivos CSV y esto
+tiene el efecto de dificultar su lectura.
+
+Una vez que se obtiene el archivo TXT o CSV, la lectura del contenido
+desde R es fácil, aun que requiere un poco de rigor.
+
+\subsection{Leer un archivo CSV}\label{l016readCSV}
+
+Esta es la fuente de error más común para los principiantes en R. Es por
+eso que es importante leer y volver a leer este capítulo y lo siguiente
+sobre la gestión de un proyecto R con mucha atención.
+
+R funciona en un directorio definido por defecto. Los usuarios de
+Rstudio u otro \protect\hyperlink{IDE}{entorno de desarrollo}
+especializado para R intentarán usar las opciones disponibles a través
+de los menús para establecer su directorio de trabajo o cargar el
+contenido de un archivo. En este libro, estas técnicas nunca se usarán
+porque no permiten la reproducibilidad de los resultados. Un script debe
+poder funcionar para todos los sistemas operativos y sin tener en cuenta
+el \protect\hyperlink{IDE}{entorno de desarrollo} del usuario.
+
+El directorio de trabajo por defecto se puede obtener con la función
+\protect\hyperlink{l015getwd}{\texttt{getwd()}} y cambiar con la función
+\protect\hyperlink{l015setwd}{\texttt{setwd()}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{oldWd <-}\StringTok{ }\KeywordTok{getwd}\NormalTok{()}
+\KeywordTok{print}\NormalTok{(oldWd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{setwd}\NormalTok{(}\StringTok{".."}\NormalTok{)}
+\KeywordTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{setwd}\NormalTok{(oldWd)}
+\KeywordTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+\end{verbatim}
+
+Entonces tenemos cuatro opciones:
+
+\begin{itemize}
+\tightlist
+\item
+  podemos leer el contenido de un archivo indicando a R su ruta completa
+  (limitacion para la reproducibilidad de los resultados)
+\item
+  podemos leer el contenido de un archivo indicando a R su ruta relativa
+\item
+  podemos mover el archivo en el directorio de trabajo de R
+\item
+  podemos modificar el directorio de trabajo de R para que coincida con
+  la ubicación de nuestro archivo (con su ruta relativa)
+\end{itemize}
+
+Un ejemplo de una ruta completa sería:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{/home/myName/myFile.csv} en un entorno UNIX
+\item
+  \texttt{C:/users/myName/myFile.csv} bajo un entorno de Windows (tenga
+  cuidado, bajo R utilizamos \texttt{/} y no \texttt{\textbackslash{}}
+  como es el caso por defecto en Windows)
+\end{itemize}
+
+Un camino relativo sería:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{myName/myFiles.csv}
+\end{itemize}
+
+Para navegar por las rutas relativas, podemos usar \texttt{..} que
+permite volver al directorio de origen. Por ejemplo, si el directorio de
+trabajo es \texttt{myScripts} y el árbol de mis archivos es:
+
+\begin{verbatim}
+## -myProject
+## |-myFiles
+## |-|-data01.csv
+## |-|-data02.csv
+## |-myScripts
+## |-|-myFirstScript.R
+\end{verbatim}
+
+La ruta relativa al archivo \texttt{data01.csv} sería
+\texttt{../myFiles/data01.csv}
+
+Entonces, para leer el contenido del archivo \texttt{data01.csv},
+privilegiaremos la opción 2 (leer el contenido de un archivo que
+indicando su ruta relativa) o la opción 4 (modificar el directorio de
+trabajo de R para que coincida con la ubicación de nuestro archivo). En
+el último caso:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myWD <-}\StringTok{ "../myFiles/"}
+\KeywordTok{setwd}\NormalTok{(myWd)}
+\KeywordTok{getwd}\NormalTok{() }\CommentTok{# para verificar que estamos en el directorio correcto}
+\KeywordTok{list.files}\NormalTok{() }\CommentTok{# para verificar que el archivo está aquí}
+\end{Highlighting}
+\end{Shaded}
+
+El error más común:
+
+\begin{verbatim}
+## Error in setwd("../myFiles/") : 
+## no se puede cambiar el directorio de trabajo
+\end{verbatim}
+
+Esto significa que el directorio no existe (se debe verificar que la
+sintaxis sea correcta y que el directorio exista con esta ruta).
+
+Una vez que el directorio de trabajo está definido correctamente o la
+ruta relativa al archivo está establecida correctamente, podemos leer el
+archivo con la función \texttt{read.table()}. Algunos usan la función
+\texttt{read.csv()} pero este es solo un caso especial de
+\texttt{read.table()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myWD <-}\StringTok{ "../myFiles/"}
+\KeywordTok{setwd}\NormalTok{(myWd)}
+\KeywordTok{read.table}\NormalTok{(}\DataTypeTok{file =} \StringTok{"data01.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+o alternativamente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{read.table}\NormalTok{(}\DataTypeTok{file =} \StringTok{"../myFiles/data01.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Si la ruta no se llena correctamente o si el archivo de datos no existe,
+R devolverá el siguiente error:
+
+\begin{verbatim}
+## Error in file(file, "rt") : incapaz de abrir la conexión
+## De más : Warning message:
+## In file(file, "rt") :
+##   incapaz de abrir el archivo '../myFiles/data01.csv' : No such file or directory
+\end{verbatim}
+
+Si todo está bien, R muestra el contenido del archivo
+\texttt{data01.csv}. Advertencia a los usuarios de Windows porque por
+defecto no aparece la extensión de los archivos\ldots{} Así que cuando
+navegamos a través de directorios con el explorador de archivos, no hay
+\texttt{data01.csv}, pero sólo un archivo \texttt{data01}. Es esencial
+remediar este problema para evitar errores. Para hacer esto, simplemente
+abrimos las `Opciones del Explorador de archivos' a través de la tecla
+`Windows', luego en la pestaña `Ver', verificamos que la opción `Ocultar
+extensiones de archivos cuyo tipo es conocido' no está marcado.
+
+Consultando la ayuda sobre la función \texttt{read.table()}, podemos ver
+que tiene muchos argumentos. Los principales son:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{header\ =\ FALSE}: ¿el archivo contiene nombres de columna? Si
+  es así, cambiamos el valor a \texttt{header\ =\ TRUE}
+\item
+  \texttt{sep\ ="\ "}: ¿cómo se separan los datos de la tabla? En un
+  archivo CSV es la coma o el punto y coma, así que cambiamos a
+  \texttt{sep\ =\ ","} o \texttt{sep\ =\ ";"}
+\item
+  \texttt{dec\ =".\ "}: ¿cuál es el separador de los números decimales?
+  Si es la coma, entonces debes cambiar a \texttt{dec\ =\ ","}
+\end{itemize}
+
+Con estos tres argumentos, la mayoría de los archivos se pueden leer sin
+ningún problema. En caso de necesidad, la ayuda de esta función es muy
+completa.
+
+La función \texttt{read.table\ ()} devuelve el contenido del archivo
+como \texttt{data.frame}. Para poder usar el contenido del archivo,
+almacenaremos el \texttt{data.frame} en un objeto.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myWD <-}\StringTok{ "../myFiles/"}
+\KeywordTok{setwd}\NormalTok{(myWd)}
+\NormalTok{data01 <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\DataTypeTok{file =} \StringTok{"data01.csv"}\NormalTok{)}
+\KeywordTok{str}\NormalTok{(data01) }\CommentTok{# verificar el formato de los datos}
+\KeywordTok{head}\NormalTok{(data01) }\CommentTok{# vverificar los primeros datos}
+\end{Highlighting}
+\end{Shaded}
+
+\protect\hyperlink{studyCase001}{El estudio de caso sobre el análisis de
+datos de datalogger} se basa en un archivo CSV. Aquí hay un extracto:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bdd <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"myFiles/E05C13.csv"}\NormalTok{, }\DataTypeTok{skip =} \DecValTok{1}\NormalTok{, }\DataTypeTok{header =} \OtherTok{TRUE}\NormalTok{, }
+  \DataTypeTok{sep =} \StringTok{","}\NormalTok{, }\DataTypeTok{dec =} \StringTok{"."}\NormalTok{, }\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(bdd) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"id"}\NormalTok{, }\StringTok{"date"}\NormalTok{, }\StringTok{"temp"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(bdd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   id              date  temp
+## 1  1 11/12/15 23:00:00 4.973
+## 2  2 11/12/15 23:30:00 4.766
+## 3  3 11/13/15 00:00:00 4.844
+## 4  4 11/13/15 00:30:00 4.844
+## 5  5 11/13/15 01:00:00 5.076
+## 6  6 11/13/15 01:30:00 5.282
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tail}\NormalTok{(bdd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          id              date  temp
+## 32781 32781 09/25/17 21:00:00 7.091
+## 32782 32782 09/25/17 21:30:00 6.914
+## 32783 32783 09/25/17 22:00:00 6.813
+## 32784 32784 09/25/17 22:30:00 6.611
+## 32785 32785 09/25/17 23:00:00 6.331
+## 32786 32786 09/25/17 23:30:00 5.385
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str}\NormalTok{(bdd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    32786 obs. of  3 variables:
+##  $ id  : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ date: chr  "11/12/15 23:00:00" "11/12/15 23:30:00" "11/13/15 00:00:00" "11/13/15 00:30:00" ...
+##  $ temp: num  4.97 4.77 4.84 4.84 5.08 ...
+\end{verbatim}
+
+\subsection{Leer un archivo de texto}\label{l016readTXT}
+
+La función más simple para leer un archivo que contiene texto es
+\texttt{readlines()}. Aquí hay un ejemplo con el archivo README.md de
+este libro, que se encuentra en GitHub.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{readmeGitHub <-}\StringTok{ "https://raw.githubusercontent.com/frareb/myRBook_SP/master/README.md"}
+\KeywordTok{readLines}\NormalTok{(readmeGitHub)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "# myRBook_SP"                                                                                                          
+## [2] "Aqui se encuentra el cÃ³digo fuente del libro  *Aprender R: iniciaciÃ³n y perfeccionamiento*, construido con bookdown."
+\end{verbatim}
+
+También está la función \texttt{scan()} que devolve todas las palabras
+separadas por espacios. Podemos consultar la ayuda para obtener más
+información.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{scan}\NormalTok{(readmeGitHub, }\DataTypeTok{what =} \StringTok{"character"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "#"                   "myRBook_SP"          "Aqui"               
+##  [4] "se"                  "encuentra"           "el"                 
+##  [7] "cÃ³digo"             "fuente"              "del"                
+## [10] "libro"               "*Aprender"           "R:"                 
+## [13] "iniciaciÃ³n"         "y"                   "perfeccionamiento*,"
+## [16] "construido"          "con"                 "bookdown."
+\end{verbatim}
 
 \section{Guardar datos para R}\label{guardar-datos-para-r}
 
@@ -8081,7 +8416,7 @@ save load
 
 \section{Exportar datos}\label{exportar-datos}
 
-write XXX
+write
 
 \chapter{Los bucles}\label{loops}
 
@@ -8364,7 +8699,7 @@ especificando el formato de las fechas con la función \texttt{as.Date()}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-175-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-186-1.pdf}
 
 Podemos simplificar la información calculando únicamente las
 temperaturas mínimas, promedias, y máximas con la función
@@ -8387,7 +8722,7 @@ temperaturas mínimas, promedias, y máximas con la función
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-176-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-187-1.pdf}
 
 También podemos calcular la diferencia entre la temperatura máxima y la
 temperatura mínima (variación de temperatura diurna).
@@ -8401,7 +8736,7 @@ temperatura mínima (variación de temperatura diurna).
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-177-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-188-1.pdf}
 
 Otra posibilidad es de agrupar los datos para tener la temperatura
 promedia de un día con la función \texttt{aggregate()}.
@@ -8425,7 +8760,7 @@ promedia de un día con la función \texttt{aggregate()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-178-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-189-1.pdf}
 
 Tambien podemos calcular las temperaturas de los dias para cada mes.
 
@@ -8461,18 +8796,18 @@ Tambien podemos calcular las temperaturas de los dias para cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-1.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-2.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-3.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-4.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-5.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-6.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-7.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-8.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-9.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-10.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-11.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-179-12.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-3.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-4.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-5.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-6.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-7.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-8.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-9.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-10.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-11.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-12.pdf}
 
 O todo en un mismo grafico, y la variación de temperatura diurna para
 cada mes.
@@ -8500,7 +8835,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-180-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-191-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8525,7 +8860,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-180-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-191-2.pdf}
 
 
 \end{document}
