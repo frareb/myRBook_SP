@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-09-06}
+    \date{2018-09-10}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -234,6 +234,20 @@
 
 \mainmatter
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -251,6 +265,15 @@ o si está familiarizado con GitHub en el sitio web del proyecto
 (\url{https://github.com/frareb/myRBook_SP}).
 
 Últimas modificaciones:
+
+\textbf{10/09/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  Importar y exportar datos (parte 2-3/3):
+  \protect\hyperlink{l016save}{Guardar y exportar datos}
+\end{itemize}
 
 \textbf{06/09/2018}
 
@@ -488,7 +511,10 @@ puede variar dependiendo de su sistema operativo (Figura
 \ref{fig:screenCapConsole}). Esta ventana se llama \emph{consola}.
 
 \begin{figure}
-\includegraphics[width=7.53in]{myFigures/screencap_rConsoleFR} \caption{Captura de pantalla de la consola R en Windows.\label{fig:screenCapConsole}}\label{fig:screenCapConsole}
+\centering
+\includegraphics{myFigures/screencap_rConsoleFR.png}
+\caption{\label{fig:screenCapConsole}Captura de pantalla de la consola R en
+Windows.\label{fig:screenCapConsole}}
 \end{figure}
 
 La consola corresponde a la interfaz donde se interpretará el código, es
@@ -509,7 +535,10 @@ hacer la distinción entre el código y el resultado del código.
 \end{rmdnote}
 
 \begin{figure}
-\includegraphics[width=6.71in]{myFigures/screencap_rConsoleCalculatrice} \caption{Captura de pantalla de la consola R al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}}\label{fig:screenCapConsoleCal}
+\centering
+\includegraphics{myFigures/screencap_rConsoleCalculatrice.png}
+\caption{\label{fig:screenCapConsoleCal}Captura de pantalla de la consola R
+al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}}
 \end{figure}
 
 \hypertarget{l011opari}{\subsection{Los operadores
@@ -1491,7 +1520,9 @@ principiantes a R.
 \section{RStudio}\label{rstudio}
 
 \begin{figure}
-\includegraphics[width=7.78in]{myLogos/RStudio} \caption{Logo RStudio.\label{fig:logoRStudio}}\label{fig:logoRStudio}
+\centering
+\includegraphics{myLogos/RStudio.png}
+\caption{\label{fig:logoRStudio}Logo RStudio.\label{fig:logoRStudio}}
 \end{figure}
 
 \subsection{Instalar RStudio}\label{instalar-rstudio}
@@ -1522,7 +1553,10 @@ izquierdo de RStudio ahora está dividido en dos, con la consola en la
 parte inferior de la pantalla y el script en la parte superior.
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_RStudio_01} \caption{Captura de pantalla de RStudio en Windows: pantalla por defecto.\label{fig:screenCapRStudio01}}\label{fig:screenCapRStudio01}
+\centering
+\includegraphics{myFigures/screencap_RStudio_01.png}
+\caption{\label{fig:screenCapRStudio01}Captura de pantalla de RStudio en
+Windows: pantalla por defecto.\label{fig:screenCapRStudio01}}
 \end{figure}
 
 Luego podemos comenzar a escribir nuestro script con los comentarios que
@@ -1556,7 +1590,11 @@ deseamos ejecutar y usamos la combinación de teclas
 \ref{fig:screenCapRStudio02}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_RStudio_02} \caption{Captura de pantalla de RStudio en Windows: ejecutar nuestro script con CTRL + ENTER.\label{fig:screenCapRStudio02}}\label{fig:screenCapRStudio02}
+\centering
+\includegraphics{myFigures/screencap_RStudio_02.png}
+\caption{\label{fig:screenCapRStudio02}Captura de pantalla de RStudio en
+Windows: ejecutar nuestro script con CTRL +
+ENTER.\label{fig:screenCapRStudio02}}
 \end{figure}
 
 Podemos ver que, de forma predeterminada, en la parte del script, los
@@ -1574,7 +1612,11 @@ theme:}). Elegiremos el tema \emph{Cobalt}, luego \emph{OK} (Figura
 \ref{fig:screenCapRStudio03}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_RStudio_03} \caption{Captura de pantalla de RStudio en Windows: cambiar preferencias de sintaxis.\label{fig:screenCapRStudio03}}\label{fig:screenCapRStudio03}
+\centering
+\includegraphics{myFigures/screencap_RStudio_03.png}
+\caption{\label{fig:screenCapRStudio03}Captura de pantalla de RStudio en
+Windows: cambiar preferencias de
+sintaxis.\label{fig:screenCapRStudio03}}
 \end{figure}
 
 Sabemos cómo crear un nuevo script, guardarlo, ejecutar su contenido y
@@ -1587,7 +1629,9 @@ misma manera, independientemente del entorno de desarrollo utilizado.
 \section{Notepad++ avec Npp2R}\label{notepad-avec-npp2r}
 
 \begin{figure}
-\includegraphics[width=7.78in]{myLogos/Notepadpp} \caption{Logo Notepad++\label{fig:logoNotepad}}\label{fig:logoNotepad}
+\centering
+\includegraphics{myLogos/Notepadpp.png}
+\caption{\label{fig:logoNotepad}Logo Notepad++\label{fig:logoNotepad}}
 \end{figure}
 
 \subsection{Instalar Notepad++ (solamente para
@@ -1614,7 +1658,10 @@ Al abrir por primera vez, Notepad++ muestra un archivo vacío \emph{new
 1} (Figura \ref{fig:screenCapNpp01}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Npp_01} \caption{Captura de pantalla de Notepad++ en Windows: pantalla por defecto.\label{fig:screenCapNpp01}}\label{fig:screenCapNpp01}
+\centering
+\includegraphics{myFigures/screencap_Npp_01.png}
+\caption{\label{fig:screenCapNpp01}Captura de pantalla de Notepad++ en
+Windows: pantalla por defecto.\label{fig:screenCapNpp01}}
 \end{figure}
 
 Como ya hemos creado un script para probarlo con RStudio, lo abriremos
@@ -1625,7 +1672,10 @@ luego \emph{R}, y de nuevo \emph{R}. Aparece el resaltado de sintaxis
 (Figura \ref{fig:screenCapNpp02}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Npp_02} \caption{Captura de pantalla de Notepad++ en Windows: ejecutar nuestro script con F8.\label{fig:screenCapNpp02}}\label{fig:screenCapNpp02}
+\centering
+\includegraphics{myFigures/screencap_Npp_02.png}
+\caption{\label{fig:screenCapNpp02}Captura de pantalla de Notepad++ en
+Windows: ejecutar nuestro script con F8.\label{fig:screenCapNpp02}}
 \end{figure}
 
 La ejecución del script solo se puede realizar si se está ejecutando
@@ -1639,7 +1689,10 @@ abrirá una nueva ventana con una consola que ejecuta las líneas deseadas
 (Figura \ref{fig:screenCapNpp03}).
 
 \begin{figure}
-\includegraphics[width=14.83in]{myFigures/screencap_Npp_03} \caption{Captura de pantalla de Notepad++ en Windows: la consola con F8.\label{fig:screenCapNpp03}}\label{fig:screenCapNpp03}
+\centering
+\includegraphics{myFigures/screencap_Npp_03.png}
+\caption{\label{fig:screenCapNpp03}Captura de pantalla de Notepad++ en
+Windows: la consola con F8.\label{fig:screenCapNpp03}}
 \end{figure}
 
 Al igual que con RStudio, el resaltado de sintaxis se puede cambiar
@@ -1647,7 +1700,10 @@ desde el menú \emph{Configuración}, y se puede seleccionar un nuevo tema
 (por ejemplo, \emph{Solarized} en la Figura \ref{fig:screenCapNpp04})
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Npp_04} \caption{Captura de pantalla de Notepad++ en Windows con el tema Solarized.\label{fig:screenCapNpp04}}\label{fig:screenCapNpp04}
+\centering
+\includegraphics{myFigures/screencap_Npp_04.png}
+\caption{\label{fig:screenCapNpp04}Captura de pantalla de Notepad++ en
+Windows con el tema Solarized.\label{fig:screenCapNpp04}}
 \end{figure}
 
 Comparado con otros editores de texto, Notepad++ tiene la ventaja de ser
@@ -1657,7 +1713,9 @@ personalizar la escritura de códigos.
 \section{Geany}\label{geany}
 
 \begin{figure}
-\includegraphics[width=7.78in]{myLogos/Geany} \caption{Logo Geany\label{fig:logoGeany}}\label{fig:logoGeany}
+\centering
+\includegraphics{myLogos/Geany.png}
+\caption{\label{fig:logoGeany}Logo Geany\label{fig:logoGeany}}
 \end{figure}
 
 \subsection{Instalar Geany (para Linux, Mac OSX y
@@ -1675,14 +1733,20 @@ Al abrir por primera vez, como para RStudio y Notepad++, se crea un
 archivo vacío (Figura \ref{fig:screenCapGeany01}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Geany_01} \caption{Captura de pantalla de Geany en Windows: pantalla por defecto.\label{fig:screenCapGeany01}}\label{fig:screenCapGeany01}
+\centering
+\includegraphics{myFigures/screencap_Geany_01.png}
+\caption{\label{fig:screenCapGeany01}Captura de pantalla de Geany en
+Windows: pantalla por defecto.\label{fig:screenCapGeany01}}
 \end{figure}
 
 Podemos abrir nuestro script con \emph{Archivo}, \emph{Abrir} (Figura
 \ref{fig:screenCapGeany02}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Geany_02} \caption{Captura de pantalla de Geany en Windows: abrir un script.\label{fig:screenCapGeany02}}\label{fig:screenCapGeany02}
+\centering
+\includegraphics{myFigures/screencap_Geany_02.png}
+\caption{\label{fig:screenCapGeany02}Captura de pantalla de Geany en
+Windows: abrir un script.\label{fig:screenCapGeany02}}
 \end{figure}
 
 Para ejecutar nuestro script, la versión de Geany para Windows no tiene
@@ -1704,7 +1768,10 @@ cambiar a través del menú \emph{Ver}, \emph{cambiar Esquema del color
 screenCapGeany03)).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Geany_03} \caption{Captura de pantalla de Geany en Windows: cambiar esquema de color.\label{fig:screenCapGeany03}}\label{fig:screenCapGeany03}
+\centering
+\includegraphics{myFigures/screencap_Geany_03.png}
+\caption{\label{fig:screenCapGeany03}Captura de pantalla de Geany en
+Windows: cambiar esquema de color.\label{fig:screenCapGeany03}}
 \end{figure}
 
 \section{Otras soluciones}\label{otras-soluciones}
@@ -7221,7 +7288,7 @@ cómo importar y exportar datos.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 \hypertarget{l015setwd}{\subsection{\texorpdfstring{\texttt{setwd()}}{setwd()}}\label{l015setwd}}
@@ -7237,7 +7304,7 @@ trabajo (carpeta de trabajo).
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 \begin{Shaded}
@@ -7248,7 +7315,7 @@ trabajo (carpeta de trabajo).
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub"
+## [1] "D:/GitHub"
 \end{verbatim}
 
 \begin{Shaded}
@@ -7259,7 +7326,7 @@ trabajo (carpeta de trabajo).
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{list.files()}}{list.files()}}\label{l015listfiles}
@@ -7906,7 +7973,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.19    0.00    0.18
+##    0.11    0.00    0.11
 \end{verbatim}
 
 \begin{Shaded}
@@ -7917,7 +7984,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.21    0.00    0.20
+##    0.11    0.00    0.11
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus
@@ -8052,12 +8119,12 @@ listar los paquetes disponibles en el CRAN en orden alfabético.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "abind"       "assertthat"  "backports"   "base64enc"   "BH"         
-##  [6] "bindr"       "bindrcpp"    "bitops"      "bookdown"    "brew"       
-## [11] "broom"       "caret"       "cartography" "caTools"     "CircStats"  
-## [16] "classInt"    "cli"         "colorRamps"  "colorspace"  "commonmark" 
-## [21] "cranlogs"    "crayon"      "crul"        "curl"        "CVST"       
-## [26] "data.table"  "DBI"         "dbscan"      "ddalpha"     "DEoptimR"
+##  [1] "abind"      "acepack"    "actuar"     "ade4"       "adehabitat"
+##  [6] "agricolae"  "AlgDesign"  "alr4"       "animation"  "ape"       
+## [11] "arm"        "arules"     "arulesViz"  "assertthat" "audio"     
+## [16] "babynames"  "backports"  "base64"     "base64enc"  "BDgraph"   
+## [21] "beanplot"   "BH"         "bibtex"     "bindr"      "bindrcpp"  
+## [26] "binom"      "bitops"     "biwavelet"  "bold"       "bookdown"
 \end{verbatim}
 
 La función \texttt{pkgCheck()} asegura la \textbf{portabilidad} de
@@ -8143,7 +8210,7 @@ El directorio de trabajo por defecto se puede obtener con la función
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 \begin{Shaded}
@@ -8154,7 +8221,7 @@ El directorio de trabajo por defecto se puede obtener con la función
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub"
+## [1] "D:/GitHub"
 \end{verbatim}
 
 \begin{Shaded}
@@ -8165,7 +8232,7 @@ El directorio de trabajo por defecto se puede obtener con la función
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 Entonces tenemos cuatro opciones:
@@ -8410,13 +8477,134 @@ información.
 ## [16] "construido"          "con"                 "bookdown."
 \end{verbatim}
 
-\section{Guardar datos para R}\label{guardar-datos-para-r}
+\hypertarget{l016save}{\section{Guardar datos para R}\label{l016save}}
 
-save load
+A veces es útil poder guardar un objeto R para poder reutilizarlo más
+tarde. Este es el caso, por ejemplo, cuando el tiempo de cálculo para
+llegar a un resultado es muy largo, o cuando queremos liberar espacio en
+la RAM. Para hacer esto, existe la función \texttt{save()} que toma como
+argumento principal el nombre de los objetos que queremos guardar.
 
-\section{Exportar datos}\label{exportar-datos}
+El objeto guardado se almacenará en un archivo. Por convención, es bueno
+dar como nombre de extensión \texttt{.RData} a los archivos que
+contienen objetos R, preferir un solo objeto por archivo, y dar el
+nombre del objeto como nombre del archivo.
 
-write
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myObject <-}\StringTok{ }\DecValTok{5}
+\KeywordTok{ls}\NormalTok{(}\DataTypeTok{pattern =} \StringTok{"myObject"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "myObject"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{save}\NormalTok{(myObject, }\DataTypeTok{file =} \StringTok{"myFiles/myObject.RData"}\NormalTok{)}
+\KeywordTok{rm}\NormalTok{(myObject)}
+\KeywordTok{ls}\NormalTok{(}\DataTypeTok{pattern =} \StringTok{"myObject"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## character(0)
+\end{verbatim}
+
+Si necesitamos el objeto guardado en el archivo, podemos volver a
+cargarlo con la función \texttt{load()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ls}\NormalTok{(}\DataTypeTok{pattern =} \StringTok{"myObject"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## character(0)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{load}\NormalTok{(}\StringTok{"myFiles/myObject.RData"}\NormalTok{)}
+\KeywordTok{ls}\NormalTok{(}\DataTypeTok{pattern =} \StringTok{"myObject"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "myObject"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(myObject)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\section{Exportar datos}\label{l016write}
+
+La mejor forma de comunicar sus resultados o datos es enviar sus scripts
+y archivos de datos. A veces esto no es posible o no es adecuado, y
+puede ser útil exportar sus datos en un archivo de texto o CSV. Para
+hacer esto, existe la función genérica \texttt{write()} y la función
+\texttt{write.table()} para \texttt{data.frame}.
+
+Por ejemplo, crearemos un \texttt{data.frame} con los números del 1 al
+26 y las letras correspondientes, luego los guardaremos en un archivo
+CSV, luego volveremos a leer los datos contenidos en este archivo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dfLetters <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{num =} \DecValTok{1}\OperatorTok{:}\DecValTok{26}\NormalTok{, }\DataTypeTok{letters =}\NormalTok{ letters)}
+\KeywordTok{write.table}\NormalTok{(dfLetters, }\DataTypeTok{file =} \StringTok{"myFiles/dfLetters.csv"}\NormalTok{, }
+  \DataTypeTok{sep =} \StringTok{","}\NormalTok{, }\DataTypeTok{col.names =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{row.names =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{read.table}\NormalTok{(}\DataTypeTok{file =} \StringTok{"myFiles/dfLetters.csv"}\NormalTok{, }\DataTypeTok{header =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{sep =} \StringTok{","}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    num letters
+## 1    1       a
+## 2    2       b
+## 3    3       c
+## 4    4       d
+## 5    5       e
+## 6    6       f
+## 7    7       g
+## 8    8       h
+## 9    9       i
+## 10  10       j
+## 11  11       k
+## 12  12       l
+## 13  13       m
+## 14  14       n
+## 15  15       o
+## 16  16       p
+## 17  17       q
+## 18  18       r
+## 19  19       s
+## 20  20       t
+## 21  21       u
+## 22  22       v
+## 23  23       w
+## 24  24       x
+## 25  25       y
+## 26  26       z
+\end{verbatim}
+
+\section{Conclusión}\label{conclusion-5}
+
+Felicitaciones! Ahora sabemos cómo leer datos de un archivo de texto o
+CSV, guardar y cargar datos de RData, y escribir en un archivo. El error
+más común entre los principiantes en R es la lectura de archivos de
+datos. Es por eso que este capítulo es para leer y volver a leer sin
+moderación.
 
 \chapter{Los bucles}\label{loops}
 
@@ -8472,6 +8660,18 @@ XXX
 
 XXX
 
+\chapter{Gestión de proyectos con R}\label{project}
+
+\section{Administrar archivos y directorio de
+trabajo}\label{administrar-archivos-y-directorio-de-trabajo}
+
+\section{Gestión de versiones de
+scripts}\label{gestion-de-versiones-de-scripts}
+
+\section{Gestión de documentación}\label{gestion-de-documentacion}
+
+\chapter{Conclusión}\label{concluP1}
+
 \part{Los gráficos}\label{part-los-graficos}
 
 \chapter{Gráficos simples}\label{graph1}
@@ -8506,9 +8706,18 @@ XXX
 
 \section{The Gimp}\label{the-gimp}
 
-\part{Estadísticas con R}\label{part-estadisticas-con-r}
+\chapter{Conclusión}\label{concluP2}
 
-\chapter{Estadísticas descriptivas}\label{stats1}
+\part{Publicar sus
+resultados}\label{part-publicar-sus-resultados}
+
+\chapter{Los scripts}\label{p3script}
+
+\chapter{Los datos}\label{p3data}
+
+\chapter{Algunos ejemplos}\label{p3example}
+
+\chapter{Conclusión}\label{p3conclu}
 
 \part{Estudio de caso}\label{part-estudio-de-caso}
 
@@ -8699,7 +8908,7 @@ especificando el formato de las fechas con la función \texttt{as.Date()}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-186-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-189-1.pdf}
 
 Podemos simplificar la información calculando únicamente las
 temperaturas mínimas, promedias, y máximas con la función
@@ -8722,7 +8931,7 @@ temperaturas mínimas, promedias, y máximas con la función
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-187-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-1.pdf}
 
 También podemos calcular la diferencia entre la temperatura máxima y la
 temperatura mínima (variación de temperatura diurna).
@@ -8736,7 +8945,7 @@ temperatura mínima (variación de temperatura diurna).
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-188-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-191-1.pdf}
 
 Otra posibilidad es de agrupar los datos para tener la temperatura
 promedia de un día con la función \texttt{aggregate()}.
@@ -8760,7 +8969,7 @@ promedia de un día con la función \texttt{aggregate()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-189-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-192-1.pdf}
 
 Tambien podemos calcular las temperaturas de los dias para cada mes.
 
@@ -8796,18 +9005,18 @@ Tambien podemos calcular las temperaturas de los dias para cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-1.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-2.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-3.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-4.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-5.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-6.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-7.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-8.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-9.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-10.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-11.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-190-12.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-3.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-4.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-5.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-6.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-7.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-8.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-9.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-10.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-11.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-193-12.pdf}
 
 O todo en un mismo grafico, y la variación de temperatura diurna para
 cada mes.
@@ -8835,7 +9044,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-191-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-194-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8860,7 +9069,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-191-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-194-2.pdf}
 
 
 \end{document}
