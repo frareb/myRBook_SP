@@ -1,3 +1,9 @@
-# (PART) Estadísticas con R {-}
+# (PART) Publicar sus resultados {-}
 
-# Estadísticas descriptivas {#stats1}
+# Los scripts {#p3script}
+
+# Los datos {#p3data}
+
+# Algunos ejemplos {#p3example}
+
+# Conclusión {#p3conclu}

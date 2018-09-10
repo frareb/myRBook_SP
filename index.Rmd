@@ -19,6 +19,10 @@ Este libro está incompleto por el momento y está leyendo su versión prelimina
 
 Últimas modificaciones:
 
+**10/09/2018**
+
+* Importar y exportar datos (parte 2-3/3): [Guardar y exportar datos](#l016save)
+
 **06/09/2018**
 
 * Importar y exportar datos (parte 1/3): [Leer datos desde un archivo](#l016read)

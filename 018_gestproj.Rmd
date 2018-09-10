@@ -1,0 +1,14 @@
+# Gestión de proyectos con R {#project}
+
+
+
+## Administrar archivos y directorio de trabajo
+
+
+
+## Gestión de versiones de scripts
+
+
+
+## Gestión de documentación
+
