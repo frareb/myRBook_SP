@@ -1,10 +1,15 @@
 # Introducción {#intro}
 
 ## ¿Por qué aprender R?
+Porque R se ha convertido en una herramienta esencial para el análisis y la gestión de datos científicos, y en este contexto se vuelve esencial dominar al menos los conceptos básicos. El éxito de R no es una coincidencia: R es un software que todos pueden obtener libremente garantizando la transparencia y la reproducibilidad de los resultados científicos (sujeto a cumplir con algunas reglas que abordará este libro). R también se basa en una comunidad muy activa con varios miles de módulos adicionales (paquetes) para realizar el análisis estadístico más avanzado.
 
 ## Este libro
+El propósito de este libro es proporcionar a los estudiantes y aquellos que deseen aprender sobre R una base sólida para luego implementar sus propios proyectos científicos y la valoración de sus resultados. Hay muchos libros dedicados a R, pero ninguno cubre los elementos básicos de este lenguaje con el fin de hacer que los resultados científicos sean publicables y reproducibles.
+
+En general, este libro está dirigido a toda la comunidad científica y en particular a aquellos interesados en las ciencias de la vida, y los ejemplos en este libro se basarán en estudios de biología.
+
+Este libro nació de la solicitud de los estudiantes de las universidades que colaboran con el IRD en América del Sur. Por lo tanto, su primera versión está escrita en español (hay pocos documentos de calidad en R en español). Comencé su traducción al francés en 2018 y hoy ambas versiones coevolucionan con contenido que puede variar (por ejemplo, para estudios de casos).
 
 ## Lectura adicional en español
 
 * R para Principiantes, Emmanuel Paradis (https://cran.r-project.org/doc/contrib/rdebuts_es.pdf)
-* xxx
