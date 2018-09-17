@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-09-10}
+    \date{2018-09-17}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -257,14 +257,30 @@
 }
 \chapter{Preámbulo}\label{preambulo}
 
-Este libro está incompleto por el momento y está leyendo su versión
-preliminar. Si tiene algún comentario, sugerencia o si identifica
-errores, no dude en enviarme un correo electrónico
+Este libro está incompleto por el momento y está viendo su versión
+preliminar. Muchos capítulos ya están en línea, así que no dude en
+consultarlos y comenzar su iniciación o su perfeccionamiento en el
+lenguaje de programación R.
+
+Si tiene algún comentario, sugerencia o si identifica errores, no dude
+en enviarme un correo electrónico
 (\href{mailto:francois.rebaudo@ird.fr}{\nolinkurl{francois.rebaudo@ird.fr}}),
 o si está familiarizado con GitHub en el sitio web del proyecto
-(\url{https://github.com/frareb/myRBook_SP}).
+(\url{https://github.com/frareb/myRBook_SP}). Este libro es
+colaborativo, se basa en su participación.
+
+Este libro también está disponible en francés
+(\url{http://myrbookfr.netlify.com/})
 
 Últimas modificaciones:
+
+\textbf{17/09/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  Introducción
+\end{itemize}
 
 \textbf{10/09/2018}
 
@@ -469,7 +485,35 @@ material.
 
 \section{¿Por qué aprender R?}\label{por-que-aprender-r}
 
+Porque R se ha convertido en una herramienta esencial para el análisis y
+la gestión de datos científicos, y en este contexto se vuelve esencial
+dominar al menos los conceptos básicos. El éxito de R no es una
+coincidencia: R es un software que todos pueden obtener libremente
+garantizando la transparencia y la reproducibilidad de los resultados
+científicos (sujeto a cumplir con algunas reglas que abordará este
+libro). R también se basa en una comunidad muy activa con varios miles
+de módulos adicionales (paquetes) para realizar el análisis estadístico
+más avanzado.
+
 \section{Este libro}\label{este-libro}
+
+El propósito de este libro es proporcionar a los estudiantes y aquellos
+que deseen aprender sobre R una base sólida para luego implementar sus
+propios proyectos científicos y la valoración de sus resultados. Hay
+muchos libros dedicados a R, pero ninguno cubre los elementos básicos de
+este lenguaje con el fin de hacer que los resultados científicos sean
+publicables y reproducibles.
+
+En general, este libro está dirigido a toda la comunidad científica y en
+particular a aquellos interesados en las ciencias de la vida, y los
+ejemplos en este libro se basarán en estudios de biología.
+
+Este libro nació de la solicitud de los estudiantes de las universidades
+que colaboran con el IRD en América del Sur. Por lo tanto, su primera
+versión está escrita en español (hay pocos documentos de calidad en R en
+español). Comencé su traducción al francés en 2018 y hoy ambas versiones
+coevolucionan con contenido que puede variar (por ejemplo, para estudios
+de casos).
 
 \section{Lectura adicional en
 español}\label{lectura-adicional-en-espanol}
@@ -479,8 +523,6 @@ español}\label{lectura-adicional-en-espanol}
 \item
   R para Principiantes, Emmanuel Paradis
   (\url{https://cran.r-project.org/doc/contrib/rdebuts_es.pdf})
-\item
-  xxx
 \end{itemize}
 
 \part{Conceptos básicos}\label{part-conceptos-basicos}
@@ -7973,7 +8015,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.11    0.00    0.11
+##    0.13    0.00    0.12
 \end{verbatim}
 
 \begin{Shaded}
@@ -7984,7 +8026,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.11    0.00    0.11
+##    0.14    0.00    0.14
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus
