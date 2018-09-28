@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="remerciements.html">
+<link rel="prev" href="import.html">
+<link rel="next" href="project.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -302,88 +302,191 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Aprender R: iniciación y perfeccionamiento</h1>
-<h4 class="author"><em>François Rebaudo</em></h4>
-<h4 class="date"><em>2018-09-28</em></h4>
+<div id="algo" class="section level1">
+<h1><span class="header-section-number"> 11</span> Algorítmico</h1>
+<div id="l17if" class="section level2">
+<h2><span class="header-section-number">11.1</span> Pruebas lógicas con <code>if</code></h2>
+<p>Si queremos realizar una operación diferente según una condición, podemos configurar una prueba lógica del tipo <strong>SI</strong> <em>esto</em> <strong>ENTONCES</strong> <em>esto</em> <strong>SINO</strong> <em>esto</em>. Con R esto dará como resultado la función <code>if(cond) cons.express alt.expr</code> como se muestra en la función help.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myVar &lt;-<span class="st"> </span><span class="dv">2</span>
+<span class="cf">if</span>(myVar <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>) <span class="kw">print</span>(<span class="st">&quot;myVar &lt; 3&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;myVar &lt; 3&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span>(myVar <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>) <span class="kw">print</span>(<span class="st">&quot;myVar &lt; 3&quot;</span>) <span class="cf">else</span> <span class="kw">print</span>(<span class="st">&quot;myVar &gt; 3&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;myVar &lt; 3&quot;</code></pre>
+<p>Cuando hay varias líneas de código para ejecutar basadas en la prueba lógica, o simplemente para hacer que el código sea más fácil de leer, utilizamos varias líneas con <code>{}</code> y con identacion.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myVar &lt;-<span class="st"> </span><span class="dv">2</span>
+myResult &lt;-<span class="st"> </span><span class="dv">0</span>
+<span class="cf">if</span>(myVar <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>){
+  <span class="kw">print</span>(<span class="st">&quot;myVar &lt; 3&quot;</span>)
+  myResult &lt;-<span class="st"> </span>myVar <span class="op">+</span><span class="st"> </span><span class="dv">10</span>
+} <span class="cf">else</span> {
+  <span class="kw">print</span>(<span class="st">&quot;myVar &gt; 3&quot;</span>)
+  myResult &lt;-<span class="st"> </span>myVar <span class="op">-</span><span class="st"> </span><span class="dv">10</span>
+}</code></pre></div>
+<pre><code>## [1] &quot;myVar &lt; 3&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(myResult)</code></pre></div>
+<pre><code>## [1] 12</code></pre>
+<p>En este ejemplo definimos una variable <code>myVar</code>. Si esta variable es menor que 3, la variable <code>myResult</code> se establece en <code>myVar + 10</code>, y de lo contrario <code>myResult</code> se establece en <code>myVar - 10</code>.</p>
+<p>Ya hemos visto el uso de la prueba lógica <code>if</code> en el <a href="fonctions.html#l015function">capítulo sobre las funciones</a>. Habiamos probado si la variable ingresada como argumento en nuestra función era de tipo <code>character</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myVar &lt;-<span class="st"> &quot;qwerty&quot;</span>
+<span class="cf">if</span>(<span class="kw">is.character</span>(myVar)){
+  <span class="kw">print</span>(<span class="st">&quot;ok&quot;</span>)
+} <span class="cf">else</span> {
+  <span class="kw">print</span>(<span class="st">&quot;error&quot;</span>)
+}</code></pre></div>
+<pre><code>## [1] &quot;ok&quot;</code></pre>
+<p>También podemos anidar pruebas lógicas entre sí.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myVar &lt;-<span class="st"> </span><span class="ot">TRUE</span>
+<span class="cf">if</span>(<span class="kw">is.character</span>(myVar)){
+  <span class="kw">print</span>(<span class="st">&quot;myVar: character&quot;</span>)
+} <span class="cf">else</span> {
+  <span class="cf">if</span>(<span class="kw">is.numeric</span>(myVar)){
+    <span class="kw">print</span>(<span class="st">&quot;myVar: numeric&quot;</span>)
+  } <span class="cf">else</span> {
+    <span class="cf">if</span>(<span class="kw">is.logical</span>(myVar)){
+      <span class="kw">print</span>(<span class="st">&quot;myVar: logical&quot;</span>)
+    } <span class="cf">else</span> {
+      <span class="kw">print</span>(<span class="st">&quot;myVar: ...&quot;</span>)
+    }
+  }
+}</code></pre></div>
+<pre><code>## [1] &quot;myVar: logical&quot;</code></pre>
+<p>También es posible estipular varias condiciones, como vimos en el capítulo sobre <a href="premiersPas.html#l011opcomp">operadores de comparación</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myVar &lt;-<span class="st"> </span><span class="dv">2</span>
+<span class="cf">if</span>(myVar <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>myVar <span class="op">&lt;</span><span class="st"> </span><span class="dv">50</span>){
+  <span class="kw">print</span>(<span class="st">&quot;ok&quot;</span>)
+}</code></pre></div>
+<pre><code>## [1] &quot;ok&quot;</code></pre>
+<p>En este ejemplo, <code>myVar</code> está en formato <code>numeric</code>, por lo que la primera condición (<code>&gt; 1</code>) y la segunda condición (<code>&lt; 50</code>) son verificables. Por otro lado, si asignamos una variable de tipo <code>character</code> a <code>myVar</code> entonces R transformará 0 y 10 en objetos de tipo <code>character</code> y probará si <code>myVar&gt; &quot;1&quot;</code> y despues si <code>myVar &lt; &quot;50&quot;</code> basandose en la clasificación alfabética. En el siguiente ejemplo, <code>&quot;azerty&quot;</code> no está ubicado segun el orden alfabético entre <code>&quot;1&quot;</code> y <code>&quot;50&quot;</code>, pero para <code>&quot;2azerty&quot;</code> es el caso, lo que resulta problematico.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myVar &lt;-<span class="st"> &quot;azerty&quot;</span>
+limInit &lt;-<span class="st"> </span><span class="dv">1</span>
+limEnd &lt;-<span class="st"> </span><span class="dv">50</span>
+<span class="cf">if</span>(myVar <span class="op">&gt;</span><span class="st"> </span>limInit <span class="op">&amp;</span><span class="st"> </span>myVar <span class="op">&lt;</span><span class="st"> </span>limEnd){
+  <span class="kw">print</span>(<span class="kw">paste0</span>(myVar, <span class="st">&quot; is between &quot;</span>, limInit, <span class="st">&quot; and &quot;</span>, limEnd, <span class="st">&quot;.&quot;</span>))
+} <span class="cf">else</span> {
+  <span class="kw">print</span>(<span class="kw">paste0</span>(myVar, <span class="st">&quot; not between &quot;</span>, limInit, <span class="st">&quot; and &quot;</span>, limEnd, <span class="st">&quot;.&quot;</span>))
+}</code></pre></div>
+<pre><code>## [1] &quot;azerty not between 1 and 50.&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myVar &lt;-<span class="st"> &quot;2azerty&quot;</span>
+<span class="cf">if</span>(myVar <span class="op">&gt;</span><span class="st"> </span>limInit <span class="op">&amp;</span><span class="st"> </span>myVar <span class="op">&lt;</span><span class="st"> </span>limEnd){
+  <span class="kw">print</span>(<span class="kw">paste0</span>(myVar, <span class="st">&quot; is between &quot;</span>, limInit, <span class="st">&quot; and &quot;</span>, limEnd, <span class="st">&quot;.&quot;</span>))
+} <span class="cf">else</span> {
+  <span class="kw">print</span>(<span class="kw">paste0</span>(myVar, <span class="st">&quot; not between &quot;</span>, limInit, <span class="st">&quot; and &quot;</span>, limEnd, <span class="st">&quot;.&quot;</span>))
+}</code></pre></div>
+<pre><code>## [1] &quot;2azerty is between 1 and 50.&quot;</code></pre>
+<p>Entonces, lo que nos gustaría hacer es probar si <code>myVar</code> está en formato <code>numeric</code>, y entonces solo si es el caso probar las siguientes condiciones.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myVar &lt;-<span class="st"> &quot;2azerty&quot;</span>
+<span class="cf">if</span>(<span class="kw">is.numeric</span>(myVar)){
+  <span class="cf">if</span>(myVar <span class="op">&gt;</span><span class="st"> </span>limInit <span class="op">&amp;</span><span class="st"> </span>myVar <span class="op">&lt;</span><span class="st"> </span>limEnd){
+    <span class="kw">print</span>(<span class="kw">paste0</span>(myVar, <span class="st">&quot; is between &quot;</span>, limInit, <span class="st">&quot; and &quot;</span>, limEnd, <span class="st">&quot;.&quot;</span>))
+  } <span class="cf">else</span> {
+    <span class="kw">print</span>(<span class="kw">paste0</span>(myVar, <span class="st">&quot; not between &quot;</span>, limInit, <span class="st">&quot; and &quot;</span>, limEnd, <span class="st">&quot;.&quot;</span>))
+  }
+} <span class="cf">else</span> {
+  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;Object &quot;</span>, myVar, <span class="st">&quot; is not numeric&quot;</span>))
+}</code></pre></div>
+<pre><code>## [1] &quot;Object 2azerty is not numeric&quot;</code></pre>
+<p>A veces es posible que necesitemos probar una primera condición y luego una segunda condición solo si la primera es verdadera en la misma prueba. Por ejemplo, para un sitio nos gustaría saber si hay una sola especie y probar si su abundancia es mayor que 10. Imagine un conjunto de datos con abundancia de vectores. Probaremos el número de especies con la función <a href="fonctions.html#l015length"><code>length ()</code></a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mySpecies &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">14</span>, <span class="dv">20</span>, <span class="dv">12</span>)
+<span class="cf">if</span>(<span class="kw">length</span>(mySpecies) <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>mySpecies <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>){
+  <span class="kw">print</span>(<span class="st">&quot;ok!&quot;</span>)
+}
+## Warning message:
+## In if (length(mySpecies) == 1 &amp; mySpecies &gt; 10) { :
+##   the condition has length &gt; 1 and only the first element will be used</code></pre></div>
+<p>R devuelve un error porque no puede dentro de una prueba lógica con <code>if()</code> verificar la segunda condición. De hecho, <code>mySpecies &gt; 10</code> devuelve <code>TRUE TRUE TRUE TRUE TRUE</code>. Podemos separar el código en dos condiciones:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mySpecies &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">14</span>, <span class="dv">20</span>, <span class="dv">12</span>)
+<span class="cf">if</span>(<span class="kw">length</span>(mySpecies) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>){
+  <span class="cf">if</span>(mySpecies <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>){
+    <span class="kw">print</span>(<span class="st">&quot;ok!&quot;</span>)
+  }
+}</code></pre></div>
+<p>Una alternativa más elegante es decirle a R que verifique la segunda condición solo si la primera es verdadera. Para eso podemos usar <code>&amp;&amp;</code> en lugar de <code>&amp;</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mySpecies &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">14</span>, <span class="dv">20</span>, <span class="dv">12</span>)
+<span class="cf">if</span>(<span class="kw">length</span>(mySpecies) <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;&amp;</span><span class="st"> </span>mySpecies <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>){
+  <span class="kw">print</span>(<span class="st">&quot;ok!&quot;</span>)
+}
+mySpecies &lt;-<span class="st"> </span><span class="dv">15</span>
+<span class="cf">if</span>(<span class="kw">length</span>(mySpecies) <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;&amp;</span><span class="st"> </span>mySpecies <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>){
+  <span class="kw">print</span>(<span class="st">&quot;ok!&quot;</span>)
+}</code></pre></div>
+<pre><code>## [1] &quot;ok!&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mySpecies &lt;-<span class="st"> </span><span class="dv">5</span>
+<span class="cf">if</span>(<span class="kw">length</span>(mySpecies) <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;&amp;</span><span class="st"> </span>mySpecies <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>){
+  <span class="kw">print</span>(<span class="st">&quot;ok!&quot;</span>)
+}</code></pre></div>
+<p>Con <code>&amp;</code> R comprobará todas las condiciones, y con <code>&amp;&amp;</code> R tomará cada condición una después de la otra y continuará solo si es verdadera. Esto puede parecer anecdótico, pero es bueno saber la diferencia entre <code>&amp;</code> y <code>&amp;&amp;</code> porque a menudo los encontramos en los códigos disponibles en Internet o en los paquetes.</p>
 </div>
-<div id="preambulo" class="section level1">
-<h1><span class="header-section-number"> 1</span> Preámbulo</h1>
-<p>Este libro está incompleto por el momento y está viendo su versión preliminar. Muchos capítulos ya están en línea, así que no dude en consultarlos y comenzar su iniciación o su perfeccionamiento en el lenguaje de programación R.</p>
-<p>Si tiene algún comentario, sugerencia o si identifica errores, no dude en enviarme un correo electrónico (<a href="mailto:francois.rebaudo@ird.fr">francois.rebaudo@ird.fr</a>), o si está familiarizado con GitHub en el sitio web del proyecto (<a href="https://github.com/frareb/myRBook_SP" class="uri">https://github.com/frareb/myRBook_SP</a>). Este libro es colaborativo, se basa en su participación.</p>
-<p>Este libro también está disponible en francés (<a href="http://myrbookfr.netlify.com/" class="uri">http://myrbookfr.netlify.com/</a>)</p>
-<p>Últimas modificaciones:</p>
-<p><strong>28/09/2018</strong></p>
-<ul>
-<li>algorítmico (1/6) <a href="algo.html#l17if">Pruebas lógicas con <code>if</code></a></li>
-<li>algorítmico (2/6) <a href="algo.html#l17switch">Pruebas lógicas con <code>switch</code></a></li>
-</ul>
-<p><strong>17/09/2018</strong></p>
-<ul>
-<li>Introducción</li>
-</ul>
-<p><strong>10/09/2018</strong></p>
-<ul>
-<li>Importar y exportar datos (parte 2-3/3): <a href="import.html#l016save">Guardar y exportar datos</a></li>
-</ul>
-<p><strong>06/09/2018</strong></p>
-<ul>
-<li>Importar y exportar datos (parte 1/3): <a href="import.html#l016read">Leer datos desde un archivo</a></li>
-</ul>
-<p><strong>30/08/2018</strong></p>
-<ul>
-<li>Nuevo estudio de caso: <a href="studyCase1.html#studyCase1">dataloggers</a></li>
-<li>Modificaciones de Marc G. sobre el <a href="dataType1.html#dataType1">tipo de datos numeric</a> y los <a href="IDE.html#IDE">entornos de desarrollo</a></li>
-</ul>
-<p><strong>24/08/2018</strong></p>
-<ul>
-<li>Capítulo sobre <a href="fonctions.html#fonctions">las funciones (3/3)</a></li>
-</ul>
-<p><strong>27/07/2018</strong></p>
-<ul>
-<li>Capítulo sobre <a href="fonctions.html#fonctions">las funciones (2/3)</a></li>
-</ul>
-<p><strong>25/07/2018</strong></p>
-<ul>
-<li>Capítulo sobre <a href="fonctions.html#fonctions">las funciones (1/3)</a></li>
-</ul>
-<p><strong>17/07/2018</strong></p>
-<ul>
-<li>edición y corrección del español (Susi L.)</li>
-<li>tercera parte del capítulo <a href="dataType2.html#dataType2"><em>Contenedores de datos</em></a>: El contenedor <a href="dataType2.html#l014dataframe"><em>data.frame</em></a></li>
-<li>cuarta parte del capítulo <a href="dataType2.html#dataType2"><em>Contenedores de datos</em></a>: El contenedor <a href="dataType2.html#l014matrix"><em>matrix</em></a></li>
-<li>quinta parte del capítulo <a href="dataType2.html#dataType2"><em>Contenedores de datos</em></a>: El contenedor <a href="dataType2.html#l014array"><em>array</em></a></li>
-</ul>
-<p><strong>16/07/2018</strong></p>
-<ul>
-<li>edición y corrección del español (Estefanía Q.)</li>
-</ul>
-<p><strong>12/07/2018</strong></p>
-<ul>
-<li>segunda parte del capítulo <a href="dataType2.html#dataType2"><em>Contenedores de datos</em></a>: El contenedor <a href="dataType2.html#l014list"><em>list</em></a></li>
-</ul>
-<p><strong>06/07/2018</strong></p>
-<ul>
-<li>edición y corrección del español (Camila B.)</li>
-<li>primera parte del capítulo <a href="dataType2.html#dataType2"><em>Contenedores de datos</em></a>: El contenedor <a href="dataType2.html#l014vector"><em>vector</em></a></li>
-</ul>
-<p><strong>04/07/2018</strong></p>
-<ul>
-<li>tabla de contenidos con los próximos capítulos</li>
-<li>error de tipografía en <em>Elegir un entorno de desarrollo</em></li>
-</ul>
-<p><strong>02/07/2018</strong></p>
-<ul>
-<li>tres capítulos en línea (<em>primeros pasos</em>, <em>elegir un entorno de desarrollo</em>, <em>tipos de datos</em>)</li>
-</ul>
+<div id="l17switch" class="section level2">
+<h2><span class="header-section-number">11.2</span> Pruebas lógicas con <code>switch</code></h2>
+<p>La función <code>switch()</code> es una variante de <code>if()</code> que es útil cuando tenemos muchas opciones posibles para la misma expresión. El siguiente ejemplo muestra cómo transformar el código usando <code>if()</code> a <code>switch()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> &quot;aa&quot;</span>
+<span class="cf">if</span>(x <span class="op">==</span><span class="st"> &quot;a&quot;</span>){
+  result &lt;-<span class="st"> </span><span class="dv">1</span>
+}
+<span class="cf">if</span>(x <span class="op">==</span><span class="st"> &quot;aa&quot;</span>){
+  result &lt;-<span class="st"> </span><span class="dv">2</span>
+}
+<span class="cf">if</span>(x <span class="op">==</span><span class="st"> &quot;aaa&quot;</span>){
+  result &lt;-<span class="st"> </span><span class="dv">3</span>
+}
+<span class="cf">if</span>(x <span class="op">==</span><span class="st"> &quot;aaaa&quot;</span>){
+  result &lt;-<span class="st"> </span><span class="dv">4</span>
+}
+<span class="kw">print</span>(result)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> &quot;aa&quot;</span>
+<span class="cf">switch</span>(x, 
+  <span class="dt">a =</span> result &lt;-<span class="st"> </span><span class="dv">1</span>,
+  <span class="dt">aa =</span> result &lt;-<span class="st"> </span><span class="dv">2</span>,
+  <span class="dt">aaa =</span> result &lt;-<span class="st"> </span><span class="dv">3</span>,
+  <span class="dt">aaaa =</span> result &lt;-<span class="st"> </span><span class="dv">4</span>)
+<span class="kw">print</span>(result)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+<div id="l17for" class="section level2">
+<h2><span class="header-section-number">11.3</span> El bucle <code>for</code></h2>
+<p>for(i in seq_along(xxx)){} for(i in xxx){}</p>
+</div>
+<div id="l17while" class="section level2">
+<h2><span class="header-section-number">11.4</span> El bucle <code>while</code></h2>
+<p>XXX</p>
+</div>
+<div id="l17spe" class="section level2">
+<h2><span class="header-section-number">11.5</span> <code>repeat</code>, <code>next</code>, <code>break</code>, <code>stop</code></h2>
+<p>XXX</p>
+</div>
+<div id="l17applyfamily" class="section level2">
+<h2><span class="header-section-number">11.6</span> Los bucles de la familia <code>apply</code></h2>
+<div id="l17apply" class="section level3">
+<h3><span class="header-section-number">11.6.1</span> <code>apply</code></h3>
+<p>XXX</p>
+</div>
+<div id="l17sapply" class="section level3">
+<h3><span class="header-section-number">11.6.2</span> <code>sapply</code></h3>
+<p>XXX</p>
+</div>
+<div id="l17lapply" class="section level3">
+<h3><span class="header-section-number">11.6.3</span> <code>lapply</code></h3>
+<p>XXX</p>
+</div>
+<div id="l17tapply" class="section level3">
+<h3><span class="header-section-number">11.6.4</span> <code>tapply</code></h3>
+<p>XXX</p>
+</div>
+<div id="l17mapply" class="section level3">
+<h3><span class="header-section-number">11.6.5</span> <code>mapply</code></h3>
+<p>XXX</p>
+
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="remerciements.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="import.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="project.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -413,7 +516,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/frareb/myRBook_SP/edit/master/index.Rmd",
+"link": "https://github.com/frareb/myRBook_SP/edit/master/017_boucles.Rmd",
 "text": "Edit"
 },
 "download": ["myRBook_SP.pdf", "myRBook_SP.epub"],
