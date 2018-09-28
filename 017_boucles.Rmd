@@ -1,47 +1,208 @@
-# Los bucles {#loops}
+# Algorítmico {#algo}
 
-## ¿Por qué hacer bucles?
 
-XXX algorítmico ...
+## Pruebas lógicas con `if` {#l17if}
 
-## El bucle `if`
+Si queremos realizar una operación diferente según una condición, podemos configurar una prueba lógica del tipo **SI** *esto* **ENTONCES** *esto* **SINO** *esto*. Con R esto dará como resultado la función `if(cond) cons.express alt.expr` como se muestra en la función help.
+
+```{r}
+myVar <- 2
+if(myVar < 3) print("myVar < 3")
+if(myVar < 3) print("myVar < 3") else print("myVar > 3")
+```
+
+Cuando hay varias líneas de código para ejecutar basadas en la prueba lógica, o simplemente para hacer que el código sea más fácil de leer, utilizamos varias líneas con `{}` y con identacion.
+
+```{r}
+myVar <- 2
+myResult <- 0
+if(myVar < 3){
+  print("myVar < 3")
+  myResult <- myVar + 10
+} else {
+  print("myVar > 3")
+  myResult <- myVar - 10
+}
+print(myResult)
+```
+
+En este ejemplo definimos una variable `myVar`. Si esta variable es menor que 3, la variable `myResult` se establece en `myVar + 10`, y de lo contrario `myResult` se establece en `myVar - 10`.
+
+Ya hemos visto el uso de la prueba lógica `if` en el [capítulo sobre las funciones](#l015function). Habiamos probado si la variable ingresada como argumento en nuestra función era de tipo `character`.
+
+```{r}
+myVar <- "qwerty"
+if(is.character(myVar)){
+  print("ok")
+} else {
+  print("error")
+}
+```
+
+También podemos anidar pruebas lógicas entre sí.
+
+```{r}
+myVar <- TRUE
+if(is.character(myVar)){
+  print("myVar: character")
+} else {
+  if(is.numeric(myVar)){
+    print("myVar: numeric")
+  } else {
+    if(is.logical(myVar)){
+      print("myVar: logical")
+    } else {
+      print("myVar: ...")
+    }
+  }
+}
+```
+
+También es posible estipular varias condiciones, como vimos en el capítulo sobre [operadores de comparación](#l011opcomp).
+
+```{r}
+myVar <- 2
+if(myVar > 1 & myVar < 50){
+  print("ok")
+}
+```
+
+En este ejemplo, `myVar` está en formato `numeric`, por lo que la primera condición (`> 1`) y la segunda condición (`< 50`) son verificables. Por otro lado, si asignamos una variable de tipo `character` a `myVar` entonces R transformará 0 y 10 en objetos de tipo `character` y probará si `myVar> "1"` y despues si `myVar < "50"` basandose en la clasificación alfabética. En el siguiente ejemplo, `"azerty"` no está ubicado segun el orden alfabético entre `"1"` y `"50"`, pero para `"2azerty"` es el caso, lo que resulta problematico.
+
+```{r}
+myVar <- "azerty"
+limInit <- 1
+limEnd <- 50
+if(myVar > limInit & myVar < limEnd){
+  print(paste0(myVar, " is between ", limInit, " and ", limEnd, "."))
+} else {
+  print(paste0(myVar, " not between ", limInit, " and ", limEnd, "."))
+}
+myVar <- "2azerty"
+if(myVar > limInit & myVar < limEnd){
+  print(paste0(myVar, " is between ", limInit, " and ", limEnd, "."))
+} else {
+  print(paste0(myVar, " not between ", limInit, " and ", limEnd, "."))
+}
+```
+
+Entonces, lo que nos gustaría hacer es probar si `myVar` está en formato `numeric`, y entonces solo si es el caso probar las siguientes condiciones.
+
+```{r}
+myVar <- "2azerty"
+if(is.numeric(myVar)){
+  if(myVar > limInit & myVar < limEnd){
+    print(paste0(myVar, " is between ", limInit, " and ", limEnd, "."))
+  } else {
+    print(paste0(myVar, " not between ", limInit, " and ", limEnd, "."))
+  }
+} else {
+  print(paste0("Object ", myVar, " is not numeric"))
+}
+```
+
+A veces es posible que necesitemos probar una primera condición y luego una segunda condición solo si la primera es verdadera en la misma prueba. Por ejemplo, para un sitio nos gustaría saber si hay una sola especie y probar si su abundancia es mayor que 10. Imagine un conjunto de datos con abundancia de vectores. Probaremos el número de especies con la función [`length ()`](#l015length).
+
+```{r, eval = FALSE}
+mySpecies <- c(15, 14, 20, 12)
+if(length(mySpecies) == 1 & mySpecies > 10){
+  print("ok!")
+}
+## Warning message:
+## In if (length(mySpecies) == 1 & mySpecies > 10) { :
+##   the condition has length > 1 and only the first element will be used
+```
+
+R devuelve un error porque no puede dentro de una prueba lógica con `if()` verificar la segunda condición. De hecho, `mySpecies > 10` devuelve `TRUE TRUE TRUE TRUE TRUE`. Podemos separar el código en dos condiciones:
+
+```{r}
+mySpecies <- c(15, 14, 20, 12)
+if(length(mySpecies) == 1){
+  if(mySpecies > 10){
+    print("ok!")
+  }
+}
+```
+
+Una alternativa más elegante es decirle a R que verifique la segunda condición solo si la primera es verdadera. Para eso podemos usar `&&` en lugar de `&`.
+
+```{r}
+mySpecies <- c(15, 14, 20, 12)
+if(length(mySpecies) == 1 && mySpecies > 10){
+  print("ok!")
+}
+mySpecies <- 15
+if(length(mySpecies) == 1 && mySpecies > 10){
+  print("ok!")
+}
+mySpecies <- 5
+if(length(mySpecies) == 1 && mySpecies > 10){
+  print("ok!")
+}
+```
+
+Con `&` R comprobará todas las condiciones, y con `&&` R tomará cada condición una después de la otra y continuará solo si es verdadera. Esto puede parecer anecdótico, pero es bueno saber la diferencia entre `&` y `&&` porque a menudo los encontramos en los códigos disponibles en Internet o en los paquetes.
+
+## Pruebas lógicas con `switch` {#l17switch}
+
+La función `switch()` es una variante de `if()` que es útil cuando tenemos muchas opciones posibles para la misma expresión. El siguiente ejemplo muestra cómo transformar el código usando `if()` a `switch()`.
+
+```{r}
+x <- "aa"
+if(x == "a"){
+  result <- 1
+}
+if(x == "aa"){
+  result <- 2
+}
+if(x == "aaa"){
+  result <- 3
+}
+if(x == "aaaa"){
+  result <- 4
+}
+print(result)
+
+x <- "aa"
+switch(x, 
+  a = result <- 1,
+  aa = result <- 2,
+  aaa = result <- 3,
+  aaaa = result <- 4)
+print(result)
+```
+
+## El bucle `for` {#l17for}
+
+for(i in seq_along(xxx)){}
+for(i in xxx){}
+
+## El bucle `while` {#l17while}
 
 XXX
 
-## El bucle `switch`
+## `repeat`, `next`, `break`, `stop` {#l17spe}
 
 XXX
 
-## El bucle `for`
+## Los bucles de la familia `apply` {#l17applyfamily}
+
+### `apply` {#l17apply}
 
 XXX
 
-## El bucle `while`
+### `sapply` {#l17sapply}
 
 XXX
 
-## `repeat`, `next`, `break`, `stop`
+### `lapply` {#l17lapply}
 
 XXX
 
-## Los bucles de la familia `apply`
-
-### `apply`
+### `tapply` {#l17tapply}
 
 XXX
 
-### `sapply`
-
-XXX
-
-### `lapply`
-
-XXX
-
-### `tapply`
-
-XXX
-
-### `mapply`
+### `mapply` {#l17mapply}
 
 XXX
