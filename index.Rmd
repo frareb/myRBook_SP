@@ -23,6 +23,11 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
 Últimas modificaciones:
 
+**28/09/2018**
+
+* algorítmico (1/6) [Pruebas lógicas con `if`](#l17if)
+* algorítmico (2/6) [Pruebas lógicas con `switch`](#l17switch)
+
 **17/09/2018**
 
 * Introducción
