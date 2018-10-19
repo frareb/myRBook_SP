@@ -368,6 +368,45 @@ Más concretamente, podríamos imaginar algoritmos para explorar un espacio de s
 
 ## El bucle `repeat` {#l17repeat}
 
+El bucle `repeat()` permite repetir una operación sin condiciones para verificar. Para salir de este bucle debemos usar la palabra clave `break`.
+
+```{r}
+i <- 1
+repeat{
+  print(i^2)
+  i <- i + 1
+  if(i == 5){
+    break
+  }
+}
+```
+
+Si volvemos al ejemplo anterior, podemos usar un bucle `repeat()` para repetirlo cinco veces.
+
+```{r}
+numTry <- 0
+repeat{
+  myNumber <- sample(x = 10000, size = 1)
+  myGuess <- sample(x = 10000, size = 1)
+  startTime <- Sys.time()
+  numberGuess <- 0
+  while(Sys.time() - startTime < 2){
+    if(myGuess == myNumber){
+      numberGuess <- numberGuess + 1
+      print(round(as.numeric(Sys.time() - startTime), digits = 3))
+      break
+    }else{
+      myGuess <- sample(x = 10000, size = 1)
+      numberGuess <- numberGuess + 1
+    }
+  }
+  numTry <- numTry + 1
+  if(numTry == 5){break}
+}
+```
+
+Al igual que el bucle `while()`, el bucle `repeat()` no se usa mucho con R.
+
 ## `next`, `break`, `stop` {#l17spe}
 
 XXX
