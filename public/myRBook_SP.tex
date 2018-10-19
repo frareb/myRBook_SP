@@ -283,6 +283,9 @@ Este libro también está disponible en francés
 \item
   algorítmico (4/6) \protect\hyperlink{l17while}{el bucle
   \texttt{while}}
+\item
+  algorítmico (4'/6) \protect\hyperlink{l17repeat}{el bucle
+  \texttt{repeat}}
 \end{itemize}
 
 \textbf{28/09/2018}
@@ -8039,7 +8042,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.10    0.00    0.11
+##    0.12    0.00    0.13
 \end{verbatim}
 
 \begin{Shaded}
@@ -8050,7 +8053,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.13    0.00    0.12
+##    0.11    0.00    0.11
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus
@@ -9007,12 +9010,12 @@ elementos de un objeto) y repetir una operación. Imaginamos un
 
 \begin{verbatim}
 ##      date01    date02
-## 1  9.827733  9.964066
-## 2  8.573856  9.509931
-## 3  9.217429 11.919206
-## 4  9.266573 10.287850
-## 5 11.354877  9.677296
-## 6  9.687460 11.195325
+## 1  9.601998 10.266995
+## 2  7.971013 10.314426
+## 3 10.624714  9.300519
+## 4 10.054655 10.233864
+## 5 10.692424 10.279242
+## 6 10.112563  8.655663
 \end{verbatim}
 
 Nos gustaría cuantificar la diferencia entre la primera y la segunda
@@ -9140,26 +9143,26 @@ para encontrar el número de líneas.
 
 \begin{verbatim}
 ##       date01    date02        dif isDifBig
-## 1   9.827733  9.964066 0.13633240    small
-## 2   8.573856  9.509931 0.93607455    small
-## 3   9.217429 11.919206 2.70177679    small
-## 4   9.266573 10.287850 1.02127720    small
-## 5  11.354877  9.677296 1.67758076    small
-## 6   9.687460 11.195325 1.50786496    small
-## 7   9.232427 10.958041 1.72561462    small
-## 8  10.646293  9.388871 1.25742280    small
-## 9   9.012040 10.827791 1.81575089    small
-## 10  9.625614  8.137986 1.48762757    small
-## 11 10.667950  9.624914 1.04303657    small
-## 12  9.076332 10.646197 1.56986490    small
-## 13  9.782384 10.164764 0.38238077    small
-## 14  9.330540  9.732777 0.40223618    small
-## 15 10.705718 10.594519 0.11119963    small
-## 16 10.722438  9.984851 0.73758676    small
-## 17  9.506958 10.698396 1.19143838    small
-## 18  7.933206 10.226948 2.29374256    small
-## 19 10.600790  8.791048 1.80974217    small
-## 20 10.055996 10.143443 0.08744703    small
+## 1   9.601998 10.266995 0.66499796    small
+## 2   7.971013 10.314426 2.34341303    small
+## 3  10.624714  9.300519 1.32419513    small
+## 4  10.054655 10.233864 0.17920875    small
+## 5  10.692424 10.279242 0.41318124    small
+## 6  10.112563  8.655663 1.45689983    small
+## 7  10.096380  9.982577 0.11380373    small
+## 8   9.957821 10.194753 0.23693171    small
+## 9  10.161501 10.270919 0.10941862    small
+## 10 11.314345 11.490087 0.17574252    small
+## 11 10.439412  9.252495 1.18691695    small
+## 12  9.537371 11.131536 1.59416418    small
+## 13  8.860698 10.287791 1.42709203    small
+## 14  9.734112  9.943970 0.20985810    small
+## 15 10.643903 10.736941 0.09303842    small
+## 16 10.692904  9.715398 0.97750570    small
+## 17  8.798361  9.085066 0.28670471    small
+## 18 10.759463  8.916726 1.84273668    small
+## 19  8.469143  9.600422 1.13127922    small
+## 20 10.163500  9.614024 0.54947583    small
 \end{verbatim}
 
 En la práctica, esta no es la mejor manera de realizar este ejercicio
@@ -9180,26 +9183,26 @@ en:
 
 \begin{verbatim}
 ##       date01    date02        dif isDifBig
-## 1   9.827733  9.964066 0.13633240    small
-## 2   8.573856  9.509931 0.93607455    small
-## 3   9.217429 11.919206 2.70177679    small
-## 4   9.266573 10.287850 1.02127720    small
-## 5  11.354877  9.677296 1.67758076    small
-## 6   9.687460 11.195325 1.50786496    small
-## 7   9.232427 10.958041 1.72561462    small
-## 8  10.646293  9.388871 1.25742280    small
-## 9   9.012040 10.827791 1.81575089    small
-## 10  9.625614  8.137986 1.48762757    small
-## 11 10.667950  9.624914 1.04303657    small
-## 12  9.076332 10.646197 1.56986490    small
-## 13  9.782384 10.164764 0.38238077    small
-## 14  9.330540  9.732777 0.40223618    small
-## 15 10.705718 10.594519 0.11119963    small
-## 16 10.722438  9.984851 0.73758676    small
-## 17  9.506958 10.698396 1.19143838    small
-## 18  7.933206 10.226948 2.29374256    small
-## 19 10.600790  8.791048 1.80974217    small
-## 20 10.055996 10.143443 0.08744703    small
+## 1   9.601998 10.266995 0.66499796    small
+## 2   7.971013 10.314426 2.34341303    small
+## 3  10.624714  9.300519 1.32419513    small
+## 4  10.054655 10.233864 0.17920875    small
+## 5  10.692424 10.279242 0.41318124    small
+## 6  10.112563  8.655663 1.45689983    small
+## 7  10.096380  9.982577 0.11380373    small
+## 8   9.957821 10.194753 0.23693171    small
+## 9  10.161501 10.270919 0.10941862    small
+## 10 11.314345 11.490087 0.17574252    small
+## 11 10.439412  9.252495 1.18691695    small
+## 12  9.537371 11.131536 1.59416418    small
+## 13  8.860698 10.287791 1.42709203    small
+## 14  9.734112  9.943970 0.20985810    small
+## 15 10.643903 10.736941 0.09303842    small
+## 16 10.692904  9.715398 0.97750570    small
+## 17  8.798361  9.085066 0.28670471    small
+## 18 10.759463  8.916726 1.84273668    small
+## 19  8.469143  9.600422 1.13127922    small
+## 20 10.163500  9.614024 0.54947583    small
 \end{verbatim}
 
 La mayoría de los ejemplos que se pueden encontrar en Internet sobre el
@@ -9222,7 +9225,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 7
+## [1] 9
 \end{verbatim}
 
 \begin{Shaded}
@@ -9233,7 +9236,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 7
+## [1] 9
 \end{verbatim}
 
 \begin{Shaded}
@@ -9279,7 +9282,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.572
+## [1] 3.471
 \end{verbatim}
 
 \begin{Shaded}
@@ -9290,7 +9293,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.437
+## [1] 3.629
 \end{verbatim}
 
 Es un buen ejercicio explorar los muchos ejemplos disponibles en
@@ -9315,12 +9318,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 364 466 500 488 496 593 390 458 465 510 539 560 595 464 563 332 491
-##  [18] 560 591 477 532 374 602 612 400 582 459 419 409 518 533 401 543 423
-##  [35] 427 558 408 496 377 469 424 575 468 390 535 451 366 604 554 518 642
-##  [52] 540 436 422 440 525 425 312 525 456 410 416 654 477 508 612 495 503
-##  [69] 657 498 447 525 492 445 454 564 500 542 490 543 588 529 462 399 388
-##  [86] 489 440 421 502 449 426 672 571 418 585 540 486 630 453 514
+##   [1] 401 621 505 419 559 487 483 710 580 325 391 467 495 514 451 446 397
+##  [18] 628 527 458 591 452 667 260 486 394 539 486 567 410 250 464 502 534
+##  [35] 503 556 442 504 434 480 583 710 619 473 536 550 482 552 445 622 441
+##  [52] 456 398 377 504 491 608 433 593 495 446 566 521 601 560 513 505 576
+##  [69] 564 367 527 398 541 426 431 452 396 533 439 539 376 678 497 475 345
+##  [86] 479 625 426 648 569 538 555 607 436 610 542 436 426 614 434
 \end{verbatim}
 
 \begin{Shaded}
@@ -9335,12 +9338,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 364 466 500 488 496 593 390 458 465 510 539 560 595 464 563 332 491
-##  [18] 560 591 477 532 374 602 612 400 582 459 419 409 518 533 401 543 423
-##  [35] 427 558 408 496 377 469 424 575 468 390 535 451 366 604 554 518 642
-##  [52] 540 436 422 440 525 425 312 525 456 410 416 654 477 508 612 495 503
-##  [69] 657 498 447 525 492 445 454 564 500 542 490 543 588 529 462 399 388
-##  [86] 489 440 421 502 449 426 672 571 418 585 540 486 630 453 514
+##   [1] 401 621 505 419 559 487 483 710 580 325 391 467 495 514 451 446 397
+##  [18] 628 527 458 591 452 667 260 486 394 539 486 567 410 250 464 502 534
+##  [35] 503 556 442 504 434 480 583 710 619 473 536 550 482 552 445 622 441
+##  [52] 456 398 377 504 491 608 433 593 495 446 566 521 601 560 513 505 576
+##  [69] 564 367 527 398 541 426 431 452 396 533 439 539 376 678 497 475 345
+##  [86] 479 625 426 648 569 538 555 607 436 610 542 436 426 614 434
 \end{verbatim}
 
 En conclusión, se recomienda no usar el bucle \texttt{for()} con R
@@ -9418,7 +9421,7 @@ pueda realizar fácilmente 35000 pruebas en 2 segundos):
 
 \begin{verbatim}
 ## [1] "Number found !"
-## [1] "And I have plenty of time left: 1.94 sec"
+## [1] "And I have plenty of time left: 1.07 sec"
 \end{verbatim}
 
 En este script generamos un número aleatorio para adivinar con la
@@ -9442,8 +9445,70 @@ script se ejecute solo cuando un archivo de otro programa esté
 disponible \ldots{} En la práctica, el bucle \texttt{while()} se usa
 poco con R.
 
-\section{\texorpdfstring{El bucle
-\texttt{repeat}}{El bucle repeat}}\label{l17repeat}
+\hypertarget{l17repeat}{\section{\texorpdfstring{El bucle
+\texttt{repeat}}{El bucle repeat}}\label{l17repeat}}
+
+El bucle \texttt{repeat()} permite repetir una operación sin condiciones
+para verificar. Para salir de este bucle debemos usar la palabra clave
+\texttt{break}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{i <-}\StringTok{ }\DecValTok{1}
+\ControlFlowTok{repeat}\NormalTok{\{}
+  \KeywordTok{print}\NormalTok{(i}\OperatorTok{^}\DecValTok{2}\NormalTok{)}
+\NormalTok{  i <-}\StringTok{ }\NormalTok{i }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+  \ControlFlowTok{if}\NormalTok{(i }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{)\{}
+    \ControlFlowTok{break}
+\NormalTok{  \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+## [1] 4
+## [1] 9
+## [1] 16
+\end{verbatim}
+
+Si volvemos al ejemplo anterior, podemos usar un bucle \texttt{repeat()}
+para repetirlo cinco veces.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numTry <-}\StringTok{ }\DecValTok{0}
+\ControlFlowTok{repeat}\NormalTok{\{}
+\NormalTok{  myNumber <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{10000}\NormalTok{, }\DataTypeTok{size =} \DecValTok{1}\NormalTok{)}
+\NormalTok{  myGuess <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{10000}\NormalTok{, }\DataTypeTok{size =} \DecValTok{1}\NormalTok{)}
+\NormalTok{  startTime <-}\StringTok{ }\KeywordTok{Sys.time}\NormalTok{()}
+\NormalTok{  numberGuess <-}\StringTok{ }\DecValTok{0}
+  \ControlFlowTok{while}\NormalTok{(}\KeywordTok{Sys.time}\NormalTok{() }\OperatorTok{-}\StringTok{ }\NormalTok{startTime }\OperatorTok{<}\StringTok{ }\DecValTok{2}\NormalTok{)\{}
+    \ControlFlowTok{if}\NormalTok{(myGuess }\OperatorTok{==}\StringTok{ }\NormalTok{myNumber)\{}
+\NormalTok{      numberGuess <-}\StringTok{ }\NormalTok{numberGuess }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+      \KeywordTok{print}\NormalTok{(}\KeywordTok{round}\NormalTok{(}\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{Sys.time}\NormalTok{() }\OperatorTok{-}\StringTok{ }\NormalTok{startTime), }\DataTypeTok{digits =} \DecValTok{3}\NormalTok{))}
+      \ControlFlowTok{break}
+\NormalTok{    \}}\ControlFlowTok{else}\NormalTok{\{}
+\NormalTok{      myGuess <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{10000}\NormalTok{, }\DataTypeTok{size =} \DecValTok{1}\NormalTok{)}
+\NormalTok{      numberGuess <-}\StringTok{ }\NormalTok{numberGuess }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+\NormalTok{    \}}
+\NormalTok{  \}}
+\NormalTok{  numTry <-}\StringTok{ }\NormalTok{numTry }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+  \ControlFlowTok{if}\NormalTok{(numTry }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{)\{}\ControlFlowTok{break}\NormalTok{\}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.165
+## [1] 0.021
+## [1] 0.833
+## [1] 1.308
+## [1] 0.049
+\end{verbatim}
+
+Al igual que el bucle \texttt{while()}, el bucle \texttt{repeat()} no se
+usa mucho con R.
 
 \section{\texorpdfstring{\texttt{next}, \texttt{break},
 \texttt{stop}}{next, break, stop}}\label{l17spe}
@@ -9721,7 +9786,7 @@ especificando el formato de las fechas con la función \texttt{as.Date()}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-211-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-213-1.pdf}
 
 Podemos simplificar la información calculando únicamente las
 temperaturas mínimas, promedias, y máximas con la función
@@ -9744,7 +9809,7 @@ temperaturas mínimas, promedias, y máximas con la función
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-212-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-214-1.pdf}
 
 También podemos calcular la diferencia entre la temperatura máxima y la
 temperatura mínima (variación de temperatura diurna).
@@ -9758,7 +9823,7 @@ temperatura mínima (variación de temperatura diurna).
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-213-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-1.pdf}
 
 Otra posibilidad es de agrupar los datos para tener la temperatura
 promedia de un día con la función \texttt{aggregate()}.
@@ -9782,7 +9847,7 @@ promedia de un día con la función \texttt{aggregate()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-214-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-216-1.pdf}
 
 Tambien podemos calcular las temperaturas de los dias para cada mes.
 
@@ -9818,18 +9883,18 @@ Tambien podemos calcular las temperaturas de los dias para cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-1.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-2.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-3.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-4.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-5.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-6.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-7.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-8.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-9.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-10.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-11.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-12.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-3.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-4.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-5.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-6.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-7.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-8.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-9.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-10.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-11.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-12.pdf}
 
 O todo en un mismo grafico, y la variación de temperatura diurna para
 cada mes.
@@ -9857,7 +9922,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-216-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-218-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9882,7 +9947,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-216-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-218-2.pdf}
 
 
 \end{document}
