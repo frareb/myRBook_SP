@@ -23,6 +23,10 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
 Últimas modificaciones:
 
+**19/10/2018**
+
+* algorítmico (3/6) [el bucle `for`](#l17for)
+
 **28/09/2018**
 
 * algorítmico (1/6) [Pruebas lógicas con `if`](#l17if)

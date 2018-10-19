@@ -174,8 +174,157 @@ print(result)
 
 ## El bucle `for` {#l17for}
 
-for(i in seq_along(xxx)){}
-for(i in xxx){}
+En programación, cuando tenemos que repetir la misma línea de código varias veces, es un signo que indica que debemos usar un **bucle**. Un bucle es una forma de iterar sobre un conjunto de objetos (o los elementos de un objeto) y repetir una operación. Imaginamos un `data.frame` con mediciones de datos de campo en dos fechas.
+
+```{r}
+bdd <- data.frame(date01 = rnorm(n = 100, mean = 10, sd = 1), 
+                  date02 = rnorm(n = 100, mean = 10, sd = 1))
+print(head(bdd))
+```
+
+Nos gustaría cuantificar la diferencia entre la primera y la segunda fecha, luego poner un indicador para saber si esta diferencia es pequeña o grande, por ejemplo, con un umbral arbitrario de 3. Entonces, para cada línea podríamos hacer:
+
+```{r}
+bdd$dif <- NA
+bdd$isDifBig <- NA
+
+bdd$dif[1] <- sqrt((bdd$date01[1] - bdd$date02[1])^2)
+bdd$dif[2] <- sqrt((bdd$date01[2] - bdd$date02[2])^2)
+bdd$dif[3] <- sqrt((bdd$date01[3] - bdd$date02[3])^2)
+# ...
+bdd$dif[100] <- sqrt((bdd$date01[100] - bdd$date02[100])^2)
+
+if(bdd$dif[1] > 3){
+  bdd$isDifBig[1] <- "big"
+}else{
+  bdd$isDifBig[1] <- "small"
+}
+if(bdd$dif[2] > 3){
+  bdd$isDifBig[2] <- "big"
+}else{
+  bdd$isDifBig[2] <- "small"
+}
+if(bdd$dif[3] > 3){
+  bdd$isDifBig[3] <- "big"
+}else{
+  bdd$isDifBig[3] <- "small"
+}
+# ...
+if(bdd$dif[100] > 3){
+  bdd$isDifBig[100] <- "big"
+}else{
+  bdd$isDifBig[100] <- "small"
+}
+```
+
+Esta forma de hacer las cosas sería extremadamente tediosa de lograr, y casi imposible de lograr si la tabla contuviera 1000 o 100000 líneas. Puede parecer lógico querer iterar sobre las líneas de nuestro `data.frame` para obtener las nuevas columnas. Es lo que vamos a hacer aun que no es la solución que retendremos más adelante.
+
+Vamos a usar un bucle `for()`. El bucle `for()` recorrerá los elementos de un objeto que vamos a dar como argumento. Por ejemplo, aquí hay un bucle que para todos los números del 3 al 9 calculará su valor al cuadrado. El valor actual del número está simbolizado por un objeto que puede tomar el nombre que queramos (aquí será `i`).
+
+```{r}
+for(i in c(3, 4, 5, 6, 7, 8, 9)){
+  print(i^2)
+}
+```
+
+Eso podemos mejorar usando [la función `:`](#l0152points).
+
+```{r, eval = FALSE}
+for(i in 3:9){
+  print(i^2)
+}
+```
+
+El bucle `for()` puede iterar sobre todos los tipos de elementos.
+
+```{r}
+nChar <- c("a", "z", "e", "r", "t", "y")
+for(i in nChar){
+  print(i)
+}
+```
+
+Volvamos a nuestro caso. Vamos a iterar sobre el número de líneas de nuestro `data.frame` `bdd`. Antes de eso crearemos las columnas `dif` y `isDifBig` con los valores `NA`. Luego usaremos [la función `nrow()`](#l015nrow) para encontrar el número de líneas.
+
+```{r}
+bdd$dif <- NA
+bdd$isDifBig <- NA
+for(i in 1:nrow(bdd)){
+  bdd$dif[i] <- sqrt((bdd$date01[i] - bdd$date02[i])^2)
+  if(bdd$dif[i] > 3){
+    bdd$isDifBig[i] <- "big"
+  }else{
+    bdd$isDifBig[i] <- "small"
+  }
+}
+print(head(bdd, n = 20))
+```
+
+En la práctica, esta no es la mejor manera de realizar este ejercicio porque se trata de cálculos simples en vectores contenidos en un `data.frame`. R es particularmente potente para realizar operaciones en vectores. Donde sea posible, siempre tenemos que enfócarnos en operaciones vectoriales. Aquí nuestro código se convierte en:
+
+```{r}
+bdd$dif <- sqrt((bdd$date01 - bdd$date02)^2)
+bdd$isDifBig <- "small"
+bdd$isDifBig[bdd$dif > 3] <- "big"
+print(head(bdd, n = 20))
+```
+
+La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle `for()` pueden reemplazarse por operaciones vectoriales. Aquí hay algunos ejemplos adaptados de varias fuentes:
+
+```{r}
+# prueba si los números son pares
+# [1] FOR
+x <- sample(1:100, size = 20)
+count <- 0
+for (val in x) {
+  if(val %% 2 == 0){
+    count <- count + 1
+  }
+}
+print(count)
+# [2] VECTOR
+sum(x %% 2 == 0)
+
+# calcular cuadrados
+# [1] FOR
+x <- rep(0, 20)
+for (j in 1:20){
+  x[j] <- j^2
+}
+print(x)
+# [2] VECTOR
+(1:20)^2
+
+# repetir una tirada de dados y promediar
+# [1] FOR
+ntrials = 1000
+trials = rep(0, ntrials)
+for (j in 1:ntrials){
+  trials[j] = sample(1:6, size = 1)
+}
+mean(trials)
+# [2] VECTOR
+mean(sample(1:6, ntrials, replace = TRUE))
+```
+
+Es un buen ejercicio explorar los muchos ejemplos disponibles en Internet en el bucle `for()` e intentar convertirlos en operaciones vectoriales. Esto nos permite adquirir buenos reflejos de programación con R. El bucle `for()` es muy útil, por ejemplo, para leer varios archivos y tratar la información que contienen de la misma manera, hacer gráficos, o Cuando las operaciones vectoriales se vuelven tediosas. Imagina una matriz de 10 columnas y 100 líneas. Queremos la suma de cada línea (veremos cómo hacer con la función `apply()` mas adelante).
+
+```{r}
+myMat <- matrix(sample(1:100, size = 1000, replace = TRUE), ncol = 10)
+# VECTOR
+sumRow <- myMat[, 1] + myMat[, 2] + myMat[, 3] + myMat[, 4] + 
+  myMat[, 5] + myMat[, 6] + myMat[, 7] + myMat[, 8] + 
+  myMat[, 9] + myMat[, 10]
+print(sumRow)
+# FOR
+sumRow <- rep(NA, times = nrow(myMat))
+for(j in 1:nrow(myMat)){
+  sumRow[j] <- sum(myMat[j, ])
+}
+print(sumRow)
+```
+
+En conclusión, se recomienda no usar el bucle `for()` con R siempre que sea posible, y en este capítulo veremos alternativas como los bucles familiares `apply()`.
 
 ## El bucle `while` {#l17while}
 
