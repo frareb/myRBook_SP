@@ -238,13 +238,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.2" data-path="algo.html"><a href="algo.html#l17switch"><i class="fa fa-check"></i><b>11.2</b> Pruebas lógicas con <code>switch</code></a></li>
 <li class="chapter" data-level="11.3" data-path="algo.html"><a href="algo.html#l17for"><i class="fa fa-check"></i><b>11.3</b> El bucle <code>for</code></a></li>
 <li class="chapter" data-level="11.4" data-path="algo.html"><a href="algo.html#l17while"><i class="fa fa-check"></i><b>11.4</b> El bucle <code>while</code></a></li>
-<li class="chapter" data-level="11.5" data-path="algo.html"><a href="algo.html#l17spe"><i class="fa fa-check"></i><b>11.5</b> <code>repeat</code>, <code>next</code>, <code>break</code>, <code>stop</code></a></li>
-<li class="chapter" data-level="11.6" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>11.6</b> Los bucles de la familia <code>apply</code></a><ul>
-<li class="chapter" data-level="11.6.1" data-path="algo.html"><a href="algo.html#l17apply"><i class="fa fa-check"></i><b>11.6.1</b> <code>apply</code></a></li>
-<li class="chapter" data-level="11.6.2" data-path="algo.html"><a href="algo.html#l17sapply"><i class="fa fa-check"></i><b>11.6.2</b> <code>sapply</code></a></li>
-<li class="chapter" data-level="11.6.3" data-path="algo.html"><a href="algo.html#l17lapply"><i class="fa fa-check"></i><b>11.6.3</b> <code>lapply</code></a></li>
-<li class="chapter" data-level="11.6.4" data-path="algo.html"><a href="algo.html#l17tapply"><i class="fa fa-check"></i><b>11.6.4</b> <code>tapply</code></a></li>
-<li class="chapter" data-level="11.6.5" data-path="algo.html"><a href="algo.html#l17mapply"><i class="fa fa-check"></i><b>11.6.5</b> <code>mapply</code></a></li>
+<li class="chapter" data-level="11.5" data-path="algo.html"><a href="algo.html#l17repeat"><i class="fa fa-check"></i><b>11.5</b> El bucle <code>repeat</code></a></li>
+<li class="chapter" data-level="11.6" data-path="algo.html"><a href="algo.html#l17spe"><i class="fa fa-check"></i><b>11.6</b> <code>next</code>, <code>break</code>, <code>stop</code></a></li>
+<li class="chapter" data-level="11.7" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>11.7</b> Los bucles de la familia <code>apply</code></a><ul>
+<li class="chapter" data-level="11.7.1" data-path="algo.html"><a href="algo.html#l17apply"><i class="fa fa-check"></i><b>11.7.1</b> <code>apply</code></a></li>
+<li class="chapter" data-level="11.7.2" data-path="algo.html"><a href="algo.html#l17sapply"><i class="fa fa-check"></i><b>11.7.2</b> <code>sapply</code></a></li>
+<li class="chapter" data-level="11.7.3" data-path="algo.html"><a href="algo.html#l17lapply"><i class="fa fa-check"></i><b>11.7.3</b> <code>lapply</code></a></li>
+<li class="chapter" data-level="11.7.4" data-path="algo.html"><a href="algo.html#l17tapply"><i class="fa fa-check"></i><b>11.7.4</b> <code>tapply</code></a></li>
+<li class="chapter" data-level="11.7.5" data-path="algo.html"><a href="algo.html#l17mapply"><i class="fa fa-check"></i><b>11.7.5</b> <code>mapply</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>12</b> Gestión de proyectos con R</a><ul>
@@ -1226,7 +1227,7 @@ irisSepWCopy &lt;-<span class="st"> </span>irisSepWCopy[<span class="kw">order</
 <p>No existe una solución óptima en absoluto, todo depende de los objetivos deseados. La primera solución puede ser más fácil de entender, y la segunda puede ser más rápida en términos de velocidad de ejecución (repitiendo el uso de la función 10000 veces, el ahorro de tiempo es casi cero en nuestro caso).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="kw">countVowelConso</span>(<span class="dt">word =</span> <span class="st">&quot;qwertyuiop azertyuiop&quot;</span>)))</code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.11    0.00    0.11</code></pre>
+##    0.09    0.00    0.11</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="kw">countVowelConsoAlt</span>(<span class="dt">word =</span> <span class="st">&quot;qwertyuiop azertyuiop&quot;</span>)))</code></pre></div>
 <pre><code>##    user  system elapsed 
 ##    0.11    0.00    0.11</code></pre>
