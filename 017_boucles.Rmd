@@ -328,7 +328,13 @@ En conclusión, se recomienda no usar el bucle `for()` con R siempre que sea pos
 
 ## El bucle `while` {#l17while}
 
-XXX
+```{r}
+i <- 0
+while(i < 10){
+  print(i)
+  i <- i + 1
+}
+```
 
 ## `repeat`, `next`, `break`, `stop` {#l17spe}
 
