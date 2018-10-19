@@ -432,3 +432,15 @@ XXX
 ### `mapply` {#l17mapply}
 
 XXX
+
+### `rapply` {#l17rapply}
+
+XXX
+
+### `vapply` {#l17vapply}
+
+XXX
+
+## Conclusión
+
+Felicitaciones, hemos llegado al final de este capítulo sobre algoritmos. Recordemos este mensaje clave: cuando una operación debe realizarse más de dos veces en un script y repetir el código que ya se ha escrito, es un signo que nos debe llevar a utilizar un bucle. Sin embargo, siempre que sea posible, se recomienda no usar los bucles tradicionales `for()`, `while()`, y `repeat()`, sino preferir operaciones sobre vectores o bucles de la familia `apply`. Esto puede ser difícil de integrar al principio, pero veremos que nuestros scripts serán más fáciles de mantener y leer, y mucho más eficientes si seguimos estos hábitos.
