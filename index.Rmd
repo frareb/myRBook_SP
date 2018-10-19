@@ -26,6 +26,7 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 **19/10/2018**
 
 * algorítmico (3/6) [el bucle `for`](#l17for)
+* algorítmico (4/6) [el bucle `while`](#l17while)
 
 **28/09/2018**
 

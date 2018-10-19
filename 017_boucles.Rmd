@@ -328,6 +328,8 @@ En conclusión, se recomienda no usar el bucle `for()` con R siempre que sea pos
 
 ## El bucle `while` {#l17while}
 
+El bucle `while()`, a diferencia del bucle `for()`, significa *MIENTRAS*. Mientras no se cumpla una condición, el bucle continuará ejecutándose. Atención porque en caso de error, podemos programar fácilmente bucles que nunca terminan. Este bucle es menos común que el bucle `for()`. Tomemos un ejemplo:
+
 ```{r}
 i <- 0
 while(i < 10){
@@ -336,7 +338,37 @@ while(i < 10){
 }
 ```
 
-## `repeat`, `next`, `break`, `stop` {#l17spe}
+En este ejemplo, la variable `i` tiene como valor inicial 0. MIENTRAS QUE `i < 10`, mostramos `i` con `print()`. Para que este bucle finalice, no olvidamos cambiar el valor de `i`, esto se hace con la línea `i <- i + 1`. Cuando la condición `i < 10` ya no se cumple, el bucle se detiene.
+
+El bucle `while()` es muy útil para crear scripts que realizarán cálculos en variables cuyo valor cambia con el tiempo. Por ejemplo, imaginamos un número entre 0 y 10000 y un generador aleatorio que intentará determinar el valor de este número. Si queremos limitar los intentos de R a 2 segundos, podemos escribir el siguiente script (que debería funcionar cada vez en una computadora de escritorio típica que pueda realizar fácilmente 35000 pruebas en 2 segundos):
+
+```{r}
+myNumber <- sample(x = 10000, size = 1)
+myGuess <- sample(x = 10000, size = 1)
+startTime <- Sys.time()
+numberGuess <- 0
+while(Sys.time() - startTime < 2){
+  if(myGuess == myNumber){
+    numberGuess <- numberGuess + 1
+    print("Number found !")
+    print(paste0("And I have plenty of time left: ", 
+      round(2 - as.numeric(Sys.time() - startTime), digits = 2), 
+      " sec"))
+    break
+  }else{
+    myGuess <- sample(x = 10000, size = 1)
+    numberGuess <- numberGuess + 1
+  }
+}
+```
+
+En este script generamos un número aleatorio para adivinar con la función `sample()`, y cada uno de los intentos con la misma función `sample()`. Luego usamos la función `Sys.time()` (con una S mayúscula a `Sys`), para saber la hora de inicio del bucle. Siempre que la diferencia entre cada iteración del bucle y la hora de inicio sea inferior a 2 segundos, el bucle `while()` verificará si el número correcto estaba adivinando en la prueba lógica con `if()` y luego si es el caso nos informa que se encontró el número, y nos indica el tiempo restante antes de los dos segundos. Luego para finalizar el bucle usamos la palabra clave "break" en la que volveremos. En resumen, `break`, permite salir de un bucle. Si no se ha adivinado el número, el bucle realiza otra prueba con la función `sample()`.
+
+Más concretamente, podríamos imaginar algoritmos para explorar un espacio de soluciones a un problema con un tiempo limitado para lograrlo. El bucle `while()` también puede ser útil para que un script se ejecute solo cuando un archivo de otro programa esté disponible ... En la práctica, el bucle `while()` se usa poco con R.
+
+## El bucle `repeat` {#l17repeat}
+
+## `next`, `break`, `stop` {#l17spe}
 
 XXX
 
