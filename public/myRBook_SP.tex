@@ -274,6 +274,18 @@ Este libro también está disponible en francés
 
 Últimas modificaciones:
 
+\textbf{08/11/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  algorítmico (5/6) \protect\hyperlink{l17spe}{\texttt{next} y
+  \texttt{break}}
+\item
+  algorítmico (6/6) \protect\hyperlink{l17applyfamily}{Los bucles de la
+  familia \texttt{apply}}
+\end{itemize}
+
 \textbf{19/10/2018}
 
 \begin{itemize}
@@ -451,9 +463,8 @@ versión en PDF utiliza los iconos del proyecto Tango disponibles en
 openclipart (\url{https://openclipart.org/}). Este libro fue escrito con
 el paquete R bookdown (\url{https://bookdown.org/}). El código fuente
 está disponible en GitHub (\url{https://github.com/frareb/myRBook_SP}).
-La compilación usa Travis CI (\url{https://travis-ci.org}). La versión
-en línea se aloja y actualiza a través de Netlify
-(\url{http://myrbooksp.netlify.com/}).
+La versión en línea se aloja y actualiza a través de Netlify
+(\url{http://netlify.com/}).
 
 \chapter{Licencia}\label{licence}
 
@@ -7972,7 +7983,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.17    0.00    0.17
+##    0.15    0.00    0.16
 \end{verbatim}
 
 \begin{Shaded}
@@ -7983,7 +7994,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.19    0.00    0.19
+##    0.18    0.00    0.17
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus
@@ -8940,12 +8951,12 @@ elementos de un objeto) y repetir una operación. Imaginamos un
 
 \begin{verbatim}
 ##      date01    date02
-## 1 11.342967 11.368269
-## 2  9.847625  8.422457
-## 3  9.521623  9.187815
-## 4  9.973029 11.778076
-## 5 10.335947  8.322898
-## 6 10.572509  9.135107
+## 1  9.803862  9.783750
+## 2 10.256415 10.423276
+## 3  9.139543  9.364392
+## 4  9.130944  9.352317
+## 5  9.095104 10.984801
+## 6 10.090406 10.438656
 \end{verbatim}
 
 Nos gustaría cuantificar la diferencia entre la primera y la segunda
@@ -9073,26 +9084,26 @@ para encontrar el número de líneas.
 
 \begin{verbatim}
 ##       date01    date02        dif isDifBig
-## 1  11.342967 11.368269 0.02530232    small
-## 2   9.847625  8.422457 1.42516751    small
-## 3   9.521623  9.187815 0.33380843    small
-## 4   9.973029 11.778076 1.80504757    small
-## 5  10.335947  8.322898 2.01304835    small
-## 6  10.572509  9.135107 1.43740224    small
-## 7  10.143942  8.804398 1.33954489    small
-## 8   8.772349 10.867625 2.09527573    small
-## 9  11.003543 10.602541 0.40100265    small
-## 10  8.543981  9.527808 0.98382717    small
-## 11 10.495352  9.534527 0.96082522    small
-## 12 11.141747 10.178285 0.96346181    small
-## 13  8.678136 11.864299 3.18616308      big
-## 14  9.681501 10.327468 0.64596642    small
-## 15  9.072755  9.583990 0.51123556    small
-## 16  9.730313 10.130342 0.40002859    small
-## 17 12.209843  9.484181 2.72566156    small
-## 18 11.094852  9.773696 1.32115616    small
-## 19 10.615735  9.030707 1.58502850    small
-## 20 11.920057 10.430950 1.48910750    small
+## 1   9.803862  9.783750 0.02011195    small
+## 2  10.256415 10.423276 0.16686079    small
+## 3   9.139543  9.364392 0.22484941    small
+## 4   9.130944  9.352317 0.22137325    small
+## 5   9.095104 10.984801 1.88969669    small
+## 6  10.090406 10.438656 0.34824996    small
+## 7   9.959970 10.631930 0.67195987    small
+## 8   9.987719 12.021353 2.03363459    small
+## 9   9.264376 10.613208 1.34883247    small
+## 10 10.646732 10.199784 0.44694837    small
+## 11  9.063558 10.439383 1.37582505    small
+## 12 11.184206  8.993523 2.19068305    small
+## 13 10.281454 10.417827 0.13637304    small
+## 14  9.594794  8.953357 0.64143774    small
+## 15 11.529066 10.553782 0.97528422    small
+## 16 11.010535 10.818919 0.19161634    small
+## 17 11.187582  8.585081 2.60250094    small
+## 18  9.344624 10.693910 1.34928641    small
+## 19  9.739545  9.817752 0.07820680    small
+## 20  9.536715 11.353469 1.81675408    small
 \end{verbatim}
 
 En la práctica, esta no es la mejor manera de realizar este ejercicio
@@ -9113,26 +9124,26 @@ en:
 
 \begin{verbatim}
 ##       date01    date02        dif isDifBig
-## 1  11.342967 11.368269 0.02530232    small
-## 2   9.847625  8.422457 1.42516751    small
-## 3   9.521623  9.187815 0.33380843    small
-## 4   9.973029 11.778076 1.80504757    small
-## 5  10.335947  8.322898 2.01304835    small
-## 6  10.572509  9.135107 1.43740224    small
-## 7  10.143942  8.804398 1.33954489    small
-## 8   8.772349 10.867625 2.09527573    small
-## 9  11.003543 10.602541 0.40100265    small
-## 10  8.543981  9.527808 0.98382717    small
-## 11 10.495352  9.534527 0.96082522    small
-## 12 11.141747 10.178285 0.96346181    small
-## 13  8.678136 11.864299 3.18616308      big
-## 14  9.681501 10.327468 0.64596642    small
-## 15  9.072755  9.583990 0.51123556    small
-## 16  9.730313 10.130342 0.40002859    small
-## 17 12.209843  9.484181 2.72566156    small
-## 18 11.094852  9.773696 1.32115616    small
-## 19 10.615735  9.030707 1.58502850    small
-## 20 11.920057 10.430950 1.48910750    small
+## 1   9.803862  9.783750 0.02011195    small
+## 2  10.256415 10.423276 0.16686079    small
+## 3   9.139543  9.364392 0.22484941    small
+## 4   9.130944  9.352317 0.22137325    small
+## 5   9.095104 10.984801 1.88969669    small
+## 6  10.090406 10.438656 0.34824996    small
+## 7   9.959970 10.631930 0.67195987    small
+## 8   9.987719 12.021353 2.03363459    small
+## 9   9.264376 10.613208 1.34883247    small
+## 10 10.646732 10.199784 0.44694837    small
+## 11  9.063558 10.439383 1.37582505    small
+## 12 11.184206  8.993523 2.19068305    small
+## 13 10.281454 10.417827 0.13637304    small
+## 14  9.594794  8.953357 0.64143774    small
+## 15 11.529066 10.553782 0.97528422    small
+## 16 11.010535 10.818919 0.19161634    small
+## 17 11.187582  8.585081 2.60250094    small
+## 18  9.344624 10.693910 1.34928641    small
+## 19  9.739545  9.817752 0.07820680    small
+## 20  9.536715 11.353469 1.81675408    small
 \end{verbatim}
 
 La mayoría de los ejemplos que se pueden encontrar en Internet sobre el
@@ -9155,7 +9166,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 11
+## [1] 13
 \end{verbatim}
 
 \begin{Shaded}
@@ -9166,7 +9177,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 11
+## [1] 13
 \end{verbatim}
 
 \begin{Shaded}
@@ -9212,7 +9223,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.488
+## [1] 3.454
 \end{verbatim}
 
 \begin{Shaded}
@@ -9223,7 +9234,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.492
+## [1] 3.567
 \end{verbatim}
 
 Es un buen ejercicio explorar los muchos ejemplos disponibles en
@@ -9248,12 +9259,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 386 330 500 531 566 640 532 539 482 530 573 420 454 369 387 379 526
-##  [18] 408 610 599 568 645 477 594 621 354 446 446 481 459 496 509 503 452
-##  [35] 534 563 694 370 488 611 323 447 460 526 557 425 425 483 623 531 669
-##  [52] 355 426 628 362 562 554 585 543 561 373 497 519 597 518 509 654 602
-##  [69] 584 680 455 578 385 526 494 347 555 505 532 471 585 414 559 575 374
-##  [86] 365 632 623 637 769 574 402 584 438 483 495 517 546 339 576
+##   [1] 502 599 367 354 556 504 458 476 441 567 474 452 532 665 474 409 642
+##  [18] 452 548 437 479 381 432 362 468 580 383 518 461 475 524 584 407 525
+##  [35] 696 511 490 616 377 389 696 671 491 361 653 439 371 547 438 647 516
+##  [52] 612 356 377 371 550 433 667 559 542 471 600 638 471 404 690 397 507
+##  [69] 477 454 524 526 572 589 402 606 372 684 527 566 579 670 423 434 552
+##  [86] 523 577 455 579 541 412 598 485 632 479 371 411 449 656 587
 \end{verbatim}
 
 \begin{Shaded}
@@ -9268,12 +9279,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 386 330 500 531 566 640 532 539 482 530 573 420 454 369 387 379 526
-##  [18] 408 610 599 568 645 477 594 621 354 446 446 481 459 496 509 503 452
-##  [35] 534 563 694 370 488 611 323 447 460 526 557 425 425 483 623 531 669
-##  [52] 355 426 628 362 562 554 585 543 561 373 497 519 597 518 509 654 602
-##  [69] 584 680 455 578 385 526 494 347 555 505 532 471 585 414 559 575 374
-##  [86] 365 632 623 637 769 574 402 584 438 483 495 517 546 339 576
+##   [1] 502 599 367 354 556 504 458 476 441 567 474 452 532 665 474 409 642
+##  [18] 452 548 437 479 381 432 362 468 580 383 518 461 475 524 584 407 525
+##  [35] 696 511 490 616 377 389 696 671 491 361 653 439 371 547 438 647 516
+##  [52] 612 356 377 371 550 433 667 559 542 471 600 638 471 404 690 397 507
+##  [69] 477 454 524 526 572 589 402 606 372 684 527 566 579 670 423 434 552
+##  [86] 523 577 455 579 541 412 598 485 632 479 371 411 449 656 587
 \end{verbatim}
 
 En conclusión, se recomienda no usar el bucle \texttt{for()} con R
@@ -9351,7 +9362,7 @@ pueda realizar fácilmente 35000 pruebas en 2 segundos):
 
 \begin{verbatim}
 ## [1] "Number found !"
-## [1] "And I have plenty of time left: 1.67 sec"
+## [1] "And I have plenty of time left: 1.22 sec"
 \end{verbatim}
 
 En este script generamos un número aleatorio para adivinar con la
@@ -9430,51 +9441,660 @@ para repetirlo cinco veces.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.714
-## [1] 0.466
-## [1] 0.062
-## [1] 1.336
-## [1] 0.6
+## [1] 0.334
+## [1] 1.385
+## [1] 0.073
+## [1] 1.305
+## [1] 0.797
 \end{verbatim}
 
 Al igual que el bucle \texttt{while()}, el bucle \texttt{repeat()} no se
 usa mucho con R.
 
-\section{\texorpdfstring{\texttt{next}, \texttt{break},
-\texttt{stop}}{next, break, stop}}\label{l17spe}
+\hypertarget{l17spe}{\section{\texorpdfstring{\texttt{next} y
+\texttt{break}}{next y break}}\label{l17spe}}
 
-XXX
+Ya hemos visto la palabra clave \texttt{break} que permite salir del
+bucle actual. Por ejemplo, si buscamos el primer dígito después de 111
+que es divisible por 32:
 
-\section{\texorpdfstring{Los bucles de la familia
-\texttt{apply}}{Los bucles de la familia apply}}\label{l17applyfamily}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myVars <-}\StringTok{ }\DecValTok{111}\OperatorTok{:}\DecValTok{1000}
+\ControlFlowTok{for}\NormalTok{(myVar }\ControlFlowTok{in}\NormalTok{ myVars)\{}
+  \ControlFlowTok{if}\NormalTok{(myVar }\OperatorTok{%%}\StringTok{ }\DecValTok{32} \OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
+    \KeywordTok{print}\NormalTok{(myVar)}
+    \ControlFlowTok{break}
+\NormalTok{  \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 128
+\end{verbatim}
+
+Aunque hemos visto que en la práctica podemos evitar el bucle
+\texttt{for()} con una operación vectorial:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{111}\OperatorTok{:}\DecValTok{1000}\NormalTok{)[}\DecValTok{111}\OperatorTok{:}\DecValTok{1000} \OperatorTok{%%}\StringTok{ }\DecValTok{32} \OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{][}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 128
+\end{verbatim}
+
+La palabra clave \texttt{next} permite pasar a la siguiente iteración de
+un bucle si se cumple una determinada condición. Por ejemplo, si
+queremos imprimir las letras del alfabeto sin las vocales:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{(myLetter }\ControlFlowTok{in}\NormalTok{ letters)\{}
+  \ControlFlowTok{if}\NormalTok{(myLetter }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"i"}\NormalTok{, }\StringTok{"o"}\NormalTok{, }\StringTok{"u"}\NormalTok{, }\StringTok{"y"}\NormalTok{))\{}
+    \ControlFlowTok{next}
+\NormalTok{  \}}
+  \KeywordTok{print}\NormalTok{(myLetter)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "b"
+## [1] "c"
+## [1] "d"
+## [1] "f"
+## [1] "g"
+## [1] "h"
+## [1] "j"
+## [1] "k"
+## [1] "l"
+## [1] "m"
+## [1] "n"
+## [1] "p"
+## [1] "q"
+## [1] "r"
+## [1] "s"
+## [1] "t"
+## [1] "v"
+## [1] "w"
+## [1] "x"
+## [1] "z"
+\end{verbatim}
+
+De nuevo podimos evitar el bucle \texttt{for()} con:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{letters[}\OperatorTok{!}\StringTok{ }\NormalTok{letters }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"i"}\NormalTok{, }\StringTok{"o"}\NormalTok{, }\StringTok{"u"}\NormalTok{, }\StringTok{"y"}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "b" "c" "d" "f" "g" "h" "j" "k" "l" "m" "n" "p" "q" "r" "s" "t" "v"
+## [18] "w" "x" "z"
+\end{verbatim}
+
+En conclusión, si usamos bucles, las palabras clave \texttt{next} y
+\texttt{break} suelen ser muy útiles, pero siempre que sea posible es
+mejor usar operaciones vectoriales. Cuando no es posible trabajar con
+vectores, es mejor usar los bucles del tipo \texttt{apply} que son el
+tema de la siguiente sección.
+
+\hypertarget{l17applyfamily}{\section{\texorpdfstring{Los bucles de la
+familia
+\texttt{apply}}{Los bucles de la familia apply}}\label{l17applyfamily}}
 
 \subsection{\texorpdfstring{\texttt{apply}}{apply}}\label{l17apply}
 
-XXX
+La función \texttt{apply()} permite aplicar una función a todos los
+elementos de un \texttt{array} o un \texttt{matrix}. Por ejemplo, si
+queremos saber la suma de cada fila de una \texttt{matriz} de 10
+columnas y 100 líneas:
 
-\subsection{\texorpdfstring{\texttt{sapply}}{sapply}}\label{l17sapply}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myMat <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{, }\DataTypeTok{size =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{10}\NormalTok{)}
+\KeywordTok{apply}\NormalTok{(}\DataTypeTok{X =}\NormalTok{ myMat, }\DataTypeTok{MARGIN =} \DecValTok{1}\NormalTok{, }\DataTypeTok{FUN =}\NormalTok{ sum)}
+\end{Highlighting}
+\end{Shaded}
 
-XXX
+\begin{verbatim}
+##   [1] 489 521 426 582 756 431 535 457 509 444 466 528 511 427 412 613 508
+##  [18] 521 694 584 419 552 544 636 432 334 504 563 616 436 688 561 391 316
+##  [35] 374 377 492 340 474 439 442 577 642 715 598 447 630 569 632 373 544
+##  [52] 481 525 452 464 455 447 418 484 486 507 563 402 474 419 508 524 343
+##  [69] 383 476 465 497 462 504 541 564 425 503 607 649 434 437 329 625 538
+##  [86] 542 378 394 540 453 456 501 370 523 446 490 628 509 593 561
+\end{verbatim}
 
-\subsection{\texorpdfstring{\texttt{lapply}}{lapply}}\label{l17lapply}
+Si queremos saber la mediana de cada columna, la expresión se convierte
+en:
 
-XXX
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{apply}\NormalTok{(}\DataTypeTok{X =}\NormalTok{ myMat, }\DataTypeTok{MARGIN =} \DecValTok{2}\NormalTok{, }\DataTypeTok{FUN =}\NormalTok{ median)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 48.0 50.5 54.0 41.0 57.5 52.5 43.5 51.0 52.5 43.5
+\end{verbatim}
+
+El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply}
+se repetirá. El argumento \texttt{MARGEN} corresponde a la dimensión a
+tener en cuenta (1 para las filas y 2 para las columnas). El argumento
+\texttt{FUN} es la función a aplicar. En un objeto \texttt{array}, el
+argumento \texttt{MARGIN} puede tomar tantos valores como dimensiones.
+En este ejemplo, \texttt{MARGIN\ =\ 1} es el promedio de cada fila -
+dimensión 1 - (todas las dimensiones combinadas), \texttt{MARGIN\ =\ 2}
+es el promedio de cada columna - dimensión 2 - (todas las dimensiones
+combinadas), y \texttt{MARGEN\ =\ 3} es el promedio de cada dimensión 3.
+Debajo cada cálculo se realiza de dos maneras diferentes para explicar
+su operación.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myArr <-}\StringTok{ }\KeywordTok{array}\NormalTok{(}\KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{, }\DataTypeTok{size =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{), }\DataTypeTok{dim =} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\KeywordTok{apply}\NormalTok{(}\DataTypeTok{X =}\NormalTok{ myArr, }\DataTypeTok{MARGIN =} \DecValTok{1}\NormalTok{, }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 49.47 55.99 47.06 51.16 50.42 50.46 52.68 53.69 49.00 44.44
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{1}\NormalTok{], }\DecValTok{1}\NormalTok{, mean) }\OperatorTok{+}\StringTok{ }\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{2}\NormalTok{], }\DecValTok{1}\NormalTok{, mean) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{3}\NormalTok{], }\DecValTok{1}\NormalTok{, mean) }\OperatorTok{+}\StringTok{ }\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{4}\NormalTok{], }\DecValTok{1}\NormalTok{, mean) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{5}\NormalTok{], }\DecValTok{1}\NormalTok{, mean))}\OperatorTok{/}\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 49.47 55.99 47.06 51.16 50.42 50.46 52.68 53.69 49.00 44.44
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{apply}\NormalTok{(}\DataTypeTok{X =}\NormalTok{ myArr, }\DataTypeTok{MARGIN =} \DecValTok{2}\NormalTok{, }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 47.10 50.86 51.18 47.72 49.90 45.46 52.98 53.92 52.12 47.54 51.12
+## [12] 46.96 51.02 49.12 49.24 52.88 52.62 45.70 58.02 53.28
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{1}\NormalTok{], }\DecValTok{2}\NormalTok{, mean) }\OperatorTok{+}\StringTok{ }\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{2}\NormalTok{], }\DecValTok{2}\NormalTok{, mean) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{3}\NormalTok{], }\DecValTok{2}\NormalTok{, mean) }\OperatorTok{+}\StringTok{ }\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{4}\NormalTok{], }\DecValTok{2}\NormalTok{, mean) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{apply}\NormalTok{(myArr[,,}\DecValTok{5}\NormalTok{], }\DecValTok{2}\NormalTok{, mean))}\OperatorTok{/}\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 47.10 50.86 51.18 47.72 49.90 45.46 52.98 53.92 52.12 47.54 51.12
+## [12] 46.96 51.02 49.12 49.24 52.88 52.62 45.70 58.02 53.28
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{apply}\NormalTok{(}\DataTypeTok{X =}\NormalTok{ myArr, }\DataTypeTok{MARGIN =} \DecValTok{3}\NormalTok{, }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 54.370 46.345 51.210 51.165 49.095
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{c}\NormalTok{(}\KeywordTok{mean}\NormalTok{(myArr[,,}\DecValTok{1}\NormalTok{]), }\KeywordTok{mean}\NormalTok{(myArr[,,}\DecValTok{2}\NormalTok{]), }\KeywordTok{mean}\NormalTok{(myArr[,,}\DecValTok{3}\NormalTok{]), }
+  \KeywordTok{mean}\NormalTok{(myArr[,,}\DecValTok{4}\NormalTok{]), }\KeywordTok{mean}\NormalTok{(myArr[,,}\DecValTok{5}\NormalTok{]))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 54.370 46.345 51.210 51.165 49.095
+\end{verbatim}
+
+También podemos calcular el promedio de cada fila y valor de columna (la
+función luego itera en la dimensión 3):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{apply}\NormalTok{(}\DataTypeTok{X =}\NormalTok{ myArr, }\DataTypeTok{MARGIN =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
+##  [1,] 54.8 40.4 48.2 53.8 56.4 46.8 50.0 56.8 40.0  51.8  37.2  53.0  36.8
+##  [2,] 37.6 69.8 73.4 45.6 50.8 63.0 69.0 59.2 55.6  55.4  53.2  29.2  44.6
+##  [3,] 43.0 35.8 48.4 50.2 45.8 19.0 50.0 35.8 27.2  48.8  58.8  63.8  39.0
+##  [4,] 47.6 69.4 60.2 46.2 52.2 40.0 55.4 65.2 52.8  49.8  58.2  39.6  45.4
+##  [5,] 43.6 29.0 39.0 31.6 55.8 33.2 52.0 70.0 62.2  35.2  54.2  62.4  77.0
+##  [6,] 51.8 56.4 49.8 57.2 66.2 61.0 52.6 38.8 60.0  25.4  44.2  61.8  47.6
+##  [7,] 51.6 66.4 44.0 58.6 60.4 43.6 56.4 38.8 67.0  44.4  62.2  35.2  65.8
+##  [8,] 44.0 69.8 56.2 35.0 51.0 49.0 57.4 60.0 52.0  70.4  55.6  50.0  51.4
+##  [9,] 61.0 49.4 44.6 57.0 34.4 60.2 44.4 63.4 49.8  45.8  44.6  42.2  46.2
+## [10,] 36.0 22.2 48.0 42.0 26.0 38.8 42.6 51.2 54.6  48.4  43.0  32.4  56.4
+##       [,14] [,15] [,16] [,17] [,18] [,19] [,20]
+##  [1,]  40.6  70.6  36.0  75.2  36.6  40.4  64.0
+##  [2,]  58.6  61.2  47.0  57.2  57.6  86.2  45.6
+##  [3,]  63.8  42.6  50.4  48.2  38.8  62.4  69.4
+##  [4,]  59.6  46.8  46.6  53.0  36.8  61.4  37.0
+##  [5,]  44.2  49.2  67.0  35.0  61.0  48.0  58.8
+##  [6,]  48.2  54.0  42.2  49.6  59.4  33.4  49.6
+##  [7,]  61.6  39.2  57.8  48.8  29.8  51.6  70.4
+##  [8,]  37.6  47.0  64.4  74.0  42.0  60.2  46.8
+##  [9,]  29.4  40.8  61.4  43.8  42.0  62.6  57.0
+## [10,]  47.6  41.0  56.0  41.4  53.0  74.0  34.2
+\end{verbatim}
+
+\subsection{\texorpdfstring{\texttt{lapply}}{lapply}}\label{l17sapply}
+
+Como se indica en la documentación, \texttt{lapply()} devuelve una lista
+de la misma longitud que \texttt{X}, y cada elemento resulta de la
+aplicación \texttt{FUN} al elemento \texttt{X} correspondiente. Si
+\texttt{X} es una \texttt{list} que contiene \texttt{vector} y estamos
+tratando de obtener el promedio de cada elemento de \texttt{list},
+podemos usar la función \texttt{lapply()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myList <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+  \DataTypeTok{a =} \KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{, }\DataTypeTok{size =} \DecValTok{10}\NormalTok{), }
+  \DataTypeTok{b =} \KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{, }\DataTypeTok{size =} \DecValTok{10}\NormalTok{), }
+  \DataTypeTok{c =} \KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{, }\DataTypeTok{size =} \DecValTok{10}\NormalTok{), }
+  \DataTypeTok{d =} \KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{, }\DataTypeTok{size =} \DecValTok{10}\NormalTok{), }
+  \DataTypeTok{e =} \KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{, }\DataTypeTok{size =} \DecValTok{10}\NormalTok{)}
+\NormalTok{)}
+\KeywordTok{print}\NormalTok{(myList)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $a
+##  [1] 93  1  6 62 94  2 56 76 43 34
+## 
+## $b
+##  [1] 89 46 26 41 29  5 57 17 13 84
+## 
+## $c
+##  [1] 83 96 93 16 62 90 76 20 14 45
+## 
+## $d
+##  [1] 60 93 22 89  8 30 73 53 84 38
+## 
+## $e
+##  [1] 65 57 41 92 83 40 81 53 66 45
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lapply}\NormalTok{(myList, }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $a
+## [1] 46.7
+## 
+## $b
+## [1] 40.7
+## 
+## $c
+## [1] 59.5
+## 
+## $d
+## [1] 55
+## 
+## $e
+## [1] 62.3
+\end{verbatim}
+
+Al igual que con la función \texttt{apply()}, podemos pasar argumentos
+adicionales a la función \texttt{lapply()} agregándolos después de la
+función. Esto es útil, por ejemplo, si nuestra \texttt{list} contiene
+estos valores faltantes \texttt{NA} y queremos ignorarlos para calcular
+los promedios (con el argumento \texttt{na.rm\ =\ TRUE}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myList <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+  \DataTypeTok{a =} \KeywordTok{sample}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\OtherTok{NA}\NormalTok{), }\DataTypeTok{size =} \DecValTok{10}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{), }
+  \DataTypeTok{b =} \KeywordTok{sample}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\OtherTok{NA}\NormalTok{), }\DataTypeTok{size =} \DecValTok{10}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{), }
+  \DataTypeTok{c =} \KeywordTok{sample}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\OtherTok{NA}\NormalTok{), }\DataTypeTok{size =} \DecValTok{10}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{), }
+  \DataTypeTok{d =} \KeywordTok{sample}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\OtherTok{NA}\NormalTok{), }\DataTypeTok{size =} \DecValTok{10}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{), }
+  \DataTypeTok{e =} \KeywordTok{sample}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\OtherTok{NA}\NormalTok{), }\DataTypeTok{size =} \DecValTok{10}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{)}
+\KeywordTok{print}\NormalTok{(myList)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $a
+##  [1] NA  3  3 NA  1  4  2  2  2 NA
+## 
+## $b
+##  [1]  2  1  3  5  1 NA  1  5  2  2
+## 
+## $c
+##  [1] NA NA NA  2  5  2  2  1  4  5
+## 
+## $d
+##  [1]  4  3  1  5  1  5  1 NA  1 NA
+## 
+## $e
+##  [1]  1  4  2 NA  3  3  3  2  3  2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lapply}\NormalTok{(myList, }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $a
+## [1] NA
+## 
+## $b
+## [1] NA
+## 
+## $c
+## [1] NA
+## 
+## $d
+## [1] NA
+## 
+## $e
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lapply}\NormalTok{(myList, }\DataTypeTok{FUN =}\NormalTok{ mean, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $a
+## [1] 2.428571
+## 
+## $b
+## [1] 2.444444
+## 
+## $c
+## [1] 3
+## 
+## $d
+## [1] 2.625
+## 
+## $e
+## [1] 2.555556
+\end{verbatim}
+
+Para mayor legibilidad o si se debemos realizar varias operaciones
+dentro del argumento \texttt{FUN}, podemos usar el siguiente script:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lapply}\NormalTok{(myList, }\DataTypeTok{FUN =} \ControlFlowTok{function}\NormalTok{(i)\{}
+  \KeywordTok{mean}\NormalTok{(i, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $a
+## [1] 2.428571
+## 
+## $b
+## [1] 2.444444
+## 
+## $c
+## [1] 3
+## 
+## $d
+## [1] 2.625
+## 
+## $e
+## [1] 2.555556
+\end{verbatim}
+
+Por ejemplo, si queremos obtener \texttt{i\^{}2} si el promedio es mayor
+que 3, y \texttt{i\^{}3} de lo contrario:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lapply}\NormalTok{(myList, }\DataTypeTok{FUN =} \ControlFlowTok{function}\NormalTok{(i)\{}
+\NormalTok{  m <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(i, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+  \ControlFlowTok{if}\NormalTok{(m }\OperatorTok{>}\StringTok{ }\DecValTok{3}\NormalTok{)\{}
+    \KeywordTok{return}\NormalTok{(i}\OperatorTok{^}\DecValTok{2}\NormalTok{)  }
+\NormalTok{  \}}\ControlFlowTok{else}\NormalTok{\{}
+    \KeywordTok{return}\NormalTok{(i}\OperatorTok{^}\DecValTok{3}\NormalTok{)}
+\NormalTok{  \}}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $a
+##  [1] NA 27 27 NA  1 64  8  8  8 NA
+## 
+## $b
+##  [1]   8   1  27 125   1  NA   1 125   8   8
+## 
+## $c
+##  [1]  NA  NA  NA   8 125   8   8   1  64 125
+## 
+## $d
+##  [1]  64  27   1 125   1 125   1  NA   1  NA
+## 
+## $e
+##  [1]  1 64  8 NA 27 27 27  8 27  8
+\end{verbatim}
+
+\subsection{\texorpdfstring{\texttt{sapply}}{sapply}}\label{l17lapply}
+
+La función \texttt{sapply()} es una versión modificada de la función
+\texttt{lapply()} que realiza la misma operación pero devuelve el
+resultado en un formato simplificado siempre que sea posible.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lapply}\NormalTok{(myList, }\DataTypeTok{FUN =} \ControlFlowTok{function}\NormalTok{(i)\{}
+  \KeywordTok{mean}\NormalTok{(i, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $a
+## [1] 2.428571
+## 
+## $b
+## [1] 2.444444
+## 
+## $c
+## [1] 3
+## 
+## $d
+## [1] 2.625
+## 
+## $e
+## [1] 2.555556
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sapply}\NormalTok{(myList, }\DataTypeTok{FUN =} \ControlFlowTok{function}\NormalTok{(i)\{}
+  \KeywordTok{mean}\NormalTok{(i, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        a        b        c        d        e 
+## 2.428571 2.444444 3.000000 2.625000 2.555556
+\end{verbatim}
+
+La función \texttt{sapply()} es interesante para recuperar, por ejemplo,
+el elemento ``n'' de cada elemento de una \texttt{list}. La función que
+se llama para hacer esto es
+\texttt{\textquotesingle{}{[}{[}\textquotesingle{}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sapply}\NormalTok{(myList, }\DataTypeTok{FUN =} \StringTok{'[['}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  a  b  c  d  e 
+##  3  1 NA  3  4
+\end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{tapply}}{tapply}}\label{l17tapply}
 
-XXX
+La función \texttt{tapply()} permite aplicar una función tomando como
+elemento para iterar una variable existente. Imaginamos información
+sobre especies representadas por letras mayúsculas (por ejemplo, A, B,
+C) y valores de mediciones biologicas en diferentes ubicaciones.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{species <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(LETTERS[}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{], }\DataTypeTok{size =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{perf1 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{10}\NormalTok{, }\DataTypeTok{sd =} \FloatTok{0.5}\NormalTok{)}
+\NormalTok{perf2 <-}\StringTok{ }\KeywordTok{rlnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{meanlog =} \DecValTok{10}\NormalTok{, }\DataTypeTok{sdlog =} \FloatTok{0.5}\NormalTok{)}
+\NormalTok{perf3 <-}\StringTok{ }\KeywordTok{rgamma}\NormalTok{(}\DataTypeTok{n =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{shape =} \DecValTok{10}\NormalTok{, }\DataTypeTok{rate =} \FloatTok{0.5}\NormalTok{)}
+\NormalTok{dfSpecies <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(species, perf1, perf2, perf3)}
+\KeywordTok{print}\NormalTok{(}\KeywordTok{head}\NormalTok{(dfSpecies, }\DataTypeTok{n =} \DecValTok{10}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    species     perf1     perf2     perf3
+## 1        C  9.769859  7809.974 21.308673
+## 2        G 10.092939 22384.092 22.270881
+## 3        E  9.667100 25256.128 35.728684
+## 4        B 10.420499 23168.027 20.224542
+## 5        H  9.620877 34565.111 17.877832
+## 6        I 10.017765 19461.840 37.863742
+## 7        F 10.109160 15746.024 16.292617
+## 8        F  9.816906 26938.823 25.146653
+## 9        H  9.387110 26180.966  9.761116
+## 10       C  9.833173 36435.397 18.213620
+\end{verbatim}
+
+Podemos obtener fácilmente un resumen de las mediciones para cada
+especie con la función \texttt{tapply()} y la función
+\texttt{summary()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tapply}\NormalTok{(dfSpecies}\OperatorTok{$}\NormalTok{perf1, }\DataTypeTok{INDEX =}\NormalTok{ dfSpecies}\OperatorTok{$}\NormalTok{species, }\DataTypeTok{FUN =}\NormalTok{ summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $A
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.631   9.655   9.931   9.956  10.250  11.470 
+## 
+## $B
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.914   9.665   9.992   9.999  10.303  11.388 
+## 
+## $C
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.935   9.534   9.965   9.947  10.314  11.260 
+## 
+## $D
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.738   9.673   9.945   9.999  10.357  11.386 
+## 
+## $E
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.990   9.757  10.036  10.073  10.396  11.192 
+## 
+## $F
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.877   9.634   9.946   9.940  10.199  11.275 
+## 
+## $G
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.622   9.871  10.093  10.102  10.393  11.012 
+## 
+## $H
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.807   9.608  10.062   9.992  10.384  11.176 
+## 
+## $I
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.534   9.748   9.998  10.037  10.391  11.438 
+## 
+## $J
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   8.847   9.703   9.994  10.040  10.385  11.151
+\end{verbatim}
+
+También podemos obtener el valor promedio de cada mediciones combinando
+una función \texttt{sapply()} con la función \texttt{tapply()} y usando
+la función \texttt{mean()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sapply}\NormalTok{(}\DecValTok{2}\OperatorTok{:}\DecValTok{4}\NormalTok{, }\DataTypeTok{FUN =} \ControlFlowTok{function}\NormalTok{(i)\{}
+  \KeywordTok{tapply}\NormalTok{(dfSpecies[,i], }\DataTypeTok{INDEX =}\NormalTok{ dfSpecies}\OperatorTok{$}\NormalTok{species, }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        [,1]     [,2]     [,3]
+## A  9.956223 24826.76 20.17741
+## B  9.998684 26256.78 19.27222
+## C  9.946963 24699.32 20.86902
+## D  9.998826 25497.63 19.23940
+## E 10.073068 25188.26 19.71412
+## F  9.939627 24683.98 20.36503
+## G 10.102419 25273.40 20.83069
+## H  9.992160 25935.02 19.32960
+## I 10.037219 24060.60 20.54914
+## J 10.039760 25483.06 19.63049
+\end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{mapply}}{mapply}}\label{l17mapply}
 
-XXX
+La función \texttt{mapply()} es una versión de la función
+\texttt{sapply()} que usa múltiples argumentos. Por ejemplo, si tenemos
+una lista de dos elementos \texttt{1:5} y \texttt{5:1} y queremos
+agregar \texttt{10} al primer elemento y \texttt{100} al segundo
+elemento:
 
-\subsection{\texorpdfstring{\texttt{rapply}}{rapply}}\label{l17rapply}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mapply}\NormalTok{(}\DataTypeTok{FUN =} \ControlFlowTok{function}\NormalTok{(i, j)\{i}\OperatorTok{+}\NormalTok{j\}, }\DataTypeTok{i =} \KeywordTok{list}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\DecValTok{5}\OperatorTok{:}\DecValTok{1}\NormalTok{), }\DataTypeTok{j =} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{100}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 
-XXX
-
-\subsection{\texorpdfstring{\texttt{vapply}}{vapply}}\label{l17vapply}
-
-XXX
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]   11  105
+## [2,]   12  104
+## [3,]   13  103
+## [4,]   14  102
+## [5,]   15  101
+\end{verbatim}
 
 \section{Conclusión}\label{conclusion-6}
 
@@ -9737,7 +10357,7 @@ especificando el formato de las fechas con la función \texttt{as.Date()}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-202-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-220-1.pdf}
 
 Podemos simplificar la información calculando únicamente las
 temperaturas mínimas, promedias, y máximas con la función
@@ -9760,7 +10380,7 @@ temperaturas mínimas, promedias, y máximas con la función
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-203-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-221-1.pdf}
 
 También podemos calcular la diferencia entre la temperatura máxima y la
 temperatura mínima (variación de temperatura diurna).
@@ -9774,7 +10394,7 @@ temperatura mínima (variación de temperatura diurna).
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-204-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-222-1.pdf}
 
 Otra posibilidad es de agrupar los datos para tener la temperatura
 promedia de un día con la función \texttt{aggregate()}.
@@ -9798,7 +10418,7 @@ promedia de un día con la función \texttt{aggregate()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-205-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-223-1.pdf}
 
 Tambien podemos calcular las temperaturas de los dias para cada mes.
 
@@ -9834,18 +10454,18 @@ Tambien podemos calcular las temperaturas de los dias para cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-1.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-2.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-3.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-4.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-5.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-6.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-7.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-8.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-9.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-10.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-11.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-12.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-3.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-4.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-5.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-6.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-7.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-8.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-9.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-10.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-11.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-224-12.pdf}
 
 O todo en un mismo grafico, y la variación de temperatura diurna para
 cada mes.
@@ -9873,7 +10493,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-207-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-225-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9898,7 +10518,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-207-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-225-2.pdf}
 
 
 \end{document}
