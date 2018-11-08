@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-10-19">
+<meta name="date" content="2018-11-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -324,13 +324,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>El directorio de trabajo por defecto se puede obtener con la función <a href="fonctions.html#l015getwd"><code>getwd()</code></a> y cambiar con la función <a href="fonctions.html#l015setwd"><code>setwd()</code></a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">oldWd &lt;-<span class="st"> </span><span class="kw">getwd</span>()
 <span class="kw">print</span>(oldWd)</code></pre></div>
-<pre><code>## [1] &quot;D:/GitHub/myRbook_SP&quot;</code></pre>
+<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;..&quot;</span>)
 <span class="kw">getwd</span>()</code></pre></div>
-<pre><code>## [1] &quot;D:/GitHub&quot;</code></pre>
+<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(oldWd)
 <span class="kw">getwd</span>()</code></pre></div>
-<pre><code>## [1] &quot;D:/GitHub/myRbook_SP&quot;</code></pre>
+<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP&quot;</code></pre>
 <p>Entonces tenemos cuatro opciones:</p>
 <ul>
 <li>podemos leer el contenido de un archivo indicando a R su ruta completa (limitacion para la reproducibilidad de los resultados)</li>

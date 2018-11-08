@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-10-19}
+    \date{2018-11-08}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -564,13 +564,9 @@ debe descargar R, y desde el más cercano a su ubicación geográfica),
 luego descargue el archivo \emph{base}. Los usuarios de Linux pueden
 preferir un \texttt{sudo\ apt-get\ install\ r-base}.
 
-\begin{rmdnote}
 El software R se puede descargar de muchos servidores CRAN
 (Comprehensive R Archive Network) de todo el mundo. Estos servidores se
-llaman espejos. La elección del espejo es manual. La información
-adicional como esta nota siempre estará representada con este pictograma
-\emph{información}.
-\end{rmdnote}
+llaman espejos. La elección del espejo es manual.
 
 \section{R como calculadora}\label{r-como-calculadora}
 
@@ -579,10 +575,7 @@ puede variar dependiendo de su sistema operativo (Figura
 \ref{fig:screenCapConsole}). Esta ventana se llama \emph{consola}.
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_rConsoleFR.png}
-\caption{\label{fig:screenCapConsole}Captura de pantalla de la consola R en
-Windows.\label{fig:screenCapConsole}}
+\includegraphics[width=7.53in]{myFigures/screencap_rConsoleFR} \caption{Captura de pantalla de la consola R en Windows.\label{fig:screenCapConsole}}\label{fig:screenCapConsole}
 \end{figure}
 
 La consola corresponde a la interfaz donde se interpretará el código, es
@@ -592,7 +585,6 @@ humanos. Esto es análogo a lo que sucede en una calculadora (Figura
 \ref{fig:screenCapConsoleCal}). Así es como se usará R más adelante en
 esta sección.
 
-\begin{rmdnote}
 A lo largo de este libro, los ejemplos del código R aparecerán sobre un
 fondo gris. Se pueden copiar y pegar directamente en la consola, aunque
 es mejor reproducir los ejemplos escribiéndolos en la consola (o más
@@ -600,13 +592,9 @@ adelante en los scripts) para una mejor comprensión del manejo del
 programa R. El resultado de lo que se envía en la consola también
 aparecerá en un fondo gris con \texttt{\#\#} delante del código para
 hacer la distinción entre el código y el resultado del código.
-\end{rmdnote}
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_rConsoleCalculatrice.png}
-\caption{\label{fig:screenCapConsoleCal}Captura de pantalla de la consola R
-al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}}
+\includegraphics[width=6.71in]{myFigures/screencap_rConsoleCalculatrice} \caption{Captura de pantalla de la consola R al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}}\label{fig:screenCapConsoleCal}
 \end{figure}
 
 \hypertarget{l011opari}{\subsection{Los operadores
@@ -779,15 +767,11 @@ el signo infinito está representado por \texttt{Inf}.
 ## [1] Inf
 \end{verbatim}
 
-\begin{rmdstyle}
-el \emph{estilo} del código es importante porque el código está
+El \emph{estilo} del código es importante porque el código está
 destinado a ser leído por nosotros y por otras personas. Para tener un
 estilo legible, se recomienda colocar espacios antes y después de los
 operadores aritméticos, excepto ``*'', ``/'' y ``\^{}'', aunque a veces
-es útil agregarlos como es el caso en nuestro ejemplos. La información
-sobre el \emph{estilo} siempre estará representada con este pictograma
-para que sea fácilmente identificable.
-\end{rmdstyle}
+es útil agregarlos como es el caso en nuestro ejemplos.
 
 \hypertarget{l011opcomp}{\subsection{Los operadores
 comparativos}\label{l011opcomp}}
@@ -887,10 +871,8 @@ Podemos combinar operadores aritméticos con operadores de comparación.
 ## [1] FALSE
 \end{verbatim}
 
-\begin{rmdstyle}
 En la comparación \texttt{(5\ +\ 8)\ \textgreater{}\ (3\ *\ 45/2)} no se
 necesitan paréntesis, pero permiten que el código sea más fácil de leer.
-\end{rmdstyle}
 
 Un operador de comparación particular es \emph{igual a}. Veremos en la
 siguiente sección que el signo \texttt{=} está reservado para otro uso:
@@ -1232,10 +1214,8 @@ separados por comas.
 ## [1] TRUE
 \end{verbatim}
 
-\begin{rmdstyle}
 Se recomienda que las comas \texttt{,} sean seguidas de un espacio para
 que el código sea más agradable de leer.
-\end{rmdstyle}
 
 \subsection{Ayuda a los operadores}\label{ayuda-a-los-operadores}
 
@@ -1294,14 +1274,12 @@ como \texttt{miVariable} o \texttt{miNumero}, asi que nombres como
 \texttt{a} o \texttt{b}. El objetivo es de tener una idea de lo que hay
 en cada objeto en base a su nombre.
 
-\begin{rmdstyle}
 Hay diferentes maneras de definir un nombre para los objetos que
 crearemos con R. En este libro, utilizamos el estilo
 \emph{lowerCamelCase}. Lo importante no es la elección del estilo, sino
 la consistencia en su elección. El objetivo es tener un código
 funcional, pero también un código que sea fácil y agradable de leer para
 nosotros y para los demás.
-\end{rmdstyle}
 
 Ahora que hemos elegido un nombre para nuestro objeto, debemos crearlo y
 hacer que R entienda que nuestro objeto debe contener el número 5. Hay
@@ -1473,13 +1451,11 @@ línea.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{rmdstyle}
 Todo lo que hay despues del simbolo numeral \texttt{\#} no sera
 ejecutado. Significa que podriamos usar comentarios como \texttt{\#\#\#}
 o \texttt{\#comentario}, aun que se recomienda hacer comentarios con un
 solo simbolo numeral seguido por un espacio y despues su comentario:
 \texttt{\#\ mi\ comentario}.
-\end{rmdstyle}
 
 Los comentarios también se pueden usar para hacer que una línea ya no se
 ejecute. En este caso no queremos ejecutar la secunda linea:
@@ -1521,11 +1497,9 @@ facilitar su lectura.
 ## [1] 78.53982
 \end{verbatim}
 
-\begin{rmdstyle}
 Para ir más allá en el estilo del código, una guía completa de
 recomendaciones está disponible en línea en el sitio web
 \emph{tidyverse} (en ingles ; \url{http://style.tidyverse.org/}).
-\end{rmdstyle}
 
 \subsection{Ejecutar un script}\label{ejecutar-un-script}
 
@@ -1588,9 +1562,7 @@ principiantes a R.
 \section{RStudio}\label{rstudio}
 
 \begin{figure}
-\centering
-\includegraphics{myLogos/RStudio.png}
-\caption{\label{fig:logoRStudio}Logo RStudio.\label{fig:logoRStudio}}
+\includegraphics[width=7.78in]{myLogos/RStudio} \caption{Logo RStudio.\label{fig:logoRStudio}}\label{fig:logoRStudio}
 \end{figure}
 
 \subsection{Instalar RStudio}\label{instalar-rstudio}
@@ -1621,10 +1593,7 @@ izquierdo de RStudio ahora está dividido en dos, con la consola en la
 parte inferior de la pantalla y el script en la parte superior.
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_RStudio_01.png}
-\caption{\label{fig:screenCapRStudio01}Captura de pantalla de RStudio en
-Windows: pantalla por defecto.\label{fig:screenCapRStudio01}}
+\includegraphics[width=10in]{myFigures/screencap_RStudio_01} \caption{Captura de pantalla de RStudio en Windows: pantalla por defecto.\label{fig:screenCapRStudio01}}\label{fig:screenCapRStudio01}
 \end{figure}
 
 Luego podemos comenzar a escribir nuestro script con los comentarios que
@@ -1658,11 +1627,7 @@ deseamos ejecutar y usamos la combinación de teclas
 \ref{fig:screenCapRStudio02}).
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_RStudio_02.png}
-\caption{\label{fig:screenCapRStudio02}Captura de pantalla de RStudio en
-Windows: ejecutar nuestro script con CTRL +
-ENTER.\label{fig:screenCapRStudio02}}
+\includegraphics[width=10in]{myFigures/screencap_RStudio_02} \caption{Captura de pantalla de RStudio en Windows: ejecutar nuestro script con CTRL + ENTER.\label{fig:screenCapRStudio02}}\label{fig:screenCapRStudio02}
 \end{figure}
 
 Podemos ver que, de forma predeterminada, en la parte del script, los
@@ -1680,11 +1645,7 @@ theme:}). Elegiremos el tema \emph{Cobalt}, luego \emph{OK} (Figura
 \ref{fig:screenCapRStudio03}).
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_RStudio_03.png}
-\caption{\label{fig:screenCapRStudio03}Captura de pantalla de RStudio en
-Windows: cambiar preferencias de
-sintaxis.\label{fig:screenCapRStudio03}}
+\includegraphics[width=10in]{myFigures/screencap_RStudio_03} \caption{Captura de pantalla de RStudio en Windows: cambiar preferencias de sintaxis.\label{fig:screenCapRStudio03}}\label{fig:screenCapRStudio03}
 \end{figure}
 
 Sabemos cómo crear un nuevo script, guardarlo, ejecutar su contenido y
@@ -1697,9 +1658,7 @@ misma manera, independientemente del entorno de desarrollo utilizado.
 \section{Notepad++ avec Npp2R}\label{notepad-avec-npp2r}
 
 \begin{figure}
-\centering
-\includegraphics{myLogos/Notepadpp.png}
-\caption{\label{fig:logoNotepad}Logo Notepad++\label{fig:logoNotepad}}
+\includegraphics[width=7.78in]{myLogos/Notepadpp} \caption{Logo Notepad++\label{fig:logoNotepad}}\label{fig:logoNotepad}
 \end{figure}
 
 \subsection{Instalar Notepad++ (solamente para
@@ -1726,10 +1685,7 @@ Al abrir por primera vez, Notepad++ muestra un archivo vacío \emph{new
 1} (Figura \ref{fig:screenCapNpp01}).
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_Npp_01.png}
-\caption{\label{fig:screenCapNpp01}Captura de pantalla de Notepad++ en
-Windows: pantalla por defecto.\label{fig:screenCapNpp01}}
+\includegraphics[width=10in]{myFigures/screencap_Npp_01} \caption{Captura de pantalla de Notepad++ en Windows: pantalla por defecto.\label{fig:screenCapNpp01}}\label{fig:screenCapNpp01}
 \end{figure}
 
 Como ya hemos creado un script para probarlo con RStudio, lo abriremos
@@ -1740,10 +1696,7 @@ luego \emph{R}, y de nuevo \emph{R}. Aparece el resaltado de sintaxis
 (Figura \ref{fig:screenCapNpp02}).
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_Npp_02.png}
-\caption{\label{fig:screenCapNpp02}Captura de pantalla de Notepad++ en
-Windows: ejecutar nuestro script con F8.\label{fig:screenCapNpp02}}
+\includegraphics[width=10in]{myFigures/screencap_Npp_02} \caption{Captura de pantalla de Notepad++ en Windows: ejecutar nuestro script con F8.\label{fig:screenCapNpp02}}\label{fig:screenCapNpp02}
 \end{figure}
 
 La ejecución del script solo se puede realizar si se está ejecutando
@@ -1757,10 +1710,7 @@ abrirá una nueva ventana con una consola que ejecuta las líneas deseadas
 (Figura \ref{fig:screenCapNpp03}).
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_Npp_03.png}
-\caption{\label{fig:screenCapNpp03}Captura de pantalla de Notepad++ en
-Windows: la consola con F8.\label{fig:screenCapNpp03}}
+\includegraphics[width=14.83in]{myFigures/screencap_Npp_03} \caption{Captura de pantalla de Notepad++ en Windows: la consola con F8.\label{fig:screenCapNpp03}}\label{fig:screenCapNpp03}
 \end{figure}
 
 Al igual que con RStudio, el resaltado de sintaxis se puede cambiar
@@ -1768,10 +1718,7 @@ desde el menú \emph{Configuración}, y se puede seleccionar un nuevo tema
 (por ejemplo, \emph{Solarized} en la Figura \ref{fig:screenCapNpp04})
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_Npp_04.png}
-\caption{\label{fig:screenCapNpp04}Captura de pantalla de Notepad++ en
-Windows con el tema Solarized.\label{fig:screenCapNpp04}}
+\includegraphics[width=10in]{myFigures/screencap_Npp_04} \caption{Captura de pantalla de Notepad++ en Windows con el tema Solarized.\label{fig:screenCapNpp04}}\label{fig:screenCapNpp04}
 \end{figure}
 
 Comparado con otros editores de texto, Notepad++ tiene la ventaja de ser
@@ -1781,9 +1728,7 @@ personalizar la escritura de códigos.
 \section{Geany}\label{geany}
 
 \begin{figure}
-\centering
-\includegraphics{myLogos/Geany.png}
-\caption{\label{fig:logoGeany}Logo Geany\label{fig:logoGeany}}
+\includegraphics[width=7.78in]{myLogos/Geany} \caption{Logo Geany\label{fig:logoGeany}}\label{fig:logoGeany}
 \end{figure}
 
 \subsection{Instalar Geany (para Linux, Mac OSX y
@@ -1801,20 +1746,14 @@ Al abrir por primera vez, como para RStudio y Notepad++, se crea un
 archivo vacío (Figura \ref{fig:screenCapGeany01}).
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_Geany_01.png}
-\caption{\label{fig:screenCapGeany01}Captura de pantalla de Geany en
-Windows: pantalla por defecto.\label{fig:screenCapGeany01}}
+\includegraphics[width=10in]{myFigures/screencap_Geany_01} \caption{Captura de pantalla de Geany en Windows: pantalla por defecto.\label{fig:screenCapGeany01}}\label{fig:screenCapGeany01}
 \end{figure}
 
 Podemos abrir nuestro script con \emph{Archivo}, \emph{Abrir} (Figura
 \ref{fig:screenCapGeany02}).
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_Geany_02.png}
-\caption{\label{fig:screenCapGeany02}Captura de pantalla de Geany en
-Windows: abrir un script.\label{fig:screenCapGeany02}}
+\includegraphics[width=10in]{myFigures/screencap_Geany_02} \caption{Captura de pantalla de Geany en Windows: abrir un script.\label{fig:screenCapGeany02}}\label{fig:screenCapGeany02}
 \end{figure}
 
 Para ejecutar nuestro script, la versión de Geany para Windows no tiene
@@ -1836,10 +1775,7 @@ cambiar a través del menú \emph{Ver}, \emph{cambiar Esquema del color
 screenCapGeany03)).
 
 \begin{figure}
-\centering
-\includegraphics{myFigures/screencap_Geany_03.png}
-\caption{\label{fig:screenCapGeany03}Captura de pantalla de Geany en
-Windows: cambiar esquema de color.\label{fig:screenCapGeany03}}
+\includegraphics[width=10in]{myFigures/screencap_Geany_03} \caption{Captura de pantalla de Geany en Windows: cambiar esquema de color.\label{fig:screenCapGeany03}}\label{fig:screenCapGeany03}
 \end{figure}
 
 \section{Otras soluciones}\label{otras-soluciones}
@@ -3752,7 +3688,6 @@ las \texttt{list}.
 ## [1] 1 1 2 3
 \end{verbatim}
 
-\begin{rmdstyle}
 Leer una larga línea de código como la línea para crear el objeto
 \texttt{bddInsect} resulta difícil porque la profundidad de los
 elementos solo se puede deducir de los paréntesis. Es por eso que vamos
@@ -3764,7 +3699,6 @@ presiona la tecla de tabulación. Volveremos al margen adicional con más
 detalles en el capítulo sobre \textbf{bucles}. Recordemos por el momento
 que si una línea de código es demasiado larga, podemos saltar de línea y
 usar el margen adicional. R leerá todo como una sola línea de código.
-\end{rmdstyle}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5528,12 +5462,10 @@ gracias a los paréntesis que la siguen en los cuales vamos a ingresar
 queremos transmitir a nuestra función para que realice la tarea que
 queremos lograr.
 
-\begin{rmdnote}
 Para funciones simples como \texttt{+}, los paréntesis han sido
 eliminados para que el código sea más fácil de leer, pero es una función
 que puede usarse con paréntesis si usamos el signo \texttt{+} entre
 comillas. Los argumentos son los números que queremos agregar.
-\end{rmdnote}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5680,12 +5612,10 @@ en la consola.
 ## row2  11  12  13
 \end{verbatim}
 
-\begin{rmdstyle}
 El nombre de los argumentos no es necesario para que una función sea
 interpretada correctamente por R. Sin embargo, es mejor usar
 explicitamente el nombre de los argumentos seguidos por el signo
 \texttt{=} para que el código sea más legible.
-\end{rmdstyle}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7356,7 +7286,7 @@ cómo importar y exportar datos.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "D:/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
 \end{verbatim}
 
 \hypertarget{l015setwd}{\subsection{\texorpdfstring{\texttt{setwd()}}{setwd()}}\label{l015setwd}}
@@ -7372,7 +7302,7 @@ trabajo (carpeta de trabajo).
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "D:/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
 \end{verbatim}
 
 \begin{Shaded}
@@ -7383,7 +7313,7 @@ trabajo (carpeta de trabajo).
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "D:/GitHub"
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub"
 \end{verbatim}
 
 \begin{Shaded}
@@ -7394,7 +7324,7 @@ trabajo (carpeta de trabajo).
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "D:/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{list.files()}}{list.files()}}\label{l015listfiles}
@@ -8042,7 +7972,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.18    0.00    0.19
+##    0.17    0.00    0.17
 \end{verbatim}
 
 \begin{Shaded}
@@ -8053,7 +7983,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.15    0.00    0.16
+##    0.19    0.00    0.19
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus
@@ -8188,12 +8118,12 @@ listar los paquetes disponibles en el CRAN en orden alfabético.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "abind"      "acepack"    "actuar"     "ade4"       "adehabitat"
-##  [6] "agricolae"  "AlgDesign"  "alr4"       "animation"  "ape"       
-## [11] "arm"        "arules"     "arulesViz"  "assertthat" "audio"     
-## [16] "babynames"  "backports"  "base64"     "base64enc"  "BDgraph"   
-## [21] "beanplot"   "BH"         "bibtex"     "bindr"      "bindrcpp"  
-## [26] "binom"      "bitops"     "biwavelet"  "bold"       "bookdown"
+##  [1] "abind"       "ade4"        "ape"         "assertthat"  "backports"  
+##  [6] "base64enc"   "BH"          "bindr"       "bindrcpp"    "bitops"     
+## [11] "bookdown"    "brew"        "broom"       "ca"          "callr"      
+## [16] "caret"       "cartography" "caTools"     "CircStats"   "classInt"   
+## [21] "cli"         "clipr"       "clisymbols"  "coda"        "colorRamps" 
+## [26] "colorspace"  "commonmark"  "cranlogs"    "crayon"      "crul"
 \end{verbatim}
 
 La función \texttt{pkgCheck()} asegura la \textbf{portabilidad} de
@@ -8279,7 +8209,7 @@ El directorio de trabajo por defecto se puede obtener con la función
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "D:/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
 \end{verbatim}
 
 \begin{Shaded}
@@ -8290,7 +8220,7 @@ El directorio de trabajo por defecto se puede obtener con la función
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "D:/GitHub"
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub"
 \end{verbatim}
 
 \begin{Shaded}
@@ -8301,7 +8231,7 @@ El directorio de trabajo por defecto se puede obtener con la función
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "D:/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
 \end{verbatim}
 
 Entonces tenemos cuatro opciones:
@@ -9010,12 +8940,12 @@ elementos de un objeto) y repetir una operación. Imaginamos un
 
 \begin{verbatim}
 ##      date01    date02
-## 1 10.119104 11.015289
-## 2 10.707931 10.435261
-## 3  7.200487  8.440011
-## 4  8.547124  7.698658
-## 5  8.308093 11.336124
-## 6 12.145005 10.137816
+## 1 11.342967 11.368269
+## 2  9.847625  8.422457
+## 3  9.521623  9.187815
+## 4  9.973029 11.778076
+## 5 10.335947  8.322898
+## 6 10.572509  9.135107
 \end{verbatim}
 
 Nos gustaría cuantificar la diferencia entre la primera y la segunda
@@ -9143,26 +9073,26 @@ para encontrar el número de líneas.
 
 \begin{verbatim}
 ##       date01    date02        dif isDifBig
-## 1  10.119104 11.015289 0.89618448    small
-## 2  10.707931 10.435261 0.27266948    small
-## 3   7.200487  8.440011 1.23952481    small
-## 4   8.547124  7.698658 0.84846587    small
-## 5   8.308093 11.336124 3.02803086      big
-## 6  12.145005 10.137816 2.00718913    small
-## 7   9.776098  9.699118 0.07697979    small
-## 8  10.638361 11.565158 0.92679718    small
-## 9  10.181798  9.557792 0.62400585    small
-## 10 10.781172  8.577222 2.20395015    small
-## 11 10.147611 11.024965 0.87735385    small
-## 12 10.748891  8.868038 1.88085278    small
-## 13 12.206486  9.106583 3.09990311      big
-## 14 10.691610  9.885840 0.80576988    small
-## 15 12.006144 10.207214 1.79892999    small
-## 16 10.212144  9.453890 0.75825435    small
-## 17  9.760097  7.638646 2.12145123    small
-## 18 10.393516  8.553690 1.83982666    small
-## 19  8.928595  8.427440 0.50115528    small
-## 20 10.319994  9.581486 0.73850887    small
+## 1  11.342967 11.368269 0.02530232    small
+## 2   9.847625  8.422457 1.42516751    small
+## 3   9.521623  9.187815 0.33380843    small
+## 4   9.973029 11.778076 1.80504757    small
+## 5  10.335947  8.322898 2.01304835    small
+## 6  10.572509  9.135107 1.43740224    small
+## 7  10.143942  8.804398 1.33954489    small
+## 8   8.772349 10.867625 2.09527573    small
+## 9  11.003543 10.602541 0.40100265    small
+## 10  8.543981  9.527808 0.98382717    small
+## 11 10.495352  9.534527 0.96082522    small
+## 12 11.141747 10.178285 0.96346181    small
+## 13  8.678136 11.864299 3.18616308      big
+## 14  9.681501 10.327468 0.64596642    small
+## 15  9.072755  9.583990 0.51123556    small
+## 16  9.730313 10.130342 0.40002859    small
+## 17 12.209843  9.484181 2.72566156    small
+## 18 11.094852  9.773696 1.32115616    small
+## 19 10.615735  9.030707 1.58502850    small
+## 20 11.920057 10.430950 1.48910750    small
 \end{verbatim}
 
 En la práctica, esta no es la mejor manera de realizar este ejercicio
@@ -9183,26 +9113,26 @@ en:
 
 \begin{verbatim}
 ##       date01    date02        dif isDifBig
-## 1  10.119104 11.015289 0.89618448    small
-## 2  10.707931 10.435261 0.27266948    small
-## 3   7.200487  8.440011 1.23952481    small
-## 4   8.547124  7.698658 0.84846587    small
-## 5   8.308093 11.336124 3.02803086      big
-## 6  12.145005 10.137816 2.00718913    small
-## 7   9.776098  9.699118 0.07697979    small
-## 8  10.638361 11.565158 0.92679718    small
-## 9  10.181798  9.557792 0.62400585    small
-## 10 10.781172  8.577222 2.20395015    small
-## 11 10.147611 11.024965 0.87735385    small
-## 12 10.748891  8.868038 1.88085278    small
-## 13 12.206486  9.106583 3.09990311      big
-## 14 10.691610  9.885840 0.80576988    small
-## 15 12.006144 10.207214 1.79892999    small
-## 16 10.212144  9.453890 0.75825435    small
-## 17  9.760097  7.638646 2.12145123    small
-## 18 10.393516  8.553690 1.83982666    small
-## 19  8.928595  8.427440 0.50115528    small
-## 20 10.319994  9.581486 0.73850887    small
+## 1  11.342967 11.368269 0.02530232    small
+## 2   9.847625  8.422457 1.42516751    small
+## 3   9.521623  9.187815 0.33380843    small
+## 4   9.973029 11.778076 1.80504757    small
+## 5  10.335947  8.322898 2.01304835    small
+## 6  10.572509  9.135107 1.43740224    small
+## 7  10.143942  8.804398 1.33954489    small
+## 8   8.772349 10.867625 2.09527573    small
+## 9  11.003543 10.602541 0.40100265    small
+## 10  8.543981  9.527808 0.98382717    small
+## 11 10.495352  9.534527 0.96082522    small
+## 12 11.141747 10.178285 0.96346181    small
+## 13  8.678136 11.864299 3.18616308      big
+## 14  9.681501 10.327468 0.64596642    small
+## 15  9.072755  9.583990 0.51123556    small
+## 16  9.730313 10.130342 0.40002859    small
+## 17 12.209843  9.484181 2.72566156    small
+## 18 11.094852  9.773696 1.32115616    small
+## 19 10.615735  9.030707 1.58502850    small
+## 20 11.920057 10.430950 1.48910750    small
 \end{verbatim}
 
 La mayoría de los ejemplos que se pueden encontrar en Internet sobre el
@@ -9282,7 +9212,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.552
+## [1] 3.488
 \end{verbatim}
 
 \begin{Shaded}
@@ -9293,7 +9223,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.515
+## [1] 3.492
 \end{verbatim}
 
 Es un buen ejercicio explorar los muchos ejemplos disponibles en
@@ -9318,12 +9248,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 556 646 574 474 317 370 544 534 639 538 531 477 405 555 556 548 496
-##  [18] 541 568 522 298 554 556 413 366 578 562 640 582 597 452 511 470 474
-##  [35] 561 496 443 497 554 567 578 498 649 436 675 336 432 377 672 509 419
-##  [52] 499 545 527 470 342 533 585 527 605 594 703 410 440 333 600 670 585
-##  [69] 625 568 634 511 666 643 518 507 539 358 332 554 558 499 524 531 376
-##  [86] 675 454 395 603 628 447 430 658 558 285 461 560 481 587 534
+##   [1] 386 330 500 531 566 640 532 539 482 530 573 420 454 369 387 379 526
+##  [18] 408 610 599 568 645 477 594 621 354 446 446 481 459 496 509 503 452
+##  [35] 534 563 694 370 488 611 323 447 460 526 557 425 425 483 623 531 669
+##  [52] 355 426 628 362 562 554 585 543 561 373 497 519 597 518 509 654 602
+##  [69] 584 680 455 578 385 526 494 347 555 505 532 471 585 414 559 575 374
+##  [86] 365 632 623 637 769 574 402 584 438 483 495 517 546 339 576
 \end{verbatim}
 
 \begin{Shaded}
@@ -9338,12 +9268,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 556 646 574 474 317 370 544 534 639 538 531 477 405 555 556 548 496
-##  [18] 541 568 522 298 554 556 413 366 578 562 640 582 597 452 511 470 474
-##  [35] 561 496 443 497 554 567 578 498 649 436 675 336 432 377 672 509 419
-##  [52] 499 545 527 470 342 533 585 527 605 594 703 410 440 333 600 670 585
-##  [69] 625 568 634 511 666 643 518 507 539 358 332 554 558 499 524 531 376
-##  [86] 675 454 395 603 628 447 430 658 558 285 461 560 481 587 534
+##   [1] 386 330 500 531 566 640 532 539 482 530 573 420 454 369 387 379 526
+##  [18] 408 610 599 568 645 477 594 621 354 446 446 481 459 496 509 503 452
+##  [35] 534 563 694 370 488 611 323 447 460 526 557 425 425 483 623 531 669
+##  [52] 355 426 628 362 562 554 585 543 561 373 497 519 597 518 509 654 602
+##  [69] 584 680 455 578 385 526 494 347 555 505 532 471 585 414 559 575 374
+##  [86] 365 632 623 637 769 574 402 584 438 483 495 517 546 339 576
 \end{verbatim}
 
 En conclusión, se recomienda no usar el bucle \texttt{for()} con R
@@ -9421,7 +9351,7 @@ pueda realizar fácilmente 35000 pruebas en 2 segundos):
 
 \begin{verbatim}
 ## [1] "Number found !"
-## [1] "And I have plenty of time left: 1.86 sec"
+## [1] "And I have plenty of time left: 1.67 sec"
 \end{verbatim}
 
 En este script generamos un número aleatorio para adivinar con la
@@ -9500,11 +9430,11 @@ para repetirlo cinco veces.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1.266
-## [1] 0.096
-## [1] 1.239
-## [1] 0.865
-## [1] 0.326
+## [1] 0.714
+## [1] 0.466
+## [1] 0.062
+## [1] 1.336
+## [1] 0.6
 \end{verbatim}
 
 Al igual que el bucle \texttt{while()}, el bucle \texttt{repeat()} no se
@@ -9807,7 +9737,7 @@ especificando el formato de las fechas con la función \texttt{as.Date()}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-213-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-202-1.pdf}
 
 Podemos simplificar la información calculando únicamente las
 temperaturas mínimas, promedias, y máximas con la función
@@ -9830,7 +9760,7 @@ temperaturas mínimas, promedias, y máximas con la función
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-214-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-203-1.pdf}
 
 También podemos calcular la diferencia entre la temperatura máxima y la
 temperatura mínima (variación de temperatura diurna).
@@ -9844,7 +9774,7 @@ temperatura mínima (variación de temperatura diurna).
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-215-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-204-1.pdf}
 
 Otra posibilidad es de agrupar los datos para tener la temperatura
 promedia de un día con la función \texttt{aggregate()}.
@@ -9868,7 +9798,7 @@ promedia de un día con la función \texttt{aggregate()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-216-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-205-1.pdf}
 
 Tambien podemos calcular las temperaturas de los dias para cada mes.
 
@@ -9904,18 +9834,18 @@ Tambien podemos calcular las temperaturas de los dias para cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-1.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-2.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-3.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-4.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-5.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-6.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-7.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-8.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-9.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-10.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-11.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-217-12.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-3.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-4.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-5.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-6.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-7.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-8.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-9.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-10.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-11.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-206-12.pdf}
 
 O todo en un mismo grafico, y la variación de temperatura diurna para
 cada mes.
@@ -9943,7 +9873,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-218-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-207-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9968,7 +9898,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-218-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-207-2.pdf}
 
 
 \end{document}

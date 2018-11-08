@@ -25,7 +25,7 @@
 <meta name="author" content="François Rebaudo">
 
 
-<meta name="date" content="2018-10-19">
+<meta name="date" content="2018-11-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -311,29 +311,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="instalar-r" class="section level2">
 <h2><span class="header-section-number">5.1</span> Instalar R</h2>
 <p>El programa para instalar el software R se puede descargar desde el sitio web de R: <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>. En el sitio web de R, primero es necesario elegir un espejo CRAN (servidor desde el cual se debe descargar R, y desde el más cercano a su ubicación geográfica), luego descargue el archivo <em>base</em>. Los usuarios de Linux pueden preferir un <code>sudo apt-get install r-base</code>.</p>
-<div class="rmdnote">
-<p>
-El software R se puede descargar de muchos servidores CRAN (Comprehensive R Archive Network) de todo el mundo. Estos servidores se llaman espejos. La elección del espejo es manual. La información adicional como esta nota siempre estará representada con este pictograma <em>información</em>.
-</p>
-</div>
+<p>El software R se puede descargar de muchos servidores CRAN (Comprehensive R Archive Network) de todo el mundo. Estos servidores se llaman espejos. La elección del espejo es manual.</p>
 </div>
 <div id="r-como-calculadora" class="section level2">
 <h2><span class="header-section-number">5.2</span> R como calculadora</h2>
 <p>Una vez que se inicia el programa, aparece una ventana cuya apariencia puede variar dependiendo de su sistema operativo (Figura <a href="premiersPas.html#fig:screenCapConsole">5.1</a>). Esta ventana se llama <em>consola</em>.</p>
 <div class="figure"><span id="fig:screenCapConsole"></span>
-<img src="myFigures/screencap_rConsoleFR.png" alt="Captura de pantalla de la consola R en Windows.\label{fig:screenCapConsole}"  />
+<img src="myFigures/screencap_rConsoleFR.png" alt="Captura de pantalla de la consola R en Windows.\label{fig:screenCapConsole}" width="271" />
 <p class="caption">
 Figure 5.1: Captura de pantalla de la consola R en Windows.
 </p>
 </div>
 <p>La consola corresponde a la interfaz donde se interpretará el código, es decir, donde el código será transformado en lenguaje de máquina, ejecutado por la computadora y retransmitido en forma legible por humanos. Esto es análogo a lo que sucede en una calculadora (Figura <a href="premiersPas.html#fig:screenCapConsoleCal">5.2</a>). Así es como se usará R más adelante en esta sección.</p>
-<div class="rmdnote">
-<p>
-A lo largo de este libro, los ejemplos del código R aparecerán sobre un fondo gris. Se pueden copiar y pegar directamente en la consola, aunque es mejor reproducir los ejemplos escribiéndolos en la consola (o más adelante en los scripts) para una mejor comprensión del manejo del programa R. El resultado de lo que se envía en la consola también aparecerá en un fondo gris con <code>##</code> delante del código para hacer la distinción entre el código y el resultado del código.
-</p>
-</div>
+<p>A lo largo de este libro, los ejemplos del código R aparecerán sobre un fondo gris. Se pueden copiar y pegar directamente en la consola, aunque es mejor reproducir los ejemplos escribiéndolos en la consola (o más adelante en los scripts) para una mejor comprensión del manejo del programa R. El resultado de lo que se envía en la consola también aparecerá en un fondo gris con <code>##</code> delante del código para hacer la distinción entre el código y el resultado del código.</p>
 <div class="figure"><span id="fig:screenCapConsoleCal"></span>
-<img src="myFigures/screencap_rConsoleCalculatrice.png" alt="Captura de pantalla de la consola R al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}"  />
+<img src="myFigures/screencap_rConsoleCalculatrice.png" alt="Captura de pantalla de la consola R al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}" width="242" />
 <p class="caption">
 Figure 5.2: Captura de pantalla de la consola R al lado de la calculadora de Windows.
 </p>
@@ -407,11 +399,7 @@ Figure 5.2: Captura de pantalla de la consola R al lado de la calculadora de Win
 <pre><code>## [1] 78.53982</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">/</span><span class="dv">0</span></code></pre></div>
 <pre><code>## [1] Inf</code></pre>
-<div class="rmdstyle">
-<p>
-el <em>estilo</em> del código es importante porque el código está destinado a ser leído por nosotros y por otras personas. Para tener un estilo legible, se recomienda colocar espacios antes y después de los operadores aritméticos, excepto “*“,”/&quot; y “^”, aunque a veces es útil agregarlos como es el caso en nuestro ejemplos. La información sobre el <em>estilo</em> siempre estará representada con este pictograma para que sea fácilmente identificable.
-</p>
-</div>
+<p>El <em>estilo</em> del código es importante porque el código está destinado a ser leído por nosotros y por otras personas. Para tener un estilo legible, se recomienda colocar espacios antes y después de los operadores aritméticos, excepto “*”, “/” y “^”, aunque a veces es útil agregarlos como es el caso en nuestro ejemplos.</p>
 </div>
 <div id="l011opcomp" class="section level3">
 <h3><span class="header-section-number">5.2.2</span> Los operadores comparativos</h3>
@@ -466,11 +454,7 @@ el <em>estilo</em> del código es importante porque el código está destinado a
 <p>Podemos combinar operadores aritméticos con operadores de comparación.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">8</span>) <span class="op">&gt;</span><span class="st"> </span>(<span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">45</span><span class="op">/</span><span class="dv">2</span>) </code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="rmdstyle">
-<p>
-En la comparación <code>(5 + 8) &gt; (3 * 45/2)</code> no se necesitan paréntesis, pero permiten que el código sea más fácil de leer.
-</p>
-</div>
+<p>En la comparación <code>(5 + 8) &gt; (3 * 45/2)</code> no se necesitan paréntesis, pero permiten que el código sea más fácil de leer.</p>
 <p>Un operador de comparación particular es <em>igual a</em>. Veremos en la siguiente sección que el signo <code>=</code> está reservado para otro uso: permite asignar un valor a un objeto. El operador de comparación <em>igual a</em> debe ser diferente, por eso R usa <code>==</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">42</span> <span class="op">==</span><span class="st"> </span><span class="dv">53</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
@@ -565,11 +549,7 @@ En la comparación <code>(5 + 8) &gt; (3 * 45/2)</code> no se necesitan parénte
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xor</span>((<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span>) <span class="op">==</span><span class="st"> </span><span class="dv">5</span>, (<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span>) <span class="op">==</span><span class="st"> </span><span class="dv">6</span>)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="rmdstyle">
-<p>
-Se recomienda que las comas <code>,</code> sean seguidas de un espacio para que el código sea más agradable de leer.
-</p>
-</div>
+<p>Se recomienda que las comas <code>,</code> sean seguidas de un espacio para que el código sea más agradable de leer.</p>
 </div>
 <div id="ayuda-a-los-operadores" class="section level3">
 <h3><span class="header-section-number">5.2.4</span> Ayuda a los operadores</h3>
@@ -587,11 +567,7 @@ Se recomienda que las comas <code>,</code> sean seguidas de un espacio para que 
 <li>el estilo <em>UpperCamelCase</em> donde cada palabra comienza con una letra mayúscula: <code>NbrRep</code></li>
 </ul>
 <p>Todas estas formas de nombrar un objeto son equivalentes. En este libro usaremos el estilo <em>lowerCamelCase</em>. En general, debemos evitar los nombres que son demasiado largos, como <code>miNumeroDeRepeticionesDeMiExperimento</code> o demasiado cortos como <code>nR</code>, y los nombres que no permiten identificar los contenidos como <code>miVariable</code> o <code>miNumero</code>, asi que nombres como <code>a</code> o <code>b</code>. El objetivo es de tener una idea de lo que hay en cada objeto en base a su nombre.</p>
-<div class="rmdstyle">
-<p>
-Hay diferentes maneras de definir un nombre para los objetos que crearemos con R. En este libro, utilizamos el estilo <em>lowerCamelCase</em>. Lo importante no es la elección del estilo, sino la consistencia en su elección. El objetivo es tener un código funcional, pero también un código que sea fácil y agradable de leer para nosotros y para los demás.
-</p>
-</div>
+<p>Hay diferentes maneras de definir un nombre para los objetos que crearemos con R. En este libro, utilizamos el estilo <em>lowerCamelCase</em>. Lo importante no es la elección del estilo, sino la consistencia en su elección. El objetivo es tener un código funcional, pero también un código que sea fácil y agradable de leer para nosotros y para los demás.</p>
 <p>Ahora que hemos elegido un nombre para nuestro objeto, debemos crearlo y hacer que R entienda que nuestro objeto debe contener el número 5. Hay tres maneras de crear un objeto bajo R:</p>
 <ul>
 <li>con <code>&lt;-</code></li>
@@ -636,11 +612,7 @@ termino01 <span class="op">/</span><span class="st"> </span>termino02</code></pr
 <p>Para crear un nuevo script basta con abrir un documento vacío de texto, que será editado por un editor de texto como el bloc de notas en Windows o Mac OSX, o Gedit o incluso nano en Linux. Por convención, este archivo toma la extensión “.r” o “.R” (lo mas comun). Esta última convención se usará en este libro (<em>“miArchivo.R”</em>). Desde la interfaz gráfica de R, es posible crear un nuevo script en Mac OS y Windows a través de <em>file</em>, luego <em>new script</em> y <em>save as</em>. Al igual que el nombre de los objetos, el nombre del script es importante para que podamos identificar fácilmente su contenido. Por ejemplo, podríamos crear un archivo <code>formRConceptsBase.R</code> que contenga los objetos que acabamos de crear y los cálculos que hicimos. Pero incluso con nombres de objetos y archivos bien definidos, será difícil recordar el significado de este archivo sin la documentación que acompaña a este script. Para documentar un script utilizaremos <em>comentarios</em>. Los <em>comentarios</em> son elementos que R identificará como tales y no se ejecutarán. Para especificar a R que vamos a hacer un <em>comentario</em>, debemos usar el carácter octothorpe (corsé o numeral) <code>#</code>. Los comentarios se pueden insertar en una nueva línea o al final de la línea.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># creación objeto número de repeticiones</span>
 nbrRep &lt;-<span class="st"> </span><span class="dv">5</span> <span class="co"># Comentario de fin de línea</span></code></pre></div>
-<div class="rmdstyle">
-<p>
-Todo lo que hay despues del simbolo numeral <code>#</code> no sera ejecutado. Significa que podriamos usar comentarios como <code>###</code> o <code>#comentario</code>, aun que se recomienda hacer comentarios con un solo simbolo numeral seguido por un espacio y despues su comentario: <code># mi comentario</code>.
-</p>
-</div>
+<p>Todo lo que hay despues del simbolo numeral <code>#</code> no sera ejecutado. Significa que podriamos usar comentarios como <code>###</code> o <code>#comentario</code>, aun que se recomienda hacer comentarios con un solo simbolo numeral seguido por un espacio y despues su comentario: <code># mi comentario</code>.</p>
 <p>Los comentarios también se pueden usar para hacer que una línea ya no se ejecute. En este caso no queremos ejecutar la secunda linea:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nbrRep &lt;-<span class="st"> </span><span class="dv">5</span>
 <span class="co"># nbrRep + 5</span></code></pre></div>
@@ -662,11 +634,7 @@ nbrRep &lt;-<span class="st"> </span><span class="dv">5</span>
 
 pi <span class="op">*</span><span class="st"> </span>nbrRep<span class="op">^</span><span class="dv">2</span></code></pre></div>
 <pre><code>## [1] 78.53982</code></pre>
-<div class="rmdstyle">
-<p>
-Para ir más allá en el estilo del código, una guía completa de recomendaciones está disponible en línea en el sitio web <em>tidyverse</em> (en ingles ; <a href="http://style.tidyverse.org/" class="uri">http://style.tidyverse.org/</a>).
-</p>
-</div>
+<p>Para ir más allá en el estilo del código, una guía completa de recomendaciones está disponible en línea en el sitio web <em>tidyverse</em> (en ingles ; <a href="http://style.tidyverse.org/" class="uri">http://style.tidyverse.org/</a>).</p>
 </div>
 <div id="ejecutar-un-script" class="section level3">
 <h3><span class="header-section-number">5.4.2</span> Ejecutar un script</h3>
