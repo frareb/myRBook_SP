@@ -23,6 +23,11 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
 Últimas modificaciones:
 
+**08/11/2018**
+
+* algorítmico (5/6) [`next` y `break`](#l17spe)
+* algorítmico (6/6) [Los bucles de la familia `apply`](#l17applyfamily)
+
 **19/10/2018**
 
 * algorítmico (3/6) [el bucle `for`](#l17for)
@@ -112,4 +117,4 @@ for(i in seq_along(contrib[, 2])){
 for(i in msg){cat(i, sep = "")}
 ```
 
-Las versiones de gitbook, html y epub de este libro usan los iconos de fuente abierta de Font Awesome (https://fontawesome.com). La versión en PDF utiliza los iconos del proyecto Tango disponibles en openclipart (https://openclipart.org/). Este libro fue escrito con el paquete R bookdown (https://bookdown.org/). El código fuente está disponible en GitHub (https://github.com/frareb/myRBook_SP). La compilación usa Travis CI (https://travis-ci.org). La versión en línea se aloja y actualiza a través de Netlify (http://myrbooksp.netlify.com/).
+Las versiones de gitbook, html y epub de este libro usan los iconos de fuente abierta de Font Awesome (https://fontawesome.com). La versión en PDF utiliza los iconos del proyecto Tango disponibles en openclipart (https://openclipart.org/). Este libro fue escrito con el paquete R bookdown (https://bookdown.org/). El código fuente está disponible en GitHub (https://github.com/frareb/myRBook_SP). La versión en línea se aloja y actualiza a través de Netlify (http://netlify.com/).

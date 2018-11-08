@@ -407,39 +407,190 @@ repeat{
 
 Al igual que el bucle `while()`, el bucle `repeat()` no se usa mucho con R.
 
-## `next`, `break`, `stop` {#l17spe}
+## `next` y `break` {#l17spe}
 
-XXX
+Ya hemos visto la palabra clave `break` que permite salir del bucle actual. Por ejemplo, si buscamos el primer dígito después de 111 que es divisible por 32:
+
+```{r}
+myVars <- 111:1000
+for(myVar in myVars){
+  if(myVar %% 32 == 0){
+    print(myVar)
+    break
+  }
+}
+```
+
+Aunque hemos visto que en la práctica podemos evitar el bucle `for()` con una operación vectorial:
+
+```{r}
+(111:1000)[111:1000 %% 32 == 0][1]
+```
+
+La palabra clave `next` permite pasar a la siguiente iteración de un bucle si se cumple una determinada condición. Por ejemplo, si queremos imprimir las letras del alfabeto sin las vocales:
+
+```{r}
+for(myLetter in letters){
+  if(myLetter %in% c("a", "e", "i", "o", "u", "y")){
+    next
+  }
+  print(myLetter)
+}
+```
+
+De nuevo podimos evitar el bucle `for()` con:
+
+```{r}
+letters[! letters %in% c("a", "e", "i", "o", "u", "y")]
+```
+
+En conclusión, si usamos bucles, las palabras clave `next` y `break` suelen ser muy útiles, pero siempre que sea posible es mejor usar operaciones vectoriales. Cuando no es posible trabajar con vectores, es mejor usar los bucles del tipo `apply` que son el tema de la siguiente sección.
 
 ## Los bucles de la familia `apply` {#l17applyfamily}
 
 ### `apply` {#l17apply}
 
-XXX
+La función `apply()` permite aplicar una función a todos los elementos de un `array` o un `matrix`. Por ejemplo, si queremos saber la suma de cada fila de una `matriz` de 10 columnas y 100 líneas:
 
-### `sapply` {#l17sapply}
+```{r}
+myMat <- matrix(sample(1:100, size = 1000, replace = TRUE), ncol = 10)
+apply(X = myMat, MARGIN = 1, FUN = sum)
+```
 
-XXX
+Si queremos saber la mediana de cada columna, la expresión se convierte en:
 
-### `lapply` {#l17lapply}
+```{r}
+apply(X = myMat, MARGIN = 2, FUN = median)
+```
 
-XXX
+El argumento `X` es el objeto en el que el bucle `apply` se repetirá. El argumento `MARGEN` corresponde a la dimensión a tener en cuenta (1 para las filas y 2 para las columnas). El argumento `FUN` es la función a aplicar. En un objeto `array`, el argumento `MARGIN` puede tomar tantos valores como dimensiones. En este ejemplo, `MARGIN = 1` es el promedio de cada fila - dimensión 1 - (todas las dimensiones combinadas), `MARGIN = 2` es el promedio de cada columna - dimensión 2 - (todas las dimensiones combinadas), y `MARGEN = 3` es el promedio de cada dimensión 3. Debajo cada cálculo se realiza de dos maneras diferentes para explicar su operación.
+
+```{r}
+myArr <- array(sample(1:100, size = 1000, replace = TRUE), dim = c(10, 20, 5))
+apply(X = myArr, MARGIN = 1, FUN = mean)
+(apply(myArr[,,1], 1, mean) + apply(myArr[,,2], 1, mean) + 
+  apply(myArr[,,3], 1, mean) + apply(myArr[,,4], 1, mean) + 
+  apply(myArr[,,5], 1, mean))/5
+apply(X = myArr, MARGIN = 2, FUN = mean)
+(apply(myArr[,,1], 2, mean) + apply(myArr[,,2], 2, mean) + 
+  apply(myArr[,,3], 2, mean) + apply(myArr[,,4], 2, mean) + 
+  apply(myArr[,,5], 2, mean))/5
+apply(X = myArr, MARGIN = 3, FUN = mean)
+c(mean(myArr[,,1]), mean(myArr[,,2]), mean(myArr[,,3]), 
+  mean(myArr[,,4]), mean(myArr[,,5]))
+```
+
+También podemos calcular el promedio de cada fila y valor de columna (la función luego itera en la dimensión 3):
+
+```{r}
+apply(X = myArr, MARGIN = c(1, 2), FUN = mean)
+```
+
+### `lapply` {#l17sapply}
+
+Como se indica en la documentación, `lapply()` devuelve una lista de la misma longitud que `X`, y cada elemento resulta de la aplicación `FUN` al elemento `X` correspondiente. Si `X` es una `list` que contiene `vector` y estamos tratando de obtener el promedio de cada elemento de `list`, podemos usar la función `lapply()`:
+
+```{r}
+myList <- list(
+  a = sample(1:100, size = 10), 
+  b = sample(1:100, size = 10), 
+  c = sample(1:100, size = 10), 
+  d = sample(1:100, size = 10), 
+  e = sample(1:100, size = 10)
+)
+print(myList)
+lapply(myList, FUN = mean)
+```
+
+Al igual que con la función `apply()`, podemos pasar argumentos adicionales a la función `lapply()` agregándolos después de la función. Esto es útil, por ejemplo, si nuestra `list` contiene estos valores faltantes `NA` y queremos ignorarlos para calcular los promedios (con el argumento `na.rm = TRUE`).
+
+```{r}
+myList <- list(
+  a = sample(c(1:5, NA), size = 10, replace = TRUE), 
+  b = sample(c(1:5, NA), size = 10, replace = TRUE), 
+  c = sample(c(1:5, NA), size = 10, replace = TRUE), 
+  d = sample(c(1:5, NA), size = 10, replace = TRUE), 
+  e = sample(c(1:5, NA), size = 10, replace = TRUE)
+)
+print(myList)
+lapply(myList, FUN = mean)
+lapply(myList, FUN = mean, na.rm = TRUE)
+```
+
+Para mayor legibilidad o si se debemos realizar varias operaciones dentro del argumento `FUN`, podemos usar el siguiente script:
+
+```{r}
+lapply(myList, FUN = function(i){
+  mean(i, na.rm = TRUE)
+})
+```
+
+Por ejemplo, si queremos obtener `i^2` si el promedio es mayor que 3, y `i^3` de lo contrario:
+
+```{r}
+lapply(myList, FUN = function(i){
+  m <- mean(i, na.rm = TRUE)
+  if(m > 3){
+    return(i^2)  
+  }else{
+    return(i^3)
+  }
+})
+```
+
+### `sapply` {#l17lapply}
+
+La función `sapply()` es una versión modificada de la función `lapply()` que realiza la misma operación pero devuelve el resultado en un formato simplificado siempre que sea posible.
+
+```{r}
+lapply(myList, FUN = function(i){
+  mean(i, na.rm = TRUE)
+})
+sapply(myList, FUN = function(i){
+  mean(i, na.rm = TRUE)
+})
+```
+
+La función `sapply()` es interesante para recuperar, por ejemplo, el elemento "n" de cada elemento de una `list`. La función que se llama para hacer esto es `'[['`.
+
+```{r}
+sapply(myList, FUN = '[[', 2)
+```
 
 ### `tapply` {#l17tapply}
 
-XXX
+La función `tapply()` permite aplicar una función tomando como elemento para iterar una variable existente. Imaginamos información sobre especies representadas por letras mayúsculas (por ejemplo, A, B, C) y valores de mediciones biologicas en diferentes ubicaciones.
+
+```{r}
+species <- sample(LETTERS[1:10], size = 1000, replace = TRUE)
+perf1 <- rnorm(n = 1000, mean = 10, sd = 0.5)
+perf2 <- rlnorm(n = 1000, meanlog = 10, sdlog = 0.5)
+perf3 <- rgamma(n = 1000, shape = 10, rate = 0.5)
+dfSpecies <- data.frame(species, perf1, perf2, perf3)
+print(head(dfSpecies, n = 10))
+```
+
+Podemos obtener fácilmente un resumen de las mediciones para cada especie con la función `tapply()` y la función `summary()`.
+
+```{r}
+tapply(dfSpecies$perf1, INDEX = dfSpecies$species, FUN = summary)
+```
+
+También podemos obtener el valor promedio de cada mediciones combinando una función `sapply()` con la función `tapply()` y usando la función `mean()`.
+
+```{r}
+sapply(2:4, FUN = function(i){
+  tapply(dfSpecies[,i], INDEX = dfSpecies$species, FUN = mean)
+})
+```
 
 ### `mapply` {#l17mapply}
 
-XXX
+La función `mapply()` es una versión de la función `sapply()` que usa múltiples argumentos. Por ejemplo, si tenemos una lista de dos elementos `1:5` y `5:1` y queremos agregar `10` al primer elemento y `100` al segundo elemento:
 
-### `rapply` {#l17rapply}
-
-XXX
-
-### `vapply` {#l17vapply}
-
-XXX
+```{r}
+mapply(FUN = function(i, j){i+j}, i = list(1:5, 5:1), j = c(10, 100))
+```
 
 ## Conclusión
 
