@@ -6,9 +6,7 @@
 
 El programa para instalar el software R se puede descargar desde el sitio web de R: https://www.r-project.org/. En el sitio web de R, primero es necesario elegir un espejo CRAN (servidor desde el cual se debe descargar R, y desde el más cercano a su ubicación geográfica), luego descargue el archivo *base*. Los usuarios de Linux pueden preferir un `sudo apt-get install r-base`. 
 
-```{block, type='rmdnote'}
-El software R se puede descargar de muchos servidores CRAN (Comprehensive R Archive Network) de todo el mundo. Estos servidores se llaman espejos. La elección del espejo es manual. La información adicional como esta nota siempre estará representada con este pictograma *información*.
-```
+El software R se puede descargar de muchos servidores CRAN (Comprehensive R Archive Network) de todo el mundo. Estos servidores se llaman espejos. La elección del espejo es manual. 
 
 ## R como calculadora
 
@@ -20,9 +18,7 @@ knitr::include_graphics("myFigures/screencap_rConsoleFR.png")
 
 La consola corresponde a la interfaz donde se interpretará el código, es decir, donde el código será transformado en lenguaje de máquina, ejecutado por la computadora y retransmitido en forma legible por humanos. Esto es análogo a lo que sucede en una calculadora (Figura \@ref(fig:screenCapConsoleCal)). Así es como se usará R más adelante en esta sección.
 
-```{block, type='rmdnote'}
 A lo largo de este libro, los ejemplos del código R aparecerán sobre un fondo gris. Se pueden copiar y pegar directamente en la consola, aunque es mejor reproducir los ejemplos escribiéndolos en la consola (o más adelante en los scripts) para una mejor comprensión del manejo del programa R. El resultado de lo que se envía en la consola también aparecerá en un fondo gris con `##` delante del código para hacer la distinción entre el código y el resultado del código.
-```
 
 
 ```{r screenCapConsoleCal, fig.cap = "Captura de pantalla de la consola R al lado de la calculadora de Windows.\\label{fig:screenCapConsoleCal}", echo = FALSE}
@@ -71,9 +67,7 @@ pi * 5^2
 1/0
 ```
 
-```{block, type='rmdstyle'}
-el *estilo* del código es importante porque el código está destinado a ser leído por nosotros y por otras personas. Para tener un estilo legible, se recomienda colocar espacios antes y después de los operadores aritméticos, excepto "\*", "/" y "^", aunque a veces es útil agregarlos como es el caso en nuestro ejemplos. La información sobre el *estilo* siempre estará representada con este pictograma para que sea fácilmente identificable.
-```
+El *estilo* del código es importante porque el código está destinado a ser leído por nosotros y por otras personas. Para tener un estilo legible, se recomienda colocar espacios antes y después de los operadores aritméticos, excepto "\*", "/" y "^", aunque a veces es útil agregarlos como es el caso en nuestro ejemplos.
 
 ### Los operadores comparativos {#l011opcomp}
 
@@ -106,9 +100,7 @@ Podemos combinar operadores aritméticos con operadores de comparación.
 (5 + 8) > (3 * 45/2) 
 ```
 
-```{block, type='rmdstyle'}
 En la comparación `(5 + 8) > (3 * 45/2)` no se necesitan paréntesis, pero permiten que el código sea más fácil de leer.
-```
 
 Un operador de comparación particular es *igual a*. Veremos en la siguiente sección que el signo `=` está reservado para otro uso: permite asignar un valor a un objeto. El operador de comparación *igual a* debe ser diferente, por eso R usa `==`.
 
@@ -180,9 +172,7 @@ xor((3 + 3) == 5, (3 + 2) == 6)
 xor((3 + 3) == 5, (3 + 3) == 6)
 ```
 
-```{block, type='rmdstyle'}
 Se recomienda que las comas `,` sean seguidas de un espacio para que el código sea más agradable de leer.
-```
 
 ### Ayuda a los operadores
 
@@ -200,9 +190,7 @@ Un aspecto importante de la programación con R, pero también la programación 
 
 Todas estas formas de nombrar un objeto son equivalentes. En este libro usaremos el estilo *lowerCamelCase*. En general, debemos evitar los nombres que son demasiado largos, como `miNumeroDeRepeticionesDeMiExperimento` o demasiado cortos como `nR`, y los nombres que no permiten identificar los contenidos como `miVariable` o `miNumero`, asi que nombres como `a` o `b`. El objetivo es de tener una idea de lo que hay en cada objeto en base a su nombre.
 
-```{block, type='rmdstyle'}
 Hay diferentes maneras de definir un nombre para los objetos que crearemos con R. En este libro, utilizamos el estilo *lowerCamelCase*. Lo importante no es la elección del estilo, sino la consistencia en su elección. El objetivo es tener un código funcional, pero también un código que sea fácil y agradable de leer para nosotros y para los demás.
-```
 
 Ahora que hemos elegido un nombre para nuestro objeto, debemos crearlo y hacer que R entienda que nuestro objeto debe contener el número 5. Hay tres maneras de crear un objeto bajo R:
 
@@ -264,9 +252,7 @@ Al igual que el nombre de los objetos, el nombre del script es importante para q
 nbrRep <- 5 # Comentario de fin de línea
 ```
 
-```{block, type='rmdstyle'}
 Todo lo que hay despues del simbolo numeral `#` no sera ejecutado. Significa que podriamos usar comentarios como `###` o `#comentario`, aun que se recomienda hacer comentarios con un solo simbolo numeral seguido por un espacio y despues su comentario: `# mi comentario`.
-```
 
 Los comentarios también se pueden usar para hacer que una línea ya no se ejecute. En este caso no queremos ejecutar la secunda linea: 
 
@@ -296,9 +282,7 @@ nbrRep <- 5
 pi * nbrRep^2
 ```
 
-```{block, type='rmdstyle'}
 Para ir más allá en el estilo del código, una guía completa de recomendaciones está disponible en línea en el sitio web *tidyverse* (en ingles ; http://style.tidyverse.org/). 
-```
 
 ### Ejecutar un script
 

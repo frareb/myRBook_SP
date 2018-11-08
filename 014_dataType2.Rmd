@@ -263,9 +263,7 @@ bddInsect <- list(Snonagrioides = list(site01 = c(12, 5, 8, 7), site02 = c(5, 23
 print(bddInsect)
 ```
 
-```{block, type='rmdstyle'}
 Leer una larga línea de código como la línea para crear el objeto `bddInsect` resulta difícil porque la profundidad de los elementos solo se puede deducir de los paréntesis. Es por eso que vamos a reorganizar el código para que sea más legible mediante el **margen adicional**. El margen adicional implica poner información en diferentes niveles para que podamos identificar rápidamente los diferentes niveles de un código. Para aplicar el margen adicional se presiona la tecla de tabulación. Volveremos al margen adicional con más detalles en el capítulo sobre **bucles**. Recordemos por el momento que si una línea de código es demasiado larga, podemos saltar de línea y usar el margen adicional. R leerá todo como una sola línea de código.
-```
 
 ```{r}
 bddInsect <- list(

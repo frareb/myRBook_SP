@@ -4,9 +4,7 @@
 
 Con este capítulo vamos a echar un primer vistazo al poder de R a través de las funciones. Una función es un conjunto de líneas de código para realizar una tarea en particular. Hemos visto muchas funciones en capítulos anteriores, unas simples como la función `+` para añadir números, o otras más complejas como `c()` o `data.frame()` que permiten crear un `vector` o `data.frame`. En cualquier caso, se puede reconocer una función gracias a los paréntesis que la siguen en los cuales vamos a ingresar **argumentos**. Los argumentos corresponden a la información que queremos transmitir a nuestra función para que realice la tarea que queremos lograr.
 
-```{block, type='rmdnote'}
 Para funciones simples como `+`, los paréntesis han sido eliminados para que el código sea más fácil de leer, pero es una función que puede usarse con paréntesis si usamos el signo `+` entre comillas. Los argumentos son los números que queremos agregar.
-```
 
 ```{r}
 5 + 2
@@ -80,9 +78,7 @@ mdat <- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3, byrow = TRUE,
 mdat
 ```
 
-```{block, type='rmdstyle'}
 El nombre de los argumentos no es necesario para que una función sea interpretada correctamente por R. Sin embargo, es mejor usar explicitamente el nombre de los argumentos seguidos por el signo `=` para que el código sea más legible.
-```
 
 ```{r}
 # buen ejemplo
