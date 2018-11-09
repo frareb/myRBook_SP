@@ -23,6 +23,11 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
 Últimas modificaciones:
 
+**09/11/2018**
+
+* Capítulo [Gestión de proyectos con R](#project)
+* La primera parte de este libro sobre conceptos básicos está completa
+
 **08/11/2018**
 
 * algorítmico (5/6) [`next` y `break`](#l17spe)

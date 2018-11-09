@@ -1,14 +1,120 @@
 # Gestión de proyectos con R {#project}
 
+Ahora que hemos visto los conceptos básicos de R, todavía tenemos que abordar un elemento decisivo para el buen funcionamiento de nuestras actividades científicas con R: gestión de proyectos. Consiste en integrar sus desarrollos en un entorno y con una lógica orientada a facilitar su trabajo y aumentar así su eficiencia. Esta es solo una manera de hacer dentro de las infinitas posibilidades, a adaptar para todos y cada uno.
 
+## Gestionando archivos y directorios de trabajo.
 
-## Administrar archivos y directorio de trabajo
+Entre los archivos de entrada (es decir, los archivos que contienen nuestros datos en bruto), los archivos de salida (por ejemplo, con la función `write()`), los gráficos (siguiente capítulo) y los muchos scripts asociados con un proyecto, se necesita un mínimo de organización para ser eficaz y reanudar rápidamente su proyecto. La solución más sencilla es estructurar su entorno de trabajo en carpetas según cada categoría de archivo. Por ejemplo, con una carpeta "myProject" para el proyecto, que contiene las carpetas "myFiles" para los archivos de entrada, una carpeta "myScripts" para el script R y una carpeta "myOutputs" para los archivos salida (por ejemplo, gráficos y análisis).
 
+```{r, echo = FALSE}
+cat("-myProject
+|-myFiles
+|-|-data01.csv
+|-|-data02.csv
+|-myScripts
+|-|-myFirstScript.R
+|-myOutputs
+|-|-dataOut01.csv
+|-|-figure01.pdf")
+```
 
+## Gestión de versiones de script
 
-## Gestión de versiones de scripts
+El trabajo en un script es iterativo: incluso si los objetivos se definen desde el principio, volveremos a trabajar algunas partes para obtener, por ejemplo, información adicional, o para optimizar esta o aquella función, o hacer un script generalizable para comunicarlo a La comunidad científica o simplemente un colega. A veces, lo que veremos como una mejora finalmente será un error, y volver al estado inicial puede ser difícil. Así que tenemos que gestionar las versiones.
 
+En la mayoría de los laboratorios hay servicios de control de versiones, el más conocido es GIT (https://git-scm.com/) y Subversion (https://subversion.apache.org/). Cuando GIT o Subversion están disponibles, se recomienda usarlos. Si no tenemos acceso a estos servicios, hay servicios en línea gratuitos como GitHub (https://github.com/; este libro utiliza GitHub). Hay muchas otras soluciones como GitLab (https://about.gitlab.com/), Bitbucket (https://bitbucket.org/), SourceForge (https://sourceforge.net/), GitKraken (https://gitkraken.com/), o Launchpad (https://launchpad.net/).
 
+El uso de estos diferentes servicios de versiones está fuera del alcance de este libro. Para los principiantes o para proyectos que no requieren trabajo colaborativo en scripts, una alternativa es administrar sus versiones manualmente. Por ejemplo, una solución es agregar un número al final de su nombre de archivo de script (por ejemplo, "myFirstScript_01.R"). Tan pronto como se realice una modificación importante en este script, bastará con guardarlo con un nuevo nombre (p. Ej., "MyFirstScript_02.R") y colocar el script antiguo en una carpeta aparte para no desordenar el espacio de trabajo y hacer errores de version. En caso de problemas, podemos volver fácilmente al script anterior y reanudar nuestro trabajo.
 
-## Gestión de documentación
+```{r, echo = FALSE}
+cat("-myProject
+|-myFiles
+|-|-data01.csv
+|-|-data02.csv
+|-myScripts
+|-|-myFirstScript04.R
+|-|-ARCHIVES
+|-|-|-myFirstScript01.R
+|-|-|-myFirstScript02.R
+|-|-|-myFirstScript03.R
+|-myOutputs
+|-|-dataOut01.csv
+|-|-figure01.pdf")
+```
 
+## Gestion de documentacion
+
+La documentación de su código es esencial para volver fácilmente al trabajo o comunicar su trabajo con colegas y la comunidad científica. Un código bien documentado será comprensible por un número mayor y, por lo tanto, se utilizará más. Por eso es importante adoptar buenas técnicas y practicas.
+
+Ya hemos visto que hay varias formas de escribir su código con R porque es un lenguaje bastante permisivo. El primer paso hacia un código legible y reproducible es adoptar un estilo de código claro y coherente y ... ¡hecho para humanos! Porque incluso si nuestro código está destinado a ser ejecutado por máquinas, debe seguir siendo comprensible de todas las personas que lo consultarán. Es por ejemplo poner espacios después de las comas, o usar la identación. Por supuesto, la legibilidad del código debe equilibrarse con la optimización del código para grandes conjuntos de datos, pero en la mayoría de los casos podemos asociar un código claro y optimizado. Entonces, el primer paso de la documentación y su administración es escribir primero su código pensando en las personas que lo leerán y lo reproducirán.
+
+El segundo paso es comentar su código. Los comentarios son esenciales cuando privilegiamos el código optimizado para el rendimiento pero que pierde en legibilidad. Los comentarios son superfluos si el código está bien escrito y los objetos y funciones están bien nombrados. Esto significa que los comentarios no deben usarse para explicar un código mal escrito, sino que desdemos desde el principio escribir bien nuestro código. Los comentarios son útiles para proporcionar elementos contextuales (por ejemplo, la elección de un método sobre otro en la literatura). El lugar de los comentarios puede estar al final de las líneas o en líneas separadas.
+
+Para un proyecto pequeño en R es esencial que cada script comience con una descripción de sus contenidos para que podamos saber rápidamente de qué se trata. Eso es lo que hicimos al principio de este libro:
+
+```{r, eval = FALSE}
+# ------------------------------------------------------------
+# Aquí hay un script para adquirir los conceptos básicos
+# con R
+# fecha de creación : 25/06/2018
+# autor : François Rebaudo
+# ------------------------------------------------------------
+
+# [1] Creación del objeto número de repeticiones.
+# ------------------------------------------------------------
+
+nbrRep <- 5
+
+# [2] calculos simples
+# ------------------------------------------------------------
+
+pi * nbrRep^2
+```
+
+Aquí los comentarios que siguen al encabezado no son necesarios porque el nombre del objeto se entiende por sí mismo. Nuestro archivo se convierte en:
+
+```{r, eval = FALSE}
+# ------------------------------------------------------------
+# Aquí hay un script para adquirir los conceptos básicos
+# con R
+# fecha de creación : 25/06/2018
+# autor : François Rebaudo
+# ------------------------------------------------------------
+
+nbrRep <- 5
+pi * nbrRep^2
+```
+
+Para un proyecto grande con muchas funciones para ser utilizado por otros usuarios, es preferible que la documentación del código esté separada, en un archivo de ayuda específico. Este es el caso de todos los paquetes R! Para gestionar la documentación de un paquete (y por lo tanto de todas las funciones), de nuevo hay muchas posibilidades. Lo más común es usar el paquete R roxigen2. Sin entrar en detalles, aquí hay algunos ejemplos de la documentación del paquete.
+
+```{r, eval = FALSE}
+#' Add together two numbers
+#'
+#' @param x A number
+#' @param y A number
+#' @return The sum of \code{x} and \code{y}
+#' @examples
+#' add(1, 1)
+#' add(10, 1)
+add <- function(x, y) {
+  x + y
+}
+```
+
+```{r, eval = FALSE}
+#' Sum of vector elements.
+#'
+#' `sum` returns the sum of all the values present in its arguments.
+#'
+#' This is a generic function: methods can be defined for it directly
+#' or via the [Summary()] group generic. For this to work properly,
+#' the arguments `...` should be unnamed, and dispatch is on the
+#' first argument.
+sum <- function(..., na.rm = TRUE) {}
+```
+
+Esto nos permite escribir la documentación de cada función junto a la función. El paquete roxigen2 generará a partir de estos comentarios un documento de ayuda accesible con la función `'?'`. A menos que escribamos un nuevo paquete, los comentarios simples serán suficientes, y el desarrollo de un paquete está fuera del alcance de este libro.
+
+## Conclusión
+
+Felicitaciones. Este capítulo marca el final de la primera parte de este libro. Ahora tenemos lo básico para llevar a cabo nuestros proyectos con R. En la siguiente parte veremos los gráficos y cómo hacer figuras en el marco de los artículos científicos.
