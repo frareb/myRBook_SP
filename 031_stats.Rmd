@@ -1,9 +1,9 @@
-# (PART) Publicar sus resultados {-}
+<!-- # (PART) Publicar sus resultados {-} -->
 
-# Los scripts {#p3script}
+<!-- # Los scripts {#p3script} -->
 
-# Los datos {#p3data}
+<!-- # Los datos {#p3data} -->
 
-# Algunos ejemplos {#p3example}
+<!-- # Algunos ejemplos {#p3example} -->
 
-# Conclusión {#p3conclu}
+<!-- # Conclusión {#p3conclu} -->

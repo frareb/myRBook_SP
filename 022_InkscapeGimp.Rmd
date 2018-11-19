@@ -1,5 +1,5 @@
-# Manipular gráficos {#graph4}
+<!-- # Manipular gráficos {#graph4} -->
 
-## Inkscape
+<!-- ## Inkscape -->
 
-## The Gimp
+<!-- ## The Gimp -->
