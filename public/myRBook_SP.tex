@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-11-29}
+    \date{2018-12-10}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -273,6 +273,14 @@ Este libro también está disponible en francés
 (\url{http://myrbookfr.netlify.com/})
 
 Últimas modificaciones:
+
+\textbf{10/12/2018}
+
+\begin{itemize}
+\tightlist
+\item
+  Capítulo \protect\hyperlink{graph2}{Gestión del color}
+\end{itemize}
 
 \textbf{29/11/2018}
 
@@ -8001,7 +8009,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.22    0.00    0.21
+##    0.34    0.00    0.34
 \end{verbatim}
 
 \begin{Shaded}
@@ -8012,7 +8020,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.19    0.00    0.19
+##    0.36    0.00    0.36
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus
@@ -8969,12 +8977,12 @@ elementos de un objeto) y repetir una operación. Imaginamos un
 
 \begin{verbatim}
 ##      date01    date02
-## 1  9.847437 10.303814
-## 2 10.460275  9.827166
-## 3 12.384287  9.088083
-## 4  9.826942  8.724478
-## 5  8.495807 10.447373
-## 6 10.537622  9.183596
+## 1 10.212657  9.632848
+## 2  9.834794  9.979411
+## 3 10.249666  9.884327
+## 4 10.471963 11.568322
+## 5  8.535451 10.997128
+## 6  9.622211  9.345290
 \end{verbatim}
 
 Nos gustaría cuantificar la diferencia entre la primera y la segunda
@@ -9101,27 +9109,27 @@ para encontrar el número de líneas.
 \end{Shaded}
 
 \begin{verbatim}
-##       date01    date02        dif isDifBig
-## 1   9.847437 10.303814 0.45637690    small
-## 2  10.460275  9.827166 0.63310964    small
-## 3  12.384287  9.088083 3.29620394      big
-## 4   9.826942  8.724478 1.10246439    small
-## 5   8.495807 10.447373 1.95156615    small
-## 6  10.537622  9.183596 1.35402639    small
-## 7   9.144505 10.507845 1.36334022    small
-## 8   8.336488  9.783840 1.44735206    small
-## 9   8.764647  9.123299 0.35865250    small
-## 10 10.165782 11.079884 0.91410219    small
-## 11 10.254274 12.283571 2.02929647    small
-## 12  9.049202  8.970204 0.07899752    small
-## 13 10.517785 10.906542 0.38875709    small
-## 14 10.733983  8.580890 2.15309248    small
-## 15 10.103459  8.071319 2.03213961    small
-## 16  9.141716  9.410970 0.26925345    small
-## 17 10.243432 10.195562 0.04786949    small
-## 18 10.328403 10.164455 0.16394749    small
-## 19 10.901998 13.068098 2.16609995    small
-## 20 11.202877  9.376690 1.82618702    small
+##       date01    date02       dif isDifBig
+## 1  10.212657  9.632848 0.5798091    small
+## 2   9.834794  9.979411 0.1446178    small
+## 3  10.249666  9.884327 0.3653396    small
+## 4  10.471963 11.568322 1.0963597    small
+## 5   8.535451 10.997128 2.4616770    small
+## 6   9.622211  9.345290 0.2769211    small
+## 7  11.457076 11.898356 0.4412798    small
+## 8   7.166480 11.193789 4.0273090      big
+## 9   9.472384  9.605045 0.1326608    small
+## 10 11.475652 10.637246 0.8384061    small
+## 11 10.356118 10.707591 0.3514732    small
+## 12  8.353595 10.918882 2.5652871    small
+## 13 10.485952  9.444934 1.0410179    small
+## 14  9.006126 10.727758 1.7216323    small
+## 15  8.625918 10.487384 1.8614664    small
+## 16  9.613077  8.442853 1.1702233    small
+## 17  9.871232  9.122721 0.7485109    small
+## 18 11.377220 10.853940 0.5232802    small
+## 19  6.998703  9.457797 2.4590937    small
+## 20 10.418347 10.637301 0.2189544    small
 \end{verbatim}
 
 En la práctica, esta no es la mejor manera de realizar este ejercicio
@@ -9141,27 +9149,27 @@ en:
 \end{Shaded}
 
 \begin{verbatim}
-##       date01    date02        dif isDifBig
-## 1   9.847437 10.303814 0.45637690    small
-## 2  10.460275  9.827166 0.63310964    small
-## 3  12.384287  9.088083 3.29620394      big
-## 4   9.826942  8.724478 1.10246439    small
-## 5   8.495807 10.447373 1.95156615    small
-## 6  10.537622  9.183596 1.35402639    small
-## 7   9.144505 10.507845 1.36334022    small
-## 8   8.336488  9.783840 1.44735206    small
-## 9   8.764647  9.123299 0.35865250    small
-## 10 10.165782 11.079884 0.91410219    small
-## 11 10.254274 12.283571 2.02929647    small
-## 12  9.049202  8.970204 0.07899752    small
-## 13 10.517785 10.906542 0.38875709    small
-## 14 10.733983  8.580890 2.15309248    small
-## 15 10.103459  8.071319 2.03213961    small
-## 16  9.141716  9.410970 0.26925345    small
-## 17 10.243432 10.195562 0.04786949    small
-## 18 10.328403 10.164455 0.16394749    small
-## 19 10.901998 13.068098 2.16609995    small
-## 20 11.202877  9.376690 1.82618702    small
+##       date01    date02       dif isDifBig
+## 1  10.212657  9.632848 0.5798091    small
+## 2   9.834794  9.979411 0.1446178    small
+## 3  10.249666  9.884327 0.3653396    small
+## 4  10.471963 11.568322 1.0963597    small
+## 5   8.535451 10.997128 2.4616770    small
+## 6   9.622211  9.345290 0.2769211    small
+## 7  11.457076 11.898356 0.4412798    small
+## 8   7.166480 11.193789 4.0273090      big
+## 9   9.472384  9.605045 0.1326608    small
+## 10 11.475652 10.637246 0.8384061    small
+## 11 10.356118 10.707591 0.3514732    small
+## 12  8.353595 10.918882 2.5652871    small
+## 13 10.485952  9.444934 1.0410179    small
+## 14  9.006126 10.727758 1.7216323    small
+## 15  8.625918 10.487384 1.8614664    small
+## 16  9.613077  8.442853 1.1702233    small
+## 17  9.871232  9.122721 0.7485109    small
+## 18 11.377220 10.853940 0.5232802    small
+## 19  6.998703  9.457797 2.4590937    small
+## 20 10.418347 10.637301 0.2189544    small
 \end{verbatim}
 
 La mayoría de los ejemplos que se pueden encontrar en Internet sobre el
@@ -9241,7 +9249,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.511
+## [1] 3.544
 \end{verbatim}
 
 \begin{Shaded}
@@ -9252,7 +9260,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.47
+## [1] 3.456
 \end{verbatim}
 
 Es un buen ejercicio explorar los muchos ejemplos disponibles en
@@ -9277,12 +9285,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 539 373 435 361 553 528 374 518 448 607 433 343 625 435 551 542 362
-##  [18] 465 442 421 414 538 619 538 469 474 585 471 632 524 466 534 500 495
-##  [35] 621 337 513 317 498 367 568 567 658 320 414 603 519 537 553 392 553
-##  [52] 526 490 605 405 449 437 432 346 555 433 465 391 309 551 586 430 534
-##  [69] 349 497 456 479 613 480 590 430 461 547 542 441 454 528 342 448 568
-##  [86] 512 548 682 350 535 617 503 276 550 534 512 254 484 584 597
+##   [1] 386 436 507 528 609 545 581 470 420 574 509 492 397 563 506 606 571
+##  [18] 475 604 439 407 501 591 368 363 531 528 453 424 490 461 555 564 514
+##  [35] 496 724 595 347 491 384 590 427 449 479 565 553 487 516 442 449 599
+##  [52] 464 402 685 569 599 507 188 353 483 378 581 535 370 388 471 277 575
+##  [69] 483 563 528 499 563 587 413 429 552 521 566 560 354 556 567 530 724
+##  [86] 549 451 360 469 545 536 511 571 476 387 309 519 460 571 405
 \end{verbatim}
 
 \begin{Shaded}
@@ -9297,12 +9305,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 539 373 435 361 553 528 374 518 448 607 433 343 625 435 551 542 362
-##  [18] 465 442 421 414 538 619 538 469 474 585 471 632 524 466 534 500 495
-##  [35] 621 337 513 317 498 367 568 567 658 320 414 603 519 537 553 392 553
-##  [52] 526 490 605 405 449 437 432 346 555 433 465 391 309 551 586 430 534
-##  [69] 349 497 456 479 613 480 590 430 461 547 542 441 454 528 342 448 568
-##  [86] 512 548 682 350 535 617 503 276 550 534 512 254 484 584 597
+##   [1] 386 436 507 528 609 545 581 470 420 574 509 492 397 563 506 606 571
+##  [18] 475 604 439 407 501 591 368 363 531 528 453 424 490 461 555 564 514
+##  [35] 496 724 595 347 491 384 590 427 449 479 565 553 487 516 442 449 599
+##  [52] 464 402 685 569 599 507 188 353 483 378 581 535 370 388 471 277 575
+##  [69] 483 563 528 499 563 587 413 429 552 521 566 560 354 556 567 530 724
+##  [86] 549 451 360 469 545 536 511 571 476 387 309 519 460 571 405
 \end{verbatim}
 
 En conclusión, se recomienda no usar el bucle \texttt{for()} con R
@@ -9380,7 +9388,7 @@ pueda realizar fácilmente 35000 pruebas en 2 segundos):
 
 \begin{verbatim}
 ## [1] "Number found !"
-## [1] "And I have plenty of time left: 0.72 sec"
+## [1] "And I have plenty of time left: 1.26 sec"
 \end{verbatim}
 
 En este script generamos un número aleatorio para adivinar con la
@@ -9459,11 +9467,11 @@ para repetirlo cinco veces.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.278
-## [1] 1.101
-## [1] 0.285
-## [1] 0.343
-## [1] 0.062
+## [1] 0.844
+## [1] 0.194
+## [1] 0.031
+## [1] 1.979
+## [1] 0.98
 \end{verbatim}
 
 Al igual que el bucle \texttt{while()}, el bucle \texttt{repeat()} no se
@@ -9581,12 +9589,12 @@ columnas y 100 líneas:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 614 591 691 372 448 523 530 374 458 428 369 696 562 393 579 562 486
-##  [18] 518 548 370 506 501 534 531 515 481 398 643 639 544 499 588 335 408
-##  [35] 486 297 421 447 655 555 497 607 526 508 455 444 529 622 599 451 532
-##  [52] 424 637 384 660 552 441 393 614 582 405 501 502 575 533 554 550 613
-##  [69] 449 532 501 509 540 580 444 346 434 549 454 443 519 560 575 520 572
-##  [86] 650 577 475 527 477 452 532 299 580 690 484 343 509 483 376
+##   [1] 601 687 427 391 472 506 385 451 555 311 348 455 541 428 554 527 440
+##  [18] 392 393 556 451 425 459 408 728 654 510 436 502 569 590 378 416 583
+##  [35] 485 445 442 477 436 538 557 589 617 366 489 396 578 441 473 453 581
+##  [52] 528 510 586 539 652 455 646 465 408 524 507 476 394 339 657 369 433
+##  [69] 432 580 605 585 626 459 458 535 594 552 470 479 617 387 408 436 596
+##  [86] 630 576 494 658 545 541 405 294 378 599 479 361 466 663 523
 \end{verbatim}
 
 Si queremos saber la mediana de cada columna, la expresión se convierte
@@ -9599,7 +9607,7 @@ en:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 52.5 55.5 52.0 43.0 50.5 50.5 46.0 51.0 56.5 58.5
+##  [1] 59.0 44.0 52.5 48.0 45.0 48.0 49.0 41.5 54.0 44.5
 \end{verbatim}
 
 El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply}
@@ -9622,7 +9630,7 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 48.14 56.18 52.03 46.87 46.96 52.82 52.66 48.27 55.27 50.34
+##  [1] 50.02 49.71 47.57 47.22 50.84 50.94 53.14 47.62 50.76 47.93
 \end{verbatim}
 
 \begin{Shaded}
@@ -9634,7 +9642,7 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 48.14 56.18 52.03 46.87 46.96 52.82 52.66 48.27 55.27 50.34
+##  [1] 50.02 49.71 47.57 47.22 50.84 50.94 53.14 47.62 50.76 47.93
 \end{verbatim}
 
 \begin{Shaded}
@@ -9644,8 +9652,8 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 51.08 50.30 52.98 47.06 51.96 46.22 54.78 59.46 52.66 54.06 48.26
-## [12] 45.56 47.34 51.36 55.48 54.38 51.56 55.20 45.46 43.92
+##  [1] 44.94 47.56 53.94 52.54 48.92 50.66 44.52 49.04 45.62 50.08 47.66
+## [12] 57.96 49.22 52.72 45.32 55.54 51.22 47.96 48.04 48.04
 \end{verbatim}
 
 \begin{Shaded}
@@ -9657,8 +9665,8 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 51.08 50.30 52.98 47.06 51.96 46.22 54.78 59.46 52.66 54.06 48.26
-## [12] 45.56 47.34 51.36 55.48 54.38 51.56 55.20 45.46 43.92
+##  [1] 44.94 47.56 53.94 52.54 48.92 50.66 44.52 49.04 45.62 50.08 47.66
+## [12] 57.96 49.22 52.72 45.32 55.54 51.22 47.96 48.04 48.04
 \end{verbatim}
 
 \begin{Shaded}
@@ -9668,7 +9676,7 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 48.675 48.070 50.260 54.260 53.505
+## [1] 47.455 48.355 52.410 47.670 51.985
 \end{verbatim}
 
 \begin{Shaded}
@@ -9679,7 +9687,7 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 48.675 48.070 50.260 54.260 53.505
+## [1] 47.455 48.355 52.410 47.670 51.985
 \end{verbatim}
 
 También podemos calcular el promedio de cada fila y valor de columna (la
@@ -9693,27 +9701,27 @@ función luego itera en la dimensión 3):
 
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,] 59.6 62.0 40.0 43.8 43.8 33.8 49.0 78.4 61.2  62.6  28.2  52.8  36.6
-##  [2,] 65.8 57.2 50.2 52.8 37.8 60.6 53.8 59.2 71.4  75.4  36.4  48.4  55.2
-##  [3,] 34.2 31.2 69.6 60.0 47.8 64.0 51.6 78.4 61.6  44.6  54.6  24.6  41.0
-##  [4,] 72.0 42.4 69.2 41.4 65.0 57.2 57.8 60.8 37.0  37.8  41.0  49.4  12.6
-##  [5,] 52.6 43.2 47.8 22.6 58.0 52.0 54.4 45.0 44.6  65.6  42.0  40.6  42.8
-##  [6,] 33.6 59.6 57.8 59.2 57.0 49.8 42.2 48.4 40.4  63.6  61.4  90.4  47.8
-##  [7,] 65.6 77.0 46.4 47.8 55.8 20.8 55.0 52.8 61.6  39.0  56.4  29.2  56.2
-##  [8,] 32.6 49.6 49.6 49.2 44.4 47.0 46.8 61.0 54.0  58.0  45.2  33.4  54.0
-##  [9,] 53.2 34.8 62.8 31.0 76.8 48.0 77.0 57.0 44.8  57.2  60.6  45.8  49.8
-## [10,] 41.6 46.0 36.4 62.8 33.2 29.0 60.2 53.6 50.0  36.8  56.8  41.0  77.4
+##  [1,] 50.8 48.0 18.8 60.8 68.8 48.0 43.6 38.0 35.2  54.8  57.6  55.6  61.0
+##  [2,] 56.0 46.6 49.8 50.2 50.6 69.6 32.2 40.0 43.0  49.2  50.6  44.8  67.6
+##  [3,] 65.2 52.6 69.8 45.8 36.6 40.8 28.4 37.8 63.4  67.4  39.2  67.8  32.0
+##  [4,] 49.6 24.0 72.2 24.0 28.0 73.8 28.0 49.2 32.6  69.2  65.2  55.4  44.6
+##  [5,] 34.6 60.6 43.4 35.4 56.8 46.6 57.0 64.4 42.4  46.6  39.8  54.2  41.4
+##  [6,] 41.6 43.8 61.8 54.0 52.0 44.2 50.6 46.2 60.2  42.8  33.8  66.8  49.0
+##  [7,] 51.8 35.6 68.8 66.8 65.0 24.2 52.4 66.8 55.8  42.8  41.4  73.0  19.4
+##  [8,] 19.0 51.8 46.0 60.2 57.8 43.6 43.0 43.2 36.6  50.4  29.4  50.6  60.2
+##  [9,] 38.0 67.6 59.0 67.0 44.8 78.8 51.8 53.4 47.0  42.8  57.8  61.4  60.0
+## [10,] 42.8 45.0 49.8 61.2 28.8 37.0 58.2 51.4 40.0  34.8  61.8  50.0  57.0
 ##       [,14] [,15] [,16] [,17] [,18] [,19] [,20]
-##  [1,]  34.0  78.0  47.2  37.6  48.8  23.8  41.6
-##  [2,]  66.6  69.6  50.6  63.6  55.4  57.8  35.8
-##  [3,]  63.8  41.6  69.0  54.0  69.4  33.6  46.0
-##  [4,]  40.0  58.4  50.6  29.0  56.2  28.2  31.4
-##  [5,]  47.2  24.8  59.4  55.8  44.6  47.0  49.2
-##  [6,]  47.6  43.2  50.0  57.4  52.8  46.6  47.6
-##  [7,]  59.8  64.0  48.0  48.0  52.8  64.4  52.6
-##  [8,]  53.2  42.6  43.4  53.8  68.6  35.4  43.6
-##  [9,]  42.6  64.0  60.2  72.8  54.8  60.6  51.6
-## [10,]  58.8  68.6  65.4  43.6  48.6  57.2  39.8
+##  [1,]  46.4  56.4  53.2  36.2  48.6  61.8  56.8
+##  [2,]  54.6  43.4  64.4  49.8  44.2  52.2  35.4
+##  [3,]  53.4  36.6  68.4  66.2  22.6  24.2  33.2
+##  [4,]  63.4  27.4  49.4  49.6  43.2  44.8  50.8
+##  [5,]  35.8  70.6  70.4  52.8  65.6  62.4  36.0
+##  [6,]  62.4  28.0  59.8  53.4  72.0  40.4  56.0
+##  [7,]  68.2  62.2  61.0  34.2  48.4  58.6  66.4
+##  [8,]  51.0  46.6  62.2  59.6  43.4  35.4  62.4
+##  [9,]  40.8  29.6  28.6  51.8  40.4  52.8  41.8
+## [10,]  51.2  52.4  38.0  58.6  51.2  47.8  41.6
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{lapply}}{lapply}}\label{l17sapply}
@@ -9740,19 +9748,19 @@ podemos usar la función \texttt{lapply()}:
 
 \begin{verbatim}
 ## $a
-##  [1] 19 60 89 78  9 87  8 58 88  3
+##  [1] 41 17 97 58 80 57 52 37 71 84
 ## 
 ## $b
-##  [1]  5 88 26 34 72 50 61 19 41 38
+##  [1] 87 46 19 14 18 63 74 22 11 64
 ## 
 ## $c
-##  [1] 89 25 70 13 33 59 35  3 77  8
+##  [1] 11 45 75 83 57 92 47 74 80 26
 ## 
 ## $d
-##  [1] 78 86 53 75  1 51 90 84 68 39
+##  [1] 39 15 82 35 53  6 42 50 37 78
 ## 
 ## $e
-##  [1]  50  88  23 100  61  46  81  44  25   8
+##  [1] 40 31 55 69 59 10 78 67  4 35
 \end{verbatim}
 
 \begin{Shaded}
@@ -9763,19 +9771,19 @@ podemos usar la función \texttt{lapply()}:
 
 \begin{verbatim}
 ## $a
-## [1] 49.9
+## [1] 59.4
 ## 
 ## $b
-## [1] 43.4
+## [1] 41.8
 ## 
 ## $c
-## [1] 41.2
+## [1] 59
 ## 
 ## $d
-## [1] 62.5
+## [1] 43.7
 ## 
 ## $e
-## [1] 52.6
+## [1] 44.8
 \end{verbatim}
 
 Al igual que con la función \texttt{apply()}, podemos pasar argumentos
@@ -9799,19 +9807,19 @@ los promedios (con el argumento \texttt{na.rm\ =\ TRUE}).
 
 \begin{verbatim}
 ## $a
-##  [1]  5 NA  2 NA  3 NA  2  3  1 NA
+##  [1]  1  4 NA  4  3  1 NA  3  2 NA
 ## 
 ## $b
-##  [1] NA  1  3  4  3  3  2  4  1 NA
+##  [1]  5  5 NA  4  2  1 NA  2  2 NA
 ## 
 ## $c
-##  [1]  3 NA  5 NA  4 NA  5  3  5  4
+##  [1]  3  5  3 NA  3  4 NA  3  1  2
 ## 
 ## $d
-##  [1]  1 NA  1 NA  1  4  2  5  5  2
+##  [1] NA  2  1  1 NA  4  4  2  3  2
 ## 
 ## $e
-##  [1] NA  2 NA NA  2  1  2  2  1 NA
+##  [1]  1  1  3  4  4  4 NA NA  2  2
 \end{verbatim}
 
 \begin{Shaded}
@@ -9845,19 +9853,19 @@ los promedios (con el argumento \texttt{na.rm\ =\ TRUE}).
 
 \begin{verbatim}
 ## $a
-## [1] 2.666667
+## [1] 2.571429
 ## 
 ## $b
-## [1] 2.625
+## [1] 3
 ## 
 ## $c
-## [1] 4.142857
+## [1] 3
 ## 
 ## $d
-## [1] 2.625
+## [1] 2.375
 ## 
 ## $e
-## [1] 1.666667
+## [1] 2.625
 \end{verbatim}
 
 Para mayor legibilidad o si se debemos realizar varias operaciones
@@ -9873,19 +9881,19 @@ dentro del argumento \texttt{FUN}, podemos usar el siguiente script:
 
 \begin{verbatim}
 ## $a
-## [1] 2.666667
+## [1] 2.571429
 ## 
 ## $b
-## [1] 2.625
+## [1] 3
 ## 
 ## $c
-## [1] 4.142857
+## [1] 3
 ## 
 ## $d
-## [1] 2.625
+## [1] 2.375
 ## 
 ## $e
-## [1] 1.666667
+## [1] 2.625
 \end{verbatim}
 
 Por ejemplo, si queremos obtener \texttt{i\^{}2} si el promedio es mayor
@@ -9906,19 +9914,19 @@ que 3, y \texttt{i\^{}3} de lo contrario:
 
 \begin{verbatim}
 ## $a
-##  [1] 125  NA   8  NA  27  NA   8  27   1  NA
+##  [1]  1 64 NA 64 27  1 NA 27  8 NA
 ## 
 ## $b
-##  [1] NA  1 27 64 27 27  8 64  1 NA
+##  [1] 125 125  NA  64   8   1  NA   8   8  NA
 ## 
 ## $c
-##  [1]  9 NA 25 NA 16 NA 25  9 25 16
+##  [1]  27 125  27  NA  27  64  NA  27   1   8
 ## 
 ## $d
-##  [1]   1  NA   1  NA   1  64   8 125 125   8
+##  [1] NA  8  1  1 NA 64 64  8 27  8
 ## 
 ## $e
-##  [1] NA  8 NA NA  8  1  8  8  1 NA
+##  [1]  1  1 27 64 64 64 NA NA  8  8
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{sapply}}{sapply}}\label{l17lapply}
@@ -9937,19 +9945,19 @@ resultado en un formato simplificado siempre que sea posible.
 
 \begin{verbatim}
 ## $a
-## [1] 2.666667
+## [1] 2.571429
 ## 
 ## $b
-## [1] 2.625
+## [1] 3
 ## 
 ## $c
-## [1] 4.142857
+## [1] 3
 ## 
 ## $d
-## [1] 2.625
+## [1] 2.375
 ## 
 ## $e
-## [1] 1.666667
+## [1] 2.625
 \end{verbatim}
 
 \begin{Shaded}
@@ -9962,7 +9970,7 @@ resultado en un formato simplificado siempre que sea posible.
 
 \begin{verbatim}
 ##        a        b        c        d        e 
-## 2.666667 2.625000 4.142857 2.625000 1.666667
+## 2.571429 3.000000 3.000000 2.375000 2.625000
 \end{verbatim}
 
 La función \texttt{sapply()} es interesante para recuperar, por ejemplo,
@@ -9977,8 +9985,8 @@ se llama para hacer esto es
 \end{Shaded}
 
 \begin{verbatim}
-##  a  b  c  d  e 
-## NA  1 NA NA  2
+## a b c d e 
+## 4 5 5 2 1
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{tapply}}{tapply}}\label{l17tapply}
@@ -10000,17 +10008,17 @@ C) y valores de mediciones biologicas en diferentes ubicaciones.
 \end{Shaded}
 
 \begin{verbatim}
-##    species     perf1    perf2     perf3
-## 1        A 10.487520 11312.34  9.502831
-## 2        F  9.313729 10195.23 16.326327
-## 3        A 10.514549 34247.60 24.406726
-## 4        E  9.437716 25231.27 21.878316
-## 5        E  9.725898 31836.24 16.870745
-## 6        J  8.940195 42622.23 20.929902
-## 7        G  9.063407 17784.35 15.579071
-## 8        H  9.836537 16229.23 20.546565
-## 9        A  9.926411 30979.89 13.852827
-## 10       H 10.005512 18812.10 24.905048
+##    species     perf1    perf2    perf3
+## 1        I 10.580514 43170.53 13.37450
+## 2        B  9.782990 18764.87 11.94993
+## 3        C  9.758533 41971.53 12.27756
+## 4        J  9.527091 19509.49 15.78558
+## 5        F  9.155731 10772.84 13.41998
+## 6        D  9.990602 53377.38 31.28052
+## 7        E  9.472620 33276.96 18.89222
+## 8        D 10.432859 27128.93 21.98789
+## 9        G 10.186037 25882.45 18.72767
+## 10       C 10.704883 28442.62 24.82419
 \end{verbatim}
 
 Podemos obtener fácilmente un resumen de las mediciones para cada
@@ -10026,43 +10034,43 @@ especie con la función \texttt{tapply()} y la función
 \begin{verbatim}
 ## $A
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.373   9.631   9.955   9.929  10.246  11.066 
+##   8.485   9.580   9.929   9.953  10.308  11.031 
 ## 
 ## $B
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.671   9.576   9.932   9.934  10.294  11.031 
+##   8.617   9.674  10.034  10.040  10.362  11.362 
 ## 
 ## $C
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.829   9.654  10.008   9.997  10.298  11.210 
+##   8.513   9.715  10.073  10.054  10.380  11.602 
 ## 
 ## $D
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.919   9.618   9.946   9.994  10.262  11.405 
+##   8.933   9.596   9.966   9.955  10.299  11.389 
 ## 
 ## $E
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   9.043   9.566   9.928   9.896  10.189  11.231 
+##   8.847   9.651   9.894   9.985  10.267  11.255 
 ## 
 ## $F
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.729   9.633   9.948   9.931  10.295  11.088 
+##   8.833   9.524   9.948   9.937  10.262  11.385 
 ## 
 ## $G
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.937   9.719  10.072  10.042  10.364  11.289 
+##   8.986   9.660   9.968   9.994  10.359  11.278 
 ## 
 ## $H
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.668   9.605  10.007  10.022  10.457  11.416 
+##   8.912   9.855  10.156  10.124  10.411  11.319 
 ## 
 ## $I
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.433   9.649  10.111  10.077  10.438  11.590 
+##   9.076   9.759  10.130  10.088  10.326  11.018 
 ## 
 ## $J
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.264   9.631   9.972   9.949  10.280  11.055
+##    8.91    9.77   10.01   10.02   10.38   11.06
 \end{verbatim}
 
 También podemos obtener el valor promedio de cada mediciones combinando
@@ -10079,16 +10087,16 @@ la función \texttt{mean()}.
 
 \begin{verbatim}
 ##        [,1]     [,2]     [,3]
-## A  9.929391 24668.84 20.03190
-## B  9.933988 26950.47 18.39145
-## C  9.996815 25961.70 19.09260
-## D  9.994265 24113.62 20.06391
-## E  9.895789 22211.54 19.35367
-## F  9.931073 23736.01 21.13780
-## G 10.042138 24153.94 20.20535
-## H 10.022077 23837.48 20.15614
-## I 10.076677 25480.06 21.09302
-## J  9.949183 25842.55 19.75914
+## A  9.953101 24341.86 19.59382
+## B 10.039693 24186.66 19.49310
+## C 10.054128 25650.70 20.27255
+## D  9.955480 27106.44 20.34481
+## E  9.985470 23536.99 19.46792
+## F  9.936886 23262.35 19.86856
+## G  9.993636 25363.79 19.48094
+## H 10.123618 24060.48 20.12785
+## I 10.088344 24933.47 18.54452
+## J 10.021799 22679.58 20.16164
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{mapply}}{mapply}}\label{l17mapply}
@@ -10891,6 +10899,388 @@ diferentes colores y diferentes formas de representar los colores: es
 hora de formalizar el uso y la gestión de los colores. ¡Este es el tema
 del próximo capítulo!
 
+\hypertarget{graph2}{\chapter{Gestión del color}\label{graph2}}
+
+Hemos visto diferentes formas de usar los colores: con su nombre (por
+ejemplo, \texttt{"salmón"}), con un número del 1 al 8, con la función
+\texttt{rgb()} (para ``rojo / red'', ``verde / green'', ``azul /
+blue''), y con la función \texttt{colors()}. Hay otros pero estos son
+los principales.
+
+El uso de los números del 1 al 8 corresponde a negro, rojo, verde, azul,
+cian, magenta, amarillo y gris. Este uso es útil para visualizar
+rápidamente nuestros resultados, pero proporciona gráficos generales
+visualmente promedio. Es preferable evitar estos colores para comunicar
+nuestros gráficos o para construir figuras en revistas científicas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{barplot}\NormalTok{(}\KeywordTok{sample}\NormalTok{(}\DecValTok{10}\OperatorTok{:}\DecValTok{15}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{), }\DataTypeTok{col =} \DecValTok{1}\OperatorTok{:}\DecValTok{8}\NormalTok{, }\DataTypeTok{names.arg =} \DecValTok{1}\OperatorTok{:}\DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-240-1.pdf}
+
+\section{\texorpdfstring{\texttt{colors()}}{colors()}}\label{colors}
+
+Para elegir colores más agradables y resaltar nuestros resultados, una
+opción es elegir de la lista de colores pregrabados en R. Podemos
+acceder a la lista de colores con la función \texttt{colors()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(}\KeywordTok{colors}\NormalTok{(), }\DataTypeTok{n =} \DecValTok{20}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "white"         "aliceblue"     "antiquewhite"  "antiquewhite1"
+##  [5] "antiquewhite2" "antiquewhite3" "antiquewhite4" "aquamarine"   
+##  [9] "aquamarine1"   "aquamarine2"   "aquamarine3"   "aquamarine4"  
+## [13] "azure"         "azure1"        "azure2"        "azure3"       
+## [17] "azure4"        "beige"         "bisque"        "bisque1"
+\end{verbatim}
+
+Podemos usar estos colores con sus nombres (por ejemplo,
+\texttt{"white"}, \texttt{"azure3"}), o con su número (por ejemplo,
+``white'' = \texttt{colors(){[}1{]}}, ``azure3'' =
+\texttt{colors(){[}16{]}}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# adapted from http://www.r-graph-gallery.com/42-colors-names/}
+\NormalTok{op <-}\StringTok{ }\KeywordTok{par}\NormalTok{(}\DataTypeTok{no.readonly =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+  \DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{""}\NormalTok{)}
+\NormalTok{numRow <-}\StringTok{ }\DecValTok{26}
+\NormalTok{numCol <-}\StringTok{ }\DecValTok{26}
+\KeywordTok{rect}\NormalTok{(}
+  \DataTypeTok{xleft =} \KeywordTok{rep}\NormalTok{((}\DecValTok{0}\OperatorTok{:}\NormalTok{(numCol }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{numCol), numRow),  }
+  \DataTypeTok{ybottom =} \KeywordTok{sort}\NormalTok{(}\KeywordTok{rep}\NormalTok{((}\DecValTok{0}\OperatorTok{:}\NormalTok{(numRow }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{numRow),numCol), }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{),}
+  \DataTypeTok{xright =} \KeywordTok{rep}\NormalTok{((}\DecValTok{1}\OperatorTok{:}\NormalTok{numCol}\OperatorTok{/}\NormalTok{numCol), numRow),}
+  \DataTypeTok{ytop =} \KeywordTok{sort}\NormalTok{(}\KeywordTok{rep}\NormalTok{((}\DecValTok{1}\OperatorTok{:}\NormalTok{numRow}\OperatorTok{/}\NormalTok{numRow), numCol), }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{),}
+  \DataTypeTok{border =} \KeywordTok{grey}\NormalTok{(}\FloatTok{0.5}\NormalTok{), }
+  \DataTypeTok{col =} \KeywordTok{colors}\NormalTok{()[}\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, numRow}\OperatorTok{*}\NormalTok{numCol)])}
+\NormalTok{myLabels <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{as.character}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{657}\NormalTok{), }\KeywordTok{rep}\NormalTok{(}\StringTok{""}\NormalTok{, numRow}\OperatorTok{*}\NormalTok{numCol }\OperatorTok{-}\StringTok{ }\DecValTok{657}\NormalTok{))}
+\KeywordTok{text}\NormalTok{(}
+  \DataTypeTok{x =} \KeywordTok{rep}\NormalTok{((}\DecValTok{0}\OperatorTok{:}\NormalTok{(numCol }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{numCol), numRow) }\OperatorTok{+}\StringTok{ }\FloatTok{0.02}\NormalTok{,}
+  \DataTypeTok{y =} \KeywordTok{sort}\NormalTok{(}\KeywordTok{rep}\NormalTok{((}\DecValTok{0}\OperatorTok{:}\NormalTok{(numRow }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{numRow), numCol), }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.02}\NormalTok{,}
+  \DataTypeTok{labels =}\NormalTok{ myLabels, }
+  \DataTypeTok{cex =} \FloatTok{0.6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-242-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{par}\NormalTok{(op)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{\texorpdfstring{\texttt{rgb()}}{rgb()}}\label{rgb}
+
+Otra opción es crear nuestros propios colores con la función
+\texttt{rgb()}, que toma la cantidad de rojo, verde y azul como
+argumentos. De forma predeterminada, estos valores se encuentran entre 0
+y 1. Esta configuración predeterminada se puede cambiar con el argumento
+\texttt{maxColorValue} para, por ejemplo, tener valores entre 0 y 255
+(\texttt{maxColorValue\ =\ 255}, estándar para la representación del
+color RGB) .
+
+Vamos a reanudar nuestra función para representar la distribución de
+puntos en un diagrama de dispersión por medio de \texttt{barplot} con
+este tiempo tres colores de puntos (rojo, verde, azul) y un
+\texttt{barplot} cuyo color corresponderá a la cantidad de cada color
+con la función \texttt{rgb()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{graphBarplotCol <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(n)\{}
+\NormalTok{  myX <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(n)}
+\NormalTok{  myY <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(n)}
+\NormalTok{  myCol <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\KeywordTok{sample}\NormalTok{(}\DecValTok{2}\OperatorTok{:}\DecValTok{4}\NormalTok{, }\DataTypeTok{size =}\NormalTok{ (n }\OperatorTok{-}\StringTok{ }\DecValTok{3}\NormalTok{), }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
+\NormalTok{  myYCut <-}\StringTok{ }\KeywordTok{cut}\NormalTok{(myY, }\DataTypeTok{breaks =} \OperatorTok{-}\DecValTok{4}\OperatorTok{:}\DecValTok{4}\NormalTok{)}
+\NormalTok{  myXCut <-}\StringTok{ }\KeywordTok{cut}\NormalTok{(myX, }\DataTypeTok{breaks =} \OperatorTok{-}\DecValTok{4}\OperatorTok{:}\DecValTok{4}\NormalTok{)}
+\NormalTok{  myYCutCol <-}\StringTok{ }\KeywordTok{table}\NormalTok{(myCol, myYCut)}
+\NormalTok{  myXCutCol <-}\StringTok{ }\KeywordTok{table}\NormalTok{(myCol, myXCut)}
+\NormalTok{  rColX <-}\StringTok{ }\NormalTok{myXCutCol[}\DecValTok{1}\NormalTok{,] }\OperatorTok{/}\StringTok{ }\NormalTok{(myXCutCol[}\DecValTok{1}\NormalTok{,] }\OperatorTok{+}\StringTok{ }\NormalTok{myXCutCol[}\DecValTok{2}\NormalTok{,] }\OperatorTok{+}\StringTok{ }
+\StringTok{                              }\NormalTok{myXCutCol[}\DecValTok{3}\NormalTok{,])}
+\NormalTok{  gColX <-}\StringTok{ }\NormalTok{myXCutCol[}\DecValTok{2}\NormalTok{,] }\OperatorTok{/}\StringTok{ }\NormalTok{(myXCutCol[}\DecValTok{1}\NormalTok{,] }\OperatorTok{+}\StringTok{ }\NormalTok{myXCutCol[}\DecValTok{2}\NormalTok{,] }\OperatorTok{+}\StringTok{ }
+\StringTok{                              }\NormalTok{myXCutCol[}\DecValTok{3}\NormalTok{,])}
+\NormalTok{  bColX <-}\StringTok{ }\NormalTok{myXCutCol[}\DecValTok{3}\NormalTok{,] }\OperatorTok{/}\StringTok{ }\NormalTok{(myXCutCol[}\DecValTok{1}\NormalTok{,] }\OperatorTok{+}\StringTok{ }\NormalTok{myXCutCol[}\DecValTok{2}\NormalTok{,] }\OperatorTok{+}\StringTok{ }
+\StringTok{                              }\NormalTok{myXCutCol[}\DecValTok{3}\NormalTok{,])}
+\NormalTok{  rColX[}\KeywordTok{is.na}\NormalTok{(rColX)] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  gColX[}\KeywordTok{is.na}\NormalTok{(gColX)] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  bColX[}\KeywordTok{is.na}\NormalTok{(bColX)] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  rColY <-}\StringTok{ }\NormalTok{myYCutCol[}\DecValTok{1}\NormalTok{,] }\OperatorTok{/}\StringTok{ }\NormalTok{(myYCutCol[}\DecValTok{1}\NormalTok{,] }\OperatorTok{+}\StringTok{ }\NormalTok{myYCutCol[}\DecValTok{2}\NormalTok{,] }\OperatorTok{+}\StringTok{ }
+\StringTok{                              }\NormalTok{myYCutCol[}\DecValTok{3}\NormalTok{,])}
+\NormalTok{  gColY <-}\StringTok{ }\NormalTok{myYCutCol[}\DecValTok{2}\NormalTok{,] }\OperatorTok{/}\StringTok{ }\NormalTok{(myYCutCol[}\DecValTok{1}\NormalTok{,] }\OperatorTok{+}\StringTok{ }\NormalTok{myYCutCol[}\DecValTok{2}\NormalTok{,] }\OperatorTok{+}\StringTok{ }
+\StringTok{                              }\NormalTok{myYCutCol[}\DecValTok{3}\NormalTok{,])}
+\NormalTok{  bColY <-}\StringTok{ }\NormalTok{myYCutCol[}\DecValTok{3}\NormalTok{,] }\OperatorTok{/}\StringTok{ }\NormalTok{(myYCutCol[}\DecValTok{1}\NormalTok{,] }\OperatorTok{+}\StringTok{ }\NormalTok{myYCutCol[}\DecValTok{2}\NormalTok{,] }\OperatorTok{+}\StringTok{ }
+\StringTok{                              }\NormalTok{myYCutCol[}\DecValTok{3}\NormalTok{,])}
+\NormalTok{  rColY[}\KeywordTok{is.na}\NormalTok{(rColY)] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  gColY[}\KeywordTok{is.na}\NormalTok{(gColY)] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  bColY[}\KeywordTok{is.na}\NormalTok{(bColY)] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  op <-}\StringTok{ }\KeywordTok{par}\NormalTok{(}\DataTypeTok{no.readonly =} \OtherTok{TRUE}\NormalTok{)}
+  \KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+  \KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }
+                  \DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }
+                  \DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{))}
+  \KeywordTok{barplot}\NormalTok{(}\KeywordTok{table}\NormalTok{(myXCut), }\DataTypeTok{las =} \DecValTok{1}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{rgb}\NormalTok{(rColX, gColX, bColX))}
+  \KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ myX, }\DataTypeTok{y =}\NormalTok{ myY, }\DataTypeTok{col =}\NormalTok{ myCol, }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }
+       \DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{cex =} \FloatTok{1.5}\NormalTok{, }
+       \DataTypeTok{panel.first =} \KeywordTok{grid}\NormalTok{())}
+  \KeywordTok{barplot}\NormalTok{(}\KeywordTok{table}\NormalTok{(myYCut), }\DataTypeTok{las =} \DecValTok{1}\NormalTok{, }\DataTypeTok{horiz =} \OtherTok{TRUE}\NormalTok{, }
+          \DataTypeTok{col =} \KeywordTok{rgb}\NormalTok{(rColY, gColY, bColY))}
+  \KeywordTok{par}\NormalTok{(op)}
+\NormalTok{\}}
+\KeywordTok{graphBarplotCol}\NormalTok{(}\DataTypeTok{n =} \DecValTok{50}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-243-1.pdf}
+
+Con la función \texttt{rgb()} podemos representar 256\^{}3 colores, o
+167 777 216 colores diferentes. Nuestro objetivo, sin embargo, es hacer
+gráficos que sean divertidos de leer y que hagan un buen uso de nuestros
+resultados científicos. Por lo tanto, debemos elegir los colores
+adecuados para nuestro propósito. Por eso utilizaremos paletas de
+colores.
+
+\section{Paletas de colores}\label{paletas-de-colores}
+
+Las paletas son esquemas de color representados como un \texttt{vector}
+con colores en formato hexadecimal (valor devuelto por la función
+\texttt{rgb()}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myPal <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}
+  \KeywordTok{rgb}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{94}\NormalTok{, }\DecValTok{255}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{),  }
+  \KeywordTok{rgb}\NormalTok{(}\DecValTok{255}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{174}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{),  }
+  \KeywordTok{rgb}\NormalTok{(}\DecValTok{255}\NormalTok{, }\DecValTok{136}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{),  }
+  \KeywordTok{rgb}\NormalTok{(}\DecValTok{119}\NormalTok{, }\DecValTok{255}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{))}
+\KeywordTok{print}\NormalTok{(myPal)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "#005EFF" "#FF00AE" "#FF8800" "#77FF00"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{boxplot}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{5}\NormalTok{), }\DataTypeTok{col =}\NormalTok{ myPal, }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-244-1.pdf}
+
+Hay paletas de colores incluidos en R: \texttt{terrain.colors()},
+\texttt{heat.colors()}, \texttt{topo.colors()}, \texttt{cm.colors()},
+\texttt{rainbow()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{op <-}\StringTok{ }\KeywordTok{par}\NormalTok{(}\DataTypeTok{no.readonly =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{boxplot}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{10}\NormalTok{), }\DataTypeTok{main =} \StringTok{"terrain.colors()"}\NormalTok{, }
+        \DataTypeTok{col =} \KeywordTok{terrain.colors}\NormalTok{(}\DecValTok{10}\NormalTok{), }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{boxplot}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{10}\NormalTok{), }\DataTypeTok{main =} \StringTok{"heat.colors()"}\NormalTok{, }
+        \DataTypeTok{col =} \KeywordTok{heat.colors}\NormalTok{(}\DecValTok{10}\NormalTok{), }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{boxplot}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{10}\NormalTok{), }\DataTypeTok{main =} \StringTok{"topo.colors()"}\NormalTok{, }
+        \DataTypeTok{col =} \KeywordTok{topo.colors}\NormalTok{(}\DecValTok{10}\NormalTok{), }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{boxplot}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{10}\NormalTok{), }\DataTypeTok{main =} \StringTok{"cm.colors()"}\NormalTok{, }
+        \DataTypeTok{col =} \KeywordTok{cm.colors}\NormalTok{(}\DecValTok{10}\NormalTok{), }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{boxplot}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{10}\NormalTok{), }\DataTypeTok{main =} \StringTok{"rainbow()"}\NormalTok{, }
+        \DataTypeTok{col =} \KeywordTok{rainbow}\NormalTok{(}\DecValTok{10}\NormalTok{), }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(op)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-245-1.pdf}
+
+También hay una función \texttt{colorRampPalette()} que nos permite
+crear un degradado de color.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{op <-}\StringTok{ }\KeywordTok{par}\NormalTok{(}\DataTypeTok{no.readonly =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{boxplot}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{2500}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{25}\NormalTok{), }
+        \DataTypeTok{col =} \KeywordTok{colorRampPalette}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{'blue'}\NormalTok{, }\StringTok{'red'}\NormalTok{))(}\DecValTok{25}\NormalTok{), }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{boxplot}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{2500}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{25}\NormalTok{), }
+        \DataTypeTok{col =} \KeywordTok{colorRampPalette}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{'blue'}\NormalTok{, }\StringTok{'white'}\NormalTok{, }\StringTok{'red'}\NormalTok{))(}\DecValTok{25}\NormalTok{), }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{boxplot}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{2500}\NormalTok{), }\DataTypeTok{ncol =} \DecValTok{25}\NormalTok{), }
+        \DataTypeTok{col =}  \KeywordTok{colorRampPalette}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\KeywordTok{rgb}\NormalTok{(}\DecValTok{255}\NormalTok{, }\DecValTok{136}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{),  }
+                                  \KeywordTok{rgb}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{94}\NormalTok{, }\DecValTok{255}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{)))(}\DecValTok{25}\NormalTok{), }
+        \DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-246-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{par}\NormalTok{(op)}
+\end{Highlighting}
+\end{Shaded}
+
+También podemos crear nuestras propias paletas utilizando sitios web de
+selección de colores como \url{http://paletton.com/} o
+\url{https://coolors.co/} (hay muchos más), y luego utilizarlos en R
+copiando en un \texttt{vector} los valores hexadecimales o rgb.
+
+R es un lenguaje de programación muy poderoso. Podemos imaginar muchas
+formas de crear paletas automáticamente de acuerdo con varios criterios.
+Por ejemplo, podemos importar una imagen cuyos tonos nos parezcan
+relevantes, luego extraer la información de cada uno de los puntos y
+luego seleccionar los colores dominantes a través de una agrupación tipo
+\texttt{kmeans}. Eso es lo que hace la siguiente función.
+
+Primero, cargaremos los paquetes \texttt{raster},\texttt{rgdal} y
+\texttt{jpeg} que se utilizarán para manipular nuestra imagen en R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pkgCheck <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{ }
+  \ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{require}\NormalTok{(x, }\DataTypeTok{character.only =} \OtherTok{TRUE}\NormalTok{))\{}
+    \KeywordTok{install.packages}\NormalTok{(x, }\DataTypeTok{dependencies =} \OtherTok{TRUE}\NormalTok{)}
+      \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(x, }\DataTypeTok{character.only =} \OtherTok{TRUE}\NormalTok{)) \{}
+        \KeywordTok{stop}\NormalTok{()}
+\NormalTok{    \}}
+\NormalTok{  \}}
+\NormalTok{\}}
+\KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"raster"}\NormalTok{)}
+\KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"rgdal"}\NormalTok{)}
+\KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"jpeg"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Luego usaremos la función \texttt{kmeans()} para realizar grupos de
+colores usando los valores RGB de cada punto en nuestra imagen. Aquí
+tenemos dos métodos posibles, el primero usa la función
+\texttt{kmeans()} para los tres valores RGB, y el segundo usa la función
+\texttt{kmeans()} para cada valor RGB individualmente (esta segunda
+función proporciona una paleta que puede ser bastante alejado de los
+colores de la imagen original).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{createPal <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(photo, }\DataTypeTok{met =} \DecValTok{1}\NormalTok{, }\DataTypeTok{graph =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{k =} \DecValTok{9}\NormalTok{)\{}
+  \ControlFlowTok{if}\NormalTok{(met }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)\{}
+\NormalTok{    colR <-}\StringTok{ }\KeywordTok{getValues}\NormalTok{(}\KeywordTok{raster}\NormalTok{(photo, }\DataTypeTok{band =} \DecValTok{1}\NormalTok{))}
+\NormalTok{    colG <-}\StringTok{ }\KeywordTok{getValues}\NormalTok{(}\KeywordTok{raster}\NormalTok{(photo, }\DataTypeTok{band =} \DecValTok{2}\NormalTok{))}
+\NormalTok{    colB <-}\StringTok{ }\KeywordTok{getValues}\NormalTok{(}\KeywordTok{raster}\NormalTok{(photo, }\DataTypeTok{band =} \DecValTok{3}\NormalTok{))}
+\NormalTok{    kMeans <-}\StringTok{ }\KeywordTok{kmeans}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(colR, colG, colB), }\DataTypeTok{centers =}\NormalTok{ k)}
+\NormalTok{    kCol <-}\StringTok{ }\KeywordTok{rgb}\NormalTok{(kMeans}\OperatorTok{$}\NormalTok{centers, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{)[}\KeywordTok{order}\NormalTok{(}\KeywordTok{table}\NormalTok{(}
+\NormalTok{      kMeans}\OperatorTok{$}\NormalTok{cluster), }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{)]}
+    \ControlFlowTok{if}\NormalTok{(graph }\OperatorTok{==}\StringTok{ }\OtherTok{TRUE}\NormalTok{)\{}
+\NormalTok{      op <-}\StringTok{ }\KeywordTok{par}\NormalTok{(}\DataTypeTok{no.readonly =} \OtherTok{TRUE}\NormalTok{)}
+      \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow =} \KeywordTok{c}\NormalTok{ (}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\NormalTok{      myJpg <-}\StringTok{ }\KeywordTok{readJPEG}\NormalTok{(}\StringTok{"./myFiles/photoKmeans.jpg"}\NormalTok{, }\DataTypeTok{native =} \OtherTok{TRUE}\NormalTok{)}
+      \KeywordTok{plot}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{1}\NormalTok{, }\DecValTok{0}\OperatorTok{:}\DecValTok{1}\NormalTok{, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{ann =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+      \KeywordTok{rasterImage}\NormalTok{(myJpg, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+      \KeywordTok{barplot}\NormalTok{(}\KeywordTok{table}\NormalTok{(kMeans}\OperatorTok{$}\NormalTok{cluster)[}\KeywordTok{order}\NormalTok{(}\KeywordTok{table}\NormalTok{(kMeans}\OperatorTok{$}\NormalTok{cluster), }
+        \DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{)], }\DataTypeTok{col =}\NormalTok{ kCol, }\DataTypeTok{names.arg =} \OtherTok{NA}\NormalTok{)}
+      \KeywordTok{par}\NormalTok{(op)}
+\NormalTok{    \}}
+    \KeywordTok{return}\NormalTok{(kCol)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \ControlFlowTok{if}\NormalTok{(met }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{)\{}
+\NormalTok{      kColR <-}\StringTok{ }\KeywordTok{kmeans}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{getValues}\NormalTok{(}\KeywordTok{raster}\NormalTok{(photo, }\DataTypeTok{band =} \DecValTok{1}\NormalTok{)), }
+                      \DataTypeTok{centers =}\NormalTok{ k)}
+\NormalTok{      kColG <-}\StringTok{ }\KeywordTok{kmeans}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{getValues}\NormalTok{(}\KeywordTok{raster}\NormalTok{(photo, }\DataTypeTok{band =} \DecValTok{2}\NormalTok{)), }
+                      \DataTypeTok{centers =}\NormalTok{ k)}
+\NormalTok{      kColB <-}\StringTok{ }\KeywordTok{kmeans}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{getValues}\NormalTok{(}\KeywordTok{raster}\NormalTok{(photo, }\DataTypeTok{band =} \DecValTok{3}\NormalTok{)), }
+                      \DataTypeTok{centers =}\NormalTok{ k)}
+\NormalTok{      kCol <-}\StringTok{ }\NormalTok{(}\KeywordTok{rgb}\NormalTok{(kColR}\OperatorTok{$}\NormalTok{centers, kColG}\OperatorTok{$}\NormalTok{centers, kColB}\OperatorTok{$}\NormalTok{centers,}
+                   \DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{))}
+      \ControlFlowTok{if}\NormalTok{(graph }\OperatorTok{==}\StringTok{ }\OtherTok{TRUE}\NormalTok{)\{}
+\NormalTok{        op <-}\StringTok{ }\KeywordTok{par}\NormalTok{(}\DataTypeTok{no.readonly =} \OtherTok{TRUE}\NormalTok{)}
+        \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow =} \KeywordTok{c}\NormalTok{ (}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\NormalTok{        myJpg <-}\StringTok{ }\KeywordTok{readJPEG}\NormalTok{(}\StringTok{"./myFiles/photoKmeans.jpg"}\NormalTok{, }\DataTypeTok{native =} \OtherTok{TRUE}\NormalTok{)}
+        \KeywordTok{plot}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{1}\NormalTok{, }\DecValTok{0}\OperatorTok{:}\DecValTok{1}\NormalTok{, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{ann =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{)}
+        \KeywordTok{rasterImage}\NormalTok{(myJpg, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+        \KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =} \DecValTok{1}\OperatorTok{:}\NormalTok{k, }\DataTypeTok{y =} \KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, k), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+             \DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, k), }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }
+             \DataTypeTok{ylab =} \StringTok{""}\NormalTok{, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{)}
+        \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{k)\{}
+          \KeywordTok{polygon}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(i}\OperatorTok{-}\DecValTok{1}\NormalTok{, i, i, i}\OperatorTok{-}\DecValTok{1}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+                  \DataTypeTok{col =}\NormalTok{ kCol[i])}
+          \KeywordTok{text}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ i }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{y =} \FloatTok{0.5}\NormalTok{, }
+               \DataTypeTok{labels =} \KeywordTok{as.character}\NormalTok{(kCol[i]), }\DataTypeTok{srt =} \DecValTok{90}\NormalTok{)}
+\NormalTok{        \}}
+        \KeywordTok{par}\NormalTok{(op)}
+\NormalTok{      \}}
+      \KeywordTok{return}\NormalTok{(kCol)}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+      \KeywordTok{print}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(}\StringTok{"No method "}\NormalTok{, met, }\StringTok{"."}\NormalTok{))}
+      \KeywordTok{return}\NormalTok{(}\KeywordTok{rgb}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\NormalTok{    \}}
+\NormalTok{  \}}
+\NormalTok{\}}
+
+\NormalTok{myPalMet1 <-}\StringTok{ }\KeywordTok{createPal}\NormalTok{(}\DataTypeTok{photo =} \StringTok{"./myFiles/photoKmeans.jpg"}\NormalTok{, }
+                       \DataTypeTok{met =} \DecValTok{1}\NormalTok{, }\DataTypeTok{graph =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{k =} \DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-248-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myPalMet2 <-}\StringTok{ }\KeywordTok{createPal}\NormalTok{(}\DataTypeTok{photo =} \StringTok{"./myFiles/photoKmeans.jpg"}\NormalTok{, }
+                       \DataTypeTok{met =} \DecValTok{2}\NormalTok{, }\DataTypeTok{graph =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{k =} \DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-248-2.pdf}
+
+La función nos devuelve los colores de la paleta con un gráfico de
+barras que representa el número de puntos de la imagen en cada uno de
+los grupos de colores. Ahora podemos usar nuestra nueva paleta para
+hacer nuestros gráficos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{makeImpact <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(myPal, }\DataTypeTok{numP =} \DecValTok{300}\NormalTok{, }\DataTypeTok{impact =} \FloatTok{0.33}\NormalTok{, }\DataTypeTok{multCex =} \DecValTok{3}\NormalTok{)\{}
+\NormalTok{  myX <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{1000}\NormalTok{, }\DataTypeTok{size =}\NormalTok{ numP, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}\OperatorTok{/}\DecValTok{1000}
+\NormalTok{  myY <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{1000}\NormalTok{, }\DataTypeTok{size =}\NormalTok{ numP, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}\OperatorTok{/}\DecValTok{1000}
+\NormalTok{  distImpact <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{((myX }\OperatorTok{-}\StringTok{ }\NormalTok{impact)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(myY }\OperatorTok{-}\StringTok{ }\NormalTok{impact)}\OperatorTok{^}\DecValTok{2}\NormalTok{)}
+\NormalTok{  dfXY <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(myX, myY, distImpact)}
+  \KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ dfXY}\OperatorTok{$}\NormalTok{myX, }\DataTypeTok{y =}\NormalTok{ dfXY}\OperatorTok{$}\NormalTok{myY, }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{, }
+    \DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{""}\NormalTok{, }\DataTypeTok{cex =}\NormalTok{ dfXY}\OperatorTok{$}\NormalTok{distImpact}\OperatorTok{*}\NormalTok{multCex, }
+    \DataTypeTok{col =}\NormalTok{ myPal, }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{)}
+\NormalTok{\}}
+
+\NormalTok{op <-}\StringTok{ }\KeywordTok{par}\NormalTok{(}\DataTypeTok{no.readonly =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow =} \KeywordTok{c}\NormalTok{ (}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{makeImpact}\NormalTok{(}\DataTypeTok{myPal =}\NormalTok{ myPalMet1, }\DataTypeTok{numP =} \DecValTok{3000}\NormalTok{, }\DataTypeTok{impact =} \FloatTok{0.33}\NormalTok{)}
+\KeywordTok{makeImpact}\NormalTok{(}\DataTypeTok{myPal =}\NormalTok{ myPalMet2, }\DataTypeTok{numP =} \DecValTok{3000}\NormalTok{, }\DataTypeTok{impact =} \FloatTok{0.66}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-249-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{par}\NormalTok{(op)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Conclusión}\label{conclusion-9}
+
+Felicitaciones ! Este es el final de este capítulo sobre la gestión del
+color. Ahora sabemos cómo usar colores y paletas, y cómo guiar la
+selección de colores para resaltar nuestros resultados. En el siguiente
+capítulo veremos algunos ejemplos de paquetes de gráficos y las últimas
+tendencias, como los gráficos dinámicos.
+
 \part{Estudio de caso}\label{part-estudio-de-caso}
 
 \hypertarget{studyCase1}{\chapter{Analizar datos de loggers de
@@ -11080,7 +11470,7 @@ especificando el formato de las fechas con la función \texttt{as.Date()}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-247-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-257-1.pdf}
 
 Podemos simplificar la información calculando únicamente las
 temperaturas mínimas, promedias, y máximas con la función
@@ -11103,7 +11493,7 @@ temperaturas mínimas, promedias, y máximas con la función
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-248-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-258-1.pdf}
 
 También podemos calcular la diferencia entre la temperatura máxima y la
 temperatura mínima (variación de temperatura diurna).
@@ -11117,7 +11507,7 @@ temperatura mínima (variación de temperatura diurna).
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-249-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-259-1.pdf}
 
 Otra posibilidad es de agrupar los datos para tener la temperatura
 promedia de un día con la función \texttt{aggregate()}.
@@ -11141,7 +11531,7 @@ promedia de un día con la función \texttt{aggregate()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-250-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-260-1.pdf}
 
 Tambien podemos calcular las temperaturas de los dias para cada mes.
 
@@ -11177,18 +11567,18 @@ Tambien podemos calcular las temperaturas de los dias para cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-1.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-2.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-3.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-4.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-5.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-6.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-7.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-8.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-9.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-10.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-11.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-251-12.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-3.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-4.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-5.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-6.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-7.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-8.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-9.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-10.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-11.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-261-12.pdf}
 
 O todo en un mismo grafico, y la variación de temperatura diurna para
 cada mes.
@@ -11216,7 +11606,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-252-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-262-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11241,7 +11631,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-252-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-262-2.pdf}
 
 
 \end{document}
