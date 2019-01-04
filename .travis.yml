@@ -1,5 +1,11 @@
 language: R
-sudo: false
+sudo: required #false
+dist: trusty
+addons:
+  apt:
+    packages:
+      - libgdal-dev
+      - libproj-dev
 cache:
   packages: true
   directories:
