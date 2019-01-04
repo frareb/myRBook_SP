@@ -23,6 +23,10 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
 Últimas modificaciones:
 
+**04/01/2019**
+
+* Capítulo [Paquetes gráficos](#graph3) 
+
 **10/12/2018**
 
 * Capítulo [Gestión del color](#graph2) 
