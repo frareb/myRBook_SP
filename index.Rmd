@@ -21,7 +21,7 @@ Si tiene algún comentario, sugerencia o si identifica errores, no dude en envia
 
 Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
-Últimas modificaciones:
+## Últimas modificaciones
 
 **04/01/2019**
 
@@ -115,7 +115,7 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 * tres capítulos en línea (*primeros pasos*, *elegir un entorno de desarrollo*, *tipos de datos*)
 
 
-# Agradecimientos {#remerciements}
+## Agradecimientos {#remerciements}
 
 Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones (en orden alfabético):
 
