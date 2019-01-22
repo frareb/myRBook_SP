@@ -1,6 +1,8 @@
 # Paquetes gráficos {#graph3}
 
-## RColorBrewer package
+## Los paquetes con paletas
+
+### `RColorBrewer`
 
 El paquete `RColorBrewer` es un paquete de referencia porque contiene paletas adicionales a las disponibles en la versión básica de R. Una vez que el paquete está instalado, solo llamamos a las paletas para utilizarlas. Aquí están las paletas disponibles y un ejemplo de uso.
 
@@ -18,6 +20,42 @@ display.brewer.all()
 boxplot(matrix(rnorm(1000), ncol = 10), 
   col = brewer.pal(10, "Paired"), axes = FALSE)
 ```
+
+### `palettesForR`
+
+El paquete `palettesForR` es otro paquete que contiene paletas listas para usar de los proyectos 'Gimp' y 'Inkscape'. Una vez que el paquete está instalado, solo llamamos a las paletas para utilizarlas. Las muchas paletas disponibles se enumeran en la ayuda del paquete (hay 48 paletas). Aquí hay un ejemplo de uso.
+
+```{r}
+pkgCheck <- function(x){ 
+	if (!require(x, character.only = TRUE)){
+		install.packages(x, dependencies = TRUE)
+		if(!require(x, character.only = TRUE)) {
+			stop()
+		}
+	}
+}
+pkgCheck("palettesForR")
+showPalette(Echo_gpl)
+groupTest <- sample(1:3, size = 100, replace = TRUE) 
+valueTest <- sample(1:7, size = 100, replace = TRUE)
+tableTest <- table(groupTest, valueTest)
+barplot(tableTest, 
+  col = Echo_gpl, axes = FALSE, beside = TRUE)
+groupTest <- sample(1:3, size = 100, replace = TRUE) 
+valueTest <- sample(1:7, size = 100, replace = TRUE)
+tableTest <- table(groupTest, valueTest)
+barplot(tableTest, 
+  col = Tango_gpl, axes = FALSE, beside = TRUE)
+```
+
+### Otros paquetes
+
+Hay muchos paquetes que contienen paletas. Por ejemplo :
+
+* `viridis` (https://CRAN.R-project.org/package=viridis)
+* `jcolors` (https://CRAN.R-project.org/package=jcolors)
+* `scico` (https://CRAN.R-project.org/package=scico)
+* ...
 
 ## ggplot2 package
 
