@@ -200,7 +200,7 @@ append(vecManip2, 5)
 append(vecManip2, 5, after = 2)
 ```
 
-#### `cbind()` et `rbind()` {#l015cbind}
+#### `cbind()` y `rbind()` {#l015cbind}
 
 Las funciones `cbind()` y `rbind()` permiten combinar elementos por columna o por línea.
 
@@ -209,7 +209,7 @@ cbind(vecManip2, vecManip2)
 rbind(vecManip2, vecManip2)
 ```
 
-#### `paste()` et `paste0()` {#l015paste}
+#### `paste()` y `paste0()` {#l015paste}
 
 Estas son dos funciones que usaremos mucho a partir de ahora. Las funciones `paste()` y `paste0()` se usan para concatenar cadenas de texto. La función `paste0()` es equivalente a `paste()` sin proponer un separador entre los elementos a concatenar. La función `paste0()` también es más rápida.
 
