@@ -130,7 +130,7 @@ names(irisCopy) <- c("a", "b", "c", "d", "e")
 names(irisCopy)
 ```
 
-#### `cat()` et `print()` {#l015print}
+#### `cat()` y `print()` {#l015print}
 
 La función `cat()` se usa para mostrar el contenido de un objeto mientras que la función `print()` devuelve el valor de un objeto con la capacidad de realizar conversiones.
 
