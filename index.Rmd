@@ -25,7 +25,7 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
 **28/03/2019**
 
-* diapositivas del [curso de R en Quito - Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/links.html)
+* diapositivas del [curso de R en Quito - Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html)
 
 **22/01/2019**
 
