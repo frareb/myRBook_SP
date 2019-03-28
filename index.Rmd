@@ -15,11 +15,11 @@ cover-image: "myFigures/cover.png"
 
 # Preámbulo
 
-Este libro está incompleto por el momento y está viendo su versión preliminar. Muchos capítulos ya están en línea, así que no dude en consultarlos y comenzar su iniciación o su perfeccionamiento en el lenguaje de programación R.
+Este libro está diseñado para actualizarse de acuerdo con las nuevas características de R y según la disponibilidad de sus colaboradores. Es un libro de colaboración, así que siéntase libre de compartir sus comentarios o colaborar directamente para mejorarlo.
 
 Si tiene algún comentario, sugerencia o si identifica errores, no dude en enviarme un correo electrónico (francois.rebaudo@ird.fr), o si está familiarizado con GitHub en el sitio web del proyecto (https://github.com/frareb/myRBook_SP). Este libro es colaborativo, se basa en su participación.
 
-Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
+Este libro también está disponible en francés (http://myrbookfr.netlify.com/). Más allá de este libro, puede acceder a las diapositivas del [último curso de R realizado en marzo de 2019 en Quito, Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html).
 
 ## Últimas modificaciones
 
