@@ -25,7 +25,11 @@
 <meta name="author" content="François Rebaudo">
 
 
+<<<<<<< HEAD
 <meta name="date" content="2019-03-28">
+=======
+<meta name="date" content="2019-02-14">
+>>>>>>> 048846750c4008499982d4b87d530421f2674a0d
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -329,13 +333,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>El directorio de trabajo por defecto se puede obtener con la función <a href="fonctions.html#l015getwd"><code>getwd()</code></a> y cambiar con la función <a href="fonctions.html#l015setwd"><code>setwd()</code></a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">oldWd &lt;-<span class="st"> </span><span class="kw">getwd</span>()
 <span class="kw">print</span>(oldWd)</code></pre></div>
-<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP&quot;</code></pre>
+<pre><code>## [1] &quot;/home/fr/myRBook_SP&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;..&quot;</span>)
 <span class="kw">getwd</span>()</code></pre></div>
-<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub&quot;</code></pre>
+<pre><code>## [1] &quot;/home/fr&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(oldWd)
 <span class="kw">getwd</span>()</code></pre></div>
-<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP&quot;</code></pre>
+<pre><code>## [1] &quot;/home/fr/myRBook_SP&quot;</code></pre>
 <p>Entonces tenemos cuatro opciones:</p>
 <ul>
 <li>podemos leer el contenido de un archivo indicando a R su ruta completa (limitacion para la reproducibilidad de los resultados)</li>
@@ -425,15 +429,15 @@ data01 &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span cl
 <p>La función más simple para leer un archivo que contiene texto es <code>readlines()</code>. Aquí hay un ejemplo con el archivo README.md de este libro, que se encuentra en GitHub.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">readmeGitHub &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/frareb/myRBook_SP/master/README.md&quot;</span>
 <span class="kw">readLines</span>(readmeGitHub)</code></pre></div>
-<pre><code>## [1] &quot;# myRBook_SP&quot;                                                                                                          
-## [2] &quot;Aqui se encuentra el cÃ³digo fuente del libro  *Aprender R: iniciaciÃ³n y perfeccionamiento*, construido con bookdown.&quot;</code></pre>
+<pre><code>## [1] &quot;# myRBook_SP&quot;                                                                                                        
+## [2] &quot;Aqui se encuentra el código fuente del libro  *Aprender R: iniciación y perfeccionamiento*, construido con bookdown.&quot;</code></pre>
 <p>También está la función <code>scan()</code> que devolve todas las palabras separadas por espacios. Podemos consultar la ayuda para obtener más información.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">scan</span>(readmeGitHub, <span class="dt">what =</span> <span class="st">&quot;character&quot;</span>)</code></pre></div>
 <pre><code>##  [1] &quot;#&quot;                   &quot;myRBook_SP&quot;          &quot;Aqui&quot;               
 ##  [4] &quot;se&quot;                  &quot;encuentra&quot;           &quot;el&quot;                 
-##  [7] &quot;cÃ³digo&quot;             &quot;fuente&quot;              &quot;del&quot;                
+##  [7] &quot;código&quot;              &quot;fuente&quot;              &quot;del&quot;                
 ## [10] &quot;libro&quot;               &quot;*Aprender&quot;           &quot;R:&quot;                 
-## [13] &quot;iniciaciÃ³n&quot;         &quot;y&quot;                   &quot;perfeccionamiento*,&quot;
+## [13] &quot;iniciación&quot;          &quot;y&quot;                   &quot;perfeccionamiento*,&quot;
 ## [16] &quot;construido&quot;          &quot;con&quot;                 &quot;bookdown.&quot;</code></pre>
 </div>
 </div>

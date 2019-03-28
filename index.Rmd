@@ -125,6 +125,7 @@ Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus co
 
 ```{r echo = FALSE}
 contrib <- unname(t(data.frame(
+  c("Baptiste", "Régnier", "France"), 
   c("Camila", "Benavides Frias", "Bolivia"), 
   c("Estefania", "Quenta Herrera",  "Bolivia"), 
   c("Susi", "Loza Herrera", "Bolivia"),
