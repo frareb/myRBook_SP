@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-03-28}
+    \date{2019-04-10}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -234,20 +234,6 @@
 
 \mainmatter
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\theoremstyle{definition}
-\newtheorem{example}{Example}[chapter]
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[chapter]
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -276,6 +262,15 @@ acceder a las diapositivas del
 curso de R realizado en marzo de 2019 en Quito, Ecuador}.
 
 \section{Últimas modificaciones}\label{ultimas-modificaciones}
+
+\textbf{10/04/2019}
+
+\begin{itemize}
+\tightlist
+\item
+  Modificaciones en el estudio de caso:
+  \protect\hyperlink{studyCase1}{dataloggers}
+\end{itemize}
 
 \textbf{28/03/2019}
 
@@ -634,7 +629,10 @@ puede variar dependiendo de su sistema operativo (Figura
 \ref{fig:screenCapConsole}). Esta ventana se llama \emph{consola}.
 
 \begin{figure}
-\includegraphics[width=7.53in]{myFigures/screencap_rConsoleFR} \caption{Captura de pantalla de la consola R en Windows.\label{fig:screenCapConsole}}\label{fig:screenCapConsole}
+\centering
+\includegraphics{myFigures/screencap_rConsoleFR.png}
+\caption{\label{fig:screenCapConsole}Captura de pantalla de la consola R en
+Windows.\label{fig:screenCapConsole}}
 \end{figure}
 
 La consola corresponde a la interfaz donde se interpretará el código, es
@@ -653,7 +651,10 @@ aparecerá en un fondo gris con \texttt{\#\#} delante del código para
 hacer la distinción entre el código y el resultado del código.
 
 \begin{figure}
-\includegraphics[width=6.71in]{myFigures/screencap_rConsoleCalculatrice} \caption{Captura de pantalla de la consola R al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}}\label{fig:screenCapConsoleCal}
+\centering
+\includegraphics{myFigures/screencap_rConsoleCalculatrice.png}
+\caption{\label{fig:screenCapConsoleCal}Captura de pantalla de la consola R
+al lado de la calculadora de Windows.\label{fig:screenCapConsoleCal}}
 \end{figure}
 
 \hypertarget{l011opari}{\subsection{Los operadores
@@ -680,11 +681,11 @@ tanto para nosotros como para las personas con las que queremos
 compartir nuestro código). Los operadores aritméticos disponibles en R
 se resumen en la tabla \ref{tab:tabOpAri}.
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:tabOpAri}Operadores aritméticos.\label{tab:tabOpAri}}
 \centering
-\begin{tabular}[t]{l|l}
+\begin{tabular}{l|l}
 \hline
 Label & Operador\\
 \hline
@@ -839,11 +840,11 @@ Sin embargo, R es mucho más que una simple calculadora porque permite
 otro tipo de operadores: operadores de comparación, para \emph{comparar}
 los valores (Table \ref{tab:tabOpCom}).
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:tabOpCom}Operadores de comparación.\label{tab:tabOpCom}}
 \centering
-\begin{tabular}[t]{l|l}
+\begin{tabular}{l|l}
 \hline
 Label & Operador\\
 \hline
@@ -1147,11 +1148,11 @@ solo es ser funcional sino también fácil de leer y volver a leer.
 Hay un último tipo de operador, los operadores lógicos. Estos son útiles
 para combinar operadores de comparación (Table \ref{tab:tabOpLog}).
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:tabOpLog}Operadores lógicos.\label{tab:tabOpLog}}
 \centering
-\begin{tabular}[t]{l|l}
+\begin{tabular}{l|l}
 \hline
 Label & Operador\\
 \hline
@@ -1621,7 +1622,9 @@ principiantes a R.
 \section{RStudio}\label{rstudio}
 
 \begin{figure}
-\includegraphics[width=7.78in]{myLogos/RStudio} \caption{Logo RStudio.\label{fig:logoRStudio}}\label{fig:logoRStudio}
+\centering
+\includegraphics{myLogos/RStudio.png}
+\caption{\label{fig:logoRStudio}Logo RStudio.\label{fig:logoRStudio}}
 \end{figure}
 
 \subsection{Instalar RStudio}\label{instalar-rstudio}
@@ -1652,7 +1655,10 @@ izquierdo de RStudio ahora está dividido en dos, con la consola en la
 parte inferior de la pantalla y el script en la parte superior.
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_RStudio_01} \caption{Captura de pantalla de RStudio en Windows: pantalla por defecto.\label{fig:screenCapRStudio01}}\label{fig:screenCapRStudio01}
+\centering
+\includegraphics{myFigures/screencap_RStudio_01.png}
+\caption{\label{fig:screenCapRStudio01}Captura de pantalla de RStudio en
+Windows: pantalla por defecto.\label{fig:screenCapRStudio01}}
 \end{figure}
 
 Luego podemos comenzar a escribir nuestro script con los comentarios que
@@ -1686,7 +1692,11 @@ deseamos ejecutar y usamos la combinación de teclas
 \ref{fig:screenCapRStudio02}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_RStudio_02} \caption{Captura de pantalla de RStudio en Windows: ejecutar nuestro script con CTRL + ENTER.\label{fig:screenCapRStudio02}}\label{fig:screenCapRStudio02}
+\centering
+\includegraphics{myFigures/screencap_RStudio_02.png}
+\caption{\label{fig:screenCapRStudio02}Captura de pantalla de RStudio en
+Windows: ejecutar nuestro script con CTRL +
+ENTER.\label{fig:screenCapRStudio02}}
 \end{figure}
 
 Podemos ver que, de forma predeterminada, en la parte del script, los
@@ -1704,7 +1714,11 @@ theme:}). Elegiremos el tema \emph{Cobalt}, luego \emph{OK} (Figura
 \ref{fig:screenCapRStudio03}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_RStudio_03} \caption{Captura de pantalla de RStudio en Windows: cambiar preferencias de sintaxis.\label{fig:screenCapRStudio03}}\label{fig:screenCapRStudio03}
+\centering
+\includegraphics{myFigures/screencap_RStudio_03.png}
+\caption{\label{fig:screenCapRStudio03}Captura de pantalla de RStudio en
+Windows: cambiar preferencias de
+sintaxis.\label{fig:screenCapRStudio03}}
 \end{figure}
 
 Sabemos cómo crear un nuevo script, guardarlo, ejecutar su contenido y
@@ -1717,7 +1731,9 @@ misma manera, independientemente del entorno de desarrollo utilizado.
 \section{Notepad++ avec Npp2R}\label{notepad-avec-npp2r}
 
 \begin{figure}
-\includegraphics[width=7.78in]{myLogos/Notepadpp} \caption{Logo Notepad++\label{fig:logoNotepad}}\label{fig:logoNotepad}
+\centering
+\includegraphics{myLogos/Notepadpp.png}
+\caption{\label{fig:logoNotepad}Logo Notepad++\label{fig:logoNotepad}}
 \end{figure}
 
 \subsection{Instalar Notepad++ (solamente para
@@ -1744,7 +1760,10 @@ Al abrir por primera vez, Notepad++ muestra un archivo vacío \emph{new
 1} (Figura \ref{fig:screenCapNpp01}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Npp_01} \caption{Captura de pantalla de Notepad++ en Windows: pantalla por defecto.\label{fig:screenCapNpp01}}\label{fig:screenCapNpp01}
+\centering
+\includegraphics{myFigures/screencap_Npp_01.png}
+\caption{\label{fig:screenCapNpp01}Captura de pantalla de Notepad++ en
+Windows: pantalla por defecto.\label{fig:screenCapNpp01}}
 \end{figure}
 
 Como ya hemos creado un script para probarlo con RStudio, lo abriremos
@@ -1755,7 +1774,10 @@ luego \emph{R}, y de nuevo \emph{R}. Aparece el resaltado de sintaxis
 (Figura \ref{fig:screenCapNpp02}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Npp_02} \caption{Captura de pantalla de Notepad++ en Windows: ejecutar nuestro script con F8.\label{fig:screenCapNpp02}}\label{fig:screenCapNpp02}
+\centering
+\includegraphics{myFigures/screencap_Npp_02.png}
+\caption{\label{fig:screenCapNpp02}Captura de pantalla de Notepad++ en
+Windows: ejecutar nuestro script con F8.\label{fig:screenCapNpp02}}
 \end{figure}
 
 La ejecución del script solo se puede realizar si se está ejecutando
@@ -1769,7 +1791,10 @@ abrirá una nueva ventana con una consola que ejecuta las líneas deseadas
 (Figura \ref{fig:screenCapNpp03}).
 
 \begin{figure}
-\includegraphics[width=14.83in]{myFigures/screencap_Npp_03} \caption{Captura de pantalla de Notepad++ en Windows: la consola con F8.\label{fig:screenCapNpp03}}\label{fig:screenCapNpp03}
+\centering
+\includegraphics{myFigures/screencap_Npp_03.png}
+\caption{\label{fig:screenCapNpp03}Captura de pantalla de Notepad++ en
+Windows: la consola con F8.\label{fig:screenCapNpp03}}
 \end{figure}
 
 Al igual que con RStudio, el resaltado de sintaxis se puede cambiar
@@ -1777,7 +1802,10 @@ desde el menú \emph{Configuración}, y se puede seleccionar un nuevo tema
 (por ejemplo, \emph{Solarized} en la Figura \ref{fig:screenCapNpp04})
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Npp_04} \caption{Captura de pantalla de Notepad++ en Windows con el tema Solarized.\label{fig:screenCapNpp04}}\label{fig:screenCapNpp04}
+\centering
+\includegraphics{myFigures/screencap_Npp_04.png}
+\caption{\label{fig:screenCapNpp04}Captura de pantalla de Notepad++ en
+Windows con el tema Solarized.\label{fig:screenCapNpp04}}
 \end{figure}
 
 Comparado con otros editores de texto, Notepad++ tiene la ventaja de ser
@@ -1787,7 +1815,9 @@ personalizar la escritura de códigos.
 \section{Geany}\label{geany}
 
 \begin{figure}
-\includegraphics[width=7.78in]{myLogos/Geany} \caption{Logo Geany\label{fig:logoGeany}}\label{fig:logoGeany}
+\centering
+\includegraphics{myLogos/Geany.png}
+\caption{\label{fig:logoGeany}Logo Geany\label{fig:logoGeany}}
 \end{figure}
 
 \subsection{Instalar Geany (para Linux, Mac OSX y
@@ -1805,14 +1835,20 @@ Al abrir por primera vez, como para RStudio y Notepad++, se crea un
 archivo vacío (Figura \ref{fig:screenCapGeany01}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Geany_01} \caption{Captura de pantalla de Geany en Windows: pantalla por defecto.\label{fig:screenCapGeany01}}\label{fig:screenCapGeany01}
+\centering
+\includegraphics{myFigures/screencap_Geany_01.png}
+\caption{\label{fig:screenCapGeany01}Captura de pantalla de Geany en
+Windows: pantalla por defecto.\label{fig:screenCapGeany01}}
 \end{figure}
 
 Podemos abrir nuestro script con \emph{Archivo}, \emph{Abrir} (Figura
 \ref{fig:screenCapGeany02}).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Geany_02} \caption{Captura de pantalla de Geany en Windows: abrir un script.\label{fig:screenCapGeany02}}\label{fig:screenCapGeany02}
+\centering
+\includegraphics{myFigures/screencap_Geany_02.png}
+\caption{\label{fig:screenCapGeany02}Captura de pantalla de Geany en
+Windows: abrir un script.\label{fig:screenCapGeany02}}
 \end{figure}
 
 Para ejecutar nuestro script, la versión de Geany para Windows no tiene
@@ -1834,7 +1870,10 @@ cambiar a través del menú \emph{Ver}, \emph{cambiar Esquema del color
 screenCapGeany03)).
 
 \begin{figure}
-\includegraphics[width=10in]{myFigures/screencap_Geany_03} \caption{Captura de pantalla de Geany en Windows: cambiar esquema de color.\label{fig:screenCapGeany03}}\label{fig:screenCapGeany03}
+\centering
+\includegraphics{myFigures/screencap_Geany_03.png}
+\caption{\label{fig:screenCapGeany03}Captura de pantalla de Geany en
+Windows: cambiar esquema de color.\label{fig:screenCapGeany03}}
 \end{figure}
 
 \section{Otras soluciones}\label{otras-soluciones}
@@ -7353,7 +7392,7 @@ cómo importar y exportar datos.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 \hypertarget{l015setwd}{\subsection{\texorpdfstring{\texttt{setwd()}}{setwd()}}\label{l015setwd}}
@@ -7369,7 +7408,7 @@ trabajo (carpeta de trabajo).
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 \begin{Shaded}
@@ -7380,7 +7419,7 @@ trabajo (carpeta de trabajo).
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub"
+## [1] "D:/GitHub"
 \end{verbatim}
 
 \begin{Shaded}
@@ -7391,7 +7430,7 @@ trabajo (carpeta de trabajo).
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{list.files()}}{list.files()}}\label{l015listfiles}
@@ -8041,7 +8080,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.36    0.00    0.36
+##    0.25    0.00    0.25
 \end{verbatim}
 
 \begin{Shaded}
@@ -8052,7 +8091,7 @@ casi cero en nuestro caso).
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.37    0.00    0.37
+##    0.25    0.00    0.28
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus
@@ -8187,12 +8226,12 @@ listar los paquetes disponibles en el CRAN en orden alfabético.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "abind"       "acepack"     "ade4"        "agricolae"   "AlgDesign"  
-##  [6] "ape"         "assertthat"  "backports"   "base64enc"   "BH"         
-## [11] "bindr"       "bindrcpp"    "BioFTF"      "bitops"      "bookdown"   
-## [16] "brew"        "broom"       "ca"          "callr"       "caret"      
-## [21] "cartography" "caTools"     "cellranger"  "checkmate"   "CircStats"  
-## [26] "classInt"    "cli"         "clipr"       "clisymbols"  "coda"
+##  [1] "abind"      "acepack"    "actuar"     "ade4"       "adehabitat"
+##  [6] "agricolae"  "AlgDesign"  "alr4"       "animation"  "ape"       
+## [11] "arm"        "arules"     "arulesViz"  "askpass"    "assertthat"
+## [16] "audio"      "babynames"  "backports"  "base64"     "base64enc" 
+## [21] "BDgraph"    "beanplot"   "BH"         "bibtex"     "bindr"     
+## [26] "bindrcpp"   "binom"      "bit"        "bitops"     "biwavelet"
 \end{verbatim}
 
 La función \texttt{pkgCheck()} asegura la \textbf{portabilidad} de
@@ -8278,7 +8317,7 @@ El directorio de trabajo por defecto se puede obtener con la función
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 \begin{Shaded}
@@ -8289,7 +8328,7 @@ El directorio de trabajo por defecto se puede obtener con la función
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub"
+## [1] "D:/GitHub"
 \end{verbatim}
 
 \begin{Shaded}
@@ -8300,7 +8339,7 @@ El directorio de trabajo por defecto se puede obtener con la función
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "D:/GitHub/myRbook_SP"
 \end{verbatim}
 
 Entonces tenemos cuatro opciones:
@@ -9009,12 +9048,12 @@ elementos de un objeto) y repetir una operación. Imaginamos un
 
 \begin{verbatim}
 ##      date01    date02
-## 1 11.503338 10.351879
-## 2  9.163033  9.767451
-## 3 10.112900 10.773763
-## 4  9.739180 11.383376
-## 5 11.384378 10.556375
-## 6  9.114525 10.156984
+## 1 10.018288  9.001038
+## 2 10.629828 12.771839
+## 3  9.291223  9.594611
+## 4 12.476939  9.926380
+## 5  9.665082  8.852094
+## 6  9.232240  9.805178
 \end{verbatim}
 
 Nos gustaría cuantificar la diferencia entre la primera y la segunda
@@ -9141,27 +9180,27 @@ para encontrar el número de líneas.
 \end{Shaded}
 
 \begin{verbatim}
-##       date01    date02       dif isDifBig
-## 1  11.503338 10.351879 1.1514587    small
-## 2   9.163033  9.767451 0.6044179    small
-## 3  10.112900 10.773763 0.6608629    small
-## 4   9.739180 11.383376 1.6441952    small
-## 5  11.384378 10.556375 0.8280034    small
-## 6   9.114525 10.156984 1.0424592    small
-## 7  10.000382  9.091769 0.9086129    small
-## 8   9.456230 10.892206 1.4359762    small
-## 9  10.296700  9.458211 0.8384892    small
-## 10  8.423890 12.071639 3.6477492      big
-## 11  9.123823  9.994212 0.8703890    small
-## 12 10.511170  9.007507 1.5036629    small
-## 13 11.521899 10.435129 1.0867699    small
-## 14  9.866767 10.915370 1.0486033    small
-## 15 11.986800 11.417245 0.5695552    small
-## 16 10.208702  8.547109 1.6615927    small
-## 17 10.441190 10.549798 0.1086075    small
-## 18  8.944005  9.244908 0.3009025    small
-## 19 10.305029  9.631224 0.6738054    small
-## 20  8.983044  8.286438 0.6966052    small
+##       date01    date02        dif isDifBig
+## 1  10.018288  9.001038 1.01725084    small
+## 2  10.629828 12.771839 2.14201054    small
+## 3   9.291223  9.594611 0.30338728    small
+## 4  12.476939  9.926380 2.55055868    small
+## 5   9.665082  8.852094 0.81298867    small
+## 6   9.232240  9.805178 0.57293849    small
+## 7  12.034328  9.510169 2.52415929    small
+## 8  10.860194 10.219951 0.64024306    small
+## 9  10.826693  9.490646 1.33604635    small
+## 10 10.116388 10.054526 0.06186227    small
+## 11  8.926615  9.685888 0.75927315    small
+## 12  9.659990 10.091670 0.43167938    small
+## 13  9.609773 10.777063 1.16729001    small
+## 14  9.585315  8.233860 1.35145522    small
+## 15  9.308057 10.168812 0.86075583    small
+## 16 11.897240  8.658123 3.23911673      big
+## 17 10.499876  9.822939 0.67693746    small
+## 18 11.408554  9.581617 1.82693737    small
+## 19  9.759661  9.555147 0.20451418    small
+## 20 11.392786  9.140319 2.25246743    small
 \end{verbatim}
 
 En la práctica, esta no es la mejor manera de realizar este ejercicio
@@ -9181,27 +9220,27 @@ en:
 \end{Shaded}
 
 \begin{verbatim}
-##       date01    date02       dif isDifBig
-## 1  11.503338 10.351879 1.1514587    small
-## 2   9.163033  9.767451 0.6044179    small
-## 3  10.112900 10.773763 0.6608629    small
-## 4   9.739180 11.383376 1.6441952    small
-## 5  11.384378 10.556375 0.8280034    small
-## 6   9.114525 10.156984 1.0424592    small
-## 7  10.000382  9.091769 0.9086129    small
-## 8   9.456230 10.892206 1.4359762    small
-## 9  10.296700  9.458211 0.8384892    small
-## 10  8.423890 12.071639 3.6477492      big
-## 11  9.123823  9.994212 0.8703890    small
-## 12 10.511170  9.007507 1.5036629    small
-## 13 11.521899 10.435129 1.0867699    small
-## 14  9.866767 10.915370 1.0486033    small
-## 15 11.986800 11.417245 0.5695552    small
-## 16 10.208702  8.547109 1.6615927    small
-## 17 10.441190 10.549798 0.1086075    small
-## 18  8.944005  9.244908 0.3009025    small
-## 19 10.305029  9.631224 0.6738054    small
-## 20  8.983044  8.286438 0.6966052    small
+##       date01    date02        dif isDifBig
+## 1  10.018288  9.001038 1.01725084    small
+## 2  10.629828 12.771839 2.14201054    small
+## 3   9.291223  9.594611 0.30338728    small
+## 4  12.476939  9.926380 2.55055868    small
+## 5   9.665082  8.852094 0.81298867    small
+## 6   9.232240  9.805178 0.57293849    small
+## 7  12.034328  9.510169 2.52415929    small
+## 8  10.860194 10.219951 0.64024306    small
+## 9  10.826693  9.490646 1.33604635    small
+## 10 10.116388 10.054526 0.06186227    small
+## 11  8.926615  9.685888 0.75927315    small
+## 12  9.659990 10.091670 0.43167938    small
+## 13  9.609773 10.777063 1.16729001    small
+## 14  9.585315  8.233860 1.35145522    small
+## 15  9.308057 10.168812 0.86075583    small
+## 16 11.897240  8.658123 3.23911673      big
+## 17 10.499876  9.822939 0.67693746    small
+## 18 11.408554  9.581617 1.82693737    small
+## 19  9.759661  9.555147 0.20451418    small
+## 20 11.392786  9.140319 2.25246743    small
 \end{verbatim}
 
 La mayoría de los ejemplos que se pueden encontrar en Internet sobre el
@@ -9224,7 +9263,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 10
+## [1] 6
 \end{verbatim}
 
 \begin{Shaded}
@@ -9235,7 +9274,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 10
+## [1] 6
 \end{verbatim}
 
 \begin{Shaded}
@@ -9281,7 +9320,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.452
+## [1] 3.393
 \end{verbatim}
 
 \begin{Shaded}
@@ -9292,7 +9331,7 @@ Aquí hay algunos ejemplos adaptados de varias fuentes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.48
+## [1] 3.517
 \end{verbatim}
 
 Es un buen ejercicio explorar los muchos ejemplos disponibles en
@@ -9317,12 +9356,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 567 544 586 593 481 439 619 519 387 534 750 449 521 409 381 436 409
-##  [18] 508 492 485 622 529 470 593 516 604 481 554 517 439 412 286 428 544
-##  [35] 552 550 408 585 455 468 594 485 581 636 641 578 610 446 238 490 397
-##  [52] 444 493 555 512 574 533 393 612 553 340 520 637 393 616 344 528 547
-##  [69] 617 440 518 538 514 547 470 312 493 525 529 617 522 441 402 549 583
-##  [86] 573 534 456 342 378 319 556 455 536 500 666 488 432 564 585
+##   [1] 596 537 540 471 501 640 487 552 494 533 558 368 389 354 479 545 482
+##  [18] 495 441 560 627 489 412 388 604 461 417 476 477 430 488 664 423 446
+##  [35] 394 527 363 587 692 663 412 467 442 510 414 487 553 478 476 432 401
+##  [52] 467 410 466 502 484 291 448 349 521 550 693 465 375 556 546 675 458
+##  [69] 475 502 468 634 654 553 606 567 532 420 517 552 487 319 560 621 582
+##  [86] 389 546 441 477 388 423 545 577 550 436 419 332 342 622 417
 \end{verbatim}
 
 \begin{Shaded}
@@ -9337,12 +9376,12 @@ Queremos la suma de cada línea (veremos cómo hacer con la función
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 567 544 586 593 481 439 619 519 387 534 750 449 521 409 381 436 409
-##  [18] 508 492 485 622 529 470 593 516 604 481 554 517 439 412 286 428 544
-##  [35] 552 550 408 585 455 468 594 485 581 636 641 578 610 446 238 490 397
-##  [52] 444 493 555 512 574 533 393 612 553 340 520 637 393 616 344 528 547
-##  [69] 617 440 518 538 514 547 470 312 493 525 529 617 522 441 402 549 583
-##  [86] 573 534 456 342 378 319 556 455 536 500 666 488 432 564 585
+##   [1] 596 537 540 471 501 640 487 552 494 533 558 368 389 354 479 545 482
+##  [18] 495 441 560 627 489 412 388 604 461 417 476 477 430 488 664 423 446
+##  [35] 394 527 363 587 692 663 412 467 442 510 414 487 553 478 476 432 401
+##  [52] 467 410 466 502 484 291 448 349 521 550 693 465 375 556 546 675 458
+##  [69] 475 502 468 634 654 553 606 567 532 420 517 552 487 319 560 621 582
+##  [86] 389 546 441 477 388 423 545 577 550 436 419 332 342 622 417
 \end{verbatim}
 
 En conclusión, se recomienda no usar el bucle \texttt{for()} con R
@@ -9420,7 +9459,7 @@ pueda realizar fácilmente 35000 pruebas en 2 segundos):
 
 \begin{verbatim}
 ## [1] "Number found !"
-## [1] "And I have plenty of time left: 1.15 sec"
+## [1] "And I have plenty of time left: 1.25 sec"
 \end{verbatim}
 
 En este script generamos un número aleatorio para adivinar con la
@@ -9499,11 +9538,11 @@ para repetirlo cinco veces.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1.149
-## [1] 0.654
-## [1] 0.717
-## [1] 0.653
-## [1] 0.498
+## [1] 0.565
+## [1] 0.476
+## [1] 0.511
+## [1] 0.233
+## [1] 0.007
 \end{verbatim}
 
 Al igual que el bucle \texttt{while()}, el bucle \texttt{repeat()} no se
@@ -9621,12 +9660,12 @@ columnas y 100 líneas:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 457 580 475 432 433 475 521 521 584 552 600 487 644 398 317 539 453
-##  [18] 454 550 496 505 464 354 458 421 356 536 543 475 413 467 550 381 503
-##  [35] 528 544 471 476 603 499 488 563 551 469 476 477 486 565 512 590 374
-##  [52] 583 584 457 668 431 478 470 550 651 602 562 586 668 533 448 585 482
-##  [69] 636 623 508 499 201 528 451 532 281 439 448 590 621 308 486 466 531
-##  [86] 423 502 545 514 512 315 400 464 338 487 482 469 643 534 531
+##   [1] 399 496 413 426 465 460 400 655 697 639 522 594 286 430 507 418 512
+##  [18] 559 532 372 586 554 423 456 480 366 375 590 480 462 554 475 651 647
+##  [35] 604 444 502 561 561 488 530 582 624 403 454 467 559 422 609 671 518
+##  [52] 483 648 633 588 476 534 553 571 551 394 481 359 656 538 470 421 530
+##  [69] 494 425 435 438 523 582 511 552 505 614 566 525 614 506 671 559 481
+##  [86] 665 455 496 459 496 592 471 646 590 500 343 330 637 510 513
 \end{verbatim}
 
 Si queremos saber la mediana de cada columna, la expresión se convierte
@@ -9639,7 +9678,7 @@ en:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 54.0 53.0 51.0 53.0 47.0 49.5 52.5 38.0 51.0 52.5
+##  [1] 60.5 46.0 64.0 45.5 56.0 49.0 52.0 59.5 41.0 50.0
 \end{verbatim}
 
 El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply}
@@ -9662,7 +9701,7 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 53.24 52.28 52.98 51.97 52.59 44.86 48.83 50.47 53.08 49.49
+##  [1] 50.48 52.80 53.41 52.57 50.18 51.07 53.88 52.48 52.43 49.51
 \end{verbatim}
 
 \begin{Shaded}
@@ -9674,7 +9713,7 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 53.24 52.28 52.98 51.97 52.59 44.86 48.83 50.47 53.08 49.49
+##  [1] 50.48 52.80 53.41 52.57 50.18 51.07 53.88 52.48 52.43 49.51
 \end{verbatim}
 
 \begin{Shaded}
@@ -9684,8 +9723,8 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 49.02 51.32 59.10 48.38 54.60 50.24 47.98 54.82 56.92 54.08 48.06
-## [12] 47.38 43.72 43.14 50.94 49.14 51.00 52.54 51.32 55.88
+##  [1] 50.54 51.76 52.08 49.24 49.46 49.94 47.08 49.72 52.68 52.82 48.68
+## [12] 49.62 56.90 51.14 56.48 57.92 57.72 55.96 53.92 43.96
 \end{verbatim}
 
 \begin{Shaded}
@@ -9697,8 +9736,8 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 49.02 51.32 59.10 48.38 54.60 50.24 47.98 54.82 56.92 54.08 48.06
-## [12] 47.38 43.72 43.14 50.94 49.14 51.00 52.54 51.32 55.88
+##  [1] 50.54 51.76 52.08 49.24 49.46 49.94 47.08 49.72 52.68 52.82 48.68
+## [12] 49.62 56.90 51.14 56.48 57.92 57.72 55.96 53.92 43.96
 \end{verbatim}
 
 \begin{Shaded}
@@ -9708,7 +9747,7 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 51.680 51.900 50.385 49.075 51.855
+## [1] 52.730 49.760 51.380 53.115 52.420
 \end{verbatim}
 
 \begin{Shaded}
@@ -9719,7 +9758,7 @@ su operación.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 51.680 51.900 50.385 49.075 51.855
+## [1] 52.730 49.760 51.380 53.115 52.420
 \end{verbatim}
 
 También podemos calcular el promedio de cada fila y valor de columna (la
@@ -9733,27 +9772,27 @@ función luego itera en la dimensión 3):
 
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,] 27.6 49.2 74.2 59.4 59.2 36.6 52.6 74.6 63.4  56.8  32.0  48.8  56.0
-##  [2,] 72.4 36.0 68.4 45.8 54.0 75.2 40.2 43.8 67.6  83.4  52.0  40.4  33.4
-##  [3,] 47.6 74.6 38.0 58.2 56.8 26.8 36.0 65.0 55.4  46.2  53.4  74.2  47.6
-##  [4,] 40.2 64.0 67.2 38.2 58.2 78.6 43.4 59.6 44.4  50.6  51.4  56.0  18.2
-##  [5,] 50.4 42.6 54.8 47.2 51.8 53.2 50.4 56.0 40.2  66.6  61.6  47.0  36.0
-##  [6,] 36.4 72.2 62.0 26.4 30.8 51.4 32.2 62.8 44.2  48.4  16.8  30.8  60.2
-##  [7,] 35.2 34.8 67.8 44.2 50.6 31.8 62.0 39.2 55.2  45.6  43.4  70.6  50.0
-##  [8,] 55.8 45.8 57.0 57.2 62.6 42.0 68.6 47.4 81.4  49.8  45.4  33.4  37.4
-##  [9,] 62.2 58.8 49.0 47.4 81.0 50.0 56.6 42.4 60.0  49.4  65.4  45.4  49.8
-## [10,] 62.4 35.2 52.6 59.8 41.0 56.8 37.8 57.4 57.4  44.0  59.2  27.2  48.6
+##  [1,] 45.8 46.4 73.8 50.0 39.0 64.0 49.8 52.8 42.8  48.2  19.0  41.4  62.4
+##  [2,] 73.2 57.0 39.2 58.2 30.0 32.6 50.4 44.0 58.0  53.0  57.0  50.2  49.6
+##  [3,] 41.6 64.8 48.8 48.2 66.0 46.8 56.4 57.8 53.4  62.4  58.0  62.0  44.2
+##  [4,] 42.4 67.0 70.6 49.8 36.0 66.4 43.2 52.8 59.4  47.0  41.2  45.0  41.4
+##  [5,] 29.2 44.0 28.0 36.6 55.6 39.2 56.8 34.8 50.2  75.0  53.2  27.0  77.8
+##  [6,] 67.2 37.2 51.4 42.0 49.0 50.2 32.4 57.6 47.0  33.8  46.0  47.0  75.6
+##  [7,] 71.8 61.2 36.8 60.6 59.0 50.4 61.6 49.0 63.6  43.8  44.0  53.8  36.6
+##  [8,] 35.2 58.8 66.6 39.4 52.0 48.6 42.0 56.0 45.8  64.2  47.4  60.0  65.6
+##  [9,] 54.4 39.4 60.2 55.2 43.6 46.2 24.4 48.4 57.0  64.0  59.6  45.0  69.0
+## [10,] 44.6 41.8 45.4 52.4 64.4 55.0 53.8 44.0 49.6  36.8  61.4  64.8  46.8
 ##       [,14] [,15] [,16] [,17] [,18] [,19] [,20]
-##  [1,]  32.4  65.4  64.2  53.8  44.6  34.4  79.6
-##  [2,]  54.6  39.8  47.8  64.6  34.2  49.6  42.4
-##  [3,]  52.2  68.4  42.4  47.6  37.2  62.8  69.2
-##  [4,]  48.6  47.6  66.6  52.4  70.8  44.0  39.4
-##  [5,]  48.8  58.8  39.2  60.2  55.8  64.2  67.0
-##  [6,]  46.6  50.4  38.0  47.4  54.8  42.2  43.2
-##  [7,]  48.2  52.0  45.6  32.8  63.6  56.2  47.8
-##  [8,]  26.4  15.6  60.6  39.4  53.2  55.2  75.2
-##  [9,]  23.6  45.4  38.2  66.6  59.8  48.0  62.6
-## [10,]  50.0  66.0  48.8  45.2  51.4  56.6  32.4
+##  [1,]  50.6  51.8  69.4  52.8  55.2  62.4  32.0
+##  [2,]  59.2  63.2  58.2  61.6  51.8  65.8  43.8
+##  [3,]  45.8  56.2  43.4  49.0  62.4  40.0  61.0
+##  [4,]  79.2  49.8  48.6  63.8  52.4  55.4  40.0
+##  [5,]  31.4  66.4  76.6  63.6  59.4  35.8  63.0
+##  [6,]  45.6  37.6  51.8  84.2  57.6  63.4  44.8
+##  [7,]  64.2  71.2  56.4  54.0  74.2  47.4  18.0
+##  [8,]  36.6  71.0  55.6  53.4  64.8  38.2  48.4
+##  [9,]  58.2  57.2  61.2  56.2  33.8  61.0  54.6
+## [10,]  40.6  40.4  58.0  38.6  48.0  69.8  34.0
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{lapply}}{lapply}}\label{l17sapply}
@@ -9780,19 +9819,19 @@ podemos usar la función \texttt{lapply()}:
 
 \begin{verbatim}
 ## $a
-##  [1] 52  5 95 61 85 56  6 59 35 25
+##  [1] 97 55 25 39 56 68 94 51 86 31
 ## 
 ## $b
-##  [1] 84 86 25 95 12 55 79 56  7 28
+##  [1] 14 41 73 98 78 15 35 88 53 42
 ## 
 ## $c
-##  [1] 33 82 92 83 72 56 77 12 98 99
+##  [1] 25 65 85  6  8 78  7 79 43 71
 ## 
 ## $d
-##  [1] 15 19 52 26 25  6 83 65 11 69
+##  [1] 20 76 47 89 62 16 97 82 54 38
 ## 
 ## $e
-##  [1] 30 76 56 55  6  3 22 45 82 92
+##  [1]  6 75  3 86 60 56 12 26 65 28
 \end{verbatim}
 
 \begin{Shaded}
@@ -9803,19 +9842,19 @@ podemos usar la función \texttt{lapply()}:
 
 \begin{verbatim}
 ## $a
-## [1] 47.9
+## [1] 60.2
 ## 
 ## $b
-## [1] 52.7
+## [1] 53.7
 ## 
 ## $c
-## [1] 70.4
+## [1] 46.7
 ## 
 ## $d
-## [1] 37.1
+## [1] 58.1
 ## 
 ## $e
-## [1] 46.7
+## [1] 41.7
 \end{verbatim}
 
 Al igual que con la función \texttt{apply()}, podemos pasar argumentos
@@ -9839,19 +9878,19 @@ los promedios (con el argumento \texttt{na.rm\ =\ TRUE}).
 
 \begin{verbatim}
 ## $a
-##  [1]  5  5  3  5  2  3 NA  5  3  1
+##  [1]  5  1  5  5  2  5 NA  3  2 NA
 ## 
 ## $b
-##  [1] 3 2 4 5 5 3 3 4 4 5
+##  [1]  4  4  1  3  5  4 NA  2  1  3
 ## 
 ## $c
-##  [1] 3 2 5 2 3 5 3 5 3 3
+##  [1] NA  1  4  5  1  4  3  3  5  2
 ## 
 ## $d
-##  [1]  3  5  2  1  2  4  2  1  2 NA
+##  [1] NA NA  5  3  5  3  5 NA  5  1
 ## 
 ## $e
-##  [1]  4  1  5 NA  1 NA  5 NA  3  3
+##  [1] 4 1 4 4 4 2 3 3 3 4
 \end{verbatim}
 
 \begin{Shaded}
@@ -9865,16 +9904,16 @@ los promedios (con el argumento \texttt{na.rm\ =\ TRUE}).
 ## [1] NA
 ## 
 ## $b
-## [1] 3.8
+## [1] NA
 ## 
 ## $c
-## [1] 3.4
+## [1] NA
 ## 
 ## $d
 ## [1] NA
 ## 
 ## $e
-## [1] NA
+## [1] 3.2
 \end{verbatim}
 
 \begin{Shaded}
@@ -9885,19 +9924,19 @@ los promedios (con el argumento \texttt{na.rm\ =\ TRUE}).
 
 \begin{verbatim}
 ## $a
-## [1] 3.555556
+## [1] 3.5
 ## 
 ## $b
-## [1] 3.8
+## [1] 3
 ## 
 ## $c
-## [1] 3.4
+## [1] 3.111111
 ## 
 ## $d
-## [1] 2.444444
+## [1] 3.857143
 ## 
 ## $e
-## [1] 3.142857
+## [1] 3.2
 \end{verbatim}
 
 Para mayor legibilidad o si se debemos realizar varias operaciones
@@ -9913,19 +9952,19 @@ dentro del argumento \texttt{FUN}, podemos usar el siguiente script:
 
 \begin{verbatim}
 ## $a
-## [1] 3.555556
+## [1] 3.5
 ## 
 ## $b
-## [1] 3.8
+## [1] 3
 ## 
 ## $c
-## [1] 3.4
+## [1] 3.111111
 ## 
 ## $d
-## [1] 2.444444
+## [1] 3.857143
 ## 
 ## $e
-## [1] 3.142857
+## [1] 3.2
 \end{verbatim}
 
 Por ejemplo, si queremos obtener \texttt{i\^{}2} si el promedio es mayor
@@ -9946,19 +9985,19 @@ que 3, y \texttt{i\^{}3} de lo contrario:
 
 \begin{verbatim}
 ## $a
-##  [1] 25 25  9 25  4  9 NA 25  9  1
+##  [1] 25  1 25 25  4 25 NA  9  4 NA
 ## 
 ## $b
-##  [1]  9  4 16 25 25  9  9 16 16 25
+##  [1]  64  64   1  27 125  64  NA   8   1  27
 ## 
 ## $c
-##  [1]  9  4 25  4  9 25  9 25  9  9
+##  [1] NA  1 16 25  1 16  9  9 25  4
 ## 
 ## $d
-##  [1]  27 125   8   1   8  64   8   1   8  NA
+##  [1] NA NA 25  9 25  9 25 NA 25  1
 ## 
 ## $e
-##  [1] 16  1 25 NA  1 NA 25 NA  9  9
+##  [1] 16  1 16 16 16  4  9  9  9 16
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{sapply}}{sapply}}\label{l17lapply}
@@ -9977,19 +10016,19 @@ resultado en un formato simplificado siempre que sea posible.
 
 \begin{verbatim}
 ## $a
-## [1] 3.555556
+## [1] 3.5
 ## 
 ## $b
-## [1] 3.8
+## [1] 3
 ## 
 ## $c
-## [1] 3.4
+## [1] 3.111111
 ## 
 ## $d
-## [1] 2.444444
+## [1] 3.857143
 ## 
 ## $e
-## [1] 3.142857
+## [1] 3.2
 \end{verbatim}
 
 \begin{Shaded}
@@ -10002,7 +10041,7 @@ resultado en un formato simplificado siempre que sea posible.
 
 \begin{verbatim}
 ##        a        b        c        d        e 
-## 3.555556 3.800000 3.400000 2.444444 3.142857
+## 3.500000 3.000000 3.111111 3.857143 3.200000
 \end{verbatim}
 
 La función \texttt{sapply()} es interesante para recuperar, por ejemplo,
@@ -10017,8 +10056,8 @@ se llama para hacer esto es
 \end{Shaded}
 
 \begin{verbatim}
-## a b c d e 
-## 5 2 2 5 1
+##  a  b  c  d  e 
+##  1  4  1 NA  1
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{tapply}}{tapply}}\label{l17tapply}
@@ -10041,16 +10080,16 @@ C) y valores de mediciones biologicas en diferentes ubicaciones.
 
 \begin{verbatim}
 ##    species     perf1    perf2    perf3
-## 1        I 10.299054 19399.51 27.32273
-## 2        E  9.449504 20919.13 16.64836
-## 3        F 10.543924  8957.12 21.23621
-## 4        I 10.683257 52070.57 31.08587
-## 5        D 10.330525 12834.96 27.89166
-## 6        A 10.508100 19260.84 21.12422
-## 7        G  9.480351 22371.68 29.06236
-## 8        B 10.987337 35076.10 19.51797
-## 9        H  9.447949 33105.94 27.41559
-## 10       E  9.897859 56661.51 12.15576
+## 1        H 10.651285 31993.70 15.02095
+## 2        A 10.136295 13072.29 22.25550
+## 3        F 10.492761 11568.12 32.51158
+## 4        G 10.865365 80462.39 13.68846
+## 5        J 10.597397 31075.32 13.51445
+## 6        D  9.903330 41881.59 20.84242
+## 7        I  9.343390 21456.50 19.16132
+## 8        J 10.058805 22104.05 10.54795
+## 9        H  9.872385 12883.41 12.08134
+## 10       D 10.144647 26182.53 11.46969
 \end{verbatim}
 
 Podemos obtener fácilmente un resumen de las mediciones para cada
@@ -10066,43 +10105,43 @@ especie con la función \texttt{tapply()} y la función
 \begin{verbatim}
 ## $A
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.203   9.584   9.939   9.975  10.358  11.485 
+##   8.397   9.628   9.944   9.898  10.188  10.946 
 ## 
 ## $B
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   9.043   9.606   9.843   9.908  10.253  11.488 
+##   8.582   9.616   9.969   9.931  10.249  11.432 
 ## 
 ## $C
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   9.007   9.725  10.075  10.105  10.448  11.840 
+##   8.594   9.667  10.001  10.034  10.433  11.163 
 ## 
 ## $D
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.936   9.635  10.068  10.037  10.365  11.292 
+##   8.849   9.704   9.922  10.022  10.320  11.313 
 ## 
 ## $E
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   9.093   9.785  10.087  10.103  10.525  11.062 
+##   8.276   9.643   9.919   9.945  10.305  11.153 
 ## 
 ## $F
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.691   9.687  10.001  10.020  10.398  11.208 
+##   8.484   9.784  10.126  10.050  10.441  11.263 
 ## 
 ## $G
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.782   9.527   9.950   9.919  10.252  11.295 
+##   8.834   9.750  10.008  10.035  10.323  11.297 
 ## 
 ## $H
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.557   9.711  10.048  10.028  10.343  11.874 
+##   8.805   9.761  10.010   9.980  10.254  11.456 
 ## 
 ## $I
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.762   9.626   9.936   9.977  10.333  11.224 
+##   8.705   9.731  10.048  10.017  10.375  10.873 
 ## 
 ## $J
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.805   9.702  10.050  10.019  10.332  11.170
+##   8.608   9.773  10.043  10.024  10.325  10.876
 \end{verbatim}
 
 También podemos obtener el valor promedio de cada mediciones combinando
@@ -10119,16 +10158,16 @@ la función \texttt{mean()}.
 
 \begin{verbatim}
 ##        [,1]     [,2]     [,3]
-## A  9.975456 24056.07 20.28502
-## B  9.907607 24583.03 19.97502
-## C 10.105067 25829.70 20.34131
-## D 10.036543 25243.23 20.52858
-## E 10.103318 25341.45 20.01049
-## F 10.019937 25986.67 20.42594
-## G  9.918660 23537.33 19.93868
-## H 10.027857 23217.96 18.71180
-## I  9.976535 24772.44 20.54163
-## J 10.019293 25125.80 19.37977
+## A  9.898444 25482.03 20.74696
+## B  9.931102 25431.62 21.00796
+## C 10.034315 26217.35 19.43460
+## D 10.022337 25034.08 19.58139
+## E  9.944541 23440.49 19.11109
+## F 10.050401 25567.88 20.88015
+## G 10.035234 25400.84 20.46936
+## H  9.979864 26367.05 19.37292
+## I 10.017338 27499.07 20.53199
+## J 10.024142 25677.76 20.47249
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{mapply}}{mapply}}\label{l17mapply}
@@ -11601,12 +11640,16 @@ archivo CSV y la función
 \protect\hyperlink{import}{\texttt{read.table()}}. El archivo se puede
 descargar desde el sitio web del libro en GitHub
 (\url{https://github.com/frareb/myRBook_SP/blob/master/myFiles/E05C13.csv}
-; clic derecho sobre el enlace y seleccionar ``Guardar destino como'').
+; el archivo se puede leer desde su destino en GitHub
+\url{https://raw.githubusercontent.com/frareb/myRBook_SP/master/myFiles/E05C13.csv}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{bdd <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"myFiles/E05C13.csv"}\NormalTok{, }\DataTypeTok{skip =} \DecValTok{1}\NormalTok{, }\DataTypeTok{header =} \OtherTok{TRUE}\NormalTok{, }
   \DataTypeTok{sep =} \StringTok{","}\NormalTok{, }\DataTypeTok{dec =} \StringTok{"."}\NormalTok{, }\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+\CommentTok{# Desde GitHub: }
+\CommentTok{# bdd <- read.table("https://raw.githubusercontent.com/frareb/myRBook_SP/master/myFiles/E05C13.csv", }
+\CommentTok{#   skip = 1, header = TRUE, sep = ",", dec = ".", stringsAsFactors = FALSE)}
 \KeywordTok{colnames}\NormalTok{(bdd) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"id"}\NormalTok{, }\StringTok{"date"}\NormalTok{, }\StringTok{"temp"}\NormalTok{)}
 \KeywordTok{head}\NormalTok{(bdd)}
 \end{Highlighting}
@@ -11656,9 +11699,12 @@ contiene la fecha con el mes, el día, y el año separados con \texttt{/},
 un espacio, y la hora con horas de 0 a 24, minutos, y segundos,
 separados con \texttt{:} (ejemplo: \texttt{11/12/15\ 23:00:00} para el
 12 de Noviembre de 2015 a las 11 de la noche). Vamos a separar la
-información en varios objetos. Primero vamos a separar la fecha de la
-hora. Para esto vamos a usar la función \texttt{strsplit()} usando como
-separador el espacio entre la fecha y la hora.
+información en varios objetos para ver todas las opciones segun el tipo
+de datos que se puede tener.
+
+Primero vamos a separar la fecha de la hora. Para esto vamos a usar la
+función \texttt{strsplit()} usando como separador el espacio entre la
+fecha y la hora.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11700,77 +11746,109 @@ fechas vamos a hacer un bucle con la función \texttt{sapply()}.
 ## [1] "11/12/15" "11/12/15" "11/13/15" "11/13/15" "11/13/15" "11/13/15"
 \end{verbatim}
 
-A continuación vamos a necesitar las fechas en el formato
-\texttt{factor} (función \texttt{aggregate()} para sacar la información
-por día). Entonces necesitamos transformar el objeto en el formato
-\texttt{factor} con la función \texttt{as.factor()}.
+A continuación vamos a necesitar las fechas en el formato \texttt{Date}.
+Entonces necesitamos transformar el objeto en el formato \texttt{Date}
+con la función \texttt{as.Date()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bddDay <-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(}\KeywordTok{sapply}\NormalTok{(}\KeywordTok{strsplit}\NormalTok{(bdd[, }\DecValTok{2}\NormalTok{], }\DataTypeTok{split =} \StringTok{" "}\NormalTok{), }\StringTok{"[["}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\NormalTok{bddDay <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(}\KeywordTok{sapply}\NormalTok{(}\KeywordTok{strsplit}\NormalTok{(bdd[, }\DecValTok{2}\NormalTok{], }\DataTypeTok{split =} \StringTok{" "}\NormalTok{), }\StringTok{"[["}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{format =} \StringTok{"%m/%d/%y"}\NormalTok{)}
 \KeywordTok{head}\NormalTok{(bddDay)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 11/12/15 11/12/15 11/13/15 11/13/15 11/13/15 11/13/15
-## 684 Levels: 01/01/16 01/01/17 01/02/16 01/02/17 01/03/16 ... 12/31/16
+## [1] "2015-11-12" "2015-11-12" "2015-11-13" "2015-11-13" "2015-11-13"
+## [6] "2015-11-13"
 \end{verbatim}
 
-Haciendo la transformación hacia el formato \texttt{factor}, los niveles
-de nuestro objeto están en orden alfabético como si las fechas
-estuvieran texto. Nosotros querremos ordenar las fechas usando las
-fechas. Para esto vamos a hacer un \texttt{vector} con todas las fechas
-únicas con la función \texttt{unique()}, y después ordenar las fechas
-con la función \texttt{sort.list()} usando las fechas con la función
-\texttt{as.POSIXct()}. Vamos a usar el vector llamado \texttt{lev} para
-especificar como deben estar los niveles de \texttt{factor} de nuestras
-fechas.
+Vamos a añadir la information al formato \texttt{Date} en nuestro objeto
+\texttt{bdd}. Con la función \texttt{str()}, podemos ver que el formato
+de \texttt{bdd\$day} es \texttt{Date}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bddDay <-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(}\KeywordTok{sapply}\NormalTok{(}\KeywordTok{strsplit}\NormalTok{(bdd[, }\DecValTok{2}\NormalTok{], }\DataTypeTok{split =} \StringTok{" "}\NormalTok{), }\StringTok{"[["}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\NormalTok{udate <-}\StringTok{ }\KeywordTok{unique}\NormalTok{(bddDay)}
-\NormalTok{lev <-}\StringTok{ }\NormalTok{udate[}\KeywordTok{sort.list}\NormalTok{(}\KeywordTok{as.POSIXct}\NormalTok{(}\KeywordTok{strptime}\NormalTok{(udate, }\StringTok{"%m/%d/%y"}\NormalTok{)))]}
-\NormalTok{bddDay <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(bddDay, }\DataTypeTok{levels =}\NormalTok{ lev)}
-\KeywordTok{head}\NormalTok{(bddDay)}
+\NormalTok{bdd}\OperatorTok{$}\NormalTok{day <-}\StringTok{ }\NormalTok{bddDay}
+\KeywordTok{str}\NormalTok{(bdd)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 11/12/15 11/12/15 11/13/15 11/13/15 11/13/15 11/13/15
-## 684 Levels: 11/12/15 11/13/15 11/14/15 11/15/15 11/16/15 ... 09/25/17
+## 'data.frame':    32786 obs. of  4 variables:
+##  $ id  : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ date: chr  "11/12/15 23:00:00" "11/12/15 23:30:00" "11/13/15 00:00:00" "11/13/15 00:30:00" ...
+##  $ temp: num  4.97 4.77 4.84 4.84 5.08 ...
+##  $ day : Date, format: "2015-11-12" "2015-11-12" ...
 \end{verbatim}
 
-Ahora podemos añadir las fechas como nueva columna del objeto
-\texttt{bdd} y hacer lo mismo para las horas (no hay que reordenar los
-niveles de hora ya que el orden por defecto corresponde a lo que
-queremos).
+Si necesitamos la información del horario, usaremos el formato
+\texttt{POSIX} con la función \texttt{as.POSIXct()}. Vamos a añadir la
+information al formato \texttt{POSIX} en nuestro objeto \texttt{bdd}.
+Con la función \texttt{str()}, podemos ver que el formato de
+\texttt{bdd\$posix} es \texttt{POSIXct}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bdd}\OperatorTok{$}\NormalTok{bddDay <-}\StringTok{ }\NormalTok{bddDay}
-\NormalTok{bdd}\OperatorTok{$}\NormalTok{bddHour <-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(}\KeywordTok{sapply}\NormalTok{(}\KeywordTok{strsplit}\NormalTok{(bdd[, }\DecValTok{2}\NormalTok{], }\DataTypeTok{split =} \StringTok{" "}\NormalTok{), }\StringTok{"[["}\NormalTok{, }\DecValTok{2}\NormalTok{))}
-\KeywordTok{head}\NormalTok{(bdd)}
+\NormalTok{bddPosix <-}\StringTok{ }\KeywordTok{as.POSIXct}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{date, }\DataTypeTok{format =} \StringTok{"%m/%d/%y %H:%M:%S"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(bddPosix)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##   id              date  temp   bddDay  bddHour
-## 1  1 11/12/15 23:00:00 4.973 11/12/15 23:00:00
-## 2  2 11/12/15 23:30:00 4.766 11/12/15 23:30:00
-## 3  3 11/13/15 00:00:00 4.844 11/13/15 00:00:00
-## 4  4 11/13/15 00:30:00 4.844 11/13/15 00:30:00
-## 5  5 11/13/15 01:00:00 5.076 11/13/15 01:00:00
-## 6  6 11/13/15 01:30:00 5.282 11/13/15 01:30:00
+## [1] "2015-11-12 23:00:00 CET" "2015-11-12 23:30:00 CET"
+## [3] "2015-11-13 00:00:00 CET" "2015-11-13 00:30:00 CET"
+## [5] "2015-11-13 01:00:00 CET" "2015-11-13 01:30:00 CET"
 \end{verbatim}
-
-Podemos visualizar los datos con la función \texttt{plot()},
-especificando el formato de las fechas con la función \texttt{as.Date()}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{bddDay, }\DataTypeTok{format =} \StringTok{"%m/%d/%y"}\NormalTok{), }\DataTypeTok{y =}\NormalTok{ bdd}\OperatorTok{$}\NormalTok{temp, }
+\NormalTok{bdd}\OperatorTok{$}\NormalTok{posix <-}\StringTok{ }\NormalTok{bddPosix}
+\KeywordTok{str}\NormalTok{(bdd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    32786 obs. of  5 variables:
+##  $ id   : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ date : chr  "11/12/15 23:00:00" "11/12/15 23:30:00" "11/13/15 00:00:00" "11/13/15 00:30:00" ...
+##  $ temp : num  4.97 4.77 4.84 4.84 5.08 ...
+##  $ day  : Date, format: "2015-11-12" "2015-11-12" ...
+##  $ posix: POSIXct, format: "2015-11-12 23:00:00" "2015-11-12 23:30:00" ...
+\end{verbatim}
+
+En las funciones \texttt{as.Date()} y \texttt{as.POSIXct()} tenemos que
+especificar el formato en el cual esta indicado la fecha con el
+argumento \texttt{format}(\texttt{format\ =\ "\%m/\%d/\%y"} y
+\texttt{format\ =\ "\%m/\%d/\%y\ \%H:\%M:\%S"}).
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+código & Valor\tabularnewline
+\midrule
+\endhead
+\%a & dia de la semana abreviado\tabularnewline
+\%A & dia de la semana\tabularnewline
+\%b & mes abreviado\tabularnewline
+\%B & nombre completo del mes\tabularnewline
+\%d & dia del mes (decimal)\tabularnewline
+\%j & dia del año (decimal)\tabularnewline
+\%m & mes (decimal)\tabularnewline
+\%y & año con dos dígitos\tabularnewline
+\%Y & año con cuatro dígitos\tabularnewline
+\%U & semana del año desde el domingo (decimal)\tabularnewline
+\%W & semana del año desde el lunes (decimal)\tabularnewline
+\%H & hora 24\tabularnewline
+\%I & hora 12\tabularnewline
+\%M & minuto\tabularnewline
+\%S & segundo\tabularnewline
+\bottomrule
+\end{longtable}
+
+Podemos visualizar los datos con la función \texttt{plot()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd}\OperatorTok{$}\NormalTok{day, }\DataTypeTok{y =}\NormalTok{ bdd}\OperatorTok{$}\NormalTok{temp, }
     \DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{15}\NormalTok{, }\DecValTok{40}\NormalTok{), }
     \DataTypeTok{xlab =} \StringTok{"Fecha"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Temperatura (°C)"}\NormalTok{)}
 \end{Highlighting}
@@ -11779,21 +11857,21 @@ especificando el formato de las fechas con la función \texttt{as.Date()}
 \includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-264-1.pdf}
 
 Podemos simplificar la información calculando únicamente las
-temperaturas mínimas, promedias, y máximas con la función
-\texttt{aggregate()}.
+temperaturas mínimas, promedias, y máximas del dia con la función
+\texttt{tapply()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tempDayMean <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd[, }\DecValTok{3}\NormalTok{], }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(bdd[, }\DecValTok{4}\NormalTok{]), }\DataTypeTok{FUN =}\NormalTok{ mean)}
-\NormalTok{tempDayMin <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd[, }\DecValTok{3}\NormalTok{], }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(bdd[, }\DecValTok{4}\NormalTok{]), }\DataTypeTok{FUN =}\NormalTok{ min)}
-\NormalTok{tempDayMax <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd[, }\DecValTok{3}\NormalTok{], }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(bdd[, }\DecValTok{4}\NormalTok{]), }\DataTypeTok{FUN =}\NormalTok{ max)}
-\KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(tempDayMean[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{format =} \StringTok{"%m/%d/%y"}\NormalTok{), }
-    \DataTypeTok{y =}\NormalTok{ tempDayMean[, }\DecValTok{2}\NormalTok{], }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{15}\NormalTok{, }\DecValTok{40}\NormalTok{), }
+\NormalTok{tempDayMean <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp, }\DataTypeTok{INDEX =}\NormalTok{ bdd}\OperatorTok{$}\NormalTok{day, }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\NormalTok{tempDayMin <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp, }\DataTypeTok{INDEX =}\NormalTok{ bdd}\OperatorTok{$}\NormalTok{day, }\DataTypeTok{FUN =}\NormalTok{ min)}
+\NormalTok{tempDayMax <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp, }\DataTypeTok{INDEX =}\NormalTok{ bdd}\OperatorTok{$}\NormalTok{day, }\DataTypeTok{FUN =}\NormalTok{ max)}
+\KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(}\KeywordTok{names}\NormalTok{(tempDayMean), }\DataTypeTok{format =} \StringTok{"%Y-%m-%d"}\NormalTok{), }
+    \DataTypeTok{y =}\NormalTok{ tempDayMean, }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{15}\NormalTok{, }\DecValTok{40}\NormalTok{), }
     \DataTypeTok{xlab =} \StringTok{"Fecha"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Temperatura (°C)"}\NormalTok{)}
-\KeywordTok{points}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(tempDayMin[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{format =} \StringTok{"%m/%d/%y"}\NormalTok{), }
-    \DataTypeTok{y =}\NormalTok{ tempDayMin[, }\DecValTok{2}\NormalTok{], }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{col =} \DecValTok{4}\NormalTok{)}
-\KeywordTok{points}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(tempDayMax[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{format =} \StringTok{"%m/%d/%y"}\NormalTok{), }
-    \DataTypeTok{y =}\NormalTok{ tempDayMax[, }\DecValTok{2}\NormalTok{], }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{col =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(}\KeywordTok{as.Date}\NormalTok{(}\KeywordTok{names}\NormalTok{(tempDayMin), }\DataTypeTok{format =} \StringTok{"%Y-%m-%d"}\NormalTok{), }
+    \DataTypeTok{y =}\NormalTok{ tempDayMin, }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{col =} \DecValTok{4}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(}\KeywordTok{as.Date}\NormalTok{(}\KeywordTok{names}\NormalTok{(tempDayMax), }\DataTypeTok{format =} \StringTok{"%Y-%m-%d"}\NormalTok{), }
+    \DataTypeTok{y =}\NormalTok{ tempDayMax, }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{col =} \DecValTok{2}\NormalTok{)}
 \KeywordTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\DataTypeTok{legend =} \KeywordTok{c}\NormalTok{(}\StringTok{"min"}\NormalTok{, }\StringTok{"max"}\NormalTok{, }\StringTok{"promedio"}\NormalTok{), }
   \DataTypeTok{lty =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{))}
 \end{Highlighting}
@@ -11801,28 +11879,138 @@ temperaturas mínimas, promedias, y máximas con la función
 
 \includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-265-1.pdf}
 
+Podemos representar la misma información por semana. Para esto vamos a
+usar la información de los datos en el formato \texttt{POSIXct} para
+transformala en semanas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{anoSem <-}\StringTok{ }\KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%Y-%W"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(anoSem)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2015-45" "2015-45" "2015-45" "2015-45" "2015-45" "2015-45"
+\end{verbatim}
+
+Y despues hacer el gráfico.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tempWeekMean <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp, }
+  \DataTypeTok{INDEX =} \KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%Y-%W-1"}\NormalTok{), }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\NormalTok{tempWeekMin <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp, }
+  \DataTypeTok{INDEX =} \KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%Y-%W-1"}\NormalTok{), }\DataTypeTok{FUN =}\NormalTok{ min)}
+\NormalTok{tempWeekMax <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp, }
+  \DataTypeTok{INDEX =} \KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%Y-%W-1"}\NormalTok{), }\DataTypeTok{FUN =}\NormalTok{ max)}
+\KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(}\KeywordTok{names}\NormalTok{(tempWeekMean), }\DataTypeTok{format =} \StringTok{"%Y-%W-%u"}\NormalTok{), }
+    \DataTypeTok{y =}\NormalTok{ tempWeekMean, }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{15}\NormalTok{, }\DecValTok{40}\NormalTok{), }
+    \DataTypeTok{xlab =} \StringTok{"Fecha"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Temperatura (°C)"}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(}\KeywordTok{names}\NormalTok{(tempWeekMin), }\DataTypeTok{format =} \StringTok{"%Y-%W-%u"}\NormalTok{), }
+    \DataTypeTok{y =}\NormalTok{ tempWeekMin, }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{col =} \DecValTok{4}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(}\KeywordTok{names}\NormalTok{(tempWeekMax), }\DataTypeTok{format =} \StringTok{"%Y-%W-%u"}\NormalTok{), }
+    \DataTypeTok{y =}\NormalTok{ tempWeekMax, }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{col =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\DataTypeTok{legend =} \KeywordTok{c}\NormalTok{(}\StringTok{"min"}\NormalTok{, }\StringTok{"max"}\NormalTok{, }\StringTok{"promedio"}\NormalTok{), }
+  \DataTypeTok{lty =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-267-1.pdf}
+
+Para no perder la información sobre la variabilidad de la temperatura
+podemos hacer \texttt{boxplot} en lugar de \texttt{plot}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{boxplot}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp }\OperatorTok{~}\StringTok{ }\KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%Y-%m"}\NormalTok{), }\DataTypeTok{las =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-268-1.pdf}
+
+Podemos elegir colores para representar la temperatura promedia. Para
+esto podemos normalizar la temperatura en numeros integrados entre 1 y
+101 y hacer corresponder los numeros en una escala de color del azul al
+rojo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tempMonthMean <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp, }
+  \DataTypeTok{INDEX =} \KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%Y-%m"}\NormalTok{), }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\NormalTok{myCol <-}\StringTok{ }\KeywordTok{colorRampPalette}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"red"}\NormalTok{))(}\DecValTok{101}\NormalTok{)}
+\NormalTok{tempMeanDayPos <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}
+\NormalTok{  (tempMonthMean }\OperatorTok{-}\StringTok{ }\KeywordTok{min}\NormalTok{(tempMonthMean)) }\OperatorTok{/}\StringTok{ }
+\StringTok{    }\NormalTok{(}\KeywordTok{max}\NormalTok{(tempMonthMean) }\OperatorTok{-}\StringTok{ }\KeywordTok{min}\NormalTok{(tempMonthMean))}\OperatorTok{*}\DecValTok{100}\NormalTok{) }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+\KeywordTok{boxplot}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp }\OperatorTok{~}\StringTok{ }\KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%Y-%m"}\NormalTok{), }\DataTypeTok{las =} \DecValTok{3}\NormalTok{, }
+  \DataTypeTok{col =}\NormalTok{ myCol[tempMeanDayPos])}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-269-1.pdf}
+
+Para los que usan ggplot2:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pkgCheck <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{ }
+    \ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{require}\NormalTok{(x, }\DataTypeTok{character.only =} \OtherTok{TRUE}\NormalTok{))\{}
+        \KeywordTok{install.packages}\NormalTok{(x, }\DataTypeTok{dependencies =} \OtherTok{TRUE}\NormalTok{)}
+        \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(x, }\DataTypeTok{character.only =} \OtherTok{TRUE}\NormalTok{)) \{}
+            \KeywordTok{stop}\NormalTok{()}
+\NormalTok{        \}}
+\NormalTok{    \}}
+\NormalTok{\}}
+\KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+
+\NormalTok{tempMonthMean <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{temp, }
+  \DataTypeTok{INDEX =} \KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%Y-%m"}\NormalTok{), }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\NormalTok{myCol <-}\StringTok{ }\KeywordTok{colorRampPalette}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"red"}\NormalTok{))(}\DecValTok{101}\NormalTok{)}
+\NormalTok{tempMeanDayPos <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}
+\NormalTok{  (tempMonthMean }\OperatorTok{-}\StringTok{ }\KeywordTok{min}\NormalTok{(tempMonthMean)) }\OperatorTok{/}\StringTok{ }
+\StringTok{    }\NormalTok{(}\KeywordTok{max}\NormalTok{(tempMonthMean) }\OperatorTok{-}\StringTok{ }\KeywordTok{min}\NormalTok{(tempMonthMean))}\OperatorTok{*}\DecValTok{100}\NormalTok{) }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+\NormalTok{p01 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ bdd, }
+  \KeywordTok{aes}\NormalTok{(}
+    \DataTypeTok{x =}\NormalTok{ posix, }
+    \DataTypeTok{y =}\NormalTok{ temp, }
+    \DataTypeTok{group =} \KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%Y-%m"}\NormalTok{))) }\OperatorTok{+}\StringTok{ }
+\StringTok{    }\KeywordTok{geom_boxplot}\NormalTok{(}\DataTypeTok{outlier.colour =} \StringTok{"black"}\NormalTok{, }\DataTypeTok{fill =}\NormalTok{ myCol[tempMeanDayPos])}
+\NormalTok{p01}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 4 rows containing missing values (stat_boxplot).
+\end{verbatim}
+
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-270-1.pdf}
+
 También podemos calcular la diferencia entre la temperatura máxima y la
 temperatura mínima (variación de temperatura diurna).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tempDayTR <-}\StringTok{ }\NormalTok{tempDayMax[, }\DecValTok{2}\NormalTok{] }\OperatorTok{-}\StringTok{ }\NormalTok{tempDayMin[, }\DecValTok{2}\NormalTok{]}
-\KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(tempDayMean[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{format =} \StringTok{"%m/%d/%y"}\NormalTok{), }
+\NormalTok{tempDayTR <-}\StringTok{ }\NormalTok{tempDayMax }\OperatorTok{-}\StringTok{ }\NormalTok{tempDayMin}
+\KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{as.Date}\NormalTok{(}\KeywordTok{names}\NormalTok{(tempDayMean), }\DataTypeTok{format =} \StringTok{"%Y-%m-%d"}\NormalTok{), }
     \DataTypeTok{y =}\NormalTok{ tempDayTR, }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{45}\NormalTok{), }
     \DataTypeTok{xlab =} \StringTok{"Fecha"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Variación de temperatura diurna (°C)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-266-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-271-1.pdf}
 
 Otra posibilidad es de agrupar los datos para tener la temperatura
-promedia de un día con la función \texttt{aggregate()}.
+promedia de un día con la función \texttt{aggregate()} (como alternativa
+a la función \texttt{tapply}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tempHourMean <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd[, }\DecValTok{3}\NormalTok{], }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(bdd[, }\DecValTok{5}\NormalTok{]), }\DataTypeTok{FUN =}\NormalTok{ mean)}
-\NormalTok{tempHourMin <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd[, }\DecValTok{3}\NormalTok{], }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(bdd[, }\DecValTok{5}\NormalTok{]), }\DataTypeTok{FUN =}\NormalTok{ min)}
-\NormalTok{tempHourMax <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd[, }\DecValTok{3}\NormalTok{], }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(bdd[, }\DecValTok{5}\NormalTok{]), }\DataTypeTok{FUN =}\NormalTok{ max)}
+\NormalTok{tempHourMean <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd}\OperatorTok{$}\NormalTok{temp, }
+  \DataTypeTok{by =} \KeywordTok{list}\NormalTok{(}\KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%H:%M"}\NormalTok{)), }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\NormalTok{tempHourMin <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd}\OperatorTok{$}\NormalTok{temp, }
+  \DataTypeTok{by =} \KeywordTok{list}\NormalTok{(}\KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%H:%M"}\NormalTok{)), }\DataTypeTok{FUN =}\NormalTok{ min)}
+\NormalTok{tempHourMax <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bdd}\OperatorTok{$}\NormalTok{temp, }
+  \DataTypeTok{by =} \KeywordTok{list}\NormalTok{(}\KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%H:%M"}\NormalTok{)), }\DataTypeTok{FUN =}\NormalTok{ max)}
 \NormalTok{hours <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \DecValTok{0}\NormalTok{, }\DataTypeTok{to =} \FloatTok{23.5}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.5}\NormalTok{)}
 \KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ hours, }
     \DataTypeTok{y =}\NormalTok{ tempHourMean[, }\DecValTok{2}\NormalTok{], }\DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{15}\NormalTok{, }\DecValTok{40}\NormalTok{), }
@@ -11837,7 +12025,7 @@ promedia de un día con la función \texttt{aggregate()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-267-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-272-1.pdf}
 
 Tambien podemos calcular las temperaturas de los dias para cada mes.
 
@@ -11846,12 +12034,12 @@ Tambien podemos calcular las temperaturas de los dias para cada mes.
 \NormalTok{meses <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Enero"}\NormalTok{, }\StringTok{"Febrero"}\NormalTok{, }\StringTok{"Marzo"}\NormalTok{, }\StringTok{"Abril"}\NormalTok{, }\StringTok{"Mayo"}\NormalTok{, }\StringTok{"Junio"}\NormalTok{, }
     \StringTok{"Julio"}\NormalTok{, }\StringTok{"Agosto"}\NormalTok{, }\StringTok{"Septiembre"}\NormalTok{, }\StringTok{"Octubre"}\NormalTok{, }\StringTok{"Noviembre"}\NormalTok{, }\StringTok{"Diciembre"}\NormalTok{)}
 \NormalTok{hours <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \DecValTok{0}\NormalTok{, }\DataTypeTok{to =} \FloatTok{23.5}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.5}\NormalTok{)}
-\NormalTok{bddMonth <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(}\KeywordTok{strsplit}\NormalTok{(}\KeywordTok{as.character}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{bddDay), }\DataTypeTok{split =} \StringTok{"/"}\NormalTok{), }\StringTok{"[["}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{bddMonth <-}\StringTok{ }\KeywordTok{format}\NormalTok{(bdd}\OperatorTok{$}\NormalTok{day, }\DataTypeTok{format =} \StringTok{"%m"}\NormalTok{)}
 \NormalTok{tempDayEachMonth <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(}\KeywordTok{sort}\NormalTok{(}\KeywordTok{unique}\NormalTok{(bddMonth)), }\ControlFlowTok{function}\NormalTok{(myMonth)\{}
 \NormalTok{    bddX <-}\StringTok{ }\NormalTok{bdd[bddMonth }\OperatorTok{==}\StringTok{ }\NormalTok{myMonth, ]}
-\NormalTok{    tempHourMean <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bddX[, }\DecValTok{3}\NormalTok{], }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(bddX[, }\DecValTok{5}\NormalTok{]), }\DataTypeTok{FUN =}\NormalTok{ mean)}
-\NormalTok{    tempHourMin <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bddX[, }\DecValTok{3}\NormalTok{], }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(bddX[, }\DecValTok{5}\NormalTok{]), }\DataTypeTok{FUN =}\NormalTok{ min)}
-\NormalTok{    tempHourMax <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bddX[, }\DecValTok{3}\NormalTok{], }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(bddX[, }\DecValTok{5}\NormalTok{]), }\DataTypeTok{FUN =}\NormalTok{ max)}
+\NormalTok{    tempHourMean <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bddX}\OperatorTok{$}\NormalTok{temp, }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(}\KeywordTok{format}\NormalTok{(bddX}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%H:%M"}\NormalTok{)), }\DataTypeTok{FUN =}\NormalTok{ mean)}
+\NormalTok{    tempHourMin <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bddX}\OperatorTok{$}\NormalTok{temp, }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(}\KeywordTok{format}\NormalTok{(bddX}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%H:%M"}\NormalTok{)), }\DataTypeTok{FUN =}\NormalTok{ min)}
+\NormalTok{    tempHourMax <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ bddX}\OperatorTok{$}\NormalTok{temp, }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(}\KeywordTok{format}\NormalTok{(bddX}\OperatorTok{$}\NormalTok{posix, }\DataTypeTok{format =} \StringTok{"%H:%M"}\NormalTok{)), }\DataTypeTok{FUN =}\NormalTok{ max)}
     \KeywordTok{return}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(tempHourMean, tempHourMin, tempHourMax))}
 \NormalTok{\})}
 
@@ -11874,8 +12062,8 @@ Tambien podemos calcular las temperaturas de los dias para cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-268-1.pdf}
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-268-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-273-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-273-2.pdf}
 
 O todo en un mismo grafico, y la variación de temperatura diurna para
 cada mes.
@@ -11903,7 +12091,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-269-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-274-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11928,7 +12116,7 @@ cada mes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-269-2.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-274-2.pdf}
 
 También podemos representar las temperaturas diarias con gráficos
 ``ridgeline'' y el package \texttt{ggplot2}
@@ -11969,7 +12157,7 @@ También podemos representar las temperaturas diarias con gráficos
 ## `stat_binline()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-270-1.pdf}
+\includegraphics{myRBook_SP_files/figure-latex/unnamed-chunk-275-1.pdf}
 
 
 \end{document}
