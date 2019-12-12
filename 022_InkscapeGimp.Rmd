@@ -1,5 +1,62 @@
-<!-- # Manipular gráficos {#graph4} -->
+# De la gráfica a la figura en un artículo científico {#graph4}
 
-<!-- ## Inkscape -->
+Una vez que se han obtenido nuestros resultados, es esencial publicarlos. Solo al publicar nuestros resultados estamos involucrados en la ciencia. Esto puede hacerse a través de comunicaciones en congresos, a través de carteles o (y esto es lo más común), a través de artículos científicos.
 
-<!-- ## The Gimp -->
+En los artículos científicos, los resultados gráficos toman la forma de *figuras* que a menudo son el resultado de uno o más gráficos. Figuras siguen criterios muy específicos dictados por la revista. Tomemos este ejemplo adaptado y traducido de la guía para autores de PLoS:
+
+*Los archivos deben estar en formato TIFF (con compresión LZW y de una sola capa) o EPS. Las dimensiones deben ser de 789 a 2250 píxeles y una altura máxima de 2625 píxeles para una resolución de 300 ppp (entre 6.68 y 19.05 cm de ancho - máximo 13.2 cm para alinear en una columna - y máximo 22.23 cm de alto). La fuente debe ser Arial, Times o Symbol y tener un tamaño de entre 8 y 12 puntos.*
+
+Resulta difícil (pero posible) respetar todas estas limitaciones con R. Por eso utilizaremos software libres para transformar nuestros gráficos en figuras. Usaremos Inkscape para el diseño y Gimp para la transformación en los formatos requeridos.
+
+Cuando tomamos una foto, cada píxel toma un valor que definirá el color del píxel, por lo que al acercar una foto veremos aparecer los píxeles (perdemos el foco). Es una imagen *matricial*. En una imagen *vector*, los elementos están codificados en forma de segmentos, no perdemos calidad porque cada elemento retiene sus coordenadas (Figura \@ref(fig:matVec)). La ventaja de las imágenes vectoriales es que se puede modificar los elementos de la imagen sin perder calidad. Eso es lo que vamos a hacer con Inkscape. La ventaja de las imágenes ráster es que se puede elegir entre muchos formatos (incluido TIFF). Esto es lo que vamos a hacer con Gimp.
+
+```{r matVec, fig.cap = "Imagen matricial/raster y vector.\\label{fig:matVec}", echo = FALSE}
+knitr::include_graphics("myFigures/matVec.png")
+```
+
+## Inkscape
+
+```{r logoInkscape, fig.cap = "Logo Inkscape (https://inkscape.org).\\label{fig:logoInkscape}", echo = FALSE}
+knitr::include_graphics("myLogos/logoInkscape.png")
+```
+
+Inkscape es un software de dibujo vectorial disponible en Windows, Mac OSX y Linux. Es un software gratuito y de código abierto bajo licencia GPL. Podemos descargarlo en la siguiente dirección https://inkscape.org. Inkscape ya está instalado por defecto en muchas distribuciones de Linux.
+
+Explicar toda la funcionalidad de Inkscape está más allá del alcance de este libro, pero podemos encontrar muchos tutoriales en línea para dominar rápidamente esta herramienta. Brevemente, para seguir la guía de construcción de una figura de una revista cientifica, primero construiremos nuestra figura *cruda* bajo R, luego la exportaremos a PDF usando la función `pdf()`.
+
+```{r ex1, eval=FALSE}
+pdf("miFigura.pdf")
+  plot(0)
+dev.off()
+```
+
+Luego solo tenemos que importar nuestro pdf en Inkscape para modificarlo. Por defecto, el PDF se *agrupará* en un solo elemento. Para acceder a los subelementos de nuestra figura, podemos seleccionarlos con el atajo `Ctrl + Shift + g`. Es aconsejable agregar un fondo blanco a nuestra figura para evitar la transparencia (un simple rectángulo blanco sin bordes servirá). Una vez que nuestra figura esté lista para ser exportada, debemos guardarla en un archivo PNG con el acceso directo `Ctrl + Shift + e`, y luego abrir el PNG con *The Gimp*.
+
+## The Gimp
+
+```{r logoGimp, fig.cap = "Logo Gimp (https://www.gimp.org/).\\label{fig:logoGimp}", echo = FALSE}
+knitr::include_graphics("myLogos/logoGimp.png")
+```
+
+Gimp es un software de dibujo matricial disponible en Windows, Mac OSX y Linux. Es un software gratuito y de código abierto bajo licencia GPL. Podemos descargarlo en la siguiente dirección: https://www.gimp.org/. Gimp significa "GNU Image Manipulation Program". Gimp ya está instalado por defecto en muchas distribuciones de Linux.
+
+Importaremos nuestro archivo PNG y luego simplemente lo exportaremos a otro formato con el acceso directo `Ctrl + Shift + e`. Luego, una ventana propondrá elegir el nuevo formato, por ejemplo, TIFF con compresión LZW. Nuestra figura está lista para la revista de nuestra eleccion.
+
+## Tabla de referencia
+
+Aquí hay una tabla de referencia (Table \@ref(tab:tabRefPub)) con algunas revistas que ilustran la diversidad de formatos para figuras científicas.
+
+```{r tabRefPub, echo = FALSE}
+tabRef <- data.frame(
+  Revista = c("PLoS", "PNAS", "Science"), 
+  Ancho = c("6.68-19.05", "8.7; 11.4; 17.8", "9; 12.7; 18.4"), 
+  Altura = c("max 22.23", "max 22.5", "NA"), 
+  Formato = c("TIFF, EPS", "TIF, EPS", "AI, EPS, PDF, TIF, JPEG"), 
+  Resolucion = c("300-600 dpi", "300 dpi", "300 dpi"), 
+  Fuente = c("Arial, Times, Symbol", "Arial, Helvetica, Times, Symbol, Mathematical Pi, European Pi", "Helvetica"), 
+  Tamano = c("9-12", "min 6-8", "panel 10, axis 6-9, font 5"))
+knitr::kable(tabRef, caption = "Tabla de referencia para figuras en revistas cientificas.\\label{tab:tabRefPub}")
+```
+
+
+

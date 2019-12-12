@@ -9,6 +9,11 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
 ## Últimas modificaciones
 
+
+**12/12/2019**
+
+* De la gráfica a la figura en un artículo científico
+
 **10/04/2019**
 
 * Modificaciones en el estudio de caso: [dataloggers](#studyCase1)
