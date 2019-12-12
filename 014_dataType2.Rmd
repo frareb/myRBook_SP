@@ -10,7 +10,7 @@ En R, un `vector` es una combinación de datos con la particularidad de que todo
 
 Para crear un `vector` utilizaremos la función `c()` que permite combinar elementos en un `vector`. Los elementos para combinar deben estar separados por comas.
 
-```{r}
+```{r 014-dataType2-1}
 miVec01 <- c(1, 2, 3, 4) # un vector de 4 elementos de tipo numeric ; double
 print(miVec01)
 typeof(miVec01)
@@ -19,7 +19,7 @@ is.vector(miVec01)
 
 La funcion `is.vector()` permite verificar el tipo de contenedor.
 
-```{r}
+```{r 014-dataType2-2}
 miVec02 <- c("a", "b", "c") 
 print(miVec02)
 typeof(miVec02)
@@ -43,7 +43,7 @@ is.vector(miVec04)
 
 Si combinamos diferentes tipos de datos, R intentará transformar los elementos en un tipo de forma predeterminada. Si como aquí en el objeto `miVec03` tenemos los tipos `character` y `numeric`, R convertirá todos los elementos en `character`.
 
-```{r}
+```{r 014-dataType2-3}
 miVec05 <- c(factor("abc"), "def")
 print(miVec05)
 typeof(miVec05)
@@ -60,7 +60,7 @@ typeof(miVec08)
 
 También podemos combinar objetos existentes dentro de un `vector`.
 
-```{r}
+```{r 014-dataType2-4}
 miVec09 <- c(miVec02, "d", "e", "f")
 print(miVec09)
 miVec10 <- c("aaa", "aa", miVec09, "d", "e", "f")
@@ -73,7 +73,7 @@ print(miVec11)
 
 También podemos realizar operaciones en un `vector`.
 
-```{r}
+```{r 014-dataType2-5}
 print(miVec01)
 miVec01 + 1
 miVec01 - 1
@@ -83,7 +83,7 @@ miVec01 /10
 
 Las operaciones de un `vector` a otro también son posibles, pero se debe tener cuidado para asegurar que el número de elementos en un `vector` sea el mismo que el otro, de lo contrario R realizará el cálculo comenzando desde el inicio del `vector` mas pequeño. Aquí hay un ejemplo para ilustrar lo que R hace:
 
-```{r}
+```{r 014-dataType2-6}
 miVec12 <- c(1, 1, 1, 1, 1, 1, 1, 1, 1)
 print(miVec12)
 miVec13 <- c(10, 20, 30)
@@ -101,7 +101,7 @@ miVec15 + miVec13 # vectores de diferentes tamaños y no múltiples
 
 Suele pasar que sea necesario poder acceder a los valores de un `vector`, es decir, recuperar un valor o un grupo de valores dentro de un `vector`. Para acceder a un elemento de un `vector` usamos los corchetes `[]`. Entre los corchetes, podemos usar un número correspondiente al número del elemento en el `vector`.
 
-```{r}
+```{r 014-dataType2-7}
 miVec20 <- c(10, 20, 30, 40, 50, 60, 70, 80, 90)
 miVec21 <- c("a", "b", "c", "d", "e", "f", "g", "h", "i")
 print(miVec20)
@@ -113,7 +113,7 @@ print(miVec21[3])
 
 También podemos usar la combinación de diferentes elementos (otro `vector`).
 
-```{r}
+```{r 014-dataType2-8}
 print(miVec20[c(1, 5, 9)])
 print(miVec21[c(4, 3, 1)])
 print(miVec21[c(4, 4, 3, 4, 3, 2, 5)])
@@ -121,7 +121,7 @@ print(miVec21[c(4, 4, 3, 4, 3, 2, 5)])
 
 También podemos seleccionar elementos usando un operador de comparación o un operador lógico.
 
-```{r}
+```{r 014-dataType2-9}
 print(miVec20[miVec20 >= 50])
 print(miVec20[(miVec20 >= 50) & ((miVec20 < 80))])
 print(miVec20[miVec20 != 50])
@@ -133,7 +133,7 @@ print(miVec21[miVec21 == "a"])
 
 Otra característica interesante es la posibilidad de condicionar los elementos a seleccionar en base a otro `vector`.
 
-```{r}
+```{r 014-dataType2-10}
 print(miVec21[miVec20 >= 50])
 print(miVec21[(miVec20 >= 50) & ((miVec20 < 80))])
 print(miVec21[miVec20 != 50])
@@ -144,7 +144,7 @@ print(miVec21[(miVec20 == 30) | (miVec21 == "h")])
 
 También es posible excluir ciertos elementos en lugar de seleccionarlos.
 
-```{r}
+```{r 014-dataType2-11}
 print(miVec20[-1])
 print(miVec21[-5])
 print(miVec20[-c(1, 2, 5)])
@@ -153,7 +153,7 @@ print(miVec21[-c(1, 2, 5)])
 
 Los elementos de un `vector` también se pueden seleccionar sobre la base de un `vector` tipo `logical`. En este caso, solo se seleccionarán elementos con un valor `TRUE`.
 
-```{r}
+```{r 014-dataType2-12}
 miVec22 <- c(TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE)
 print(miVec21[miVec22])
 ```
@@ -162,7 +162,7 @@ print(miVec21[miVec22])
 
 Los elementos de un `vector` se pueden nombrar para referenciarlos y luego selectionarlos. La función `names()` recupera los nombres de los elementos de un vector.
 
-```{r}
+```{r 014-dataType2-13}
 miVec23 <- c(aaa = 10, bbb = 20, ccc = 30, ddd = 40, eee = 50)
 print(miVec23)
 print(miVec23["bbb"])
@@ -174,7 +174,7 @@ names(miVec23)
 
 Para modificar un `vector`, operamos de la misma manera que para modificar un objeto simple, con el signo `<-` y el elemento o los elementos a modificar entre corchetes.
 
-```{r}
+```{r 014-dataType2-14}
 print(miVec21)
 miVec21[3] <- "zzz"
 print(miVec21)
@@ -188,7 +188,7 @@ print(miVec23)
 
 También podemos cambiar los nombres asociados con los elementos de un `vector`.
 
-```{r}
+```{r 014-dataType2-15}
 print(miVec23)
 names(miVec23)[2] <- "bb_bb"
 print(miVec23)
@@ -204,7 +204,7 @@ El segundo tipo de contenedor que vamos a presentar es el contenedor `list`, que
 
 Para crear una `list` usaremos la función `list()`, que toma elementos (objetos) como argumentos.
 
-```{r}
+```{r 014-dataType2-16}
 miList01 <- list()
 print(miList01)
 miList02 <- list(5, "qwerty", c(4, 5, 6), c("a", "b", "c"))
@@ -215,7 +215,7 @@ print(miList03)
 
 La función `is.list()` se usa para probar si hemos creado un objeto de tipo `list`.
 
-```{r}
+```{r 014-dataType2-17}
 is.list(miList02)
 typeof(miList02)
 ```
@@ -224,13 +224,13 @@ typeof(miList02)
 
 Los elementos del contenedor `list` son identificables por los corchetes dobles `[[ ]]`. 
 
-```{r}
+```{r 014-dataType2-18}
 print(miList02)
 ```
 
 En el objeto de tipo `list` `miList02`, hay cuatro elementos identificables con `[[1]]`, `[[2]]`, `[[3]]` y `[[4]]`. Cada uno de los elementos es de tipo `vector`.  El primer elemento tiene un tamaño de 1 con elementos del tipo `double`, el segundo elemento tiene un tamaño de 1 con elementos del tipo `character`, el tercero elemento tiene un tamaño de 3 con elementos del tipo `double`, y el cuarto elemento tiene un tamaño de 3 con elementos del tipo `character`.
 
-```{r}
+```{r 014-dataType2-19}
 typeof(miList02)
 print(miList02[[1]])
 typeof(miList02[[1]])
@@ -244,13 +244,13 @@ typeof(miList02[[4]])
 
 El acceso al segundo elemento del `vector` ubicado en la cuarta posición de la `list` se hace con `miList02[[4]][2]`. Usamos doble corchetes para el cuarto elemento de la `list`, luego corchetes simples para el segundo elemento del `vector`.
 
-```{r}
+```{r 014-dataType2-20}
 print(miList02[[4]][2])
 ```
 
 Como una `list` puede contener una o más `list`, podemos acceder a la información buscada combinando corchetes dobles. El objeto `miList04` es una `list` de dos elementos: la `list` `miList02` y la `list` `miList03`. El objeto `miList03` en sí contiene una `list` como tercer elemento. Para acceder al primer elemento del `vector` en la primera posición del elemento en la tercera posición del segundo elemento del `list` `miList04`, podemos usar `miList04[[2]][[3]][[1]][1]`. No hay límite en cuanto a la profundidad de `list` pero en la práctica raramente hay necesidad de hacer `list` de `list` de `list`.
 
-```{r}
+```{r 014-dataType2-21}
 miList04 <- list(miList02, miList03)
 print(miList04)
 print(miList04[[2]][[3]][[1]][1])
@@ -258,14 +258,14 @@ print(miList04[[2]][[3]][[1]][1])
 
 Para concretar el ejemplo anterior, podemos imaginar especies de barrenadores del maíz (*Sesamia nonagrioides* y *Ostrinia nubilalis*), muestreados en diferentes sitios, con diferentes abundancias en cuatro fechas. Aquí daremos nombres a los elementos de las `list`.
 
-```{r}
+```{r 014-dataType2-22}
 bddInsect <- list(Snonagrioides = list(site01 = c(12, 5, 8, 7), site02 = c(5, 23, 4, 41), site03 = c(12, 0, 0, 0)), Onubilalis = list(site01 = c(12, 1, 2, 3), site02 = c(0, 0, 0, 1), site03 = c(1, 1, 2, 3)))
 print(bddInsect)
 ```
 
 Leer una larga línea de código como la línea para crear el objeto `bddInsect` resulta difícil porque la profundidad de los elementos solo se puede deducir de los paréntesis. Es por eso que vamos a reorganizar el código para que sea más legible mediante el **margen adicional**. El margen adicional implica poner información en diferentes niveles para que podamos identificar rápidamente los diferentes niveles de un código. Para aplicar el margen adicional se presiona la tecla de tabulación. Volveremos al margen adicional con más detalles en el capítulo sobre **bucles**. Recordemos por el momento que si una línea de código es demasiado larga, podemos saltar de línea y usar el margen adicional. R leerá todo como una sola línea de código.
 
-```{r}
+```{r 014-dataType2-23}
 bddInsect <- list(
   Snonagrioides = list(
     site01 = c(12, 5, 8, 7), 
@@ -282,7 +282,7 @@ bddInsect <- list(
 
 Podemos seleccionar los datos de abundancia del segundo sitio de la primera especie como previamente `bddInsect[[1]][[2]]`, o alternativamente usando los nombres de los elementos `bddInsect$Snonagrioides$site02`. Para hacer esto usamos el signo `$`, o como alternativa el nombre de los elementos con comillas simples o dobles `bddInsect[['Snonagrioides']][['sitio02']]`.
 
-```{r}
+```{r 014-dataType2-24}
 print(bddInsect[[1]][[2]])
 print(bddInsect$Snonagrioides$site02)
 print(bddInsect[['Snonagrioides']][['site02']])
@@ -290,14 +290,14 @@ print(bddInsect[['Snonagrioides']][['site02']])
 
 En cuanto a los vectores, podemos recuperar los nombres de los elementos con la función `names()`.
 
-```{r}
+```{r 014-dataType2-25}
 names(bddInsect)
 names(bddInsect[[1]])
 ```
 
 Cuando usamos los corchetes dobles `[[]]` o el signo `$`, R devuelve el contenido del elemento seleccionado. En nuestro ejemplo, los datos de abundancia están contenidos como un `vector`, por lo que R devuelve un elemento del tipo `vector`. Si queremos seleccionar un elemento de una `list` pero manteniendo el formato `list`, entonces podemos usar corchetes simples `[]`.
 
-```{r}
+```{r 014-dataType2-26}
 print(bddInsect[[1]][[2]])
 typeof(bddInsect[[1]][[2]])
 is.list(bddInsect[[1]][[2]])
@@ -309,7 +309,7 @@ is.list(bddInsect[[1]][2])
 
 El uso de corchetes simples `[]` es útil cuando queremos recuperar varios elementos de una `list`. Por ejemplo, para seleccionar las abundancias de insectos de los primeros dos sitios de la primera especie, usaremos `bddInsect [[1]][c(1, 2)]` o alternativamente `bddInsect[[1]][c("site01", "sitio02")]`.
 
-```{r}
+```{r 014-dataType2-27}
 print(bddInsect[[1]][c(1, 2)])
 print(bddInsect[[1]][c("site01", "site02")])
 ```
@@ -318,7 +318,7 @@ print(bddInsect[[1]][c("site01", "site02")])
 
 Una `list` se puede modificar de la misma manera que para el contenedor `vector`, es decir, haciendo referencia con corchetes al elemento que queremos modificar.
 
-```{r}
+```{r 014-dataType2-28}
 print(miList02)
 miList02[[1]] <- 12
 print(miList02)
@@ -340,14 +340,14 @@ print(bddInsect)
 
 Para combinar dos `list`, simplemente usamos la función `c()` que hemos usado para crear un `vector`.
 
-```{r}
+```{r 014-dataType2-29}
 miList0203 <- c(miList02, miList03)
 print(miList0203)
 ```
 
 Un objeto de tipo `list` se puede transformar en `vector` con la función `unlist()` si el formato de los elementos de la lista lo permite (un `vector` solo puede contener elementos del mismo tipo).
 
-```{r}
+```{r 014-dataType2-30}
 miList05 <- list("a", c("b", "c"), "d")
 print(miList05)
 miVec24 <- unlist(miList05)
@@ -360,7 +360,7 @@ print(miVec25)
 
 Para agregar un elemento a una `list`, podemos usar la función `c()` o los corchetes dobles `[[ ]]`.
 
-```{r}
+```{r 014-dataType2-31}
 print(miList05)
 miList05 <- c(miList05, "e")
 print(miList05)
@@ -370,7 +370,7 @@ print(miList05)
 
 Para eliminar un elemento de una `list`, la técnica más rápida es establecer `NULL` en el elemento que deseamos eliminar.
 
-```{r}
+```{r 014-dataType2-32}
 print(miList05)
 miList05[[2]] <- NULL
 print(miList05)
@@ -384,7 +384,7 @@ El contenedor `data.frame` se puede comparar a una *tabla*. Este es en realidad 
 
 Para crear un `data.frame` usamos la función `data.frame()` que toma como argumentos los elementos de la tabla que queremos crear. Los elementos son del tipo `vector` y son todos del mismo tamaño. Podemos dar un nombre a cada *columna* (`vector`) de nuestra *tabla* (`data.frame`).
 
-```{r}
+```{r 014-dataType2-33}
 # crear un data.frame 
 miDf01 <- data.frame(
   numbers = c(1, 2, 3, 4), 
@@ -405,7 +405,7 @@ print(miDf01)
 
 El acceso a los diferentes valores de un `data.frame` se puede hacer de la misma manera que para un contenedor de tipo `list`.
 
-```{r}
+```{r 014-dataType2-34}
 print(miDf01$numbers) # vector
 print(miDf01[[1]]) # vector
 print(miDf01[1]) # list
@@ -415,7 +415,7 @@ print(miDf01[["numbers"]]) # vector
 
 También podemos usar otra forma que consiste en especificar la línea o las líneas seguidas de una coma (con un espacio después de la coma), y luego la columna o columnas entre corchetes. Si se omite la información de línea o columna, R mostrará todas las líneas o columnas. Nuevamente podemos usar el número correspondiente a un elemento o el nombre del elemento que queremos seleccionar.
 
-```{r}
+```{r 014-dataType2-35}
 myRow <- 2
 myCol <- 1
 print(miDf01[myRow, myCol])
@@ -427,14 +427,14 @@ print(miDf01[, myCol])
 
 Es posible seleccionar múltiples líneas o columnas.
 
-```{r}
+```{r 014-dataType2-36}
 print(miDf01[, c(1, 2)])
 print(miDf01[c(2, 1), ])
 ```
 
 Como cada columna está en formato `vector`, también podemos hacer una selección que depende del contenido con operadores de comparación y operadores lógicos.
 
-```{r}
+```{r 014-dataType2-37}
 miDfSub01 <- miDf01[miDf01$numbers > 2, ]
 print(miDfSub01)
 miDfSub02 <- miDf01[(miDf01$logicals == TRUE) & (miDf01$numbers < 2), ]
@@ -449,7 +449,7 @@ print(miDfSub04)
 
 Para agregar un elemento a un `data.frame`, procedemos como para un contenedor de tipo `list`. Es necesario asegurarse de que el nuevo elemento sea del mismo tamaño que los otros elementos de nuestro `data.frame`. Por defecto, un nuevo elemento en `data.frame` toma el nombre de la letra *V* seguido del número de la columna. Podemos cambiar los nombres de las columnas con la función `colnames()`. Podemos nombrar las líneas con la función `rownames()`.
 
-```{r}
+```{r 014-dataType2-38}
 newVec <- c(4, 5, 6, 7)
 miDf01[[4]] <- newVec
 print(miDf01)
@@ -466,7 +466,7 @@ print(miDf01)
 
 Como el contenedor de tipo `data.frame` es un caso especial de `list`, la selección y modificación se realiza como un contenedor de tipo `list`. Dado que los elementos de un `data.frame` son del tipo `vector`, la selección y la modificación de los elementos de un `data.frame` se hace como para un contenedor `vector`.
 
-```{r}
+```{r 014-dataType2-39}
 miDf01$newVec2 <- miDf01$newVec2 * 2
 print(miDf01)
 miDf01$newVec2 + miDf01$newVec
@@ -476,7 +476,7 @@ print(miDf01)
 
 Un `vector` se puede transformar en `data.frame` con la función `as.data.frame()`.
 
-```{r}
+```{r 014-dataType2-40}
 print(newVec2)
 print(as.data.frame(newVec2))
 is.data.frame(newVec2)
@@ -491,7 +491,7 @@ El contenedor `matrix` se puede ver como un `vector` de dos dimensiones: líneas
 
 Para crear una `matrix` primero creamos un `vector`, luego especificamos el número deseado de líneas y columnas en la función `matrix()`.
 
-```{r}
+```{r 014-dataType2-41}
 vecForMatrix <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
 miMat <- matrix(vecForMatrix, nrow = 3, ncol = 4)
 print(miMat)
@@ -499,7 +499,7 @@ print(miMat)
 
 No tenemos que especificar el número de líneas `nrow` y el número de columnas `ncol`. Si usamos uno u otro de estos argumentos, R calculará automáticamente el número correspondiente.
 
-```{r}
+```{r 014-dataType2-42}
 miMat <- matrix(vecForMatrix, nrow = 3)
 print(miMat)
 miMat <- matrix(vecForMatrix, ncol = 4)
@@ -508,14 +508,14 @@ print(miMat)
 
 Observamos que los diferentes elementos del `vector` inicial aparecen por columna. Si queremos llenar la `matrix` empezando por línea, entonces tenemos que dar como valor `TRUE` al argumento `byrow`.
 
-```{r}
+```{r 014-dataType2-43}
 miMat <- matrix(vecForMatrix, nrow = 3, byrow = TRUE)
 print(miMat)
 ```
 
 También podemos dar un nombre a las líneas y columnas de nuestra `matrix` cuando se crea con el argumento `dimnames` que toma como valor una `list` de dos elementos: el nombre de las líneas y luego el nombre de las columnas. También podemos cambiar el nombre de las líneas y columnas a posteriori con las funciones `rownames()` y `colnames()`.
 
-```{r}
+```{r 014-dataType2-44}
 miMat <- matrix(
   vecForMatrix, 
   nrow = 3, 
@@ -530,7 +530,7 @@ print(miMat)
 
 Es posible crear una `matrix` desde un `data.frame` con la función `as.matrix()`. Tenemos que verificar que nuestra `data.frame` contenga solo elementos del mismo tipo (por ejemplo, elementos de tipo `numeric`).
 
-```{r}
+```{r 014-dataType2-45}
 vecForMat01 <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
 vecForMat02 <- vecForMat01 * 10
 vecForMat03 <- vecForMat01 / 10
@@ -543,7 +543,7 @@ is.matrix(as.matrix(dfForMat))
 
 También podemos crear una `matrix` desde un `vector` con la función `as.matrix()` (matriz de una sola columna).
 
-```{r}
+```{r 014-dataType2-46}
 as.matrix(vecForMat01)
 ```
 
@@ -551,7 +551,7 @@ as.matrix(vecForMat01)
 
 Todas las operaciones término a término son posibles con una `matrix`.
 
-```{r}
+```{r 014-dataType2-47}
 # operaciones término a término
 miMat01 <- matrix(vecForMat01, ncol = 3)
 miVecOp <- c(1, 10, 100, 1000)
@@ -563,7 +563,7 @@ miMat01 - 10
 
 Para realizar operaciones algebraicas, podemos usar la función `%*%`.
 
-```{r}
+```{r 014-dataType2-48}
 # operaciones algebraicas
 miVecConf <- c(1, 10, 100)
 miMat01 %*% miVecConf
@@ -574,7 +574,7 @@ miMat02 %*% miMat02
 
 La diagonal de una `matrix` se puede obtener con la función `diag()` y el determinante de una `matrix` con la función `det()`.
 
-```{r}
+```{r 014-dataType2-49}
 print(miMat02)
 diag(miMat02)
 det(miMat02)
@@ -582,7 +582,7 @@ det(miMat02)
 
 Suele ser útil poder hacer una transposición de `matrix` (columnas en líneas o líneas en columnas). Para eso, están las funciones `aperm()` o `t()`. la función `t()` es más genérica y también funciona con `data.frame`.
 
-```{r}
+```{r 014-dataType2-50}
 aperm(miMat01)
 t(miMat01)
 ```
@@ -591,7 +591,7 @@ t(miMat01)
 
 Tal como hemos hecho con los `data.frame`, podemos acceder a los elementos de una `matrix` especificando un número de línea y un número de columna entre corchetes simples `[ ]`, y separados por una coma. Si `i` es el número de línea y `j` es el número de columna, entonces `miMat01[i, j]` devuelve el elemento en la línea `i` y en la columna` j`. `miMat01[i,]` devuelve todos los elementos de la línea `i`, y `miMat01[, j]` todos los elementos de la columna `j`. Múltiples selecciones son posibles. También podemos acceder a un elemento de acuerdo con su posición en la `matrix` entre corchetes simples `[ ]` contando por columna y luego por línea. En nuestro ejemplo, el valor del décimo elemento es 10.
 
-```{r}
+```{r 014-dataType2-51}
 i <- 2
 j <- 1
 print(miMat01[i, j])
@@ -605,7 +605,7 @@ print(miMat01[10])
 
 El contenedor `array` es una generalización del contenedor de tipo `matrix`. Donde el tipo `matrix` tiene dos dimensiones (líneas y columnas), el tipo `array` tiene un número indefinido de dimensiones. Podemos saber el número de dimensiones de un `array` (y por lo tanto una `matrix`) con la función `dim()`.
 
-```{r}
+```{r 014-dataType2-52}
 dim(miMat01)
 ```
 
@@ -613,7 +613,7 @@ dim(miMat01)
 
 La creación de una `array` es similar a la de una `matrix` con una dimensión extra.
 
-```{r}
+```{r 014-dataType2-53}
 miVecArr <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)
 miArray <- array(miVecArr, dim = c(3, 3, 2))
 print(miArray)
@@ -628,7 +628,7 @@ is.array(miArray02)
 
 Podemos dar nombres a líneas y columnas, pero también a elementos.
 
-```{r}
+```{r 014-dataType2-54}
 miArray02 <- array(
   c(miVecArr, miVecArr02), 
   dim = c(3, 3, 2), 
@@ -645,7 +645,7 @@ print(miArray02)
 
 La manipulación de un `array` se hace de la misma manera que para una `matrix`. Para acceder a los diferentes elementos de un `array`, simplemente hay que especificar la línea `i`, la columna `j`, y la `matrix` `k`.
 
-```{r}
+```{r 014-dataType2-55}
 i <- 2
 j <- 1
 k <- 1

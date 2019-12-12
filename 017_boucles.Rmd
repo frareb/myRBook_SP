@@ -5,7 +5,7 @@
 
 Si queremos realizar una operación diferente según una condición, podemos configurar una prueba lógica del tipo **SI** *esto* **ENTONCES** *esto* **SINO** *esto*. Con R esto dará como resultado la función `if(cond) cons.express alt.expr` como se muestra en la función help.
 
-```{r}
+```{r 017-boucles-1}
 myVar <- 2
 if(myVar < 3) print("myVar < 3")
 if(myVar < 3) print("myVar < 3") else print("myVar > 3")
@@ -13,7 +13,7 @@ if(myVar < 3) print("myVar < 3") else print("myVar > 3")
 
 Cuando hay varias líneas de código para ejecutar basadas en la prueba lógica, o simplemente para hacer que el código sea más fácil de leer, utilizamos varias líneas con `{}` y con identacion.
 
-```{r}
+```{r 017-boucles-2}
 myVar <- 2
 myResult <- 0
 if(myVar < 3){
@@ -30,7 +30,7 @@ En este ejemplo definimos una variable `myVar`. Si esta variable es menor que 3,
 
 Ya hemos visto el uso de la prueba lógica `if` en el [capítulo sobre las funciones](#l015function). Habiamos probado si la variable ingresada como argumento en nuestra función era de tipo `character`.
 
-```{r}
+```{r 017-boucles-3}
 myVar <- "qwerty"
 if(is.character(myVar)){
   print("ok")
@@ -41,7 +41,7 @@ if(is.character(myVar)){
 
 También podemos anidar pruebas lógicas entre sí.
 
-```{r}
+```{r 017-boucles-4}
 myVar <- TRUE
 if(is.character(myVar)){
   print("myVar: character")
@@ -60,7 +60,7 @@ if(is.character(myVar)){
 
 También es posible estipular varias condiciones, como vimos en el capítulo sobre [operadores de comparación](#l011opcomp).
 
-```{r}
+```{r 017-boucles-5}
 myVar <- 2
 if(myVar > 1 & myVar < 50){
   print("ok")
@@ -69,7 +69,7 @@ if(myVar > 1 & myVar < 50){
 
 En este ejemplo, `myVar` está en formato `numeric`, por lo que la primera condición (`> 1`) y la segunda condición (`< 50`) son verificables. Por otro lado, si asignamos una variable de tipo `character` a `myVar` entonces R transformará 0 y 10 en objetos de tipo `character` y probará si `myVar> "1"` y despues si `myVar < "50"` basandose en la clasificación alfabética. En el siguiente ejemplo, `"azerty"` no está ubicado segun el orden alfabético entre `"1"` y `"50"`, pero para `"2azerty"` es el caso, lo que resulta problematico.
 
-```{r}
+```{r 017-boucles-6}
 myVar <- "azerty"
 limInit <- 1
 limEnd <- 50
@@ -88,7 +88,7 @@ if(myVar > limInit & myVar < limEnd){
 
 Entonces, lo que nos gustaría hacer es probar si `myVar` está en formato `numeric`, y entonces solo si es el caso probar las siguientes condiciones.
 
-```{r}
+```{r 017-boucles-7}
 myVar <- "2azerty"
 if(is.numeric(myVar)){
   if(myVar > limInit & myVar < limEnd){
@@ -103,7 +103,7 @@ if(is.numeric(myVar)){
 
 A veces es posible que necesitemos probar una primera condición y luego una segunda condición solo si la primera es verdadera en la misma prueba. Por ejemplo, para un sitio nos gustaría saber si hay una sola especie y probar si su abundancia es mayor que 10. Imagine un conjunto de datos con abundancia de vectores. Probaremos el número de especies con la función [`length()`](#l015length).
 
-```{r, eval = FALSE}
+```{r 017-boucles-8, eval = FALSE}
 mySpecies <- c(15, 14, 20, 12)
 if(length(mySpecies) == 1 & mySpecies > 10){
   print("ok!")
@@ -115,7 +115,7 @@ if(length(mySpecies) == 1 & mySpecies > 10){
 
 R devuelve un error porque no puede dentro de una prueba lógica con `if()` verificar la segunda condición. De hecho, `mySpecies > 10` devuelve `TRUE TRUE TRUE TRUE TRUE`. Podemos separar el código en dos condiciones:
 
-```{r}
+```{r 017-boucles-9}
 mySpecies <- c(15, 14, 20, 12)
 if(length(mySpecies) == 1){
   if(mySpecies > 10){
@@ -126,7 +126,7 @@ if(length(mySpecies) == 1){
 
 Una alternativa más elegante es decirle a R que verifique la segunda condición solo si la primera es verdadera. Para eso podemos usar `&&` en lugar de `&`.
 
-```{r}
+```{r 017-boucles-10}
 mySpecies <- c(15, 14, 20, 12)
 if(length(mySpecies) == 1 && mySpecies > 10){
   print("ok!")
@@ -147,7 +147,7 @@ Con `&` R comprobará todas las condiciones, y con `&&` R tomará cada condició
 
 La función `switch()` es una variante de `if()` que es útil cuando tenemos muchas opciones posibles para la misma expresión. El siguiente ejemplo muestra cómo transformar el código usando `if()` a `switch()`.
 
-```{r}
+```{r 017-boucles-11}
 x <- "aa"
 if(x == "a"){
   result <- 1
@@ -176,7 +176,7 @@ print(result)
 
 En programación, cuando tenemos que repetir la misma línea de código varias veces, es un signo que indica que debemos usar un **bucle**. Un bucle es una forma de iterar sobre un conjunto de objetos (o los elementos de un objeto) y repetir una operación. Imaginamos un `data.frame` con mediciones de datos de campo en dos fechas.
 
-```{r}
+```{r 017-boucles-12}
 bdd <- data.frame(date01 = rnorm(n = 100, mean = 10, sd = 1), 
                   date02 = rnorm(n = 100, mean = 10, sd = 1))
 print(head(bdd))
@@ -184,7 +184,7 @@ print(head(bdd))
 
 Nos gustaría cuantificar la diferencia entre la primera y la segunda fecha, luego poner un indicador para saber si esta diferencia es pequeña o grande, por ejemplo, con un umbral arbitrario de 3. Entonces, para cada línea podríamos hacer:
 
-```{r}
+```{r 017-boucles-13}
 bdd$dif <- NA
 bdd$isDifBig <- NA
 
@@ -221,7 +221,7 @@ Esta forma de hacer las cosas sería extremadamente tediosa de lograr, y casi im
 
 Vamos a usar un bucle `for()`. El bucle `for()` recorrerá los elementos de un objeto que vamos a dar como argumento. Por ejemplo, aquí hay un bucle que para todos los números del 3 al 9 calculará su valor al cuadrado. El valor actual del número está simbolizado por un objeto que puede tomar el nombre que queramos (aquí será `i`).
 
-```{r}
+```{r 017-boucles-14}
 for(i in c(3, 4, 5, 6, 7, 8, 9)){
   print(i^2)
 }
@@ -229,7 +229,7 @@ for(i in c(3, 4, 5, 6, 7, 8, 9)){
 
 Eso podemos mejorar usando [la función `:`](#l0152points).
 
-```{r, eval = FALSE}
+```{r 017-boucles-15, eval = FALSE}
 for(i in 3:9){
   print(i^2)
 }
@@ -237,7 +237,7 @@ for(i in 3:9){
 
 El bucle `for()` puede iterar sobre todos los tipos de elementos.
 
-```{r}
+```{r 017-boucles-16}
 nChar <- c("a", "z", "e", "r", "t", "y")
 for(i in nChar){
   print(i)
@@ -246,7 +246,7 @@ for(i in nChar){
 
 Volvamos a nuestro caso. Vamos a iterar sobre el número de líneas de nuestro `data.frame` `bdd`. Antes de eso crearemos las columnas `dif` y `isDifBig` con los valores `NA`. Luego usaremos [la función `nrow()`](#l015nrow) para encontrar el número de líneas.
 
-```{r}
+```{r 017-boucles-17}
 bdd$dif <- NA
 bdd$isDifBig <- NA
 for(i in 1:nrow(bdd)){
@@ -262,7 +262,7 @@ print(head(bdd, n = 20))
 
 En la práctica, esta no es la mejor manera de realizar este ejercicio porque se trata de cálculos simples en vectores contenidos en un `data.frame`. R es particularmente potente para realizar operaciones en vectores. Donde sea posible, siempre tenemos que enfócarnos en operaciones vectoriales. Aquí nuestro código se convierte en:
 
-```{r}
+```{r 017-boucles-18}
 bdd$dif <- sqrt((bdd$date01 - bdd$date02)^2)
 bdd$isDifBig <- "small"
 bdd$isDifBig[bdd$dif > 3] <- "big"
@@ -271,7 +271,7 @@ print(head(bdd, n = 20))
 
 La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle `for()` pueden reemplazarse por operaciones vectoriales. Aquí hay algunos ejemplos adaptados de varias fuentes:
 
-```{r}
+```{r 017-boucles-19}
 # prueba si los números son pares
 # [1] FOR
 x <- sample(1:100, size = 20)
@@ -309,7 +309,7 @@ mean(sample(1:6, ntrials, replace = TRUE))
 
 Es un buen ejercicio explorar los muchos ejemplos disponibles en Internet en el bucle `for()` e intentar convertirlos en operaciones vectoriales. Esto nos permite adquirir buenos reflejos de programación con R. El bucle `for()` es muy útil, por ejemplo, para leer varios archivos y tratar la información que contienen de la misma manera, hacer gráficos, o Cuando las operaciones vectoriales se vuelven tediosas. Imagina una matriz de 10 columnas y 100 líneas. Queremos la suma de cada línea (veremos cómo hacer con la función `apply()` mas adelante).
 
-```{r}
+```{r 017-boucles-20}
 myMat <- matrix(sample(1:100, size = 1000, replace = TRUE), ncol = 10)
 # VECTOR
 sumRow <- myMat[, 1] + myMat[, 2] + myMat[, 3] + myMat[, 4] + 
@@ -330,7 +330,7 @@ En conclusión, se recomienda no usar el bucle `for()` con R siempre que sea pos
 
 El bucle `while()`, a diferencia del bucle `for()`, significa *MIENTRAS*. Mientras no se cumpla una condición, el bucle continuará ejecutándose. Atención porque en caso de error, podemos programar fácilmente bucles que nunca terminan. Este bucle es menos común que el bucle `for()`. Tomemos un ejemplo:
 
-```{r}
+```{r 017-boucles-21}
 i <- 0
 while(i < 10){
   print(i)
@@ -342,7 +342,7 @@ En este ejemplo, la variable `i` tiene como valor inicial 0. MIENTRAS QUE `i < 1
 
 El bucle `while()` es muy útil para crear scripts que realizarán cálculos en variables cuyo valor cambia con el tiempo. Por ejemplo, imaginamos un número entre 0 y 10000 y un generador aleatorio que intentará determinar el valor de este número. Si queremos limitar los intentos de R a 2 segundos, podemos escribir el siguiente script (que debería funcionar cada vez en una computadora de escritorio típica que pueda realizar fácilmente 35000 pruebas en 2 segundos):
 
-```{r}
+```{r 017-boucles-22}
 myNumber <- sample(x = 10000, size = 1)
 myGuess <- sample(x = 10000, size = 1)
 startTime <- Sys.time()
@@ -370,7 +370,7 @@ Más concretamente, podríamos imaginar algoritmos para explorar un espacio de s
 
 El bucle `repeat()` permite repetir una operación sin condiciones para verificar. Para salir de este bucle debemos usar la palabra clave `break`.
 
-```{r}
+```{r 017-boucles-23}
 i <- 1
 repeat{
   print(i^2)
@@ -383,7 +383,7 @@ repeat{
 
 Si volvemos al ejemplo anterior, podemos usar un bucle `repeat()` para repetirlo cinco veces.
 
-```{r}
+```{r 017-boucles-24}
 numTry <- 0
 repeat{
   myNumber <- sample(x = 10000, size = 1)
@@ -411,7 +411,7 @@ Al igual que el bucle `while()`, el bucle `repeat()` no se usa mucho con R.
 
 Ya hemos visto la palabra clave `break` que permite salir del bucle actual. Por ejemplo, si buscamos el primer dígito después de 111 que es divisible por 32:
 
-```{r}
+```{r 017-boucles-25}
 myVars <- 111:1000
 for(myVar in myVars){
   if(myVar %% 32 == 0){
@@ -423,13 +423,13 @@ for(myVar in myVars){
 
 Aunque hemos visto que en la práctica podemos evitar el bucle `for()` con una operación vectorial:
 
-```{r}
+```{r 017-boucles-26}
 (111:1000)[111:1000 %% 32 == 0][1]
 ```
 
 La palabra clave `next` permite pasar a la siguiente iteración de un bucle si se cumple una determinada condición. Por ejemplo, si queremos imprimir las letras del alfabeto sin las vocales:
 
-```{r}
+```{r 017-boucles-27}
 for(myLetter in letters){
   if(myLetter %in% c("a", "e", "i", "o", "u", "y")){
     next
@@ -440,7 +440,7 @@ for(myLetter in letters){
 
 De nuevo podimos evitar el bucle `for()` con:
 
-```{r}
+```{r 017-boucles-28}
 letters[! letters %in% c("a", "e", "i", "o", "u", "y")]
 ```
 
@@ -452,20 +452,20 @@ En conclusión, si usamos bucles, las palabras clave `next` y `break` suelen ser
 
 La función `apply()` permite aplicar una función a todos los elementos de un `array` o un `matrix`. Por ejemplo, si queremos saber la suma de cada fila de una `matriz` de 10 columnas y 100 líneas:
 
-```{r}
+```{r 017-boucles-29}
 myMat <- matrix(sample(1:100, size = 1000, replace = TRUE), ncol = 10)
 apply(X = myMat, MARGIN = 1, FUN = sum)
 ```
 
 Si queremos saber la mediana de cada columna, la expresión se convierte en:
 
-```{r}
+```{r 017-boucles-30}
 apply(X = myMat, MARGIN = 2, FUN = median)
 ```
 
 El argumento `X` es el objeto en el que el bucle `apply` se repetirá. El argumento `MARGEN` corresponde a la dimensión a tener en cuenta (1 para las filas y 2 para las columnas). El argumento `FUN` es la función a aplicar. En un objeto `array`, el argumento `MARGIN` puede tomar tantos valores como dimensiones. En este ejemplo, `MARGIN = 1` es el promedio de cada fila - dimensión 1 - (todas las dimensiones combinadas), `MARGIN = 2` es el promedio de cada columna - dimensión 2 - (todas las dimensiones combinadas), y `MARGEN = 3` es el promedio de cada dimensión 3. Debajo cada cálculo se realiza de dos maneras diferentes para explicar su operación.
 
-```{r}
+```{r 017-boucles-31}
 myArr <- array(sample(1:100, size = 1000, replace = TRUE), dim = c(10, 20, 5))
 apply(X = myArr, MARGIN = 1, FUN = mean)
 (apply(myArr[,,1], 1, mean) + apply(myArr[,,2], 1, mean) + 
@@ -482,7 +482,7 @@ c(mean(myArr[,,1]), mean(myArr[,,2]), mean(myArr[,,3]),
 
 También podemos calcular el promedio de cada fila y valor de columna (la función luego itera en la dimensión 3):
 
-```{r}
+```{r 017-boucles-32}
 apply(X = myArr, MARGIN = c(1, 2), FUN = mean)
 ```
 
@@ -490,7 +490,7 @@ apply(X = myArr, MARGIN = c(1, 2), FUN = mean)
 
 Como se indica en la documentación, `lapply()` devuelve una lista de la misma longitud que `X`, y cada elemento resulta de la aplicación `FUN` al elemento `X` correspondiente. Si `X` es una `list` que contiene `vector` y estamos tratando de obtener el promedio de cada elemento de `list`, podemos usar la función `lapply()`:
 
-```{r}
+```{r 017-boucles-33}
 myList <- list(
   a = sample(1:100, size = 10), 
   b = sample(1:100, size = 10), 
@@ -504,7 +504,7 @@ lapply(myList, FUN = mean)
 
 Al igual que con la función `apply()`, podemos pasar argumentos adicionales a la función `lapply()` agregándolos después de la función. Esto es útil, por ejemplo, si nuestra `list` contiene estos valores faltantes `NA` y queremos ignorarlos para calcular los promedios (con el argumento `na.rm = TRUE`).
 
-```{r}
+```{r 017-boucles-34}
 myList <- list(
   a = sample(c(1:5, NA), size = 10, replace = TRUE), 
   b = sample(c(1:5, NA), size = 10, replace = TRUE), 
@@ -519,7 +519,7 @@ lapply(myList, FUN = mean, na.rm = TRUE)
 
 Para mayor legibilidad o si se debemos realizar varias operaciones dentro del argumento `FUN`, podemos usar el siguiente script:
 
-```{r}
+```{r 017-boucles-35}
 lapply(myList, FUN = function(i){
   mean(i, na.rm = TRUE)
 })
@@ -527,7 +527,7 @@ lapply(myList, FUN = function(i){
 
 Por ejemplo, si queremos obtener `i^2` si el promedio es mayor que 3, y `i^3` de lo contrario:
 
-```{r}
+```{r 017-boucles-36}
 lapply(myList, FUN = function(i){
   m <- mean(i, na.rm = TRUE)
   if(m > 3){
@@ -542,7 +542,7 @@ lapply(myList, FUN = function(i){
 
 La función `sapply()` es una versión modificada de la función `lapply()` que realiza la misma operación pero devuelve el resultado en un formato simplificado siempre que sea posible.
 
-```{r}
+```{r 017-boucles-37}
 lapply(myList, FUN = function(i){
   mean(i, na.rm = TRUE)
 })
@@ -553,7 +553,7 @@ sapply(myList, FUN = function(i){
 
 La función `sapply()` es interesante para recuperar, por ejemplo, el elemento "n" de cada elemento de una `list`. La función que se llama para hacer esto es `'[['`.
 
-```{r}
+```{r 017-boucles-38}
 sapply(myList, FUN = '[[', 2)
 ```
 
@@ -561,7 +561,7 @@ sapply(myList, FUN = '[[', 2)
 
 La función `tapply()` permite aplicar una función tomando como elemento para iterar una variable existente. Imaginamos información sobre especies representadas por letras mayúsculas (por ejemplo, A, B, C) y valores de mediciones biologicas en diferentes ubicaciones.
 
-```{r}
+```{r 017-boucles-39}
 species <- sample(LETTERS[1:10], size = 1000, replace = TRUE)
 perf1 <- rnorm(n = 1000, mean = 10, sd = 0.5)
 perf2 <- rlnorm(n = 1000, meanlog = 10, sdlog = 0.5)
@@ -572,13 +572,13 @@ print(head(dfSpecies, n = 10))
 
 Podemos obtener fácilmente un resumen de las mediciones para cada especie con la función `tapply()` y la función `summary()`.
 
-```{r}
+```{r 017-boucles-40}
 tapply(dfSpecies$perf1, INDEX = dfSpecies$species, FUN = summary)
 ```
 
 También podemos obtener el valor promedio de cada mediciones combinando una función `sapply()` con la función `tapply()` y usando la función `mean()`.
 
-```{r}
+```{r 017-boucles-41}
 sapply(2:4, FUN = function(i){
   tapply(dfSpecies[,i], INDEX = dfSpecies$species, FUN = mean)
 })
@@ -588,7 +588,7 @@ sapply(2:4, FUN = function(i){
 
 La función `mapply()` es una versión de la función `sapply()` que usa múltiples argumentos. Por ejemplo, si tenemos una lista de dos elementos `1:5` y `5:1` y queremos agregar `10` al primer elemento y `100` al segundo elemento:
 
-```{r}
+```{r 017-boucles-42}
 mapply(FUN = function(i, j){i+j}, i = list(1:5, 5:1), j = c(10, 100))
 ```
 

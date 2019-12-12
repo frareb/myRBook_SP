@@ -4,7 +4,7 @@ Hemos visto diferentes formas de usar los colores: con su nombre (por ejemplo, `
 
 El uso de los números del 1 al 8 corresponde a negro, rojo, verde, azul, cian, magenta, amarillo y gris. Este uso es útil para visualizar rápidamente nuestros resultados, pero proporciona gráficos generales visualmente promedio. Es preferable evitar estos colores para comunicar nuestros gráficos o para construir figuras en revistas científicas.
 
-```{r}
+```{r 021-02-graphiques-1}
 barplot(sample(10:15, 8, replace = TRUE), col = 1:8, names.arg = 1:8)
 ```
 
@@ -12,13 +12,13 @@ barplot(sample(10:15, 8, replace = TRUE), col = 1:8, names.arg = 1:8)
 
 Para elegir colores más agradables y resaltar nuestros resultados, una opción es elegir de la lista de colores pregrabados en R. Podemos acceder a la lista de colores con la función `colors()`
 
-```{r}
+```{r 021-02-graphiques-2}
 head(colors(), n = 20)
 ```
 
 Podemos usar estos colores con sus nombres (por ejemplo, `"white"`, `"azure3"`), o con su número (por ejemplo, "white" = `colors()[1]`, "azure3" = `colors()[16]`).
 
-```{r}
+```{r 021-02-graphiques-3}
 # adapted from http://www.r-graph-gallery.com/42-colors-names/
 op <- par(no.readonly = TRUE)
 par(mar = c(0, 0, 0, 0))
@@ -48,7 +48,7 @@ Otra opción es crear nuestros propios colores con la función `rgb()`, que toma
 
 Vamos a reanudar nuestra función para representar la distribución de puntos en un diagrama de dispersión por medio de `barplot` con este tiempo tres colores de puntos (rojo, verde, azul) y un `barplot` cuyo color corresponderá a la cantidad de cada color con la función `rgb()`.
 
-```{r}
+```{r 021-02-graphiques-4}
 graphBarplotCol <- function(n){
   myX <- rnorm(n)
   myY <- rnorm(n)
@@ -97,7 +97,7 @@ Con la función `rgb()` podemos representar 256^3 colores, o 167 777 216 colores
 
 Las paletas son esquemas de color representados como un `vector` con colores en formato hexadecimal (valor devuelto por la función `rgb()`).
 
-```{r}
+```{r 021-02-graphiques-5}
 myPal <- c(
   rgb(0, 94, 255, maxColorValue = 255),  
   rgb(255, 0, 174, maxColorValue = 255),  
@@ -112,7 +112,7 @@ axis(2)
 Hay paletas de colores incluidos en R: `terrain.colors()`, `heat.colors()`, `topo.colors()`, 
 `cm.colors()`, `rainbow()`. 
 
-```{r}
+```{r 021-02-graphiques-6}
 op <- par(no.readonly = TRUE)
 par(mfrow = c(2, 3), mar = c(0, 0, 2, 0))
 boxplot(matrix(rnorm(1000), ncol = 10), main = "terrain.colors()", 
@@ -130,7 +130,7 @@ par(op)
 
 También hay una función `colorRampPalette()` que nos permite crear un degradado de color.
 
-```{r}
+```{r 021-02-graphiques-7}
 op <- par(no.readonly = TRUE)
 par(mfrow = c(3, 1), mar = c(0, 0, 0, 0))
 boxplot(matrix(rnorm(2500), ncol = 25), 
@@ -150,7 +150,7 @@ R es un lenguaje de programación muy poderoso. Podemos imaginar muchas formas d
 
 Primero, cargaremos los paquetes `raster`,` rgdal` y `jpeg` que se utilizarán para manipular nuestra imagen en R.
 
-```{r}
+```{r 021-02-graphiques-8}
 pkgCheck <- function(x){ 
   if (!require(x, character.only = TRUE)){
     install.packages(x, dependencies = TRUE)
@@ -166,7 +166,7 @@ pkgCheck("jpeg")
 
 Luego usaremos la función `kmeans()` para realizar grupos de colores usando los valores RGB de cada punto en nuestra imagen. Aquí tenemos dos métodos posibles, el primero usa la función `kmeans()` para los tres valores RGB, y el segundo usa la función `kmeans()` para cada valor RGB individualmente (esta segunda función proporciona una paleta que puede ser bastante alejado de los colores de la imagen original).
 
-```{r}
+```{r 021-02-graphiques-9}
 createPal <- function(photo, met = 1, graph = TRUE, k = 9){
   if(met == 1){
     colR <- getValues(raster(photo, band = 1))
@@ -230,7 +230,7 @@ myPalMet2 <- createPal(photo = "./myFiles/photoKmeans.jpg",
 
 La función nos devuelve los colores de la paleta con un gráfico de barras que representa el número de puntos de la imagen en cada uno de los grupos de colores. Ahora podemos usar nuestra nueva paleta para hacer nuestros gráficos.
 
-```{r}
+```{r 021-02-graphiques-10}
 makeImpact <- function(myPal, numP = 300, impact = 0.33, multCex = 3){
   myX <- sample(0:1000, size = numP, replace = TRUE)/1000
   myY <- sample(0:1000, size = numP, replace = TRUE)/1000

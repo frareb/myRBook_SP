@@ -4,7 +4,7 @@
 
 En estudios de biología, ecología, o agronomía, frecuentemente usamos datos de temperatura de dataloggers. En este estudio vamos a ver como analizar esos datos usando datos de temperatura del altiplano Boliviano cerca de la ciudad de El Alto. El primer paso es transformar los datos del datalogger en un formato que sea fácil de leer para R. Usaremos un archivo CSV y la función [`read.table()`](#import). El archivo se puede descargar desde el sitio web del libro en GitHub (https://github.com/frareb/myRBook_SP/blob/master/myFiles/E05C13.csv ; el archivo se puede leer desde su destino en GitHub https://raw.githubusercontent.com/frareb/myRBook_SP/master/myFiles/E05C13.csv).
 
-```{r}
+```{r 041-studyCase-1}
 bdd <- read.table("myFiles/E05C13.csv", skip = 1, header = TRUE, 
   sep = ",", dec = ".", stringsAsFactors = FALSE)
 # Desde GitHub: 
@@ -20,40 +20,40 @@ Podemos observar que la fecha esta al formato `character`, y que contiene la fec
 
 Primero vamos a separar la fecha de la hora. Para esto vamos a usar la función `strsplit()` usando como separador el espacio entre la fecha y la hora.
 
-```{r}
+```{r 041-studyCase-2}
 strsplit("11/12/15 23:00:00", split = " ")
 ```
 
 Como indican los corchetes dobles, la función devuelve un objeto en el formato `list`. Nosotros queremos el `vector` que corresponde al primer elemento de la `list` entonces vamos a añadir `[[1]]`.
 
-```{r}
+```{r 041-studyCase-3}
 strsplit("11/12/15 23:00:00", split = " ")[[1]]
 ```
 
 El primer elemento del `vector` es la fecha. Para tener todas las fechas vamos a hacer un bucle con la función `sapply()`. 
 
-```{r}
+```{r 041-studyCase-4}
 bddDay <- sapply(strsplit(bdd[, 2], split = " "), "[[", 1)
 head(bddDay)
 ```
 
 A continuación vamos a necesitar las fechas en el formato `Date`. Entonces necesitamos transformar el objeto en el formato `Date` con la función `as.Date()`. 
 
-```{r}
+```{r 041-studyCase-5}
 bddDay <- as.Date(sapply(strsplit(bdd[, 2], split = " "), "[[", 1), format = "%m/%d/%y")
 head(bddDay)
 ```
 
 Vamos a añadir la information al formato `Date` en nuestro objeto `bdd`. Con la función `str()`, podemos ver que el formato de `bdd$day` es `Date`.
 
-```{r}
+```{r 041-studyCase-6}
 bdd$day <- bddDay
 str(bdd)
 ```
 
 Si necesitamos la información del horario, usaremos el formato `POSIX` con la función `as.POSIXct()`. Vamos a añadir la information al formato `POSIX` en nuestro objeto `bdd`. Con la función `str()`, podemos ver que el formato de `bdd$posix` es `POSIXct`.
 
-```{r}
+```{r 041-studyCase-7}
 bddPosix <- as.POSIXct(bdd$date, format = "%m/%d/%y %H:%M:%S")
 head(bddPosix)
 bdd$posix <- bddPosix
@@ -82,7 +82,7 @@ En las funciones `as.Date()` y `as.POSIXct()` tenemos que especificar el formato
 
 Podemos visualizar los datos con la función `plot()`.
 
-```{r}
+```{r 041-studyCase-8}
 plot(x = bdd$day, y = bdd$temp, 
 	type = 'l', ylim = c(-15, 40), 
 	xlab = "Fecha", ylab = "Temperatura (°C)")
@@ -90,7 +90,7 @@ plot(x = bdd$day, y = bdd$temp,
 
 Podemos simplificar la información calculando únicamente las temperaturas mínimas, promedias, y máximas del dia con la función `tapply()`. 
 
-```{r}
+```{r 041-studyCase-9}
 tempDayMean <- tapply(bdd$temp, INDEX = bdd$day, FUN = mean)
 tempDayMin <- tapply(bdd$temp, INDEX = bdd$day, FUN = min)
 tempDayMax <- tapply(bdd$temp, INDEX = bdd$day, FUN = max)
@@ -107,14 +107,14 @@ legend("topright", legend = c("min", "max", "promedio"),
 
 Podemos representar la misma información por semana. Para esto vamos a usar la información de los datos en el formato `POSIXct` para transformala en semanas.
 
-```{r}
+```{r 041-studyCase-10}
 anoSem <- format(bdd$posix, format = "%Y-%W")
 head(anoSem)
 ```
 
 Y despues hacer el gráfico.
 
-```{r}
+```{r 041-studyCase-11}
 tempWeekMean <- tapply(bdd$temp, 
   INDEX = format(bdd$posix, format = "%Y-%W-1"), FUN = mean)
 tempWeekMin <- tapply(bdd$temp, 
@@ -134,13 +134,13 @@ legend("topright", legend = c("min", "max", "promedio"),
 
 Para no perder la información sobre la variabilidad de la temperatura podemos hacer `boxplot` en lugar de `plot`.
 
-```{r}
+```{r 041-studyCase-12}
 boxplot(bdd$temp ~ format(bdd$posix, format = "%Y-%m"), las = 3)
 ```
 
 Podemos elegir colores para representar la temperatura promedia. Para esto podemos normalizar la temperatura en numeros integrados entre 1 y 101 y hacer corresponder los numeros en una escala de color del azul al rojo.
 
-```{r}
+```{r 041-studyCase-13}
 tempMonthMean <- tapply(bdd$temp, 
   INDEX = format(bdd$posix, format = "%Y-%m"), FUN = mean)
 myCol <- colorRampPalette(c("blue", "red"))(101)
@@ -153,7 +153,7 @@ boxplot(bdd$temp ~ format(bdd$posix, format = "%Y-%m"), las = 3,
 
 Para los que usan ggplot2:
 
-```{r}
+```{r 041-studyCase-14}
 pkgCheck <- function(x){ 
 	if (!require(x, character.only = TRUE)){
 		install.packages(x, dependencies = TRUE)
@@ -181,7 +181,7 @@ p01
 
 También podemos calcular la diferencia entre la temperatura máxima y la temperatura mínima (variación de temperatura diurna).
 
-```{r}
+```{r 041-studyCase-15}
 tempDayTR <- tempDayMax - tempDayMin
 plot(x = as.Date(names(tempDayMean), format = "%Y-%m-%d"), 
 	y = tempDayTR, type = 'l', ylim = c(5, 45), 
@@ -190,7 +190,7 @@ plot(x = as.Date(names(tempDayMean), format = "%Y-%m-%d"),
 
 Otra posibilidad es de agrupar los datos para tener la temperatura promedia de un día con la función `aggregate()` (como alternativa a la función `tapply`). 
 
-```{r}
+```{r 041-studyCase-16}
 tempHourMean <- aggregate(x = bdd$temp, 
   by = list(format(bdd$posix, format = "%H:%M")), FUN = mean)
 tempHourMin <- aggregate(x = bdd$temp, 
@@ -212,7 +212,7 @@ points(x = hours, y = tempHourMax[, 2], type = 'l', col = 2, lwd = 2)
 
 Tambien podemos calcular las temperaturas de los dias para cada mes. 
 
-```{r}
+```{r 041-studyCase-17}
 meses <- c("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
 	"Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
 hours <- seq(from = 0, to = 23.5, by = 0.5)
@@ -245,7 +245,7 @@ for (i in 1:2){ # solo para Enero y Febrero
 
 O todo en un mismo grafico, y la variación de temperatura diurna para cada mes.
 
-```{r}
+```{r 041-studyCase-18}
 plot(x = hours, y = tempDayEachMonth[[1]][, 2], type = 'n', ylim = c(-10, 35),
 	xlab = "", ylab = "Temperatura promedia (°C)",
 	xaxt = "n", 
@@ -287,7 +287,7 @@ legend("topright", ncol = 4, legend = meses, col = myColors,
 
 También podemos representar las temperaturas diarias con gráficos "ridgeline" y el package `ggplot2` (https://www.data-to-viz.com/graph/ridgeline.html).
 
-```{r}
+```{r 041-studyCase-19}
 pkgCheck <- function(x){ 
 	if (!require(x, character.only = TRUE)){
 		install.packages(x, dependencies = TRUE)

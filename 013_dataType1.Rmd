@@ -7,7 +7,7 @@ Vimos anteriormente cómo crear un objeto. Un objeto es como una caja en la que 
 El tipo `numeric` es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números en R: enteros (*integer*) y números decimales (*double*). Por defecto, R considera todos los números como números decimales y asigna el tipo `double`.
 Para verificar el tipo de datos utilizaremos la *función* `typeof()` que toma como *argumento* un objeto (o directamente la información que queremos probar). También podemos usar la función `is.double()` que devolverá `TRUE` si el número está en formato `double` y `FALSE` en caso contrario. La función genérica `is.numeric()` devolverá `TRUE` si el objeto está en formato `numeric` y `FALSE` en caso contrario.
 
-```{r}
+```{r 013-dataType1-1}
 nbrRep <- 5
 typeof(nbrRep)
 typeof(5.32)
@@ -17,7 +17,7 @@ is.double(5)
 
 Si queremos decirle a R que vamos a trabajar con un entero, entonces necesitamos convertir nuestro número decimal en un entero con la función `as.integer()`. También podemos usar la función `is.integer()` que devolverá `TRUE` si el número está en formato `integer` y `FALSE` en caso contrario.
 
-```{r}
+```{r 013-dataType1-2}
 nbrRep <- as.integer(5)
 typeof(nbrRep)
 typeof(5.32)
@@ -29,7 +29,7 @@ is.numeric(nbrRep)
 
 Vemos aquí que convertir un número como `5.99` a `integer` solo devolverá la parte entera, `5`.
 
-```{r}
+```{r 013-dataType1-3}
 is.integer(5)
 is.numeric(5)
 is.integer(as.integer(5))
@@ -38,7 +38,7 @@ is.numeric(as.integer(5))
 
 La suma de un número entero `integer` y un número decimal `double` devuelve un número decimal.
 
-```{r}
+```{r 013-dataType1-4}
 sumIntDou <- as.integer(5) + 5.2
 typeof(sumIntDou)
 sumIntInt <- as.integer(5) + as.integer(5)
@@ -53,7 +53,7 @@ Los números almacenados en una variable de tipo `integer` son codificados en 32
 
 No podemos dejar esta sección sin mencionar las funciones [`round()`](#l015round) [`ceiling()`](#l015round) [`trunc()`](#l015round) o [`floor()`](#l015round) que devuelven la parte entera de un número, pero déjelo en el tipo `double`. Para obtener más información, podemos usar la [ayuda de R](#l015ayuda) con `?round`.
 
-```{r}
+```{r 013-dataType1-5}
 roundDou <- round (5.2)
 typeof (roundDou)
 ```
@@ -62,7 +62,7 @@ typeof (roundDou)
 
 El tipo `character` es texto. De hecho, R permite trabajar con texto. Para especificar a R que la información contenida en un objeto está en formato de texto (o generalmente para todos los textos), usamos las comillas dobles (`"`) o las comillas simples (`'`).
 
-```{r}
+```{r 013-dataType1-6}
 myText <- "azerty"
 myText2 <- 'azerty'
 myText3 <- 'azerty uiop qsdfg hjklm'
@@ -71,7 +71,7 @@ typeof(myText3)
 
 Tanto las comillas dobles y simples son útiles en nuestro texto. También podemos *escapar* un carácter especial como comillas gracias al signo de barra invertida `\`.
 
-```{r}
+```{r 013-dataType1-7}
 myText <- "a 'ze' 'rt' y"
 print(myText)
 myText2 <- 'a "zert" y'
@@ -86,14 +86,14 @@ print(myText5)
 
 De forma predeterminada, cuando creamos un objeto, su contenido no es devuelto por la consola. En Internet o en muchos libros podemos encontrar el nombre del objeto en una línea para devolver sus contenidos:
 
-```{r}
+```{r 013-dataType1-8}
 myText <- "a 'ze' 'rt' y"
 myText
 ```
 
 En este libro, no lo usaremos de esta manera y preferiremos el uso de la función `print()`, que permite mostrar en la consola el contenido de un objeto. El resultado es el mismo, pero el código es más fácil de leer y más explícito sobre lo que hace.
 
-```{r}
+```{r 013-dataType1-9}
 myText <- "a 'ze' 'rt' y"
 print(myText)
 nbrRep <- 5
@@ -102,7 +102,7 @@ print(nbrRep)
 
 También podemos poner números en formato de texto, pero no debemos olvidar poner comillas para especificar el tipo `character` o usar la función` as.character()`. Una operación entre un texto y un número devuelve un error. Por ejemplo, si agregamos `10` a `5`, R nos dice que un **argumento** de la **función** `+` no es un tipo `numeric` y que, por lo tanto, la operación no es posible. Tampoco podemos agregar texto a texto, pero veremos más adelante cómo *concatenar* dos cadenas de texto.
 
-```{r}
+```{r 013-dataType1-10}
 myText <- "qwerty"
 typeof(myText)
 myText2 <- 5
@@ -121,7 +121,7 @@ Para resumir, el tipo `character` permite el ingreso de texto, podemos reconocer
 
 El tipo `factor` corresponde a los factores. Los factores son una elección dentro de una lista finita de posibilidades. Por ejemplo, los países son factores porque existe una lista finita de países en el mundo en un momento dado. Un factor puede definirse con la función `factor()` o transformarse utilizando la función `as.factor()`. Al igual que con otros tipos de datos, podemos usar la función `is.factor()` para verificar el tipo de datos. Para obtener una lista de todas las posibilidades, existe la función `levels()` (esta función tendrá más sentido cuando nos acerquemos a los tipos de contenedores de información).
 
-```{r}
+```{r 013-dataType1-11}
 factor01 <- factor("aaa")
 print(factor01)
 typeof(factor01)
@@ -131,7 +131,7 @@ levels(factor01)
 
 Un factor se puede transformar en texto con la función `as.character()` pero también en número con `as.numeric()`. Al cambiar al tipo `numeric`, cada factor toma el valor de su posición en la lista de posibilidades. En nuestro caso, solo hay una posibilidad, por lo que la función `as.numeric()` devolverá `1`:
 
-```{r}
+```{r 013-dataType1-12}
 factor01 <- factor("aaa")
 as.character(factor01)
 as.numeric(factor01)
@@ -141,7 +141,7 @@ as.numeric(factor01)
 
 El tipo `logical` corresponde a los valores `TRUE` y `FALSE` (y `NA`) que ya hemos visto con los operadores de comparación.
 
-```{r}
+```{r 013-dataType1-13}
 aLogic <- TRUE
 print(aLogic)
 typeof(aLogic)
@@ -155,7 +155,7 @@ as.character(aLogic)
 
 El valor `NA` se puede usar para especificar que no hay datos o datos faltantes. Por defecto, `NA` es `logical`, pero se puede usar para texto o números.
 
-```{r}
+```{r 013-dataType1-14}
 print(NA)
 typeof(NA)
 typeof(as.integer(NA))
