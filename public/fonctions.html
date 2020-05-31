@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 7 Las funciones | Aprender R: iniciación y perfeccionamiento</title>
   <meta name="description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 7 Las funciones | Aprender R: iniciación y perfeccionamiento" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="François Rebaudo" />
 
 
-<meta name="date" content="2019-12-12" />
+<meta name="date" content="2020-05-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,12 +51,12 @@
 
 
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.1/plotly.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.49.4/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.49.4/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124666641-1"></script>
 <script>
@@ -323,9 +323,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>III Estudio de caso</b></span></li>
 <li class="chapter" data-level="15" data-path="studyCase1.html"><a href="studyCase1.html"><i class="fa fa-check"></i><b>15</b> Analizar datos de loggers de temperatura</a></li>
-<li class="divider"></li>
-<li><a href="http://es.ird.fr/ird.fr" target="blank"><img src="myLogos/logo_IRD_2016_LONGUEUR_SP_COUL.png" alt="IRD" width="100"></a></li>
-
 </ul>
 
       </nav>
@@ -1237,10 +1234,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>No existe una solución óptima en absoluto, todo depende de los objetivos deseados. La primera solución puede ser más fácil de entender, y la segunda puede ser más rápida en términos de velocidad de ejecución (repitiendo el uso de la función 10000 veces, el ahorro de tiempo es casi cero en nuestro caso).</p>
 <div class="sourceCode" id="cb947"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb947-1" title="1"><span class="kw">system.time</span>(<span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="kw">countVowelConso</span>(<span class="dt">word =</span> <span class="st">&quot;qwertyuiop azertyuiop&quot;</span>)))</a></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.14    0.02    0.16</code></pre>
+##    0.15    0.00    0.16</code></pre>
 <div class="sourceCode" id="cb949"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb949-1" title="1"><span class="kw">system.time</span>(<span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="kw">countVowelConsoAlt</span>(<span class="dt">word =</span> <span class="st">&quot;qwertyuiop azertyuiop&quot;</span>)))</a></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.17    0.00    0.18</code></pre>
+##    0.16    0.00    0.15</code></pre>
 <p>Una función puede tener <strong>valores predeterminados</strong> para sus argumentos. Este es el caso para la mayoría de las funciones existentes. Por defecto, nuestra función ahora contará el número de vocales y consonantes en la palabra <code>qwerty</code> (los paréntesis son necesarios incluso en ausencia de argumentos).</p>
 <div class="sourceCode" id="cb951"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb951-1" title="1">countVowelConsoAlt &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">word =</span> <span class="st">&quot;qwerty&quot;</span>){ <span class="co"># número de vocales y consonantes</span></a>
 <a class="sourceLine" id="cb951-2" title="2">  <span class="cf">if</span>(<span class="kw">is.vector</span>(word) <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.character</span>(word) <span class="op">&amp;</span><span class="st"> </span><span class="kw">length</span>(word) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>){</a>
@@ -1291,12 +1288,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb955-11" title="11"><span class="kw">pkgCheck</span>(<span class="kw">c</span>(<span class="st">&quot;stats&quot;</span>, <span class="st">&quot;graphics&quot;</span>))</a></code></pre></div>
 <p>Alternativamente, podemos usar la función <code>.packages()</code> para listar los paquetes disponibles en el CRAN en orden alfabético.</p>
 <div class="sourceCode" id="cb956"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb956-1" title="1"><span class="kw">head</span>(<span class="kw">.packages</span>(<span class="dt">all.available =</span> <span class="ot">TRUE</span>), <span class="dt">n =</span> <span class="dv">30</span>)</a></code></pre></div>
-<pre><code>##  [1] &quot;abind&quot;       &quot;acepack&quot;     &quot;ade4&quot;        &quot;agricolae&quot;   &quot;AlgDesign&quot;  
-##  [6] &quot;alr4&quot;        &quot;ape&quot;         &quot;askpass&quot;     &quot;assertthat&quot;  &quot;backports&quot;  
-## [11] &quot;base64enc&quot;   &quot;bdsmatrix&quot;   &quot;BH&quot;          &quot;bibtex&quot;      &quot;bindr&quot;      
-## [16] &quot;bindrcpp&quot;    &quot;BioFTF&quot;      &quot;bitops&quot;      &quot;bold&quot;        &quot;bookdown&quot;   
-## [21] &quot;boot&quot;        &quot;brew&quot;        &quot;broom&quot;       &quot;ca&quot;          &quot;callr&quot;      
-## [26] &quot;car&quot;         &quot;carData&quot;     &quot;caret&quot;       &quot;cartography&quot; &quot;caTools&quot;</code></pre>
+<pre><code>##  [1] &quot;abind&quot;      &quot;acepack&quot;    &quot;ade4&quot;       &quot;agricolae&quot;  &quot;AlgDesign&quot; 
+##  [6] &quot;alr4&quot;       &quot;aof&quot;        &quot;ape&quot;        &quot;askpass&quot;    &quot;assertthat&quot;
+## [11] &quot;backports&quot;  &quot;base64enc&quot;  &quot;bcpa&quot;       &quot;bdsmatrix&quot;  &quot;BH&quot;        
+## [16] &quot;bibtex&quot;     &quot;bindr&quot;      &quot;bindrcpp&quot;   &quot;BioFTF&quot;     &quot;bitops&quot;    
+## [21] &quot;bold&quot;       &quot;bookdown&quot;   &quot;boot&quot;       &quot;brew&quot;       &quot;broom&quot;     
+## [26] &quot;ca&quot;         &quot;callr&quot;      &quot;car&quot;        &quot;carData&quot;    &quot;caret&quot;</code></pre>
 <p>La función <code>pkgCheck()</code> asegura la <strong>portabilidad</strong> de nuestros scripts: funcionarán en todas las computadoras sin tener que realizar ningún cambio. Por lo tanto, nuestros scipts pueden adjuntarse, por ejemplo, a nuestros artículos científicos y así garantizar la <strong>reproducibilidad</strong> de nuestros resultados.</p>
 </div>
 </div>

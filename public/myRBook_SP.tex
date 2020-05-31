@@ -213,38 +213,20 @@
 \makeatother
 
 \mainmatter
-% https://github.com/rstudio/rmarkdown/issues/337
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-% https://github.com/rstudio/rmarkdown/pull/252
-\usepackage{titling}
-\setlength{\droptitle}{-2em}
-
-\pretitle{\vspace{\droptitle}\centering\huge}
-\posttitle{\par}
-
-\preauthor{\centering\large\emph}
-\postauthor{\par}
-
-\predate{\centering\large\emph}
-\postdate{\par}
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Aprender R: iniciación y perfeccionamiento}
 \author{François Rebaudo}
-\date{2019-12-12}
+\date{2020-05-31}
 
 \begin{document}
-\frontmatter
 \maketitle
 
 {
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\mainmatter
 \hypertarget{preuxe1mbulo}{%
 \chapter{Preámbulo}\label{preuxe1mbulo}}
 
@@ -254,12 +236,7 @@
 Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones (en orden alfabético):
 
 \begin{verbatim}
-## Colaboradores :
-Camila Benavides Frias (Bolivia)
-Marc Girondot (France ; UMR 8079 ESE)
-Susi Loza Herrera (Bolivia)
-Estefania Quenta Herrera (Bolivia)
-Baptiste Régnier (France)
+## Colaboradores :Camila Benavides Frias (Bolivia)Marc Girondot (France ; UMR 8079 ESE)Susi Loza Herrera (Bolivia)Estefania Quenta Herrera (Bolivia)Baptiste Régnier (France)
 \end{verbatim}
 
 Las versiones de gitbook, html y epub de este libro usan los iconos de fuente abierta de Font Awesome (\url{https://fontawesome.com}). La versión en PDF utiliza los iconos del proyecto Tango disponibles en openclipart (\url{https://openclipart.org/}). Este libro fue escrito con el paquete R bookdown (\url{https://bookdown.org/}). El código fuente está disponible en GitHub (\url{https://github.com/frareb/myRBook_SP}). La versión en línea se aloja y actualiza a través de Netlify (\url{http://netlify.com/}).
@@ -7047,7 +7024,7 @@ No existe una solución óptima en absoluto, todo depende de los objetivos desea
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.22    0.00    0.22
+##    0.23    0.00    0.24
 \end{verbatim}
 
 \begin{Shaded}
@@ -7058,7 +7035,7 @@ No existe una solución óptima en absoluto, todo depende de los objetivos desea
 
 \begin{verbatim}
 ##    user  system elapsed 
-##    0.24    0.00    0.24
+##    0.26    0.00    0.27
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus argumentos. Este es el caso para la mayoría de las funciones existentes. Por defecto, nuestra función ahora contará el número de vocales y consonantes en la palabra \texttt{qwerty} (los paréntesis son necesarios incluso en ausencia de argumentos).
@@ -7151,12 +7128,12 @@ Alternativamente, podemos usar la función \texttt{.packages()} para listar los 
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "abind"       "acepack"     "ade4"        "agricolae"   "AlgDesign"  
-##  [6] "alr4"        "ape"         "askpass"     "assertthat"  "backports"  
-## [11] "base64enc"   "bdsmatrix"   "BH"          "bibtex"      "bindr"      
-## [16] "bindrcpp"    "BioFTF"      "bitops"      "bold"        "bookdown"   
-## [21] "boot"        "brew"        "broom"       "ca"          "callr"      
-## [26] "car"         "carData"     "caret"       "cartography" "caTools"
+##  [1] "abind"      "acepack"    "ade4"       "agricolae"  "AlgDesign" 
+##  [6] "alr4"       "aof"        "ape"        "askpass"    "assertthat"
+## [11] "backports"  "base64enc"  "bcpa"       "bdsmatrix"  "BH"        
+## [16] "bibtex"     "bindr"      "bindrcpp"   "BioFTF"     "bitops"    
+## [21] "bold"       "bookdown"   "boot"       "brew"       "broom"     
+## [26] "ca"         "callr"      "car"        "carData"    "caret"
 \end{verbatim}
 
 La función \texttt{pkgCheck()} asegura la \textbf{portabilidad} de nuestros scripts: funcionarán en todas las computadoras sin tener que realizar ningún cambio. Por lo tanto, nuestros scipts pueden adjuntarse, por ejemplo, a nuestros artículos científicos y así garantizar la \textbf{reproducibilidad} de nuestros resultados.
@@ -7419,104 +7396,112 @@ La función más simple para leer un archivo que contiene texto es \texttt{readl
 ##   [9] ""                                                                                                                                                                                                                                                                                                        
 ##  [10] "## Ãšltimas modificaciones"                                                                                                                                                                                                                                                                              
 ##  [11] ""                                                                                                                                                                                                                                                                                                        
-##  [12] "**10/04/2019**"                                                                                                                                                                                                                                                                                          
+##  [12] "**31/05/2020**"                                                                                                                                                                                                                                                                                          
 ##  [13] ""                                                                                                                                                                                                                                                                                                        
-##  [14] "* Modificaciones en el estudio de caso: [dataloggers](#studyCase1)"                                                                                                                                                                                                                                      
+##  [14] "* modificaciones menores "                                                                                                                                                                                                                                                                               
 ##  [15] ""                                                                                                                                                                                                                                                                                                        
-##  [16] "**28/03/2019**"                                                                                                                                                                                                                                                                                          
+##  [16] "**12/12/2019**"                                                                                                                                                                                                                                                                                          
 ##  [17] ""                                                                                                                                                                                                                                                                                                        
-##  [18] "* diapositivas del [curso de R en Quito - Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html)"                                                                                                                                                                              
+##  [18] "* De la grÃ¡fica a la figura en un artÃ­culo cientÃ­fico"                                                                                                                                                                                                                                                
 ##  [19] ""                                                                                                                                                                                                                                                                                                        
-##  [20] "**22/01/2019**"                                                                                                                                                                                                                                                                                          
+##  [20] "**10/04/2019**"                                                                                                                                                                                                                                                                                          
 ##  [21] ""                                                                                                                                                                                                                                                                                                        
-##  [22] "* CapÃ­tulo [Paquetes grÃ¡ficos](#graph3) "                                                                                                                                                                                                                                                              
+##  [22] "* Modificaciones en el estudio de caso: [dataloggers](#studyCase1)"                                                                                                                                                                                                                                      
 ##  [23] ""                                                                                                                                                                                                                                                                                                        
-##  [24] "**10/12/2018**"                                                                                                                                                                                                                                                                                          
+##  [24] "**28/03/2019**"                                                                                                                                                                                                                                                                                          
 ##  [25] ""                                                                                                                                                                                                                                                                                                        
-##  [26] "* CapÃ­tulo [GestiÃ³n del color](#graph2) "                                                                                                                                                                                                                                                              
+##  [26] "* diapositivas del [curso de R en Quito - Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html)"                                                                                                                                                                              
 ##  [27] ""                                                                                                                                                                                                                                                                                                        
-##  [28] "**29/11/2018**"                                                                                                                                                                                                                                                                                          
+##  [28] "**22/01/2019**"                                                                                                                                                                                                                                                                                          
 ##  [29] ""                                                                                                                                                                                                                                                                                                        
-##  [30] "* CapÃ­tulo [GrÃ¡ficos simples](#graph1) "                                                                                                                                                                                                                                                               
+##  [30] "* CapÃ­tulo [Paquetes grÃ¡ficos](#graph3) "                                                                                                                                                                                                                                                              
 ##  [31] ""                                                                                                                                                                                                                                                                                                        
-##  [32] "**09/11/2018**"                                                                                                                                                                                                                                                                                          
+##  [32] "**10/12/2018**"                                                                                                                                                                                                                                                                                          
 ##  [33] ""                                                                                                                                                                                                                                                                                                        
-##  [34] "* CapÃ­tulo [GestiÃ³n de proyectos con R](#project)"                                                                                                                                                                                                                                                     
-##  [35] "* La primera parte de este libro sobre conceptos bÃ¡sicos estÃ¡ completa"                                                                                                                                                                                                                                
-##  [36] ""                                                                                                                                                                                                                                                                                                        
-##  [37] "**08/11/2018**"                                                                                                                                                                                                                                                                                          
-##  [38] ""                                                                                                                                                                                                                                                                                                        
-##  [39] "* algorÃ­tmico (5/6) [`next` y `break`](#l17spe)"                                                                                                                                                                                                                                                        
-##  [40] "* algorÃ­tmico (6/6) [Los bucles de la familia `apply`](#l17applyfamily)"                                                                                                                                                                                                                                
+##  [34] "* CapÃ­tulo [GestiÃ³n del color](#graph2) "                                                                                                                                                                                                                                                              
+##  [35] ""                                                                                                                                                                                                                                                                                                        
+##  [36] "**29/11/2018**"                                                                                                                                                                                                                                                                                          
+##  [37] ""                                                                                                                                                                                                                                                                                                        
+##  [38] "* CapÃ­tulo [GrÃ¡ficos simples](#graph1) "                                                                                                                                                                                                                                                               
+##  [39] ""                                                                                                                                                                                                                                                                                                        
+##  [40] "**09/11/2018**"                                                                                                                                                                                                                                                                                          
 ##  [41] ""                                                                                                                                                                                                                                                                                                        
-##  [42] "**19/10/2018**"                                                                                                                                                                                                                                                                                          
-##  [43] ""                                                                                                                                                                                                                                                                                                        
-##  [44] "* algorÃ­tmico (3/6) [el bucle `for`](#l17for)"                                                                                                                                                                                                                                                          
-##  [45] "* algorÃ­tmico (4/6) [el bucle `while`](#l17while)"                                                                                                                                                                                                                                                      
-##  [46] "* algorÃ­tmico (4'/6) [el bucle `repeat`](#l17repeat)"                                                                                                                                                                                                                                                   
-##  [47] ""                                                                                                                                                                                                                                                                                                        
-##  [48] "**28/09/2018**"                                                                                                                                                                                                                                                                                          
+##  [42] "* CapÃ­tulo [GestiÃ³n de proyectos con R](#project)"                                                                                                                                                                                                                                                     
+##  [43] "* La primera parte de este libro sobre conceptos bÃ¡sicos estÃ¡ completa"                                                                                                                                                                                                                                
+##  [44] ""                                                                                                                                                                                                                                                                                                        
+##  [45] "**08/11/2018**"                                                                                                                                                                                                                                                                                          
+##  [46] ""                                                                                                                                                                                                                                                                                                        
+##  [47] "* algorÃ­tmico (5/6) [`next` y `break`](#l17spe)"                                                                                                                                                                                                                                                        
+##  [48] "* algorÃ­tmico (6/6) [Los bucles de la familia `apply`](#l17applyfamily)"                                                                                                                                                                                                                                
 ##  [49] ""                                                                                                                                                                                                                                                                                                        
-##  [50] "* algorÃ­tmico (1/6) [Pruebas lÃ³gicas con `if`](#l17if)"                                                                                                                                                                                                                                                
-##  [51] "* algorÃ­tmico (2/6) [Pruebas lÃ³gicas con `switch`](#l17switch)"                                                                                                                                                                                                                                        
-##  [52] ""                                                                                                                                                                                                                                                                                                        
-##  [53] "**17/09/2018**"                                                                                                                                                                                                                                                                                          
-##  [54] ""                                                                                                                                                                                                                                                                                                        
-##  [55] "* IntroducciÃ³n"                                                                                                                                                                                                                                                                                         
-##  [56] ""                                                                                                                                                                                                                                                                                                        
-##  [57] "**10/09/2018**"                                                                                                                                                                                                                                                                                          
-##  [58] ""                                                                                                                                                                                                                                                                                                        
-##  [59] "* Importar y exportar datos (parte 2-3/3): [Guardar y exportar datos](#l016save)"                                                                                                                                                                                                                        
+##  [50] "**19/10/2018**"                                                                                                                                                                                                                                                                                          
+##  [51] ""                                                                                                                                                                                                                                                                                                        
+##  [52] "* algorÃ­tmico (3/6) [el bucle `for`](#l17for)"                                                                                                                                                                                                                                                          
+##  [53] "* algorÃ­tmico (4/6) [el bucle `while`](#l17while)"                                                                                                                                                                                                                                                      
+##  [54] "* algorÃ­tmico (4'/6) [el bucle `repeat`](#l17repeat)"                                                                                                                                                                                                                                                   
+##  [55] ""                                                                                                                                                                                                                                                                                                        
+##  [56] "**28/09/2018**"                                                                                                                                                                                                                                                                                          
+##  [57] ""                                                                                                                                                                                                                                                                                                        
+##  [58] "* algorÃ­tmico (1/6) [Pruebas lÃ³gicas con `if`](#l17if)"                                                                                                                                                                                                                                                
+##  [59] "* algorÃ­tmico (2/6) [Pruebas lÃ³gicas con `switch`](#l17switch)"                                                                                                                                                                                                                                        
 ##  [60] ""                                                                                                                                                                                                                                                                                                        
-##  [61] "**06/09/2018**"                                                                                                                                                                                                                                                                                          
+##  [61] "**17/09/2018**"                                                                                                                                                                                                                                                                                          
 ##  [62] ""                                                                                                                                                                                                                                                                                                        
-##  [63] "* Importar y exportar datos (parte 1/3): [Leer datos desde un archivo](#l016read)"                                                                                                                                                                                                                       
+##  [63] "* IntroducciÃ³n"                                                                                                                                                                                                                                                                                         
 ##  [64] ""                                                                                                                                                                                                                                                                                                        
-##  [65] "**30/08/2018**"                                                                                                                                                                                                                                                                                          
+##  [65] "**10/09/2018**"                                                                                                                                                                                                                                                                                          
 ##  [66] ""                                                                                                                                                                                                                                                                                                        
-##  [67] "* Nuevo estudio de caso: [dataloggers](#studyCase1)"                                                                                                                                                                                                                                                     
-##  [68] "* Modificaciones de Marc G. sobre el [tipo de datos numeric](#dataType1) y los [entornos de desarrollo](#IDE)"                                                                                                                                                                                           
-##  [69] ""                                                                                                                                                                                                                                                                                                        
-##  [70] "**24/08/2018**"                                                                                                                                                                                                                                                                                          
-##  [71] ""                                                                                                                                                                                                                                                                                                        
-##  [72] "* CapÃ­tulo sobre [las funciones (3/3)](#fonctions)"                                                                                                                                                                                                                                                     
-##  [73] ""                                                                                                                                                                                                                                                                                                        
-##  [74] "**27/07/2018**"                                                                                                                                                                                                                                                                                          
-##  [75] ""                                                                                                                                                                                                                                                                                                        
-##  [76] "* CapÃ­tulo sobre [las funciones (2/3)](#fonctions)"                                                                                                                                                                                                                                                     
+##  [67] "* Importar y exportar datos (parte 2-3/3): [Guardar y exportar datos](#l016save)"                                                                                                                                                                                                                        
+##  [68] ""                                                                                                                                                                                                                                                                                                        
+##  [69] "**06/09/2018**"                                                                                                                                                                                                                                                                                          
+##  [70] ""                                                                                                                                                                                                                                                                                                        
+##  [71] "* Importar y exportar datos (parte 1/3): [Leer datos desde un archivo](#l016read)"                                                                                                                                                                                                                       
+##  [72] ""                                                                                                                                                                                                                                                                                                        
+##  [73] "**30/08/2018**"                                                                                                                                                                                                                                                                                          
+##  [74] ""                                                                                                                                                                                                                                                                                                        
+##  [75] "* Nuevo estudio de caso: [dataloggers](#studyCase1)"                                                                                                                                                                                                                                                     
+##  [76] "* Modificaciones de Marc G. sobre el [tipo de datos numeric](#dataType1) y los [entornos de desarrollo](#IDE)"                                                                                                                                                                                           
 ##  [77] ""                                                                                                                                                                                                                                                                                                        
-##  [78] "**25/07/2018**"                                                                                                                                                                                                                                                                                          
+##  [78] "**24/08/2018**"                                                                                                                                                                                                                                                                                          
 ##  [79] ""                                                                                                                                                                                                                                                                                                        
-##  [80] "* CapÃ­tulo sobre [las funciones (1/3)](#fonctions)"                                                                                                                                                                                                                                                     
+##  [80] "* CapÃ­tulo sobre [las funciones (3/3)](#fonctions)"                                                                                                                                                                                                                                                     
 ##  [81] ""                                                                                                                                                                                                                                                                                                        
-##  [82] "**17/07/2018**"                                                                                                                                                                                                                                                                                          
+##  [82] "**27/07/2018**"                                                                                                                                                                                                                                                                                          
 ##  [83] ""                                                                                                                                                                                                                                                                                                        
-##  [84] "* ediciÃ³n y correcciÃ³n del espaÃ±ol (Susi L.) "                                                                                                                                                                                                                                                        
-##  [85] "* tercera parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*data.frame*](#l014dataframe)"                                                                                                                                                                                       
-##  [86] "* cuarta parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*matrix*](#l014matrix)"                                                                                                                                                                                               
-##  [87] "* quinta parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*array*](#l014array)"                                                                                                                                                                                                 
-##  [88] ""                                                                                                                                                                                                                                                                                                        
-##  [89] "**16/07/2018**"                                                                                                                                                                                                                                                                                          
-##  [90] ""                                                                                                                                                                                                                                                                                                        
-##  [91] "* ediciÃ³n y correcciÃ³n del espaÃ±ol (EstefanÃ­a Q.) "                                                                                                                                                                                                                                                  
-##  [92] ""                                                                                                                                                                                                                                                                                                        
-##  [93] "**12/07/2018**"                                                                                                                                                                                                                                                                                          
-##  [94] ""                                                                                                                                                                                                                                                                                                        
-##  [95] "* segunda parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*list*](#l014list)"                                                                                                                                                                                                  
+##  [84] "* CapÃ­tulo sobre [las funciones (2/3)](#fonctions)"                                                                                                                                                                                                                                                     
+##  [85] ""                                                                                                                                                                                                                                                                                                        
+##  [86] "**25/07/2018**"                                                                                                                                                                                                                                                                                          
+##  [87] ""                                                                                                                                                                                                                                                                                                        
+##  [88] "* CapÃ­tulo sobre [las funciones (1/3)](#fonctions)"                                                                                                                                                                                                                                                     
+##  [89] ""                                                                                                                                                                                                                                                                                                        
+##  [90] "**17/07/2018**"                                                                                                                                                                                                                                                                                          
+##  [91] ""                                                                                                                                                                                                                                                                                                        
+##  [92] "* ediciÃ³n y correcciÃ³n del espaÃ±ol (Susi L.) "                                                                                                                                                                                                                                                        
+##  [93] "* tercera parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*data.frame*](#l014dataframe)"                                                                                                                                                                                       
+##  [94] "* cuarta parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*matrix*](#l014matrix)"                                                                                                                                                                                               
+##  [95] "* quinta parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*array*](#l014array)"                                                                                                                                                                                                 
 ##  [96] ""                                                                                                                                                                                                                                                                                                        
-##  [97] "**06/07/2018**"                                                                                                                                                                                                                                                                                          
+##  [97] "**16/07/2018**"                                                                                                                                                                                                                                                                                          
 ##  [98] ""                                                                                                                                                                                                                                                                                                        
-##  [99] "* ediciÃ³n y correcciÃ³n del espaÃ±ol (Camila B.) "                                                                                                                                                                                                                                                      
-## [100] "* primera parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*vector*](#l014vector)"                                                                                                                                                                                              
-## [101] ""                                                                                                                                                                                                                                                                                                        
-## [102] "**04/07/2018**"                                                                                                                                                                                                                                                                                          
-## [103] ""                                                                                                                                                                                                                                                                                                        
-## [104] "* tabla de contenidos con los prÃ³ximos capÃ­tulos"                                                                                                                                                                                                                                                      
-## [105] "* error de tipografÃ­a en *Elegir un entorno de desarrollo*"                                                                                                                                                                                                                                             
+##  [99] "* ediciÃ³n y correcciÃ³n del espaÃ±ol (EstefanÃ­a Q.) "                                                                                                                                                                                                                                                  
+## [100] ""                                                                                                                                                                                                                                                                                                        
+## [101] "**12/07/2018**"                                                                                                                                                                                                                                                                                          
+## [102] ""                                                                                                                                                                                                                                                                                                        
+## [103] "* segunda parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*list*](#l014list)"                                                                                                                                                                                                  
+## [104] ""                                                                                                                                                                                                                                                                                                        
+## [105] "**06/07/2018**"                                                                                                                                                                                                                                                                                          
 ## [106] ""                                                                                                                                                                                                                                                                                                        
-## [107] "**02/07/2018**"                                                                                                                                                                                                                                                                                          
-## [108] ""                                                                                                                                                                                                                                                                                                        
-## [109] "* tres capÃ­tulos en lÃ­nea (*primeros pasos*, *elegir un entorno de desarrollo*, *tipos de datos*)"
+## [107] "* ediciÃ³n y correcciÃ³n del espaÃ±ol (Camila B.) "                                                                                                                                                                                                                                                      
+## [108] "* primera parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*vector*](#l014vector)"                                                                                                                                                                                              
+## [109] ""                                                                                                                                                                                                                                                                                                        
+## [110] "**04/07/2018**"                                                                                                                                                                                                                                                                                          
+## [111] ""                                                                                                                                                                                                                                                                                                        
+## [112] "* tabla de contenidos con los prÃ³ximos capÃ­tulos"                                                                                                                                                                                                                                                      
+## [113] "* error de tipografÃ­a en *Elegir un entorno de desarrollo*"                                                                                                                                                                                                                                             
+## [114] ""                                                                                                                                                                                                                                                                                                        
+## [115] "**02/07/2018**"                                                                                                                                                                                                                                                                                          
+## [116] ""                                                                                                                                                                                                                                                                                                        
+## [117] "* tres capÃ­tulos en lÃ­nea (*primeros pasos*, *elegir un entorno de desarrollo*, *tipos de datos*)"
 \end{verbatim}
 
 También está la función \texttt{scan()} que devolve todas las palabras separadas por espacios. Podemos consultar la ayuda para obtener más información.
@@ -7658,302 +7643,318 @@ También está la función \texttt{scan()} que devolve todas las palabras separa
 ## [128] "##"                                                                               
 ## [129] "Ãšltimas"                                                                         
 ## [130] "modificaciones"                                                                   
-## [131] "**10/04/2019**"                                                                   
+## [131] "**31/05/2020**"                                                                   
 ## [132] "*"                                                                                
-## [133] "Modificaciones"                                                                   
-## [134] "en"                                                                               
-## [135] "el"                                                                               
-## [136] "estudio"                                                                          
-## [137] "de"                                                                               
-## [138] "caso:"                                                                            
-## [139] "[dataloggers](#studyCase1)"                                                       
-## [140] "**28/03/2019**"                                                                   
-## [141] "*"                                                                                
-## [142] "diapositivas"                                                                     
-## [143] "del"                                                                              
-## [144] "[curso"                                                                           
-## [145] "de"                                                                               
-## [146] "R"                                                                                
-## [147] "en"                                                                               
-## [148] "Quito"                                                                            
-## [149] "-"                                                                                
-## [150] "Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html)" 
-## [151] "**22/01/2019**"                                                                   
-## [152] "*"                                                                                
-## [153] "CapÃ­tulo"                                                                        
-## [154] "[Paquetes"                                                                        
-## [155] "grÃ¡ficos](#graph3)"                                                              
-## [156] "**10/12/2018**"                                                                   
+## [133] "modificaciones"                                                                   
+## [134] "menores"                                                                          
+## [135] "**12/12/2019**"                                                                   
+## [136] "*"                                                                                
+## [137] "De"                                                                               
+## [138] "la"                                                                               
+## [139] "grÃ¡fica"                                                                         
+## [140] "a"                                                                                
+## [141] "la"                                                                               
+## [142] "figura"                                                                           
+## [143] "en"                                                                               
+## [144] "un"                                                                               
+## [145] "artÃ­culo"                                                                        
+## [146] "cientÃ­fico"                                                                      
+## [147] "**10/04/2019**"                                                                   
+## [148] "*"                                                                                
+## [149] "Modificaciones"                                                                   
+## [150] "en"                                                                               
+## [151] "el"                                                                               
+## [152] "estudio"                                                                          
+## [153] "de"                                                                               
+## [154] "caso:"                                                                            
+## [155] "[dataloggers](#studyCase1)"                                                       
+## [156] "**28/03/2019**"                                                                   
 ## [157] "*"                                                                                
-## [158] "CapÃ­tulo"                                                                        
-## [159] "[GestiÃ³n"                                                                        
-## [160] "del"                                                                              
-## [161] "color](#graph2)"                                                                  
-## [162] "**29/11/2018**"                                                                   
-## [163] "*"                                                                                
-## [164] "CapÃ­tulo"                                                                        
-## [165] "[GrÃ¡ficos"                                                                       
-## [166] "simples](#graph1)"                                                                
-## [167] "**09/11/2018**"                                                                   
+## [158] "diapositivas"                                                                     
+## [159] "del"                                                                              
+## [160] "[curso"                                                                           
+## [161] "de"                                                                               
+## [162] "R"                                                                                
+## [163] "en"                                                                               
+## [164] "Quito"                                                                            
+## [165] "-"                                                                                
+## [166] "Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html)" 
+## [167] "**22/01/2019**"                                                                   
 ## [168] "*"                                                                                
 ## [169] "CapÃ­tulo"                                                                        
-## [170] "[GestiÃ³n"                                                                        
-## [171] "de"                                                                               
-## [172] "proyectos"                                                                        
-## [173] "con"                                                                              
-## [174] "R](#project)"                                                                     
-## [175] "*"                                                                                
-## [176] "La"                                                                               
-## [177] "primera"                                                                          
-## [178] "parte"                                                                            
-## [179] "de"                                                                               
-## [180] "este"                                                                             
-## [181] "libro"                                                                            
-## [182] "sobre"                                                                            
-## [183] "conceptos"                                                                        
-## [184] "bÃ¡sicos"                                                                         
-## [185] "estÃ¡"                                                                            
-## [186] "completa"                                                                         
-## [187] "**08/11/2018**"                                                                   
-## [188] "*"                                                                                
-## [189] "algorÃ­tmico"                                                                     
-## [190] "(5/6)"                                                                            
-## [191] "[`next`"                                                                          
-## [192] "y"                                                                                
-## [193] "`break`](#l17spe)"                                                                
-## [194] "*"                                                                                
-## [195] "algorÃ­tmico"                                                                     
-## [196] "(6/6)"                                                                            
-## [197] "[Los"                                                                             
-## [198] "bucles"                                                                           
-## [199] "de"                                                                               
-## [200] "la"                                                                               
-## [201] "familia"                                                                          
-## [202] "`apply`](#l17applyfamily)"                                                        
-## [203] "**19/10/2018**"                                                                   
+## [170] "[Paquetes"                                                                        
+## [171] "grÃ¡ficos](#graph3)"                                                              
+## [172] "**10/12/2018**"                                                                   
+## [173] "*"                                                                                
+## [174] "CapÃ­tulo"                                                                        
+## [175] "[GestiÃ³n"                                                                        
+## [176] "del"                                                                              
+## [177] "color](#graph2)"                                                                  
+## [178] "**29/11/2018**"                                                                   
+## [179] "*"                                                                                
+## [180] "CapÃ­tulo"                                                                        
+## [181] "[GrÃ¡ficos"                                                                       
+## [182] "simples](#graph1)"                                                                
+## [183] "**09/11/2018**"                                                                   
+## [184] "*"                                                                                
+## [185] "CapÃ­tulo"                                                                        
+## [186] "[GestiÃ³n"                                                                        
+## [187] "de"                                                                               
+## [188] "proyectos"                                                                        
+## [189] "con"                                                                              
+## [190] "R](#project)"                                                                     
+## [191] "*"                                                                                
+## [192] "La"                                                                               
+## [193] "primera"                                                                          
+## [194] "parte"                                                                            
+## [195] "de"                                                                               
+## [196] "este"                                                                             
+## [197] "libro"                                                                            
+## [198] "sobre"                                                                            
+## [199] "conceptos"                                                                        
+## [200] "bÃ¡sicos"                                                                         
+## [201] "estÃ¡"                                                                            
+## [202] "completa"                                                                         
+## [203] "**08/11/2018**"                                                                   
 ## [204] "*"                                                                                
 ## [205] "algorÃ­tmico"                                                                     
-## [206] "(3/6)"                                                                            
-## [207] "[el"                                                                              
-## [208] "bucle"                                                                            
-## [209] "`for`](#l17for)"                                                                  
+## [206] "(5/6)"                                                                            
+## [207] "[`next`"                                                                          
+## [208] "y"                                                                                
+## [209] "`break`](#l17spe)"                                                                
 ## [210] "*"                                                                                
 ## [211] "algorÃ­tmico"                                                                     
-## [212] "(4/6)"                                                                            
-## [213] "[el"                                                                              
-## [214] "bucle"                                                                            
-## [215] "`while`](#l17while)"                                                              
-## [216] "*"                                                                                
-## [217] "algorÃ­tmico"                                                                     
-## [218] "(4'/6)"                                                                           
-## [219] "[el"                                                                              
-## [220] "bucle"                                                                            
-## [221] "`repeat`](#l17repeat)"                                                            
-## [222] "**28/09/2018**"                                                                   
-## [223] "*"                                                                                
-## [224] "algorÃ­tmico"                                                                     
-## [225] "(1/6)"                                                                            
-## [226] "[Pruebas"                                                                         
-## [227] "lÃ³gicas"                                                                         
-## [228] "con"                                                                              
-## [229] "`if`](#l17if)"                                                                    
-## [230] "*"                                                                                
-## [231] "algorÃ­tmico"                                                                     
-## [232] "(2/6)"                                                                            
-## [233] "[Pruebas"                                                                         
-## [234] "lÃ³gicas"                                                                         
-## [235] "con"                                                                              
-## [236] "`switch`](#l17switch)"                                                            
-## [237] "**17/09/2018**"                                                                   
-## [238] "*"                                                                                
-## [239] "IntroducciÃ³n"                                                                    
-## [240] "**10/09/2018**"                                                                   
-## [241] "*"                                                                                
-## [242] "Importar"                                                                         
-## [243] "y"                                                                                
-## [244] "exportar"                                                                         
-## [245] "datos"                                                                            
-## [246] "(parte"                                                                           
-## [247] "2-3/3):"                                                                          
-## [248] "[Guardar"                                                                         
-## [249] "y"                                                                                
-## [250] "exportar"                                                                         
-## [251] "datos](#l016save)"                                                                
-## [252] "**06/09/2018**"                                                                   
-## [253] "*"                                                                                
-## [254] "Importar"                                                                         
-## [255] "y"                                                                                
-## [256] "exportar"                                                                         
-## [257] "datos"                                                                            
-## [258] "(parte"                                                                           
-## [259] "1/3):"                                                                            
-## [260] "[Leer"                                                                            
+## [212] "(6/6)"                                                                            
+## [213] "[Los"                                                                             
+## [214] "bucles"                                                                           
+## [215] "de"                                                                               
+## [216] "la"                                                                               
+## [217] "familia"                                                                          
+## [218] "`apply`](#l17applyfamily)"                                                        
+## [219] "**19/10/2018**"                                                                   
+## [220] "*"                                                                                
+## [221] "algorÃ­tmico"                                                                     
+## [222] "(3/6)"                                                                            
+## [223] "[el"                                                                              
+## [224] "bucle"                                                                            
+## [225] "`for`](#l17for)"                                                                  
+## [226] "*"                                                                                
+## [227] "algorÃ­tmico"                                                                     
+## [228] "(4/6)"                                                                            
+## [229] "[el"                                                                              
+## [230] "bucle"                                                                            
+## [231] "`while`](#l17while)"                                                              
+## [232] "*"                                                                                
+## [233] "algorÃ­tmico"                                                                     
+## [234] "(4'/6)"                                                                           
+## [235] "[el"                                                                              
+## [236] "bucle"                                                                            
+## [237] "`repeat`](#l17repeat)"                                                            
+## [238] "**28/09/2018**"                                                                   
+## [239] "*"                                                                                
+## [240] "algorÃ­tmico"                                                                     
+## [241] "(1/6)"                                                                            
+## [242] "[Pruebas"                                                                         
+## [243] "lÃ³gicas"                                                                         
+## [244] "con"                                                                              
+## [245] "`if`](#l17if)"                                                                    
+## [246] "*"                                                                                
+## [247] "algorÃ­tmico"                                                                     
+## [248] "(2/6)"                                                                            
+## [249] "[Pruebas"                                                                         
+## [250] "lÃ³gicas"                                                                         
+## [251] "con"                                                                              
+## [252] "`switch`](#l17switch)"                                                            
+## [253] "**17/09/2018**"                                                                   
+## [254] "*"                                                                                
+## [255] "IntroducciÃ³n"                                                                    
+## [256] "**10/09/2018**"                                                                   
+## [257] "*"                                                                                
+## [258] "Importar"                                                                         
+## [259] "y"                                                                                
+## [260] "exportar"                                                                         
 ## [261] "datos"                                                                            
-## [262] "desde"                                                                            
-## [263] "un"                                                                               
-## [264] "archivo](#l016read)"                                                              
-## [265] "**30/08/2018**"                                                                   
-## [266] "*"                                                                                
-## [267] "Nuevo"                                                                            
-## [268] "estudio"                                                                          
-## [269] "de"                                                                               
-## [270] "caso:"                                                                            
-## [271] "[dataloggers](#studyCase1)"                                                       
-## [272] "*"                                                                                
-## [273] "Modificaciones"                                                                   
-## [274] "de"                                                                               
-## [275] "Marc"                                                                             
-## [276] "G."                                                                               
-## [277] "sobre"                                                                            
-## [278] "el"                                                                               
-## [279] "[tipo"                                                                            
-## [280] "de"                                                                               
-## [281] "datos"                                                                            
-## [282] "numeric](#dataType1)"                                                             
-## [283] "y"                                                                                
-## [284] "los"                                                                              
-## [285] "[entornos"                                                                        
-## [286] "de"                                                                               
-## [287] "desarrollo](#IDE)"                                                                
-## [288] "**24/08/2018**"                                                                   
-## [289] "*"                                                                                
-## [290] "CapÃ­tulo"                                                                        
-## [291] "sobre"                                                                            
-## [292] "[las"                                                                             
-## [293] "funciones"                                                                        
-## [294] "(3/3)](#fonctions)"                                                               
-## [295] "**27/07/2018**"                                                                   
-## [296] "*"                                                                                
-## [297] "CapÃ­tulo"                                                                        
-## [298] "sobre"                                                                            
-## [299] "[las"                                                                             
-## [300] "funciones"                                                                        
-## [301] "(2/3)](#fonctions)"                                                               
-## [302] "**25/07/2018**"                                                                   
-## [303] "*"                                                                                
-## [304] "CapÃ­tulo"                                                                        
-## [305] "sobre"                                                                            
-## [306] "[las"                                                                             
-## [307] "funciones"                                                                        
-## [308] "(1/3)](#fonctions)"                                                               
-## [309] "**17/07/2018**"                                                                   
-## [310] "*"                                                                                
-## [311] "ediciÃ³n"                                                                         
-## [312] "y"                                                                                
-## [313] "correcciÃ³n"                                                                      
-## [314] "del"                                                                              
-## [315] "espaÃ±ol"                                                                         
-## [316] "(Susi"                                                                            
-## [317] "L.)"                                                                              
-## [318] "*"                                                                                
-## [319] "tercera"                                                                          
-## [320] "parte"                                                                            
-## [321] "del"                                                                              
-## [322] "capÃ­tulo"                                                                        
-## [323] "[*Contenedores"                                                                   
-## [324] "de"                                                                               
-## [325] "datos*](#dataType2):"                                                             
-## [326] "El"                                                                               
-## [327] "contenedor"                                                                       
-## [328] "[*data.frame*](#l014dataframe)"                                                   
-## [329] "*"                                                                                
-## [330] "cuarta"                                                                           
-## [331] "parte"                                                                            
-## [332] "del"                                                                              
-## [333] "capÃ­tulo"                                                                        
-## [334] "[*Contenedores"                                                                   
-## [335] "de"                                                                               
-## [336] "datos*](#dataType2):"                                                             
-## [337] "El"                                                                               
-## [338] "contenedor"                                                                       
-## [339] "[*matrix*](#l014matrix)"                                                          
-## [340] "*"                                                                                
-## [341] "quinta"                                                                           
-## [342] "parte"                                                                            
-## [343] "del"                                                                              
-## [344] "capÃ­tulo"                                                                        
-## [345] "[*Contenedores"                                                                   
-## [346] "de"                                                                               
-## [347] "datos*](#dataType2):"                                                             
-## [348] "El"                                                                               
-## [349] "contenedor"                                                                       
-## [350] "[*array*](#l014array)"                                                            
-## [351] "**16/07/2018**"                                                                   
-## [352] "*"                                                                                
-## [353] "ediciÃ³n"                                                                         
-## [354] "y"                                                                                
-## [355] "correcciÃ³n"                                                                      
-## [356] "del"                                                                              
-## [357] "espaÃ±ol"                                                                         
-## [358] "(EstefanÃ­a"                                                                      
-## [359] "Q.)"                                                                              
-## [360] "**12/07/2018**"                                                                   
-## [361] "*"                                                                                
-## [362] "segunda"                                                                          
-## [363] "parte"                                                                            
-## [364] "del"                                                                              
-## [365] "capÃ­tulo"                                                                        
-## [366] "[*Contenedores"                                                                   
-## [367] "de"                                                                               
-## [368] "datos*](#dataType2):"                                                             
-## [369] "El"                                                                               
-## [370] "contenedor"                                                                       
-## [371] "[*list*](#l014list)"                                                              
-## [372] "**06/07/2018**"                                                                   
-## [373] "*"                                                                                
-## [374] "ediciÃ³n"                                                                         
-## [375] "y"                                                                                
-## [376] "correcciÃ³n"                                                                      
-## [377] "del"                                                                              
-## [378] "espaÃ±ol"                                                                         
-## [379] "(Camila"                                                                          
-## [380] "B.)"                                                                              
-## [381] "*"                                                                                
-## [382] "primera"                                                                          
-## [383] "parte"                                                                            
-## [384] "del"                                                                              
-## [385] "capÃ­tulo"                                                                        
-## [386] "[*Contenedores"                                                                   
-## [387] "de"                                                                               
-## [388] "datos*](#dataType2):"                                                             
-## [389] "El"                                                                               
-## [390] "contenedor"                                                                       
-## [391] "[*vector*](#l014vector)"                                                          
-## [392] "**04/07/2018**"                                                                   
-## [393] "*"                                                                                
-## [394] "tabla"                                                                            
-## [395] "de"                                                                               
-## [396] "contenidos"                                                                       
-## [397] "con"                                                                              
-## [398] "los"                                                                              
-## [399] "prÃ³ximos"                                                                        
-## [400] "capÃ­tulos"                                                                       
-## [401] "*"                                                                                
-## [402] "error"                                                                            
+## [262] "(parte"                                                                           
+## [263] "2-3/3):"                                                                          
+## [264] "[Guardar"                                                                         
+## [265] "y"                                                                                
+## [266] "exportar"                                                                         
+## [267] "datos](#l016save)"                                                                
+## [268] "**06/09/2018**"                                                                   
+## [269] "*"                                                                                
+## [270] "Importar"                                                                         
+## [271] "y"                                                                                
+## [272] "exportar"                                                                         
+## [273] "datos"                                                                            
+## [274] "(parte"                                                                           
+## [275] "1/3):"                                                                            
+## [276] "[Leer"                                                                            
+## [277] "datos"                                                                            
+## [278] "desde"                                                                            
+## [279] "un"                                                                               
+## [280] "archivo](#l016read)"                                                              
+## [281] "**30/08/2018**"                                                                   
+## [282] "*"                                                                                
+## [283] "Nuevo"                                                                            
+## [284] "estudio"                                                                          
+## [285] "de"                                                                               
+## [286] "caso:"                                                                            
+## [287] "[dataloggers](#studyCase1)"                                                       
+## [288] "*"                                                                                
+## [289] "Modificaciones"                                                                   
+## [290] "de"                                                                               
+## [291] "Marc"                                                                             
+## [292] "G."                                                                               
+## [293] "sobre"                                                                            
+## [294] "el"                                                                               
+## [295] "[tipo"                                                                            
+## [296] "de"                                                                               
+## [297] "datos"                                                                            
+## [298] "numeric](#dataType1)"                                                             
+## [299] "y"                                                                                
+## [300] "los"                                                                              
+## [301] "[entornos"                                                                        
+## [302] "de"                                                                               
+## [303] "desarrollo](#IDE)"                                                                
+## [304] "**24/08/2018**"                                                                   
+## [305] "*"                                                                                
+## [306] "CapÃ­tulo"                                                                        
+## [307] "sobre"                                                                            
+## [308] "[las"                                                                             
+## [309] "funciones"                                                                        
+## [310] "(3/3)](#fonctions)"                                                               
+## [311] "**27/07/2018**"                                                                   
+## [312] "*"                                                                                
+## [313] "CapÃ­tulo"                                                                        
+## [314] "sobre"                                                                            
+## [315] "[las"                                                                             
+## [316] "funciones"                                                                        
+## [317] "(2/3)](#fonctions)"                                                               
+## [318] "**25/07/2018**"                                                                   
+## [319] "*"                                                                                
+## [320] "CapÃ­tulo"                                                                        
+## [321] "sobre"                                                                            
+## [322] "[las"                                                                             
+## [323] "funciones"                                                                        
+## [324] "(1/3)](#fonctions)"                                                               
+## [325] "**17/07/2018**"                                                                   
+## [326] "*"                                                                                
+## [327] "ediciÃ³n"                                                                         
+## [328] "y"                                                                                
+## [329] "correcciÃ³n"                                                                      
+## [330] "del"                                                                              
+## [331] "espaÃ±ol"                                                                         
+## [332] "(Susi"                                                                            
+## [333] "L.)"                                                                              
+## [334] "*"                                                                                
+## [335] "tercera"                                                                          
+## [336] "parte"                                                                            
+## [337] "del"                                                                              
+## [338] "capÃ­tulo"                                                                        
+## [339] "[*Contenedores"                                                                   
+## [340] "de"                                                                               
+## [341] "datos*](#dataType2):"                                                             
+## [342] "El"                                                                               
+## [343] "contenedor"                                                                       
+## [344] "[*data.frame*](#l014dataframe)"                                                   
+## [345] "*"                                                                                
+## [346] "cuarta"                                                                           
+## [347] "parte"                                                                            
+## [348] "del"                                                                              
+## [349] "capÃ­tulo"                                                                        
+## [350] "[*Contenedores"                                                                   
+## [351] "de"                                                                               
+## [352] "datos*](#dataType2):"                                                             
+## [353] "El"                                                                               
+## [354] "contenedor"                                                                       
+## [355] "[*matrix*](#l014matrix)"                                                          
+## [356] "*"                                                                                
+## [357] "quinta"                                                                           
+## [358] "parte"                                                                            
+## [359] "del"                                                                              
+## [360] "capÃ­tulo"                                                                        
+## [361] "[*Contenedores"                                                                   
+## [362] "de"                                                                               
+## [363] "datos*](#dataType2):"                                                             
+## [364] "El"                                                                               
+## [365] "contenedor"                                                                       
+## [366] "[*array*](#l014array)"                                                            
+## [367] "**16/07/2018**"                                                                   
+## [368] "*"                                                                                
+## [369] "ediciÃ³n"                                                                         
+## [370] "y"                                                                                
+## [371] "correcciÃ³n"                                                                      
+## [372] "del"                                                                              
+## [373] "espaÃ±ol"                                                                         
+## [374] "(EstefanÃ­a"                                                                      
+## [375] "Q.)"                                                                              
+## [376] "**12/07/2018**"                                                                   
+## [377] "*"                                                                                
+## [378] "segunda"                                                                          
+## [379] "parte"                                                                            
+## [380] "del"                                                                              
+## [381] "capÃ­tulo"                                                                        
+## [382] "[*Contenedores"                                                                   
+## [383] "de"                                                                               
+## [384] "datos*](#dataType2):"                                                             
+## [385] "El"                                                                               
+## [386] "contenedor"                                                                       
+## [387] "[*list*](#l014list)"                                                              
+## [388] "**06/07/2018**"                                                                   
+## [389] "*"                                                                                
+## [390] "ediciÃ³n"                                                                         
+## [391] "y"                                                                                
+## [392] "correcciÃ³n"                                                                      
+## [393] "del"                                                                              
+## [394] "espaÃ±ol"                                                                         
+## [395] "(Camila"                                                                          
+## [396] "B.)"                                                                              
+## [397] "*"                                                                                
+## [398] "primera"                                                                          
+## [399] "parte"                                                                            
+## [400] "del"                                                                              
+## [401] "capÃ­tulo"                                                                        
+## [402] "[*Contenedores"                                                                   
 ## [403] "de"                                                                               
-## [404] "tipografÃ­a"                                                                      
-## [405] "en"                                                                               
-## [406] "*Elegir"                                                                          
-## [407] "un"                                                                               
-## [408] "entorno"                                                                          
-## [409] "de"                                                                               
-## [410] "desarrollo*"                                                                      
-## [411] "**02/07/2018**"                                                                   
-## [412] "*"                                                                                
-## [413] "tres"                                                                             
-## [414] "capÃ­tulos"                                                                       
-## [415] "en"                                                                               
-## [416] "lÃ­nea"                                                                           
-## [417] "(*primeros"                                                                       
-## [418] "pasos*,"                                                                          
-## [419] "*elegir"                                                                          
-## [420] "un"                                                                               
-## [421] "entorno"                                                                          
-## [422] "de"                                                                               
-## [423] "desarrollo*,"                                                                     
-## [424] "*tipos"                                                                           
+## [404] "datos*](#dataType2):"                                                             
+## [405] "El"                                                                               
+## [406] "contenedor"                                                                       
+## [407] "[*vector*](#l014vector)"                                                          
+## [408] "**04/07/2018**"                                                                   
+## [409] "*"                                                                                
+## [410] "tabla"                                                                            
+## [411] "de"                                                                               
+## [412] "contenidos"                                                                       
+## [413] "con"                                                                              
+## [414] "los"                                                                              
+## [415] "prÃ³ximos"                                                                        
+## [416] "capÃ­tulos"                                                                       
+## [417] "*"                                                                                
+## [418] "error"                                                                            
+## [419] "de"                                                                               
+## [420] "tipografÃ­a"                                                                      
+## [421] "en"                                                                               
+## [422] "*Elegir"                                                                          
+## [423] "un"                                                                               
+## [424] "entorno"                                                                          
 ## [425] "de"                                                                               
-## [426] "datos*)"
+## [426] "desarrollo*"                                                                      
+## [427] "**02/07/2018**"                                                                   
+## [428] "*"                                                                                
+## [429] "tres"                                                                             
+## [430] "capÃ­tulos"                                                                       
+## [431] "en"                                                                               
+## [432] "lÃ­nea"                                                                           
+## [433] "(*primeros"                                                                       
+## [434] "pasos*,"                                                                          
+## [435] "*elegir"                                                                          
+## [436] "un"                                                                               
+## [437] "entorno"                                                                          
+## [438] "de"                                                                               
+## [439] "desarrollo*,"                                                                     
+## [440] "*tipos"                                                                           
+## [441] "de"                                                                               
+## [442] "datos*)"
 \end{verbatim}
 
 \hypertarget{l016save}{%
@@ -8359,12 +8360,12 @@ En programación, cuando tenemos que repetir la misma línea de código varias v
 
 \begin{verbatim}
 ##      date01    date02
-## 1  7.851062  8.463316
-## 2  8.442502  8.153341
-## 3 10.041101  9.266885
-## 4  9.638196  9.558501
-## 5 10.923950 10.154055
-## 6  9.393738  9.401411
+## 1  9.437843 10.258637
+## 2 11.351304  9.307591
+## 3  7.641367 10.049938
+## 4  9.303449 10.022079
+## 5  8.742268 11.852992
+## 6  9.585674 11.217403
 \end{verbatim}
 
 Nos gustaría cuantificar la diferencia entre la primera y la segunda fecha, luego poner un indicador para saber si esta diferencia es pequeña o grande, por ejemplo, con un umbral arbitrario de 3. Entonces, para cada línea podríamos hacer:
@@ -8475,27 +8476,27 @@ Volvamos a nuestro caso. Vamos a iterar sobre el número de líneas de nuestro \
 \end{Shaded}
 
 \begin{verbatim}
-##       date01    date02         dif isDifBig
-## 1   7.851062  8.463316 0.612253760    small
-## 2   8.442502  8.153341 0.289161027    small
-## 3  10.041101  9.266885 0.774215824    small
-## 4   9.638196  9.558501 0.079695420    small
-## 5  10.923950 10.154055 0.769894691    small
-## 6   9.393738  9.401411 0.007673754    small
-## 7   8.720710 10.551207 1.830497109    small
-## 8  10.991145 10.660821 0.330323661    small
-## 9  10.514296 10.630679 0.116383243    small
-## 10 10.463658  8.237239 2.226418744    small
-## 11 10.698329 11.478250 0.779920515    small
-## 12  9.874337  8.927273 0.947064126    small
-## 13 10.406661 10.549218 0.142557602    small
-## 14 11.227250 10.435958 0.791291349    small
-## 15  9.325431 10.867099 1.541668078    small
-## 16 12.938963 10.078469 2.860493520    small
-## 17 11.197052 10.311529 0.885523042    small
-## 18  8.508730 12.323098 3.814367580      big
-## 19 11.356239  8.476192 2.880047031    small
-## 20  9.058927 11.355651 2.296724148    small
+##       date01    date02        dif isDifBig
+## 1   9.437843 10.258637 0.82079459    small
+## 2  11.351304  9.307591 2.04371287    small
+## 3   7.641367 10.049938 2.40857184    small
+## 4   9.303449 10.022079 0.71862988    small
+## 5   8.742268 11.852992 3.11072461      big
+## 6   9.585674 11.217403 1.63172930    small
+## 7  10.837333  9.514922 1.32241133    small
+## 8   9.288704 10.773326 1.48462158    small
+## 9   9.823862  9.349687 0.47417481    small
+## 10 10.804474 10.359691 0.44478315    small
+## 11  9.102477  9.715328 0.61285097    small
+## 12  9.687928  9.539796 0.14813185    small
+## 13  8.973510  9.748980 0.77547004    small
+## 14  8.897896  8.968995 0.07109917    small
+## 15 11.106967  9.971450 1.13551659    small
+## 16  8.802034  9.607025 0.80499121    small
+## 17  9.979632  8.811952 1.16768021    small
+## 18  8.920435 11.150506 2.23007183    small
+## 19 10.258320  9.860566 0.39775457    small
+## 20  7.373026 10.196226 2.82319965    small
 \end{verbatim}
 
 En la práctica, esta no es la mejor manera de realizar este ejercicio porque se trata de cálculos simples en vectores contenidos en un \texttt{data.frame}. R es particularmente potente para realizar operaciones en vectores. Donde sea posible, siempre tenemos que enfócarnos en operaciones vectoriales. Aquí nuestro código se convierte en:
@@ -8510,27 +8511,27 @@ En la práctica, esta no es la mejor manera de realizar este ejercicio porque se
 \end{Shaded}
 
 \begin{verbatim}
-##       date01    date02         dif isDifBig
-## 1   7.851062  8.463316 0.612253760    small
-## 2   8.442502  8.153341 0.289161027    small
-## 3  10.041101  9.266885 0.774215824    small
-## 4   9.638196  9.558501 0.079695420    small
-## 5  10.923950 10.154055 0.769894691    small
-## 6   9.393738  9.401411 0.007673754    small
-## 7   8.720710 10.551207 1.830497109    small
-## 8  10.991145 10.660821 0.330323661    small
-## 9  10.514296 10.630679 0.116383243    small
-## 10 10.463658  8.237239 2.226418744    small
-## 11 10.698329 11.478250 0.779920515    small
-## 12  9.874337  8.927273 0.947064126    small
-## 13 10.406661 10.549218 0.142557602    small
-## 14 11.227250 10.435958 0.791291349    small
-## 15  9.325431 10.867099 1.541668078    small
-## 16 12.938963 10.078469 2.860493520    small
-## 17 11.197052 10.311529 0.885523042    small
-## 18  8.508730 12.323098 3.814367580      big
-## 19 11.356239  8.476192 2.880047031    small
-## 20  9.058927 11.355651 2.296724148    small
+##       date01    date02        dif isDifBig
+## 1   9.437843 10.258637 0.82079459    small
+## 2  11.351304  9.307591 2.04371287    small
+## 3   7.641367 10.049938 2.40857184    small
+## 4   9.303449 10.022079 0.71862988    small
+## 5   8.742268 11.852992 3.11072461      big
+## 6   9.585674 11.217403 1.63172930    small
+## 7  10.837333  9.514922 1.32241133    small
+## 8   9.288704 10.773326 1.48462158    small
+## 9   9.823862  9.349687 0.47417481    small
+## 10 10.804474 10.359691 0.44478315    small
+## 11  9.102477  9.715328 0.61285097    small
+## 12  9.687928  9.539796 0.14813185    small
+## 13  8.973510  9.748980 0.77547004    small
+## 14  8.897896  8.968995 0.07109917    small
+## 15 11.106967  9.971450 1.13551659    small
+## 16  8.802034  9.607025 0.80499121    small
+## 17  9.979632  8.811952 1.16768021    small
+## 18  8.920435 11.150506 2.23007183    small
+## 19 10.258320  9.860566 0.39775457    small
+## 20  7.373026 10.196226 2.82319965    small
 \end{verbatim}
 
 La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \texttt{for()} pueden reemplazarse por operaciones vectoriales. Aquí hay algunos ejemplos adaptados de varias fuentes:
@@ -8551,7 +8552,7 @@ La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 9
+## [1] 11
 \end{verbatim}
 
 \begin{Shaded}
@@ -8562,7 +8563,7 @@ La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 9
+## [1] 11
 \end{verbatim}
 
 \begin{Shaded}
@@ -8608,7 +8609,7 @@ La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.576
+## [1] 3.56
 \end{verbatim}
 
 \begin{Shaded}
@@ -8619,7 +8620,7 @@ La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.47
+## [1] 3.538
 \end{verbatim}
 
 Es un buen ejercicio explorar los muchos ejemplos disponibles en Internet en el bucle \texttt{for()} e intentar convertirlos en operaciones vectoriales. Esto nos permite adquirir buenos reflejos de programación con R. El bucle \texttt{for()} es muy útil, por ejemplo, para leer varios archivos y tratar la información que contienen de la misma manera, hacer gráficos, o Cuando las operaciones vectoriales se vuelven tediosas. Imagina una matriz de 10 columnas y 100 líneas. Queremos la suma de cada línea (veremos cómo hacer con la función \texttt{apply()} mas adelante).
@@ -8636,12 +8637,12 @@ Es un buen ejercicio explorar los muchos ejemplos disponibles en Internet en el 
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 438 511 390 597 489 720 501 540 353 505 463 363 631 608 523 526 483 463
-##  [19] 512 533 408 460 633 405 386 471 432 473 550 505 507 584 760 434 619 477
-##  [37] 540 490 511 781 473 608 607 513 526 633 517 510 635 373 572 552 572 528
-##  [55] 595 485 475 563 396 609 578 683 453 523 447 582 365 528 510 383 535 573
-##  [73] 272 459 541 439 523 339 508 421 693 450 446 452 571 437 389 552 577 630
-##  [91] 335 334 603 343 598 526 464 455 235 470
+##   [1] 635 540 593 444 445 568 466 512 537 714 434 540 734 548 329 472 581 466
+##  [19] 574 479 444 486 492 379 450 560 484 619 502 282 399 581 530 597 679 660
+##  [37] 442 351 583 472 488 398 472 444 540 578 447 467 482 463 553 594 519 539
+##  [55] 532 500 476 550 433 545 529 432 349 513 628 398 569 388 600 449 399 545
+##  [73] 426 442 371 506 634 331 687 376 318 485 444 504 486 504 503 350 578 410
+##  [91] 619 425 502 492 540 421 353 682 435 527
 \end{verbatim}
 
 \begin{Shaded}
@@ -8656,12 +8657,12 @@ Es un buen ejercicio explorar los muchos ejemplos disponibles en Internet en el 
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 438 511 390 597 489 720 501 540 353 505 463 363 631 608 523 526 483 463
-##  [19] 512 533 408 460 633 405 386 471 432 473 550 505 507 584 760 434 619 477
-##  [37] 540 490 511 781 473 608 607 513 526 633 517 510 635 373 572 552 572 528
-##  [55] 595 485 475 563 396 609 578 683 453 523 447 582 365 528 510 383 535 573
-##  [73] 272 459 541 439 523 339 508 421 693 450 446 452 571 437 389 552 577 630
-##  [91] 335 334 603 343 598 526 464 455 235 470
+##   [1] 635 540 593 444 445 568 466 512 537 714 434 540 734 548 329 472 581 466
+##  [19] 574 479 444 486 492 379 450 560 484 619 502 282 399 581 530 597 679 660
+##  [37] 442 351 583 472 488 398 472 444 540 578 447 467 482 463 553 594 519 539
+##  [55] 532 500 476 550 433 545 529 432 349 513 628 398 569 388 600 449 399 545
+##  [73] 426 442 371 506 634 331 687 376 318 485 444 504 486 504 503 350 578 410
+##  [91] 619 425 502 492 540 421 353 682 435 527
 \end{verbatim}
 
 En conclusión, se recomienda no usar el bucle \texttt{for()} con R siempre que sea posible, y en este capítulo veremos alternativas como los bucles familiares \texttt{apply()}.
@@ -8722,7 +8723,7 @@ El bucle \texttt{while()} es muy útil para crear scripts que realizarán cálcu
 
 \begin{verbatim}
 ## [1] "Number found !"
-## [1] "And I have plenty of time left: 1.83 sec"
+## [1] "And I have plenty of time left: 1.4 sec"
 \end{verbatim}
 
 En este script generamos un número aleatorio para adivinar con la función \texttt{sample()}, y cada uno de los intentos con la misma función \texttt{sample()}. Luego usamos la función \texttt{Sys.time()} (con una S mayúscula a \texttt{Sys}), para saber la hora de inicio del bucle. Siempre que la diferencia entre cada iteración del bucle y la hora de inicio sea inferior a 2 segundos, el bucle \texttt{while()} verificará si el número correcto estaba adivinando en la prueba lógica con \texttt{if()} y luego si es el caso nos informa que se encontró el número, y nos indica el tiempo restante antes de los dos segundos. Luego para finalizar el bucle usamos la palabra clave ``break'' en la que volveremos. En resumen, \texttt{break}, permite salir de un bucle. Si no se ha adivinado el número, el bucle realiza otra prueba con la función \texttt{sample()}.
@@ -8781,11 +8782,11 @@ Si volvemos al ejemplo anterior, podemos usar un bucle \texttt{repeat()} para re
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.354
-## [1] 1.326
-## [1] 0.573
-## [1] 0.055
-## [1] 0.474
+## [1] 0.632
+## [1] 0.045
+## [1] 1.075
+## [1] 0.2
+## [1] 0.384
 \end{verbatim}
 
 Al igual que el bucle \texttt{while()}, el bucle \texttt{repeat()} no se usa mucho con R.
@@ -8890,12 +8891,12 @@ La función \texttt{apply()} permite aplicar una función a todos los elementos 
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 580 653 637 500 588 384 474 491 636 540 578 505 473 553 496 372 509 403
-##  [19] 569 428 589 528 690 507 359 504 444 512 428 570 566 347 409 429 545 359
-##  [37] 450 579 696 611 592 636 706 753 452 331 493 461 240 652 398 526 469 344
-##  [55] 553 483 377 413 419 607 545 557 455 608 300 299 679 552 543 561 510 484
-##  [73] 414 460 602 452 456 369 408 346 366 651 387 521 586 488 580 508 463 469
-##  [91] 401 729 531 389 474 391 459 468 538 388
+##   [1] 462 485 490 347 357 449 522 439 429 600 547 424 471 324 426 560 512 651
+##  [19] 606 593 475 442 439 450 336 368 554 588 428 570 423 387 617 473 473 585
+##  [37] 501 510 500 379 586 577 612 349 536 443 453 571 475 498 369 579 476 446
+##  [55] 460 469 603 690 423 503 422 430 546 692 683 402 469 473 354 445 561 308
+##  [73] 451 380 644 541 424 556 464 399 361 551 382 636 218 513 548 574 441 453
+##  [91] 552 502 666 529 584 531 537 597 469 463
 \end{verbatim}
 
 Si queremos saber la mediana de cada columna, la expresión se convierte en:
@@ -8907,7 +8908,7 @@ Si queremos saber la mediana de cada columna, la expresión se convierte en:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 50.5 51.0 55.5 45.5 49.0 53.5 43.0 50.5 47.0 44.5
+##  [1] 46.5 50.0 46.0 54.0 47.5 50.0 47.5 46.0 46.0 45.0
 \end{verbatim}
 
 El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repetirá. El argumento \texttt{MARGEN} corresponde a la dimensión a tener en cuenta (1 para las filas y 2 para las columnas). El argumento \texttt{FUN} es la función a aplicar. En un objeto \texttt{array}, el argumento \texttt{MARGIN} puede tomar tantos valores como dimensiones. En este ejemplo, \texttt{MARGIN\ =\ 1} es el promedio de cada fila - dimensión 1 - (todas las dimensiones combinadas), \texttt{MARGIN\ =\ 2} es el promedio de cada columna - dimensión 2 - (todas las dimensiones combinadas), y \texttt{MARGEN\ =\ 3} es el promedio de cada dimensión 3. Debajo cada cálculo se realiza de dos maneras diferentes para explicar su operación.
@@ -8920,7 +8921,7 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 52.49 47.89 54.00 47.26 50.03 52.51 53.20 50.57 48.30 46.18
+##  [1] 48.97 52.46 51.11 50.07 54.28 54.13 46.28 54.14 49.42 52.18
 \end{verbatim}
 
 \begin{Shaded}
@@ -8932,7 +8933,7 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 52.49 47.89 54.00 47.26 50.03 52.51 53.20 50.57 48.30 46.18
+##  [1] 48.97 52.46 51.11 50.07 54.28 54.13 46.28 54.14 49.42 52.18
 \end{verbatim}
 
 \begin{Shaded}
@@ -8942,8 +8943,8 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 58.96 52.62 50.50 47.20 55.94 43.52 52.62 54.24 45.24 51.00 56.52 43.06
-## [13] 54.32 55.22 45.60 45.36 39.76 55.96 50.18 47.04
+##  [1] 55.14 50.40 48.00 54.02 52.94 51.72 55.24 49.76 54.50 53.00 44.72 51.16
+## [13] 51.16 56.60 49.70 48.42 49.70 45.80 55.38 48.72
 \end{verbatim}
 
 \begin{Shaded}
@@ -8955,8 +8956,8 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 58.96 52.62 50.50 47.20 55.94 43.52 52.62 54.24 45.24 51.00 56.52 43.06
-## [13] 54.32 55.22 45.60 45.36 39.76 55.96 50.18 47.04
+##  [1] 55.14 50.40 48.00 54.02 52.94 51.72 55.24 49.76 54.50 53.00 44.72 51.16
+## [13] 51.16 56.60 49.70 48.42 49.70 45.80 55.38 48.72
 \end{verbatim}
 
 \begin{Shaded}
@@ -8966,7 +8967,7 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 50.405 50.900 49.755 49.975 50.180
+## [1] 53.220 50.285 51.530 51.915 49.570
 \end{verbatim}
 
 \begin{Shaded}
@@ -8977,7 +8978,7 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 50.405 50.900 49.755 49.975 50.180
+## [1] 53.220 50.285 51.530 51.915 49.570
 \end{verbatim}
 
 También podemos calcular el promedio de cada fila y valor de columna (la función luego itera en la dimensión 3):
@@ -8990,27 +8991,27 @@ También podemos calcular el promedio de cada fila y valor de columna (la funci�
 
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,] 88.4 50.6 47.8 50.4 60.8 41.4 41.2 66.0 72.2  55.4  49.2  41.2  29.8
-##  [2,] 53.2 33.0 43.4 32.0 49.8 21.6 62.8 38.0 52.6  44.2  60.8  37.0  57.4
-##  [3,] 57.0 53.4 66.4 53.6 52.4 56.2 60.4 69.2 38.6  56.6  56.8  48.8  40.8
-##  [4,] 34.8 58.2 47.2 68.2 49.8 25.2 55.2 47.6 37.0  66.6  33.0  55.6  55.8
-##  [5,] 62.6 42.6 58.0 38.0 59.8 37.2 67.2 55.0 47.2  64.8  56.2  35.2  77.0
-##  [6,] 61.6 49.4 57.4 72.8 47.2 71.0 40.8 51.0 50.6  38.4  73.8  35.6  46.4
-##  [7,] 67.8 70.0 41.2 62.8 62.6 45.8 67.4 53.0 50.0  33.8  60.6  35.4  63.4
-##  [8,] 41.6 77.4 49.4 26.2 70.8 56.0 57.2 58.6 35.6  57.8  60.6  45.4  51.8
-##  [9,] 64.2 52.0 55.6 39.0 44.6 36.0 44.2 54.2 42.4  40.6  51.0  36.2  60.8
-## [10,] 58.4 39.6 38.6 29.0 61.6 44.8 29.8 49.8 26.2  51.8  63.2  60.2  60.0
+##  [1,] 85.2 40.0 65.0 38.2 57.4 37.4 64.0 22.6 63.6  43.4  44.2  55.4  44.2
+##  [2,] 63.2 52.4 53.2 70.6 58.8 53.0 66.0 46.6 23.4  64.2  33.6  55.6  37.2
+##  [3,] 55.8 47.6 38.6 41.2 46.8 50.4 59.6 59.2 49.4  59.0  65.2  53.2  58.8
+##  [4,] 49.8 53.4 54.8 60.8 61.8 40.8 65.4 36.0 58.2  53.6  40.0  52.4  50.8
+##  [5,] 64.0 36.4 59.0 64.0 40.4 83.0 59.0 55.8 57.2  37.6  64.0  38.2  57.2
+##  [6,] 68.2 55.0 43.8 43.6 62.8 50.8 68.6 35.6 59.4  50.8  28.2  75.2  50.8
+##  [7,] 31.0 53.8 48.0 62.6 49.6 43.6 34.6 57.2 51.4  50.6  39.0  35.4  48.4
+##  [8,] 45.8 53.0 46.6 38.8 59.4 69.4 49.6 54.8 76.6  49.8  48.4  51.2  55.4
+##  [9,] 49.0 59.2 23.2 54.4 43.6 42.4 59.6 71.6 31.4  75.2  50.6  58.4  47.4
+## [10,] 39.4 53.2 47.8 66.0 48.8 46.4 26.0 58.2 74.4  45.8  34.0  36.6  61.4
 ##       [,14] [,15] [,16] [,17] [,18] [,19] [,20]
-##  [1,]  56.0  30.0  49.2  48.4  59.8  62.2  49.8
-##  [2,]  40.4  53.2  52.8  41.6  75.8  53.0  55.2
-##  [3,]  57.2  49.2  48.8  41.0  71.8  57.8  44.0
-##  [4,]  66.0  43.0  22.2  47.0  50.0  29.4  53.4
-##  [5,]  31.0  52.0  49.6  26.0  55.4  51.6  34.2
-##  [6,]  64.2  57.4  42.2  47.0  58.0  40.2  45.2
-##  [7,]  42.4  55.2  58.0  67.0  53.0  32.2  42.4
-##  [8,]  46.4  29.8  30.2  34.8  58.0  68.0  55.8
-##  [9,]  83.8  49.4  40.2  29.0  49.6  53.8  39.4
-## [10,]  64.8  36.8  60.4  15.8  28.2  53.6  51.0
+##  [1,]  51.8  42.0  47.4  44.4  38.0  51.2  44.0
+##  [2,]  59.2  64.4  54.0  32.0  48.0  55.4  58.4
+##  [3,]  58.8  40.2  42.8  42.0  49.0  57.0  47.6
+##  [4,]  50.6  58.6  34.6  26.4  37.8  55.6  60.0
+##  [5,]  47.4  67.0  49.4  61.0  46.2  57.6  41.2
+##  [6,]  61.0  49.0  56.4  63.0  71.4  45.0  44.0
+##  [7,]  63.4  25.2  34.2  58.0  27.2  66.4  46.0
+##  [8,]  55.0  58.8  61.4  43.2  47.2  59.8  58.6
+##  [9,]  36.6  51.4  46.6  64.6  27.6  51.4  44.2
+## [10,]  82.2  40.4  57.4  62.4  65.6  54.4  43.2
 \end{verbatim}
 
 \hypertarget{l17sapply}{%
@@ -9033,19 +9034,19 @@ Como se indica en la documentación, \texttt{lapply()} devuelve una lista de la 
 
 \begin{verbatim}
 ## $a
-##  [1] 34 13 12 71 51 42 38 62 92 84
+##  [1] 45  8 95 20 39 52 61 27 72 44
 ## 
 ## $b
-##  [1] 15 19 54 18 88  6 40 55 93 70
+##  [1] 62 35 54 97 66 53  7 50 95 20
 ## 
 ## $c
-##  [1] 58  6 91 82  5 71 31 25 10 34
+##  [1] 21  2 98 22 41  4 16 40 87 80
 ## 
 ## $d
-##  [1] 98 64 22  8 29 77 96 80 66  9
+##  [1] 45 32 96 27  4 21 43 65 62  2
 ## 
 ## $e
-##  [1]  86  61  67  73  30  77 100  70  80  82
+##  [1] 57 22 29 25 78 99 77 64 84 83
 \end{verbatim}
 
 \begin{Shaded}
@@ -9056,19 +9057,19 @@ Como se indica en la documentación, \texttt{lapply()} devuelve una lista de la 
 
 \begin{verbatim}
 ## $a
-## [1] 49.9
+## [1] 46.3
 ## 
 ## $b
-## [1] 45.8
+## [1] 53.9
 ## 
 ## $c
-## [1] 41.3
+## [1] 41.1
 ## 
 ## $d
-## [1] 54.9
+## [1] 39.7
 ## 
 ## $e
-## [1] 72.6
+## [1] 61.8
 \end{verbatim}
 
 Al igual que con la función \texttt{apply()}, podemos pasar argumentos adicionales a la función \texttt{lapply()} agregándolos después de la función. Esto es útil, por ejemplo, si nuestra \texttt{list} contiene estos valores faltantes \texttt{NA} y queremos ignorarlos para calcular los promedios (con el argumento \texttt{na.rm\ =\ TRUE}).
@@ -9088,19 +9089,19 @@ Al igual que con la función \texttt{apply()}, podemos pasar argumentos adiciona
 
 \begin{verbatim}
 ## $a
-##  [1]  3  2  2 NA  3 NA  5  2 NA  4
+##  [1]  3  2  5  2 NA  3  4  3 NA  3
 ## 
 ## $b
-##  [1]  5  2  2  4  3  4 NA  3  4  2
+##  [1] 2 3 4 2 1 2 4 2 3 5
 ## 
 ## $c
-##  [1] NA NA NA  3  3  5  5  5  2 NA
+##  [1]  3 NA  1  1  5  4  5  3  3  1
 ## 
 ## $d
-##  [1] 1 1 5 5 5 5 2 2 5 3
+##  [1] 3 3 4 4 1 4 2 2 3 2
 ## 
 ## $e
-##  [1] 5 1 1 5 3 2 4 3 5 4
+##  [1]  3  5  5 NA  1  5  4  5  3 NA
 \end{verbatim}
 
 \begin{Shaded}
@@ -9114,16 +9115,16 @@ Al igual que con la función \texttt{apply()}, podemos pasar argumentos adiciona
 ## [1] NA
 ## 
 ## $b
-## [1] NA
+## [1] 2.8
 ## 
 ## $c
 ## [1] NA
 ## 
 ## $d
-## [1] 3.4
+## [1] 2.8
 ## 
 ## $e
-## [1] 3.3
+## [1] NA
 \end{verbatim}
 
 \begin{Shaded}
@@ -9134,19 +9135,19 @@ Al igual que con la función \texttt{apply()}, podemos pasar argumentos adiciona
 
 \begin{verbatim}
 ## $a
-## [1] 3
+## [1] 3.125
 ## 
 ## $b
-## [1] 3.222222
+## [1] 2.8
 ## 
 ## $c
-## [1] 3.833333
+## [1] 2.888889
 ## 
 ## $d
-## [1] 3.4
+## [1] 2.8
 ## 
 ## $e
-## [1] 3.3
+## [1] 3.875
 \end{verbatim}
 
 Para mayor legibilidad o si se debemos realizar varias operaciones dentro del argumento \texttt{FUN}, podemos usar el siguiente script:
@@ -9161,19 +9162,19 @@ Para mayor legibilidad o si se debemos realizar varias operaciones dentro del ar
 
 \begin{verbatim}
 ## $a
-## [1] 3
+## [1] 3.125
 ## 
 ## $b
-## [1] 3.222222
+## [1] 2.8
 ## 
 ## $c
-## [1] 3.833333
+## [1] 2.888889
 ## 
 ## $d
-## [1] 3.4
+## [1] 2.8
 ## 
 ## $e
-## [1] 3.3
+## [1] 3.875
 \end{verbatim}
 
 Por ejemplo, si queremos obtener \texttt{i\^{}2} si el promedio es mayor que 3, y \texttt{i\^{}3} de lo contrario:
@@ -9193,19 +9194,19 @@ Por ejemplo, si queremos obtener \texttt{i\^{}2} si el promedio es mayor que 3, 
 
 \begin{verbatim}
 ## $a
-##  [1]  27   8   8  NA  27  NA 125   8  NA  64
+##  [1]  9  4 25  4 NA  9 16  9 NA  9
 ## 
 ## $b
-##  [1] 25  4  4 16  9 16 NA  9 16  4
+##  [1]   8  27  64   8   1   8  64   8  27 125
 ## 
 ## $c
-##  [1] NA NA NA  9  9 25 25 25  4 NA
+##  [1]  27  NA   1   1 125  64 125  27  27   1
 ## 
 ## $d
-##  [1]  1  1 25 25 25 25  4  4 25  9
+##  [1] 27 27 64 64  1 64  8  8 27  8
 ## 
 ## $e
-##  [1] 25  1  1 25  9  4 16  9 25 16
+##  [1]  9 25 25 NA  1 25 16 25  9 NA
 \end{verbatim}
 
 \hypertarget{l17lapply}{%
@@ -9223,19 +9224,19 @@ La función \texttt{sapply()} es una versión modificada de la función \texttt{
 
 \begin{verbatim}
 ## $a
-## [1] 3
+## [1] 3.125
 ## 
 ## $b
-## [1] 3.222222
+## [1] 2.8
 ## 
 ## $c
-## [1] 3.833333
+## [1] 2.888889
 ## 
 ## $d
-## [1] 3.4
+## [1] 2.8
 ## 
 ## $e
-## [1] 3.3
+## [1] 3.875
 \end{verbatim}
 
 \begin{Shaded}
@@ -9248,7 +9249,7 @@ La función \texttt{sapply()} es una versión modificada de la función \texttt{
 
 \begin{verbatim}
 ##        a        b        c        d        e 
-## 3.000000 3.222222 3.833333 3.400000 3.300000
+## 3.125000 2.800000 2.888889 2.800000 3.875000
 \end{verbatim}
 
 La función \texttt{sapply()} es interesante para recuperar, por ejemplo, el elemento ``n'' de cada elemento de una \texttt{list}. La función que se llama para hacer esto es \texttt{\textquotesingle{}{[}{[}\textquotesingle{}}.
@@ -9261,7 +9262,7 @@ La función \texttt{sapply()} es interesante para recuperar, por ejemplo, el ele
 
 \begin{verbatim}
 ##  a  b  c  d  e 
-##  2  2 NA  1  1
+##  2  3 NA  3  5
 \end{verbatim}
 
 \hypertarget{l17tapply}{%
@@ -9281,17 +9282,17 @@ La función \texttt{tapply()} permite aplicar una función tomando como elemento
 \end{Shaded}
 
 \begin{verbatim}
-##    species     perf1    perf2    perf3
-## 1        D  9.559929 13924.42 26.88223
-## 2        F  9.735849 16263.17 18.41193
-## 3        F  9.061074 56073.99 23.98331
-## 4        E 10.760851 45205.65 19.81495
-## 5        A  9.601484 22763.78 22.40059
-## 6        E  9.159680 14219.31 24.66233
-## 7        B 10.016604 33034.27 11.48175
-## 8        G 10.657492 12192.77 12.81897
-## 9        D  9.369517 14606.20 22.35186
-## 10       F  9.722381 54142.60 14.80562
+##    species     perf1     perf2    perf3
+## 1        J 10.063293 39241.157 10.46635
+## 2        E  9.775636 19520.933 22.94408
+## 3        B 10.426207  9036.755 16.55586
+## 4        A  9.421323  8078.149 18.77847
+## 5        E 10.396562 15718.033 18.96720
+## 6        I  9.678050 38958.231 23.47009
+## 7        C 10.954156 46806.215 12.32157
+## 8        B 10.182968 63639.968 15.24049
+## 9        J 10.095675 28100.705 14.73962
+## 10       C  9.469241  5756.993 16.21883
 \end{verbatim}
 
 Podemos obtener fácilmente un resumen de las mediciones para cada especie con la función \texttt{tapply()} y la función \texttt{summary()}.
@@ -9305,43 +9306,43 @@ Podemos obtener fácilmente un resumen de las mediciones para cada especie con l
 \begin{verbatim}
 ## $A
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.872   9.688   9.988   9.982  10.296  11.150 
+##   8.900   9.627  10.019  10.025  10.427  10.955 
 ## 
 ## $B
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.625   9.712  10.049  10.018  10.378  11.106 
+##   8.983   9.707   9.969  10.007  10.299  11.578 
 ## 
 ## $C
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.471   9.598  10.027   9.978  10.327  11.344 
+##   8.641   9.502   9.931   9.906  10.234  11.203 
 ## 
 ## $D
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.684   9.590   9.940   9.951  10.326  11.356 
+##   8.848   9.752   9.998  10.046  10.389  11.074 
 ## 
 ## $E
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.788   9.642   9.937   9.933  10.250  11.115 
+##   8.872   9.676  10.040  10.040  10.359  11.091 
 ## 
 ## $F
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.808   9.752  10.039  10.085  10.396  11.468 
+##   8.857   9.704   9.933   9.984  10.294  11.236 
 ## 
 ## $G
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.480   9.579   9.899   9.922  10.253  11.586 
+##   8.646   9.578   9.976   9.988  10.351  11.345 
 ## 
 ## $H
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.824   9.607   9.986   9.977  10.276  10.953 
+##   8.581   9.624   9.956   9.962  10.308  11.342 
 ## 
 ## $I
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.454   9.681  10.023   9.974  10.312  11.193 
+##   8.831   9.595   9.857   9.890  10.198  11.417 
 ## 
 ## $J
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.939   9.612   9.991  10.012  10.402  11.053
+##   8.719   9.773  10.005  10.016  10.257  11.120
 \end{verbatim}
 
 También podemos obtener el valor promedio de cada mediciones combinando una función \texttt{sapply()} con la función \texttt{tapply()} y usando la función \texttt{mean()}.
@@ -9356,16 +9357,16 @@ También podemos obtener el valor promedio de cada mediciones combinando una fun
 
 \begin{verbatim}
 ##        [,1]     [,2]     [,3]
-## A  9.981823 26875.86 20.09357
-## B 10.017844 24700.81 19.98814
-## C  9.978246 27339.99 19.32167
-## D  9.950811 24154.02 20.90187
-## E  9.933378 23657.54 19.77816
-## F 10.085380 26814.93 18.79511
-## G  9.921667 24463.22 19.80377
-## H  9.976746 24228.95 21.04241
-## I  9.974418 25426.90 20.85745
-## J 10.012368 25366.90 20.82865
+## A 10.024843 24686.91 19.11268
+## B 10.007120 24975.49 20.41302
+## C  9.905643 26558.30 20.25345
+## D 10.045883 23183.14 20.19549
+## E 10.040126 27407.49 20.54505
+## F  9.984403 26471.28 20.88533
+## G  9.987620 24380.23 20.45530
+## H  9.962417 24976.25 19.82224
+## I  9.889595 24914.28 18.35470
+## J 10.015668 25246.07 20.52805
 \end{verbatim}
 
 \hypertarget{l17mapply}{%
@@ -10499,6 +10500,10 @@ Parece haber una relación entre el ancho y el largo de los sépalos por especie
 \end{Highlighting}
 \end{Shaded}
 
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
 \includegraphics{myRBook_SP_files/figure-latex/021-03-graphiques-5-1.pdf}
 
 \begin{Shaded}
@@ -10920,6 +10925,10 @@ Para los que usan ggplot2:
 \end{Shaded}
 
 \begin{verbatim}
+## Warning: Use of `bdd$posix` is discouraged. Use `posix` instead.
+\end{verbatim}
+
+\begin{verbatim}
 ## Warning: Removed 4 rows containing missing values (stat_boxplot).
 \end{verbatim}
 
@@ -11092,5 +11101,4 @@ También podemos representar las temperaturas diarias con gráficos ``ridgeline'
 
 \includegraphics{myRBook_SP_files/figure-latex/041-studyCase-19-1.pdf}
 
-\backmatter
 \end{document}
