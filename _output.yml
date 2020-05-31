@@ -9,8 +9,6 @@ bookdown::gitbook:
       collapse: section
       before: |
         <li><a href="./">Aprender R: iniciación y perfeccionamiento</a></li>
-      after: |
-        <li><a href="http://es.ird.fr/ird.fr" target="blank"><img src="myLogos/logo_IRD_2016_LONGUEUR_SP_COUL.png" alt="IRD" width="100"></a></li>
     download: ["pdf", "epub"]
     edit: https://github.com/frareb/myRBook_SP/edit/master/%s
 bookdown::pdf_book:

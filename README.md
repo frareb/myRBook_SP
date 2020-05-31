@@ -9,6 +9,9 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
 ## Últimas modificaciones
 
+**31/05/2020**
+
+* modificaciones menores 
 
 **12/12/2019**
 
