@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title> 8 Importar y exportar datos | Aprender R: iniciación y perfeccionamiento</title>
+  <title> 8 Importar y exportar datos | R para los científicos</title>
   <meta name="description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content=" 8 Importar y exportar datos | Aprender R: iniciación y perfeccionamiento" />
+  <meta property="og:title" content=" 8 Importar y exportar datos | R para los científicos" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="myFigures/cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="frareb/myRBook_SP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" 8 Importar y exportar datos | Aprender R: iniciación y perfeccionamiento" />
+  <meta name="twitter:title" content=" 8 Importar y exportar datos | R para los científicos" />
   
   <meta name="twitter:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
   <meta name="twitter:image" content="myFigures/cover.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="François Rebaudo" />
 
 
-<meta name="date" content="2020-05-31" />
+<meta name="date" content="2021-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="fonctions.html"/>
 <link rel="next" href="algo.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,13 +50,14 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124666641-1"></script>
 <script>
@@ -69,9 +70,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -80,14 +81,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -96,9 +99,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -332,7 +335,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aprender R: iniciación y perfeccionamiento</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R para los científicos</a>
           </h1>
         </div>
 
@@ -356,15 +359,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Esta es la fuente de error más común para los principiantes en R. Es por eso que es importante leer y volver a leer este capítulo y lo siguiente sobre la gestión de un proyecto R con mucha atención.</p>
 <p>R funciona en un directorio definido por defecto. Los usuarios de Rstudio u otro <a href="IDE.html#IDE">entorno de desarrollo</a> especializado para R intentarán usar las opciones disponibles a través de los menús para establecer su directorio de trabajo o cargar el contenido de un archivo. En este libro, estas técnicas nunca se usarán porque no permiten la reproducibilidad de los resultados. Un script debe poder funcionar para todos los sistemas operativos y sin tener en cuenta el <a href="IDE.html#IDE">entorno de desarrollo</a> del usuario.</p>
 <p>El directorio de trabajo por defecto se puede obtener con la función <a href="fonctions.html#l015getwd"><code>getwd()</code></a> y cambiar con la función <a href="fonctions.html#l015setwd"><code>setwd()</code></a>.</p>
-<div class="sourceCode" id="cb958"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb958-1" title="1">oldWd &lt;-<span class="st"> </span><span class="kw">getwd</span>()</a>
-<a class="sourceLine" id="cb958-2" title="2"><span class="kw">print</span>(oldWd)</a></code></pre></div>
-<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP&quot;</code></pre>
-<div class="sourceCode" id="cb960"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb960-1" title="1"><span class="kw">setwd</span>(<span class="st">&quot;..&quot;</span>)</a>
-<a class="sourceLine" id="cb960-2" title="2"><span class="kw">getwd</span>()</a></code></pre></div>
-<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub&quot;</code></pre>
-<div class="sourceCode" id="cb962"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb962-1" title="1"><span class="kw">setwd</span>(oldWd)</a>
-<a class="sourceLine" id="cb962-2" title="2"><span class="kw">getwd</span>()</a></code></pre></div>
-<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP&quot;</code></pre>
+<div class="sourceCode" id="cb957"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb957-1"><a href="import.html#cb957-1"></a>oldWd &lt;-<span class="st"> </span><span class="kw">getwd</span>()</span>
+<span id="cb957-2"><a href="import.html#cb957-2"></a><span class="kw">print</span>(oldWd)</span></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/GITHUB/myRbook_SP&quot;</code></pre>
+<div class="sourceCode" id="cb959"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb959-1"><a href="import.html#cb959-1"></a><span class="kw">setwd</span>(<span class="st">&quot;..&quot;</span>)</span>
+<span id="cb959-2"><a href="import.html#cb959-2"></a><span class="kw">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/GITHUB&quot;</code></pre>
+<div class="sourceCode" id="cb961"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb961-1"><a href="import.html#cb961-1"></a><span class="kw">setwd</span>(oldWd)</span>
+<span id="cb961-2"><a href="import.html#cb961-2"></a><span class="kw">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/GITHUB/myRbook_SP&quot;</code></pre>
 <p>Entonces tenemos cuatro opciones:</p>
 <ul>
 <li>podemos leer el contenido de un archivo indicando a R su ruta completa (limitacion para la reproducibilidad de los resultados)</li>
@@ -390,20 +393,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## |-|-myFirstScript.R</code></pre>
 <p>La ruta relativa al archivo <code>data01.csv</code> sería <code>../myFiles/data01.csv</code></p>
 <p>Entonces, para leer el contenido del archivo <code>data01.csv</code>, privilegiaremos la opción 2 (leer el contenido de un archivo que indicando su ruta relativa) o la opción 4 (modificar el directorio de trabajo de R para que coincida con la ubicación de nuestro archivo). En el último caso:</p>
-<div class="sourceCode" id="cb965"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb965-1" title="1">myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span></a>
-<a class="sourceLine" id="cb965-2" title="2"><span class="kw">setwd</span>(myWd)</a>
-<a class="sourceLine" id="cb965-3" title="3"><span class="kw">getwd</span>() <span class="co"># para verificar que estamos en el directorio correcto</span></a>
-<a class="sourceLine" id="cb965-4" title="4"><span class="kw">list.files</span>() <span class="co"># para verificar que el archivo está aquí</span></a></code></pre></div>
+<div class="sourceCode" id="cb964"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb964-1"><a href="import.html#cb964-1"></a>myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span></span>
+<span id="cb964-2"><a href="import.html#cb964-2"></a><span class="kw">setwd</span>(myWd)</span>
+<span id="cb964-3"><a href="import.html#cb964-3"></a><span class="kw">getwd</span>() <span class="co"># para verificar que estamos en el directorio correcto</span></span>
+<span id="cb964-4"><a href="import.html#cb964-4"></a><span class="kw">list.files</span>() <span class="co"># para verificar que el archivo está aquí</span></span></code></pre></div>
 <p>El error más común:</p>
 <pre><code>## Error in setwd(&quot;../myFiles/&quot;) : 
 ## no se puede cambiar el directorio de trabajo</code></pre>
 <p>Esto significa que el directorio no existe (se debe verificar que la sintaxis sea correcta y que el directorio exista con esta ruta).</p>
 <p>Una vez que el directorio de trabajo está definido correctamente o la ruta relativa al archivo está establecida correctamente, podemos leer el archivo con la función <code>read.table()</code>. Algunos usan la función <code>read.csv()</code> pero este es solo un caso especial de <code>read.table()</code>.</p>
-<div class="sourceCode" id="cb967"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb967-1" title="1">myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span></a>
-<a class="sourceLine" id="cb967-2" title="2"><span class="kw">setwd</span>(myWd)</a>
-<a class="sourceLine" id="cb967-3" title="3"><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;data01.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb966"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb966-1"><a href="import.html#cb966-1"></a>myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span></span>
+<span id="cb966-2"><a href="import.html#cb966-2"></a><span class="kw">setwd</span>(myWd)</span>
+<span id="cb966-3"><a href="import.html#cb966-3"></a><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;data01.csv&quot;</span>)</span></code></pre></div>
 <p>o alternativamente:</p>
-<div class="sourceCode" id="cb968"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb968-1" title="1"><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;../myFiles/data01.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb967"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb967-1"><a href="import.html#cb967-1"></a><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;../myFiles/data01.csv&quot;</span>)</span></code></pre></div>
 <p>Si la ruta no se llena correctamente o si el archivo de datos no existe, R devolverá el siguiente error:</p>
 <pre><code>## Error in file(file, &quot;rt&quot;) : incapaz de abrir la conexión
 ## De más : Warning message:
@@ -418,16 +421,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Con estos tres argumentos, la mayoría de los archivos se pueden leer sin ningún problema. En caso de necesidad, la ayuda de esta función es muy completa.</p>
 <p>La función <code>read.table ()</code> devuelve el contenido del archivo como <code>data.frame</code>. Para poder usar el contenido del archivo, almacenaremos el <code>data.frame</code> en un objeto.</p>
-<div class="sourceCode" id="cb970"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb970-1" title="1">myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span></a>
-<a class="sourceLine" id="cb970-2" title="2"><span class="kw">setwd</span>(myWd)</a>
-<a class="sourceLine" id="cb970-3" title="3">data01 &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;data01.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb970-4" title="4"><span class="kw">str</span>(data01) <span class="co"># verificar el formato de los datos</span></a>
-<a class="sourceLine" id="cb970-5" title="5"><span class="kw">head</span>(data01) <span class="co"># vverificar los primeros datos</span></a></code></pre></div>
+<div class="sourceCode" id="cb969"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb969-1"><a href="import.html#cb969-1"></a>myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span></span>
+<span id="cb969-2"><a href="import.html#cb969-2"></a><span class="kw">setwd</span>(myWd)</span>
+<span id="cb969-3"><a href="import.html#cb969-3"></a>data01 &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;data01.csv&quot;</span>)</span>
+<span id="cb969-4"><a href="import.html#cb969-4"></a><span class="kw">str</span>(data01) <span class="co"># verificar el formato de los datos</span></span>
+<span id="cb969-5"><a href="import.html#cb969-5"></a><span class="kw">head</span>(data01) <span class="co"># vverificar los primeros datos</span></span></code></pre></div>
 <p><a href="#studyCase001">El estudio de caso sobre el análisis de datos de datalogger</a> se basa en un archivo CSV. Aquí hay un extracto:</p>
-<div class="sourceCode" id="cb971"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb971-1" title="1">bdd &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;myFiles/E05C13.csv&quot;</span>, <span class="dt">skip =</span> <span class="dv">1</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, </a>
-<a class="sourceLine" id="cb971-2" title="2">  <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb971-3" title="3"><span class="kw">colnames</span>(bdd) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;temp&quot;</span>)</a>
-<a class="sourceLine" id="cb971-4" title="4"><span class="kw">head</span>(bdd)</a></code></pre></div>
+<div class="sourceCode" id="cb970"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb970-1"><a href="import.html#cb970-1"></a>bdd &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;myFiles/E05C13.csv&quot;</span>, <span class="dt">skip =</span> <span class="dv">1</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb970-2"><a href="import.html#cb970-2"></a>  <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb970-3"><a href="import.html#cb970-3"></a><span class="kw">colnames</span>(bdd) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;temp&quot;</span>)</span>
+<span id="cb970-4"><a href="import.html#cb970-4"></a><span class="kw">head</span>(bdd)</span></code></pre></div>
 <pre><code>##   id              date  temp
 ## 1  1 11/12/15 23:00:00 4.973
 ## 2  2 11/12/15 23:30:00 4.766
@@ -435,7 +438,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  4 11/13/15 00:30:00 4.844
 ## 5  5 11/13/15 01:00:00 5.076
 ## 6  6 11/13/15 01:30:00 5.282</code></pre>
-<div class="sourceCode" id="cb973"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb973-1" title="1"><span class="kw">tail</span>(bdd)</a></code></pre></div>
+<div class="sourceCode" id="cb972"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb972-1"><a href="import.html#cb972-1"></a><span class="kw">tail</span>(bdd)</span></code></pre></div>
 <pre><code>##          id              date  temp
 ## 32781 32781 09/25/17 21:00:00 7.091
 ## 32782 32782 09/25/17 21:30:00 6.914
@@ -443,7 +446,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 32784 32784 09/25/17 22:30:00 6.611
 ## 32785 32785 09/25/17 23:00:00 6.331
 ## 32786 32786 09/25/17 23:30:00 5.385</code></pre>
-<div class="sourceCode" id="cb975"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb975-1" title="1"><span class="kw">str</span>(bdd)</a></code></pre></div>
+<div class="sourceCode" id="cb974"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb974-1"><a href="import.html#cb974-1"></a><span class="kw">str</span>(bdd)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    32786 obs. of  3 variables:
 ##  $ id  : int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ date: chr  &quot;11/12/15 23:00:00&quot; &quot;11/12/15 23:30:00&quot; &quot;11/13/15 00:00:00&quot; &quot;11/13/15 00:30:00&quot; ...
@@ -452,8 +455,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="l016readTXT" class="section level3">
 <h3><span class="header-section-number">8.1.3</span> Leer un archivo de texto</h3>
 <p>La función más simple para leer un archivo que contiene texto es <code>readlines()</code>. Aquí hay un ejemplo con el archivo README.md de este libro, que se encuentra en GitHub.</p>
-<div class="sourceCode" id="cb977"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb977-1" title="1">readmeGitHub &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/frareb/myRBook_SP/master/README.md&quot;</span></a>
-<a class="sourceLine" id="cb977-2" title="2"><span class="kw">readLines</span>(readmeGitHub)</a></code></pre></div>
+<div class="sourceCode" id="cb976"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb976-1"><a href="import.html#cb976-1"></a>readmeGitHub &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/frareb/myRBook_SP/master/README.md&quot;</span></span>
+<span id="cb976-2"><a href="import.html#cb976-2"></a><span class="kw">readLines</span>(readmeGitHub)</span></code></pre></div>
 <pre><code>##   [1] &quot;# myRBook_SP&quot;                                                                                                                                                                                                                                                                                            
 ##   [2] &quot;Aqui se encuentra el cÃ³digo fuente del libro  *Aprender R: iniciaciÃ³n y perfeccionamiento*, construido con bookdown.&quot;                                                                                                                                                                                  
 ##   [3] &quot;&quot;                                                                                                                                                                                                                                                                                                        
@@ -572,7 +575,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [116] &quot;&quot;                                                                                                                                                                                                                                                                                                        
 ## [117] &quot;* tres capÃ­tulos en lÃ­nea (*primeros pasos*, *elegir un entorno de desarrollo*, *tipos de datos*)&quot;</code></pre>
 <p>También está la función <code>scan()</code> que devolve todas las palabras separadas por espacios. Podemos consultar la ayuda para obtener más información.</p>
-<div class="sourceCode" id="cb979"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb979-1" title="1"><span class="kw">scan</span>(readmeGitHub, <span class="dt">what =</span> <span class="st">&quot;character&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb978"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb978-1"><a href="import.html#cb978-1"></a><span class="kw">scan</span>(readmeGitHub, <span class="dt">what =</span> <span class="st">&quot;character&quot;</span>)</span></code></pre></div>
 <pre><code>##   [1] &quot;#&quot;                                                                                
 ##   [2] &quot;myRBook_SP&quot;                                                                       
 ##   [3] &quot;Aqui&quot;                                                                             
@@ -1021,30 +1024,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.2</span> Guardar datos para R</h2>
 <p>A veces es útil poder guardar un objeto R para poder reutilizarlo más tarde. Este es el caso, por ejemplo, cuando el tiempo de cálculo para llegar a un resultado es muy largo, o cuando queremos liberar espacio en la RAM. Para hacer esto, existe la función <code>save()</code> que toma como argumento principal el nombre de los objetos que queremos guardar.</p>
 <p>El objeto guardado se almacenará en un archivo. Por convención, es bueno dar como nombre de extensión <code>.RData</code> a los archivos que contienen objetos R, preferir un solo objeto por archivo, y dar el nombre del objeto como nombre del archivo.</p>
-<div class="sourceCode" id="cb981"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb981-1" title="1">myObject &lt;-<span class="st"> </span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb981-2" title="2"><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb980"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb980-1"><a href="import.html#cb980-1"></a>myObject &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb980-2"><a href="import.html#cb980-2"></a><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;myObject&quot;</code></pre>
-<div class="sourceCode" id="cb983"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb983-1" title="1"><span class="kw">save</span>(myObject, <span class="dt">file =</span> <span class="st">&quot;myFiles/myObject.RData&quot;</span>)</a>
-<a class="sourceLine" id="cb983-2" title="2"><span class="kw">rm</span>(myObject)</a>
-<a class="sourceLine" id="cb983-3" title="3"><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb982"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb982-1"><a href="import.html#cb982-1"></a><span class="kw">save</span>(myObject, <span class="dt">file =</span> <span class="st">&quot;myFiles/myObject.RData&quot;</span>)</span>
+<span id="cb982-2"><a href="import.html#cb982-2"></a><span class="kw">rm</span>(myObject)</span>
+<span id="cb982-3"><a href="import.html#cb982-3"></a><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
 <pre><code>## character(0)</code></pre>
 <p>Si necesitamos el objeto guardado en el archivo, podemos volver a cargarlo con la función <code>load()</code>.</p>
-<div class="sourceCode" id="cb985"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb985-1" title="1"><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb984"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb984-1"><a href="import.html#cb984-1"></a><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
 <pre><code>## character(0)</code></pre>
-<div class="sourceCode" id="cb987"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb987-1" title="1"><span class="kw">load</span>(<span class="st">&quot;myFiles/myObject.RData&quot;</span>)</a>
-<a class="sourceLine" id="cb987-2" title="2"><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb986"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb986-1"><a href="import.html#cb986-1"></a><span class="kw">load</span>(<span class="st">&quot;myFiles/myObject.RData&quot;</span>)</span>
+<span id="cb986-2"><a href="import.html#cb986-2"></a><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;myObject&quot;</code></pre>
-<div class="sourceCode" id="cb989"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb989-1" title="1"><span class="kw">print</span>(myObject)</a></code></pre></div>
+<div class="sourceCode" id="cb988"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb988-1"><a href="import.html#cb988-1"></a><span class="kw">print</span>(myObject)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 </div>
 <div id="l016write" class="section level2">
 <h2><span class="header-section-number">8.3</span> Exportar datos</h2>
 <p>La mejor forma de comunicar sus resultados o datos es enviar sus scripts y archivos de datos. A veces esto no es posible o no es adecuado, y puede ser útil exportar sus datos en un archivo de texto o CSV. Para hacer esto, existe la función genérica <code>write()</code> y la función <code>write.table()</code> para <code>data.frame</code>.</p>
 <p>Por ejemplo, crearemos un <code>data.frame</code> con los números del 1 al 26 y las letras correspondientes, luego los guardaremos en un archivo CSV, luego volveremos a leer los datos contenidos en este archivo.</p>
-<div class="sourceCode" id="cb991"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb991-1" title="1">dfLetters &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">num =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">26</span>, <span class="dt">letters =</span> letters)</a>
-<a class="sourceLine" id="cb991-2" title="2"><span class="kw">write.table</span>(dfLetters, <span class="dt">file =</span> <span class="st">&quot;myFiles/dfLetters.csv&quot;</span>, </a>
-<a class="sourceLine" id="cb991-3" title="3">  <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">col.names =</span> <span class="ot">TRUE</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb991-4" title="4"><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;myFiles/dfLetters.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb990"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb990-1"><a href="import.html#cb990-1"></a>dfLetters &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">num =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">26</span>, <span class="dt">letters =</span> letters)</span>
+<span id="cb990-2"><a href="import.html#cb990-2"></a><span class="kw">write.table</span>(dfLetters, <span class="dt">file =</span> <span class="st">&quot;myFiles/dfLetters.csv&quot;</span>, </span>
+<span id="cb990-3"><a href="import.html#cb990-3"></a>  <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">col.names =</span> <span class="ot">TRUE</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb990-4"><a href="import.html#cb990-4"></a><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;myFiles/dfLetters.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
 <pre><code>##    num letters
 ## 1    1       a
 ## 2    2       b

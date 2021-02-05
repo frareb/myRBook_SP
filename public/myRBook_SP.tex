@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Aprender R: iniciación y perfeccionamiento},
+  pdftitle={R para los científicos},
   pdfauthor={François Rebaudo},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -216,9 +216,9 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
-\title{Aprender R: iniciación y perfeccionamiento}
+\title{R para los científicos}
 \author{François Rebaudo}
-\date{2020-05-31}
+\date{2021-02-05}
 
 \begin{document}
 \maketitle
@@ -233,15 +233,11 @@
 \hypertarget{remerciements}{%
 \section{Agradecimientos}\label{remerciements}}
 
-Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones (en orden alfabético):
-
-\begin{verbatim}
-## Colaboradores :Camila Benavides Frias (Bolivia)Marc Girondot (France ; UMR 8079 ESE)Susi Loza Herrera (Bolivia)Estefania Quenta Herrera (Bolivia)Baptiste Régnier (France)
-\end{verbatim}
+Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones (en orden alfabético): Camila BF, Marc G, Susi LH, y Estefania QH.
 
 Las versiones de gitbook, html y epub de este libro usan los iconos de fuente abierta de Font Awesome (\url{https://fontawesome.com}). La versión en PDF utiliza los iconos del proyecto Tango disponibles en openclipart (\url{https://openclipart.org/}). Este libro fue escrito con el paquete R bookdown (\url{https://bookdown.org/}). El código fuente está disponible en GitHub (\url{https://github.com/frareb/myRBook_SP}). La versión en línea se aloja y actualiza a través de Netlify (\url{http://netlify.com/}).
 
-Este libro también está disponible en francés (\url{http://myrbookfr.netlify.com/}). Más allá de este libro, puede acceder a las diapositivas del \href{http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html}{último curso de R realizado en marzo de 2019 en Quito, Ecuador}.
+Este libro también está disponible en francés en versión imprimida (\url{http://myrbookfr.netlify.app/}). Más allá de este libro, puede acceder a las diapositivas del \href{http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html}{último curso de R realizado en marzo de 2019 en Quito, Ecuador}.
 
 \hypertarget{licence}{%
 \section{Licencia}\label{licence}}
@@ -6404,7 +6400,7 @@ La función \texttt{getwd()} establece la carpeta de trabajo. Esto corresponde a
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/GITHUB/myRbook_SP"
 \end{verbatim}
 
 \hypertarget{l015setwd}{%
@@ -6420,7 +6416,7 @@ La función \texttt{setwd()} se usa para definir un nuevo directorio de trabajo 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/GITHUB/myRbook_SP"
 \end{verbatim}
 
 \begin{Shaded}
@@ -6431,7 +6427,7 @@ La función \texttt{setwd()} se usa para definir un nuevo directorio de trabajo 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub"
+## [1] "C:/Users/nous/Documents/Francois/GITHUB"
 \end{verbatim}
 
 \begin{Shaded}
@@ -6442,7 +6438,7 @@ La función \texttt{setwd()} se usa para definir un nuevo directorio de trabajo 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/GITHUB/myRbook_SP"
 \end{verbatim}
 
 \hypertarget{l015listfiles}{%
@@ -6482,23 +6478,22 @@ Al igual que la función \texttt{list.files()} hace posible listar todos los arc
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "aLogic"       "bddInsect"    "characters"   "contrib"      "dfForMat"    
-##  [6] "factor01"     "i"            "irisCopy"     "j"            "k"           
-## [11] "logicals"     "mdat"         "miArray"      "miArray02"    "miDf01"      
-## [16] "miDfSub01"    "miDfSub02"    "miDfSub03"    "miDfSub04"    "miList01"    
-## [21] "miList02"     "miList0203"   "miList03"     "miList04"     "miList05"    
-## [26] "miList06"     "miMat"        "miMat01"      "miMat02"      "miVec01"     
-## [31] "miVec02"      "miVec03"      "miVec04"      "miVec05"      "miVec06"     
-## [36] "miVec07"      "miVec08"      "miVec09"      "miVec10"      "miVec11"     
-## [41] "miVec12"      "miVec13"      "miVec14"      "miVec15"      "miVec20"     
-## [46] "miVec21"      "miVec22"      "miVec23"      "miVec24"      "miVec25"     
-## [51] "miVecArr"     "miVecArr02"   "miVecConf"    "miVecNA"      "miVecOp"     
-## [56] "msg"          "myCol"        "myRow"        "myText"       "myText2"     
-## [61] "myText3"      "myText4"      "myText5"      "nbrRep"       "newVec"      
-## [66] "newVec2"      "numbers"      "oldWd"        "opAriDf"      "roundDou"    
-## [71] "sumIntDou"    "sumIntInt"    "termino01"    "termino02"    "vecForMat01" 
-## [76] "vecForMat02"  "vecForMat03"  "vecForMatrix" "vecManip"     "vecManip2"   
-## [81] "vecManip3"
+##  [1] "aLogic"       "bddInsect"    "characters"   "dfForMat"     "factor01"    
+##  [6] "i"            "irisCopy"     "j"            "k"            "logicals"    
+## [11] "mdat"         "miArray"      "miArray02"    "miDf01"       "miDfSub01"   
+## [16] "miDfSub02"    "miDfSub03"    "miDfSub04"    "miList01"     "miList02"    
+## [21] "miList0203"   "miList03"     "miList04"     "miList05"     "miList06"    
+## [26] "miMat"        "miMat01"      "miMat02"      "miVec01"      "miVec02"     
+## [31] "miVec03"      "miVec04"      "miVec05"      "miVec06"      "miVec07"     
+## [36] "miVec08"      "miVec09"      "miVec10"      "miVec11"      "miVec12"     
+## [41] "miVec13"      "miVec14"      "miVec15"      "miVec20"      "miVec21"     
+## [46] "miVec22"      "miVec23"      "miVec24"      "miVec25"      "miVecArr"    
+## [51] "miVecArr02"   "miVecConf"    "miVecNA"      "miVecOp"      "myCol"       
+## [56] "myRow"        "myText"       "myText2"      "myText3"      "myText4"     
+## [61] "myText5"      "nbrRep"       "newVec"       "newVec2"      "numbers"     
+## [66] "oldWd"        "opAriDf"      "roundDou"     "sumIntDou"    "sumIntInt"   
+## [71] "termino01"    "termino02"    "vecForMat01"  "vecForMat02"  "vecForMat03" 
+## [76] "vecForMatrix" "vecManip"     "vecManip2"    "vecManip3"
 \end{verbatim}
 
 \begin{Shaded}
@@ -6509,23 +6504,22 @@ Al igual que la función \texttt{list.files()} hace posible listar todos los arc
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "aLogic"       "bddInsect"    "characters"   "contrib"      "dfForMat"    
-##  [6] "factor01"     "i"            "irisCopy"     "j"            "k"           
-## [11] "logicals"     "mdat"         "miArray"      "miArray02"    "miDf01"      
-## [16] "miDfSub01"    "miDfSub02"    "miDfSub03"    "miDfSub04"    "miList01"    
-## [21] "miList02"     "miList0203"   "miList03"     "miList04"     "miList05"    
-## [26] "miList06"     "miMat"        "miMat01"      "miMat02"      "miVec01"     
-## [31] "miVec02"      "miVec03"      "miVec04"      "miVec05"      "miVec06"     
-## [36] "miVec07"      "miVec08"      "miVec09"      "miVec10"      "miVec11"     
-## [41] "miVec12"      "miVec13"      "miVec14"      "miVec15"      "miVec20"     
-## [46] "miVec21"      "miVec22"      "miVec23"      "miVec24"      "miVec25"     
-## [51] "miVecArr"     "miVecArr02"   "miVecConf"    "miVecNA"      "miVecOp"     
-## [56] "msg"          "myCol"        "myRow"        "myText"       "myText2"     
-## [61] "myText3"      "myText4"      "myText5"      "nbrRep"       "newVec"      
-## [66] "newVec2"      "numbers"      "oldWd"        "opAriDf"      "roundDou"    
-## [71] "sumIntDou"    "sumIntInt"    "termino01"    "termino02"    "vecForMat01" 
-## [76] "vecForMat02"  "vecForMat03"  "vecForMatrix" "vecManip"     "vecManip2"   
-## [81] "vecManip3"    "zzz"
+##  [1] "aLogic"       "bddInsect"    "characters"   "dfForMat"     "factor01"    
+##  [6] "i"            "irisCopy"     "j"            "k"            "logicals"    
+## [11] "mdat"         "miArray"      "miArray02"    "miDf01"       "miDfSub01"   
+## [16] "miDfSub02"    "miDfSub03"    "miDfSub04"    "miList01"     "miList02"    
+## [21] "miList0203"   "miList03"     "miList04"     "miList05"     "miList06"    
+## [26] "miMat"        "miMat01"      "miMat02"      "miVec01"      "miVec02"     
+## [31] "miVec03"      "miVec04"      "miVec05"      "miVec06"      "miVec07"     
+## [36] "miVec08"      "miVec09"      "miVec10"      "miVec11"      "miVec12"     
+## [41] "miVec13"      "miVec14"      "miVec15"      "miVec20"      "miVec21"     
+## [46] "miVec22"      "miVec23"      "miVec24"      "miVec25"      "miVecArr"    
+## [51] "miVecArr02"   "miVecConf"    "miVecNA"      "miVecOp"      "myCol"       
+## [56] "myRow"        "myText"       "myText2"      "myText3"      "myText4"     
+## [61] "myText5"      "nbrRep"       "newVec"       "newVec2"      "numbers"     
+## [66] "oldWd"        "opAriDf"      "roundDou"     "sumIntDou"    "sumIntInt"   
+## [71] "termino01"    "termino02"    "vecForMat01"  "vecForMat02"  "vecForMat03" 
+## [76] "vecForMatrix" "vecManip"     "vecManip2"    "vecManip3"    "zzz"
 \end{verbatim}
 
 \hypertarget{l015rm}{%
@@ -6541,23 +6535,22 @@ La función \texttt{rm()} permite eliminar un objeto presente en el entorno de t
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "aLogic"       "bddInsect"    "characters"   "contrib"      "dfForMat"    
-##  [6] "factor01"     "i"            "irisCopy"     "j"            "k"           
-## [11] "logicals"     "mdat"         "miArray"      "miArray02"    "miDf01"      
-## [16] "miDfSub01"    "miDfSub02"    "miDfSub03"    "miDfSub04"    "miList01"    
-## [21] "miList02"     "miList0203"   "miList03"     "miList04"     "miList05"    
-## [26] "miList06"     "miMat"        "miMat01"      "miMat02"      "miVec01"     
-## [31] "miVec02"      "miVec03"      "miVec04"      "miVec05"      "miVec06"     
-## [36] "miVec07"      "miVec08"      "miVec09"      "miVec10"      "miVec11"     
-## [41] "miVec12"      "miVec13"      "miVec14"      "miVec15"      "miVec20"     
-## [46] "miVec21"      "miVec22"      "miVec23"      "miVec24"      "miVec25"     
-## [51] "miVecArr"     "miVecArr02"   "miVecConf"    "miVecNA"      "miVecOp"     
-## [56] "msg"          "myCol"        "myRow"        "myText"       "myText2"     
-## [61] "myText3"      "myText4"      "myText5"      "nbrRep"       "newVec"      
-## [66] "newVec2"      "numbers"      "oldWd"        "opAriDf"      "roundDou"    
-## [71] "sumIntDou"    "sumIntInt"    "termino01"    "termino02"    "vecForMat01" 
-## [76] "vecForMat02"  "vecForMat03"  "vecForMatrix" "vecManip"     "vecManip2"   
-## [81] "vecManip3"
+##  [1] "aLogic"       "bddInsect"    "characters"   "dfForMat"     "factor01"    
+##  [6] "i"            "irisCopy"     "j"            "k"            "logicals"    
+## [11] "mdat"         "miArray"      "miArray02"    "miDf01"       "miDfSub01"   
+## [16] "miDfSub02"    "miDfSub03"    "miDfSub04"    "miList01"     "miList02"    
+## [21] "miList0203"   "miList03"     "miList04"     "miList05"     "miList06"    
+## [26] "miMat"        "miMat01"      "miMat02"      "miVec01"      "miVec02"     
+## [31] "miVec03"      "miVec04"      "miVec05"      "miVec06"      "miVec07"     
+## [36] "miVec08"      "miVec09"      "miVec10"      "miVec11"      "miVec12"     
+## [41] "miVec13"      "miVec14"      "miVec15"      "miVec20"      "miVec21"     
+## [46] "miVec22"      "miVec23"      "miVec24"      "miVec25"      "miVecArr"    
+## [51] "miVecArr02"   "miVecConf"    "miVecNA"      "miVecOp"      "myCol"       
+## [56] "myRow"        "myText"       "myText2"      "myText3"      "myText4"     
+## [61] "myText5"      "nbrRep"       "newVec"       "newVec2"      "numbers"     
+## [66] "oldWd"        "opAriDf"      "roundDou"     "sumIntDou"    "sumIntInt"   
+## [71] "termino01"    "termino02"    "vecForMat01"  "vecForMat02"  "vecForMat03" 
+## [76] "vecForMatrix" "vecManip"     "vecManip2"    "vecManip3"
 \end{verbatim}
 
 \hypertarget{algunos-ejercicios-para-practicar}{%
@@ -7023,8 +7016,8 @@ No existe una solución óptima en absoluto, todo depende de los objetivos desea
 \end{Shaded}
 
 \begin{verbatim}
-##    user  system elapsed 
-##    0.23    0.00    0.24
+## utilisateur     système      écoulé 
+##        0.25        0.03        0.28
 \end{verbatim}
 
 \begin{Shaded}
@@ -7034,8 +7027,8 @@ No existe una solución óptima en absoluto, todo depende de los objetivos desea
 \end{Shaded}
 
 \begin{verbatim}
-##    user  system elapsed 
-##    0.26    0.00    0.27
+## utilisateur     système      écoulé 
+##        0.25        0.00        0.25
 \end{verbatim}
 
 Una función puede tener \textbf{valores predeterminados} para sus argumentos. Este es el caso para la mayoría de las funciones existentes. Por defecto, nuestra función ahora contará el número de vocales y consonantes en la palabra \texttt{qwerty} (los paréntesis son necesarios incluso en ausencia de argumentos).
@@ -7128,12 +7121,12 @@ Alternativamente, podemos usar la función \texttt{.packages()} para listar los 
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "abind"      "acepack"    "ade4"       "agricolae"  "AlgDesign" 
-##  [6] "alr4"       "aof"        "ape"        "askpass"    "assertthat"
-## [11] "backports"  "base64enc"  "bcpa"       "bdsmatrix"  "BH"        
-## [16] "bibtex"     "bindr"      "bindrcpp"   "BioFTF"     "bitops"    
-## [21] "bold"       "bookdown"   "boot"       "brew"       "broom"     
-## [26] "ca"         "callr"      "car"        "carData"    "caret"
+##  [1] "abind"      "acepack"    "ade4"       "agricolae"  "akima"     
+##  [6] "AlgDesign"  "alr4"       "aof"        "ape"        "askpass"   
+## [11] "assertthat" "backports"  "base64enc"  "BayesLogit" "bcpa"      
+## [16] "bdsmatrix"  "BH"         "bibtex"     "bindr"      "bindrcpp"  
+## [21] "BioFTF"     "bitops"     "blob"       "bold"       "bookdown"  
+## [26] "boot"       "brew"       "brio"       "broom"      "bslib"
 \end{verbatim}
 
 La función \texttt{pkgCheck()} asegura la \textbf{portabilidad} de nuestros scripts: funcionarán en todas las computadoras sin tener que realizar ningún cambio. Por lo tanto, nuestros scipts pueden adjuntarse, por ejemplo, a nuestros artículos científicos y así garantizar la \textbf{reproducibilidad} de nuestros resultados.
@@ -7177,7 +7170,7 @@ El directorio de trabajo por defecto se puede obtener con la función \protect\h
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/GITHUB/myRbook_SP"
 \end{verbatim}
 
 \begin{Shaded}
@@ -7188,7 +7181,7 @@ El directorio de trabajo por defecto se puede obtener con la función \protect\h
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub"
+## [1] "C:/Users/nous/Documents/Francois/GITHUB"
 \end{verbatim}
 
 \begin{Shaded}
@@ -7199,7 +7192,7 @@ El directorio de trabajo por defecto se puede obtener con la función \protect\h
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "C:/Users/nous/Documents/Francois/TRAVAIL/GitHub/myRbook_SP"
+## [1] "C:/Users/nous/Documents/Francois/GITHUB/myRbook_SP"
 \end{verbatim}
 
 Entonces tenemos cuatro opciones:
@@ -8360,12 +8353,12 @@ En programación, cuando tenemos que repetir la misma línea de código varias v
 
 \begin{verbatim}
 ##      date01    date02
-## 1  9.437843 10.258637
-## 2 11.351304  9.307591
-## 3  7.641367 10.049938
-## 4  9.303449 10.022079
-## 5  8.742268 11.852992
-## 6  9.585674 11.217403
+## 1  9.621289  9.686327
+## 2  9.283140  9.116428
+## 3  9.443993  8.618936
+## 4 11.439371 11.640735
+## 5 10.231469  9.909636
+## 6 10.620379  9.595343
 \end{verbatim}
 
 Nos gustaría cuantificar la diferencia entre la primera y la segunda fecha, luego poner un indicador para saber si esta diferencia es pequeña o grande, por ejemplo, con un umbral arbitrario de 3. Entonces, para cada línea podríamos hacer:
@@ -8477,26 +8470,26 @@ Volvamos a nuestro caso. Vamos a iterar sobre el número de líneas de nuestro \
 
 \begin{verbatim}
 ##       date01    date02        dif isDifBig
-## 1   9.437843 10.258637 0.82079459    small
-## 2  11.351304  9.307591 2.04371287    small
-## 3   7.641367 10.049938 2.40857184    small
-## 4   9.303449 10.022079 0.71862988    small
-## 5   8.742268 11.852992 3.11072461      big
-## 6   9.585674 11.217403 1.63172930    small
-## 7  10.837333  9.514922 1.32241133    small
-## 8   9.288704 10.773326 1.48462158    small
-## 9   9.823862  9.349687 0.47417481    small
-## 10 10.804474 10.359691 0.44478315    small
-## 11  9.102477  9.715328 0.61285097    small
-## 12  9.687928  9.539796 0.14813185    small
-## 13  8.973510  9.748980 0.77547004    small
-## 14  8.897896  8.968995 0.07109917    small
-## 15 11.106967  9.971450 1.13551659    small
-## 16  8.802034  9.607025 0.80499121    small
-## 17  9.979632  8.811952 1.16768021    small
-## 18  8.920435 11.150506 2.23007183    small
-## 19 10.258320  9.860566 0.39775457    small
-## 20  7.373026 10.196226 2.82319965    small
+## 1   9.621289  9.686327 0.06503747    small
+## 2   9.283140  9.116428 0.16671188    small
+## 3   9.443993  8.618936 0.82505654    small
+## 4  11.439371 11.640735 0.20136428    small
+## 5  10.231469  9.909636 0.32183311    small
+## 6  10.620379  9.595343 1.02503589    small
+## 7   9.471954  8.151107 1.32084701    small
+## 8  10.206886  8.872958 1.33392864    small
+## 9   9.940182  7.987280 1.95290193    small
+## 10 11.089402 10.752103 0.33729969    small
+## 11  8.103621 11.430655 3.32703446      big
+## 12  8.910775  9.585639 0.67486444    small
+## 13 12.774985  8.402278 4.37270660      big
+## 14 10.863061 11.642042 0.77898086    small
+## 15  9.729175  9.937674 0.20849943    small
+## 16 10.020267  8.848447 1.17181997    small
+## 17 10.580743  9.045502 1.53524042    small
+## 18  8.501826 11.048164 2.54633791    small
+## 19 10.204127  9.371507 0.83262015    small
+## 20  9.667688 10.715911 1.04822292    small
 \end{verbatim}
 
 En la práctica, esta no es la mejor manera de realizar este ejercicio porque se trata de cálculos simples en vectores contenidos en un \texttt{data.frame}. R es particularmente potente para realizar operaciones en vectores. Donde sea posible, siempre tenemos que enfócarnos en operaciones vectoriales. Aquí nuestro código se convierte en:
@@ -8512,26 +8505,26 @@ En la práctica, esta no es la mejor manera de realizar este ejercicio porque se
 
 \begin{verbatim}
 ##       date01    date02        dif isDifBig
-## 1   9.437843 10.258637 0.82079459    small
-## 2  11.351304  9.307591 2.04371287    small
-## 3   7.641367 10.049938 2.40857184    small
-## 4   9.303449 10.022079 0.71862988    small
-## 5   8.742268 11.852992 3.11072461      big
-## 6   9.585674 11.217403 1.63172930    small
-## 7  10.837333  9.514922 1.32241133    small
-## 8   9.288704 10.773326 1.48462158    small
-## 9   9.823862  9.349687 0.47417481    small
-## 10 10.804474 10.359691 0.44478315    small
-## 11  9.102477  9.715328 0.61285097    small
-## 12  9.687928  9.539796 0.14813185    small
-## 13  8.973510  9.748980 0.77547004    small
-## 14  8.897896  8.968995 0.07109917    small
-## 15 11.106967  9.971450 1.13551659    small
-## 16  8.802034  9.607025 0.80499121    small
-## 17  9.979632  8.811952 1.16768021    small
-## 18  8.920435 11.150506 2.23007183    small
-## 19 10.258320  9.860566 0.39775457    small
-## 20  7.373026 10.196226 2.82319965    small
+## 1   9.621289  9.686327 0.06503747    small
+## 2   9.283140  9.116428 0.16671188    small
+## 3   9.443993  8.618936 0.82505654    small
+## 4  11.439371 11.640735 0.20136428    small
+## 5  10.231469  9.909636 0.32183311    small
+## 6  10.620379  9.595343 1.02503589    small
+## 7   9.471954  8.151107 1.32084701    small
+## 8  10.206886  8.872958 1.33392864    small
+## 9   9.940182  7.987280 1.95290193    small
+## 10 11.089402 10.752103 0.33729969    small
+## 11  8.103621 11.430655 3.32703446      big
+## 12  8.910775  9.585639 0.67486444    small
+## 13 12.774985  8.402278 4.37270660      big
+## 14 10.863061 11.642042 0.77898086    small
+## 15  9.729175  9.937674 0.20849943    small
+## 16 10.020267  8.848447 1.17181997    small
+## 17 10.580743  9.045502 1.53524042    small
+## 18  8.501826 11.048164 2.54633791    small
+## 19 10.204127  9.371507 0.83262015    small
+## 20  9.667688 10.715911 1.04822292    small
 \end{verbatim}
 
 La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \texttt{for()} pueden reemplazarse por operaciones vectoriales. Aquí hay algunos ejemplos adaptados de varias fuentes:
@@ -8552,7 +8545,7 @@ La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 11
+## [1] 6
 \end{verbatim}
 
 \begin{Shaded}
@@ -8563,7 +8556,7 @@ La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 11
+## [1] 6
 \end{verbatim}
 
 \begin{Shaded}
@@ -8609,7 +8602,7 @@ La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.56
+## [1] 3.488
 \end{verbatim}
 
 \begin{Shaded}
@@ -8620,7 +8613,7 @@ La mayoría de los ejemplos que se pueden encontrar en Internet sobre el bucle \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.538
+## [1] 3.448
 \end{verbatim}
 
 Es un buen ejercicio explorar los muchos ejemplos disponibles en Internet en el bucle \texttt{for()} e intentar convertirlos en operaciones vectoriales. Esto nos permite adquirir buenos reflejos de programación con R. El bucle \texttt{for()} es muy útil, por ejemplo, para leer varios archivos y tratar la información que contienen de la misma manera, hacer gráficos, o Cuando las operaciones vectoriales se vuelven tediosas. Imagina una matriz de 10 columnas y 100 líneas. Queremos la suma de cada línea (veremos cómo hacer con la función \texttt{apply()} mas adelante).
@@ -8637,12 +8630,12 @@ Es un buen ejercicio explorar los muchos ejemplos disponibles en Internet en el 
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 635 540 593 444 445 568 466 512 537 714 434 540 734 548 329 472 581 466
-##  [19] 574 479 444 486 492 379 450 560 484 619 502 282 399 581 530 597 679 660
-##  [37] 442 351 583 472 488 398 472 444 540 578 447 467 482 463 553 594 519 539
-##  [55] 532 500 476 550 433 545 529 432 349 513 628 398 569 388 600 449 399 545
-##  [73] 426 442 371 506 634 331 687 376 318 485 444 504 486 504 503 350 578 410
-##  [91] 619 425 502 492 540 421 353 682 435 527
+##   [1] 612 447 554 596 499 371 662 406 391 614 303 601 465 375 493 304 442 466
+##  [19] 546 454 584 484 547 745 544 369 591 511 502 386 465 565 448 442 215 433
+##  [37] 609 339 365 586 390 475 363 596 437 519 568 489 545 454 525 577 503 525
+##  [55] 572 466 374 631 354 594 416 479 488 484 409 358 528 527 647 441 493 578
+##  [73] 542 376 537 398 294 500 610 724 417 510 476 510 581 571 341 390 529 449
+##  [91] 602 320 507 328 402 607 633 655 450 622
 \end{verbatim}
 
 \begin{Shaded}
@@ -8657,12 +8650,12 @@ Es un buen ejercicio explorar los muchos ejemplos disponibles en Internet en el 
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 635 540 593 444 445 568 466 512 537 714 434 540 734 548 329 472 581 466
-##  [19] 574 479 444 486 492 379 450 560 484 619 502 282 399 581 530 597 679 660
-##  [37] 442 351 583 472 488 398 472 444 540 578 447 467 482 463 553 594 519 539
-##  [55] 532 500 476 550 433 545 529 432 349 513 628 398 569 388 600 449 399 545
-##  [73] 426 442 371 506 634 331 687 376 318 485 444 504 486 504 503 350 578 410
-##  [91] 619 425 502 492 540 421 353 682 435 527
+##   [1] 612 447 554 596 499 371 662 406 391 614 303 601 465 375 493 304 442 466
+##  [19] 546 454 584 484 547 745 544 369 591 511 502 386 465 565 448 442 215 433
+##  [37] 609 339 365 586 390 475 363 596 437 519 568 489 545 454 525 577 503 525
+##  [55] 572 466 374 631 354 594 416 479 488 484 409 358 528 527 647 441 493 578
+##  [73] 542 376 537 398 294 500 610 724 417 510 476 510 581 571 341 390 529 449
+##  [91] 602 320 507 328 402 607 633 655 450 622
 \end{verbatim}
 
 En conclusión, se recomienda no usar el bucle \texttt{for()} con R siempre que sea posible, y en este capítulo veremos alternativas como los bucles familiares \texttt{apply()}.
@@ -8723,7 +8716,7 @@ El bucle \texttt{while()} es muy útil para crear scripts que realizarán cálcu
 
 \begin{verbatim}
 ## [1] "Number found !"
-## [1] "And I have plenty of time left: 1.4 sec"
+## [1] "And I have plenty of time left: 1.72 sec"
 \end{verbatim}
 
 En este script generamos un número aleatorio para adivinar con la función \texttt{sample()}, y cada uno de los intentos con la misma función \texttt{sample()}. Luego usamos la función \texttt{Sys.time()} (con una S mayúscula a \texttt{Sys}), para saber la hora de inicio del bucle. Siempre que la diferencia entre cada iteración del bucle y la hora de inicio sea inferior a 2 segundos, el bucle \texttt{while()} verificará si el número correcto estaba adivinando en la prueba lógica con \texttt{if()} y luego si es el caso nos informa que se encontró el número, y nos indica el tiempo restante antes de los dos segundos. Luego para finalizar el bucle usamos la palabra clave ``break'' en la que volveremos. En resumen, \texttt{break}, permite salir de un bucle. Si no se ha adivinado el número, el bucle realiza otra prueba con la función \texttt{sample()}.
@@ -8782,11 +8775,11 @@ Si volvemos al ejemplo anterior, podemos usar un bucle \texttt{repeat()} para re
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.632
-## [1] 0.045
-## [1] 1.075
-## [1] 0.2
-## [1] 0.384
+## [1] 0.12
+## [1] 0.714
+## [1] 1.028
+## [1] 0.074
+## [1] 0.872
 \end{verbatim}
 
 Al igual que el bucle \texttt{while()}, el bucle \texttt{repeat()} no se usa mucho con R.
@@ -8891,12 +8884,12 @@ La función \texttt{apply()} permite aplicar una función a todos los elementos 
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 462 485 490 347 357 449 522 439 429 600 547 424 471 324 426 560 512 651
-##  [19] 606 593 475 442 439 450 336 368 554 588 428 570 423 387 617 473 473 585
-##  [37] 501 510 500 379 586 577 612 349 536 443 453 571 475 498 369 579 476 446
-##  [55] 460 469 603 690 423 503 422 430 546 692 683 402 469 473 354 445 561 308
-##  [73] 451 380 644 541 424 556 464 399 361 551 382 636 218 513 548 574 441 453
-##  [91] 552 502 666 529 584 531 537 597 469 463
+##   [1] 494 506 669 520 433 345 592 365 483 475 520 560 518 362 383 747 571 657
+##  [19] 605 500 526 549 622 405 499 602 607 301 423 549 581 650 470 456 581 558
+##  [37] 582 533 730 380 643 582 427 335 490 286 650 616 583 460 566 545 508 609
+##  [55] 547 530 408 630 439 487 421 485 628 462 444 443 444 493 484 562 520 571
+##  [73] 619 507 457 396 462 588 507 322 424 469 537 478 538 368 489 537 658 456
+##  [91] 593 453 631 620 545 500 716 678 476 430
 \end{verbatim}
 
 Si queremos saber la mediana de cada columna, la expresión se convierte en:
@@ -8908,7 +8901,7 @@ Si queremos saber la mediana de cada columna, la expresión se convierte en:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 46.5 50.0 46.0 54.0 47.5 50.0 47.5 46.0 46.0 45.0
+##  [1] 53.0 48.5 48.5 55.0 54.0 48.5 51.5 60.0 49.5 47.0
 \end{verbatim}
 
 El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repetirá. El argumento \texttt{MARGEN} corresponde a la dimensión a tener en cuenta (1 para las filas y 2 para las columnas). El argumento \texttt{FUN} es la función a aplicar. En un objeto \texttt{array}, el argumento \texttt{MARGIN} puede tomar tantos valores como dimensiones. En este ejemplo, \texttt{MARGIN\ =\ 1} es el promedio de cada fila - dimensión 1 - (todas las dimensiones combinadas), \texttt{MARGIN\ =\ 2} es el promedio de cada columna - dimensión 2 - (todas las dimensiones combinadas), y \texttt{MARGEN\ =\ 3} es el promedio de cada dimensión 3. Debajo cada cálculo se realiza de dos maneras diferentes para explicar su operación.
@@ -8921,7 +8914,7 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 48.97 52.46 51.11 50.07 54.28 54.13 46.28 54.14 49.42 52.18
+##  [1] 45.67 50.97 50.12 48.10 47.67 48.48 48.33 55.61 57.21 45.64
 \end{verbatim}
 
 \begin{Shaded}
@@ -8933,7 +8926,7 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 48.97 52.46 51.11 50.07 54.28 54.13 46.28 54.14 49.42 52.18
+##  [1] 45.67 50.97 50.12 48.10 47.67 48.48 48.33 55.61 57.21 45.64
 \end{verbatim}
 
 \begin{Shaded}
@@ -8943,8 +8936,8 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 55.14 50.40 48.00 54.02 52.94 51.72 55.24 49.76 54.50 53.00 44.72 51.16
-## [13] 51.16 56.60 49.70 48.42 49.70 45.80 55.38 48.72
+##  [1] 47.62 53.30 52.06 50.06 48.22 44.32 51.72 45.34 53.86 53.16 47.26 48.26
+## [13] 54.04 50.86 44.84 53.84 43.26 49.82 48.70 55.06
 \end{verbatim}
 
 \begin{Shaded}
@@ -8956,8 +8949,8 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 55.14 50.40 48.00 54.02 52.94 51.72 55.24 49.76 54.50 53.00 44.72 51.16
-## [13] 51.16 56.60 49.70 48.42 49.70 45.80 55.38 48.72
+##  [1] 47.62 53.30 52.06 50.06 48.22 44.32 51.72 45.34 53.86 53.16 47.26 48.26
+## [13] 54.04 50.86 44.84 53.84 43.26 49.82 48.70 55.06
 \end{verbatim}
 
 \begin{Shaded}
@@ -8967,7 +8960,7 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 53.220 50.285 51.530 51.915 49.570
+## [1] 48.485 47.725 51.890 48.730 52.070
 \end{verbatim}
 
 \begin{Shaded}
@@ -8978,7 +8971,7 @@ El argumento \texttt{X} es el objeto en el que el bucle \texttt{apply} se repeti
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 53.220 50.285 51.530 51.915 49.570
+## [1] 48.485 47.725 51.890 48.730 52.070
 \end{verbatim}
 
 También podemos calcular el promedio de cada fila y valor de columna (la función luego itera en la dimensión 3):
@@ -8991,27 +8984,27 @@ También podemos calcular el promedio de cada fila y valor de columna (la funci�
 
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,] 85.2 40.0 65.0 38.2 57.4 37.4 64.0 22.6 63.6  43.4  44.2  55.4  44.2
-##  [2,] 63.2 52.4 53.2 70.6 58.8 53.0 66.0 46.6 23.4  64.2  33.6  55.6  37.2
-##  [3,] 55.8 47.6 38.6 41.2 46.8 50.4 59.6 59.2 49.4  59.0  65.2  53.2  58.8
-##  [4,] 49.8 53.4 54.8 60.8 61.8 40.8 65.4 36.0 58.2  53.6  40.0  52.4  50.8
-##  [5,] 64.0 36.4 59.0 64.0 40.4 83.0 59.0 55.8 57.2  37.6  64.0  38.2  57.2
-##  [6,] 68.2 55.0 43.8 43.6 62.8 50.8 68.6 35.6 59.4  50.8  28.2  75.2  50.8
-##  [7,] 31.0 53.8 48.0 62.6 49.6 43.6 34.6 57.2 51.4  50.6  39.0  35.4  48.4
-##  [8,] 45.8 53.0 46.6 38.8 59.4 69.4 49.6 54.8 76.6  49.8  48.4  51.2  55.4
-##  [9,] 49.0 59.2 23.2 54.4 43.6 42.4 59.6 71.6 31.4  75.2  50.6  58.4  47.4
-## [10,] 39.4 53.2 47.8 66.0 48.8 46.4 26.0 58.2 74.4  45.8  34.0  36.6  61.4
+##  [1,] 46.0 60.6 53.2 44.2 34.4 44.4 41.8 50.0 64.6  57.4  32.2  28.4  32.0
+##  [2,] 66.6 46.2 52.4 37.0 73.0 39.0 80.4 28.8 28.8  36.0  59.6  57.8  40.8
+##  [3,] 30.4 60.8 72.8 37.2 40.2 47.6 49.6 61.6 37.8  62.6  46.2  33.4  66.2
+##  [4,] 66.2 57.6 29.8 29.6 49.2 60.6 53.2 53.0 59.0  23.0  45.2  40.0  49.8
+##  [5,] 54.0 39.6 50.2 61.2 19.8 40.2 52.6 46.0 50.6  42.6  55.4  58.4  37.0
+##  [6,] 42.4 42.6 53.6 54.4 51.4 40.0 45.0 41.0 50.2  60.2  48.8  66.8  69.6
+##  [7,] 52.4 20.2 44.2 54.8 46.4 34.0 60.4 40.6 45.6  66.4  30.8  43.8  56.4
+##  [8,] 37.6 69.8 50.2 81.6 62.0 46.6 28.4 45.8 67.0  53.4  58.8  70.0  59.8
+##  [9,] 56.8 67.4 57.6 53.0 53.6 34.0 70.4 61.0 64.8  76.6  62.8  38.6  78.2
+## [10,] 23.8 68.2 56.6 47.6 52.2 56.8 35.4 25.6 70.2  53.4  32.8  45.4  50.6
 ##       [,14] [,15] [,16] [,17] [,18] [,19] [,20]
-##  [1,]  51.8  42.0  47.4  44.4  38.0  51.2  44.0
-##  [2,]  59.2  64.4  54.0  32.0  48.0  55.4  58.4
-##  [3,]  58.8  40.2  42.8  42.0  49.0  57.0  47.6
-##  [4,]  50.6  58.6  34.6  26.4  37.8  55.6  60.0
-##  [5,]  47.4  67.0  49.4  61.0  46.2  57.6  41.2
-##  [6,]  61.0  49.0  56.4  63.0  71.4  45.0  44.0
-##  [7,]  63.4  25.2  34.2  58.0  27.2  66.4  46.0
-##  [8,]  55.0  58.8  61.4  43.2  47.2  59.8  58.6
-##  [9,]  36.6  51.4  46.6  64.6  27.6  51.4  44.2
-## [10,]  82.2  40.4  57.4  62.4  65.6  54.4  43.2
+##  [1,]  34.6  51.6  46.4  39.8  45.0  64.0  42.8
+##  [2,]  65.6  45.4  53.6  36.0  41.6  54.6  76.2
+##  [3,]  63.6  39.8  48.2  42.0  47.4  56.4  58.6
+##  [4,]  40.6  52.2  68.4  34.6  61.6  35.8  52.6
+##  [5,]  62.4  38.0  59.8  48.8  47.6  46.8  42.4
+##  [6,]  30.6  41.0  48.2  37.0  51.8  40.8  54.2
+##  [7,]  56.6  42.6  37.4  46.6  76.0  50.0  61.4
+##  [8,]  63.8  55.0  68.6  59.4  57.8  25.8  50.8
+##  [9,]  60.4  52.2  37.4  51.6  46.8  56.8  64.2
+## [10,]  30.4  30.6  70.4  36.8  22.6  56.0  47.4
 \end{verbatim}
 
 \hypertarget{l17sapply}{%
@@ -9034,19 +9027,19 @@ Como se indica en la documentación, \texttt{lapply()} devuelve una lista de la 
 
 \begin{verbatim}
 ## $a
-##  [1] 45  8 95 20 39 52 61 27 72 44
+##  [1]  4 35 61 98 43 63 94 39 92 70
 ## 
 ## $b
-##  [1] 62 35 54 97 66 53  7 50 95 20
+##  [1] 83 69 95 20 55 52 17 96 29 34
 ## 
 ## $c
-##  [1] 21  2 98 22 41  4 16 40 87 80
+##  [1] 52 41 59 15 55 17 66 44 50 43
 ## 
 ## $d
-##  [1] 45 32 96 27  4 21 43 65 62  2
+##  [1] 67 89 88 94 72  3  4 99  2 37
 ## 
 ## $e
-##  [1] 57 22 29 25 78 99 77 64 84 83
+##  [1] 30 51 62 56 44 59 67 10 98 35
 \end{verbatim}
 
 \begin{Shaded}
@@ -9057,19 +9050,19 @@ Como se indica en la documentación, \texttt{lapply()} devuelve una lista de la 
 
 \begin{verbatim}
 ## $a
-## [1] 46.3
+## [1] 59.9
 ## 
 ## $b
-## [1] 53.9
+## [1] 55
 ## 
 ## $c
-## [1] 41.1
+## [1] 44.2
 ## 
 ## $d
-## [1] 39.7
+## [1] 55.5
 ## 
 ## $e
-## [1] 61.8
+## [1] 51.2
 \end{verbatim}
 
 Al igual que con la función \texttt{apply()}, podemos pasar argumentos adicionales a la función \texttt{lapply()} agregándolos después de la función. Esto es útil, por ejemplo, si nuestra \texttt{list} contiene estos valores faltantes \texttt{NA} y queremos ignorarlos para calcular los promedios (con el argumento \texttt{na.rm\ =\ TRUE}).
@@ -9089,19 +9082,19 @@ Al igual que con la función \texttt{apply()}, podemos pasar argumentos adiciona
 
 \begin{verbatim}
 ## $a
-##  [1]  3  2  5  2 NA  3  4  3 NA  3
+##  [1]  3  5  4  1  5 NA  3  2  3  2
 ## 
 ## $b
-##  [1] 2 3 4 2 1 2 4 2 3 5
+##  [1] 3 4 5 4 5 2 5 4 2 4
 ## 
 ## $c
-##  [1]  3 NA  1  1  5  4  5  3  3  1
+##  [1] NA  1 NA  5  4  4  4 NA  4  4
 ## 
 ## $d
-##  [1] 3 3 4 4 1 4 2 2 3 2
+##  [1]  3  2  4 NA  5  1  5  1  3 NA
 ## 
 ## $e
-##  [1]  3  5  5 NA  1  5  4  5  3 NA
+##  [1]  3  3  3  1  2  2  2  1 NA  3
 \end{verbatim}
 
 \begin{Shaded}
@@ -9115,13 +9108,13 @@ Al igual que con la función \texttt{apply()}, podemos pasar argumentos adiciona
 ## [1] NA
 ## 
 ## $b
-## [1] 2.8
+## [1] 3.8
 ## 
 ## $c
 ## [1] NA
 ## 
 ## $d
-## [1] 2.8
+## [1] NA
 ## 
 ## $e
 ## [1] NA
@@ -9135,19 +9128,19 @@ Al igual que con la función \texttt{apply()}, podemos pasar argumentos adiciona
 
 \begin{verbatim}
 ## $a
-## [1] 3.125
+## [1] 3.111111
 ## 
 ## $b
-## [1] 2.8
+## [1] 3.8
 ## 
 ## $c
-## [1] 2.888889
+## [1] 3.714286
 ## 
 ## $d
-## [1] 2.8
+## [1] 3
 ## 
 ## $e
-## [1] 3.875
+## [1] 2.222222
 \end{verbatim}
 
 Para mayor legibilidad o si se debemos realizar varias operaciones dentro del argumento \texttt{FUN}, podemos usar el siguiente script:
@@ -9162,19 +9155,19 @@ Para mayor legibilidad o si se debemos realizar varias operaciones dentro del ar
 
 \begin{verbatim}
 ## $a
-## [1] 3.125
+## [1] 3.111111
 ## 
 ## $b
-## [1] 2.8
+## [1] 3.8
 ## 
 ## $c
-## [1] 2.888889
+## [1] 3.714286
 ## 
 ## $d
-## [1] 2.8
+## [1] 3
 ## 
 ## $e
-## [1] 3.875
+## [1] 2.222222
 \end{verbatim}
 
 Por ejemplo, si queremos obtener \texttt{i\^{}2} si el promedio es mayor que 3, y \texttt{i\^{}3} de lo contrario:
@@ -9194,19 +9187,19 @@ Por ejemplo, si queremos obtener \texttt{i\^{}2} si el promedio es mayor que 3, 
 
 \begin{verbatim}
 ## $a
-##  [1]  9  4 25  4 NA  9 16  9 NA  9
+##  [1]  9 25 16  1 25 NA  9  4  9  4
 ## 
 ## $b
-##  [1]   8  27  64   8   1   8  64   8  27 125
+##  [1]  9 16 25 16 25  4 25 16  4 16
 ## 
 ## $c
-##  [1]  27  NA   1   1 125  64 125  27  27   1
+##  [1] NA  1 NA 25 16 16 16 NA 16 16
 ## 
 ## $d
-##  [1] 27 27 64 64  1 64  8  8 27  8
+##  [1]  27   8  64  NA 125   1 125   1  27  NA
 ## 
 ## $e
-##  [1]  9 25 25 NA  1 25 16 25  9 NA
+##  [1] 27 27 27  1  8  8  8  1 NA 27
 \end{verbatim}
 
 \hypertarget{l17lapply}{%
@@ -9224,19 +9217,19 @@ La función \texttt{sapply()} es una versión modificada de la función \texttt{
 
 \begin{verbatim}
 ## $a
-## [1] 3.125
+## [1] 3.111111
 ## 
 ## $b
-## [1] 2.8
+## [1] 3.8
 ## 
 ## $c
-## [1] 2.888889
+## [1] 3.714286
 ## 
 ## $d
-## [1] 2.8
+## [1] 3
 ## 
 ## $e
-## [1] 3.875
+## [1] 2.222222
 \end{verbatim}
 
 \begin{Shaded}
@@ -9249,7 +9242,7 @@ La función \texttt{sapply()} es una versión modificada de la función \texttt{
 
 \begin{verbatim}
 ##        a        b        c        d        e 
-## 3.125000 2.800000 2.888889 2.800000 3.875000
+## 3.111111 3.800000 3.714286 3.000000 2.222222
 \end{verbatim}
 
 La función \texttt{sapply()} es interesante para recuperar, por ejemplo, el elemento ``n'' de cada elemento de una \texttt{list}. La función que se llama para hacer esto es \texttt{\textquotesingle{}{[}{[}\textquotesingle{}}.
@@ -9261,8 +9254,8 @@ La función \texttt{sapply()} es interesante para recuperar, por ejemplo, el ele
 \end{Shaded}
 
 \begin{verbatim}
-##  a  b  c  d  e 
-##  2  3 NA  3  5
+## a b c d e 
+## 5 4 1 2 3
 \end{verbatim}
 
 \hypertarget{l17tapply}{%
@@ -9283,16 +9276,16 @@ La función \texttt{tapply()} permite aplicar una función tomando como elemento
 
 \begin{verbatim}
 ##    species     perf1     perf2    perf3
-## 1        J 10.063293 39241.157 10.46635
-## 2        E  9.775636 19520.933 22.94408
-## 3        B 10.426207  9036.755 16.55586
-## 4        A  9.421323  8078.149 18.77847
-## 5        E 10.396562 15718.033 18.96720
-## 6        I  9.678050 38958.231 23.47009
-## 7        C 10.954156 46806.215 12.32157
-## 8        B 10.182968 63639.968 15.24049
-## 9        J 10.095675 28100.705 14.73962
-## 10       C  9.469241  5756.993 16.21883
+## 1        C  9.465711  9557.186 20.59318
+## 2        B 10.173325 32697.401 16.15745
+## 3        H  9.678765 32095.626 20.23407
+## 4        J  9.299957 79957.092 20.79950
+## 5        B 10.121323 29958.874 17.84391
+## 6        F  9.946976 18537.890 11.62043
+## 7        A  9.829032 11595.807 19.47898
+## 8        H  9.818917 15614.000 14.15474
+## 9        A  9.982095 22595.216 28.52242
+## 10       F 10.083935  9898.786 12.28431
 \end{verbatim}
 
 Podemos obtener fácilmente un resumen de las mediciones para cada especie con la función \texttt{tapply()} y la función \texttt{summary()}.
@@ -9306,43 +9299,43 @@ Podemos obtener fácilmente un resumen de las mediciones para cada especie con l
 \begin{verbatim}
 ## $A
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.900   9.627  10.019  10.025  10.427  10.955 
+##   8.640   9.569   9.955   9.882  10.259  11.293 
 ## 
 ## $B
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.983   9.707   9.969  10.007  10.299  11.578 
+##   8.474   9.608   9.897   9.898  10.180  11.052 
 ## 
 ## $C
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.641   9.502   9.931   9.906  10.234  11.203 
+##   8.759   9.785  10.050  10.020  10.220  11.020 
 ## 
 ## $D
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.848   9.752   9.998  10.046  10.389  11.074 
+##   8.634   9.556  10.004   9.984  10.443  11.090 
 ## 
 ## $E
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.872   9.676  10.040  10.040  10.359  11.091 
+##   8.564   9.686   9.996   9.953  10.347  11.071 
 ## 
 ## $F
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.857   9.704   9.933   9.984  10.294  11.236 
+##   9.025   9.597   9.972  10.008  10.404  10.915 
 ## 
 ## $G
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.646   9.578   9.976   9.988  10.351  11.345 
+##   8.946   9.749  10.041  10.075  10.393  11.373 
 ## 
 ## $H
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.581   9.624   9.956   9.962  10.308  11.342 
+##   8.953   9.671   9.926   9.986  10.311  11.161 
 ## 
 ## $I
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.831   9.595   9.857   9.890  10.198  11.417 
+##   8.650   9.743  10.048  10.059  10.521  11.510 
 ## 
 ## $J
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.719   9.773  10.005  10.016  10.257  11.120
+##   8.615   9.689  10.070   9.999  10.374  10.981
 \end{verbatim}
 
 También podemos obtener el valor promedio de cada mediciones combinando una función \texttt{sapply()} con la función \texttt{tapply()} y usando la función \texttt{mean()}.
@@ -9357,16 +9350,16 @@ También podemos obtener el valor promedio de cada mediciones combinando una fun
 
 \begin{verbatim}
 ##        [,1]     [,2]     [,3]
-## A 10.024843 24686.91 19.11268
-## B 10.007120 24975.49 20.41302
-## C  9.905643 26558.30 20.25345
-## D 10.045883 23183.14 20.19549
-## E 10.040126 27407.49 20.54505
-## F  9.984403 26471.28 20.88533
-## G  9.987620 24380.23 20.45530
-## H  9.962417 24976.25 19.82224
-## I  9.889595 24914.28 18.35470
-## J 10.015668 25246.07 20.52805
+## A  9.882429 25152.17 19.79861
+## B  9.898078 24391.82 19.00927
+## C 10.020033 24635.47 19.97719
+## D  9.983717 22739.51 18.45493
+## E  9.953028 24395.31 20.16085
+## F 10.008370 26247.00 21.14164
+## G 10.075446 24343.86 19.34270
+## H  9.986065 26167.18 19.69502
+## I 10.059065 25818.91 20.15104
+## J  9.998833 27961.94 20.13280
 \end{verbatim}
 
 \hypertarget{l17mapply}{%
@@ -10202,10 +10195,49 @@ Primero, cargaremos los paquetes \texttt{raster},\texttt{rgdal} y \texttt{jpeg} 
 \NormalTok{  \}}
 \NormalTok{\}}
 \KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"raster"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : raster
+\end{verbatim}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : sp
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"rgdal"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : rgdal
+\end{verbatim}
+
+\begin{verbatim}
+## rgdal: version: 1.5-19, (SVN revision 1092)
+## Geospatial Data Abstraction Library extensions to R successfully loaded
+## Loaded GDAL runtime: GDAL 3.0.4, released 2020/01/28
+## Path to GDAL shared files: C:/Users/nous/Documents/R/win-library/4.0/rgdal/gdal
+## GDAL binary built with GEOS: TRUE 
+## Loaded PROJ runtime: Rel. 6.3.1, February 10th, 2020, [PJ_VERSION: 631]
+## Path to PROJ shared files: C:/Users/nous/Documents/R/win-library/4.0/rgdal/proj
+## Linking to sp version:1.4-5
+## To mute warnings of possible GDAL/OSR exportToProj4() degradation,
+## use options("rgdal_show_exportToProj4_warnings"="none") before loading rgdal.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"jpeg"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : jpeg
+\end{verbatim}
 
 Luego usaremos la función \texttt{kmeans()} para realizar grupos de colores usando los valores RGB de cada punto en nuestra imagen. Aquí tenemos dos métodos posibles, el primero usa la función \texttt{kmeans()} para los tres valores RGB, y el segundo usa la función \texttt{kmeans()} para cada valor RGB individualmente (esta segunda función proporciona una paleta que puede ser bastante alejado de los colores de la imagen original).
 
@@ -10337,6 +10369,15 @@ El paquete \texttt{RColorBrewer} es un paquete de referencia porque contiene pal
 \NormalTok{    \}}
 \NormalTok{\}}
 \KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"RColorBrewer"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : RColorBrewer
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{display.brewer.all}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
@@ -10368,6 +10409,15 @@ El paquete \texttt{palettesForR} es otro paquete que contiene paletas listas par
 \NormalTok{    \}}
 \NormalTok{\}}
 \KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"palettesForR"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : palettesForR
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{showPalette}\NormalTok{(Echo_gpl)}
 \end{Highlighting}
 \end{Shaded}
@@ -10433,6 +10483,15 @@ Para volver a \texttt{ggplot2}, empezamos con un ejemplo con los datos \texttt{i
 \NormalTok{    \}}
 \NormalTok{\}}
 \KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : ggplot2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{data}\NormalTok{(iris)}
 \CommentTok{# ggplot2}
 \NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ iris, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Sepal.Length, }\DataTypeTok{y =}\NormalTok{ Sepal.Width))}
@@ -11076,7 +11135,29 @@ También podemos representar las temperaturas diarias con gráficos ``ridgeline'
 \NormalTok{\}}
 \KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
 \KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"ggridges"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : ggridges
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{pkgCheck}\NormalTok{(}\StringTok{"viridis"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : viridis
+\end{verbatim}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : viridisLite
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{meanTemps <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(}\KeywordTok{lapply}\NormalTok{(tempDayEachMonth, }\StringTok{"[["}\NormalTok{, }\DecValTok{2}\NormalTok{))}
 \NormalTok{labelMonth <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(meses, }\DataTypeTok{each =} \DecValTok{48}\NormalTok{)}
 \NormalTok{dfTemps <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{month =}\NormalTok{ labelMonth, }\DataTypeTok{value =}\NormalTok{ meanTemps, }

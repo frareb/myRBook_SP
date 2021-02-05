@@ -1,5 +1,5 @@
 ---
-title: "Aprender R: iniciación y perfeccionamiento"
+title: "R para los científicos"
 author: "François Rebaudo"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -17,24 +17,8 @@ cover-image: "myFigures/cover.png"
 
 ## Agradecimientos {#remerciements}
 
-Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones (en orden alfabético):
-
-```{r index-1, echo = FALSE}
-contrib <- unname(t(data.frame(
-  c("Baptiste", "Régnier", "France"), 
-  c("Camila", "Benavides Frias", "Bolivia"), 
-  c("Estefania", "Quenta Herrera",  "Bolivia"), 
-  c("Susi", "Loza Herrera", "Bolivia"),
-  c("Marc", "Girondot", "France ; UMR 8079 ESE")
-)))
-contrib <- contrib[order(contrib[, 2]),]
-msg <- "Colaboradores :\r"
-for(i in seq_along(contrib[, 2])){
-  msg <- c(msg, paste0(contrib[i, 1], " ",contrib[i, 2], " (", contrib[i, 3],")\r"))
-}
-for(i in msg){cat(i, sep = "")}
-```
+Agradezco a todos los colaboradores que ayudaron a mejorar este libro con sus consejos, sugerencias de cambios y correcciones (en orden alfabético): Camila BF, Marc G, Susi LH, y Estefania QH.
 
 Las versiones de gitbook, html y epub de este libro usan los iconos de fuente abierta de Font Awesome (https://fontawesome.com). La versión en PDF utiliza los iconos del proyecto Tango disponibles en openclipart (https://openclipart.org/). Este libro fue escrito con el paquete R bookdown (https://bookdown.org/). El código fuente está disponible en GitHub (https://github.com/frareb/myRBook_SP). La versión en línea se aloja y actualiza a través de Netlify (http://netlify.com/).
 
-Este libro también está disponible en francés (http://myrbookfr.netlify.com/). Más allá de este libro, puede acceder a las diapositivas del [último curso de R realizado en marzo de 2019 en Quito, Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html).
+Este libro también está disponible en francés en versión imprimida (http://myrbookfr.netlify.app/). Más allá de este libro, puede acceder a las diapositivas del [último curso de R realizado en marzo de 2019 en Quito, Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html).

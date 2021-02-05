@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title> 5 Tipos de datos | Aprender R: iniciación y perfeccionamiento</title>
+  <title> 5 Tipos de datos | R para los científicos</title>
   <meta name="description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content=" 5 Tipos de datos | Aprender R: iniciación y perfeccionamiento" />
+  <meta property="og:title" content=" 5 Tipos de datos | R para los científicos" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="myFigures/cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="frareb/myRBook_SP" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" 5 Tipos de datos | Aprender R: iniciación y perfeccionamiento" />
+  <meta name="twitter:title" content=" 5 Tipos de datos | R para los científicos" />
   
   <meta name="twitter:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
   <meta name="twitter:image" content="myFigures/cover.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="François Rebaudo" />
 
 
-<meta name="date" content="2020-05-31" />
+<meta name="date" content="2021-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="IDE.html"/>
 <link rel="next" href="dataType2.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,13 +50,14 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124666641-1"></script>
 <script>
@@ -69,9 +70,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -80,14 +81,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -96,9 +99,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -332,7 +335,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aprender R: iniciación y perfeccionamiento</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R para los científicos</a>
           </h1>
         </div>
 
@@ -347,161 +350,161 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.1</span> El tipo <code>numeric</code></h2>
 <p>El tipo <code>numeric</code> es lo que hemos hecho hasta ahora, almacenando números. Hay dos tipos principales de números en R: enteros (<em>integer</em>) y números decimales (<em>double</em>). Por defecto, R considera todos los números como números decimales y asigna el tipo <code>double</code>.
 Para verificar el tipo de datos utilizaremos la <em>función</em> <code>typeof()</code> que toma como <em>argumento</em> un objeto (o directamente la información que queremos probar). También podemos usar la función <code>is.double()</code> que devolverá <code>TRUE</code> si el número está en formato <code>double</code> y <code>FALSE</code> en caso contrario. La función genérica <code>is.numeric()</code> devolverá <code>TRUE</code> si el objeto está en formato <code>numeric</code> y <code>FALSE</code> en caso contrario.</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" title="1">nbrRep &lt;-<span class="st"> </span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb118-2" title="2"><span class="kw">typeof</span>(nbrRep)</a></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="dataType1.html#cb117-1"></a>nbrRep &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb117-2"><a href="dataType1.html#cb117-2"></a><span class="kw">typeof</span>(nbrRep)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" title="1"><span class="kw">typeof</span>(<span class="fl">5.32</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="dataType1.html#cb119-1"></a><span class="kw">typeof</span>(<span class="fl">5.32</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" title="1"><span class="kw">is.numeric</span>(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="dataType1.html#cb121-1"></a><span class="kw">is.numeric</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" title="1"><span class="kw">is.double</span>(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="dataType1.html#cb123-1"></a><span class="kw">is.double</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Si queremos decirle a R que vamos a trabajar con un entero, entonces necesitamos convertir nuestro número decimal en un entero con la función <code>as.integer()</code>. También podemos usar la función <code>is.integer()</code> que devolverá <code>TRUE</code> si el número está en formato <code>integer</code> y <code>FALSE</code> en caso contrario.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" title="1">nbrRep &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb126-2" title="2"><span class="kw">typeof</span>(nbrRep)</a></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="dataType1.html#cb125-1"></a>nbrRep &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>)</span>
+<span id="cb125-2"><a href="dataType1.html#cb125-2"></a><span class="kw">typeof</span>(nbrRep)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" title="1"><span class="kw">typeof</span>(<span class="fl">5.32</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="dataType1.html#cb127-1"></a><span class="kw">typeof</span>(<span class="fl">5.32</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" title="1"><span class="kw">typeof</span>(<span class="kw">as.integer</span>(<span class="fl">5.32</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="dataType1.html#cb129-1"></a><span class="kw">typeof</span>(<span class="kw">as.integer</span>(<span class="fl">5.32</span>))</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" title="1"><span class="kw">as.integer</span>(<span class="fl">5.32</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="dataType1.html#cb131-1"></a><span class="kw">as.integer</span>(<span class="fl">5.32</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" title="1"><span class="kw">as.integer</span>(<span class="fl">5.99</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="dataType1.html#cb133-1"></a><span class="kw">as.integer</span>(<span class="fl">5.99</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1"><span class="kw">is.numeric</span>(nbrRep)</a></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="dataType1.html#cb135-1"></a><span class="kw">is.numeric</span>(nbrRep)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Vemos aquí que convertir un número como <code>5.99</code> a <code>integer</code> solo devolverá la parte entera, <code>5</code>.</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" title="1"><span class="kw">is.integer</span>(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="dataType1.html#cb137-1"></a><span class="kw">is.integer</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" title="1"><span class="kw">is.numeric</span>(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="dataType1.html#cb139-1"></a><span class="kw">is.numeric</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1"><span class="kw">is.integer</span>(<span class="kw">as.integer</span>(<span class="dv">5</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="dataType1.html#cb141-1"></a><span class="kw">is.integer</span>(<span class="kw">as.integer</span>(<span class="dv">5</span>))</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1"><span class="kw">is.numeric</span>(<span class="kw">as.integer</span>(<span class="dv">5</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="dataType1.html#cb143-1"></a><span class="kw">is.numeric</span>(<span class="kw">as.integer</span>(<span class="dv">5</span>))</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>La suma de un número entero <code>integer</code> y un número decimal <code>double</code> devuelve un número decimal.</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1">sumIntDou &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="fl">5.2</span></a>
-<a class="sourceLine" id="cb146-2" title="2"><span class="kw">typeof</span>(sumIntDou)</a></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="dataType1.html#cb145-1"></a>sumIntDou &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="fl">5.2</span></span>
+<span id="cb145-2"><a href="dataType1.html#cb145-2"></a><span class="kw">typeof</span>(sumIntDou)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" title="1">sumIntInt &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb148-2" title="2"><span class="kw">typeof</span>(sumIntInt)</a></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="dataType1.html#cb147-1"></a>sumIntInt &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">as.integer</span>(<span class="dv">5</span>)</span>
+<span id="cb147-2"><a href="dataType1.html#cb147-2"></a><span class="kw">typeof</span>(sumIntInt)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
 <p>Para resumir, el tipo <code>numeric</code> contiene dos subtipos, los tipos <code>integer</code> para enteros y el tipo <code>double</code> para los números decimales. Por defecto, R asigna el tipo <code>double</code> a los números.</p>
 <p>Tenga cuidado, hay una trampa para usar la función <code>is.integer()</code>. No nos dice si el número es un número entero, pero si es de tipo <code>integer</code>. De hecho, uno puede almacenar un entero en una variable de tipo <code>double</code>.</p>
 <p>Los números almacenados en una variable de tipo <code>integer</code> son codificados en 32 bits y, por lo tanto, pueden tomar valores entre 0 y 2^32-1 = 4294967295. Hay otra forma de decirle a R que un número es un número entero, usando el sufijo <code>L</code>. Por ejemplo, <code>5L</code> es lo mismo que <code>as.integer(5)</code>. El origen del sufijo <code>L</code>, que se remonta a una época en que las computadoras usaban palabras de 16 bits y 32 bits, era un tipo <code>Long</code>. ¡Ahora las computadoras usan palabras de 64 bits y 32 bits es bastante corto!</p>
 <p>No podemos dejar esta sección sin mencionar las funciones <a href="fonctions.html#l015round"><code>round()</code></a> <a href="fonctions.html#l015round"><code>ceiling()</code></a> <a href="fonctions.html#l015round"><code>trunc()</code></a> o <a href="fonctions.html#l015round"><code>floor()</code></a> que devuelven la parte entera de un número, pero déjelo en el tipo <code>double</code>. Para obtener más información, podemos usar la <a href="#l015ayuda">ayuda de R</a> con <code>?round</code>.</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" title="1">roundDou &lt;-<span class="st"> </span><span class="kw">round</span> (<span class="fl">5.2</span>)</a>
-<a class="sourceLine" id="cb150-2" title="2"><span class="kw">typeof</span> (roundDou)</a></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="dataType1.html#cb149-1"></a>roundDou &lt;-<span class="st"> </span><span class="kw">round</span> (<span class="fl">5.2</span>)</span>
+<span id="cb149-2"><a href="dataType1.html#cb149-2"></a><span class="kw">typeof</span> (roundDou)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 </div>
 <div id="el-tipo-character" class="section level2">
 <h2><span class="header-section-number">5.2</span> El tipo <code>character</code></h2>
 <p>El tipo <code>character</code> es texto. De hecho, R permite trabajar con texto. Para especificar a R que la información contenida en un objeto está en formato de texto (o generalmente para todos los textos), usamos las comillas dobles (<code>"</code>) o las comillas simples (<code>'</code>).</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" title="1">myText &lt;-<span class="st"> &quot;azerty&quot;</span></a>
-<a class="sourceLine" id="cb152-2" title="2">myText2 &lt;-<span class="st"> &#39;azerty&#39;</span></a>
-<a class="sourceLine" id="cb152-3" title="3">myText3 &lt;-<span class="st"> &#39;azerty uiop qsdfg hjklm&#39;</span></a>
-<a class="sourceLine" id="cb152-4" title="4"><span class="kw">typeof</span>(myText3)</a></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="dataType1.html#cb151-1"></a>myText &lt;-<span class="st"> &quot;azerty&quot;</span></span>
+<span id="cb151-2"><a href="dataType1.html#cb151-2"></a>myText2 &lt;-<span class="st"> &#39;azerty&#39;</span></span>
+<span id="cb151-3"><a href="dataType1.html#cb151-3"></a>myText3 &lt;-<span class="st"> &#39;azerty uiop qsdfg hjklm&#39;</span></span>
+<span id="cb151-4"><a href="dataType1.html#cb151-4"></a><span class="kw">typeof</span>(myText3)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>Tanto las comillas dobles y simples son útiles en nuestro texto. También podemos <em>escapar</em> un carácter especial como comillas gracias al signo de barra invertida <code>\</code>.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" title="1">myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span></a>
-<a class="sourceLine" id="cb154-2" title="2"><span class="kw">print</span>(myText)</a></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="dataType1.html#cb153-1"></a>myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span></span>
+<span id="cb153-2"><a href="dataType1.html#cb153-2"></a><span class="kw">print</span>(myText)</span></code></pre></div>
 <pre><code>## [1] &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</code></pre>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" title="1">myText2 &lt;-<span class="st"> &#39;a &quot;zert&quot; y&#39;</span></a>
-<a class="sourceLine" id="cb156-2" title="2"><span class="kw">print</span>(myText2)</a></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="dataType1.html#cb155-1"></a>myText2 &lt;-<span class="st"> &#39;a &quot;zert&quot; y&#39;</span></span>
+<span id="cb155-2"><a href="dataType1.html#cb155-2"></a><span class="kw">print</span>(myText2)</span></code></pre></div>
 <pre><code>## [1] &quot;a \&quot;zert\&quot; y&quot;</code></pre>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" title="1">myText3 &lt;-<span class="st"> &#39;azerty uiop qsdfg hjklm&#39;</span></a>
-<a class="sourceLine" id="cb158-2" title="2"><span class="kw">print</span>(myText3)</a></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="dataType1.html#cb157-1"></a>myText3 &lt;-<span class="st"> &#39;azerty uiop qsdfg hjklm&#39;</span></span>
+<span id="cb157-2"><a href="dataType1.html#cb157-2"></a><span class="kw">print</span>(myText3)</span></code></pre></div>
 <pre><code>## [1] &quot;azerty uiop qsdfg hjklm&quot;</code></pre>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" title="1">myText4 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\&quot;</span><span class="st"> azerty &quot;</span></a>
-<a class="sourceLine" id="cb160-2" title="2"><span class="kw">print</span>(myText4)</a></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="dataType1.html#cb159-1"></a>myText4 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\&quot;</span><span class="st"> azerty &quot;</span></span>
+<span id="cb159-2"><a href="dataType1.html#cb159-2"></a><span class="kw">print</span>(myText4)</span></code></pre></div>
 <pre><code>## [1] &quot;qwerty \&quot; azerty &quot;</code></pre>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" title="1">myText5 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\\</span><span class="st"> azerty &quot;</span></a>
-<a class="sourceLine" id="cb162-2" title="2"><span class="kw">print</span>(myText5)</a></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="dataType1.html#cb161-1"></a>myText5 &lt;-<span class="st"> &quot;qwerty </span><span class="ch">\\</span><span class="st"> azerty &quot;</span></span>
+<span id="cb161-2"><a href="dataType1.html#cb161-2"></a><span class="kw">print</span>(myText5)</span></code></pre></div>
 <pre><code>## [1] &quot;qwerty \\ azerty &quot;</code></pre>
 <p>De forma predeterminada, cuando creamos un objeto, su contenido no es devuelto por la consola. En Internet o en muchos libros podemos encontrar el nombre del objeto en una línea para devolver sus contenidos:</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" title="1">myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span></a>
-<a class="sourceLine" id="cb164-2" title="2">myText</a></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="dataType1.html#cb163-1"></a>myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span></span>
+<span id="cb163-2"><a href="dataType1.html#cb163-2"></a>myText</span></code></pre></div>
 <pre><code>## [1] &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</code></pre>
 <p>En este libro, no lo usaremos de esta manera y preferiremos el uso de la función <code>print()</code>, que permite mostrar en la consola el contenido de un objeto. El resultado es el mismo, pero el código es más fácil de leer y más explícito sobre lo que hace.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" title="1">myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span></a>
-<a class="sourceLine" id="cb166-2" title="2"><span class="kw">print</span>(myText)</a></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="dataType1.html#cb165-1"></a>myText &lt;-<span class="st"> &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</span></span>
+<span id="cb165-2"><a href="dataType1.html#cb165-2"></a><span class="kw">print</span>(myText)</span></code></pre></div>
 <pre><code>## [1] &quot;a &#39;ze&#39; &#39;rt&#39; y&quot;</code></pre>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" title="1">nbrRep &lt;-<span class="st"> </span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb168-2" title="2"><span class="kw">print</span>(nbrRep)</a></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="dataType1.html#cb167-1"></a>nbrRep &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb167-2"><a href="dataType1.html#cb167-2"></a><span class="kw">print</span>(nbrRep)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <p>También podemos poner números en formato de texto, pero no debemos olvidar poner comillas para especificar el tipo <code>character</code> o usar la función<code>as.character()</code>. Una operación entre un texto y un número devuelve un error. Por ejemplo, si agregamos <code>10</code> a <code>5</code>, R nos dice que un <strong>argumento</strong> de la <strong>función</strong> <code>+</code> no es un tipo <code>numeric</code> y que, por lo tanto, la operación no es posible. Tampoco podemos agregar texto a texto, pero veremos más adelante cómo <em>concatenar</em> dos cadenas de texto.</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" title="1">myText &lt;-<span class="st"> &quot;qwerty&quot;</span></a>
-<a class="sourceLine" id="cb170-2" title="2"><span class="kw">typeof</span>(myText)</a></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="dataType1.html#cb169-1"></a>myText &lt;-<span class="st"> &quot;qwerty&quot;</span></span>
+<span id="cb169-2"><a href="dataType1.html#cb169-2"></a><span class="kw">typeof</span>(myText)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" title="1">myText2 &lt;-<span class="st"> </span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb172-2" title="2"><span class="kw">typeof</span>(myText2)</a></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="dataType1.html#cb171-1"></a>myText2 &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb171-2"><a href="dataType1.html#cb171-2"></a><span class="kw">typeof</span>(myText2)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" title="1">myText3 &lt;-<span class="st"> &quot;5&quot;</span></a>
-<a class="sourceLine" id="cb174-2" title="2"><span class="kw">typeof</span>(myText3)</a></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="dataType1.html#cb173-1"></a>myText3 &lt;-<span class="st"> &quot;5&quot;</span></span>
+<span id="cb173-2"><a href="dataType1.html#cb173-2"></a><span class="kw">typeof</span>(myText3)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" title="1">myText2 <span class="op">+</span><span class="st"> </span><span class="dv">10</span></a></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="dataType1.html#cb175-1"></a>myText2 <span class="op">+</span><span class="st"> </span><span class="dv">10</span></span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" title="1"><span class="kw">as.character</span>(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="dataType1.html#cb177-1"></a><span class="kw">as.character</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;5&quot;</code></pre>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" title="1"><span class="co"># myText3 + 10 # Error in myText3 + 10 : non-numeric argument to binary operator</span></a>
-<a class="sourceLine" id="cb180-2" title="2"><span class="co"># &quot;a&quot; + &quot;b&quot; # Error in &quot;a&quot; + &quot;b&quot; : non-numeric argument to binary operator</span></a></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="dataType1.html#cb179-1"></a><span class="co"># myText3 + 10 # Error in myText3 + 10 : non-numeric argument to binary operator</span></span>
+<span id="cb179-2"><a href="dataType1.html#cb179-2"></a><span class="co"># &quot;a&quot; + &quot;b&quot; # Error in &quot;a&quot; + &quot;b&quot; : non-numeric argument to binary operator</span></span></code></pre></div>
 <p>Para resumir, el tipo <code>character</code> permite el ingreso de texto, podemos reconocerlo con comillas simples o dobles.</p>
 </div>
 <div id="el-tipo-factor" class="section level2">
 <h2><span class="header-section-number">5.3</span> El tipo <code>factor</code></h2>
 <p>El tipo <code>factor</code> corresponde a los factores. Los factores son una elección dentro de una lista finita de posibilidades. Por ejemplo, los países son factores porque existe una lista finita de países en el mundo en un momento dado. Un factor puede definirse con la función <code>factor()</code> o transformarse utilizando la función <code>as.factor()</code>. Al igual que con otros tipos de datos, podemos usar la función <code>is.factor()</code> para verificar el tipo de datos. Para obtener una lista de todas las posibilidades, existe la función <code>levels()</code> (esta función tendrá más sentido cuando nos acerquemos a los tipos de contenedores de información).</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" title="1">factor01 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="st">&quot;aaa&quot;</span>)</a>
-<a class="sourceLine" id="cb181-2" title="2"><span class="kw">print</span>(factor01)</a></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="dataType1.html#cb180-1"></a>factor01 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="st">&quot;aaa&quot;</span>)</span>
+<span id="cb180-2"><a href="dataType1.html#cb180-2"></a><span class="kw">print</span>(factor01)</span></code></pre></div>
 <pre><code>## [1] aaa
 ## Levels: aaa</code></pre>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" title="1"><span class="kw">typeof</span>(factor01)</a></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="dataType1.html#cb182-1"></a><span class="kw">typeof</span>(factor01)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" title="1"><span class="kw">is.factor</span>(factor01)</a></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="dataType1.html#cb184-1"></a><span class="kw">is.factor</span>(factor01)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb187-1" title="1"><span class="kw">levels</span>(factor01)</a></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="dataType1.html#cb186-1"></a><span class="kw">levels</span>(factor01)</span></code></pre></div>
 <pre><code>## [1] &quot;aaa&quot;</code></pre>
 <p>Un factor se puede transformar en texto con la función <code>as.character()</code> pero también en número con <code>as.numeric()</code>. Al cambiar al tipo <code>numeric</code>, cada factor toma el valor de su posición en la lista de posibilidades. En nuestro caso, solo hay una posibilidad, por lo que la función <code>as.numeric()</code> devolverá <code>1</code>:</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb189-1" title="1">factor01 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="st">&quot;aaa&quot;</span>)</a>
-<a class="sourceLine" id="cb189-2" title="2"><span class="kw">as.character</span>(factor01)</a></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="dataType1.html#cb188-1"></a>factor01 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="st">&quot;aaa&quot;</span>)</span>
+<span id="cb188-2"><a href="dataType1.html#cb188-2"></a><span class="kw">as.character</span>(factor01)</span></code></pre></div>
 <pre><code>## [1] &quot;aaa&quot;</code></pre>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" title="1"><span class="kw">as.numeric</span>(factor01)</a></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="dataType1.html#cb190-1"></a><span class="kw">as.numeric</span>(factor01)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 </div>
 <div id="l013logi" class="section level2">
 <h2><span class="header-section-number">5.4</span> El tipo <code>logical</code></h2>
 <p>El tipo <code>logical</code> corresponde a los valores <code>TRUE</code> y <code>FALSE</code> (y <code>NA</code>) que ya hemos visto con los operadores de comparación.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" title="1">aLogic &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb193-2" title="2"><span class="kw">print</span>(aLogic)</a></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="dataType1.html#cb192-1"></a>aLogic &lt;-<span class="st"> </span><span class="ot">TRUE</span></span>
+<span id="cb192-2"><a href="dataType1.html#cb192-2"></a><span class="kw">print</span>(aLogic)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" title="1"><span class="kw">typeof</span>(aLogic)</a></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="dataType1.html#cb194-1"></a><span class="kw">typeof</span>(aLogic)</span></code></pre></div>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" title="1"><span class="kw">is.logical</span>(aLogic)</a></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="dataType1.html#cb196-1"></a><span class="kw">is.logical</span>(aLogic)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" title="1">aLogic <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="dataType1.html#cb198-1"></a>aLogic <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" title="1"><span class="kw">as.numeric</span>(aLogic)</a></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="dataType1.html#cb200-1"></a><span class="kw">as.numeric</span>(aLogic)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" title="1"><span class="kw">as.character</span>(aLogic)</a></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="dataType1.html#cb202-1"></a><span class="kw">as.character</span>(aLogic)</span></code></pre></div>
 <pre><code>## [1] &quot;TRUE&quot;</code></pre>
 </div>
 <div id="acerca-de-na" class="section level2">
 <h2><span class="header-section-number">5.5</span> Acerca de <code>NA</code></h2>
 <p>El valor <code>NA</code> se puede usar para especificar que no hay datos o datos faltantes. Por defecto, <code>NA</code> es <code>logical</code>, pero se puede usar para texto o números.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" title="1"><span class="kw">print</span>(<span class="ot">NA</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="dataType1.html#cb204-1"></a><span class="kw">print</span>(<span class="ot">NA</span>)</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" title="1"><span class="kw">typeof</span>(<span class="ot">NA</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="dataType1.html#cb206-1"></a><span class="kw">typeof</span>(<span class="ot">NA</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" title="1"><span class="kw">typeof</span>(<span class="kw">as.integer</span>(<span class="ot">NA</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="dataType1.html#cb208-1"></a><span class="kw">typeof</span>(<span class="kw">as.integer</span>(<span class="ot">NA</span>))</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" title="1"><span class="kw">typeof</span>(<span class="kw">as.character</span>(<span class="ot">NA</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="dataType1.html#cb210-1"></a><span class="kw">typeof</span>(<span class="kw">as.character</span>(<span class="ot">NA</span>))</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb213-1" title="1"><span class="ot">NA</span> <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="dataType1.html#cb212-1"></a><span class="ot">NA</span> <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span></span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" title="1"><span class="ot">NA</span> <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="dataType1.html#cb214-1"></a><span class="ot">NA</span> <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span></span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb217-1" title="1"><span class="ot">NA</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="dataType1.html#cb216-1"></a><span class="ot">NA</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span></span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb219-1" title="1"><span class="ot">NA</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="dataType1.html#cb218-1"></a><span class="ot">NA</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
 </div>
 <div id="conclusión-2" class="section level2">
