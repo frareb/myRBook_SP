@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 8 Importar y exportar datos | R para los científicos</title>
   <meta name="description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 8 Importar y exportar datos | R para los científicos" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="myFigures/cover.png" />
+  <meta property="og:image" content="/myFigures/cover.png" />
   <meta property="og:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
   <meta name="github-repo" content="frareb/myRBook_SP" />
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content=" 8 Importar y exportar datos | R para los científicos" />
   
   <meta name="twitter:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="twitter:image" content="myFigures/cover.png" />
+  <meta name="twitter:image" content="/myFigures/cover.png" />
 
 <meta name="author" content="François Rebaudo" />
 
 
-<meta name="date" content="2021-02-05" />
+<meta name="date" content="2021-07-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="fonctions.html"/>
 <link rel="next" href="algo.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,9 +51,10 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
@@ -70,18 +72,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -101,7 +103,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,6 +136,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="myStyle.css" type="text/css" />
 </head>
 
@@ -150,50 +153,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Aprender R: iniciación y perfeccionamiento</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#remerciements"><i class="fa fa-check"></i><b>1.1</b> Agradecimientos</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#licence"><i class="fa fa-check"></i><b>1.2</b> Licencia</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#por-qué-aprender-r"><i class="fa fa-check"></i><b>2.1</b> ¿Por qué aprender R?</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#este-libro"><i class="fa fa-check"></i><b>2.2</b> Este libro</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#lectura-adicional-en-español"><i class="fa fa-check"></i><b>2.3</b> Lectura adicional en español</a></li>
 </ul></li>
 <li class="part"><span><b>I Conceptos básicos</b></span></li>
-<li class="chapter" data-level="3" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos</a><ul>
+<li class="chapter" data-level="3" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="premiersPas.html"><a href="premiersPas.html#instalar-r"><i class="fa fa-check"></i><b>3.1</b> Instalar R</a></li>
-<li class="chapter" data-level="3.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="premiersPas.html"><a href="premiersPas.html#l011opari"><i class="fa fa-check"></i><b>3.2.1</b> Los operadores aritméticos</a></li>
 <li class="chapter" data-level="3.2.2" data-path="premiersPas.html"><a href="premiersPas.html#l011opcomp"><i class="fa fa-check"></i><b>3.2.2</b> Los operadores comparativos</a></li>
 <li class="chapter" data-level="3.2.3" data-path="premiersPas.html"><a href="premiersPas.html#l011oplog"><i class="fa fa-check"></i><b>3.2.3</b> Los operadores lógicos</a></li>
 <li class="chapter" data-level="3.2.4" data-path="premiersPas.html"><a href="premiersPas.html#ayuda-a-los-operadores"><i class="fa fa-check"></i><b>3.2.4</b> Ayuda a los operadores</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="premiersPas.html"><a href="premiersPas.html#l011object"><i class="fa fa-check"></i><b>3.3</b> El concepto de objeto</a></li>
-<li class="chapter" data-level="3.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>3.4</b> Los scripts</a><ul>
+<li class="chapter" data-level="3.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>3.4</b> Los scripts</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="premiersPas.html"><a href="premiersPas.html#crear-un-script-y-documentarlo"><i class="fa fa-check"></i><b>3.4.1</b> Crear un script y documentarlo</a></li>
 <li class="chapter" data-level="3.4.2" data-path="premiersPas.html"><a href="premiersPas.html#ejecutar-un-script"><i class="fa fa-check"></i><b>3.4.2</b> Ejecutar un script</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="premiersPas.html"><a href="premiersPas.html#conclusión"><i class="fa fa-check"></i><b>3.5</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="IDE.html"><a href="IDE.html"><i class="fa fa-check"></i><b>4</b> Elegir un entorno de desarrollo</a><ul>
+<li class="chapter" data-level="4" data-path="IDE.html"><a href="IDE.html"><i class="fa fa-check"></i><b>4</b> Elegir un entorno de desarrollo</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="IDE.html"><a href="IDE.html#editores-de-texto-y-entorno-de-desarrollo"><i class="fa fa-check"></i><b>4.1</b> Editores de texto y entorno de desarrollo</a></li>
-<li class="chapter" data-level="4.2" data-path="IDE.html"><a href="IDE.html#rstudio"><i class="fa fa-check"></i><b>4.2</b> RStudio</a><ul>
+<li class="chapter" data-level="4.2" data-path="IDE.html"><a href="IDE.html#rstudio"><i class="fa fa-check"></i><b>4.2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="IDE.html"><a href="IDE.html#instalar-rstudio"><i class="fa fa-check"></i><b>4.2.1</b> Instalar RStudio</a></li>
 <li class="chapter" data-level="4.2.2" data-path="IDE.html"><a href="IDE.html#un-script-con-rstudio"><i class="fa fa-check"></i><b>4.2.2</b> Un script con RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="IDE.html"><a href="IDE.html#notepad-avec-npp2r"><i class="fa fa-check"></i><b>4.3</b> Notepad++ avec Npp2R</a><ul>
+<li class="chapter" data-level="4.3" data-path="IDE.html"><a href="IDE.html#notepad-avec-npp2r"><i class="fa fa-check"></i><b>4.3</b> Notepad++ avec Npp2R</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="IDE.html"><a href="IDE.html#instalar-notepad-solamente-para-windows"><i class="fa fa-check"></i><b>4.3.1</b> Instalar Notepad++ (solamente para Windows)</a></li>
 <li class="chapter" data-level="4.3.2" data-path="IDE.html"><a href="IDE.html#instalar-npp2r"><i class="fa fa-check"></i><b>4.3.2</b> Instalar Npp2R</a></li>
 <li class="chapter" data-level="4.3.3" data-path="IDE.html"><a href="IDE.html#un-script-con-notepad"><i class="fa fa-check"></i><b>4.3.3</b> Un script con Notepad++</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="IDE.html"><a href="IDE.html#geany"><i class="fa fa-check"></i><b>4.4</b> Geany</a><ul>
+<li class="chapter" data-level="4.4" data-path="IDE.html"><a href="IDE.html#geany"><i class="fa fa-check"></i><b>4.4</b> Geany</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="IDE.html"><a href="IDE.html#instalar-geany-para-linux-mac-osx-y-windows"><i class="fa fa-check"></i><b>4.4.1</b> Instalar Geany (para Linux, Mac OSX y Windows)</a></li>
 <li class="chapter" data-level="4.4.2" data-path="IDE.html"><a href="IDE.html#un-script-con-geany"><i class="fa fa-check"></i><b>4.4.2</b> Un script con Geany</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="IDE.html"><a href="IDE.html#otras-soluciones"><i class="fa fa-check"></i><b>4.5</b> Otras soluciones</a></li>
 <li class="chapter" data-level="4.6" data-path="IDE.html"><a href="IDE.html#conclusión-1"><i class="fa fa-check"></i><b>4.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>5</b> Tipos de datos</a><ul>
+<li class="chapter" data-level="5" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>5</b> Tipos de datos</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="dataType1.html"><a href="dataType1.html#el-tipo-numeric"><i class="fa fa-check"></i><b>5.1</b> El tipo <code>numeric</code></a></li>
 <li class="chapter" data-level="5.2" data-path="dataType1.html"><a href="dataType1.html#el-tipo-character"><i class="fa fa-check"></i><b>5.2</b> El tipo <code>character</code></a></li>
 <li class="chapter" data-level="5.3" data-path="dataType1.html"><a href="dataType1.html#el-tipo-factor"><i class="fa fa-check"></i><b>5.3</b> El tipo <code>factor</code></a></li>
@@ -201,45 +214,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="dataType1.html"><a href="dataType1.html#acerca-de-na"><i class="fa fa-check"></i><b>5.5</b> Acerca de <code>NA</code></a></li>
 <li class="chapter" data-level="5.6" data-path="dataType1.html"><a href="dataType1.html#conclusión-2"><i class="fa fa-check"></i><b>5.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="dataType2.html"><a href="dataType2.html"><i class="fa fa-check"></i><b>6</b> Contenedores de datos</a><ul>
-<li class="chapter" data-level="6.1" data-path="dataType2.html"><a href="dataType2.html#l014vector"><i class="fa fa-check"></i><b>6.1</b> El contenedor <code>vector</code></a><ul>
+<li class="chapter" data-level="6" data-path="dataType2.html"><a href="dataType2.html"><i class="fa fa-check"></i><b>6</b> Contenedores de datos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="dataType2.html"><a href="dataType2.html#l014vector"><i class="fa fa-check"></i><b>6.1</b> El contenedor <code>vector</code></a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-vector"><i class="fa fa-check"></i><b>6.1.1</b> Crear un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.2" data-path="dataType2.html"><a href="dataType2.html#hacer-operaciones-con-un-vector"><i class="fa fa-check"></i><b>6.1.2</b> Hacer operaciones con un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.3" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-un-vector"><i class="fa fa-check"></i><b>6.1.3</b> Acceder a los valores de un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.4" data-path="dataType2.html"><a href="dataType2.html#dar-nombres-a-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>6.1.4</b> Dar nombres a los elementos de un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.5" data-path="dataType2.html"><a href="dataType2.html#editar-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>6.1.5</b> Editar los elementos de un <code>vector</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="dataType2.html"><a href="dataType2.html#l014list"><i class="fa fa-check"></i><b>6.2</b> El contenedor <code>list</code></a><ul>
+<li class="chapter" data-level="6.2" data-path="dataType2.html"><a href="dataType2.html#l014list"><i class="fa fa-check"></i><b>6.2</b> El contenedor <code>list</code></a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-list"><i class="fa fa-check"></i><b>6.2.1</b> Crear una <code>list</code></a></li>
 <li class="chapter" data-level="6.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-list"><i class="fa fa-check"></i><b>6.2.2</b> Acceder a los valores de una <code>list</code></a></li>
 <li class="chapter" data-level="6.2.3" data-path="dataType2.html"><a href="dataType2.html#editar-una-list"><i class="fa fa-check"></i><b>6.2.3</b> Editar una <code>list</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="dataType2.html"><a href="dataType2.html#l014dataframe"><i class="fa fa-check"></i><b>6.3</b> El contenedor <code>data.frame</code></a><ul>
+<li class="chapter" data-level="6.3" data-path="dataType2.html"><a href="dataType2.html#l014dataframe"><i class="fa fa-check"></i><b>6.3</b> El contenedor <code>data.frame</code></a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-data.frame"><i class="fa fa-check"></i><b>6.3.1</b> Crear un <code>data.frame</code></a></li>
 <li class="chapter" data-level="6.3.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-un-data.frame"><i class="fa fa-check"></i><b>6.3.2</b> Acceder a los elementos de un <code>data.frame</code></a></li>
 <li class="chapter" data-level="6.3.3" data-path="dataType2.html"><a href="dataType2.html#modificar-un-data.frame"><i class="fa fa-check"></i><b>6.3.3</b> Modificar un <code>data.frame</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="dataType2.html"><a href="dataType2.html#l014matrix"><i class="fa fa-check"></i><b>6.4</b> El contenedor <code>matrix</code></a><ul>
+<li class="chapter" data-level="6.4" data-path="dataType2.html"><a href="dataType2.html#l014matrix"><i class="fa fa-check"></i><b>6.4</b> El contenedor <code>matrix</code></a>
+<ul>
 <li class="chapter" data-level="6.4.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-matrix"><i class="fa fa-check"></i><b>6.4.1</b> Crear una <code>matrix</code></a></li>
 <li class="chapter" data-level="6.4.2" data-path="dataType2.html"><a href="dataType2.html#manipular-y-hacer-operaciones-en-una-matrix"><i class="fa fa-check"></i><b>6.4.2</b> Manipular y hacer operaciones en una <code>matrix</code></a></li>
 <li class="chapter" data-level="6.4.3" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-una-matrix"><i class="fa fa-check"></i><b>6.4.3</b> Acceder a los elementos de una <code>matrix</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="dataType2.html"><a href="dataType2.html#l014array"><i class="fa fa-check"></i><b>6.5</b> El contenedor <code>array</code></a><ul>
+<li class="chapter" data-level="6.5" data-path="dataType2.html"><a href="dataType2.html#l014array"><i class="fa fa-check"></i><b>6.5</b> El contenedor <code>array</code></a>
+<ul>
 <li class="chapter" data-level="6.5.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-array"><i class="fa fa-check"></i><b>6.5.1</b> Crear un <code>array</code></a></li>
 <li class="chapter" data-level="6.5.2" data-path="dataType2.html"><a href="dataType2.html#manipular-un-array"><i class="fa fa-check"></i><b>6.5.2</b> Manipular un <code>array</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="dataType2.html"><a href="dataType2.html#conclusión-3"><i class="fa fa-check"></i><b>6.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="fonctions.html"><a href="fonctions.html"><i class="fa fa-check"></i><b>7</b> Las funciones</a><ul>
+<li class="chapter" data-level="7" data-path="fonctions.html"><a href="fonctions.html"><i class="fa fa-check"></i><b>7</b> Las funciones</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="fonctions.html"><a href="fonctions.html#qué-es-una-función"><i class="fa fa-check"></i><b>7.1</b> ¿Qué es una función?</a></li>
-<li class="chapter" data-level="7.2" data-path="fonctions.html"><a href="fonctions.html#las-funciones-más-comunes"><i class="fa fa-check"></i><b>7.2</b> Las funciones más comunes</a><ul>
+<li class="chapter" data-level="7.2" data-path="fonctions.html"><a href="fonctions.html#las-funciones-más-comunes"><i class="fa fa-check"></i><b>7.2</b> Las funciones más comunes</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="fonctions.html"><a href="fonctions.html#el-acceso-a-la-documentación"><i class="fa fa-check"></i><b>7.2.1</b> El acceso a la documentación</a></li>
 <li class="chapter" data-level="7.2.2" data-path="fonctions.html"><a href="fonctions.html#ver-los-datos"><i class="fa fa-check"></i><b>7.2.2</b> Ver los datos</a></li>
 <li class="chapter" data-level="7.2.3" data-path="fonctions.html"><a href="fonctions.html#manipular-los-datos"><i class="fa fa-check"></i><b>7.2.3</b> Manipular los datos</a></li>
 <li class="chapter" data-level="7.2.4" data-path="fonctions.html"><a href="fonctions.html#l015maths"><i class="fa fa-check"></i><b>7.2.4</b> Funciones matemáticas</a></li>
 <li class="chapter" data-level="7.2.5" data-path="fonctions.html"><a href="fonctions.html#estadísticas-descriptivas"><i class="fa fa-check"></i><b>7.2.5</b> Estadísticas descriptivas</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-útiles"><i class="fa fa-check"></i><b>7.3</b> Otras funciones útiles</a><ul>
+<li class="chapter" data-level="7.3" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-útiles"><i class="fa fa-check"></i><b>7.3</b> Otras funciones útiles</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="fonctions.html"><a href="fonctions.html#l015seqalong"><i class="fa fa-check"></i><b>7.3.1</b> <code>seq_along()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="fonctions.html"><a href="fonctions.html#l0152points"><i class="fa fa-check"></i><b>7.3.2</b> <code>:</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="fonctions.html"><a href="fonctions.html#l015rep"><i class="fa fa-check"></i><b>7.3.3</b> <code>rep()</code></a></li>
@@ -250,20 +272,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="fonctions.html"><a href="fonctions.html#l015ls"><i class="fa fa-check"></i><b>7.3.8</b> <code>ls()</code></a></li>
 <li class="chapter" data-level="7.3.9" data-path="fonctions.html"><a href="fonctions.html#l015rm"><i class="fa fa-check"></i><b>7.3.9</b> <code>rm()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="fonctions.html"><a href="fonctions.html#algunos-ejercicios-para-practicar"><i class="fa fa-check"></i><b>7.4</b> Algunos ejercicios para practicar</a><ul>
+<li class="chapter" data-level="7.4" data-path="fonctions.html"><a href="fonctions.html#algunos-ejercicios-para-practicar"><i class="fa fa-check"></i><b>7.4</b> Algunos ejercicios para practicar</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="fonctions.html"><a href="fonctions.html#secuencias"><i class="fa fa-check"></i><b>7.4.1</b> Secuencias</a></li>
 <li class="chapter" data-level="7.4.2" data-path="fonctions.html"><a href="fonctions.html#estadísticas-descriptivas-1"><i class="fa fa-check"></i><b>7.4.2</b> Estadísticas descriptivas</a></li>
 </ul></li>
 <li class="chapter" data-level="7.5" data-path="fonctions.html"><a href="fonctions.html#l015function"><i class="fa fa-check"></i><b>7.5</b> Escribir una función</a></li>
-<li class="chapter" data-level="7.6" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-desarrolladas-por-la-comunidad-de-usuarios-los-packages"><i class="fa fa-check"></i><b>7.6</b> Otras funciones desarrolladas por la comunidad de usuarios: los <em>packages</em></a><ul>
+<li class="chapter" data-level="7.6" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-desarrolladas-por-la-comunidad-de-usuarios-los-packages"><i class="fa fa-check"></i><b>7.6</b> Otras funciones desarrolladas por la comunidad de usuarios: los <em>packages</em></a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="fonctions.html"><a href="fonctions.html#instalar-un-paquete"><i class="fa fa-check"></i><b>7.6.1</b> Instalar un paquete</a></li>
 <li class="chapter" data-level="7.6.2" data-path="fonctions.html"><a href="fonctions.html#cargar-un-paquete"><i class="fa fa-check"></i><b>7.6.2</b> Cargar un paquete</a></li>
 <li class="chapter" data-level="7.6.3" data-path="fonctions.html"><a href="fonctions.html#portabilidad-del-código"><i class="fa fa-check"></i><b>7.6.3</b> Portabilidad del código</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="fonctions.html"><a href="fonctions.html#conclusión-4"><i class="fa fa-check"></i><b>7.7</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>8</b> Importar y exportar datos</a><ul>
-<li class="chapter" data-level="8.1" data-path="import.html"><a href="import.html#l016read"><i class="fa fa-check"></i><b>8.1</b> Leer datos de un archivo</a><ul>
+<li class="chapter" data-level="8" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>8</b> Importar y exportar datos</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="import.html"><a href="import.html#l016read"><i class="fa fa-check"></i><b>8.1</b> Leer datos de un archivo</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="import.html"><a href="import.html#l016transfo"><i class="fa fa-check"></i><b>8.1.1</b> Transformar datos en formato TXT o CSV</a></li>
 <li class="chapter" data-level="8.1.2" data-path="import.html"><a href="import.html#l016readCSV"><i class="fa fa-check"></i><b>8.1.2</b> Leer un archivo CSV</a></li>
 <li class="chapter" data-level="8.1.3" data-path="import.html"><a href="import.html#l016readTXT"><i class="fa fa-check"></i><b>8.1.3</b> Leer un archivo de texto</a></li>
@@ -272,14 +298,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="import.html"><a href="import.html#l016write"><i class="fa fa-check"></i><b>8.3</b> Exportar datos</a></li>
 <li class="chapter" data-level="8.4" data-path="import.html"><a href="import.html#conclusión-5"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="algo.html"><a href="algo.html"><i class="fa fa-check"></i><b>9</b> Algorítmico</a><ul>
+<li class="chapter" data-level="9" data-path="algo.html"><a href="algo.html"><i class="fa fa-check"></i><b>9</b> Algorítmico</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="algo.html"><a href="algo.html#l17if"><i class="fa fa-check"></i><b>9.1</b> Pruebas lógicas con <code>if</code></a></li>
 <li class="chapter" data-level="9.2" data-path="algo.html"><a href="algo.html#l17switch"><i class="fa fa-check"></i><b>9.2</b> Pruebas lógicas con <code>switch</code></a></li>
 <li class="chapter" data-level="9.3" data-path="algo.html"><a href="algo.html#l17for"><i class="fa fa-check"></i><b>9.3</b> El bucle <code>for</code></a></li>
 <li class="chapter" data-level="9.4" data-path="algo.html"><a href="algo.html#l17while"><i class="fa fa-check"></i><b>9.4</b> El bucle <code>while</code></a></li>
 <li class="chapter" data-level="9.5" data-path="algo.html"><a href="algo.html#l17repeat"><i class="fa fa-check"></i><b>9.5</b> El bucle <code>repeat</code></a></li>
 <li class="chapter" data-level="9.6" data-path="algo.html"><a href="algo.html#l17spe"><i class="fa fa-check"></i><b>9.6</b> <code>next</code> y <code>break</code></a></li>
-<li class="chapter" data-level="9.7" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>9.7</b> Los bucles de la familia <code>apply</code></a><ul>
+<li class="chapter" data-level="9.7" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>9.7</b> Los bucles de la familia <code>apply</code></a>
+<ul>
 <li class="chapter" data-level="9.7.1" data-path="algo.html"><a href="algo.html#l17apply"><i class="fa fa-check"></i><b>9.7.1</b> <code>apply</code></a></li>
 <li class="chapter" data-level="9.7.2" data-path="algo.html"><a href="algo.html#l17sapply"><i class="fa fa-check"></i><b>9.7.2</b> <code>lapply</code></a></li>
 <li class="chapter" data-level="9.7.3" data-path="algo.html"><a href="algo.html#l17lapply"><i class="fa fa-check"></i><b>9.7.3</b> <code>sapply</code></a></li>
@@ -288,14 +316,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.8" data-path="algo.html"><a href="algo.html#conclusión-6"><i class="fa fa-check"></i><b>9.8</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>10</b> Gestión de proyectos con R</a><ul>
+<li class="chapter" data-level="10" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>10</b> Gestión de proyectos con R</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="project.html"><a href="project.html#gestionando-archivos-y-directorios-de-trabajo."><i class="fa fa-check"></i><b>10.1</b> Gestionando archivos y directorios de trabajo.</a></li>
 <li class="chapter" data-level="10.2" data-path="project.html"><a href="project.html#gestión-de-versiones-de-script"><i class="fa fa-check"></i><b>10.2</b> Gestión de versiones de script</a></li>
 <li class="chapter" data-level="10.3" data-path="project.html"><a href="project.html#gestion-de-documentacion"><i class="fa fa-check"></i><b>10.3</b> Gestion de documentacion</a></li>
 <li class="chapter" data-level="10.4" data-path="project.html"><a href="project.html#conclusión-7"><i class="fa fa-check"></i><b>10.4</b> Conclusión</a></li>
 </ul></li>
 <li class="part"><span><b>II Los gráficos</b></span></li>
-<li class="chapter" data-level="11" data-path="graph1.html"><a href="graph1.html"><i class="fa fa-check"></i><b>11</b> Gráficos simples</a><ul>
+<li class="chapter" data-level="11" data-path="graph1.html"><a href="graph1.html"><i class="fa fa-check"></i><b>11</b> Gráficos simples</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="graph1.html"><a href="graph1.html#graph1plot"><i class="fa fa-check"></i><b>11.1</b> <code>plot</code></a></li>
 <li class="chapter" data-level="11.2" data-path="graph1.html"><a href="graph1.html#graph1hist"><i class="fa fa-check"></i><b>11.2</b> <code>hist</code></a></li>
 <li class="chapter" data-level="11.3" data-path="graph1.html"><a href="graph1.html#graph1barplot"><i class="fa fa-check"></i><b>11.3</b> <code>barplot</code></a></li>
@@ -303,14 +333,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5" data-path="graph1.html"><a href="graph1.html#otros-gráficos"><i class="fa fa-check"></i><b>11.5</b> Otros gráficos</a></li>
 <li class="chapter" data-level="11.6" data-path="graph1.html"><a href="graph1.html#conclusión-8"><i class="fa fa-check"></i><b>11.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="graph2.html"><a href="graph2.html"><i class="fa fa-check"></i><b>12</b> Gestión del color</a><ul>
+<li class="chapter" data-level="12" data-path="graph2.html"><a href="graph2.html"><i class="fa fa-check"></i><b>12</b> Gestión del color</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="graph2.html"><a href="graph2.html#colors"><i class="fa fa-check"></i><b>12.1</b> <code>colors()</code></a></li>
 <li class="chapter" data-level="12.2" data-path="graph2.html"><a href="graph2.html#rgb"><i class="fa fa-check"></i><b>12.2</b> <code>rgb()</code></a></li>
 <li class="chapter" data-level="12.3" data-path="graph2.html"><a href="graph2.html#paletas-de-colores"><i class="fa fa-check"></i><b>12.3</b> Paletas de colores</a></li>
 <li class="chapter" data-level="12.4" data-path="graph2.html"><a href="graph2.html#conclusión-9"><i class="fa fa-check"></i><b>12.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="graph3.html"><a href="graph3.html"><i class="fa fa-check"></i><b>13</b> Paquetes gráficos</a><ul>
-<li class="chapter" data-level="13.1" data-path="graph3.html"><a href="graph3.html#los-paquetes-con-paletas"><i class="fa fa-check"></i><b>13.1</b> Los paquetes con paletas</a><ul>
+<li class="chapter" data-level="13" data-path="graph3.html"><a href="graph3.html"><i class="fa fa-check"></i><b>13</b> Paquetes gráficos</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="graph3.html"><a href="graph3.html#los-paquetes-con-paletas"><i class="fa fa-check"></i><b>13.1</b> Los paquetes con paletas</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="graph3.html"><a href="graph3.html#rcolorbrewer"><i class="fa fa-check"></i><b>13.1.1</b> <code>RColorBrewer</code></a></li>
 <li class="chapter" data-level="13.1.2" data-path="graph3.html"><a href="graph3.html#palettesforr"><i class="fa fa-check"></i><b>13.1.2</b> <code>palettesForR</code></a></li>
 <li class="chapter" data-level="13.1.3" data-path="graph3.html"><a href="graph3.html#otros-paquetes"><i class="fa fa-check"></i><b>13.1.3</b> Otros paquetes</a></li>
@@ -319,7 +352,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="graph3.html"><a href="graph3.html#gráficos-interactivos-y-dinámicos-con-plotly"><i class="fa fa-check"></i><b>13.3</b> Gráficos interactivos y dinámicos con <code>Plotly</code></a></li>
 <li class="chapter" data-level="13.4" data-path="graph3.html"><a href="graph3.html#conclusión-10"><i class="fa fa-check"></i><b>13.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="graph4.html"><a href="graph4.html"><i class="fa fa-check"></i><b>14</b> De la gráfica a la figura en un artículo científico</a><ul>
+<li class="chapter" data-level="14" data-path="graph4.html"><a href="graph4.html"><i class="fa fa-check"></i><b>14</b> De la gráfica a la figura en un artículo científico</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="graph4.html"><a href="graph4.html#inkscape"><i class="fa fa-check"></i><b>14.1</b> Inkscape</a></li>
 <li class="chapter" data-level="14.2" data-path="graph4.html"><a href="graph4.html#the-gimp"><i class="fa fa-check"></i><b>14.2</b> The Gimp</a></li>
 <li class="chapter" data-level="14.3" data-path="graph4.html"><a href="graph4.html#tabla-de-referencia"><i class="fa fa-check"></i><b>14.3</b> Tabla de referencia</a></li>
@@ -343,30 +377,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="import" class="section level1">
+<div id="import" class="section level1" number="8">
 <h1><span class="header-section-number"> 8</span> Importar y exportar datos</h1>
-<div id="l016read" class="section level2">
+<div id="l016read" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Leer datos de un archivo</h2>
-<div id="l016transfo" class="section level3">
+<div id="l016transfo" class="section level3" number="8.1.1">
 <h3><span class="header-section-number">8.1.1</span> Transformar datos en formato TXT o CSV</h3>
 <p>Hay muchas maneras de leer el contenido de un archivo con R. Sin embargo, nos enfocaremos en leer los archivos TXT y CSV que son los más comunes y los más confiables. Con raras excepciones, todos los archivos de datos se pueden transformar fácilmente en formatos TXT y CSV. Esta es la práctica preferida para el análisis de datos con R.</p>
 <p>En concreto, desde Microsoft Excel, simplemente vamos a <em>Archivo</em>, luego <em>Guardar como</em>, seleccionamos el lugar donde queremos guardar nuestro archivo (hablaremos en el siguiente capítulo sobre la gestión de un proyecto R) y luego en el la ventana de copia de seguridad cambiamos el <em>Tipo</em> desde XLSX hacia CSV. Desde LibreOffice Calc, simplemente vamos a <em>Archivo</em>, luego <em>Guardar como</em>, luego seleccionamos el tipo <em>CSV</em>. Es importante saber que el archivo CSV no admite el formato de archivos de hoja de cálculo con, por ejemplo, colores, y que el archivo CSV contiene solo una pestaña. Si tenemos un archivo de hoja de cálculo con varias pestañas, tendremos que guardar tantos archivos CSV como pestañas.</p>
 <p>CSV viene del Inglés <em>Comma-separated values</em> (<a href="https://es.wikipedia.org/wiki/Valores_separados_por_comas" class="uri">https://es.wikipedia.org/wiki/Valores_separados_por_comas</a>) y representa los datos de hoja de cálculo en un formato de texto separado por comas (o punto y coma según el país). Siempre se puede abrir un archivo CSV con software de hoja de cálculo, pero también con un editor de texto simple como el bloc de notas de Windows o con Notepad++. Es preferible abrir archivos CSV con un editor de texto porque las hojas de cálculo tienden a querer cambiar automáticamente los archivos CSV y esto tiene el efecto de dificultar su lectura.</p>
 <p>Una vez que se obtiene el archivo TXT o CSV, la lectura del contenido desde R es fácil, aun que requiere un poco de rigor.</p>
 </div>
-<div id="l016readCSV" class="section level3">
+<div id="l016readCSV" class="section level3" number="8.1.2">
 <h3><span class="header-section-number">8.1.2</span> Leer un archivo CSV</h3>
 <p>Esta es la fuente de error más común para los principiantes en R. Es por eso que es importante leer y volver a leer este capítulo y lo siguiente sobre la gestión de un proyecto R con mucha atención.</p>
 <p>R funciona en un directorio definido por defecto. Los usuarios de Rstudio u otro <a href="IDE.html#IDE">entorno de desarrollo</a> especializado para R intentarán usar las opciones disponibles a través de los menús para establecer su directorio de trabajo o cargar el contenido de un archivo. En este libro, estas técnicas nunca se usarán porque no permiten la reproducibilidad de los resultados. Un script debe poder funcionar para todos los sistemas operativos y sin tener en cuenta el <a href="IDE.html#IDE">entorno de desarrollo</a> del usuario.</p>
 <p>El directorio de trabajo por defecto se puede obtener con la función <a href="fonctions.html#l015getwd"><code>getwd()</code></a> y cambiar con la función <a href="fonctions.html#l015setwd"><code>setwd()</code></a>.</p>
-<div class="sourceCode" id="cb957"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb957-1"><a href="import.html#cb957-1"></a>oldWd &lt;-<span class="st"> </span><span class="kw">getwd</span>()</span>
-<span id="cb957-2"><a href="import.html#cb957-2"></a><span class="kw">print</span>(oldWd)</span></code></pre></div>
+<div class="sourceCode" id="cb957"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb957-1"><a href="import.html#cb957-1" aria-hidden="true" tabindex="-1"></a>oldWd <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb957-2"><a href="import.html#cb957-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(oldWd)</span></code></pre></div>
 <pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/GITHUB/myRbook_SP&quot;</code></pre>
-<div class="sourceCode" id="cb959"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb959-1"><a href="import.html#cb959-1"></a><span class="kw">setwd</span>(<span class="st">&quot;..&quot;</span>)</span>
-<span id="cb959-2"><a href="import.html#cb959-2"></a><span class="kw">getwd</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb959"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb959-1"><a href="import.html#cb959-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;..&quot;</span>)</span>
+<span id="cb959-2"><a href="import.html#cb959-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/GITHUB&quot;</code></pre>
-<div class="sourceCode" id="cb961"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb961-1"><a href="import.html#cb961-1"></a><span class="kw">setwd</span>(oldWd)</span>
-<span id="cb961-2"><a href="import.html#cb961-2"></a><span class="kw">getwd</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb961"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb961-1"><a href="import.html#cb961-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(oldWd)</span>
+<span id="cb961-2"><a href="import.html#cb961-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;C:/Users/nous/Documents/Francois/GITHUB/myRbook_SP&quot;</code></pre>
 <p>Entonces tenemos cuatro opciones:</p>
 <ul>
@@ -393,20 +427,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## |-|-myFirstScript.R</code></pre>
 <p>La ruta relativa al archivo <code>data01.csv</code> sería <code>../myFiles/data01.csv</code></p>
 <p>Entonces, para leer el contenido del archivo <code>data01.csv</code>, privilegiaremos la opción 2 (leer el contenido de un archivo que indicando su ruta relativa) o la opción 4 (modificar el directorio de trabajo de R para que coincida con la ubicación de nuestro archivo). En el último caso:</p>
-<div class="sourceCode" id="cb964"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb964-1"><a href="import.html#cb964-1"></a>myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span></span>
-<span id="cb964-2"><a href="import.html#cb964-2"></a><span class="kw">setwd</span>(myWd)</span>
-<span id="cb964-3"><a href="import.html#cb964-3"></a><span class="kw">getwd</span>() <span class="co"># para verificar que estamos en el directorio correcto</span></span>
-<span id="cb964-4"><a href="import.html#cb964-4"></a><span class="kw">list.files</span>() <span class="co"># para verificar que el archivo está aquí</span></span></code></pre></div>
+<div class="sourceCode" id="cb964"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb964-1"><a href="import.html#cb964-1" aria-hidden="true" tabindex="-1"></a>myWD <span class="ot">&lt;-</span> <span class="st">&quot;../myFiles/&quot;</span></span>
+<span id="cb964-2"><a href="import.html#cb964-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(myWd)</span>
+<span id="cb964-3"><a href="import.html#cb964-3" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>() <span class="co"># para verificar que estamos en el directorio correcto</span></span>
+<span id="cb964-4"><a href="import.html#cb964-4" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>() <span class="co"># para verificar que el archivo está aquí</span></span></code></pre></div>
 <p>El error más común:</p>
 <pre><code>## Error in setwd(&quot;../myFiles/&quot;) : 
 ## no se puede cambiar el directorio de trabajo</code></pre>
 <p>Esto significa que el directorio no existe (se debe verificar que la sintaxis sea correcta y que el directorio exista con esta ruta).</p>
 <p>Una vez que el directorio de trabajo está definido correctamente o la ruta relativa al archivo está establecida correctamente, podemos leer el archivo con la función <code>read.table()</code>. Algunos usan la función <code>read.csv()</code> pero este es solo un caso especial de <code>read.table()</code>.</p>
-<div class="sourceCode" id="cb966"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb966-1"><a href="import.html#cb966-1"></a>myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span></span>
-<span id="cb966-2"><a href="import.html#cb966-2"></a><span class="kw">setwd</span>(myWd)</span>
-<span id="cb966-3"><a href="import.html#cb966-3"></a><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;data01.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb966"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb966-1"><a href="import.html#cb966-1" aria-hidden="true" tabindex="-1"></a>myWD <span class="ot">&lt;-</span> <span class="st">&quot;../myFiles/&quot;</span></span>
+<span id="cb966-2"><a href="import.html#cb966-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(myWd)</span>
+<span id="cb966-3"><a href="import.html#cb966-3" aria-hidden="true" tabindex="-1"></a><span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">&quot;data01.csv&quot;</span>)</span></code></pre></div>
 <p>o alternativamente:</p>
-<div class="sourceCode" id="cb967"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb967-1"><a href="import.html#cb967-1"></a><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;../myFiles/data01.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb967"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb967-1"><a href="import.html#cb967-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">&quot;../myFiles/data01.csv&quot;</span>)</span></code></pre></div>
 <p>Si la ruta no se llena correctamente o si el archivo de datos no existe, R devolverá el siguiente error:</p>
 <pre><code>## Error in file(file, &quot;rt&quot;) : incapaz de abrir la conexión
 ## De más : Warning message:
@@ -421,16 +455,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Con estos tres argumentos, la mayoría de los archivos se pueden leer sin ningún problema. En caso de necesidad, la ayuda de esta función es muy completa.</p>
 <p>La función <code>read.table ()</code> devuelve el contenido del archivo como <code>data.frame</code>. Para poder usar el contenido del archivo, almacenaremos el <code>data.frame</code> en un objeto.</p>
-<div class="sourceCode" id="cb969"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb969-1"><a href="import.html#cb969-1"></a>myWD &lt;-<span class="st"> &quot;../myFiles/&quot;</span></span>
-<span id="cb969-2"><a href="import.html#cb969-2"></a><span class="kw">setwd</span>(myWd)</span>
-<span id="cb969-3"><a href="import.html#cb969-3"></a>data01 &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;data01.csv&quot;</span>)</span>
-<span id="cb969-4"><a href="import.html#cb969-4"></a><span class="kw">str</span>(data01) <span class="co"># verificar el formato de los datos</span></span>
-<span id="cb969-5"><a href="import.html#cb969-5"></a><span class="kw">head</span>(data01) <span class="co"># vverificar los primeros datos</span></span></code></pre></div>
+<div class="sourceCode" id="cb969"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb969-1"><a href="import.html#cb969-1" aria-hidden="true" tabindex="-1"></a>myWD <span class="ot">&lt;-</span> <span class="st">&quot;../myFiles/&quot;</span></span>
+<span id="cb969-2"><a href="import.html#cb969-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(myWd)</span>
+<span id="cb969-3"><a href="import.html#cb969-3" aria-hidden="true" tabindex="-1"></a>data01 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">&quot;data01.csv&quot;</span>)</span>
+<span id="cb969-4"><a href="import.html#cb969-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data01) <span class="co"># verificar el formato de los datos</span></span>
+<span id="cb969-5"><a href="import.html#cb969-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data01) <span class="co"># vverificar los primeros datos</span></span></code></pre></div>
 <p><a href="#studyCase001">El estudio de caso sobre el análisis de datos de datalogger</a> se basa en un archivo CSV. Aquí hay un extracto:</p>
-<div class="sourceCode" id="cb970"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb970-1"><a href="import.html#cb970-1"></a>bdd &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;myFiles/E05C13.csv&quot;</span>, <span class="dt">skip =</span> <span class="dv">1</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb970-2"><a href="import.html#cb970-2"></a>  <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb970-3"><a href="import.html#cb970-3"></a><span class="kw">colnames</span>(bdd) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;temp&quot;</span>)</span>
-<span id="cb970-4"><a href="import.html#cb970-4"></a><span class="kw">head</span>(bdd)</span></code></pre></div>
+<div class="sourceCode" id="cb970"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb970-1"><a href="import.html#cb970-1" aria-hidden="true" tabindex="-1"></a>bdd <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;myFiles/E05C13.csv&quot;</span>, <span class="at">skip =</span> <span class="dv">1</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb970-2"><a href="import.html#cb970-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="at">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb970-3"><a href="import.html#cb970-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bdd) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;temp&quot;</span>)</span>
+<span id="cb970-4"><a href="import.html#cb970-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bdd)</span></code></pre></div>
 <pre><code>##   id              date  temp
 ## 1  1 11/12/15 23:00:00 4.973
 ## 2  2 11/12/15 23:30:00 4.766
@@ -438,7 +472,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  4 11/13/15 00:30:00 4.844
 ## 5  5 11/13/15 01:00:00 5.076
 ## 6  6 11/13/15 01:30:00 5.282</code></pre>
-<div class="sourceCode" id="cb972"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb972-1"><a href="import.html#cb972-1"></a><span class="kw">tail</span>(bdd)</span></code></pre></div>
+<div class="sourceCode" id="cb972"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb972-1"><a href="import.html#cb972-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(bdd)</span></code></pre></div>
 <pre><code>##          id              date  temp
 ## 32781 32781 09/25/17 21:00:00 7.091
 ## 32782 32782 09/25/17 21:30:00 6.914
@@ -446,17 +480,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 32784 32784 09/25/17 22:30:00 6.611
 ## 32785 32785 09/25/17 23:00:00 6.331
 ## 32786 32786 09/25/17 23:30:00 5.385</code></pre>
-<div class="sourceCode" id="cb974"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb974-1"><a href="import.html#cb974-1"></a><span class="kw">str</span>(bdd)</span></code></pre></div>
+<div class="sourceCode" id="cb974"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb974-1"><a href="import.html#cb974-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bdd)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    32786 obs. of  3 variables:
 ##  $ id  : int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ date: chr  &quot;11/12/15 23:00:00&quot; &quot;11/12/15 23:30:00&quot; &quot;11/13/15 00:00:00&quot; &quot;11/13/15 00:30:00&quot; ...
 ##  $ temp: num  4.97 4.77 4.84 4.84 5.08 ...</code></pre>
 </div>
-<div id="l016readTXT" class="section level3">
+<div id="l016readTXT" class="section level3" number="8.1.3">
 <h3><span class="header-section-number">8.1.3</span> Leer un archivo de texto</h3>
 <p>La función más simple para leer un archivo que contiene texto es <code>readlines()</code>. Aquí hay un ejemplo con el archivo README.md de este libro, que se encuentra en GitHub.</p>
-<div class="sourceCode" id="cb976"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb976-1"><a href="import.html#cb976-1"></a>readmeGitHub &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/frareb/myRBook_SP/master/README.md&quot;</span></span>
-<span id="cb976-2"><a href="import.html#cb976-2"></a><span class="kw">readLines</span>(readmeGitHub)</span></code></pre></div>
+<div class="sourceCode" id="cb976"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb976-1"><a href="import.html#cb976-1" aria-hidden="true" tabindex="-1"></a>readmeGitHub <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/frareb/myRBook_SP/master/README.md&quot;</span></span>
+<span id="cb976-2"><a href="import.html#cb976-2" aria-hidden="true" tabindex="-1"></a><span class="fu">readLines</span>(readmeGitHub)</span></code></pre></div>
 <pre><code>##   [1] &quot;# myRBook_SP&quot;                                                                                                                                                                                                                                                                                            
 ##   [2] &quot;Aqui se encuentra el cÃ³digo fuente del libro  *Aprender R: iniciaciÃ³n y perfeccionamiento*, construido con bookdown.&quot;                                                                                                                                                                                  
 ##   [3] &quot;&quot;                                                                                                                                                                                                                                                                                                        
@@ -468,114 +502,118 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   [9] &quot;&quot;                                                                                                                                                                                                                                                                                                        
 ##  [10] &quot;## Ãšltimas modificaciones&quot;                                                                                                                                                                                                                                                                              
 ##  [11] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [12] &quot;**31/05/2020**&quot;                                                                                                                                                                                                                                                                                          
+##  [12] &quot;**05/02/2021**&quot;                                                                                                                                                                                                                                                                                          
 ##  [13] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [14] &quot;* modificaciones menores &quot;                                                                                                                                                                                                                                                                               
+##  [14] &quot;* revisiones del estilo&quot;                                                                                                                                                                                                                                                                                 
 ##  [15] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [16] &quot;**12/12/2019**&quot;                                                                                                                                                                                                                                                                                          
+##  [16] &quot;**31/05/2020**&quot;                                                                                                                                                                                                                                                                                          
 ##  [17] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [18] &quot;* De la grÃ¡fica a la figura en un artÃ­culo cientÃ­fico&quot;                                                                                                                                                                                                                                                
+##  [18] &quot;* modificaciones menores &quot;                                                                                                                                                                                                                                                                               
 ##  [19] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [20] &quot;**10/04/2019**&quot;                                                                                                                                                                                                                                                                                          
+##  [20] &quot;**12/12/2019**&quot;                                                                                                                                                                                                                                                                                          
 ##  [21] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [22] &quot;* Modificaciones en el estudio de caso: [dataloggers](#studyCase1)&quot;                                                                                                                                                                                                                                      
+##  [22] &quot;* De la grÃ¡fica a la figura en un artÃ­culo cientÃ­fico&quot;                                                                                                                                                                                                                                                
 ##  [23] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [24] &quot;**28/03/2019**&quot;                                                                                                                                                                                                                                                                                          
+##  [24] &quot;**10/04/2019**&quot;                                                                                                                                                                                                                                                                                          
 ##  [25] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [26] &quot;* diapositivas del [curso de R en Quito - Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html)&quot;                                                                                                                                                                              
+##  [26] &quot;* Modificaciones en el estudio de caso: [dataloggers](#studyCase1)&quot;                                                                                                                                                                                                                                      
 ##  [27] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [28] &quot;**22/01/2019**&quot;                                                                                                                                                                                                                                                                                          
+##  [28] &quot;**28/03/2019**&quot;                                                                                                                                                                                                                                                                                          
 ##  [29] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [30] &quot;* CapÃ­tulo [Paquetes grÃ¡ficos](#graph3) &quot;                                                                                                                                                                                                                                                              
+##  [30] &quot;* diapositivas del [curso de R en Quito - Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html)&quot;                                                                                                                                                                              
 ##  [31] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [32] &quot;**10/12/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [32] &quot;**22/01/2019**&quot;                                                                                                                                                                                                                                                                                          
 ##  [33] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [34] &quot;* CapÃ­tulo [GestiÃ³n del color](#graph2) &quot;                                                                                                                                                                                                                                                              
+##  [34] &quot;* CapÃ­tulo [Paquetes grÃ¡ficos](#graph3) &quot;                                                                                                                                                                                                                                                              
 ##  [35] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [36] &quot;**29/11/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [36] &quot;**10/12/2018**&quot;                                                                                                                                                                                                                                                                                          
 ##  [37] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [38] &quot;* CapÃ­tulo [GrÃ¡ficos simples](#graph1) &quot;                                                                                                                                                                                                                                                               
+##  [38] &quot;* CapÃ­tulo [GestiÃ³n del color](#graph2) &quot;                                                                                                                                                                                                                                                              
 ##  [39] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [40] &quot;**09/11/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [40] &quot;**29/11/2018**&quot;                                                                                                                                                                                                                                                                                          
 ##  [41] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [42] &quot;* CapÃ­tulo [GestiÃ³n de proyectos con R](#project)&quot;                                                                                                                                                                                                                                                     
-##  [43] &quot;* La primera parte de este libro sobre conceptos bÃ¡sicos estÃ¡ completa&quot;                                                                                                                                                                                                                                
-##  [44] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [45] &quot;**08/11/2018**&quot;                                                                                                                                                                                                                                                                                          
-##  [46] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [47] &quot;* algorÃ­tmico (5/6) [`next` y `break`](#l17spe)&quot;                                                                                                                                                                                                                                                        
-##  [48] &quot;* algorÃ­tmico (6/6) [Los bucles de la familia `apply`](#l17applyfamily)&quot;                                                                                                                                                                                                                                
-##  [49] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [50] &quot;**19/10/2018**&quot;                                                                                                                                                                                                                                                                                          
-##  [51] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [52] &quot;* algorÃ­tmico (3/6) [el bucle `for`](#l17for)&quot;                                                                                                                                                                                                                                                          
-##  [53] &quot;* algorÃ­tmico (4/6) [el bucle `while`](#l17while)&quot;                                                                                                                                                                                                                                                      
-##  [54] &quot;* algorÃ­tmico (4&#39;/6) [el bucle `repeat`](#l17repeat)&quot;                                                                                                                                                                                                                                                   
+##  [42] &quot;* CapÃ­tulo [GrÃ¡ficos simples](#graph1) &quot;                                                                                                                                                                                                                                                               
+##  [43] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [44] &quot;**09/11/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [45] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [46] &quot;* CapÃ­tulo [GestiÃ³n de proyectos con R](#project)&quot;                                                                                                                                                                                                                                                     
+##  [47] &quot;* La primera parte de este libro sobre conceptos bÃ¡sicos estÃ¡ completa&quot;                                                                                                                                                                                                                                
+##  [48] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [49] &quot;**08/11/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [50] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [51] &quot;* algorÃ­tmico (5/6) [`next` y `break`](#l17spe)&quot;                                                                                                                                                                                                                                                        
+##  [52] &quot;* algorÃ­tmico (6/6) [Los bucles de la familia `apply`](#l17applyfamily)&quot;                                                                                                                                                                                                                                
+##  [53] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [54] &quot;**19/10/2018**&quot;                                                                                                                                                                                                                                                                                          
 ##  [55] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [56] &quot;**28/09/2018**&quot;                                                                                                                                                                                                                                                                                          
-##  [57] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [58] &quot;* algorÃ­tmico (1/6) [Pruebas lÃ³gicas con `if`](#l17if)&quot;                                                                                                                                                                                                                                                
-##  [59] &quot;* algorÃ­tmico (2/6) [Pruebas lÃ³gicas con `switch`](#l17switch)&quot;                                                                                                                                                                                                                                        
-##  [60] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [61] &quot;**17/09/2018**&quot;                                                                                                                                                                                                                                                                                          
-##  [62] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [63] &quot;* IntroducciÃ³n&quot;                                                                                                                                                                                                                                                                                         
+##  [56] &quot;* algorÃ­tmico (3/6) [el bucle `for`](#l17for)&quot;                                                                                                                                                                                                                                                          
+##  [57] &quot;* algorÃ­tmico (4/6) [el bucle `while`](#l17while)&quot;                                                                                                                                                                                                                                                      
+##  [58] &quot;* algorÃ­tmico (4&#39;/6) [el bucle `repeat`](#l17repeat)&quot;                                                                                                                                                                                                                                                   
+##  [59] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [60] &quot;**28/09/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [61] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [62] &quot;* algorÃ­tmico (1/6) [Pruebas lÃ³gicas con `if`](#l17if)&quot;                                                                                                                                                                                                                                                
+##  [63] &quot;* algorÃ­tmico (2/6) [Pruebas lÃ³gicas con `switch`](#l17switch)&quot;                                                                                                                                                                                                                                        
 ##  [64] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [65] &quot;**10/09/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [65] &quot;**17/09/2018**&quot;                                                                                                                                                                                                                                                                                          
 ##  [66] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [67] &quot;* Importar y exportar datos (parte 2-3/3): [Guardar y exportar datos](#l016save)&quot;                                                                                                                                                                                                                        
+##  [67] &quot;* IntroducciÃ³n&quot;                                                                                                                                                                                                                                                                                         
 ##  [68] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [69] &quot;**06/09/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [69] &quot;**10/09/2018**&quot;                                                                                                                                                                                                                                                                                          
 ##  [70] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [71] &quot;* Importar y exportar datos (parte 1/3): [Leer datos desde un archivo](#l016read)&quot;                                                                                                                                                                                                                       
+##  [71] &quot;* Importar y exportar datos (parte 2-3/3): [Guardar y exportar datos](#l016save)&quot;                                                                                                                                                                                                                        
 ##  [72] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [73] &quot;**30/08/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [73] &quot;**06/09/2018**&quot;                                                                                                                                                                                                                                                                                          
 ##  [74] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [75] &quot;* Nuevo estudio de caso: [dataloggers](#studyCase1)&quot;                                                                                                                                                                                                                                                     
-##  [76] &quot;* Modificaciones de Marc G. sobre el [tipo de datos numeric](#dataType1) y los [entornos de desarrollo](#IDE)&quot;                                                                                                                                                                                           
-##  [77] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [78] &quot;**24/08/2018**&quot;                                                                                                                                                                                                                                                                                          
-##  [79] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [80] &quot;* CapÃ­tulo sobre [las funciones (3/3)](#fonctions)&quot;                                                                                                                                                                                                                                                     
+##  [75] &quot;* Importar y exportar datos (parte 1/3): [Leer datos desde un archivo](#l016read)&quot;                                                                                                                                                                                                                       
+##  [76] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [77] &quot;**30/08/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [78] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [79] &quot;* Nuevo estudio de caso: [dataloggers](#studyCase1)&quot;                                                                                                                                                                                                                                                     
+##  [80] &quot;* Modificaciones de Marc G. sobre el [tipo de datos numeric](#dataType1) y los [entornos de desarrollo](#IDE)&quot;                                                                                                                                                                                           
 ##  [81] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [82] &quot;**27/07/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [82] &quot;**24/08/2018**&quot;                                                                                                                                                                                                                                                                                          
 ##  [83] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [84] &quot;* CapÃ­tulo sobre [las funciones (2/3)](#fonctions)&quot;                                                                                                                                                                                                                                                     
+##  [84] &quot;* CapÃ­tulo sobre [las funciones (3/3)](#fonctions)&quot;                                                                                                                                                                                                                                                     
 ##  [85] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [86] &quot;**25/07/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [86] &quot;**27/07/2018**&quot;                                                                                                                                                                                                                                                                                          
 ##  [87] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [88] &quot;* CapÃ­tulo sobre [las funciones (1/3)](#fonctions)&quot;                                                                                                                                                                                                                                                     
+##  [88] &quot;* CapÃ­tulo sobre [las funciones (2/3)](#fonctions)&quot;                                                                                                                                                                                                                                                     
 ##  [89] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [90] &quot;**17/07/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [90] &quot;**25/07/2018**&quot;                                                                                                                                                                                                                                                                                          
 ##  [91] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [92] &quot;* ediciÃ³n y correcciÃ³n del espaÃ±ol (Susi L.) &quot;                                                                                                                                                                                                                                                        
-##  [93] &quot;* tercera parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*data.frame*](#l014dataframe)&quot;                                                                                                                                                                                       
-##  [94] &quot;* cuarta parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*matrix*](#l014matrix)&quot;                                                                                                                                                                                               
-##  [95] &quot;* quinta parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*array*](#l014array)&quot;                                                                                                                                                                                                 
-##  [96] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [97] &quot;**16/07/2018**&quot;                                                                                                                                                                                                                                                                                          
-##  [98] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-##  [99] &quot;* ediciÃ³n y correcciÃ³n del espaÃ±ol (EstefanÃ­a Q.) &quot;                                                                                                                                                                                                                                                  
+##  [92] &quot;* CapÃ­tulo sobre [las funciones (1/3)](#fonctions)&quot;                                                                                                                                                                                                                                                     
+##  [93] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [94] &quot;**17/07/2018**&quot;                                                                                                                                                                                                                                                                                          
+##  [95] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+##  [96] &quot;* ediciÃ³n y correcciÃ³n del espaÃ±ol (Susi L.) &quot;                                                                                                                                                                                                                                                        
+##  [97] &quot;* tercera parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*data.frame*](#l014dataframe)&quot;                                                                                                                                                                                       
+##  [98] &quot;* cuarta parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*matrix*](#l014matrix)&quot;                                                                                                                                                                                               
+##  [99] &quot;* quinta parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*array*](#l014array)&quot;                                                                                                                                                                                                 
 ## [100] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-## [101] &quot;**12/07/2018**&quot;                                                                                                                                                                                                                                                                                          
+## [101] &quot;**16/07/2018**&quot;                                                                                                                                                                                                                                                                                          
 ## [102] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-## [103] &quot;* segunda parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*list*](#l014list)&quot;                                                                                                                                                                                                  
+## [103] &quot;* ediciÃ³n y correcciÃ³n del espaÃ±ol (EstefanÃ­a Q.) &quot;                                                                                                                                                                                                                                                  
 ## [104] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-## [105] &quot;**06/07/2018**&quot;                                                                                                                                                                                                                                                                                          
+## [105] &quot;**12/07/2018**&quot;                                                                                                                                                                                                                                                                                          
 ## [106] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-## [107] &quot;* ediciÃ³n y correcciÃ³n del espaÃ±ol (Camila B.) &quot;                                                                                                                                                                                                                                                      
-## [108] &quot;* primera parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*vector*](#l014vector)&quot;                                                                                                                                                                                              
-## [109] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-## [110] &quot;**04/07/2018**&quot;                                                                                                                                                                                                                                                                                          
-## [111] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-## [112] &quot;* tabla de contenidos con los prÃ³ximos capÃ­tulos&quot;                                                                                                                                                                                                                                                      
-## [113] &quot;* error de tipografÃ­a en *Elegir un entorno de desarrollo*&quot;                                                                                                                                                                                                                                             
-## [114] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-## [115] &quot;**02/07/2018**&quot;                                                                                                                                                                                                                                                                                          
-## [116] &quot;&quot;                                                                                                                                                                                                                                                                                                        
-## [117] &quot;* tres capÃ­tulos en lÃ­nea (*primeros pasos*, *elegir un entorno de desarrollo*, *tipos de datos*)&quot;</code></pre>
+## [107] &quot;* segunda parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*list*](#l014list)&quot;                                                                                                                                                                                                  
+## [108] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+## [109] &quot;**06/07/2018**&quot;                                                                                                                                                                                                                                                                                          
+## [110] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+## [111] &quot;* ediciÃ³n y correcciÃ³n del espaÃ±ol (Camila B.) &quot;                                                                                                                                                                                                                                                      
+## [112] &quot;* primera parte del capÃ­tulo [*Contenedores de datos*](#dataType2): El contenedor [*vector*](#l014vector)&quot;                                                                                                                                                                                              
+## [113] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+## [114] &quot;**04/07/2018**&quot;                                                                                                                                                                                                                                                                                          
+## [115] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+## [116] &quot;* tabla de contenidos con los prÃ³ximos capÃ­tulos&quot;                                                                                                                                                                                                                                                      
+## [117] &quot;* error de tipografÃ­a en *Elegir un entorno de desarrollo*&quot;                                                                                                                                                                                                                                             
+## [118] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+## [119] &quot;**02/07/2018**&quot;                                                                                                                                                                                                                                                                                          
+## [120] &quot;&quot;                                                                                                                                                                                                                                                                                                        
+## [121] &quot;* tres capÃ­tulos en lÃ­nea (*primeros pasos*, *elegir un entorno de desarrollo*, *tipos de datos*)&quot;</code></pre>
 <p>También está la función <code>scan()</code> que devolve todas las palabras separadas por espacios. Podemos consultar la ayuda para obtener más información.</p>
-<div class="sourceCode" id="cb978"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb978-1"><a href="import.html#cb978-1"></a><span class="kw">scan</span>(readmeGitHub, <span class="dt">what =</span> <span class="st">&quot;character&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb978"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb978-1"><a href="import.html#cb978-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scan</span>(readmeGitHub, <span class="at">what =</span> <span class="st">&quot;character&quot;</span>)</span></code></pre></div>
 <pre><code>##   [1] &quot;#&quot;                                                                                
 ##   [2] &quot;myRBook_SP&quot;                                                                       
 ##   [3] &quot;Aqui&quot;                                                                             
@@ -706,348 +744,353 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [128] &quot;##&quot;                                                                               
 ## [129] &quot;Ãšltimas&quot;                                                                         
 ## [130] &quot;modificaciones&quot;                                                                   
-## [131] &quot;**31/05/2020**&quot;                                                                   
+## [131] &quot;**05/02/2021**&quot;                                                                   
 ## [132] &quot;*&quot;                                                                                
-## [133] &quot;modificaciones&quot;                                                                   
-## [134] &quot;menores&quot;                                                                          
-## [135] &quot;**12/12/2019**&quot;                                                                   
-## [136] &quot;*&quot;                                                                                
-## [137] &quot;De&quot;                                                                               
-## [138] &quot;la&quot;                                                                               
-## [139] &quot;grÃ¡fica&quot;                                                                         
-## [140] &quot;a&quot;                                                                                
-## [141] &quot;la&quot;                                                                               
-## [142] &quot;figura&quot;                                                                           
-## [143] &quot;en&quot;                                                                               
-## [144] &quot;un&quot;                                                                               
-## [145] &quot;artÃ­culo&quot;                                                                        
-## [146] &quot;cientÃ­fico&quot;                                                                      
-## [147] &quot;**10/04/2019**&quot;                                                                   
-## [148] &quot;*&quot;                                                                                
-## [149] &quot;Modificaciones&quot;                                                                   
-## [150] &quot;en&quot;                                                                               
-## [151] &quot;el&quot;                                                                               
-## [152] &quot;estudio&quot;                                                                          
-## [153] &quot;de&quot;                                                                               
-## [154] &quot;caso:&quot;                                                                            
-## [155] &quot;[dataloggers](#studyCase1)&quot;                                                       
-## [156] &quot;**28/03/2019**&quot;                                                                   
-## [157] &quot;*&quot;                                                                                
-## [158] &quot;diapositivas&quot;                                                                     
-## [159] &quot;del&quot;                                                                              
-## [160] &quot;[curso&quot;                                                                           
-## [161] &quot;de&quot;                                                                               
-## [162] &quot;R&quot;                                                                                
-## [163] &quot;en&quot;                                                                               
-## [164] &quot;Quito&quot;                                                                            
-## [165] &quot;-&quot;                                                                                
-## [166] &quot;Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html)&quot; 
-## [167] &quot;**22/01/2019**&quot;                                                                   
-## [168] &quot;*&quot;                                                                                
-## [169] &quot;CapÃ­tulo&quot;                                                                        
-## [170] &quot;[Paquetes&quot;                                                                        
-## [171] &quot;grÃ¡ficos](#graph3)&quot;                                                              
-## [172] &quot;**10/12/2018**&quot;                                                                   
+## [133] &quot;revisiones&quot;                                                                       
+## [134] &quot;del&quot;                                                                              
+## [135] &quot;estilo&quot;                                                                           
+## [136] &quot;**31/05/2020**&quot;                                                                   
+## [137] &quot;*&quot;                                                                                
+## [138] &quot;modificaciones&quot;                                                                   
+## [139] &quot;menores&quot;                                                                          
+## [140] &quot;**12/12/2019**&quot;                                                                   
+## [141] &quot;*&quot;                                                                                
+## [142] &quot;De&quot;                                                                               
+## [143] &quot;la&quot;                                                                               
+## [144] &quot;grÃ¡fica&quot;                                                                         
+## [145] &quot;a&quot;                                                                                
+## [146] &quot;la&quot;                                                                               
+## [147] &quot;figura&quot;                                                                           
+## [148] &quot;en&quot;                                                                               
+## [149] &quot;un&quot;                                                                               
+## [150] &quot;artÃ­culo&quot;                                                                        
+## [151] &quot;cientÃ­fico&quot;                                                                      
+## [152] &quot;**10/04/2019**&quot;                                                                   
+## [153] &quot;*&quot;                                                                                
+## [154] &quot;Modificaciones&quot;                                                                   
+## [155] &quot;en&quot;                                                                               
+## [156] &quot;el&quot;                                                                               
+## [157] &quot;estudio&quot;                                                                          
+## [158] &quot;de&quot;                                                                               
+## [159] &quot;caso:&quot;                                                                            
+## [160] &quot;[dataloggers](#studyCase1)&quot;                                                       
+## [161] &quot;**28/03/2019**&quot;                                                                   
+## [162] &quot;*&quot;                                                                                
+## [163] &quot;diapositivas&quot;                                                                     
+## [164] &quot;del&quot;                                                                              
+## [165] &quot;[curso&quot;                                                                           
+## [166] &quot;de&quot;                                                                               
+## [167] &quot;R&quot;                                                                                
+## [168] &quot;en&quot;                                                                               
+## [169] &quot;Quito&quot;                                                                            
+## [170] &quot;-&quot;                                                                                
+## [171] &quot;Ecuador](http://myrbooksp.netlify.com/myHtmls/Ecuador_Quito_2019/R00_links.html)&quot; 
+## [172] &quot;**22/01/2019**&quot;                                                                   
 ## [173] &quot;*&quot;                                                                                
 ## [174] &quot;CapÃ­tulo&quot;                                                                        
-## [175] &quot;[GestiÃ³n&quot;                                                                        
-## [176] &quot;del&quot;                                                                              
-## [177] &quot;color](#graph2)&quot;                                                                  
-## [178] &quot;**29/11/2018**&quot;                                                                   
-## [179] &quot;*&quot;                                                                                
-## [180] &quot;CapÃ­tulo&quot;                                                                        
-## [181] &quot;[GrÃ¡ficos&quot;                                                                       
-## [182] &quot;simples](#graph1)&quot;                                                                
-## [183] &quot;**09/11/2018**&quot;                                                                   
+## [175] &quot;[Paquetes&quot;                                                                        
+## [176] &quot;grÃ¡ficos](#graph3)&quot;                                                              
+## [177] &quot;**10/12/2018**&quot;                                                                   
+## [178] &quot;*&quot;                                                                                
+## [179] &quot;CapÃ­tulo&quot;                                                                        
+## [180] &quot;[GestiÃ³n&quot;                                                                        
+## [181] &quot;del&quot;                                                                              
+## [182] &quot;color](#graph2)&quot;                                                                  
+## [183] &quot;**29/11/2018**&quot;                                                                   
 ## [184] &quot;*&quot;                                                                                
 ## [185] &quot;CapÃ­tulo&quot;                                                                        
-## [186] &quot;[GestiÃ³n&quot;                                                                        
-## [187] &quot;de&quot;                                                                               
-## [188] &quot;proyectos&quot;                                                                        
-## [189] &quot;con&quot;                                                                              
-## [190] &quot;R](#project)&quot;                                                                     
-## [191] &quot;*&quot;                                                                                
-## [192] &quot;La&quot;                                                                               
-## [193] &quot;primera&quot;                                                                          
-## [194] &quot;parte&quot;                                                                            
-## [195] &quot;de&quot;                                                                               
-## [196] &quot;este&quot;                                                                             
-## [197] &quot;libro&quot;                                                                            
-## [198] &quot;sobre&quot;                                                                            
-## [199] &quot;conceptos&quot;                                                                        
-## [200] &quot;bÃ¡sicos&quot;                                                                         
-## [201] &quot;estÃ¡&quot;                                                                            
-## [202] &quot;completa&quot;                                                                         
-## [203] &quot;**08/11/2018**&quot;                                                                   
-## [204] &quot;*&quot;                                                                                
-## [205] &quot;algorÃ­tmico&quot;                                                                     
-## [206] &quot;(5/6)&quot;                                                                            
-## [207] &quot;[`next`&quot;                                                                          
-## [208] &quot;y&quot;                                                                                
-## [209] &quot;`break`](#l17spe)&quot;                                                                
-## [210] &quot;*&quot;                                                                                
-## [211] &quot;algorÃ­tmico&quot;                                                                     
-## [212] &quot;(6/6)&quot;                                                                            
-## [213] &quot;[Los&quot;                                                                             
-## [214] &quot;bucles&quot;                                                                           
-## [215] &quot;de&quot;                                                                               
-## [216] &quot;la&quot;                                                                               
-## [217] &quot;familia&quot;                                                                          
-## [218] &quot;`apply`](#l17applyfamily)&quot;                                                        
-## [219] &quot;**19/10/2018**&quot;                                                                   
-## [220] &quot;*&quot;                                                                                
-## [221] &quot;algorÃ­tmico&quot;                                                                     
-## [222] &quot;(3/6)&quot;                                                                            
-## [223] &quot;[el&quot;                                                                              
-## [224] &quot;bucle&quot;                                                                            
-## [225] &quot;`for`](#l17for)&quot;                                                                  
-## [226] &quot;*&quot;                                                                                
-## [227] &quot;algorÃ­tmico&quot;                                                                     
-## [228] &quot;(4/6)&quot;                                                                            
-## [229] &quot;[el&quot;                                                                              
-## [230] &quot;bucle&quot;                                                                            
-## [231] &quot;`while`](#l17while)&quot;                                                              
-## [232] &quot;*&quot;                                                                                
-## [233] &quot;algorÃ­tmico&quot;                                                                     
-## [234] &quot;(4&#39;/6)&quot;                                                                           
-## [235] &quot;[el&quot;                                                                              
-## [236] &quot;bucle&quot;                                                                            
-## [237] &quot;`repeat`](#l17repeat)&quot;                                                            
-## [238] &quot;**28/09/2018**&quot;                                                                   
-## [239] &quot;*&quot;                                                                                
-## [240] &quot;algorÃ­tmico&quot;                                                                     
-## [241] &quot;(1/6)&quot;                                                                            
-## [242] &quot;[Pruebas&quot;                                                                         
-## [243] &quot;lÃ³gicas&quot;                                                                         
-## [244] &quot;con&quot;                                                                              
-## [245] &quot;`if`](#l17if)&quot;                                                                    
-## [246] &quot;*&quot;                                                                                
-## [247] &quot;algorÃ­tmico&quot;                                                                     
-## [248] &quot;(2/6)&quot;                                                                            
-## [249] &quot;[Pruebas&quot;                                                                         
-## [250] &quot;lÃ³gicas&quot;                                                                         
-## [251] &quot;con&quot;                                                                              
-## [252] &quot;`switch`](#l17switch)&quot;                                                            
-## [253] &quot;**17/09/2018**&quot;                                                                   
-## [254] &quot;*&quot;                                                                                
-## [255] &quot;IntroducciÃ³n&quot;                                                                    
-## [256] &quot;**10/09/2018**&quot;                                                                   
-## [257] &quot;*&quot;                                                                                
-## [258] &quot;Importar&quot;                                                                         
-## [259] &quot;y&quot;                                                                                
-## [260] &quot;exportar&quot;                                                                         
-## [261] &quot;datos&quot;                                                                            
-## [262] &quot;(parte&quot;                                                                           
-## [263] &quot;2-3/3):&quot;                                                                          
-## [264] &quot;[Guardar&quot;                                                                         
-## [265] &quot;y&quot;                                                                                
-## [266] &quot;exportar&quot;                                                                         
-## [267] &quot;datos](#l016save)&quot;                                                                
-## [268] &quot;**06/09/2018**&quot;                                                                   
-## [269] &quot;*&quot;                                                                                
-## [270] &quot;Importar&quot;                                                                         
-## [271] &quot;y&quot;                                                                                
-## [272] &quot;exportar&quot;                                                                         
-## [273] &quot;datos&quot;                                                                            
-## [274] &quot;(parte&quot;                                                                           
-## [275] &quot;1/3):&quot;                                                                            
-## [276] &quot;[Leer&quot;                                                                            
-## [277] &quot;datos&quot;                                                                            
-## [278] &quot;desde&quot;                                                                            
-## [279] &quot;un&quot;                                                                               
-## [280] &quot;archivo](#l016read)&quot;                                                              
-## [281] &quot;**30/08/2018**&quot;                                                                   
-## [282] &quot;*&quot;                                                                                
-## [283] &quot;Nuevo&quot;                                                                            
-## [284] &quot;estudio&quot;                                                                          
-## [285] &quot;de&quot;                                                                               
-## [286] &quot;caso:&quot;                                                                            
-## [287] &quot;[dataloggers](#studyCase1)&quot;                                                       
-## [288] &quot;*&quot;                                                                                
-## [289] &quot;Modificaciones&quot;                                                                   
+## [186] &quot;[GrÃ¡ficos&quot;                                                                       
+## [187] &quot;simples](#graph1)&quot;                                                                
+## [188] &quot;**09/11/2018**&quot;                                                                   
+## [189] &quot;*&quot;                                                                                
+## [190] &quot;CapÃ­tulo&quot;                                                                        
+## [191] &quot;[GestiÃ³n&quot;                                                                        
+## [192] &quot;de&quot;                                                                               
+## [193] &quot;proyectos&quot;                                                                        
+## [194] &quot;con&quot;                                                                              
+## [195] &quot;R](#project)&quot;                                                                     
+## [196] &quot;*&quot;                                                                                
+## [197] &quot;La&quot;                                                                               
+## [198] &quot;primera&quot;                                                                          
+## [199] &quot;parte&quot;                                                                            
+## [200] &quot;de&quot;                                                                               
+## [201] &quot;este&quot;                                                                             
+## [202] &quot;libro&quot;                                                                            
+## [203] &quot;sobre&quot;                                                                            
+## [204] &quot;conceptos&quot;                                                                        
+## [205] &quot;bÃ¡sicos&quot;                                                                         
+## [206] &quot;estÃ¡&quot;                                                                            
+## [207] &quot;completa&quot;                                                                         
+## [208] &quot;**08/11/2018**&quot;                                                                   
+## [209] &quot;*&quot;                                                                                
+## [210] &quot;algorÃ­tmico&quot;                                                                     
+## [211] &quot;(5/6)&quot;                                                                            
+## [212] &quot;[`next`&quot;                                                                          
+## [213] &quot;y&quot;                                                                                
+## [214] &quot;`break`](#l17spe)&quot;                                                                
+## [215] &quot;*&quot;                                                                                
+## [216] &quot;algorÃ­tmico&quot;                                                                     
+## [217] &quot;(6/6)&quot;                                                                            
+## [218] &quot;[Los&quot;                                                                             
+## [219] &quot;bucles&quot;                                                                           
+## [220] &quot;de&quot;                                                                               
+## [221] &quot;la&quot;                                                                               
+## [222] &quot;familia&quot;                                                                          
+## [223] &quot;`apply`](#l17applyfamily)&quot;                                                        
+## [224] &quot;**19/10/2018**&quot;                                                                   
+## [225] &quot;*&quot;                                                                                
+## [226] &quot;algorÃ­tmico&quot;                                                                     
+## [227] &quot;(3/6)&quot;                                                                            
+## [228] &quot;[el&quot;                                                                              
+## [229] &quot;bucle&quot;                                                                            
+## [230] &quot;`for`](#l17for)&quot;                                                                  
+## [231] &quot;*&quot;                                                                                
+## [232] &quot;algorÃ­tmico&quot;                                                                     
+## [233] &quot;(4/6)&quot;                                                                            
+## [234] &quot;[el&quot;                                                                              
+## [235] &quot;bucle&quot;                                                                            
+## [236] &quot;`while`](#l17while)&quot;                                                              
+## [237] &quot;*&quot;                                                                                
+## [238] &quot;algorÃ­tmico&quot;                                                                     
+## [239] &quot;(4&#39;/6)&quot;                                                                           
+## [240] &quot;[el&quot;                                                                              
+## [241] &quot;bucle&quot;                                                                            
+## [242] &quot;`repeat`](#l17repeat)&quot;                                                            
+## [243] &quot;**28/09/2018**&quot;                                                                   
+## [244] &quot;*&quot;                                                                                
+## [245] &quot;algorÃ­tmico&quot;                                                                     
+## [246] &quot;(1/6)&quot;                                                                            
+## [247] &quot;[Pruebas&quot;                                                                         
+## [248] &quot;lÃ³gicas&quot;                                                                         
+## [249] &quot;con&quot;                                                                              
+## [250] &quot;`if`](#l17if)&quot;                                                                    
+## [251] &quot;*&quot;                                                                                
+## [252] &quot;algorÃ­tmico&quot;                                                                     
+## [253] &quot;(2/6)&quot;                                                                            
+## [254] &quot;[Pruebas&quot;                                                                         
+## [255] &quot;lÃ³gicas&quot;                                                                         
+## [256] &quot;con&quot;                                                                              
+## [257] &quot;`switch`](#l17switch)&quot;                                                            
+## [258] &quot;**17/09/2018**&quot;                                                                   
+## [259] &quot;*&quot;                                                                                
+## [260] &quot;IntroducciÃ³n&quot;                                                                    
+## [261] &quot;**10/09/2018**&quot;                                                                   
+## [262] &quot;*&quot;                                                                                
+## [263] &quot;Importar&quot;                                                                         
+## [264] &quot;y&quot;                                                                                
+## [265] &quot;exportar&quot;                                                                         
+## [266] &quot;datos&quot;                                                                            
+## [267] &quot;(parte&quot;                                                                           
+## [268] &quot;2-3/3):&quot;                                                                          
+## [269] &quot;[Guardar&quot;                                                                         
+## [270] &quot;y&quot;                                                                                
+## [271] &quot;exportar&quot;                                                                         
+## [272] &quot;datos](#l016save)&quot;                                                                
+## [273] &quot;**06/09/2018**&quot;                                                                   
+## [274] &quot;*&quot;                                                                                
+## [275] &quot;Importar&quot;                                                                         
+## [276] &quot;y&quot;                                                                                
+## [277] &quot;exportar&quot;                                                                         
+## [278] &quot;datos&quot;                                                                            
+## [279] &quot;(parte&quot;                                                                           
+## [280] &quot;1/3):&quot;                                                                            
+## [281] &quot;[Leer&quot;                                                                            
+## [282] &quot;datos&quot;                                                                            
+## [283] &quot;desde&quot;                                                                            
+## [284] &quot;un&quot;                                                                               
+## [285] &quot;archivo](#l016read)&quot;                                                              
+## [286] &quot;**30/08/2018**&quot;                                                                   
+## [287] &quot;*&quot;                                                                                
+## [288] &quot;Nuevo&quot;                                                                            
+## [289] &quot;estudio&quot;                                                                          
 ## [290] &quot;de&quot;                                                                               
-## [291] &quot;Marc&quot;                                                                             
-## [292] &quot;G.&quot;                                                                               
-## [293] &quot;sobre&quot;                                                                            
-## [294] &quot;el&quot;                                                                               
-## [295] &quot;[tipo&quot;                                                                            
-## [296] &quot;de&quot;                                                                               
-## [297] &quot;datos&quot;                                                                            
-## [298] &quot;numeric](#dataType1)&quot;                                                             
-## [299] &quot;y&quot;                                                                                
-## [300] &quot;los&quot;                                                                              
-## [301] &quot;[entornos&quot;                                                                        
-## [302] &quot;de&quot;                                                                               
-## [303] &quot;desarrollo](#IDE)&quot;                                                                
-## [304] &quot;**24/08/2018**&quot;                                                                   
-## [305] &quot;*&quot;                                                                                
-## [306] &quot;CapÃ­tulo&quot;                                                                        
-## [307] &quot;sobre&quot;                                                                            
-## [308] &quot;[las&quot;                                                                             
-## [309] &quot;funciones&quot;                                                                        
-## [310] &quot;(3/3)](#fonctions)&quot;                                                               
-## [311] &quot;**27/07/2018**&quot;                                                                   
-## [312] &quot;*&quot;                                                                                
-## [313] &quot;CapÃ­tulo&quot;                                                                        
-## [314] &quot;sobre&quot;                                                                            
-## [315] &quot;[las&quot;                                                                             
-## [316] &quot;funciones&quot;                                                                        
-## [317] &quot;(2/3)](#fonctions)&quot;                                                               
-## [318] &quot;**25/07/2018**&quot;                                                                   
-## [319] &quot;*&quot;                                                                                
-## [320] &quot;CapÃ­tulo&quot;                                                                        
-## [321] &quot;sobre&quot;                                                                            
-## [322] &quot;[las&quot;                                                                             
-## [323] &quot;funciones&quot;                                                                        
-## [324] &quot;(1/3)](#fonctions)&quot;                                                               
-## [325] &quot;**17/07/2018**&quot;                                                                   
-## [326] &quot;*&quot;                                                                                
-## [327] &quot;ediciÃ³n&quot;                                                                         
-## [328] &quot;y&quot;                                                                                
-## [329] &quot;correcciÃ³n&quot;                                                                      
-## [330] &quot;del&quot;                                                                              
-## [331] &quot;espaÃ±ol&quot;                                                                         
-## [332] &quot;(Susi&quot;                                                                            
-## [333] &quot;L.)&quot;                                                                              
-## [334] &quot;*&quot;                                                                                
-## [335] &quot;tercera&quot;                                                                          
-## [336] &quot;parte&quot;                                                                            
-## [337] &quot;del&quot;                                                                              
-## [338] &quot;capÃ­tulo&quot;                                                                        
-## [339] &quot;[*Contenedores&quot;                                                                   
-## [340] &quot;de&quot;                                                                               
-## [341] &quot;datos*](#dataType2):&quot;                                                             
-## [342] &quot;El&quot;                                                                               
-## [343] &quot;contenedor&quot;                                                                       
-## [344] &quot;[*data.frame*](#l014dataframe)&quot;                                                   
-## [345] &quot;*&quot;                                                                                
-## [346] &quot;cuarta&quot;                                                                           
-## [347] &quot;parte&quot;                                                                            
-## [348] &quot;del&quot;                                                                              
-## [349] &quot;capÃ­tulo&quot;                                                                        
-## [350] &quot;[*Contenedores&quot;                                                                   
-## [351] &quot;de&quot;                                                                               
-## [352] &quot;datos*](#dataType2):&quot;                                                             
-## [353] &quot;El&quot;                                                                               
-## [354] &quot;contenedor&quot;                                                                       
-## [355] &quot;[*matrix*](#l014matrix)&quot;                                                          
-## [356] &quot;*&quot;                                                                                
-## [357] &quot;quinta&quot;                                                                           
-## [358] &quot;parte&quot;                                                                            
-## [359] &quot;del&quot;                                                                              
-## [360] &quot;capÃ­tulo&quot;                                                                        
-## [361] &quot;[*Contenedores&quot;                                                                   
-## [362] &quot;de&quot;                                                                               
-## [363] &quot;datos*](#dataType2):&quot;                                                             
-## [364] &quot;El&quot;                                                                               
-## [365] &quot;contenedor&quot;                                                                       
-## [366] &quot;[*array*](#l014array)&quot;                                                            
-## [367] &quot;**16/07/2018**&quot;                                                                   
-## [368] &quot;*&quot;                                                                                
-## [369] &quot;ediciÃ³n&quot;                                                                         
-## [370] &quot;y&quot;                                                                                
-## [371] &quot;correcciÃ³n&quot;                                                                      
-## [372] &quot;del&quot;                                                                              
-## [373] &quot;espaÃ±ol&quot;                                                                         
-## [374] &quot;(EstefanÃ­a&quot;                                                                      
-## [375] &quot;Q.)&quot;                                                                              
-## [376] &quot;**12/07/2018**&quot;                                                                   
-## [377] &quot;*&quot;                                                                                
-## [378] &quot;segunda&quot;                                                                          
-## [379] &quot;parte&quot;                                                                            
-## [380] &quot;del&quot;                                                                              
-## [381] &quot;capÃ­tulo&quot;                                                                        
-## [382] &quot;[*Contenedores&quot;                                                                   
-## [383] &quot;de&quot;                                                                               
-## [384] &quot;datos*](#dataType2):&quot;                                                             
-## [385] &quot;El&quot;                                                                               
-## [386] &quot;contenedor&quot;                                                                       
-## [387] &quot;[*list*](#l014list)&quot;                                                              
-## [388] &quot;**06/07/2018**&quot;                                                                   
-## [389] &quot;*&quot;                                                                                
-## [390] &quot;ediciÃ³n&quot;                                                                         
-## [391] &quot;y&quot;                                                                                
-## [392] &quot;correcciÃ³n&quot;                                                                      
-## [393] &quot;del&quot;                                                                              
-## [394] &quot;espaÃ±ol&quot;                                                                         
-## [395] &quot;(Camila&quot;                                                                          
-## [396] &quot;B.)&quot;                                                                              
-## [397] &quot;*&quot;                                                                                
-## [398] &quot;primera&quot;                                                                          
-## [399] &quot;parte&quot;                                                                            
-## [400] &quot;del&quot;                                                                              
-## [401] &quot;capÃ­tulo&quot;                                                                        
-## [402] &quot;[*Contenedores&quot;                                                                   
-## [403] &quot;de&quot;                                                                               
-## [404] &quot;datos*](#dataType2):&quot;                                                             
-## [405] &quot;El&quot;                                                                               
-## [406] &quot;contenedor&quot;                                                                       
-## [407] &quot;[*vector*](#l014vector)&quot;                                                          
-## [408] &quot;**04/07/2018**&quot;                                                                   
-## [409] &quot;*&quot;                                                                                
-## [410] &quot;tabla&quot;                                                                            
-## [411] &quot;de&quot;                                                                               
-## [412] &quot;contenidos&quot;                                                                       
-## [413] &quot;con&quot;                                                                              
-## [414] &quot;los&quot;                                                                              
-## [415] &quot;prÃ³ximos&quot;                                                                        
-## [416] &quot;capÃ­tulos&quot;                                                                       
-## [417] &quot;*&quot;                                                                                
-## [418] &quot;error&quot;                                                                            
-## [419] &quot;de&quot;                                                                               
-## [420] &quot;tipografÃ­a&quot;                                                                      
-## [421] &quot;en&quot;                                                                               
-## [422] &quot;*Elegir&quot;                                                                          
-## [423] &quot;un&quot;                                                                               
-## [424] &quot;entorno&quot;                                                                          
-## [425] &quot;de&quot;                                                                               
-## [426] &quot;desarrollo*&quot;                                                                      
-## [427] &quot;**02/07/2018**&quot;                                                                   
-## [428] &quot;*&quot;                                                                                
-## [429] &quot;tres&quot;                                                                             
-## [430] &quot;capÃ­tulos&quot;                                                                       
-## [431] &quot;en&quot;                                                                               
-## [432] &quot;lÃ­nea&quot;                                                                           
-## [433] &quot;(*primeros&quot;                                                                       
-## [434] &quot;pasos*,&quot;                                                                          
-## [435] &quot;*elegir&quot;                                                                          
-## [436] &quot;un&quot;                                                                               
-## [437] &quot;entorno&quot;                                                                          
-## [438] &quot;de&quot;                                                                               
-## [439] &quot;desarrollo*,&quot;                                                                     
-## [440] &quot;*tipos&quot;                                                                           
-## [441] &quot;de&quot;                                                                               
-## [442] &quot;datos*)&quot;</code></pre>
+## [291] &quot;caso:&quot;                                                                            
+## [292] &quot;[dataloggers](#studyCase1)&quot;                                                       
+## [293] &quot;*&quot;                                                                                
+## [294] &quot;Modificaciones&quot;                                                                   
+## [295] &quot;de&quot;                                                                               
+## [296] &quot;Marc&quot;                                                                             
+## [297] &quot;G.&quot;                                                                               
+## [298] &quot;sobre&quot;                                                                            
+## [299] &quot;el&quot;                                                                               
+## [300] &quot;[tipo&quot;                                                                            
+## [301] &quot;de&quot;                                                                               
+## [302] &quot;datos&quot;                                                                            
+## [303] &quot;numeric](#dataType1)&quot;                                                             
+## [304] &quot;y&quot;                                                                                
+## [305] &quot;los&quot;                                                                              
+## [306] &quot;[entornos&quot;                                                                        
+## [307] &quot;de&quot;                                                                               
+## [308] &quot;desarrollo](#IDE)&quot;                                                                
+## [309] &quot;**24/08/2018**&quot;                                                                   
+## [310] &quot;*&quot;                                                                                
+## [311] &quot;CapÃ­tulo&quot;                                                                        
+## [312] &quot;sobre&quot;                                                                            
+## [313] &quot;[las&quot;                                                                             
+## [314] &quot;funciones&quot;                                                                        
+## [315] &quot;(3/3)](#fonctions)&quot;                                                               
+## [316] &quot;**27/07/2018**&quot;                                                                   
+## [317] &quot;*&quot;                                                                                
+## [318] &quot;CapÃ­tulo&quot;                                                                        
+## [319] &quot;sobre&quot;                                                                            
+## [320] &quot;[las&quot;                                                                             
+## [321] &quot;funciones&quot;                                                                        
+## [322] &quot;(2/3)](#fonctions)&quot;                                                               
+## [323] &quot;**25/07/2018**&quot;                                                                   
+## [324] &quot;*&quot;                                                                                
+## [325] &quot;CapÃ­tulo&quot;                                                                        
+## [326] &quot;sobre&quot;                                                                            
+## [327] &quot;[las&quot;                                                                             
+## [328] &quot;funciones&quot;                                                                        
+## [329] &quot;(1/3)](#fonctions)&quot;                                                               
+## [330] &quot;**17/07/2018**&quot;                                                                   
+## [331] &quot;*&quot;                                                                                
+## [332] &quot;ediciÃ³n&quot;                                                                         
+## [333] &quot;y&quot;                                                                                
+## [334] &quot;correcciÃ³n&quot;                                                                      
+## [335] &quot;del&quot;                                                                              
+## [336] &quot;espaÃ±ol&quot;                                                                         
+## [337] &quot;(Susi&quot;                                                                            
+## [338] &quot;L.)&quot;                                                                              
+## [339] &quot;*&quot;                                                                                
+## [340] &quot;tercera&quot;                                                                          
+## [341] &quot;parte&quot;                                                                            
+## [342] &quot;del&quot;                                                                              
+## [343] &quot;capÃ­tulo&quot;                                                                        
+## [344] &quot;[*Contenedores&quot;                                                                   
+## [345] &quot;de&quot;                                                                               
+## [346] &quot;datos*](#dataType2):&quot;                                                             
+## [347] &quot;El&quot;                                                                               
+## [348] &quot;contenedor&quot;                                                                       
+## [349] &quot;[*data.frame*](#l014dataframe)&quot;                                                   
+## [350] &quot;*&quot;                                                                                
+## [351] &quot;cuarta&quot;                                                                           
+## [352] &quot;parte&quot;                                                                            
+## [353] &quot;del&quot;                                                                              
+## [354] &quot;capÃ­tulo&quot;                                                                        
+## [355] &quot;[*Contenedores&quot;                                                                   
+## [356] &quot;de&quot;                                                                               
+## [357] &quot;datos*](#dataType2):&quot;                                                             
+## [358] &quot;El&quot;                                                                               
+## [359] &quot;contenedor&quot;                                                                       
+## [360] &quot;[*matrix*](#l014matrix)&quot;                                                          
+## [361] &quot;*&quot;                                                                                
+## [362] &quot;quinta&quot;                                                                           
+## [363] &quot;parte&quot;                                                                            
+## [364] &quot;del&quot;                                                                              
+## [365] &quot;capÃ­tulo&quot;                                                                        
+## [366] &quot;[*Contenedores&quot;                                                                   
+## [367] &quot;de&quot;                                                                               
+## [368] &quot;datos*](#dataType2):&quot;                                                             
+## [369] &quot;El&quot;                                                                               
+## [370] &quot;contenedor&quot;                                                                       
+## [371] &quot;[*array*](#l014array)&quot;                                                            
+## [372] &quot;**16/07/2018**&quot;                                                                   
+## [373] &quot;*&quot;                                                                                
+## [374] &quot;ediciÃ³n&quot;                                                                         
+## [375] &quot;y&quot;                                                                                
+## [376] &quot;correcciÃ³n&quot;                                                                      
+## [377] &quot;del&quot;                                                                              
+## [378] &quot;espaÃ±ol&quot;                                                                         
+## [379] &quot;(EstefanÃ­a&quot;                                                                      
+## [380] &quot;Q.)&quot;                                                                              
+## [381] &quot;**12/07/2018**&quot;                                                                   
+## [382] &quot;*&quot;                                                                                
+## [383] &quot;segunda&quot;                                                                          
+## [384] &quot;parte&quot;                                                                            
+## [385] &quot;del&quot;                                                                              
+## [386] &quot;capÃ­tulo&quot;                                                                        
+## [387] &quot;[*Contenedores&quot;                                                                   
+## [388] &quot;de&quot;                                                                               
+## [389] &quot;datos*](#dataType2):&quot;                                                             
+## [390] &quot;El&quot;                                                                               
+## [391] &quot;contenedor&quot;                                                                       
+## [392] &quot;[*list*](#l014list)&quot;                                                              
+## [393] &quot;**06/07/2018**&quot;                                                                   
+## [394] &quot;*&quot;                                                                                
+## [395] &quot;ediciÃ³n&quot;                                                                         
+## [396] &quot;y&quot;                                                                                
+## [397] &quot;correcciÃ³n&quot;                                                                      
+## [398] &quot;del&quot;                                                                              
+## [399] &quot;espaÃ±ol&quot;                                                                         
+## [400] &quot;(Camila&quot;                                                                          
+## [401] &quot;B.)&quot;                                                                              
+## [402] &quot;*&quot;                                                                                
+## [403] &quot;primera&quot;                                                                          
+## [404] &quot;parte&quot;                                                                            
+## [405] &quot;del&quot;                                                                              
+## [406] &quot;capÃ­tulo&quot;                                                                        
+## [407] &quot;[*Contenedores&quot;                                                                   
+## [408] &quot;de&quot;                                                                               
+## [409] &quot;datos*](#dataType2):&quot;                                                             
+## [410] &quot;El&quot;                                                                               
+## [411] &quot;contenedor&quot;                                                                       
+## [412] &quot;[*vector*](#l014vector)&quot;                                                          
+## [413] &quot;**04/07/2018**&quot;                                                                   
+## [414] &quot;*&quot;                                                                                
+## [415] &quot;tabla&quot;                                                                            
+## [416] &quot;de&quot;                                                                               
+## [417] &quot;contenidos&quot;                                                                       
+## [418] &quot;con&quot;                                                                              
+## [419] &quot;los&quot;                                                                              
+## [420] &quot;prÃ³ximos&quot;                                                                        
+## [421] &quot;capÃ­tulos&quot;                                                                       
+## [422] &quot;*&quot;                                                                                
+## [423] &quot;error&quot;                                                                            
+## [424] &quot;de&quot;                                                                               
+## [425] &quot;tipografÃ­a&quot;                                                                      
+## [426] &quot;en&quot;                                                                               
+## [427] &quot;*Elegir&quot;                                                                          
+## [428] &quot;un&quot;                                                                               
+## [429] &quot;entorno&quot;                                                                          
+## [430] &quot;de&quot;                                                                               
+## [431] &quot;desarrollo*&quot;                                                                      
+## [432] &quot;**02/07/2018**&quot;                                                                   
+## [433] &quot;*&quot;                                                                                
+## [434] &quot;tres&quot;                                                                             
+## [435] &quot;capÃ­tulos&quot;                                                                       
+## [436] &quot;en&quot;                                                                               
+## [437] &quot;lÃ­nea&quot;                                                                           
+## [438] &quot;(*primeros&quot;                                                                       
+## [439] &quot;pasos*,&quot;                                                                          
+## [440] &quot;*elegir&quot;                                                                          
+## [441] &quot;un&quot;                                                                               
+## [442] &quot;entorno&quot;                                                                          
+## [443] &quot;de&quot;                                                                               
+## [444] &quot;desarrollo*,&quot;                                                                     
+## [445] &quot;*tipos&quot;                                                                           
+## [446] &quot;de&quot;                                                                               
+## [447] &quot;datos*)&quot;</code></pre>
 </div>
 </div>
-<div id="l016save" class="section level2">
+<div id="l016save" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Guardar datos para R</h2>
 <p>A veces es útil poder guardar un objeto R para poder reutilizarlo más tarde. Este es el caso, por ejemplo, cuando el tiempo de cálculo para llegar a un resultado es muy largo, o cuando queremos liberar espacio en la RAM. Para hacer esto, existe la función <code>save()</code> que toma como argumento principal el nombre de los objetos que queremos guardar.</p>
 <p>El objeto guardado se almacenará en un archivo. Por convención, es bueno dar como nombre de extensión <code>.RData</code> a los archivos que contienen objetos R, preferir un solo objeto por archivo, y dar el nombre del objeto como nombre del archivo.</p>
-<div class="sourceCode" id="cb980"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb980-1"><a href="import.html#cb980-1"></a>myObject &lt;-<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb980-2"><a href="import.html#cb980-2"></a><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb980"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb980-1"><a href="import.html#cb980-1" aria-hidden="true" tabindex="-1"></a>myObject <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb980-2"><a href="import.html#cb980-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="at">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;myObject&quot;</code></pre>
-<div class="sourceCode" id="cb982"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb982-1"><a href="import.html#cb982-1"></a><span class="kw">save</span>(myObject, <span class="dt">file =</span> <span class="st">&quot;myFiles/myObject.RData&quot;</span>)</span>
-<span id="cb982-2"><a href="import.html#cb982-2"></a><span class="kw">rm</span>(myObject)</span>
-<span id="cb982-3"><a href="import.html#cb982-3"></a><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb982"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb982-1"><a href="import.html#cb982-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(myObject, <span class="at">file =</span> <span class="st">&quot;myFiles/myObject.RData&quot;</span>)</span>
+<span id="cb982-2"><a href="import.html#cb982-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(myObject)</span>
+<span id="cb982-3"><a href="import.html#cb982-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="at">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
 <pre><code>## character(0)</code></pre>
 <p>Si necesitamos el objeto guardado en el archivo, podemos volver a cargarlo con la función <code>load()</code>.</p>
-<div class="sourceCode" id="cb984"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb984-1"><a href="import.html#cb984-1"></a><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb984"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb984-1"><a href="import.html#cb984-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="at">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
 <pre><code>## character(0)</code></pre>
-<div class="sourceCode" id="cb986"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb986-1"><a href="import.html#cb986-1"></a><span class="kw">load</span>(<span class="st">&quot;myFiles/myObject.RData&quot;</span>)</span>
-<span id="cb986-2"><a href="import.html#cb986-2"></a><span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb986"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb986-1"><a href="import.html#cb986-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;myFiles/myObject.RData&quot;</span>)</span>
+<span id="cb986-2"><a href="import.html#cb986-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="at">pattern =</span> <span class="st">&quot;myObject&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;myObject&quot;</code></pre>
-<div class="sourceCode" id="cb988"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb988-1"><a href="import.html#cb988-1"></a><span class="kw">print</span>(myObject)</span></code></pre></div>
+<div class="sourceCode" id="cb988"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb988-1"><a href="import.html#cb988-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(myObject)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 </div>
-<div id="l016write" class="section level2">
+<div id="l016write" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Exportar datos</h2>
 <p>La mejor forma de comunicar sus resultados o datos es enviar sus scripts y archivos de datos. A veces esto no es posible o no es adecuado, y puede ser útil exportar sus datos en un archivo de texto o CSV. Para hacer esto, existe la función genérica <code>write()</code> y la función <code>write.table()</code> para <code>data.frame</code>.</p>
 <p>Por ejemplo, crearemos un <code>data.frame</code> con los números del 1 al 26 y las letras correspondientes, luego los guardaremos en un archivo CSV, luego volveremos a leer los datos contenidos en este archivo.</p>
-<div class="sourceCode" id="cb990"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb990-1"><a href="import.html#cb990-1"></a>dfLetters &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">num =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">26</span>, <span class="dt">letters =</span> letters)</span>
-<span id="cb990-2"><a href="import.html#cb990-2"></a><span class="kw">write.table</span>(dfLetters, <span class="dt">file =</span> <span class="st">&quot;myFiles/dfLetters.csv&quot;</span>, </span>
-<span id="cb990-3"><a href="import.html#cb990-3"></a>  <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">col.names =</span> <span class="ot">TRUE</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb990-4"><a href="import.html#cb990-4"></a><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;myFiles/dfLetters.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb990"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb990-1"><a href="import.html#cb990-1" aria-hidden="true" tabindex="-1"></a>dfLetters <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">num =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">26</span>, <span class="at">letters =</span> letters)</span>
+<span id="cb990-2"><a href="import.html#cb990-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(dfLetters, <span class="at">file =</span> <span class="st">&quot;myFiles/dfLetters.csv&quot;</span>, </span>
+<span id="cb990-3"><a href="import.html#cb990-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="at">col.names =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb990-4"><a href="import.html#cb990-4" aria-hidden="true" tabindex="-1"></a><span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">&quot;myFiles/dfLetters.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
 <pre><code>##    num letters
 ## 1    1       a
 ## 2    2       b
@@ -1076,7 +1119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 25  25       y
 ## 26  26       z</code></pre>
 </div>
-<div id="conclusión-5" class="section level2">
+<div id="conclusión-5" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> Conclusión</h2>
 <p>Felicitaciones! Ahora sabemos cómo leer datos de un archivo de texto o CSV, guardar y cargar datos de RData, y escribir en un archivo. El error más común entre los principiantes en R es la lectura de archivos de datos. Es por eso que este capítulo es para leer y volver a leer sin moderación.</p>
 
@@ -1111,6 +1154,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

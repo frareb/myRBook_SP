@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 10 Gestión de proyectos con R | R para los científicos</title>
   <meta name="description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 10 Gestión de proyectos con R | R para los científicos" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="myFigures/cover.png" />
+  <meta property="og:image" content="/myFigures/cover.png" />
   <meta property="og:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
   <meta name="github-repo" content="frareb/myRBook_SP" />
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content=" 10 Gestión de proyectos con R | R para los científicos" />
   
   <meta name="twitter:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="twitter:image" content="myFigures/cover.png" />
+  <meta name="twitter:image" content="/myFigures/cover.png" />
 
 <meta name="author" content="François Rebaudo" />
 
 
-<meta name="date" content="2021-02-05" />
+<meta name="date" content="2021-07-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="algo.html"/>
 <link rel="next" href="graph1.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,9 +51,10 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
@@ -70,18 +72,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -101,7 +103,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,6 +136,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="myStyle.css" type="text/css" />
 </head>
 
@@ -150,50 +153,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Aprender R: iniciación y perfeccionamiento</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#remerciements"><i class="fa fa-check"></i><b>1.1</b> Agradecimientos</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#licence"><i class="fa fa-check"></i><b>1.2</b> Licencia</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#por-qué-aprender-r"><i class="fa fa-check"></i><b>2.1</b> ¿Por qué aprender R?</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#este-libro"><i class="fa fa-check"></i><b>2.2</b> Este libro</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#lectura-adicional-en-español"><i class="fa fa-check"></i><b>2.3</b> Lectura adicional en español</a></li>
 </ul></li>
 <li class="part"><span><b>I Conceptos básicos</b></span></li>
-<li class="chapter" data-level="3" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos</a><ul>
+<li class="chapter" data-level="3" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="premiersPas.html"><a href="premiersPas.html#instalar-r"><i class="fa fa-check"></i><b>3.1</b> Instalar R</a></li>
-<li class="chapter" data-level="3.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="premiersPas.html"><a href="premiersPas.html#l011opari"><i class="fa fa-check"></i><b>3.2.1</b> Los operadores aritméticos</a></li>
 <li class="chapter" data-level="3.2.2" data-path="premiersPas.html"><a href="premiersPas.html#l011opcomp"><i class="fa fa-check"></i><b>3.2.2</b> Los operadores comparativos</a></li>
 <li class="chapter" data-level="3.2.3" data-path="premiersPas.html"><a href="premiersPas.html#l011oplog"><i class="fa fa-check"></i><b>3.2.3</b> Los operadores lógicos</a></li>
 <li class="chapter" data-level="3.2.4" data-path="premiersPas.html"><a href="premiersPas.html#ayuda-a-los-operadores"><i class="fa fa-check"></i><b>3.2.4</b> Ayuda a los operadores</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="premiersPas.html"><a href="premiersPas.html#l011object"><i class="fa fa-check"></i><b>3.3</b> El concepto de objeto</a></li>
-<li class="chapter" data-level="3.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>3.4</b> Los scripts</a><ul>
+<li class="chapter" data-level="3.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>3.4</b> Los scripts</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="premiersPas.html"><a href="premiersPas.html#crear-un-script-y-documentarlo"><i class="fa fa-check"></i><b>3.4.1</b> Crear un script y documentarlo</a></li>
 <li class="chapter" data-level="3.4.2" data-path="premiersPas.html"><a href="premiersPas.html#ejecutar-un-script"><i class="fa fa-check"></i><b>3.4.2</b> Ejecutar un script</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="premiersPas.html"><a href="premiersPas.html#conclusión"><i class="fa fa-check"></i><b>3.5</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="IDE.html"><a href="IDE.html"><i class="fa fa-check"></i><b>4</b> Elegir un entorno de desarrollo</a><ul>
+<li class="chapter" data-level="4" data-path="IDE.html"><a href="IDE.html"><i class="fa fa-check"></i><b>4</b> Elegir un entorno de desarrollo</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="IDE.html"><a href="IDE.html#editores-de-texto-y-entorno-de-desarrollo"><i class="fa fa-check"></i><b>4.1</b> Editores de texto y entorno de desarrollo</a></li>
-<li class="chapter" data-level="4.2" data-path="IDE.html"><a href="IDE.html#rstudio"><i class="fa fa-check"></i><b>4.2</b> RStudio</a><ul>
+<li class="chapter" data-level="4.2" data-path="IDE.html"><a href="IDE.html#rstudio"><i class="fa fa-check"></i><b>4.2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="IDE.html"><a href="IDE.html#instalar-rstudio"><i class="fa fa-check"></i><b>4.2.1</b> Instalar RStudio</a></li>
 <li class="chapter" data-level="4.2.2" data-path="IDE.html"><a href="IDE.html#un-script-con-rstudio"><i class="fa fa-check"></i><b>4.2.2</b> Un script con RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="IDE.html"><a href="IDE.html#notepad-avec-npp2r"><i class="fa fa-check"></i><b>4.3</b> Notepad++ avec Npp2R</a><ul>
+<li class="chapter" data-level="4.3" data-path="IDE.html"><a href="IDE.html#notepad-avec-npp2r"><i class="fa fa-check"></i><b>4.3</b> Notepad++ avec Npp2R</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="IDE.html"><a href="IDE.html#instalar-notepad-solamente-para-windows"><i class="fa fa-check"></i><b>4.3.1</b> Instalar Notepad++ (solamente para Windows)</a></li>
 <li class="chapter" data-level="4.3.2" data-path="IDE.html"><a href="IDE.html#instalar-npp2r"><i class="fa fa-check"></i><b>4.3.2</b> Instalar Npp2R</a></li>
 <li class="chapter" data-level="4.3.3" data-path="IDE.html"><a href="IDE.html#un-script-con-notepad"><i class="fa fa-check"></i><b>4.3.3</b> Un script con Notepad++</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="IDE.html"><a href="IDE.html#geany"><i class="fa fa-check"></i><b>4.4</b> Geany</a><ul>
+<li class="chapter" data-level="4.4" data-path="IDE.html"><a href="IDE.html#geany"><i class="fa fa-check"></i><b>4.4</b> Geany</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="IDE.html"><a href="IDE.html#instalar-geany-para-linux-mac-osx-y-windows"><i class="fa fa-check"></i><b>4.4.1</b> Instalar Geany (para Linux, Mac OSX y Windows)</a></li>
 <li class="chapter" data-level="4.4.2" data-path="IDE.html"><a href="IDE.html#un-script-con-geany"><i class="fa fa-check"></i><b>4.4.2</b> Un script con Geany</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="IDE.html"><a href="IDE.html#otras-soluciones"><i class="fa fa-check"></i><b>4.5</b> Otras soluciones</a></li>
 <li class="chapter" data-level="4.6" data-path="IDE.html"><a href="IDE.html#conclusión-1"><i class="fa fa-check"></i><b>4.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>5</b> Tipos de datos</a><ul>
+<li class="chapter" data-level="5" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>5</b> Tipos de datos</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="dataType1.html"><a href="dataType1.html#el-tipo-numeric"><i class="fa fa-check"></i><b>5.1</b> El tipo <code>numeric</code></a></li>
 <li class="chapter" data-level="5.2" data-path="dataType1.html"><a href="dataType1.html#el-tipo-character"><i class="fa fa-check"></i><b>5.2</b> El tipo <code>character</code></a></li>
 <li class="chapter" data-level="5.3" data-path="dataType1.html"><a href="dataType1.html#el-tipo-factor"><i class="fa fa-check"></i><b>5.3</b> El tipo <code>factor</code></a></li>
@@ -201,45 +214,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="dataType1.html"><a href="dataType1.html#acerca-de-na"><i class="fa fa-check"></i><b>5.5</b> Acerca de <code>NA</code></a></li>
 <li class="chapter" data-level="5.6" data-path="dataType1.html"><a href="dataType1.html#conclusión-2"><i class="fa fa-check"></i><b>5.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="dataType2.html"><a href="dataType2.html"><i class="fa fa-check"></i><b>6</b> Contenedores de datos</a><ul>
-<li class="chapter" data-level="6.1" data-path="dataType2.html"><a href="dataType2.html#l014vector"><i class="fa fa-check"></i><b>6.1</b> El contenedor <code>vector</code></a><ul>
+<li class="chapter" data-level="6" data-path="dataType2.html"><a href="dataType2.html"><i class="fa fa-check"></i><b>6</b> Contenedores de datos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="dataType2.html"><a href="dataType2.html#l014vector"><i class="fa fa-check"></i><b>6.1</b> El contenedor <code>vector</code></a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-vector"><i class="fa fa-check"></i><b>6.1.1</b> Crear un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.2" data-path="dataType2.html"><a href="dataType2.html#hacer-operaciones-con-un-vector"><i class="fa fa-check"></i><b>6.1.2</b> Hacer operaciones con un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.3" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-un-vector"><i class="fa fa-check"></i><b>6.1.3</b> Acceder a los valores de un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.4" data-path="dataType2.html"><a href="dataType2.html#dar-nombres-a-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>6.1.4</b> Dar nombres a los elementos de un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.5" data-path="dataType2.html"><a href="dataType2.html#editar-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>6.1.5</b> Editar los elementos de un <code>vector</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="dataType2.html"><a href="dataType2.html#l014list"><i class="fa fa-check"></i><b>6.2</b> El contenedor <code>list</code></a><ul>
+<li class="chapter" data-level="6.2" data-path="dataType2.html"><a href="dataType2.html#l014list"><i class="fa fa-check"></i><b>6.2</b> El contenedor <code>list</code></a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-list"><i class="fa fa-check"></i><b>6.2.1</b> Crear una <code>list</code></a></li>
 <li class="chapter" data-level="6.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-list"><i class="fa fa-check"></i><b>6.2.2</b> Acceder a los valores de una <code>list</code></a></li>
 <li class="chapter" data-level="6.2.3" data-path="dataType2.html"><a href="dataType2.html#editar-una-list"><i class="fa fa-check"></i><b>6.2.3</b> Editar una <code>list</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="dataType2.html"><a href="dataType2.html#l014dataframe"><i class="fa fa-check"></i><b>6.3</b> El contenedor <code>data.frame</code></a><ul>
+<li class="chapter" data-level="6.3" data-path="dataType2.html"><a href="dataType2.html#l014dataframe"><i class="fa fa-check"></i><b>6.3</b> El contenedor <code>data.frame</code></a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-data.frame"><i class="fa fa-check"></i><b>6.3.1</b> Crear un <code>data.frame</code></a></li>
 <li class="chapter" data-level="6.3.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-un-data.frame"><i class="fa fa-check"></i><b>6.3.2</b> Acceder a los elementos de un <code>data.frame</code></a></li>
 <li class="chapter" data-level="6.3.3" data-path="dataType2.html"><a href="dataType2.html#modificar-un-data.frame"><i class="fa fa-check"></i><b>6.3.3</b> Modificar un <code>data.frame</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="dataType2.html"><a href="dataType2.html#l014matrix"><i class="fa fa-check"></i><b>6.4</b> El contenedor <code>matrix</code></a><ul>
+<li class="chapter" data-level="6.4" data-path="dataType2.html"><a href="dataType2.html#l014matrix"><i class="fa fa-check"></i><b>6.4</b> El contenedor <code>matrix</code></a>
+<ul>
 <li class="chapter" data-level="6.4.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-matrix"><i class="fa fa-check"></i><b>6.4.1</b> Crear una <code>matrix</code></a></li>
 <li class="chapter" data-level="6.4.2" data-path="dataType2.html"><a href="dataType2.html#manipular-y-hacer-operaciones-en-una-matrix"><i class="fa fa-check"></i><b>6.4.2</b> Manipular y hacer operaciones en una <code>matrix</code></a></li>
 <li class="chapter" data-level="6.4.3" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-una-matrix"><i class="fa fa-check"></i><b>6.4.3</b> Acceder a los elementos de una <code>matrix</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="dataType2.html"><a href="dataType2.html#l014array"><i class="fa fa-check"></i><b>6.5</b> El contenedor <code>array</code></a><ul>
+<li class="chapter" data-level="6.5" data-path="dataType2.html"><a href="dataType2.html#l014array"><i class="fa fa-check"></i><b>6.5</b> El contenedor <code>array</code></a>
+<ul>
 <li class="chapter" data-level="6.5.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-array"><i class="fa fa-check"></i><b>6.5.1</b> Crear un <code>array</code></a></li>
 <li class="chapter" data-level="6.5.2" data-path="dataType2.html"><a href="dataType2.html#manipular-un-array"><i class="fa fa-check"></i><b>6.5.2</b> Manipular un <code>array</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="dataType2.html"><a href="dataType2.html#conclusión-3"><i class="fa fa-check"></i><b>6.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="fonctions.html"><a href="fonctions.html"><i class="fa fa-check"></i><b>7</b> Las funciones</a><ul>
+<li class="chapter" data-level="7" data-path="fonctions.html"><a href="fonctions.html"><i class="fa fa-check"></i><b>7</b> Las funciones</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="fonctions.html"><a href="fonctions.html#qué-es-una-función"><i class="fa fa-check"></i><b>7.1</b> ¿Qué es una función?</a></li>
-<li class="chapter" data-level="7.2" data-path="fonctions.html"><a href="fonctions.html#las-funciones-más-comunes"><i class="fa fa-check"></i><b>7.2</b> Las funciones más comunes</a><ul>
+<li class="chapter" data-level="7.2" data-path="fonctions.html"><a href="fonctions.html#las-funciones-más-comunes"><i class="fa fa-check"></i><b>7.2</b> Las funciones más comunes</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="fonctions.html"><a href="fonctions.html#el-acceso-a-la-documentación"><i class="fa fa-check"></i><b>7.2.1</b> El acceso a la documentación</a></li>
 <li class="chapter" data-level="7.2.2" data-path="fonctions.html"><a href="fonctions.html#ver-los-datos"><i class="fa fa-check"></i><b>7.2.2</b> Ver los datos</a></li>
 <li class="chapter" data-level="7.2.3" data-path="fonctions.html"><a href="fonctions.html#manipular-los-datos"><i class="fa fa-check"></i><b>7.2.3</b> Manipular los datos</a></li>
 <li class="chapter" data-level="7.2.4" data-path="fonctions.html"><a href="fonctions.html#l015maths"><i class="fa fa-check"></i><b>7.2.4</b> Funciones matemáticas</a></li>
 <li class="chapter" data-level="7.2.5" data-path="fonctions.html"><a href="fonctions.html#estadísticas-descriptivas"><i class="fa fa-check"></i><b>7.2.5</b> Estadísticas descriptivas</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-útiles"><i class="fa fa-check"></i><b>7.3</b> Otras funciones útiles</a><ul>
+<li class="chapter" data-level="7.3" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-útiles"><i class="fa fa-check"></i><b>7.3</b> Otras funciones útiles</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="fonctions.html"><a href="fonctions.html#l015seqalong"><i class="fa fa-check"></i><b>7.3.1</b> <code>seq_along()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="fonctions.html"><a href="fonctions.html#l0152points"><i class="fa fa-check"></i><b>7.3.2</b> <code>:</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="fonctions.html"><a href="fonctions.html#l015rep"><i class="fa fa-check"></i><b>7.3.3</b> <code>rep()</code></a></li>
@@ -250,20 +272,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="fonctions.html"><a href="fonctions.html#l015ls"><i class="fa fa-check"></i><b>7.3.8</b> <code>ls()</code></a></li>
 <li class="chapter" data-level="7.3.9" data-path="fonctions.html"><a href="fonctions.html#l015rm"><i class="fa fa-check"></i><b>7.3.9</b> <code>rm()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="fonctions.html"><a href="fonctions.html#algunos-ejercicios-para-practicar"><i class="fa fa-check"></i><b>7.4</b> Algunos ejercicios para practicar</a><ul>
+<li class="chapter" data-level="7.4" data-path="fonctions.html"><a href="fonctions.html#algunos-ejercicios-para-practicar"><i class="fa fa-check"></i><b>7.4</b> Algunos ejercicios para practicar</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="fonctions.html"><a href="fonctions.html#secuencias"><i class="fa fa-check"></i><b>7.4.1</b> Secuencias</a></li>
 <li class="chapter" data-level="7.4.2" data-path="fonctions.html"><a href="fonctions.html#estadísticas-descriptivas-1"><i class="fa fa-check"></i><b>7.4.2</b> Estadísticas descriptivas</a></li>
 </ul></li>
 <li class="chapter" data-level="7.5" data-path="fonctions.html"><a href="fonctions.html#l015function"><i class="fa fa-check"></i><b>7.5</b> Escribir una función</a></li>
-<li class="chapter" data-level="7.6" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-desarrolladas-por-la-comunidad-de-usuarios-los-packages"><i class="fa fa-check"></i><b>7.6</b> Otras funciones desarrolladas por la comunidad de usuarios: los <em>packages</em></a><ul>
+<li class="chapter" data-level="7.6" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-desarrolladas-por-la-comunidad-de-usuarios-los-packages"><i class="fa fa-check"></i><b>7.6</b> Otras funciones desarrolladas por la comunidad de usuarios: los <em>packages</em></a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="fonctions.html"><a href="fonctions.html#instalar-un-paquete"><i class="fa fa-check"></i><b>7.6.1</b> Instalar un paquete</a></li>
 <li class="chapter" data-level="7.6.2" data-path="fonctions.html"><a href="fonctions.html#cargar-un-paquete"><i class="fa fa-check"></i><b>7.6.2</b> Cargar un paquete</a></li>
 <li class="chapter" data-level="7.6.3" data-path="fonctions.html"><a href="fonctions.html#portabilidad-del-código"><i class="fa fa-check"></i><b>7.6.3</b> Portabilidad del código</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="fonctions.html"><a href="fonctions.html#conclusión-4"><i class="fa fa-check"></i><b>7.7</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>8</b> Importar y exportar datos</a><ul>
-<li class="chapter" data-level="8.1" data-path="import.html"><a href="import.html#l016read"><i class="fa fa-check"></i><b>8.1</b> Leer datos de un archivo</a><ul>
+<li class="chapter" data-level="8" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>8</b> Importar y exportar datos</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="import.html"><a href="import.html#l016read"><i class="fa fa-check"></i><b>8.1</b> Leer datos de un archivo</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="import.html"><a href="import.html#l016transfo"><i class="fa fa-check"></i><b>8.1.1</b> Transformar datos en formato TXT o CSV</a></li>
 <li class="chapter" data-level="8.1.2" data-path="import.html"><a href="import.html#l016readCSV"><i class="fa fa-check"></i><b>8.1.2</b> Leer un archivo CSV</a></li>
 <li class="chapter" data-level="8.1.3" data-path="import.html"><a href="import.html#l016readTXT"><i class="fa fa-check"></i><b>8.1.3</b> Leer un archivo de texto</a></li>
@@ -272,14 +298,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="import.html"><a href="import.html#l016write"><i class="fa fa-check"></i><b>8.3</b> Exportar datos</a></li>
 <li class="chapter" data-level="8.4" data-path="import.html"><a href="import.html#conclusión-5"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="algo.html"><a href="algo.html"><i class="fa fa-check"></i><b>9</b> Algorítmico</a><ul>
+<li class="chapter" data-level="9" data-path="algo.html"><a href="algo.html"><i class="fa fa-check"></i><b>9</b> Algorítmico</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="algo.html"><a href="algo.html#l17if"><i class="fa fa-check"></i><b>9.1</b> Pruebas lógicas con <code>if</code></a></li>
 <li class="chapter" data-level="9.2" data-path="algo.html"><a href="algo.html#l17switch"><i class="fa fa-check"></i><b>9.2</b> Pruebas lógicas con <code>switch</code></a></li>
 <li class="chapter" data-level="9.3" data-path="algo.html"><a href="algo.html#l17for"><i class="fa fa-check"></i><b>9.3</b> El bucle <code>for</code></a></li>
 <li class="chapter" data-level="9.4" data-path="algo.html"><a href="algo.html#l17while"><i class="fa fa-check"></i><b>9.4</b> El bucle <code>while</code></a></li>
 <li class="chapter" data-level="9.5" data-path="algo.html"><a href="algo.html#l17repeat"><i class="fa fa-check"></i><b>9.5</b> El bucle <code>repeat</code></a></li>
 <li class="chapter" data-level="9.6" data-path="algo.html"><a href="algo.html#l17spe"><i class="fa fa-check"></i><b>9.6</b> <code>next</code> y <code>break</code></a></li>
-<li class="chapter" data-level="9.7" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>9.7</b> Los bucles de la familia <code>apply</code></a><ul>
+<li class="chapter" data-level="9.7" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>9.7</b> Los bucles de la familia <code>apply</code></a>
+<ul>
 <li class="chapter" data-level="9.7.1" data-path="algo.html"><a href="algo.html#l17apply"><i class="fa fa-check"></i><b>9.7.1</b> <code>apply</code></a></li>
 <li class="chapter" data-level="9.7.2" data-path="algo.html"><a href="algo.html#l17sapply"><i class="fa fa-check"></i><b>9.7.2</b> <code>lapply</code></a></li>
 <li class="chapter" data-level="9.7.3" data-path="algo.html"><a href="algo.html#l17lapply"><i class="fa fa-check"></i><b>9.7.3</b> <code>sapply</code></a></li>
@@ -288,14 +316,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.8" data-path="algo.html"><a href="algo.html#conclusión-6"><i class="fa fa-check"></i><b>9.8</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>10</b> Gestión de proyectos con R</a><ul>
+<li class="chapter" data-level="10" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>10</b> Gestión de proyectos con R</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="project.html"><a href="project.html#gestionando-archivos-y-directorios-de-trabajo."><i class="fa fa-check"></i><b>10.1</b> Gestionando archivos y directorios de trabajo.</a></li>
 <li class="chapter" data-level="10.2" data-path="project.html"><a href="project.html#gestión-de-versiones-de-script"><i class="fa fa-check"></i><b>10.2</b> Gestión de versiones de script</a></li>
 <li class="chapter" data-level="10.3" data-path="project.html"><a href="project.html#gestion-de-documentacion"><i class="fa fa-check"></i><b>10.3</b> Gestion de documentacion</a></li>
 <li class="chapter" data-level="10.4" data-path="project.html"><a href="project.html#conclusión-7"><i class="fa fa-check"></i><b>10.4</b> Conclusión</a></li>
 </ul></li>
 <li class="part"><span><b>II Los gráficos</b></span></li>
-<li class="chapter" data-level="11" data-path="graph1.html"><a href="graph1.html"><i class="fa fa-check"></i><b>11</b> Gráficos simples</a><ul>
+<li class="chapter" data-level="11" data-path="graph1.html"><a href="graph1.html"><i class="fa fa-check"></i><b>11</b> Gráficos simples</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="graph1.html"><a href="graph1.html#graph1plot"><i class="fa fa-check"></i><b>11.1</b> <code>plot</code></a></li>
 <li class="chapter" data-level="11.2" data-path="graph1.html"><a href="graph1.html#graph1hist"><i class="fa fa-check"></i><b>11.2</b> <code>hist</code></a></li>
 <li class="chapter" data-level="11.3" data-path="graph1.html"><a href="graph1.html#graph1barplot"><i class="fa fa-check"></i><b>11.3</b> <code>barplot</code></a></li>
@@ -303,14 +333,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5" data-path="graph1.html"><a href="graph1.html#otros-gráficos"><i class="fa fa-check"></i><b>11.5</b> Otros gráficos</a></li>
 <li class="chapter" data-level="11.6" data-path="graph1.html"><a href="graph1.html#conclusión-8"><i class="fa fa-check"></i><b>11.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="graph2.html"><a href="graph2.html"><i class="fa fa-check"></i><b>12</b> Gestión del color</a><ul>
+<li class="chapter" data-level="12" data-path="graph2.html"><a href="graph2.html"><i class="fa fa-check"></i><b>12</b> Gestión del color</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="graph2.html"><a href="graph2.html#colors"><i class="fa fa-check"></i><b>12.1</b> <code>colors()</code></a></li>
 <li class="chapter" data-level="12.2" data-path="graph2.html"><a href="graph2.html#rgb"><i class="fa fa-check"></i><b>12.2</b> <code>rgb()</code></a></li>
 <li class="chapter" data-level="12.3" data-path="graph2.html"><a href="graph2.html#paletas-de-colores"><i class="fa fa-check"></i><b>12.3</b> Paletas de colores</a></li>
 <li class="chapter" data-level="12.4" data-path="graph2.html"><a href="graph2.html#conclusión-9"><i class="fa fa-check"></i><b>12.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="graph3.html"><a href="graph3.html"><i class="fa fa-check"></i><b>13</b> Paquetes gráficos</a><ul>
-<li class="chapter" data-level="13.1" data-path="graph3.html"><a href="graph3.html#los-paquetes-con-paletas"><i class="fa fa-check"></i><b>13.1</b> Los paquetes con paletas</a><ul>
+<li class="chapter" data-level="13" data-path="graph3.html"><a href="graph3.html"><i class="fa fa-check"></i><b>13</b> Paquetes gráficos</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="graph3.html"><a href="graph3.html#los-paquetes-con-paletas"><i class="fa fa-check"></i><b>13.1</b> Los paquetes con paletas</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="graph3.html"><a href="graph3.html#rcolorbrewer"><i class="fa fa-check"></i><b>13.1.1</b> <code>RColorBrewer</code></a></li>
 <li class="chapter" data-level="13.1.2" data-path="graph3.html"><a href="graph3.html#palettesforr"><i class="fa fa-check"></i><b>13.1.2</b> <code>palettesForR</code></a></li>
 <li class="chapter" data-level="13.1.3" data-path="graph3.html"><a href="graph3.html#otros-paquetes"><i class="fa fa-check"></i><b>13.1.3</b> Otros paquetes</a></li>
@@ -319,7 +352,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="graph3.html"><a href="graph3.html#gráficos-interactivos-y-dinámicos-con-plotly"><i class="fa fa-check"></i><b>13.3</b> Gráficos interactivos y dinámicos con <code>Plotly</code></a></li>
 <li class="chapter" data-level="13.4" data-path="graph3.html"><a href="graph3.html#conclusión-10"><i class="fa fa-check"></i><b>13.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="graph4.html"><a href="graph4.html"><i class="fa fa-check"></i><b>14</b> De la gráfica a la figura en un artículo científico</a><ul>
+<li class="chapter" data-level="14" data-path="graph4.html"><a href="graph4.html"><i class="fa fa-check"></i><b>14</b> De la gráfica a la figura en un artículo científico</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="graph4.html"><a href="graph4.html#inkscape"><i class="fa fa-check"></i><b>14.1</b> Inkscape</a></li>
 <li class="chapter" data-level="14.2" data-path="graph4.html"><a href="graph4.html#the-gimp"><i class="fa fa-check"></i><b>14.2</b> The Gimp</a></li>
 <li class="chapter" data-level="14.3" data-path="graph4.html"><a href="graph4.html#tabla-de-referencia"><i class="fa fa-check"></i><b>14.3</b> Tabla de referencia</a></li>
@@ -343,10 +377,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="project" class="section level1">
+<div id="project" class="section level1" number="10">
 <h1><span class="header-section-number"> 10</span> Gestión de proyectos con R</h1>
 <p>Ahora que hemos visto los conceptos básicos de R, todavía tenemos que abordar un elemento decisivo para el buen funcionamiento de nuestras actividades científicas con R: gestión de proyectos. Consiste en integrar sus desarrollos en un entorno y con una lógica orientada a facilitar su trabajo y aumentar así su eficiencia. Esta es solo una manera de hacer dentro de las infinitas posibilidades, a adaptar para todos y cada uno.</p>
-<div id="gestionando-archivos-y-directorios-de-trabajo." class="section level2">
+<div id="gestionando-archivos-y-directorios-de-trabajo." class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Gestionando archivos y directorios de trabajo.</h2>
 <p>Entre los archivos de entrada (es decir, los archivos que contienen nuestros datos en bruto), los archivos de salida (por ejemplo, con la función <code>write()</code>), los gráficos (siguiente capítulo) y los muchos scripts asociados con un proyecto, se necesita un mínimo de organización para ser eficaz y reanudar rápidamente su proyecto. La solución más sencilla es estructurar su entorno de trabajo en carpetas según cada categoría de archivo. Por ejemplo, con una carpeta “myProject” para el proyecto, que contiene las carpetas “myFiles” para los archivos de entrada, una carpeta “myScripts” para el script R y una carpeta “myOutputs” para los archivos salida (por ejemplo, gráficos y análisis).</p>
 <pre><code>## -myProject
@@ -359,7 +393,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## |-|-dataOut01.csv
 ## |-|-figure01.pdf</code></pre>
 </div>
-<div id="gestión-de-versiones-de-script" class="section level2">
+<div id="gestión-de-versiones-de-script" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Gestión de versiones de script</h2>
 <p>El trabajo en un script es iterativo: incluso si los objetivos se definen desde el principio, volveremos a trabajar algunas partes para obtener, por ejemplo, información adicional, o para optimizar esta o aquella función, o hacer un script generalizable para comunicarlo a La comunidad científica o simplemente un colega. A veces, lo que veremos como una mejora finalmente será un error, y volver al estado inicial puede ser difícil. Así que tenemos que gestionar las versiones.</p>
 <p>En la mayoría de los laboratorios hay servicios de control de versiones, el más conocido es GIT (<a href="https://git-scm.com/" class="uri">https://git-scm.com/</a>) y Subversion (<a href="https://subversion.apache.org/" class="uri">https://subversion.apache.org/</a>). Cuando GIT o Subversion están disponibles, se recomienda usarlos. Si no tenemos acceso a estos servicios, hay servicios en línea gratuitos como GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>; este libro utiliza GitHub). Hay muchas otras soluciones como GitLab (<a href="https://about.gitlab.com/" class="uri">https://about.gitlab.com/</a>), Bitbucket (<a href="https://bitbucket.org/" class="uri">https://bitbucket.org/</a>), SourceForge (<a href="https://sourceforge.net/" class="uri">https://sourceforge.net/</a>), GitKraken (<a href="https://gitkraken.com/" class="uri">https://gitkraken.com/</a>), o Launchpad (<a href="https://launchpad.net/" class="uri">https://launchpad.net/</a>).</p>
@@ -378,62 +412,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## |-|-dataOut01.csv
 ## |-|-figure01.pdf</code></pre>
 </div>
-<div id="gestion-de-documentacion" class="section level2">
+<div id="gestion-de-documentacion" class="section level2" number="10.3">
 <h2><span class="header-section-number">10.3</span> Gestion de documentacion</h2>
 <p>La documentación de su código es esencial para volver fácilmente al trabajo o comunicar su trabajo con colegas y la comunidad científica. Un código bien documentado será comprensible por un número mayor y, por lo tanto, se utilizará más. Por eso es importante adoptar buenas técnicas y practicas.</p>
 <p>Ya hemos visto que hay varias formas de escribir su código con R porque es un lenguaje bastante permisivo. El primer paso hacia un código legible y reproducible es adoptar un estilo de código claro y coherente y … ¡hecho para humanos! Porque incluso si nuestro código está destinado a ser ejecutado por máquinas, debe seguir siendo comprensible de todas las personas que lo consultarán. Es por ejemplo poner espacios después de las comas, o usar la identación. Por supuesto, la legibilidad del código debe equilibrarse con la optimización del código para grandes conjuntos de datos, pero en la mayoría de los casos podemos asociar un código claro y optimizado. Entonces, el primer paso de la documentación y su administración es escribir primero su código pensando en las personas que lo leerán y lo reproducirán.</p>
 <p>El segundo paso es comentar su código. Los comentarios son esenciales cuando privilegiamos el código optimizado para el rendimiento pero que pierde en legibilidad. Los comentarios son superfluos si el código está bien escrito y los objetos y funciones están bien nombrados. Esto significa que los comentarios no deben usarse para explicar un código mal escrito, sino que desdemos desde el principio escribir bien nuestro código. Los comentarios son útiles para proporcionar elementos contextuales (por ejemplo, la elección de un método sobre otro en la literatura). El lugar de los comentarios puede estar al final de las líneas o en líneas separadas.</p>
 <p>Para un proyecto pequeño en R es esencial que cada script comience con una descripción de sus contenidos para que podamos saber rápidamente de qué se trata. Eso es lo que hicimos al principio de este libro:</p>
-<div class="sourceCode" id="cb1113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1113-1"><a href="project.html#cb1113-1"></a><span class="co"># ------------------------------------------------------------</span></span>
-<span id="cb1113-2"><a href="project.html#cb1113-2"></a><span class="co"># Aquí hay un script para adquirir los conceptos básicos</span></span>
-<span id="cb1113-3"><a href="project.html#cb1113-3"></a><span class="co"># con R</span></span>
-<span id="cb1113-4"><a href="project.html#cb1113-4"></a><span class="co"># fecha de creación : 25/06/2018</span></span>
-<span id="cb1113-5"><a href="project.html#cb1113-5"></a><span class="co"># autor : François Rebaudo</span></span>
-<span id="cb1113-6"><a href="project.html#cb1113-6"></a><span class="co"># ------------------------------------------------------------</span></span>
-<span id="cb1113-7"><a href="project.html#cb1113-7"></a></span>
-<span id="cb1113-8"><a href="project.html#cb1113-8"></a><span class="co"># [1] Creación del objeto número de repeticiones.</span></span>
-<span id="cb1113-9"><a href="project.html#cb1113-9"></a><span class="co"># ------------------------------------------------------------</span></span>
-<span id="cb1113-10"><a href="project.html#cb1113-10"></a></span>
-<span id="cb1113-11"><a href="project.html#cb1113-11"></a>nbrRep &lt;-<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb1113-12"><a href="project.html#cb1113-12"></a></span>
-<span id="cb1113-13"><a href="project.html#cb1113-13"></a><span class="co"># [2] calculos simples</span></span>
-<span id="cb1113-14"><a href="project.html#cb1113-14"></a><span class="co"># ------------------------------------------------------------</span></span>
-<span id="cb1113-15"><a href="project.html#cb1113-15"></a></span>
-<span id="cb1113-16"><a href="project.html#cb1113-16"></a>pi <span class="op">*</span><span class="st"> </span>nbrRep<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb1113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1113-1"><a href="project.html#cb1113-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------------------------------------</span></span>
+<span id="cb1113-2"><a href="project.html#cb1113-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Aquí hay un script para adquirir los conceptos básicos</span></span>
+<span id="cb1113-3"><a href="project.html#cb1113-3" aria-hidden="true" tabindex="-1"></a><span class="co"># con R</span></span>
+<span id="cb1113-4"><a href="project.html#cb1113-4" aria-hidden="true" tabindex="-1"></a><span class="co"># fecha de creación : 25/06/2018</span></span>
+<span id="cb1113-5"><a href="project.html#cb1113-5" aria-hidden="true" tabindex="-1"></a><span class="co"># autor : François Rebaudo</span></span>
+<span id="cb1113-6"><a href="project.html#cb1113-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------------------------------------</span></span>
+<span id="cb1113-7"><a href="project.html#cb1113-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1113-8"><a href="project.html#cb1113-8" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] Creación del objeto número de repeticiones.</span></span>
+<span id="cb1113-9"><a href="project.html#cb1113-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------------------------------------</span></span>
+<span id="cb1113-10"><a href="project.html#cb1113-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1113-11"><a href="project.html#cb1113-11" aria-hidden="true" tabindex="-1"></a>nbrRep <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb1113-12"><a href="project.html#cb1113-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1113-13"><a href="project.html#cb1113-13" aria-hidden="true" tabindex="-1"></a><span class="co"># [2] calculos simples</span></span>
+<span id="cb1113-14"><a href="project.html#cb1113-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------------------------------------</span></span>
+<span id="cb1113-15"><a href="project.html#cb1113-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1113-16"><a href="project.html#cb1113-16" aria-hidden="true" tabindex="-1"></a>pi <span class="sc">*</span> nbrRep<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <p>Aquí los comentarios que siguen al encabezado no son necesarios porque el nombre del objeto se entiende por sí mismo. Nuestro archivo se convierte en:</p>
-<div class="sourceCode" id="cb1114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1114-1"><a href="project.html#cb1114-1"></a><span class="co"># ------------------------------------------------------------</span></span>
-<span id="cb1114-2"><a href="project.html#cb1114-2"></a><span class="co"># Aquí hay un script para adquirir los conceptos básicos</span></span>
-<span id="cb1114-3"><a href="project.html#cb1114-3"></a><span class="co"># con R</span></span>
-<span id="cb1114-4"><a href="project.html#cb1114-4"></a><span class="co"># fecha de creación : 25/06/2018</span></span>
-<span id="cb1114-5"><a href="project.html#cb1114-5"></a><span class="co"># autor : François Rebaudo</span></span>
-<span id="cb1114-6"><a href="project.html#cb1114-6"></a><span class="co"># ------------------------------------------------------------</span></span>
-<span id="cb1114-7"><a href="project.html#cb1114-7"></a></span>
-<span id="cb1114-8"><a href="project.html#cb1114-8"></a>nbrRep &lt;-<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb1114-9"><a href="project.html#cb1114-9"></a>pi <span class="op">*</span><span class="st"> </span>nbrRep<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb1114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1114-1"><a href="project.html#cb1114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------------------------------------</span></span>
+<span id="cb1114-2"><a href="project.html#cb1114-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Aquí hay un script para adquirir los conceptos básicos</span></span>
+<span id="cb1114-3"><a href="project.html#cb1114-3" aria-hidden="true" tabindex="-1"></a><span class="co"># con R</span></span>
+<span id="cb1114-4"><a href="project.html#cb1114-4" aria-hidden="true" tabindex="-1"></a><span class="co"># fecha de creación : 25/06/2018</span></span>
+<span id="cb1114-5"><a href="project.html#cb1114-5" aria-hidden="true" tabindex="-1"></a><span class="co"># autor : François Rebaudo</span></span>
+<span id="cb1114-6"><a href="project.html#cb1114-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------------------------------------</span></span>
+<span id="cb1114-7"><a href="project.html#cb1114-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1114-8"><a href="project.html#cb1114-8" aria-hidden="true" tabindex="-1"></a>nbrRep <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb1114-9"><a href="project.html#cb1114-9" aria-hidden="true" tabindex="-1"></a>pi <span class="sc">*</span> nbrRep<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <p>Para un proyecto grande con muchas funciones para ser utilizado por otros usuarios, es preferible que la documentación del código esté separada, en un archivo de ayuda específico. Este es el caso de todos los paquetes R! Para gestionar la documentación de un paquete (y por lo tanto de todas las funciones), de nuevo hay muchas posibilidades. Lo más común es usar el paquete R roxigen2. Sin entrar en detalles, aquí hay algunos ejemplos de la documentación del paquete.</p>
-<div class="sourceCode" id="cb1115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1115-1"><a href="project.html#cb1115-1"></a><span class="co">#&#39; Add together two numbers</span></span>
-<span id="cb1115-2"><a href="project.html#cb1115-2"></a><span class="co">#&#39;</span></span>
-<span id="cb1115-3"><a href="project.html#cb1115-3"></a><span class="co">#&#39; @param x A number</span></span>
-<span id="cb1115-4"><a href="project.html#cb1115-4"></a><span class="co">#&#39; @param y A number</span></span>
-<span id="cb1115-5"><a href="project.html#cb1115-5"></a><span class="co">#&#39; @return The sum of \code{x} and \code{y}</span></span>
-<span id="cb1115-6"><a href="project.html#cb1115-6"></a><span class="co">#&#39; @examples</span></span>
-<span id="cb1115-7"><a href="project.html#cb1115-7"></a><span class="co">#&#39; add(1, 1)</span></span>
-<span id="cb1115-8"><a href="project.html#cb1115-8"></a><span class="co">#&#39; add(10, 1)</span></span>
-<span id="cb1115-9"><a href="project.html#cb1115-9"></a>add &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
-<span id="cb1115-10"><a href="project.html#cb1115-10"></a>  x <span class="op">+</span><span class="st"> </span>y</span>
-<span id="cb1115-11"><a href="project.html#cb1115-11"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb1116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1116-1"><a href="project.html#cb1116-1"></a><span class="co">#&#39; Sum of vector elements.</span></span>
-<span id="cb1116-2"><a href="project.html#cb1116-2"></a><span class="co">#&#39;</span></span>
-<span id="cb1116-3"><a href="project.html#cb1116-3"></a><span class="co">#&#39; `sum` returns the sum of all the values present in its arguments.</span></span>
-<span id="cb1116-4"><a href="project.html#cb1116-4"></a><span class="co">#&#39;</span></span>
-<span id="cb1116-5"><a href="project.html#cb1116-5"></a><span class="co">#&#39; This is a generic function: methods can be defined for it directly</span></span>
-<span id="cb1116-6"><a href="project.html#cb1116-6"></a><span class="co">#&#39; or via the [Summary()] group generic. For this to work properly,</span></span>
-<span id="cb1116-7"><a href="project.html#cb1116-7"></a><span class="co">#&#39; the arguments `...` should be unnamed, and dispatch is on the</span></span>
-<span id="cb1116-8"><a href="project.html#cb1116-8"></a><span class="co">#&#39; first argument.</span></span>
-<span id="cb1116-9"><a href="project.html#cb1116-9"></a>sum &lt;-<span class="st"> </span><span class="cf">function</span>(..., <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) {}</span></code></pre></div>
+<div class="sourceCode" id="cb1115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1115-1"><a href="project.html#cb1115-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Add together two numbers</span></span>
+<span id="cb1115-2"><a href="project.html#cb1115-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb1115-3"><a href="project.html#cb1115-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x A number</span></span>
+<span id="cb1115-4"><a href="project.html#cb1115-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y A number</span></span>
+<span id="cb1115-5"><a href="project.html#cb1115-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return The sum of \code{x} and \code{y}</span></span>
+<span id="cb1115-6"><a href="project.html#cb1115-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @examples</span></span>
+<span id="cb1115-7"><a href="project.html#cb1115-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; add(1, 1)</span></span>
+<span id="cb1115-8"><a href="project.html#cb1115-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; add(10, 1)</span></span>
+<span id="cb1115-9"><a href="project.html#cb1115-9" aria-hidden="true" tabindex="-1"></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb1115-10"><a href="project.html#cb1115-10" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> y</span>
+<span id="cb1115-11"><a href="project.html#cb1115-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb1116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1116-1"><a href="project.html#cb1116-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Sum of vector elements.</span></span>
+<span id="cb1116-2"><a href="project.html#cb1116-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb1116-3"><a href="project.html#cb1116-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; `sum` returns the sum of all the values present in its arguments.</span></span>
+<span id="cb1116-4"><a href="project.html#cb1116-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb1116-5"><a href="project.html#cb1116-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; This is a generic function: methods can be defined for it directly</span></span>
+<span id="cb1116-6"><a href="project.html#cb1116-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; or via the [Summary()] group generic. For this to work properly,</span></span>
+<span id="cb1116-7"><a href="project.html#cb1116-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; the arguments `...` should be unnamed, and dispatch is on the</span></span>
+<span id="cb1116-8"><a href="project.html#cb1116-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; first argument.</span></span>
+<span id="cb1116-9"><a href="project.html#cb1116-9" aria-hidden="true" tabindex="-1"></a>sum <span class="ot">&lt;-</span> <span class="cf">function</span>(..., <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {}</span></code></pre></div>
 <p>Esto nos permite escribir la documentación de cada función junto a la función. El paquete roxigen2 generará a partir de estos comentarios un documento de ayuda accesible con la función <code>'?'</code>. A menos que escribamos un nuevo paquete, los comentarios simples serán suficientes, y el desarrollo de un paquete está fuera del alcance de este libro.</p>
 </div>
-<div id="conclusión-7" class="section level2">
+<div id="conclusión-7" class="section level2" number="10.4">
 <h2><span class="header-section-number">10.4</span> Conclusión</h2>
 <p>Felicitaciones. Este capítulo marca el final de la primera parte de este libro. Ahora tenemos lo básico para llevar a cabo nuestros proyectos con R. En la siguiente parte veremos los gráficos y cómo hacer figuras en el marco de los artículos científicos.</p>
 
@@ -471,6 +505,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

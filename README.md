@@ -9,6 +9,11 @@ Este libro también está disponible en francés (http://myrbookfr.netlify.com/)
 
 ## Últimas modificaciones
 
+**15/07/2021**
+
+* change distro to Ubuntu focal
+
+
 **05/02/2021**
 
 * revisiones del estilo

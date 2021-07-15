@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 15 Analizar datos de loggers de temperatura | R para los científicos</title>
   <meta name="description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 15 Analizar datos de loggers de temperatura | R para los científicos" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="myFigures/cover.png" />
+  <meta property="og:image" content="/myFigures/cover.png" />
   <meta property="og:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
   <meta name="github-repo" content="frareb/myRBook_SP" />
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content=" 15 Analizar datos de loggers de temperatura | R para los científicos" />
   
   <meta name="twitter:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="twitter:image" content="myFigures/cover.png" />
+  <meta name="twitter:image" content="/myFigures/cover.png" />
 
 <meta name="author" content="François Rebaudo" />
 
 
-<meta name="date" content="2021-02-05" />
+<meta name="date" content="2021-07-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="graph4.html"/>
 
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,9 +51,10 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
@@ -70,18 +72,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -101,7 +103,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,6 +136,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="myStyle.css" type="text/css" />
 </head>
 
@@ -150,50 +153,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Aprender R: iniciación y perfeccionamiento</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#remerciements"><i class="fa fa-check"></i><b>1.1</b> Agradecimientos</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#licence"><i class="fa fa-check"></i><b>1.2</b> Licencia</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#por-qué-aprender-r"><i class="fa fa-check"></i><b>2.1</b> ¿Por qué aprender R?</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#este-libro"><i class="fa fa-check"></i><b>2.2</b> Este libro</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#lectura-adicional-en-español"><i class="fa fa-check"></i><b>2.3</b> Lectura adicional en español</a></li>
 </ul></li>
 <li class="part"><span><b>I Conceptos básicos</b></span></li>
-<li class="chapter" data-level="3" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos</a><ul>
+<li class="chapter" data-level="3" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="premiersPas.html"><a href="premiersPas.html#instalar-r"><i class="fa fa-check"></i><b>3.1</b> Instalar R</a></li>
-<li class="chapter" data-level="3.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="premiersPas.html"><a href="premiersPas.html#l011opari"><i class="fa fa-check"></i><b>3.2.1</b> Los operadores aritméticos</a></li>
 <li class="chapter" data-level="3.2.2" data-path="premiersPas.html"><a href="premiersPas.html#l011opcomp"><i class="fa fa-check"></i><b>3.2.2</b> Los operadores comparativos</a></li>
 <li class="chapter" data-level="3.2.3" data-path="premiersPas.html"><a href="premiersPas.html#l011oplog"><i class="fa fa-check"></i><b>3.2.3</b> Los operadores lógicos</a></li>
 <li class="chapter" data-level="3.2.4" data-path="premiersPas.html"><a href="premiersPas.html#ayuda-a-los-operadores"><i class="fa fa-check"></i><b>3.2.4</b> Ayuda a los operadores</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="premiersPas.html"><a href="premiersPas.html#l011object"><i class="fa fa-check"></i><b>3.3</b> El concepto de objeto</a></li>
-<li class="chapter" data-level="3.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>3.4</b> Los scripts</a><ul>
+<li class="chapter" data-level="3.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>3.4</b> Los scripts</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="premiersPas.html"><a href="premiersPas.html#crear-un-script-y-documentarlo"><i class="fa fa-check"></i><b>3.4.1</b> Crear un script y documentarlo</a></li>
 <li class="chapter" data-level="3.4.2" data-path="premiersPas.html"><a href="premiersPas.html#ejecutar-un-script"><i class="fa fa-check"></i><b>3.4.2</b> Ejecutar un script</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="premiersPas.html"><a href="premiersPas.html#conclusión"><i class="fa fa-check"></i><b>3.5</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="IDE.html"><a href="IDE.html"><i class="fa fa-check"></i><b>4</b> Elegir un entorno de desarrollo</a><ul>
+<li class="chapter" data-level="4" data-path="IDE.html"><a href="IDE.html"><i class="fa fa-check"></i><b>4</b> Elegir un entorno de desarrollo</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="IDE.html"><a href="IDE.html#editores-de-texto-y-entorno-de-desarrollo"><i class="fa fa-check"></i><b>4.1</b> Editores de texto y entorno de desarrollo</a></li>
-<li class="chapter" data-level="4.2" data-path="IDE.html"><a href="IDE.html#rstudio"><i class="fa fa-check"></i><b>4.2</b> RStudio</a><ul>
+<li class="chapter" data-level="4.2" data-path="IDE.html"><a href="IDE.html#rstudio"><i class="fa fa-check"></i><b>4.2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="IDE.html"><a href="IDE.html#instalar-rstudio"><i class="fa fa-check"></i><b>4.2.1</b> Instalar RStudio</a></li>
 <li class="chapter" data-level="4.2.2" data-path="IDE.html"><a href="IDE.html#un-script-con-rstudio"><i class="fa fa-check"></i><b>4.2.2</b> Un script con RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="IDE.html"><a href="IDE.html#notepad-avec-npp2r"><i class="fa fa-check"></i><b>4.3</b> Notepad++ avec Npp2R</a><ul>
+<li class="chapter" data-level="4.3" data-path="IDE.html"><a href="IDE.html#notepad-avec-npp2r"><i class="fa fa-check"></i><b>4.3</b> Notepad++ avec Npp2R</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="IDE.html"><a href="IDE.html#instalar-notepad-solamente-para-windows"><i class="fa fa-check"></i><b>4.3.1</b> Instalar Notepad++ (solamente para Windows)</a></li>
 <li class="chapter" data-level="4.3.2" data-path="IDE.html"><a href="IDE.html#instalar-npp2r"><i class="fa fa-check"></i><b>4.3.2</b> Instalar Npp2R</a></li>
 <li class="chapter" data-level="4.3.3" data-path="IDE.html"><a href="IDE.html#un-script-con-notepad"><i class="fa fa-check"></i><b>4.3.3</b> Un script con Notepad++</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="IDE.html"><a href="IDE.html#geany"><i class="fa fa-check"></i><b>4.4</b> Geany</a><ul>
+<li class="chapter" data-level="4.4" data-path="IDE.html"><a href="IDE.html#geany"><i class="fa fa-check"></i><b>4.4</b> Geany</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="IDE.html"><a href="IDE.html#instalar-geany-para-linux-mac-osx-y-windows"><i class="fa fa-check"></i><b>4.4.1</b> Instalar Geany (para Linux, Mac OSX y Windows)</a></li>
 <li class="chapter" data-level="4.4.2" data-path="IDE.html"><a href="IDE.html#un-script-con-geany"><i class="fa fa-check"></i><b>4.4.2</b> Un script con Geany</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="IDE.html"><a href="IDE.html#otras-soluciones"><i class="fa fa-check"></i><b>4.5</b> Otras soluciones</a></li>
 <li class="chapter" data-level="4.6" data-path="IDE.html"><a href="IDE.html#conclusión-1"><i class="fa fa-check"></i><b>4.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>5</b> Tipos de datos</a><ul>
+<li class="chapter" data-level="5" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>5</b> Tipos de datos</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="dataType1.html"><a href="dataType1.html#el-tipo-numeric"><i class="fa fa-check"></i><b>5.1</b> El tipo <code>numeric</code></a></li>
 <li class="chapter" data-level="5.2" data-path="dataType1.html"><a href="dataType1.html#el-tipo-character"><i class="fa fa-check"></i><b>5.2</b> El tipo <code>character</code></a></li>
 <li class="chapter" data-level="5.3" data-path="dataType1.html"><a href="dataType1.html#el-tipo-factor"><i class="fa fa-check"></i><b>5.3</b> El tipo <code>factor</code></a></li>
@@ -201,45 +214,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="dataType1.html"><a href="dataType1.html#acerca-de-na"><i class="fa fa-check"></i><b>5.5</b> Acerca de <code>NA</code></a></li>
 <li class="chapter" data-level="5.6" data-path="dataType1.html"><a href="dataType1.html#conclusión-2"><i class="fa fa-check"></i><b>5.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="dataType2.html"><a href="dataType2.html"><i class="fa fa-check"></i><b>6</b> Contenedores de datos</a><ul>
-<li class="chapter" data-level="6.1" data-path="dataType2.html"><a href="dataType2.html#l014vector"><i class="fa fa-check"></i><b>6.1</b> El contenedor <code>vector</code></a><ul>
+<li class="chapter" data-level="6" data-path="dataType2.html"><a href="dataType2.html"><i class="fa fa-check"></i><b>6</b> Contenedores de datos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="dataType2.html"><a href="dataType2.html#l014vector"><i class="fa fa-check"></i><b>6.1</b> El contenedor <code>vector</code></a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-vector"><i class="fa fa-check"></i><b>6.1.1</b> Crear un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.2" data-path="dataType2.html"><a href="dataType2.html#hacer-operaciones-con-un-vector"><i class="fa fa-check"></i><b>6.1.2</b> Hacer operaciones con un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.3" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-un-vector"><i class="fa fa-check"></i><b>6.1.3</b> Acceder a los valores de un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.4" data-path="dataType2.html"><a href="dataType2.html#dar-nombres-a-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>6.1.4</b> Dar nombres a los elementos de un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.5" data-path="dataType2.html"><a href="dataType2.html#editar-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>6.1.5</b> Editar los elementos de un <code>vector</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="dataType2.html"><a href="dataType2.html#l014list"><i class="fa fa-check"></i><b>6.2</b> El contenedor <code>list</code></a><ul>
+<li class="chapter" data-level="6.2" data-path="dataType2.html"><a href="dataType2.html#l014list"><i class="fa fa-check"></i><b>6.2</b> El contenedor <code>list</code></a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-list"><i class="fa fa-check"></i><b>6.2.1</b> Crear una <code>list</code></a></li>
 <li class="chapter" data-level="6.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-list"><i class="fa fa-check"></i><b>6.2.2</b> Acceder a los valores de una <code>list</code></a></li>
 <li class="chapter" data-level="6.2.3" data-path="dataType2.html"><a href="dataType2.html#editar-una-list"><i class="fa fa-check"></i><b>6.2.3</b> Editar una <code>list</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="dataType2.html"><a href="dataType2.html#l014dataframe"><i class="fa fa-check"></i><b>6.3</b> El contenedor <code>data.frame</code></a><ul>
+<li class="chapter" data-level="6.3" data-path="dataType2.html"><a href="dataType2.html#l014dataframe"><i class="fa fa-check"></i><b>6.3</b> El contenedor <code>data.frame</code></a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-data.frame"><i class="fa fa-check"></i><b>6.3.1</b> Crear un <code>data.frame</code></a></li>
 <li class="chapter" data-level="6.3.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-un-data.frame"><i class="fa fa-check"></i><b>6.3.2</b> Acceder a los elementos de un <code>data.frame</code></a></li>
 <li class="chapter" data-level="6.3.3" data-path="dataType2.html"><a href="dataType2.html#modificar-un-data.frame"><i class="fa fa-check"></i><b>6.3.3</b> Modificar un <code>data.frame</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="dataType2.html"><a href="dataType2.html#l014matrix"><i class="fa fa-check"></i><b>6.4</b> El contenedor <code>matrix</code></a><ul>
+<li class="chapter" data-level="6.4" data-path="dataType2.html"><a href="dataType2.html#l014matrix"><i class="fa fa-check"></i><b>6.4</b> El contenedor <code>matrix</code></a>
+<ul>
 <li class="chapter" data-level="6.4.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-matrix"><i class="fa fa-check"></i><b>6.4.1</b> Crear una <code>matrix</code></a></li>
 <li class="chapter" data-level="6.4.2" data-path="dataType2.html"><a href="dataType2.html#manipular-y-hacer-operaciones-en-una-matrix"><i class="fa fa-check"></i><b>6.4.2</b> Manipular y hacer operaciones en una <code>matrix</code></a></li>
 <li class="chapter" data-level="6.4.3" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-una-matrix"><i class="fa fa-check"></i><b>6.4.3</b> Acceder a los elementos de una <code>matrix</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="dataType2.html"><a href="dataType2.html#l014array"><i class="fa fa-check"></i><b>6.5</b> El contenedor <code>array</code></a><ul>
+<li class="chapter" data-level="6.5" data-path="dataType2.html"><a href="dataType2.html#l014array"><i class="fa fa-check"></i><b>6.5</b> El contenedor <code>array</code></a>
+<ul>
 <li class="chapter" data-level="6.5.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-array"><i class="fa fa-check"></i><b>6.5.1</b> Crear un <code>array</code></a></li>
 <li class="chapter" data-level="6.5.2" data-path="dataType2.html"><a href="dataType2.html#manipular-un-array"><i class="fa fa-check"></i><b>6.5.2</b> Manipular un <code>array</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="dataType2.html"><a href="dataType2.html#conclusión-3"><i class="fa fa-check"></i><b>6.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="fonctions.html"><a href="fonctions.html"><i class="fa fa-check"></i><b>7</b> Las funciones</a><ul>
+<li class="chapter" data-level="7" data-path="fonctions.html"><a href="fonctions.html"><i class="fa fa-check"></i><b>7</b> Las funciones</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="fonctions.html"><a href="fonctions.html#qué-es-una-función"><i class="fa fa-check"></i><b>7.1</b> ¿Qué es una función?</a></li>
-<li class="chapter" data-level="7.2" data-path="fonctions.html"><a href="fonctions.html#las-funciones-más-comunes"><i class="fa fa-check"></i><b>7.2</b> Las funciones más comunes</a><ul>
+<li class="chapter" data-level="7.2" data-path="fonctions.html"><a href="fonctions.html#las-funciones-más-comunes"><i class="fa fa-check"></i><b>7.2</b> Las funciones más comunes</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="fonctions.html"><a href="fonctions.html#el-acceso-a-la-documentación"><i class="fa fa-check"></i><b>7.2.1</b> El acceso a la documentación</a></li>
 <li class="chapter" data-level="7.2.2" data-path="fonctions.html"><a href="fonctions.html#ver-los-datos"><i class="fa fa-check"></i><b>7.2.2</b> Ver los datos</a></li>
 <li class="chapter" data-level="7.2.3" data-path="fonctions.html"><a href="fonctions.html#manipular-los-datos"><i class="fa fa-check"></i><b>7.2.3</b> Manipular los datos</a></li>
 <li class="chapter" data-level="7.2.4" data-path="fonctions.html"><a href="fonctions.html#l015maths"><i class="fa fa-check"></i><b>7.2.4</b> Funciones matemáticas</a></li>
 <li class="chapter" data-level="7.2.5" data-path="fonctions.html"><a href="fonctions.html#estadísticas-descriptivas"><i class="fa fa-check"></i><b>7.2.5</b> Estadísticas descriptivas</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-útiles"><i class="fa fa-check"></i><b>7.3</b> Otras funciones útiles</a><ul>
+<li class="chapter" data-level="7.3" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-útiles"><i class="fa fa-check"></i><b>7.3</b> Otras funciones útiles</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="fonctions.html"><a href="fonctions.html#l015seqalong"><i class="fa fa-check"></i><b>7.3.1</b> <code>seq_along()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="fonctions.html"><a href="fonctions.html#l0152points"><i class="fa fa-check"></i><b>7.3.2</b> <code>:</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="fonctions.html"><a href="fonctions.html#l015rep"><i class="fa fa-check"></i><b>7.3.3</b> <code>rep()</code></a></li>
@@ -250,20 +272,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="fonctions.html"><a href="fonctions.html#l015ls"><i class="fa fa-check"></i><b>7.3.8</b> <code>ls()</code></a></li>
 <li class="chapter" data-level="7.3.9" data-path="fonctions.html"><a href="fonctions.html#l015rm"><i class="fa fa-check"></i><b>7.3.9</b> <code>rm()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="fonctions.html"><a href="fonctions.html#algunos-ejercicios-para-practicar"><i class="fa fa-check"></i><b>7.4</b> Algunos ejercicios para practicar</a><ul>
+<li class="chapter" data-level="7.4" data-path="fonctions.html"><a href="fonctions.html#algunos-ejercicios-para-practicar"><i class="fa fa-check"></i><b>7.4</b> Algunos ejercicios para practicar</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="fonctions.html"><a href="fonctions.html#secuencias"><i class="fa fa-check"></i><b>7.4.1</b> Secuencias</a></li>
 <li class="chapter" data-level="7.4.2" data-path="fonctions.html"><a href="fonctions.html#estadísticas-descriptivas-1"><i class="fa fa-check"></i><b>7.4.2</b> Estadísticas descriptivas</a></li>
 </ul></li>
 <li class="chapter" data-level="7.5" data-path="fonctions.html"><a href="fonctions.html#l015function"><i class="fa fa-check"></i><b>7.5</b> Escribir una función</a></li>
-<li class="chapter" data-level="7.6" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-desarrolladas-por-la-comunidad-de-usuarios-los-packages"><i class="fa fa-check"></i><b>7.6</b> Otras funciones desarrolladas por la comunidad de usuarios: los <em>packages</em></a><ul>
+<li class="chapter" data-level="7.6" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-desarrolladas-por-la-comunidad-de-usuarios-los-packages"><i class="fa fa-check"></i><b>7.6</b> Otras funciones desarrolladas por la comunidad de usuarios: los <em>packages</em></a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="fonctions.html"><a href="fonctions.html#instalar-un-paquete"><i class="fa fa-check"></i><b>7.6.1</b> Instalar un paquete</a></li>
 <li class="chapter" data-level="7.6.2" data-path="fonctions.html"><a href="fonctions.html#cargar-un-paquete"><i class="fa fa-check"></i><b>7.6.2</b> Cargar un paquete</a></li>
 <li class="chapter" data-level="7.6.3" data-path="fonctions.html"><a href="fonctions.html#portabilidad-del-código"><i class="fa fa-check"></i><b>7.6.3</b> Portabilidad del código</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="fonctions.html"><a href="fonctions.html#conclusión-4"><i class="fa fa-check"></i><b>7.7</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>8</b> Importar y exportar datos</a><ul>
-<li class="chapter" data-level="8.1" data-path="import.html"><a href="import.html#l016read"><i class="fa fa-check"></i><b>8.1</b> Leer datos de un archivo</a><ul>
+<li class="chapter" data-level="8" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>8</b> Importar y exportar datos</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="import.html"><a href="import.html#l016read"><i class="fa fa-check"></i><b>8.1</b> Leer datos de un archivo</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="import.html"><a href="import.html#l016transfo"><i class="fa fa-check"></i><b>8.1.1</b> Transformar datos en formato TXT o CSV</a></li>
 <li class="chapter" data-level="8.1.2" data-path="import.html"><a href="import.html#l016readCSV"><i class="fa fa-check"></i><b>8.1.2</b> Leer un archivo CSV</a></li>
 <li class="chapter" data-level="8.1.3" data-path="import.html"><a href="import.html#l016readTXT"><i class="fa fa-check"></i><b>8.1.3</b> Leer un archivo de texto</a></li>
@@ -272,14 +298,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="import.html"><a href="import.html#l016write"><i class="fa fa-check"></i><b>8.3</b> Exportar datos</a></li>
 <li class="chapter" data-level="8.4" data-path="import.html"><a href="import.html#conclusión-5"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="algo.html"><a href="algo.html"><i class="fa fa-check"></i><b>9</b> Algorítmico</a><ul>
+<li class="chapter" data-level="9" data-path="algo.html"><a href="algo.html"><i class="fa fa-check"></i><b>9</b> Algorítmico</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="algo.html"><a href="algo.html#l17if"><i class="fa fa-check"></i><b>9.1</b> Pruebas lógicas con <code>if</code></a></li>
 <li class="chapter" data-level="9.2" data-path="algo.html"><a href="algo.html#l17switch"><i class="fa fa-check"></i><b>9.2</b> Pruebas lógicas con <code>switch</code></a></li>
 <li class="chapter" data-level="9.3" data-path="algo.html"><a href="algo.html#l17for"><i class="fa fa-check"></i><b>9.3</b> El bucle <code>for</code></a></li>
 <li class="chapter" data-level="9.4" data-path="algo.html"><a href="algo.html#l17while"><i class="fa fa-check"></i><b>9.4</b> El bucle <code>while</code></a></li>
 <li class="chapter" data-level="9.5" data-path="algo.html"><a href="algo.html#l17repeat"><i class="fa fa-check"></i><b>9.5</b> El bucle <code>repeat</code></a></li>
 <li class="chapter" data-level="9.6" data-path="algo.html"><a href="algo.html#l17spe"><i class="fa fa-check"></i><b>9.6</b> <code>next</code> y <code>break</code></a></li>
-<li class="chapter" data-level="9.7" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>9.7</b> Los bucles de la familia <code>apply</code></a><ul>
+<li class="chapter" data-level="9.7" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>9.7</b> Los bucles de la familia <code>apply</code></a>
+<ul>
 <li class="chapter" data-level="9.7.1" data-path="algo.html"><a href="algo.html#l17apply"><i class="fa fa-check"></i><b>9.7.1</b> <code>apply</code></a></li>
 <li class="chapter" data-level="9.7.2" data-path="algo.html"><a href="algo.html#l17sapply"><i class="fa fa-check"></i><b>9.7.2</b> <code>lapply</code></a></li>
 <li class="chapter" data-level="9.7.3" data-path="algo.html"><a href="algo.html#l17lapply"><i class="fa fa-check"></i><b>9.7.3</b> <code>sapply</code></a></li>
@@ -288,14 +316,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.8" data-path="algo.html"><a href="algo.html#conclusión-6"><i class="fa fa-check"></i><b>9.8</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>10</b> Gestión de proyectos con R</a><ul>
+<li class="chapter" data-level="10" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>10</b> Gestión de proyectos con R</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="project.html"><a href="project.html#gestionando-archivos-y-directorios-de-trabajo."><i class="fa fa-check"></i><b>10.1</b> Gestionando archivos y directorios de trabajo.</a></li>
 <li class="chapter" data-level="10.2" data-path="project.html"><a href="project.html#gestión-de-versiones-de-script"><i class="fa fa-check"></i><b>10.2</b> Gestión de versiones de script</a></li>
 <li class="chapter" data-level="10.3" data-path="project.html"><a href="project.html#gestion-de-documentacion"><i class="fa fa-check"></i><b>10.3</b> Gestion de documentacion</a></li>
 <li class="chapter" data-level="10.4" data-path="project.html"><a href="project.html#conclusión-7"><i class="fa fa-check"></i><b>10.4</b> Conclusión</a></li>
 </ul></li>
 <li class="part"><span><b>II Los gráficos</b></span></li>
-<li class="chapter" data-level="11" data-path="graph1.html"><a href="graph1.html"><i class="fa fa-check"></i><b>11</b> Gráficos simples</a><ul>
+<li class="chapter" data-level="11" data-path="graph1.html"><a href="graph1.html"><i class="fa fa-check"></i><b>11</b> Gráficos simples</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="graph1.html"><a href="graph1.html#graph1plot"><i class="fa fa-check"></i><b>11.1</b> <code>plot</code></a></li>
 <li class="chapter" data-level="11.2" data-path="graph1.html"><a href="graph1.html#graph1hist"><i class="fa fa-check"></i><b>11.2</b> <code>hist</code></a></li>
 <li class="chapter" data-level="11.3" data-path="graph1.html"><a href="graph1.html#graph1barplot"><i class="fa fa-check"></i><b>11.3</b> <code>barplot</code></a></li>
@@ -303,14 +333,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5" data-path="graph1.html"><a href="graph1.html#otros-gráficos"><i class="fa fa-check"></i><b>11.5</b> Otros gráficos</a></li>
 <li class="chapter" data-level="11.6" data-path="graph1.html"><a href="graph1.html#conclusión-8"><i class="fa fa-check"></i><b>11.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="graph2.html"><a href="graph2.html"><i class="fa fa-check"></i><b>12</b> Gestión del color</a><ul>
+<li class="chapter" data-level="12" data-path="graph2.html"><a href="graph2.html"><i class="fa fa-check"></i><b>12</b> Gestión del color</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="graph2.html"><a href="graph2.html#colors"><i class="fa fa-check"></i><b>12.1</b> <code>colors()</code></a></li>
 <li class="chapter" data-level="12.2" data-path="graph2.html"><a href="graph2.html#rgb"><i class="fa fa-check"></i><b>12.2</b> <code>rgb()</code></a></li>
 <li class="chapter" data-level="12.3" data-path="graph2.html"><a href="graph2.html#paletas-de-colores"><i class="fa fa-check"></i><b>12.3</b> Paletas de colores</a></li>
 <li class="chapter" data-level="12.4" data-path="graph2.html"><a href="graph2.html#conclusión-9"><i class="fa fa-check"></i><b>12.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="graph3.html"><a href="graph3.html"><i class="fa fa-check"></i><b>13</b> Paquetes gráficos</a><ul>
-<li class="chapter" data-level="13.1" data-path="graph3.html"><a href="graph3.html#los-paquetes-con-paletas"><i class="fa fa-check"></i><b>13.1</b> Los paquetes con paletas</a><ul>
+<li class="chapter" data-level="13" data-path="graph3.html"><a href="graph3.html"><i class="fa fa-check"></i><b>13</b> Paquetes gráficos</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="graph3.html"><a href="graph3.html#los-paquetes-con-paletas"><i class="fa fa-check"></i><b>13.1</b> Los paquetes con paletas</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="graph3.html"><a href="graph3.html#rcolorbrewer"><i class="fa fa-check"></i><b>13.1.1</b> <code>RColorBrewer</code></a></li>
 <li class="chapter" data-level="13.1.2" data-path="graph3.html"><a href="graph3.html#palettesforr"><i class="fa fa-check"></i><b>13.1.2</b> <code>palettesForR</code></a></li>
 <li class="chapter" data-level="13.1.3" data-path="graph3.html"><a href="graph3.html#otros-paquetes"><i class="fa fa-check"></i><b>13.1.3</b> Otros paquetes</a></li>
@@ -319,7 +352,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="graph3.html"><a href="graph3.html#gráficos-interactivos-y-dinámicos-con-plotly"><i class="fa fa-check"></i><b>13.3</b> Gráficos interactivos y dinámicos con <code>Plotly</code></a></li>
 <li class="chapter" data-level="13.4" data-path="graph3.html"><a href="graph3.html#conclusión-10"><i class="fa fa-check"></i><b>13.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="graph4.html"><a href="graph4.html"><i class="fa fa-check"></i><b>14</b> De la gráfica a la figura en un artículo científico</a><ul>
+<li class="chapter" data-level="14" data-path="graph4.html"><a href="graph4.html"><i class="fa fa-check"></i><b>14</b> De la gráfica a la figura en un artículo científico</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="graph4.html"><a href="graph4.html#inkscape"><i class="fa fa-check"></i><b>14.1</b> Inkscape</a></li>
 <li class="chapter" data-level="14.2" data-path="graph4.html"><a href="graph4.html#the-gimp"><i class="fa fa-check"></i><b>14.2</b> The Gimp</a></li>
 <li class="chapter" data-level="14.3" data-path="graph4.html"><a href="graph4.html#tabla-de-referencia"><i class="fa fa-check"></i><b>14.3</b> Tabla de referencia</a></li>
@@ -343,16 +377,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="studyCase1" class="section level1">
+<div id="studyCase1" class="section level1" number="15">
 <h1><span class="header-section-number"> 15</span> Analizar datos de loggers de temperatura</h1>
 <p>En estudios de biología, ecología, o agronomía, frecuentemente usamos datos de temperatura de dataloggers. En este estudio vamos a ver como analizar esos datos usando datos de temperatura del altiplano Boliviano cerca de la ciudad de El Alto. El primer paso es transformar los datos del datalogger en un formato que sea fácil de leer para R. Usaremos un archivo CSV y la función <a href="import.html#import"><code>read.table()</code></a>. El archivo se puede descargar desde el sitio web del libro en GitHub (<a href="https://github.com/frareb/myRBook_SP/blob/master/myFiles/E05C13.csv" class="uri">https://github.com/frareb/myRBook_SP/blob/master/myFiles/E05C13.csv</a> ; el archivo se puede leer desde su destino en GitHub <a href="https://raw.githubusercontent.com/frareb/myRBook_SP/master/myFiles/E05C13.csv" class="uri">https://raw.githubusercontent.com/frareb/myRBook_SP/master/myFiles/E05C13.csv</a>).</p>
-<div class="sourceCode" id="cb1189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1189-1"><a href="studyCase1.html#cb1189-1"></a>bdd &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;myFiles/E05C13.csv&quot;</span>, <span class="dt">skip =</span> <span class="dv">1</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb1189-2"><a href="studyCase1.html#cb1189-2"></a>  <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1189-3"><a href="studyCase1.html#cb1189-3"></a><span class="co"># Desde GitHub: </span></span>
-<span id="cb1189-4"><a href="studyCase1.html#cb1189-4"></a><span class="co"># bdd &lt;- read.table(&quot;https://raw.githubusercontent.com/frareb/myRBook_SP/master/myFiles/E05C13.csv&quot;, </span></span>
-<span id="cb1189-5"><a href="studyCase1.html#cb1189-5"></a><span class="co">#   skip = 1, header = TRUE, sep = &quot;,&quot;, dec = &quot;.&quot;, stringsAsFactors = FALSE)</span></span>
-<span id="cb1189-6"><a href="studyCase1.html#cb1189-6"></a><span class="kw">colnames</span>(bdd) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;temp&quot;</span>)</span>
-<span id="cb1189-7"><a href="studyCase1.html#cb1189-7"></a><span class="kw">head</span>(bdd)</span></code></pre></div>
+<div class="sourceCode" id="cb1189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1189-1"><a href="studyCase1.html#cb1189-1" aria-hidden="true" tabindex="-1"></a>bdd <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;myFiles/E05C13.csv&quot;</span>, <span class="at">skip =</span> <span class="dv">1</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb1189-2"><a href="studyCase1.html#cb1189-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="at">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1189-3"><a href="studyCase1.html#cb1189-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Desde GitHub: </span></span>
+<span id="cb1189-4"><a href="studyCase1.html#cb1189-4" aria-hidden="true" tabindex="-1"></a><span class="co"># bdd &lt;- read.table(&quot;https://raw.githubusercontent.com/frareb/myRBook_SP/master/myFiles/E05C13.csv&quot;, </span></span>
+<span id="cb1189-5"><a href="studyCase1.html#cb1189-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   skip = 1, header = TRUE, sep = &quot;,&quot;, dec = &quot;.&quot;, stringsAsFactors = FALSE)</span></span>
+<span id="cb1189-6"><a href="studyCase1.html#cb1189-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bdd) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;temp&quot;</span>)</span>
+<span id="cb1189-7"><a href="studyCase1.html#cb1189-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bdd)</span></code></pre></div>
 <pre><code>##   id              date  temp
 ## 1  1 11/12/15 23:00:00 4.973
 ## 2  2 11/12/15 23:30:00 4.766
@@ -360,7 +394,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  4 11/13/15 00:30:00 4.844
 ## 5  5 11/13/15 01:00:00 5.076
 ## 6  6 11/13/15 01:30:00 5.282</code></pre>
-<div class="sourceCode" id="cb1191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1191-1"><a href="studyCase1.html#cb1191-1"></a><span class="kw">tail</span>(bdd)</span></code></pre></div>
+<div class="sourceCode" id="cb1191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1191-1"><a href="studyCase1.html#cb1191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(bdd)</span></code></pre></div>
 <pre><code>##          id              date  temp
 ## 32781 32781 09/25/17 21:00:00 7.091
 ## 32782 32782 09/25/17 21:30:00 6.914
@@ -368,44 +402,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 32784 32784 09/25/17 22:30:00 6.611
 ## 32785 32785 09/25/17 23:00:00 6.331
 ## 32786 32786 09/25/17 23:30:00 5.385</code></pre>
-<div class="sourceCode" id="cb1193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1193-1"><a href="studyCase1.html#cb1193-1"></a><span class="kw">str</span>(bdd)</span></code></pre></div>
+<div class="sourceCode" id="cb1193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1193-1"><a href="studyCase1.html#cb1193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bdd)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    32786 obs. of  3 variables:
 ##  $ id  : int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ date: chr  &quot;11/12/15 23:00:00&quot; &quot;11/12/15 23:30:00&quot; &quot;11/13/15 00:00:00&quot; &quot;11/13/15 00:30:00&quot; ...
 ##  $ temp: num  4.97 4.77 4.84 4.84 5.08 ...</code></pre>
 <p>Podemos observar que la fecha esta al formato <code>character</code>, y que contiene la fecha con el mes, el día, y el año separados con <code>/</code>, un espacio, y la hora con horas de 0 a 24, minutos, y segundos, separados con <code>:</code> (ejemplo: <code>11/12/15 23:00:00</code> para el 12 de Noviembre de 2015 a las 11 de la noche). Vamos a separar la información en varios objetos para ver todas las opciones segun el tipo de datos que se puede tener.</p>
 <p>Primero vamos a separar la fecha de la hora. Para esto vamos a usar la función <code>strsplit()</code> usando como separador el espacio entre la fecha y la hora.</p>
-<div class="sourceCode" id="cb1195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1195-1"><a href="studyCase1.html#cb1195-1"></a><span class="kw">strsplit</span>(<span class="st">&quot;11/12/15 23:00:00&quot;</span>, <span class="dt">split =</span> <span class="st">&quot; &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1195-1"><a href="studyCase1.html#cb1195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;11/12/15 23:00:00&quot;</span>, <span class="at">split =</span> <span class="st">&quot; &quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;11/12/15&quot; &quot;23:00:00&quot;</code></pre>
 <p>Como indican los corchetes dobles, la función devuelve un objeto en el formato <code>list</code>. Nosotros queremos el <code>vector</code> que corresponde al primer elemento de la <code>list</code> entonces vamos a añadir <code>[[1]]</code>.</p>
-<div class="sourceCode" id="cb1197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1197-1"><a href="studyCase1.html#cb1197-1"></a><span class="kw">strsplit</span>(<span class="st">&quot;11/12/15 23:00:00&quot;</span>, <span class="dt">split =</span> <span class="st">&quot; &quot;</span>)[[<span class="dv">1</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb1197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1197-1"><a href="studyCase1.html#cb1197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;11/12/15 23:00:00&quot;</span>, <span class="at">split =</span> <span class="st">&quot; &quot;</span>)[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>## [1] &quot;11/12/15&quot; &quot;23:00:00&quot;</code></pre>
 <p>El primer elemento del <code>vector</code> es la fecha. Para tener todas las fechas vamos a hacer un bucle con la función <code>sapply()</code>.</p>
-<div class="sourceCode" id="cb1199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1199-1"><a href="studyCase1.html#cb1199-1"></a>bddDay &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="kw">strsplit</span>(bdd[, <span class="dv">2</span>], <span class="dt">split =</span> <span class="st">&quot; &quot;</span>), <span class="st">&quot;[[&quot;</span>, <span class="dv">1</span>)</span>
-<span id="cb1199-2"><a href="studyCase1.html#cb1199-2"></a><span class="kw">head</span>(bddDay)</span></code></pre></div>
+<div class="sourceCode" id="cb1199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1199-1"><a href="studyCase1.html#cb1199-1" aria-hidden="true" tabindex="-1"></a>bddDay <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(bdd[, <span class="dv">2</span>], <span class="at">split =</span> <span class="st">&quot; &quot;</span>), <span class="st">&quot;[[&quot;</span>, <span class="dv">1</span>)</span>
+<span id="cb1199-2"><a href="studyCase1.html#cb1199-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bddDay)</span></code></pre></div>
 <pre><code>## [1] &quot;11/12/15&quot; &quot;11/12/15&quot; &quot;11/13/15&quot; &quot;11/13/15&quot; &quot;11/13/15&quot; &quot;11/13/15&quot;</code></pre>
 <p>A continuación vamos a necesitar las fechas en el formato <code>Date</code>. Entonces necesitamos transformar el objeto en el formato <code>Date</code> con la función <code>as.Date()</code>.</p>
-<div class="sourceCode" id="cb1201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1201-1"><a href="studyCase1.html#cb1201-1"></a>bddDay &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">sapply</span>(<span class="kw">strsplit</span>(bdd[, <span class="dv">2</span>], <span class="dt">split =</span> <span class="st">&quot; &quot;</span>), <span class="st">&quot;[[&quot;</span>, <span class="dv">1</span>), <span class="dt">format =</span> <span class="st">&quot;%m/%d/%y&quot;</span>)</span>
-<span id="cb1201-2"><a href="studyCase1.html#cb1201-2"></a><span class="kw">head</span>(bddDay)</span></code></pre></div>
+<div class="sourceCode" id="cb1201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1201-1"><a href="studyCase1.html#cb1201-1" aria-hidden="true" tabindex="-1"></a>bddDay <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">sapply</span>(<span class="fu">strsplit</span>(bdd[, <span class="dv">2</span>], <span class="at">split =</span> <span class="st">&quot; &quot;</span>), <span class="st">&quot;[[&quot;</span>, <span class="dv">1</span>), <span class="at">format =</span> <span class="st">&quot;%m/%d/%y&quot;</span>)</span>
+<span id="cb1201-2"><a href="studyCase1.html#cb1201-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bddDay)</span></code></pre></div>
 <pre><code>## [1] &quot;2015-11-12&quot; &quot;2015-11-12&quot; &quot;2015-11-13&quot; &quot;2015-11-13&quot; &quot;2015-11-13&quot;
 ## [6] &quot;2015-11-13&quot;</code></pre>
 <p>Vamos a añadir la information al formato <code>Date</code> en nuestro objeto <code>bdd</code>. Con la función <code>str()</code>, podemos ver que el formato de <code>bdd$day</code> es <code>Date</code>.</p>
-<div class="sourceCode" id="cb1203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1203-1"><a href="studyCase1.html#cb1203-1"></a>bdd<span class="op">$</span>day &lt;-<span class="st"> </span>bddDay</span>
-<span id="cb1203-2"><a href="studyCase1.html#cb1203-2"></a><span class="kw">str</span>(bdd)</span></code></pre></div>
+<div class="sourceCode" id="cb1203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1203-1"><a href="studyCase1.html#cb1203-1" aria-hidden="true" tabindex="-1"></a>bdd<span class="sc">$</span>day <span class="ot">&lt;-</span> bddDay</span>
+<span id="cb1203-2"><a href="studyCase1.html#cb1203-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bdd)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    32786 obs. of  4 variables:
 ##  $ id  : int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ date: chr  &quot;11/12/15 23:00:00&quot; &quot;11/12/15 23:30:00&quot; &quot;11/13/15 00:00:00&quot; &quot;11/13/15 00:30:00&quot; ...
 ##  $ temp: num  4.97 4.77 4.84 4.84 5.08 ...
 ##  $ day : Date, format: &quot;2015-11-12&quot; &quot;2015-11-12&quot; ...</code></pre>
 <p>Si necesitamos la información del horario, usaremos el formato <code>POSIX</code> con la función <code>as.POSIXct()</code>. Vamos a añadir la information al formato <code>POSIX</code> en nuestro objeto <code>bdd</code>. Con la función <code>str()</code>, podemos ver que el formato de <code>bdd$posix</code> es <code>POSIXct</code>.</p>
-<div class="sourceCode" id="cb1205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1205-1"><a href="studyCase1.html#cb1205-1"></a>bddPosix &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(bdd<span class="op">$</span>date, <span class="dt">format =</span> <span class="st">&quot;%m/%d/%y %H:%M:%S&quot;</span>)</span>
-<span id="cb1205-2"><a href="studyCase1.html#cb1205-2"></a><span class="kw">head</span>(bddPosix)</span></code></pre></div>
+<div class="sourceCode" id="cb1205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1205-1"><a href="studyCase1.html#cb1205-1" aria-hidden="true" tabindex="-1"></a>bddPosix <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(bdd<span class="sc">$</span>date, <span class="at">format =</span> <span class="st">&quot;%m/%d/%y %H:%M:%S&quot;</span>)</span>
+<span id="cb1205-2"><a href="studyCase1.html#cb1205-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bddPosix)</span></code></pre></div>
 <pre><code>## [1] &quot;2015-11-12 23:00:00 CET&quot; &quot;2015-11-12 23:30:00 CET&quot;
 ## [3] &quot;2015-11-13 00:00:00 CET&quot; &quot;2015-11-13 00:30:00 CET&quot;
 ## [5] &quot;2015-11-13 01:00:00 CET&quot; &quot;2015-11-13 01:30:00 CET&quot;</code></pre>
-<div class="sourceCode" id="cb1207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1207-1"><a href="studyCase1.html#cb1207-1"></a>bdd<span class="op">$</span>posix &lt;-<span class="st"> </span>bddPosix</span>
-<span id="cb1207-2"><a href="studyCase1.html#cb1207-2"></a><span class="kw">str</span>(bdd)</span></code></pre></div>
+<div class="sourceCode" id="cb1207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1207-1"><a href="studyCase1.html#cb1207-1" aria-hidden="true" tabindex="-1"></a>bdd<span class="sc">$</span>posix <span class="ot">&lt;-</span> bddPosix</span>
+<span id="cb1207-2"><a href="studyCase1.html#cb1207-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bdd)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    32786 obs. of  5 variables:
 ##  $ id   : int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ date : chr  &quot;11/12/15 23:00:00&quot; &quot;11/12/15 23:30:00&quot; &quot;11/13/15 00:00:00&quot; &quot;11/13/15 00:30:00&quot; ...
@@ -484,209 +518,209 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Podemos visualizar los datos con la función <code>plot()</code>.</p>
-<div class="sourceCode" id="cb1209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1209-1"><a href="studyCase1.html#cb1209-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> bdd<span class="op">$</span>day, <span class="dt">y =</span> bdd<span class="op">$</span>temp, </span>
-<span id="cb1209-2"><a href="studyCase1.html#cb1209-2"></a>    <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
-<span id="cb1209-3"><a href="studyCase1.html#cb1209-3"></a>    <span class="dt">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1209-1"><a href="studyCase1.html#cb1209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> bdd<span class="sc">$</span>day, <span class="at">y =</span> bdd<span class="sc">$</span>temp, </span>
+<span id="cb1209-2"><a href="studyCase1.html#cb1209-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
+<span id="cb1209-3"><a href="studyCase1.html#cb1209-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-8-1.png" width="672" /></p>
 <p>Podemos simplificar la información calculando únicamente las temperaturas mínimas, promedias, y máximas del dia con la función <code>tapply()</code>.</p>
-<div class="sourceCode" id="cb1210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1210-1"><a href="studyCase1.html#cb1210-1"></a>tempDayMean &lt;-<span class="st"> </span><span class="kw">tapply</span>(bdd<span class="op">$</span>temp, <span class="dt">INDEX =</span> bdd<span class="op">$</span>day, <span class="dt">FUN =</span> mean)</span>
-<span id="cb1210-2"><a href="studyCase1.html#cb1210-2"></a>tempDayMin &lt;-<span class="st"> </span><span class="kw">tapply</span>(bdd<span class="op">$</span>temp, <span class="dt">INDEX =</span> bdd<span class="op">$</span>day, <span class="dt">FUN =</span> min)</span>
-<span id="cb1210-3"><a href="studyCase1.html#cb1210-3"></a>tempDayMax &lt;-<span class="st"> </span><span class="kw">tapply</span>(bdd<span class="op">$</span>temp, <span class="dt">INDEX =</span> bdd<span class="op">$</span>day, <span class="dt">FUN =</span> max)</span>
-<span id="cb1210-4"><a href="studyCase1.html#cb1210-4"></a><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(<span class="kw">names</span>(tempDayMean), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>), </span>
-<span id="cb1210-5"><a href="studyCase1.html#cb1210-5"></a>    <span class="dt">y =</span> tempDayMean, <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
-<span id="cb1210-6"><a href="studyCase1.html#cb1210-6"></a>    <span class="dt">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>)</span>
-<span id="cb1210-7"><a href="studyCase1.html#cb1210-7"></a><span class="kw">points</span>(<span class="kw">as.Date</span>(<span class="kw">names</span>(tempDayMin), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>), </span>
-<span id="cb1210-8"><a href="studyCase1.html#cb1210-8"></a>    <span class="dt">y =</span> tempDayMin, <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">4</span>)</span>
-<span id="cb1210-9"><a href="studyCase1.html#cb1210-9"></a><span class="kw">points</span>(<span class="kw">as.Date</span>(<span class="kw">names</span>(tempDayMax), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>), </span>
-<span id="cb1210-10"><a href="studyCase1.html#cb1210-10"></a>    <span class="dt">y =</span> tempDayMax, <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">2</span>)</span>
-<span id="cb1210-11"><a href="studyCase1.html#cb1210-11"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>, <span class="st">&quot;promedio&quot;</span>), </span>
-<span id="cb1210-12"><a href="studyCase1.html#cb1210-12"></a>  <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1210-1"><a href="studyCase1.html#cb1210-1" aria-hidden="true" tabindex="-1"></a>tempDayMean <span class="ot">&lt;-</span> <span class="fu">tapply</span>(bdd<span class="sc">$</span>temp, <span class="at">INDEX =</span> bdd<span class="sc">$</span>day, <span class="at">FUN =</span> mean)</span>
+<span id="cb1210-2"><a href="studyCase1.html#cb1210-2" aria-hidden="true" tabindex="-1"></a>tempDayMin <span class="ot">&lt;-</span> <span class="fu">tapply</span>(bdd<span class="sc">$</span>temp, <span class="at">INDEX =</span> bdd<span class="sc">$</span>day, <span class="at">FUN =</span> min)</span>
+<span id="cb1210-3"><a href="studyCase1.html#cb1210-3" aria-hidden="true" tabindex="-1"></a>tempDayMax <span class="ot">&lt;-</span> <span class="fu">tapply</span>(bdd<span class="sc">$</span>temp, <span class="at">INDEX =</span> bdd<span class="sc">$</span>day, <span class="at">FUN =</span> max)</span>
+<span id="cb1210-4"><a href="studyCase1.html#cb1210-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="fu">names</span>(tempDayMean), <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>), </span>
+<span id="cb1210-5"><a href="studyCase1.html#cb1210-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> tempDayMean, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
+<span id="cb1210-6"><a href="studyCase1.html#cb1210-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>)</span>
+<span id="cb1210-7"><a href="studyCase1.html#cb1210-7" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">as.Date</span>(<span class="fu">names</span>(tempDayMin), <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>), </span>
+<span id="cb1210-8"><a href="studyCase1.html#cb1210-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> tempDayMin, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> <span class="dv">4</span>)</span>
+<span id="cb1210-9"><a href="studyCase1.html#cb1210-9" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">as.Date</span>(<span class="fu">names</span>(tempDayMax), <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>), </span>
+<span id="cb1210-10"><a href="studyCase1.html#cb1210-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> tempDayMax, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> <span class="dv">2</span>)</span>
+<span id="cb1210-11"><a href="studyCase1.html#cb1210-11" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>, <span class="st">&quot;promedio&quot;</span>), </span>
+<span id="cb1210-12"><a href="studyCase1.html#cb1210-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-9-1.png" width="672" /></p>
 <p>Podemos representar la misma información por semana. Para esto vamos a usar la información de los datos en el formato <code>POSIXct</code> para transformala en semanas.</p>
-<div class="sourceCode" id="cb1211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1211-1"><a href="studyCase1.html#cb1211-1"></a>anoSem &lt;-<span class="st"> </span><span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%Y-%W&quot;</span>)</span>
-<span id="cb1211-2"><a href="studyCase1.html#cb1211-2"></a><span class="kw">head</span>(anoSem)</span></code></pre></div>
+<div class="sourceCode" id="cb1211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1211-1"><a href="studyCase1.html#cb1211-1" aria-hidden="true" tabindex="-1"></a>anoSem <span class="ot">&lt;-</span> <span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%Y-%W&quot;</span>)</span>
+<span id="cb1211-2"><a href="studyCase1.html#cb1211-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(anoSem)</span></code></pre></div>
 <pre><code>## [1] &quot;2015-45&quot; &quot;2015-45&quot; &quot;2015-45&quot; &quot;2015-45&quot; &quot;2015-45&quot; &quot;2015-45&quot;</code></pre>
 <p>Y despues hacer el gráfico.</p>
-<div class="sourceCode" id="cb1213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1213-1"><a href="studyCase1.html#cb1213-1"></a>tempWeekMean &lt;-<span class="st"> </span><span class="kw">tapply</span>(bdd<span class="op">$</span>temp, </span>
-<span id="cb1213-2"><a href="studyCase1.html#cb1213-2"></a>  <span class="dt">INDEX =</span> <span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%Y-%W-1&quot;</span>), <span class="dt">FUN =</span> mean)</span>
-<span id="cb1213-3"><a href="studyCase1.html#cb1213-3"></a>tempWeekMin &lt;-<span class="st"> </span><span class="kw">tapply</span>(bdd<span class="op">$</span>temp, </span>
-<span id="cb1213-4"><a href="studyCase1.html#cb1213-4"></a>  <span class="dt">INDEX =</span> <span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%Y-%W-1&quot;</span>), <span class="dt">FUN =</span> min)</span>
-<span id="cb1213-5"><a href="studyCase1.html#cb1213-5"></a>tempWeekMax &lt;-<span class="st"> </span><span class="kw">tapply</span>(bdd<span class="op">$</span>temp, </span>
-<span id="cb1213-6"><a href="studyCase1.html#cb1213-6"></a>  <span class="dt">INDEX =</span> <span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%Y-%W-1&quot;</span>), <span class="dt">FUN =</span> max)</span>
-<span id="cb1213-7"><a href="studyCase1.html#cb1213-7"></a><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(<span class="kw">names</span>(tempWeekMean), <span class="dt">format =</span> <span class="st">&quot;%Y-%W-%u&quot;</span>), </span>
-<span id="cb1213-8"><a href="studyCase1.html#cb1213-8"></a>    <span class="dt">y =</span> tempWeekMean, <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
-<span id="cb1213-9"><a href="studyCase1.html#cb1213-9"></a>    <span class="dt">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>)</span>
-<span id="cb1213-10"><a href="studyCase1.html#cb1213-10"></a><span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(<span class="kw">names</span>(tempWeekMin), <span class="dt">format =</span> <span class="st">&quot;%Y-%W-%u&quot;</span>), </span>
-<span id="cb1213-11"><a href="studyCase1.html#cb1213-11"></a>    <span class="dt">y =</span> tempWeekMin, <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">4</span>)</span>
-<span id="cb1213-12"><a href="studyCase1.html#cb1213-12"></a><span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(<span class="kw">names</span>(tempWeekMax), <span class="dt">format =</span> <span class="st">&quot;%Y-%W-%u&quot;</span>), </span>
-<span id="cb1213-13"><a href="studyCase1.html#cb1213-13"></a>    <span class="dt">y =</span> tempWeekMax, <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">2</span>)</span>
-<span id="cb1213-14"><a href="studyCase1.html#cb1213-14"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>, <span class="st">&quot;promedio&quot;</span>), </span>
-<span id="cb1213-15"><a href="studyCase1.html#cb1213-15"></a>  <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1213-1"><a href="studyCase1.html#cb1213-1" aria-hidden="true" tabindex="-1"></a>tempWeekMean <span class="ot">&lt;-</span> <span class="fu">tapply</span>(bdd<span class="sc">$</span>temp, </span>
+<span id="cb1213-2"><a href="studyCase1.html#cb1213-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">INDEX =</span> <span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%Y-%W-1&quot;</span>), <span class="at">FUN =</span> mean)</span>
+<span id="cb1213-3"><a href="studyCase1.html#cb1213-3" aria-hidden="true" tabindex="-1"></a>tempWeekMin <span class="ot">&lt;-</span> <span class="fu">tapply</span>(bdd<span class="sc">$</span>temp, </span>
+<span id="cb1213-4"><a href="studyCase1.html#cb1213-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">INDEX =</span> <span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%Y-%W-1&quot;</span>), <span class="at">FUN =</span> min)</span>
+<span id="cb1213-5"><a href="studyCase1.html#cb1213-5" aria-hidden="true" tabindex="-1"></a>tempWeekMax <span class="ot">&lt;-</span> <span class="fu">tapply</span>(bdd<span class="sc">$</span>temp, </span>
+<span id="cb1213-6"><a href="studyCase1.html#cb1213-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">INDEX =</span> <span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%Y-%W-1&quot;</span>), <span class="at">FUN =</span> max)</span>
+<span id="cb1213-7"><a href="studyCase1.html#cb1213-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="fu">names</span>(tempWeekMean), <span class="at">format =</span> <span class="st">&quot;%Y-%W-%u&quot;</span>), </span>
+<span id="cb1213-8"><a href="studyCase1.html#cb1213-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> tempWeekMean, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
+<span id="cb1213-9"><a href="studyCase1.html#cb1213-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>)</span>
+<span id="cb1213-10"><a href="studyCase1.html#cb1213-10" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="fu">names</span>(tempWeekMin), <span class="at">format =</span> <span class="st">&quot;%Y-%W-%u&quot;</span>), </span>
+<span id="cb1213-11"><a href="studyCase1.html#cb1213-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> tempWeekMin, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> <span class="dv">4</span>)</span>
+<span id="cb1213-12"><a href="studyCase1.html#cb1213-12" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="fu">names</span>(tempWeekMax), <span class="at">format =</span> <span class="st">&quot;%Y-%W-%u&quot;</span>), </span>
+<span id="cb1213-13"><a href="studyCase1.html#cb1213-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> tempWeekMax, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> <span class="dv">2</span>)</span>
+<span id="cb1213-14"><a href="studyCase1.html#cb1213-14" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>, <span class="st">&quot;promedio&quot;</span>), </span>
+<span id="cb1213-15"><a href="studyCase1.html#cb1213-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-11-1.png" width="672" /></p>
 <p>Para no perder la información sobre la variabilidad de la temperatura podemos hacer <code>boxplot</code> en lugar de <code>plot</code>.</p>
-<div class="sourceCode" id="cb1214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1214-1"><a href="studyCase1.html#cb1214-1"></a><span class="kw">boxplot</span>(bdd<span class="op">$</span>temp <span class="op">~</span><span class="st"> </span><span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%Y-%m&quot;</span>), <span class="dt">las =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1214-1"><a href="studyCase1.html#cb1214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(bdd<span class="sc">$</span>temp <span class="sc">~</span> <span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%Y-%m&quot;</span>), <span class="at">las =</span> <span class="dv">3</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-12-1.png" width="672" /></p>
 <p>Podemos elegir colores para representar la temperatura promedia. Para esto podemos normalizar la temperatura en numeros integrados entre 1 y 101 y hacer corresponder los numeros en una escala de color del azul al rojo.</p>
-<div class="sourceCode" id="cb1215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1215-1"><a href="studyCase1.html#cb1215-1"></a>tempMonthMean &lt;-<span class="st"> </span><span class="kw">tapply</span>(bdd<span class="op">$</span>temp, </span>
-<span id="cb1215-2"><a href="studyCase1.html#cb1215-2"></a>  <span class="dt">INDEX =</span> <span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%Y-%m&quot;</span>), <span class="dt">FUN =</span> mean)</span>
-<span id="cb1215-3"><a href="studyCase1.html#cb1215-3"></a>myCol &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>))(<span class="dv">101</span>)</span>
-<span id="cb1215-4"><a href="studyCase1.html#cb1215-4"></a>tempMeanDayPos &lt;-<span class="st"> </span><span class="kw">round</span>(</span>
-<span id="cb1215-5"><a href="studyCase1.html#cb1215-5"></a>  (tempMonthMean <span class="op">-</span><span class="st"> </span><span class="kw">min</span>(tempMonthMean)) <span class="op">/</span><span class="st"> </span></span>
-<span id="cb1215-6"><a href="studyCase1.html#cb1215-6"></a><span class="st">    </span>(<span class="kw">max</span>(tempMonthMean) <span class="op">-</span><span class="st"> </span><span class="kw">min</span>(tempMonthMean))<span class="op">*</span><span class="dv">100</span>) <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb1215-7"><a href="studyCase1.html#cb1215-7"></a><span class="kw">boxplot</span>(bdd<span class="op">$</span>temp <span class="op">~</span><span class="st"> </span><span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%Y-%m&quot;</span>), <span class="dt">las =</span> <span class="dv">3</span>, </span>
-<span id="cb1215-8"><a href="studyCase1.html#cb1215-8"></a>  <span class="dt">col =</span> myCol[tempMeanDayPos])</span></code></pre></div>
+<div class="sourceCode" id="cb1215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1215-1"><a href="studyCase1.html#cb1215-1" aria-hidden="true" tabindex="-1"></a>tempMonthMean <span class="ot">&lt;-</span> <span class="fu">tapply</span>(bdd<span class="sc">$</span>temp, </span>
+<span id="cb1215-2"><a href="studyCase1.html#cb1215-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">INDEX =</span> <span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%Y-%m&quot;</span>), <span class="at">FUN =</span> mean)</span>
+<span id="cb1215-3"><a href="studyCase1.html#cb1215-3" aria-hidden="true" tabindex="-1"></a>myCol <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>))(<span class="dv">101</span>)</span>
+<span id="cb1215-4"><a href="studyCase1.html#cb1215-4" aria-hidden="true" tabindex="-1"></a>tempMeanDayPos <span class="ot">&lt;-</span> <span class="fu">round</span>(</span>
+<span id="cb1215-5"><a href="studyCase1.html#cb1215-5" aria-hidden="true" tabindex="-1"></a>  (tempMonthMean <span class="sc">-</span> <span class="fu">min</span>(tempMonthMean)) <span class="sc">/</span> </span>
+<span id="cb1215-6"><a href="studyCase1.html#cb1215-6" aria-hidden="true" tabindex="-1"></a>    (<span class="fu">max</span>(tempMonthMean) <span class="sc">-</span> <span class="fu">min</span>(tempMonthMean))<span class="sc">*</span><span class="dv">100</span>) <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1215-7"><a href="studyCase1.html#cb1215-7" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(bdd<span class="sc">$</span>temp <span class="sc">~</span> <span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%Y-%m&quot;</span>), <span class="at">las =</span> <span class="dv">3</span>, </span>
+<span id="cb1215-8"><a href="studyCase1.html#cb1215-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> myCol[tempMeanDayPos])</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-13-1.png" width="672" /></p>
 <p>Para los que usan ggplot2:</p>
-<div class="sourceCode" id="cb1216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1216-1"><a href="studyCase1.html#cb1216-1"></a>pkgCheck &lt;-<span class="st"> </span><span class="cf">function</span>(x){ </span>
-<span id="cb1216-2"><a href="studyCase1.html#cb1216-2"></a>    <span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(x, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)){</span>
-<span id="cb1216-3"><a href="studyCase1.html#cb1216-3"></a>        <span class="kw">install.packages</span>(x, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1216-4"><a href="studyCase1.html#cb1216-4"></a>        <span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(x, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)) {</span>
-<span id="cb1216-5"><a href="studyCase1.html#cb1216-5"></a>            <span class="kw">stop</span>()</span>
-<span id="cb1216-6"><a href="studyCase1.html#cb1216-6"></a>        }</span>
-<span id="cb1216-7"><a href="studyCase1.html#cb1216-7"></a>    }</span>
-<span id="cb1216-8"><a href="studyCase1.html#cb1216-8"></a>}</span>
-<span id="cb1216-9"><a href="studyCase1.html#cb1216-9"></a><span class="kw">pkgCheck</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb1216-10"><a href="studyCase1.html#cb1216-10"></a></span>
-<span id="cb1216-11"><a href="studyCase1.html#cb1216-11"></a>tempMonthMean &lt;-<span class="st"> </span><span class="kw">tapply</span>(bdd<span class="op">$</span>temp, </span>
-<span id="cb1216-12"><a href="studyCase1.html#cb1216-12"></a>  <span class="dt">INDEX =</span> <span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%Y-%m&quot;</span>), <span class="dt">FUN =</span> mean)</span>
-<span id="cb1216-13"><a href="studyCase1.html#cb1216-13"></a>myCol &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>))(<span class="dv">101</span>)</span>
-<span id="cb1216-14"><a href="studyCase1.html#cb1216-14"></a>tempMeanDayPos &lt;-<span class="st"> </span><span class="kw">round</span>(</span>
-<span id="cb1216-15"><a href="studyCase1.html#cb1216-15"></a>  (tempMonthMean <span class="op">-</span><span class="st"> </span><span class="kw">min</span>(tempMonthMean)) <span class="op">/</span><span class="st"> </span></span>
-<span id="cb1216-16"><a href="studyCase1.html#cb1216-16"></a><span class="st">    </span>(<span class="kw">max</span>(tempMonthMean) <span class="op">-</span><span class="st"> </span><span class="kw">min</span>(tempMonthMean))<span class="op">*</span><span class="dv">100</span>) <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb1216-17"><a href="studyCase1.html#cb1216-17"></a>p01 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> bdd, </span>
-<span id="cb1216-18"><a href="studyCase1.html#cb1216-18"></a>  <span class="kw">aes</span>(</span>
-<span id="cb1216-19"><a href="studyCase1.html#cb1216-19"></a>    <span class="dt">x =</span> posix, </span>
-<span id="cb1216-20"><a href="studyCase1.html#cb1216-20"></a>    <span class="dt">y =</span> temp, </span>
-<span id="cb1216-21"><a href="studyCase1.html#cb1216-21"></a>    <span class="dt">group =</span> <span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%Y-%m&quot;</span>))) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1216-22"><a href="studyCase1.html#cb1216-22"></a><span class="st">    </span><span class="kw">geom_boxplot</span>(<span class="dt">outlier.colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> myCol[tempMeanDayPos])</span>
-<span id="cb1216-23"><a href="studyCase1.html#cb1216-23"></a>p01</span></code></pre></div>
+<div class="sourceCode" id="cb1216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1216-1"><a href="studyCase1.html#cb1216-1" aria-hidden="true" tabindex="-1"></a>pkgCheck <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ </span>
+<span id="cb1216-2"><a href="studyCase1.html#cb1216-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(x, <span class="at">character.only =</span> <span class="cn">TRUE</span>)){</span>
+<span id="cb1216-3"><a href="studyCase1.html#cb1216-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">install.packages</span>(x, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1216-4"><a href="studyCase1.html#cb1216-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(x, <span class="at">character.only =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1216-5"><a href="studyCase1.html#cb1216-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">stop</span>()</span>
+<span id="cb1216-6"><a href="studyCase1.html#cb1216-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1216-7"><a href="studyCase1.html#cb1216-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1216-8"><a href="studyCase1.html#cb1216-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1216-9"><a href="studyCase1.html#cb1216-9" aria-hidden="true" tabindex="-1"></a><span class="fu">pkgCheck</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb1216-10"><a href="studyCase1.html#cb1216-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1216-11"><a href="studyCase1.html#cb1216-11" aria-hidden="true" tabindex="-1"></a>tempMonthMean <span class="ot">&lt;-</span> <span class="fu">tapply</span>(bdd<span class="sc">$</span>temp, </span>
+<span id="cb1216-12"><a href="studyCase1.html#cb1216-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">INDEX =</span> <span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%Y-%m&quot;</span>), <span class="at">FUN =</span> mean)</span>
+<span id="cb1216-13"><a href="studyCase1.html#cb1216-13" aria-hidden="true" tabindex="-1"></a>myCol <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>))(<span class="dv">101</span>)</span>
+<span id="cb1216-14"><a href="studyCase1.html#cb1216-14" aria-hidden="true" tabindex="-1"></a>tempMeanDayPos <span class="ot">&lt;-</span> <span class="fu">round</span>(</span>
+<span id="cb1216-15"><a href="studyCase1.html#cb1216-15" aria-hidden="true" tabindex="-1"></a>  (tempMonthMean <span class="sc">-</span> <span class="fu">min</span>(tempMonthMean)) <span class="sc">/</span> </span>
+<span id="cb1216-16"><a href="studyCase1.html#cb1216-16" aria-hidden="true" tabindex="-1"></a>    (<span class="fu">max</span>(tempMonthMean) <span class="sc">-</span> <span class="fu">min</span>(tempMonthMean))<span class="sc">*</span><span class="dv">100</span>) <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1216-17"><a href="studyCase1.html#cb1216-17" aria-hidden="true" tabindex="-1"></a>p01 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> bdd, </span>
+<span id="cb1216-18"><a href="studyCase1.html#cb1216-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(</span>
+<span id="cb1216-19"><a href="studyCase1.html#cb1216-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> posix, </span>
+<span id="cb1216-20"><a href="studyCase1.html#cb1216-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> temp, </span>
+<span id="cb1216-21"><a href="studyCase1.html#cb1216-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">group =</span> <span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%Y-%m&quot;</span>))) <span class="sc">+</span> </span>
+<span id="cb1216-22"><a href="studyCase1.html#cb1216-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">outlier.colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> myCol[tempMeanDayPos])</span>
+<span id="cb1216-23"><a href="studyCase1.html#cb1216-23" aria-hidden="true" tabindex="-1"></a>p01</span></code></pre></div>
 <pre><code>## Warning: Use of `bdd$posix` is discouraged. Use `posix` instead.</code></pre>
 <pre><code>## Warning: Removed 4 rows containing missing values (stat_boxplot).</code></pre>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-14-1.png" width="672" /></p>
 <p>También podemos calcular la diferencia entre la temperatura máxima y la temperatura mínima (variación de temperatura diurna).</p>
-<div class="sourceCode" id="cb1219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1219-1"><a href="studyCase1.html#cb1219-1"></a>tempDayTR &lt;-<span class="st"> </span>tempDayMax <span class="op">-</span><span class="st"> </span>tempDayMin</span>
-<span id="cb1219-2"><a href="studyCase1.html#cb1219-2"></a><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">as.Date</span>(<span class="kw">names</span>(tempDayMean), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>), </span>
-<span id="cb1219-3"><a href="studyCase1.html#cb1219-3"></a>    <span class="dt">y =</span> tempDayTR, <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">45</span>), </span>
-<span id="cb1219-4"><a href="studyCase1.html#cb1219-4"></a>    <span class="dt">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Variación de temperatura diurna (°C)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1219-1"><a href="studyCase1.html#cb1219-1" aria-hidden="true" tabindex="-1"></a>tempDayTR <span class="ot">&lt;-</span> tempDayMax <span class="sc">-</span> tempDayMin</span>
+<span id="cb1219-2"><a href="studyCase1.html#cb1219-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="fu">names</span>(tempDayMean), <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>), </span>
+<span id="cb1219-3"><a href="studyCase1.html#cb1219-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> tempDayTR, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">45</span>), </span>
+<span id="cb1219-4"><a href="studyCase1.html#cb1219-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variación de temperatura diurna (°C)&quot;</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-15-1.png" width="672" /></p>
 <p>Otra posibilidad es de agrupar los datos para tener la temperatura promedia de un día con la función <code>aggregate()</code> (como alternativa a la función <code>tapply</code>).</p>
-<div class="sourceCode" id="cb1220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1220-1"><a href="studyCase1.html#cb1220-1"></a>tempHourMean &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bdd<span class="op">$</span>temp, </span>
-<span id="cb1220-2"><a href="studyCase1.html#cb1220-2"></a>  <span class="dt">by =</span> <span class="kw">list</span>(<span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="dt">FUN =</span> mean)</span>
-<span id="cb1220-3"><a href="studyCase1.html#cb1220-3"></a>tempHourMin &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bdd<span class="op">$</span>temp, </span>
-<span id="cb1220-4"><a href="studyCase1.html#cb1220-4"></a>  <span class="dt">by =</span> <span class="kw">list</span>(<span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="dt">FUN =</span> min)</span>
-<span id="cb1220-5"><a href="studyCase1.html#cb1220-5"></a>tempHourMax &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bdd<span class="op">$</span>temp, </span>
-<span id="cb1220-6"><a href="studyCase1.html#cb1220-6"></a>  <span class="dt">by =</span> <span class="kw">list</span>(<span class="kw">format</span>(bdd<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="dt">FUN =</span> max)</span>
-<span id="cb1220-7"><a href="studyCase1.html#cb1220-7"></a>hours &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="fl">23.5</span>, <span class="dt">by =</span> <span class="fl">0.5</span>)</span>
-<span id="cb1220-8"><a href="studyCase1.html#cb1220-8"></a><span class="kw">plot</span>(<span class="dt">x =</span> hours, </span>
-<span id="cb1220-9"><a href="studyCase1.html#cb1220-9"></a>    <span class="dt">y =</span> tempHourMean[, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
-<span id="cb1220-10"><a href="studyCase1.html#cb1220-10"></a>    <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, </span>
-<span id="cb1220-11"><a href="studyCase1.html#cb1220-11"></a>    <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">panel.first =</span> {</span>
-<span id="cb1220-12"><a href="studyCase1.html#cb1220-12"></a>        <span class="kw">abline</span>(<span class="dt">v =</span> hours, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb1220-13"><a href="studyCase1.html#cb1220-13"></a>        <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>)  </span>
-<span id="cb1220-14"><a href="studyCase1.html#cb1220-14"></a>    })</span>
-<span id="cb1220-15"><a href="studyCase1.html#cb1220-15"></a><span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> hours, <span class="dt">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="dt">las =</span> <span class="dv">2</span>)</span>
-<span id="cb1220-16"><a href="studyCase1.html#cb1220-16"></a><span class="kw">points</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempHourMin[, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">4</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb1220-17"><a href="studyCase1.html#cb1220-17"></a><span class="kw">points</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempHourMax[, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1220-1"><a href="studyCase1.html#cb1220-1" aria-hidden="true" tabindex="-1"></a>tempHourMean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="at">x =</span> bdd<span class="sc">$</span>temp, </span>
+<span id="cb1220-2"><a href="studyCase1.html#cb1220-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">list</span>(<span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="at">FUN =</span> mean)</span>
+<span id="cb1220-3"><a href="studyCase1.html#cb1220-3" aria-hidden="true" tabindex="-1"></a>tempHourMin <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="at">x =</span> bdd<span class="sc">$</span>temp, </span>
+<span id="cb1220-4"><a href="studyCase1.html#cb1220-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">list</span>(<span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="at">FUN =</span> min)</span>
+<span id="cb1220-5"><a href="studyCase1.html#cb1220-5" aria-hidden="true" tabindex="-1"></a>tempHourMax <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="at">x =</span> bdd<span class="sc">$</span>temp, </span>
+<span id="cb1220-6"><a href="studyCase1.html#cb1220-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">list</span>(<span class="fu">format</span>(bdd<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="at">FUN =</span> max)</span>
+<span id="cb1220-7"><a href="studyCase1.html#cb1220-7" aria-hidden="true" tabindex="-1"></a>hours <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="fl">23.5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1220-8"><a href="studyCase1.html#cb1220-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> hours, </span>
+<span id="cb1220-9"><a href="studyCase1.html#cb1220-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> tempHourMean[, <span class="dv">2</span>], <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
+<span id="cb1220-10"><a href="studyCase1.html#cb1220-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb1220-11"><a href="studyCase1.html#cb1220-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="at">panel.first =</span> {</span>
+<span id="cb1220-12"><a href="studyCase1.html#cb1220-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">v =</span> hours, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb1220-13"><a href="studyCase1.html#cb1220-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">2</span>)  </span>
+<span id="cb1220-14"><a href="studyCase1.html#cb1220-14" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1220-15"><a href="studyCase1.html#cb1220-15" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">at =</span> hours, <span class="at">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="at">las =</span> <span class="dv">2</span>)</span>
+<span id="cb1220-16"><a href="studyCase1.html#cb1220-16" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x =</span> hours, <span class="at">y =</span> tempHourMin[, <span class="dv">2</span>], <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> <span class="dv">4</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb1220-17"><a href="studyCase1.html#cb1220-17" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x =</span> hours, <span class="at">y =</span> tempHourMax[, <span class="dv">2</span>], <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-16-1.png" width="672" /></p>
 <p>Tambien podemos calcular las temperaturas de los dias para cada mes.</p>
-<div class="sourceCode" id="cb1221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1221-1"><a href="studyCase1.html#cb1221-1"></a>meses &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Enero&quot;</span>, <span class="st">&quot;Febrero&quot;</span>, <span class="st">&quot;Marzo&quot;</span>, <span class="st">&quot;Abril&quot;</span>, <span class="st">&quot;Mayo&quot;</span>, <span class="st">&quot;Junio&quot;</span>, </span>
-<span id="cb1221-2"><a href="studyCase1.html#cb1221-2"></a>    <span class="st">&quot;Julio&quot;</span>, <span class="st">&quot;Agosto&quot;</span>, <span class="st">&quot;Septiembre&quot;</span>, <span class="st">&quot;Octubre&quot;</span>, <span class="st">&quot;Noviembre&quot;</span>, <span class="st">&quot;Diciembre&quot;</span>)</span>
-<span id="cb1221-3"><a href="studyCase1.html#cb1221-3"></a>hours &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="fl">23.5</span>, <span class="dt">by =</span> <span class="fl">0.5</span>)</span>
-<span id="cb1221-4"><a href="studyCase1.html#cb1221-4"></a>bddMonth &lt;-<span class="st"> </span><span class="kw">format</span>(bdd<span class="op">$</span>day, <span class="dt">format =</span> <span class="st">&quot;%m&quot;</span>)</span>
-<span id="cb1221-5"><a href="studyCase1.html#cb1221-5"></a>tempDayEachMonth &lt;-<span class="st"> </span><span class="kw">lapply</span>(<span class="kw">sort</span>(<span class="kw">unique</span>(bddMonth)), <span class="cf">function</span>(myMonth){</span>
-<span id="cb1221-6"><a href="studyCase1.html#cb1221-6"></a>    bddX &lt;-<span class="st"> </span>bdd[bddMonth <span class="op">==</span><span class="st"> </span>myMonth, ]</span>
-<span id="cb1221-7"><a href="studyCase1.html#cb1221-7"></a>    tempHourMean &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bddX<span class="op">$</span>temp, <span class="dt">by =</span> <span class="kw">list</span>(<span class="kw">format</span>(bddX<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="dt">FUN =</span> mean)</span>
-<span id="cb1221-8"><a href="studyCase1.html#cb1221-8"></a>    tempHourMin &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bddX<span class="op">$</span>temp, <span class="dt">by =</span> <span class="kw">list</span>(<span class="kw">format</span>(bddX<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="dt">FUN =</span> min)</span>
-<span id="cb1221-9"><a href="studyCase1.html#cb1221-9"></a>    tempHourMax &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> bddX<span class="op">$</span>temp, <span class="dt">by =</span> <span class="kw">list</span>(<span class="kw">format</span>(bddX<span class="op">$</span>posix, <span class="dt">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="dt">FUN =</span> max)</span>
-<span id="cb1221-10"><a href="studyCase1.html#cb1221-10"></a>    <span class="kw">return</span>(<span class="kw">data.frame</span>(tempHourMean, tempHourMin, tempHourMax))</span>
-<span id="cb1221-11"><a href="studyCase1.html#cb1221-11"></a>})</span>
-<span id="cb1221-12"><a href="studyCase1.html#cb1221-12"></a></span>
-<span id="cb1221-13"><a href="studyCase1.html#cb1221-13"></a><span class="co"># for (i in seq_along(tempDayEachMonth)){ # para todos los meses</span></span>
-<span id="cb1221-14"><a href="studyCase1.html#cb1221-14"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>){ <span class="co"># solo para Enero y Febrero </span></span>
-<span id="cb1221-15"><a href="studyCase1.html#cb1221-15"></a>    <span class="kw">plot</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">2</span>], </span>
-<span id="cb1221-16"><a href="studyCase1.html#cb1221-16"></a>        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
-<span id="cb1221-17"><a href="studyCase1.html#cb1221-17"></a>        <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, </span>
-<span id="cb1221-18"><a href="studyCase1.html#cb1221-18"></a>        <span class="dt">main =</span> meses[i],</span>
-<span id="cb1221-19"><a href="studyCase1.html#cb1221-19"></a>        <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">panel.first =</span> {</span>
-<span id="cb1221-20"><a href="studyCase1.html#cb1221-20"></a>            <span class="kw">abline</span>(<span class="dt">v =</span> hours, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb1221-21"><a href="studyCase1.html#cb1221-21"></a>            <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>)  </span>
-<span id="cb1221-22"><a href="studyCase1.html#cb1221-22"></a>        })</span>
-<span id="cb1221-23"><a href="studyCase1.html#cb1221-23"></a>    <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> hours, <span class="dt">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="dt">las =</span> <span class="dv">2</span>)</span>
-<span id="cb1221-24"><a href="studyCase1.html#cb1221-24"></a>    <span class="kw">points</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">4</span>], </span>
-<span id="cb1221-25"><a href="studyCase1.html#cb1221-25"></a>        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">4</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb1221-26"><a href="studyCase1.html#cb1221-26"></a>    <span class="kw">points</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">6</span>], </span>
-<span id="cb1221-27"><a href="studyCase1.html#cb1221-27"></a>        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb1221-28"><a href="studyCase1.html#cb1221-28"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb1221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1221-1"><a href="studyCase1.html#cb1221-1" aria-hidden="true" tabindex="-1"></a>meses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Enero&quot;</span>, <span class="st">&quot;Febrero&quot;</span>, <span class="st">&quot;Marzo&quot;</span>, <span class="st">&quot;Abril&quot;</span>, <span class="st">&quot;Mayo&quot;</span>, <span class="st">&quot;Junio&quot;</span>, </span>
+<span id="cb1221-2"><a href="studyCase1.html#cb1221-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Julio&quot;</span>, <span class="st">&quot;Agosto&quot;</span>, <span class="st">&quot;Septiembre&quot;</span>, <span class="st">&quot;Octubre&quot;</span>, <span class="st">&quot;Noviembre&quot;</span>, <span class="st">&quot;Diciembre&quot;</span>)</span>
+<span id="cb1221-3"><a href="studyCase1.html#cb1221-3" aria-hidden="true" tabindex="-1"></a>hours <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="fl">23.5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1221-4"><a href="studyCase1.html#cb1221-4" aria-hidden="true" tabindex="-1"></a>bddMonth <span class="ot">&lt;-</span> <span class="fu">format</span>(bdd<span class="sc">$</span>day, <span class="at">format =</span> <span class="st">&quot;%m&quot;</span>)</span>
+<span id="cb1221-5"><a href="studyCase1.html#cb1221-5" aria-hidden="true" tabindex="-1"></a>tempDayEachMonth <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">sort</span>(<span class="fu">unique</span>(bddMonth)), <span class="cf">function</span>(myMonth){</span>
+<span id="cb1221-6"><a href="studyCase1.html#cb1221-6" aria-hidden="true" tabindex="-1"></a>    bddX <span class="ot">&lt;-</span> bdd[bddMonth <span class="sc">==</span> myMonth, ]</span>
+<span id="cb1221-7"><a href="studyCase1.html#cb1221-7" aria-hidden="true" tabindex="-1"></a>    tempHourMean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="at">x =</span> bddX<span class="sc">$</span>temp, <span class="at">by =</span> <span class="fu">list</span>(<span class="fu">format</span>(bddX<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="at">FUN =</span> mean)</span>
+<span id="cb1221-8"><a href="studyCase1.html#cb1221-8" aria-hidden="true" tabindex="-1"></a>    tempHourMin <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="at">x =</span> bddX<span class="sc">$</span>temp, <span class="at">by =</span> <span class="fu">list</span>(<span class="fu">format</span>(bddX<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="at">FUN =</span> min)</span>
+<span id="cb1221-9"><a href="studyCase1.html#cb1221-9" aria-hidden="true" tabindex="-1"></a>    tempHourMax <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="at">x =</span> bddX<span class="sc">$</span>temp, <span class="at">by =</span> <span class="fu">list</span>(<span class="fu">format</span>(bddX<span class="sc">$</span>posix, <span class="at">format =</span> <span class="st">&quot;%H:%M&quot;</span>)), <span class="at">FUN =</span> max)</span>
+<span id="cb1221-10"><a href="studyCase1.html#cb1221-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">data.frame</span>(tempHourMean, tempHourMin, tempHourMax))</span>
+<span id="cb1221-11"><a href="studyCase1.html#cb1221-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1221-12"><a href="studyCase1.html#cb1221-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1221-13"><a href="studyCase1.html#cb1221-13" aria-hidden="true" tabindex="-1"></a><span class="co"># for (i in seq_along(tempDayEachMonth)){ # para todos los meses</span></span>
+<span id="cb1221-14"><a href="studyCase1.html#cb1221-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>){ <span class="co"># solo para Enero y Febrero </span></span>
+<span id="cb1221-15"><a href="studyCase1.html#cb1221-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(<span class="at">x =</span> hours, <span class="at">y =</span> tempDayEachMonth[[i]][, <span class="dv">2</span>], </span>
+<span id="cb1221-16"><a href="studyCase1.html#cb1221-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">40</span>), </span>
+<span id="cb1221-17"><a href="studyCase1.html#cb1221-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Temperatura (°C)&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb1221-18"><a href="studyCase1.html#cb1221-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> meses[i],</span>
+<span id="cb1221-19"><a href="studyCase1.html#cb1221-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="at">panel.first =</span> {</span>
+<span id="cb1221-20"><a href="studyCase1.html#cb1221-20" aria-hidden="true" tabindex="-1"></a>            <span class="fu">abline</span>(<span class="at">v =</span> hours, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb1221-21"><a href="studyCase1.html#cb1221-21" aria-hidden="true" tabindex="-1"></a>            <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">2</span>)  </span>
+<span id="cb1221-22"><a href="studyCase1.html#cb1221-22" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb1221-23"><a href="studyCase1.html#cb1221-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">axis</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">at =</span> hours, <span class="at">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="at">las =</span> <span class="dv">2</span>)</span>
+<span id="cb1221-24"><a href="studyCase1.html#cb1221-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">points</span>(<span class="at">x =</span> hours, <span class="at">y =</span> tempDayEachMonth[[i]][, <span class="dv">4</span>], </span>
+<span id="cb1221-25"><a href="studyCase1.html#cb1221-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> <span class="dv">4</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb1221-26"><a href="studyCase1.html#cb1221-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">points</span>(<span class="at">x =</span> hours, <span class="at">y =</span> tempDayEachMonth[[i]][, <span class="dv">6</span>], </span>
+<span id="cb1221-27"><a href="studyCase1.html#cb1221-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb1221-28"><a href="studyCase1.html#cb1221-28" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-17-1.png" width="672" /><img src="myRBook_SP_files/figure-html/041-studyCase-17-2.png" width="672" /></p>
 <p>O todo en un mismo grafico, y la variación de temperatura diurna para cada mes.</p>
-<div class="sourceCode" id="cb1222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1222-1"><a href="studyCase1.html#cb1222-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[<span class="dv">1</span>]][, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">35</span>),</span>
-<span id="cb1222-2"><a href="studyCase1.html#cb1222-2"></a>    <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Temperatura promedia (°C)&quot;</span>,</span>
-<span id="cb1222-3"><a href="studyCase1.html#cb1222-3"></a>    <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, </span>
-<span id="cb1222-4"><a href="studyCase1.html#cb1222-4"></a>    <span class="dt">panel.first =</span> {</span>
-<span id="cb1222-5"><a href="studyCase1.html#cb1222-5"></a>        <span class="kw">abline</span>(<span class="dt">v =</span> hours, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb1222-6"><a href="studyCase1.html#cb1222-6"></a>        <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>)  </span>
-<span id="cb1222-7"><a href="studyCase1.html#cb1222-7"></a>    })</span>
-<span id="cb1222-8"><a href="studyCase1.html#cb1222-8"></a><span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> hours, <span class="dt">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="dt">las =</span> <span class="dv">2</span>)</span>
-<span id="cb1222-9"><a href="studyCase1.html#cb1222-9"></a>myColors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#A6CEE3&quot;</span>, <span class="st">&quot;#1F78B4&quot;</span>, <span class="st">&quot;#B2DF8A&quot;</span>, <span class="st">&quot;#33A02C&quot;</span>, <span class="st">&quot;#FB9A99&quot;</span>, </span>
-<span id="cb1222-10"><a href="studyCase1.html#cb1222-10"></a>    <span class="st">&quot;#E31A1C&quot;</span>, <span class="st">&quot;#FDBF6F&quot;</span>, <span class="st">&quot;#FF7F00&quot;</span>, <span class="st">&quot;#CAB2D6&quot;</span>, <span class="st">&quot;#6A3D9A&quot;</span>, <span class="st">&quot;#FFFF99&quot;</span>, </span>
-<span id="cb1222-11"><a href="studyCase1.html#cb1222-11"></a>    <span class="st">&quot;#B15928&quot;</span>)</span>
-<span id="cb1222-12"><a href="studyCase1.html#cb1222-12"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(tempDayEachMonth)){</span>
-<span id="cb1222-13"><a href="studyCase1.html#cb1222-13"></a>    <span class="kw">points</span>(<span class="dt">x =</span> hours, </span>
-<span id="cb1222-14"><a href="studyCase1.html#cb1222-14"></a>        <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">2</span>], </span>
-<span id="cb1222-15"><a href="studyCase1.html#cb1222-15"></a>        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> myColors[i], <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb1222-16"><a href="studyCase1.html#cb1222-16"></a>}</span>
-<span id="cb1222-17"><a href="studyCase1.html#cb1222-17"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">legend =</span> meses, <span class="dt">col =</span> myColors, </span>
-<span id="cb1222-18"><a href="studyCase1.html#cb1222-18"></a>    <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1222-1"><a href="studyCase1.html#cb1222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> hours, <span class="at">y =</span> tempDayEachMonth[[<span class="dv">1</span>]][, <span class="dv">2</span>], <span class="at">type =</span> <span class="st">&#39;n&#39;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">35</span>),</span>
+<span id="cb1222-2"><a href="studyCase1.html#cb1222-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Temperatura promedia (°C)&quot;</span>,</span>
+<span id="cb1222-3"><a href="studyCase1.html#cb1222-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxt =</span> <span class="st">&quot;n&quot;</span>, </span>
+<span id="cb1222-4"><a href="studyCase1.html#cb1222-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.first =</span> {</span>
+<span id="cb1222-5"><a href="studyCase1.html#cb1222-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">v =</span> hours, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb1222-6"><a href="studyCase1.html#cb1222-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">2</span>)  </span>
+<span id="cb1222-7"><a href="studyCase1.html#cb1222-7" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1222-8"><a href="studyCase1.html#cb1222-8" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">at =</span> hours, <span class="at">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="at">las =</span> <span class="dv">2</span>)</span>
+<span id="cb1222-9"><a href="studyCase1.html#cb1222-9" aria-hidden="true" tabindex="-1"></a>myColors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#A6CEE3&quot;</span>, <span class="st">&quot;#1F78B4&quot;</span>, <span class="st">&quot;#B2DF8A&quot;</span>, <span class="st">&quot;#33A02C&quot;</span>, <span class="st">&quot;#FB9A99&quot;</span>, </span>
+<span id="cb1222-10"><a href="studyCase1.html#cb1222-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#E31A1C&quot;</span>, <span class="st">&quot;#FDBF6F&quot;</span>, <span class="st">&quot;#FF7F00&quot;</span>, <span class="st">&quot;#CAB2D6&quot;</span>, <span class="st">&quot;#6A3D9A&quot;</span>, <span class="st">&quot;#FFFF99&quot;</span>, </span>
+<span id="cb1222-11"><a href="studyCase1.html#cb1222-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#B15928&quot;</span>)</span>
+<span id="cb1222-12"><a href="studyCase1.html#cb1222-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(tempDayEachMonth)){</span>
+<span id="cb1222-13"><a href="studyCase1.html#cb1222-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">points</span>(<span class="at">x =</span> hours, </span>
+<span id="cb1222-14"><a href="studyCase1.html#cb1222-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> tempDayEachMonth[[i]][, <span class="dv">2</span>], </span>
+<span id="cb1222-15"><a href="studyCase1.html#cb1222-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> myColors[i], <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb1222-16"><a href="studyCase1.html#cb1222-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1222-17"><a href="studyCase1.html#cb1222-17" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">legend =</span> meses, <span class="at">col =</span> myColors, </span>
+<span id="cb1222-18"><a href="studyCase1.html#cb1222-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-18-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1223-1"><a href="studyCase1.html#cb1223-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> hours, <span class="dt">y =</span> tempDayEachMonth[[<span class="dv">1</span>]][, <span class="dv">2</span>], <span class="dt">type =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">30</span>),</span>
-<span id="cb1223-2"><a href="studyCase1.html#cb1223-2"></a>    <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Variación de temperatura diurna (°C)&quot;</span>,</span>
-<span id="cb1223-3"><a href="studyCase1.html#cb1223-3"></a>    <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, </span>
-<span id="cb1223-4"><a href="studyCase1.html#cb1223-4"></a>    <span class="dt">panel.first =</span> {</span>
-<span id="cb1223-5"><a href="studyCase1.html#cb1223-5"></a>        <span class="kw">abline</span>(<span class="dt">v =</span> hours, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb1223-6"><a href="studyCase1.html#cb1223-6"></a>        <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>)  </span>
-<span id="cb1223-7"><a href="studyCase1.html#cb1223-7"></a>    })</span>
-<span id="cb1223-8"><a href="studyCase1.html#cb1223-8"></a><span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> hours, <span class="dt">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="dt">las =</span> <span class="dv">2</span>)</span>
-<span id="cb1223-9"><a href="studyCase1.html#cb1223-9"></a>myColors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#A6CEE3&quot;</span>, <span class="st">&quot;#1F78B4&quot;</span>, <span class="st">&quot;#B2DF8A&quot;</span>, <span class="st">&quot;#33A02C&quot;</span>, <span class="st">&quot;#FB9A99&quot;</span>, </span>
-<span id="cb1223-10"><a href="studyCase1.html#cb1223-10"></a>    <span class="st">&quot;#E31A1C&quot;</span>, <span class="st">&quot;#FDBF6F&quot;</span>, <span class="st">&quot;#FF7F00&quot;</span>, <span class="st">&quot;#CAB2D6&quot;</span>, <span class="st">&quot;#6A3D9A&quot;</span>, <span class="st">&quot;#FFFF99&quot;</span>, </span>
-<span id="cb1223-11"><a href="studyCase1.html#cb1223-11"></a>    <span class="st">&quot;#B15928&quot;</span>)</span>
-<span id="cb1223-12"><a href="studyCase1.html#cb1223-12"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(tempDayEachMonth)){</span>
-<span id="cb1223-13"><a href="studyCase1.html#cb1223-13"></a>    <span class="kw">points</span>(<span class="dt">x =</span> hours, </span>
-<span id="cb1223-14"><a href="studyCase1.html#cb1223-14"></a>        <span class="dt">y =</span> tempDayEachMonth[[i]][, <span class="dv">6</span>] <span class="op">-</span><span class="st"> </span>tempDayEachMonth[[i]][, <span class="dv">4</span>], </span>
-<span id="cb1223-15"><a href="studyCase1.html#cb1223-15"></a>        <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">col =</span> myColors[i], <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb1223-16"><a href="studyCase1.html#cb1223-16"></a>}</span>
-<span id="cb1223-17"><a href="studyCase1.html#cb1223-17"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">legend =</span> meses, <span class="dt">col =</span> myColors, </span>
-<span id="cb1223-18"><a href="studyCase1.html#cb1223-18"></a>    <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1223-1"><a href="studyCase1.html#cb1223-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> hours, <span class="at">y =</span> tempDayEachMonth[[<span class="dv">1</span>]][, <span class="dv">2</span>], <span class="at">type =</span> <span class="st">&#39;n&#39;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>),</span>
+<span id="cb1223-2"><a href="studyCase1.html#cb1223-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variación de temperatura diurna (°C)&quot;</span>,</span>
+<span id="cb1223-3"><a href="studyCase1.html#cb1223-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxt =</span> <span class="st">&quot;n&quot;</span>, </span>
+<span id="cb1223-4"><a href="studyCase1.html#cb1223-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.first =</span> {</span>
+<span id="cb1223-5"><a href="studyCase1.html#cb1223-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">v =</span> hours, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb1223-6"><a href="studyCase1.html#cb1223-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">2</span>)  </span>
+<span id="cb1223-7"><a href="studyCase1.html#cb1223-7" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1223-8"><a href="studyCase1.html#cb1223-8" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">at =</span> hours, <span class="at">labels =</span> tempHourMean[, <span class="dv">1</span>], <span class="at">las =</span> <span class="dv">2</span>)</span>
+<span id="cb1223-9"><a href="studyCase1.html#cb1223-9" aria-hidden="true" tabindex="-1"></a>myColors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#A6CEE3&quot;</span>, <span class="st">&quot;#1F78B4&quot;</span>, <span class="st">&quot;#B2DF8A&quot;</span>, <span class="st">&quot;#33A02C&quot;</span>, <span class="st">&quot;#FB9A99&quot;</span>, </span>
+<span id="cb1223-10"><a href="studyCase1.html#cb1223-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#E31A1C&quot;</span>, <span class="st">&quot;#FDBF6F&quot;</span>, <span class="st">&quot;#FF7F00&quot;</span>, <span class="st">&quot;#CAB2D6&quot;</span>, <span class="st">&quot;#6A3D9A&quot;</span>, <span class="st">&quot;#FFFF99&quot;</span>, </span>
+<span id="cb1223-11"><a href="studyCase1.html#cb1223-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#B15928&quot;</span>)</span>
+<span id="cb1223-12"><a href="studyCase1.html#cb1223-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(tempDayEachMonth)){</span>
+<span id="cb1223-13"><a href="studyCase1.html#cb1223-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">points</span>(<span class="at">x =</span> hours, </span>
+<span id="cb1223-14"><a href="studyCase1.html#cb1223-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> tempDayEachMonth[[i]][, <span class="dv">6</span>] <span class="sc">-</span> tempDayEachMonth[[i]][, <span class="dv">4</span>], </span>
+<span id="cb1223-15"><a href="studyCase1.html#cb1223-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">col =</span> myColors[i], <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb1223-16"><a href="studyCase1.html#cb1223-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1223-17"><a href="studyCase1.html#cb1223-17" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">legend =</span> meses, <span class="at">col =</span> myColors, </span>
+<span id="cb1223-18"><a href="studyCase1.html#cb1223-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-18-2.png" width="672" /></p>
 <p>También podemos representar las temperaturas diarias con gráficos “ridgeline” y el package <code>ggplot2</code> (<a href="https://www.data-to-viz.com/graph/ridgeline.html" class="uri">https://www.data-to-viz.com/graph/ridgeline.html</a>).</p>
-<div class="sourceCode" id="cb1224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1224-1"><a href="studyCase1.html#cb1224-1"></a>pkgCheck &lt;-<span class="st"> </span><span class="cf">function</span>(x){ </span>
-<span id="cb1224-2"><a href="studyCase1.html#cb1224-2"></a>    <span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(x, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)){</span>
-<span id="cb1224-3"><a href="studyCase1.html#cb1224-3"></a>        <span class="kw">install.packages</span>(x, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1224-4"><a href="studyCase1.html#cb1224-4"></a>        <span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(x, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)) {</span>
-<span id="cb1224-5"><a href="studyCase1.html#cb1224-5"></a>            <span class="kw">stop</span>()</span>
-<span id="cb1224-6"><a href="studyCase1.html#cb1224-6"></a>        }</span>
-<span id="cb1224-7"><a href="studyCase1.html#cb1224-7"></a>    }</span>
-<span id="cb1224-8"><a href="studyCase1.html#cb1224-8"></a>}</span>
-<span id="cb1224-9"><a href="studyCase1.html#cb1224-9"></a><span class="kw">pkgCheck</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb1224-10"><a href="studyCase1.html#cb1224-10"></a><span class="kw">pkgCheck</span>(<span class="st">&quot;ggridges&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1224-1"><a href="studyCase1.html#cb1224-1" aria-hidden="true" tabindex="-1"></a>pkgCheck <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ </span>
+<span id="cb1224-2"><a href="studyCase1.html#cb1224-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(x, <span class="at">character.only =</span> <span class="cn">TRUE</span>)){</span>
+<span id="cb1224-3"><a href="studyCase1.html#cb1224-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">install.packages</span>(x, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1224-4"><a href="studyCase1.html#cb1224-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(x, <span class="at">character.only =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1224-5"><a href="studyCase1.html#cb1224-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">stop</span>()</span>
+<span id="cb1224-6"><a href="studyCase1.html#cb1224-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1224-7"><a href="studyCase1.html#cb1224-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1224-8"><a href="studyCase1.html#cb1224-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1224-9"><a href="studyCase1.html#cb1224-9" aria-hidden="true" tabindex="-1"></a><span class="fu">pkgCheck</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb1224-10"><a href="studyCase1.html#cb1224-10" aria-hidden="true" tabindex="-1"></a><span class="fu">pkgCheck</span>(<span class="st">&quot;ggridges&quot;</span>)</span></code></pre></div>
 <pre><code>## Le chargement a nécessité le package : ggridges</code></pre>
-<div class="sourceCode" id="cb1226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1226-1"><a href="studyCase1.html#cb1226-1"></a><span class="kw">pkgCheck</span>(<span class="st">&quot;viridis&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1226-1"><a href="studyCase1.html#cb1226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkgCheck</span>(<span class="st">&quot;viridis&quot;</span>)</span></code></pre></div>
 <pre><code>## Le chargement a nécessité le package : viridis</code></pre>
 <pre><code>## Le chargement a nécessité le package : viridisLite</code></pre>
-<div class="sourceCode" id="cb1229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1229-1"><a href="studyCase1.html#cb1229-1"></a>meanTemps &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">lapply</span>(tempDayEachMonth, <span class="st">&quot;[[&quot;</span>, <span class="dv">2</span>))</span>
-<span id="cb1229-2"><a href="studyCase1.html#cb1229-2"></a>labelMonth &lt;-<span class="st"> </span><span class="kw">rep</span>(meses, <span class="dt">each =</span> <span class="dv">48</span>)</span>
-<span id="cb1229-3"><a href="studyCase1.html#cb1229-3"></a>dfTemps &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">month =</span> labelMonth, <span class="dt">value =</span> meanTemps, </span>
-<span id="cb1229-4"><a href="studyCase1.html#cb1229-4"></a>  <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1229-5"><a href="studyCase1.html#cb1229-5"></a>dfTemps<span class="op">$</span>month &lt;-<span class="st"> </span><span class="kw">factor</span>(dfTemps<span class="op">$</span>month, <span class="dt">levels =</span> <span class="kw">rev</span>(meses))</span>
-<span id="cb1229-6"><a href="studyCase1.html#cb1229-6"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> dfTemps, <span class="kw">aes</span>(<span class="dt">y =</span> month, <span class="dt">x =</span> value,  <span class="dt">fill =</span> ..x..))</span>
-<span id="cb1229-7"><a href="studyCase1.html#cb1229-7"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_density_ridges_gradient</span>(<span class="dt">stat=</span><span class="st">&quot;binline&quot;</span>)</span>
-<span id="cb1229-8"><a href="studyCase1.html#cb1229-8"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_viridis</span>(<span class="dt">name =</span> <span class="st">&quot;Temp. [°C]&quot;</span>, <span class="dt">option =</span> <span class="st">&quot;C&quot;</span>)</span>
-<span id="cb1229-9"><a href="studyCase1.html#cb1229-9"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Temperature&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
-<span id="cb1229-10"><a href="studyCase1.html#cb1229-10"></a><span class="st">    </span><span class="kw">theme</span>(</span>
-<span id="cb1229-11"><a href="studyCase1.html#cb1229-11"></a>      <span class="dt">legend.position=</span><span class="st">&quot;none&quot;</span>,</span>
-<span id="cb1229-12"><a href="studyCase1.html#cb1229-12"></a>      <span class="dt">panel.spacing =</span> <span class="kw">unit</span>(<span class="fl">0.1</span>, <span class="st">&quot;lines&quot;</span>),</span>
-<span id="cb1229-13"><a href="studyCase1.html#cb1229-13"></a>      <span class="dt">strip.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">8</span>)</span>
-<span id="cb1229-14"><a href="studyCase1.html#cb1229-14"></a>    ) </span>
-<span id="cb1229-15"><a href="studyCase1.html#cb1229-15"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb1229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1229-1"><a href="studyCase1.html#cb1229-1" aria-hidden="true" tabindex="-1"></a>meanTemps <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(tempDayEachMonth, <span class="st">&quot;[[&quot;</span>, <span class="dv">2</span>))</span>
+<span id="cb1229-2"><a href="studyCase1.html#cb1229-2" aria-hidden="true" tabindex="-1"></a>labelMonth <span class="ot">&lt;-</span> <span class="fu">rep</span>(meses, <span class="at">each =</span> <span class="dv">48</span>)</span>
+<span id="cb1229-3"><a href="studyCase1.html#cb1229-3" aria-hidden="true" tabindex="-1"></a>dfTemps <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">month =</span> labelMonth, <span class="at">value =</span> meanTemps, </span>
+<span id="cb1229-4"><a href="studyCase1.html#cb1229-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1229-5"><a href="studyCase1.html#cb1229-5" aria-hidden="true" tabindex="-1"></a>dfTemps<span class="sc">$</span>month <span class="ot">&lt;-</span> <span class="fu">factor</span>(dfTemps<span class="sc">$</span>month, <span class="at">levels =</span> <span class="fu">rev</span>(meses))</span>
+<span id="cb1229-6"><a href="studyCase1.html#cb1229-6" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> dfTemps, <span class="fu">aes</span>(<span class="at">y =</span> month, <span class="at">x =</span> value,  <span class="at">fill =</span> ..x..))</span>
+<span id="cb1229-7"><a href="studyCase1.html#cb1229-7" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_density_ridges_gradient</span>(<span class="at">stat=</span><span class="st">&quot;binline&quot;</span>)</span>
+<span id="cb1229-8"><a href="studyCase1.html#cb1229-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">scale_fill_viridis</span>(<span class="at">name =</span> <span class="st">&quot;Temp. [°C]&quot;</span>, <span class="at">option =</span> <span class="st">&quot;C&quot;</span>)</span>
+<span id="cb1229-9"><a href="studyCase1.html#cb1229-9" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Temperature&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1229-10"><a href="studyCase1.html#cb1229-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb1229-11"><a href="studyCase1.html#cb1229-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>,</span>
+<span id="cb1229-12"><a href="studyCase1.html#cb1229-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb1229-13"><a href="studyCase1.html#cb1229-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)</span>
+<span id="cb1229-14"><a href="studyCase1.html#cb1229-14" aria-hidden="true" tabindex="-1"></a>    ) </span>
+<span id="cb1229-15"><a href="studyCase1.html#cb1229-15" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## `stat_binline()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="myRBook_SP_files/figure-html/041-studyCase-19-1.png" width="672" /></p>
 
@@ -720,6 +754,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 12 Gestión del color | R para los científicos</title>
   <meta name="description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 12 Gestión del color | R para los científicos" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="myFigures/cover.png" />
+  <meta property="og:image" content="/myFigures/cover.png" />
   <meta property="og:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
   <meta name="github-repo" content="frareb/myRBook_SP" />
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content=" 12 Gestión del color | R para los científicos" />
   
   <meta name="twitter:description" content="Un guía para adquirir las bases de la programación con R y conducir de forma efectiva su gestión y análisis de datos." />
-  <meta name="twitter:image" content="myFigures/cover.png" />
+  <meta name="twitter:image" content="/myFigures/cover.png" />
 
 <meta name="author" content="François Rebaudo" />
 
 
-<meta name="date" content="2021-02-05" />
+<meta name="date" content="2021-07-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="graph1.html"/>
 <link rel="next" href="graph3.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,9 +51,10 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
@@ -70,18 +72,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -101,7 +103,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,6 +136,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="myStyle.css" type="text/css" />
 </head>
 
@@ -150,50 +153,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Aprender R: iniciación y perfeccionamiento</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#remerciements"><i class="fa fa-check"></i><b>1.1</b> Agradecimientos</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#licence"><i class="fa fa-check"></i><b>1.2</b> Licencia</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#por-qué-aprender-r"><i class="fa fa-check"></i><b>2.1</b> ¿Por qué aprender R?</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#este-libro"><i class="fa fa-check"></i><b>2.2</b> Este libro</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#lectura-adicional-en-español"><i class="fa fa-check"></i><b>2.3</b> Lectura adicional en español</a></li>
 </ul></li>
 <li class="part"><span><b>I Conceptos básicos</b></span></li>
-<li class="chapter" data-level="3" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos</a><ul>
+<li class="chapter" data-level="3" data-path="premiersPas.html"><a href="premiersPas.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="premiersPas.html"><a href="premiersPas.html#instalar-r"><i class="fa fa-check"></i><b>3.1</b> Instalar R</a></li>
-<li class="chapter" data-level="3.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="premiersPas.html"><a href="premiersPas.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="premiersPas.html"><a href="premiersPas.html#l011opari"><i class="fa fa-check"></i><b>3.2.1</b> Los operadores aritméticos</a></li>
 <li class="chapter" data-level="3.2.2" data-path="premiersPas.html"><a href="premiersPas.html#l011opcomp"><i class="fa fa-check"></i><b>3.2.2</b> Los operadores comparativos</a></li>
 <li class="chapter" data-level="3.2.3" data-path="premiersPas.html"><a href="premiersPas.html#l011oplog"><i class="fa fa-check"></i><b>3.2.3</b> Los operadores lógicos</a></li>
 <li class="chapter" data-level="3.2.4" data-path="premiersPas.html"><a href="premiersPas.html#ayuda-a-los-operadores"><i class="fa fa-check"></i><b>3.2.4</b> Ayuda a los operadores</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="premiersPas.html"><a href="premiersPas.html#l011object"><i class="fa fa-check"></i><b>3.3</b> El concepto de objeto</a></li>
-<li class="chapter" data-level="3.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>3.4</b> Los scripts</a><ul>
+<li class="chapter" data-level="3.4" data-path="premiersPas.html"><a href="premiersPas.html#los-scripts"><i class="fa fa-check"></i><b>3.4</b> Los scripts</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="premiersPas.html"><a href="premiersPas.html#crear-un-script-y-documentarlo"><i class="fa fa-check"></i><b>3.4.1</b> Crear un script y documentarlo</a></li>
 <li class="chapter" data-level="3.4.2" data-path="premiersPas.html"><a href="premiersPas.html#ejecutar-un-script"><i class="fa fa-check"></i><b>3.4.2</b> Ejecutar un script</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="premiersPas.html"><a href="premiersPas.html#conclusión"><i class="fa fa-check"></i><b>3.5</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="IDE.html"><a href="IDE.html"><i class="fa fa-check"></i><b>4</b> Elegir un entorno de desarrollo</a><ul>
+<li class="chapter" data-level="4" data-path="IDE.html"><a href="IDE.html"><i class="fa fa-check"></i><b>4</b> Elegir un entorno de desarrollo</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="IDE.html"><a href="IDE.html#editores-de-texto-y-entorno-de-desarrollo"><i class="fa fa-check"></i><b>4.1</b> Editores de texto y entorno de desarrollo</a></li>
-<li class="chapter" data-level="4.2" data-path="IDE.html"><a href="IDE.html#rstudio"><i class="fa fa-check"></i><b>4.2</b> RStudio</a><ul>
+<li class="chapter" data-level="4.2" data-path="IDE.html"><a href="IDE.html#rstudio"><i class="fa fa-check"></i><b>4.2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="IDE.html"><a href="IDE.html#instalar-rstudio"><i class="fa fa-check"></i><b>4.2.1</b> Instalar RStudio</a></li>
 <li class="chapter" data-level="4.2.2" data-path="IDE.html"><a href="IDE.html#un-script-con-rstudio"><i class="fa fa-check"></i><b>4.2.2</b> Un script con RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="IDE.html"><a href="IDE.html#notepad-avec-npp2r"><i class="fa fa-check"></i><b>4.3</b> Notepad++ avec Npp2R</a><ul>
+<li class="chapter" data-level="4.3" data-path="IDE.html"><a href="IDE.html#notepad-avec-npp2r"><i class="fa fa-check"></i><b>4.3</b> Notepad++ avec Npp2R</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="IDE.html"><a href="IDE.html#instalar-notepad-solamente-para-windows"><i class="fa fa-check"></i><b>4.3.1</b> Instalar Notepad++ (solamente para Windows)</a></li>
 <li class="chapter" data-level="4.3.2" data-path="IDE.html"><a href="IDE.html#instalar-npp2r"><i class="fa fa-check"></i><b>4.3.2</b> Instalar Npp2R</a></li>
 <li class="chapter" data-level="4.3.3" data-path="IDE.html"><a href="IDE.html#un-script-con-notepad"><i class="fa fa-check"></i><b>4.3.3</b> Un script con Notepad++</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="IDE.html"><a href="IDE.html#geany"><i class="fa fa-check"></i><b>4.4</b> Geany</a><ul>
+<li class="chapter" data-level="4.4" data-path="IDE.html"><a href="IDE.html#geany"><i class="fa fa-check"></i><b>4.4</b> Geany</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="IDE.html"><a href="IDE.html#instalar-geany-para-linux-mac-osx-y-windows"><i class="fa fa-check"></i><b>4.4.1</b> Instalar Geany (para Linux, Mac OSX y Windows)</a></li>
 <li class="chapter" data-level="4.4.2" data-path="IDE.html"><a href="IDE.html#un-script-con-geany"><i class="fa fa-check"></i><b>4.4.2</b> Un script con Geany</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="IDE.html"><a href="IDE.html#otras-soluciones"><i class="fa fa-check"></i><b>4.5</b> Otras soluciones</a></li>
 <li class="chapter" data-level="4.6" data-path="IDE.html"><a href="IDE.html#conclusión-1"><i class="fa fa-check"></i><b>4.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>5</b> Tipos de datos</a><ul>
+<li class="chapter" data-level="5" data-path="dataType1.html"><a href="dataType1.html"><i class="fa fa-check"></i><b>5</b> Tipos de datos</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="dataType1.html"><a href="dataType1.html#el-tipo-numeric"><i class="fa fa-check"></i><b>5.1</b> El tipo <code>numeric</code></a></li>
 <li class="chapter" data-level="5.2" data-path="dataType1.html"><a href="dataType1.html#el-tipo-character"><i class="fa fa-check"></i><b>5.2</b> El tipo <code>character</code></a></li>
 <li class="chapter" data-level="5.3" data-path="dataType1.html"><a href="dataType1.html#el-tipo-factor"><i class="fa fa-check"></i><b>5.3</b> El tipo <code>factor</code></a></li>
@@ -201,45 +214,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="dataType1.html"><a href="dataType1.html#acerca-de-na"><i class="fa fa-check"></i><b>5.5</b> Acerca de <code>NA</code></a></li>
 <li class="chapter" data-level="5.6" data-path="dataType1.html"><a href="dataType1.html#conclusión-2"><i class="fa fa-check"></i><b>5.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="dataType2.html"><a href="dataType2.html"><i class="fa fa-check"></i><b>6</b> Contenedores de datos</a><ul>
-<li class="chapter" data-level="6.1" data-path="dataType2.html"><a href="dataType2.html#l014vector"><i class="fa fa-check"></i><b>6.1</b> El contenedor <code>vector</code></a><ul>
+<li class="chapter" data-level="6" data-path="dataType2.html"><a href="dataType2.html"><i class="fa fa-check"></i><b>6</b> Contenedores de datos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="dataType2.html"><a href="dataType2.html#l014vector"><i class="fa fa-check"></i><b>6.1</b> El contenedor <code>vector</code></a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-vector"><i class="fa fa-check"></i><b>6.1.1</b> Crear un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.2" data-path="dataType2.html"><a href="dataType2.html#hacer-operaciones-con-un-vector"><i class="fa fa-check"></i><b>6.1.2</b> Hacer operaciones con un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.3" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-un-vector"><i class="fa fa-check"></i><b>6.1.3</b> Acceder a los valores de un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.4" data-path="dataType2.html"><a href="dataType2.html#dar-nombres-a-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>6.1.4</b> Dar nombres a los elementos de un <code>vector</code></a></li>
 <li class="chapter" data-level="6.1.5" data-path="dataType2.html"><a href="dataType2.html#editar-los-elementos-de-un-vector"><i class="fa fa-check"></i><b>6.1.5</b> Editar los elementos de un <code>vector</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="dataType2.html"><a href="dataType2.html#l014list"><i class="fa fa-check"></i><b>6.2</b> El contenedor <code>list</code></a><ul>
+<li class="chapter" data-level="6.2" data-path="dataType2.html"><a href="dataType2.html#l014list"><i class="fa fa-check"></i><b>6.2</b> El contenedor <code>list</code></a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-list"><i class="fa fa-check"></i><b>6.2.1</b> Crear una <code>list</code></a></li>
 <li class="chapter" data-level="6.2.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-valores-de-una-list"><i class="fa fa-check"></i><b>6.2.2</b> Acceder a los valores de una <code>list</code></a></li>
 <li class="chapter" data-level="6.2.3" data-path="dataType2.html"><a href="dataType2.html#editar-una-list"><i class="fa fa-check"></i><b>6.2.3</b> Editar una <code>list</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="dataType2.html"><a href="dataType2.html#l014dataframe"><i class="fa fa-check"></i><b>6.3</b> El contenedor <code>data.frame</code></a><ul>
+<li class="chapter" data-level="6.3" data-path="dataType2.html"><a href="dataType2.html#l014dataframe"><i class="fa fa-check"></i><b>6.3</b> El contenedor <code>data.frame</code></a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-data.frame"><i class="fa fa-check"></i><b>6.3.1</b> Crear un <code>data.frame</code></a></li>
 <li class="chapter" data-level="6.3.2" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-un-data.frame"><i class="fa fa-check"></i><b>6.3.2</b> Acceder a los elementos de un <code>data.frame</code></a></li>
 <li class="chapter" data-level="6.3.3" data-path="dataType2.html"><a href="dataType2.html#modificar-un-data.frame"><i class="fa fa-check"></i><b>6.3.3</b> Modificar un <code>data.frame</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="dataType2.html"><a href="dataType2.html#l014matrix"><i class="fa fa-check"></i><b>6.4</b> El contenedor <code>matrix</code></a><ul>
+<li class="chapter" data-level="6.4" data-path="dataType2.html"><a href="dataType2.html#l014matrix"><i class="fa fa-check"></i><b>6.4</b> El contenedor <code>matrix</code></a>
+<ul>
 <li class="chapter" data-level="6.4.1" data-path="dataType2.html"><a href="dataType2.html#crear-una-matrix"><i class="fa fa-check"></i><b>6.4.1</b> Crear una <code>matrix</code></a></li>
 <li class="chapter" data-level="6.4.2" data-path="dataType2.html"><a href="dataType2.html#manipular-y-hacer-operaciones-en-una-matrix"><i class="fa fa-check"></i><b>6.4.2</b> Manipular y hacer operaciones en una <code>matrix</code></a></li>
 <li class="chapter" data-level="6.4.3" data-path="dataType2.html"><a href="dataType2.html#acceder-a-los-elementos-de-una-matrix"><i class="fa fa-check"></i><b>6.4.3</b> Acceder a los elementos de una <code>matrix</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="dataType2.html"><a href="dataType2.html#l014array"><i class="fa fa-check"></i><b>6.5</b> El contenedor <code>array</code></a><ul>
+<li class="chapter" data-level="6.5" data-path="dataType2.html"><a href="dataType2.html#l014array"><i class="fa fa-check"></i><b>6.5</b> El contenedor <code>array</code></a>
+<ul>
 <li class="chapter" data-level="6.5.1" data-path="dataType2.html"><a href="dataType2.html#crear-un-array"><i class="fa fa-check"></i><b>6.5.1</b> Crear un <code>array</code></a></li>
 <li class="chapter" data-level="6.5.2" data-path="dataType2.html"><a href="dataType2.html#manipular-un-array"><i class="fa fa-check"></i><b>6.5.2</b> Manipular un <code>array</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="dataType2.html"><a href="dataType2.html#conclusión-3"><i class="fa fa-check"></i><b>6.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="fonctions.html"><a href="fonctions.html"><i class="fa fa-check"></i><b>7</b> Las funciones</a><ul>
+<li class="chapter" data-level="7" data-path="fonctions.html"><a href="fonctions.html"><i class="fa fa-check"></i><b>7</b> Las funciones</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="fonctions.html"><a href="fonctions.html#qué-es-una-función"><i class="fa fa-check"></i><b>7.1</b> ¿Qué es una función?</a></li>
-<li class="chapter" data-level="7.2" data-path="fonctions.html"><a href="fonctions.html#las-funciones-más-comunes"><i class="fa fa-check"></i><b>7.2</b> Las funciones más comunes</a><ul>
+<li class="chapter" data-level="7.2" data-path="fonctions.html"><a href="fonctions.html#las-funciones-más-comunes"><i class="fa fa-check"></i><b>7.2</b> Las funciones más comunes</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="fonctions.html"><a href="fonctions.html#el-acceso-a-la-documentación"><i class="fa fa-check"></i><b>7.2.1</b> El acceso a la documentación</a></li>
 <li class="chapter" data-level="7.2.2" data-path="fonctions.html"><a href="fonctions.html#ver-los-datos"><i class="fa fa-check"></i><b>7.2.2</b> Ver los datos</a></li>
 <li class="chapter" data-level="7.2.3" data-path="fonctions.html"><a href="fonctions.html#manipular-los-datos"><i class="fa fa-check"></i><b>7.2.3</b> Manipular los datos</a></li>
 <li class="chapter" data-level="7.2.4" data-path="fonctions.html"><a href="fonctions.html#l015maths"><i class="fa fa-check"></i><b>7.2.4</b> Funciones matemáticas</a></li>
 <li class="chapter" data-level="7.2.5" data-path="fonctions.html"><a href="fonctions.html#estadísticas-descriptivas"><i class="fa fa-check"></i><b>7.2.5</b> Estadísticas descriptivas</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-útiles"><i class="fa fa-check"></i><b>7.3</b> Otras funciones útiles</a><ul>
+<li class="chapter" data-level="7.3" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-útiles"><i class="fa fa-check"></i><b>7.3</b> Otras funciones útiles</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="fonctions.html"><a href="fonctions.html#l015seqalong"><i class="fa fa-check"></i><b>7.3.1</b> <code>seq_along()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="fonctions.html"><a href="fonctions.html#l0152points"><i class="fa fa-check"></i><b>7.3.2</b> <code>:</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="fonctions.html"><a href="fonctions.html#l015rep"><i class="fa fa-check"></i><b>7.3.3</b> <code>rep()</code></a></li>
@@ -250,20 +272,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="fonctions.html"><a href="fonctions.html#l015ls"><i class="fa fa-check"></i><b>7.3.8</b> <code>ls()</code></a></li>
 <li class="chapter" data-level="7.3.9" data-path="fonctions.html"><a href="fonctions.html#l015rm"><i class="fa fa-check"></i><b>7.3.9</b> <code>rm()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="fonctions.html"><a href="fonctions.html#algunos-ejercicios-para-practicar"><i class="fa fa-check"></i><b>7.4</b> Algunos ejercicios para practicar</a><ul>
+<li class="chapter" data-level="7.4" data-path="fonctions.html"><a href="fonctions.html#algunos-ejercicios-para-practicar"><i class="fa fa-check"></i><b>7.4</b> Algunos ejercicios para practicar</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="fonctions.html"><a href="fonctions.html#secuencias"><i class="fa fa-check"></i><b>7.4.1</b> Secuencias</a></li>
 <li class="chapter" data-level="7.4.2" data-path="fonctions.html"><a href="fonctions.html#estadísticas-descriptivas-1"><i class="fa fa-check"></i><b>7.4.2</b> Estadísticas descriptivas</a></li>
 </ul></li>
 <li class="chapter" data-level="7.5" data-path="fonctions.html"><a href="fonctions.html#l015function"><i class="fa fa-check"></i><b>7.5</b> Escribir una función</a></li>
-<li class="chapter" data-level="7.6" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-desarrolladas-por-la-comunidad-de-usuarios-los-packages"><i class="fa fa-check"></i><b>7.6</b> Otras funciones desarrolladas por la comunidad de usuarios: los <em>packages</em></a><ul>
+<li class="chapter" data-level="7.6" data-path="fonctions.html"><a href="fonctions.html#otras-funciones-desarrolladas-por-la-comunidad-de-usuarios-los-packages"><i class="fa fa-check"></i><b>7.6</b> Otras funciones desarrolladas por la comunidad de usuarios: los <em>packages</em></a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="fonctions.html"><a href="fonctions.html#instalar-un-paquete"><i class="fa fa-check"></i><b>7.6.1</b> Instalar un paquete</a></li>
 <li class="chapter" data-level="7.6.2" data-path="fonctions.html"><a href="fonctions.html#cargar-un-paquete"><i class="fa fa-check"></i><b>7.6.2</b> Cargar un paquete</a></li>
 <li class="chapter" data-level="7.6.3" data-path="fonctions.html"><a href="fonctions.html#portabilidad-del-código"><i class="fa fa-check"></i><b>7.6.3</b> Portabilidad del código</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="fonctions.html"><a href="fonctions.html#conclusión-4"><i class="fa fa-check"></i><b>7.7</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>8</b> Importar y exportar datos</a><ul>
-<li class="chapter" data-level="8.1" data-path="import.html"><a href="import.html#l016read"><i class="fa fa-check"></i><b>8.1</b> Leer datos de un archivo</a><ul>
+<li class="chapter" data-level="8" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>8</b> Importar y exportar datos</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="import.html"><a href="import.html#l016read"><i class="fa fa-check"></i><b>8.1</b> Leer datos de un archivo</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="import.html"><a href="import.html#l016transfo"><i class="fa fa-check"></i><b>8.1.1</b> Transformar datos en formato TXT o CSV</a></li>
 <li class="chapter" data-level="8.1.2" data-path="import.html"><a href="import.html#l016readCSV"><i class="fa fa-check"></i><b>8.1.2</b> Leer un archivo CSV</a></li>
 <li class="chapter" data-level="8.1.3" data-path="import.html"><a href="import.html#l016readTXT"><i class="fa fa-check"></i><b>8.1.3</b> Leer un archivo de texto</a></li>
@@ -272,14 +298,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="import.html"><a href="import.html#l016write"><i class="fa fa-check"></i><b>8.3</b> Exportar datos</a></li>
 <li class="chapter" data-level="8.4" data-path="import.html"><a href="import.html#conclusión-5"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="algo.html"><a href="algo.html"><i class="fa fa-check"></i><b>9</b> Algorítmico</a><ul>
+<li class="chapter" data-level="9" data-path="algo.html"><a href="algo.html"><i class="fa fa-check"></i><b>9</b> Algorítmico</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="algo.html"><a href="algo.html#l17if"><i class="fa fa-check"></i><b>9.1</b> Pruebas lógicas con <code>if</code></a></li>
 <li class="chapter" data-level="9.2" data-path="algo.html"><a href="algo.html#l17switch"><i class="fa fa-check"></i><b>9.2</b> Pruebas lógicas con <code>switch</code></a></li>
 <li class="chapter" data-level="9.3" data-path="algo.html"><a href="algo.html#l17for"><i class="fa fa-check"></i><b>9.3</b> El bucle <code>for</code></a></li>
 <li class="chapter" data-level="9.4" data-path="algo.html"><a href="algo.html#l17while"><i class="fa fa-check"></i><b>9.4</b> El bucle <code>while</code></a></li>
 <li class="chapter" data-level="9.5" data-path="algo.html"><a href="algo.html#l17repeat"><i class="fa fa-check"></i><b>9.5</b> El bucle <code>repeat</code></a></li>
 <li class="chapter" data-level="9.6" data-path="algo.html"><a href="algo.html#l17spe"><i class="fa fa-check"></i><b>9.6</b> <code>next</code> y <code>break</code></a></li>
-<li class="chapter" data-level="9.7" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>9.7</b> Los bucles de la familia <code>apply</code></a><ul>
+<li class="chapter" data-level="9.7" data-path="algo.html"><a href="algo.html#l17applyfamily"><i class="fa fa-check"></i><b>9.7</b> Los bucles de la familia <code>apply</code></a>
+<ul>
 <li class="chapter" data-level="9.7.1" data-path="algo.html"><a href="algo.html#l17apply"><i class="fa fa-check"></i><b>9.7.1</b> <code>apply</code></a></li>
 <li class="chapter" data-level="9.7.2" data-path="algo.html"><a href="algo.html#l17sapply"><i class="fa fa-check"></i><b>9.7.2</b> <code>lapply</code></a></li>
 <li class="chapter" data-level="9.7.3" data-path="algo.html"><a href="algo.html#l17lapply"><i class="fa fa-check"></i><b>9.7.3</b> <code>sapply</code></a></li>
@@ -288,14 +316,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.8" data-path="algo.html"><a href="algo.html#conclusión-6"><i class="fa fa-check"></i><b>9.8</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>10</b> Gestión de proyectos con R</a><ul>
+<li class="chapter" data-level="10" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>10</b> Gestión de proyectos con R</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="project.html"><a href="project.html#gestionando-archivos-y-directorios-de-trabajo."><i class="fa fa-check"></i><b>10.1</b> Gestionando archivos y directorios de trabajo.</a></li>
 <li class="chapter" data-level="10.2" data-path="project.html"><a href="project.html#gestión-de-versiones-de-script"><i class="fa fa-check"></i><b>10.2</b> Gestión de versiones de script</a></li>
 <li class="chapter" data-level="10.3" data-path="project.html"><a href="project.html#gestion-de-documentacion"><i class="fa fa-check"></i><b>10.3</b> Gestion de documentacion</a></li>
 <li class="chapter" data-level="10.4" data-path="project.html"><a href="project.html#conclusión-7"><i class="fa fa-check"></i><b>10.4</b> Conclusión</a></li>
 </ul></li>
 <li class="part"><span><b>II Los gráficos</b></span></li>
-<li class="chapter" data-level="11" data-path="graph1.html"><a href="graph1.html"><i class="fa fa-check"></i><b>11</b> Gráficos simples</a><ul>
+<li class="chapter" data-level="11" data-path="graph1.html"><a href="graph1.html"><i class="fa fa-check"></i><b>11</b> Gráficos simples</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="graph1.html"><a href="graph1.html#graph1plot"><i class="fa fa-check"></i><b>11.1</b> <code>plot</code></a></li>
 <li class="chapter" data-level="11.2" data-path="graph1.html"><a href="graph1.html#graph1hist"><i class="fa fa-check"></i><b>11.2</b> <code>hist</code></a></li>
 <li class="chapter" data-level="11.3" data-path="graph1.html"><a href="graph1.html#graph1barplot"><i class="fa fa-check"></i><b>11.3</b> <code>barplot</code></a></li>
@@ -303,14 +333,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5" data-path="graph1.html"><a href="graph1.html#otros-gráficos"><i class="fa fa-check"></i><b>11.5</b> Otros gráficos</a></li>
 <li class="chapter" data-level="11.6" data-path="graph1.html"><a href="graph1.html#conclusión-8"><i class="fa fa-check"></i><b>11.6</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="graph2.html"><a href="graph2.html"><i class="fa fa-check"></i><b>12</b> Gestión del color</a><ul>
+<li class="chapter" data-level="12" data-path="graph2.html"><a href="graph2.html"><i class="fa fa-check"></i><b>12</b> Gestión del color</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="graph2.html"><a href="graph2.html#colors"><i class="fa fa-check"></i><b>12.1</b> <code>colors()</code></a></li>
 <li class="chapter" data-level="12.2" data-path="graph2.html"><a href="graph2.html#rgb"><i class="fa fa-check"></i><b>12.2</b> <code>rgb()</code></a></li>
 <li class="chapter" data-level="12.3" data-path="graph2.html"><a href="graph2.html#paletas-de-colores"><i class="fa fa-check"></i><b>12.3</b> Paletas de colores</a></li>
 <li class="chapter" data-level="12.4" data-path="graph2.html"><a href="graph2.html#conclusión-9"><i class="fa fa-check"></i><b>12.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="graph3.html"><a href="graph3.html"><i class="fa fa-check"></i><b>13</b> Paquetes gráficos</a><ul>
-<li class="chapter" data-level="13.1" data-path="graph3.html"><a href="graph3.html#los-paquetes-con-paletas"><i class="fa fa-check"></i><b>13.1</b> Los paquetes con paletas</a><ul>
+<li class="chapter" data-level="13" data-path="graph3.html"><a href="graph3.html"><i class="fa fa-check"></i><b>13</b> Paquetes gráficos</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="graph3.html"><a href="graph3.html#los-paquetes-con-paletas"><i class="fa fa-check"></i><b>13.1</b> Los paquetes con paletas</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="graph3.html"><a href="graph3.html#rcolorbrewer"><i class="fa fa-check"></i><b>13.1.1</b> <code>RColorBrewer</code></a></li>
 <li class="chapter" data-level="13.1.2" data-path="graph3.html"><a href="graph3.html#palettesforr"><i class="fa fa-check"></i><b>13.1.2</b> <code>palettesForR</code></a></li>
 <li class="chapter" data-level="13.1.3" data-path="graph3.html"><a href="graph3.html#otros-paquetes"><i class="fa fa-check"></i><b>13.1.3</b> Otros paquetes</a></li>
@@ -319,7 +352,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="graph3.html"><a href="graph3.html#gráficos-interactivos-y-dinámicos-con-plotly"><i class="fa fa-check"></i><b>13.3</b> Gráficos interactivos y dinámicos con <code>Plotly</code></a></li>
 <li class="chapter" data-level="13.4" data-path="graph3.html"><a href="graph3.html#conclusión-10"><i class="fa fa-check"></i><b>13.4</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="graph4.html"><a href="graph4.html"><i class="fa fa-check"></i><b>14</b> De la gráfica a la figura en un artículo científico</a><ul>
+<li class="chapter" data-level="14" data-path="graph4.html"><a href="graph4.html"><i class="fa fa-check"></i><b>14</b> De la gráfica a la figura en un artículo científico</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="graph4.html"><a href="graph4.html#inkscape"><i class="fa fa-check"></i><b>14.1</b> Inkscape</a></li>
 <li class="chapter" data-level="14.2" data-path="graph4.html"><a href="graph4.html#the-gimp"><i class="fa fa-check"></i><b>14.2</b> The Gimp</a></li>
 <li class="chapter" data-level="14.3" data-path="graph4.html"><a href="graph4.html#tabla-de-referencia"><i class="fa fa-check"></i><b>14.3</b> Tabla de referencia</a></li>
@@ -343,243 +377,245 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="graph2" class="section level1">
+<div id="graph2" class="section level1" number="12">
 <h1><span class="header-section-number"> 12</span> Gestión del color</h1>
 <p>Hemos visto diferentes formas de usar los colores: con su nombre (por ejemplo, <code>"salmón"</code>), con un número del 1 al 8, con la función <code>rgb()</code> (para “rojo / red”, “verde / green”, “azul / blue”), y con la función <code>colors()</code>. Hay otros pero estos son los principales.</p>
 <p>El uso de los números del 1 al 8 corresponde a negro, rojo, verde, azul, cian, magenta, amarillo y gris. Este uso es útil para visualizar rápidamente nuestros resultados, pero proporciona gráficos generales visualmente promedio. Es preferable evitar estos colores para comunicar nuestros gráficos o para construir figuras en revistas científicas.</p>
-<div class="sourceCode" id="cb1146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1146-1"><a href="graph2.html#cb1146-1"></a><span class="kw">barplot</span>(<span class="kw">sample</span>(<span class="dv">10</span><span class="op">:</span><span class="dv">15</span>, <span class="dv">8</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>), <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">8</span>, <span class="dt">names.arg =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1146-1"><a href="graph2.html#cb1146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">sample</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>, <span class="dv">8</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">names.arg =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/021-02-graphiques-1-1.png" width="672" /></p>
-<div id="colors" class="section level2">
+<div id="colors" class="section level2" number="12.1">
 <h2><span class="header-section-number">12.1</span> <code>colors()</code></h2>
 <p>Para elegir colores más agradables y resaltar nuestros resultados, una opción es elegir de la lista de colores pregrabados en R. Podemos acceder a la lista de colores con la función <code>colors()</code></p>
-<div class="sourceCode" id="cb1147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1147-1"><a href="graph2.html#cb1147-1"></a><span class="kw">head</span>(<span class="kw">colors</span>(), <span class="dt">n =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1147-1"><a href="graph2.html#cb1147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">colors</span>(), <span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;white&quot;         &quot;aliceblue&quot;     &quot;antiquewhite&quot;  &quot;antiquewhite1&quot;
 ##  [5] &quot;antiquewhite2&quot; &quot;antiquewhite3&quot; &quot;antiquewhite4&quot; &quot;aquamarine&quot;   
 ##  [9] &quot;aquamarine1&quot;   &quot;aquamarine2&quot;   &quot;aquamarine3&quot;   &quot;aquamarine4&quot;  
 ## [13] &quot;azure&quot;         &quot;azure1&quot;        &quot;azure2&quot;        &quot;azure3&quot;       
 ## [17] &quot;azure4&quot;        &quot;beige&quot;         &quot;bisque&quot;        &quot;bisque1&quot;</code></pre>
 <p>Podemos usar estos colores con sus nombres (por ejemplo, <code>"white"</code>, <code>"azure3"</code>), o con su número (por ejemplo, “white” = <code>colors()[1]</code>, “azure3” = <code>colors()[16]</code>).</p>
-<div class="sourceCode" id="cb1149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1149-1"><a href="graph2.html#cb1149-1"></a><span class="co"># adapted from http://www.r-graph-gallery.com/42-colors-names/</span></span>
-<span id="cb1149-2"><a href="graph2.html#cb1149-2"></a>op &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1149-3"><a href="graph2.html#cb1149-3"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb1149-4"><a href="graph2.html#cb1149-4"></a><span class="kw">plot</span>(<span class="dv">0</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
-<span id="cb1149-5"><a href="graph2.html#cb1149-5"></a>  <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb1149-6"><a href="graph2.html#cb1149-6"></a>numRow &lt;-<span class="st"> </span><span class="dv">26</span></span>
-<span id="cb1149-7"><a href="graph2.html#cb1149-7"></a>numCol &lt;-<span class="st"> </span><span class="dv">26</span></span>
-<span id="cb1149-8"><a href="graph2.html#cb1149-8"></a><span class="kw">rect</span>(</span>
-<span id="cb1149-9"><a href="graph2.html#cb1149-9"></a>  <span class="dt">xleft =</span> <span class="kw">rep</span>((<span class="dv">0</span><span class="op">:</span>(numCol <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">/</span>numCol), numRow),  </span>
-<span id="cb1149-10"><a href="graph2.html#cb1149-10"></a>  <span class="dt">ybottom =</span> <span class="kw">sort</span>(<span class="kw">rep</span>((<span class="dv">0</span><span class="op">:</span>(numRow <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">/</span>numRow),numCol), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb1149-11"><a href="graph2.html#cb1149-11"></a>  <span class="dt">xright =</span> <span class="kw">rep</span>((<span class="dv">1</span><span class="op">:</span>numCol<span class="op">/</span>numCol), numRow),</span>
-<span id="cb1149-12"><a href="graph2.html#cb1149-12"></a>  <span class="dt">ytop =</span> <span class="kw">sort</span>(<span class="kw">rep</span>((<span class="dv">1</span><span class="op">:</span>numRow<span class="op">/</span>numRow), numCol), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb1149-13"><a href="graph2.html#cb1149-13"></a>  <span class="dt">border =</span> <span class="kw">grey</span>(<span class="fl">0.5</span>), </span>
-<span id="cb1149-14"><a href="graph2.html#cb1149-14"></a>  <span class="dt">col =</span> <span class="kw">colors</span>()[<span class="kw">seq</span>(<span class="dv">1</span>, numRow<span class="op">*</span>numCol)])</span>
-<span id="cb1149-15"><a href="graph2.html#cb1149-15"></a>myLabels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">as.character</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">657</span>), <span class="kw">rep</span>(<span class="st">&quot;&quot;</span>, numRow<span class="op">*</span>numCol <span class="op">-</span><span class="st"> </span><span class="dv">657</span>))</span>
-<span id="cb1149-16"><a href="graph2.html#cb1149-16"></a><span class="kw">text</span>(</span>
-<span id="cb1149-17"><a href="graph2.html#cb1149-17"></a>  <span class="dt">x =</span> <span class="kw">rep</span>((<span class="dv">0</span><span class="op">:</span>(numCol <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">/</span>numCol), numRow) <span class="op">+</span><span class="st"> </span><span class="fl">0.02</span>,</span>
-<span id="cb1149-18"><a href="graph2.html#cb1149-18"></a>  <span class="dt">y =</span> <span class="kw">sort</span>(<span class="kw">rep</span>((<span class="dv">0</span><span class="op">:</span>(numRow <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">/</span>numRow), numCol), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.02</span>,</span>
-<span id="cb1149-19"><a href="graph2.html#cb1149-19"></a>  <span class="dt">labels =</span> myLabels, </span>
-<span id="cb1149-20"><a href="graph2.html#cb1149-20"></a>  <span class="dt">cex =</span> <span class="fl">0.6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1149-1"><a href="graph2.html#cb1149-1" aria-hidden="true" tabindex="-1"></a><span class="co"># adapted from http://www.r-graph-gallery.com/42-colors-names/</span></span>
+<span id="cb1149-2"><a href="graph2.html#cb1149-2" aria-hidden="true" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1149-3"><a href="graph2.html#cb1149-3" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb1149-4"><a href="graph2.html#cb1149-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
+<span id="cb1149-5"><a href="graph2.html#cb1149-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb1149-6"><a href="graph2.html#cb1149-6" aria-hidden="true" tabindex="-1"></a>numRow <span class="ot">&lt;-</span> <span class="dv">26</span></span>
+<span id="cb1149-7"><a href="graph2.html#cb1149-7" aria-hidden="true" tabindex="-1"></a>numCol <span class="ot">&lt;-</span> <span class="dv">26</span></span>
+<span id="cb1149-8"><a href="graph2.html#cb1149-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rect</span>(</span>
+<span id="cb1149-9"><a href="graph2.html#cb1149-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">xleft =</span> <span class="fu">rep</span>((<span class="dv">0</span><span class="sc">:</span>(numCol <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>numCol), numRow),  </span>
+<span id="cb1149-10"><a href="graph2.html#cb1149-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">ybottom =</span> <span class="fu">sort</span>(<span class="fu">rep</span>((<span class="dv">0</span><span class="sc">:</span>(numRow <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>numRow),numCol), <span class="at">decreasing =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1149-11"><a href="graph2.html#cb1149-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">xright =</span> <span class="fu">rep</span>((<span class="dv">1</span><span class="sc">:</span>numCol<span class="sc">/</span>numCol), numRow),</span>
+<span id="cb1149-12"><a href="graph2.html#cb1149-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">ytop =</span> <span class="fu">sort</span>(<span class="fu">rep</span>((<span class="dv">1</span><span class="sc">:</span>numRow<span class="sc">/</span>numRow), numCol), <span class="at">decreasing =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1149-13"><a href="graph2.html#cb1149-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">border =</span> <span class="fu">grey</span>(<span class="fl">0.5</span>), </span>
+<span id="cb1149-14"><a href="graph2.html#cb1149-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="fu">colors</span>()[<span class="fu">seq</span>(<span class="dv">1</span>, numRow<span class="sc">*</span>numCol)])</span>
+<span id="cb1149-15"><a href="graph2.html#cb1149-15" aria-hidden="true" tabindex="-1"></a>myLabels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">657</span>), <span class="fu">rep</span>(<span class="st">&quot;&quot;</span>, numRow<span class="sc">*</span>numCol <span class="sc">-</span> <span class="dv">657</span>))</span>
+<span id="cb1149-16"><a href="graph2.html#cb1149-16" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(</span>
+<span id="cb1149-17"><a href="graph2.html#cb1149-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rep</span>((<span class="dv">0</span><span class="sc">:</span>(numCol <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>numCol), numRow) <span class="sc">+</span> <span class="fl">0.02</span>,</span>
+<span id="cb1149-18"><a href="graph2.html#cb1149-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">sort</span>(<span class="fu">rep</span>((<span class="dv">0</span><span class="sc">:</span>(numRow <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>numRow), numCol), <span class="at">decreasing =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fl">0.02</span>,</span>
+<span id="cb1149-19"><a href="graph2.html#cb1149-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> myLabels, </span>
+<span id="cb1149-20"><a href="graph2.html#cb1149-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">cex =</span> <span class="fl">0.6</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/021-02-graphiques-3-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1150-1"><a href="graph2.html#cb1150-1"></a><span class="kw">par</span>(op)</span></code></pre></div>
+<div class="sourceCode" id="cb1150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1150-1"><a href="graph2.html#cb1150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(op)</span></code></pre></div>
 </div>
-<div id="rgb" class="section level2">
+<div id="rgb" class="section level2" number="12.2">
 <h2><span class="header-section-number">12.2</span> <code>rgb()</code></h2>
 <p>Otra opción es crear nuestros propios colores con la función <code>rgb()</code>, que toma la cantidad de rojo, verde y azul como argumentos. De forma predeterminada, estos valores se encuentran entre 0 y 1. Esta configuración predeterminada se puede cambiar con el argumento <code>maxColorValue</code> para, por ejemplo, tener valores entre 0 y 255 (<code>maxColorValue = 255</code>, estándar para la representación del color RGB) .</p>
 <p>Vamos a reanudar nuestra función para representar la distribución de puntos en un diagrama de dispersión por medio de <code>barplot</code> con este tiempo tres colores de puntos (rojo, verde, azul) y un <code>barplot</code> cuyo color corresponderá a la cantidad de cada color con la función <code>rgb()</code>.</p>
-<div class="sourceCode" id="cb1151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1151-1"><a href="graph2.html#cb1151-1"></a>graphBarplotCol &lt;-<span class="st"> </span><span class="cf">function</span>(n){</span>
-<span id="cb1151-2"><a href="graph2.html#cb1151-2"></a>  myX &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n)</span>
-<span id="cb1151-3"><a href="graph2.html#cb1151-3"></a>  myY &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n)</span>
-<span id="cb1151-4"><a href="graph2.html#cb1151-4"></a>  myCol &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="kw">sample</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">size =</span> (n <span class="op">-</span><span class="st"> </span><span class="dv">3</span>), <span class="dt">replace =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb1151-5"><a href="graph2.html#cb1151-5"></a>  myYCut &lt;-<span class="st"> </span><span class="kw">cut</span>(myY, <span class="dt">breaks =</span> <span class="dv">-4</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb1151-6"><a href="graph2.html#cb1151-6"></a>  myXCut &lt;-<span class="st"> </span><span class="kw">cut</span>(myX, <span class="dt">breaks =</span> <span class="dv">-4</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb1151-7"><a href="graph2.html#cb1151-7"></a>  myYCutCol &lt;-<span class="st"> </span><span class="kw">table</span>(myCol, myYCut)</span>
-<span id="cb1151-8"><a href="graph2.html#cb1151-8"></a>  myXCutCol &lt;-<span class="st"> </span><span class="kw">table</span>(myCol, myXCut)</span>
-<span id="cb1151-9"><a href="graph2.html#cb1151-9"></a>  rColX &lt;-<span class="st"> </span>myXCutCol[<span class="dv">1</span>,] <span class="op">/</span><span class="st"> </span>(myXCutCol[<span class="dv">1</span>,] <span class="op">+</span><span class="st"> </span>myXCutCol[<span class="dv">2</span>,] <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1151-10"><a href="graph2.html#cb1151-10"></a><span class="st">                              </span>myXCutCol[<span class="dv">3</span>,])</span>
-<span id="cb1151-11"><a href="graph2.html#cb1151-11"></a>  gColX &lt;-<span class="st"> </span>myXCutCol[<span class="dv">2</span>,] <span class="op">/</span><span class="st"> </span>(myXCutCol[<span class="dv">1</span>,] <span class="op">+</span><span class="st"> </span>myXCutCol[<span class="dv">2</span>,] <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1151-12"><a href="graph2.html#cb1151-12"></a><span class="st">                              </span>myXCutCol[<span class="dv">3</span>,])</span>
-<span id="cb1151-13"><a href="graph2.html#cb1151-13"></a>  bColX &lt;-<span class="st"> </span>myXCutCol[<span class="dv">3</span>,] <span class="op">/</span><span class="st"> </span>(myXCutCol[<span class="dv">1</span>,] <span class="op">+</span><span class="st"> </span>myXCutCol[<span class="dv">2</span>,] <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1151-14"><a href="graph2.html#cb1151-14"></a><span class="st">                              </span>myXCutCol[<span class="dv">3</span>,])</span>
-<span id="cb1151-15"><a href="graph2.html#cb1151-15"></a>  rColX[<span class="kw">is.na</span>(rColX)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb1151-16"><a href="graph2.html#cb1151-16"></a>  gColX[<span class="kw">is.na</span>(gColX)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb1151-17"><a href="graph2.html#cb1151-17"></a>  bColX[<span class="kw">is.na</span>(bColX)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb1151-18"><a href="graph2.html#cb1151-18"></a>  rColY &lt;-<span class="st"> </span>myYCutCol[<span class="dv">1</span>,] <span class="op">/</span><span class="st"> </span>(myYCutCol[<span class="dv">1</span>,] <span class="op">+</span><span class="st"> </span>myYCutCol[<span class="dv">2</span>,] <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1151-19"><a href="graph2.html#cb1151-19"></a><span class="st">                              </span>myYCutCol[<span class="dv">3</span>,])</span>
-<span id="cb1151-20"><a href="graph2.html#cb1151-20"></a>  gColY &lt;-<span class="st"> </span>myYCutCol[<span class="dv">2</span>,] <span class="op">/</span><span class="st"> </span>(myYCutCol[<span class="dv">1</span>,] <span class="op">+</span><span class="st"> </span>myYCutCol[<span class="dv">2</span>,] <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1151-21"><a href="graph2.html#cb1151-21"></a><span class="st">                              </span>myYCutCol[<span class="dv">3</span>,])</span>
-<span id="cb1151-22"><a href="graph2.html#cb1151-22"></a>  bColY &lt;-<span class="st"> </span>myYCutCol[<span class="dv">3</span>,] <span class="op">/</span><span class="st"> </span>(myYCutCol[<span class="dv">1</span>,] <span class="op">+</span><span class="st"> </span>myYCutCol[<span class="dv">2</span>,] <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1151-23"><a href="graph2.html#cb1151-23"></a><span class="st">                              </span>myYCutCol[<span class="dv">3</span>,])</span>
-<span id="cb1151-24"><a href="graph2.html#cb1151-24"></a>  rColY[<span class="kw">is.na</span>(rColY)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb1151-25"><a href="graph2.html#cb1151-25"></a>  gColY[<span class="kw">is.na</span>(gColY)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb1151-26"><a href="graph2.html#cb1151-26"></a>  bColY[<span class="kw">is.na</span>(bColY)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb1151-27"><a href="graph2.html#cb1151-27"></a>  op &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1151-28"><a href="graph2.html#cb1151-28"></a>  <span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb1151-29"><a href="graph2.html#cb1151-29"></a>  <span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, </span>
-<span id="cb1151-30"><a href="graph2.html#cb1151-30"></a>                  <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, </span>
-<span id="cb1151-31"><a href="graph2.html#cb1151-31"></a>                  <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb1151-32"><a href="graph2.html#cb1151-32"></a>  <span class="kw">barplot</span>(<span class="kw">table</span>(myXCut), <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="kw">rgb</span>(rColX, gColX, bColX))</span>
-<span id="cb1151-33"><a href="graph2.html#cb1151-33"></a>  <span class="kw">plot</span>(<span class="dt">x =</span> myX, <span class="dt">y =</span> myY, <span class="dt">col =</span> myCol, <span class="dt">pch =</span> <span class="dv">16</span>, </span>
-<span id="cb1151-34"><a href="graph2.html#cb1151-34"></a>       <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>), <span class="dt">cex =</span> <span class="fl">1.5</span>, </span>
-<span id="cb1151-35"><a href="graph2.html#cb1151-35"></a>       <span class="dt">panel.first =</span> <span class="kw">grid</span>())</span>
-<span id="cb1151-36"><a href="graph2.html#cb1151-36"></a>  <span class="kw">barplot</span>(<span class="kw">table</span>(myYCut), <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">horiz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb1151-37"><a href="graph2.html#cb1151-37"></a>          <span class="dt">col =</span> <span class="kw">rgb</span>(rColY, gColY, bColY))</span>
-<span id="cb1151-38"><a href="graph2.html#cb1151-38"></a>  <span class="kw">par</span>(op)</span>
-<span id="cb1151-39"><a href="graph2.html#cb1151-39"></a>}</span>
-<span id="cb1151-40"><a href="graph2.html#cb1151-40"></a><span class="kw">graphBarplotCol</span>(<span class="dt">n =</span> <span class="dv">50</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1151-1"><a href="graph2.html#cb1151-1" aria-hidden="true" tabindex="-1"></a>graphBarplotCol <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb1151-2"><a href="graph2.html#cb1151-2" aria-hidden="true" tabindex="-1"></a>  myX <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb1151-3"><a href="graph2.html#cb1151-3" aria-hidden="true" tabindex="-1"></a>  myY <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb1151-4"><a href="graph2.html#cb1151-4" aria-hidden="true" tabindex="-1"></a>  myCol <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="fu">sample</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">size =</span> (n <span class="sc">-</span> <span class="dv">3</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb1151-5"><a href="graph2.html#cb1151-5" aria-hidden="true" tabindex="-1"></a>  myYCut <span class="ot">&lt;-</span> <span class="fu">cut</span>(myY, <span class="at">breaks =</span> <span class="sc">-</span><span class="dv">4</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb1151-6"><a href="graph2.html#cb1151-6" aria-hidden="true" tabindex="-1"></a>  myXCut <span class="ot">&lt;-</span> <span class="fu">cut</span>(myX, <span class="at">breaks =</span> <span class="sc">-</span><span class="dv">4</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb1151-7"><a href="graph2.html#cb1151-7" aria-hidden="true" tabindex="-1"></a>  myYCutCol <span class="ot">&lt;-</span> <span class="fu">table</span>(myCol, myYCut)</span>
+<span id="cb1151-8"><a href="graph2.html#cb1151-8" aria-hidden="true" tabindex="-1"></a>  myXCutCol <span class="ot">&lt;-</span> <span class="fu">table</span>(myCol, myXCut)</span>
+<span id="cb1151-9"><a href="graph2.html#cb1151-9" aria-hidden="true" tabindex="-1"></a>  rColX <span class="ot">&lt;-</span> myXCutCol[<span class="dv">1</span>,] <span class="sc">/</span> (myXCutCol[<span class="dv">1</span>,] <span class="sc">+</span> myXCutCol[<span class="dv">2</span>,] <span class="sc">+</span> </span>
+<span id="cb1151-10"><a href="graph2.html#cb1151-10" aria-hidden="true" tabindex="-1"></a>                              myXCutCol[<span class="dv">3</span>,])</span>
+<span id="cb1151-11"><a href="graph2.html#cb1151-11" aria-hidden="true" tabindex="-1"></a>  gColX <span class="ot">&lt;-</span> myXCutCol[<span class="dv">2</span>,] <span class="sc">/</span> (myXCutCol[<span class="dv">1</span>,] <span class="sc">+</span> myXCutCol[<span class="dv">2</span>,] <span class="sc">+</span> </span>
+<span id="cb1151-12"><a href="graph2.html#cb1151-12" aria-hidden="true" tabindex="-1"></a>                              myXCutCol[<span class="dv">3</span>,])</span>
+<span id="cb1151-13"><a href="graph2.html#cb1151-13" aria-hidden="true" tabindex="-1"></a>  bColX <span class="ot">&lt;-</span> myXCutCol[<span class="dv">3</span>,] <span class="sc">/</span> (myXCutCol[<span class="dv">1</span>,] <span class="sc">+</span> myXCutCol[<span class="dv">2</span>,] <span class="sc">+</span> </span>
+<span id="cb1151-14"><a href="graph2.html#cb1151-14" aria-hidden="true" tabindex="-1"></a>                              myXCutCol[<span class="dv">3</span>,])</span>
+<span id="cb1151-15"><a href="graph2.html#cb1151-15" aria-hidden="true" tabindex="-1"></a>  rColX[<span class="fu">is.na</span>(rColX)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1151-16"><a href="graph2.html#cb1151-16" aria-hidden="true" tabindex="-1"></a>  gColX[<span class="fu">is.na</span>(gColX)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1151-17"><a href="graph2.html#cb1151-17" aria-hidden="true" tabindex="-1"></a>  bColX[<span class="fu">is.na</span>(bColX)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1151-18"><a href="graph2.html#cb1151-18" aria-hidden="true" tabindex="-1"></a>  rColY <span class="ot">&lt;-</span> myYCutCol[<span class="dv">1</span>,] <span class="sc">/</span> (myYCutCol[<span class="dv">1</span>,] <span class="sc">+</span> myYCutCol[<span class="dv">2</span>,] <span class="sc">+</span> </span>
+<span id="cb1151-19"><a href="graph2.html#cb1151-19" aria-hidden="true" tabindex="-1"></a>                              myYCutCol[<span class="dv">3</span>,])</span>
+<span id="cb1151-20"><a href="graph2.html#cb1151-20" aria-hidden="true" tabindex="-1"></a>  gColY <span class="ot">&lt;-</span> myYCutCol[<span class="dv">2</span>,] <span class="sc">/</span> (myYCutCol[<span class="dv">1</span>,] <span class="sc">+</span> myYCutCol[<span class="dv">2</span>,] <span class="sc">+</span> </span>
+<span id="cb1151-21"><a href="graph2.html#cb1151-21" aria-hidden="true" tabindex="-1"></a>                              myYCutCol[<span class="dv">3</span>,])</span>
+<span id="cb1151-22"><a href="graph2.html#cb1151-22" aria-hidden="true" tabindex="-1"></a>  bColY <span class="ot">&lt;-</span> myYCutCol[<span class="dv">3</span>,] <span class="sc">/</span> (myYCutCol[<span class="dv">1</span>,] <span class="sc">+</span> myYCutCol[<span class="dv">2</span>,] <span class="sc">+</span> </span>
+<span id="cb1151-23"><a href="graph2.html#cb1151-23" aria-hidden="true" tabindex="-1"></a>                              myYCutCol[<span class="dv">3</span>,])</span>
+<span id="cb1151-24"><a href="graph2.html#cb1151-24" aria-hidden="true" tabindex="-1"></a>  rColY[<span class="fu">is.na</span>(rColY)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1151-25"><a href="graph2.html#cb1151-25" aria-hidden="true" tabindex="-1"></a>  gColY[<span class="fu">is.na</span>(gColY)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1151-26"><a href="graph2.html#cb1151-26" aria-hidden="true" tabindex="-1"></a>  bColY[<span class="fu">is.na</span>(bColY)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1151-27"><a href="graph2.html#cb1151-27" aria-hidden="true" tabindex="-1"></a>  op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1151-28"><a href="graph2.html#cb1151-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb1151-29"><a href="graph2.html#cb1151-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, </span>
+<span id="cb1151-30"><a href="graph2.html#cb1151-30" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, </span>
+<span id="cb1151-31"><a href="graph2.html#cb1151-31" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb1151-32"><a href="graph2.html#cb1151-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">barplot</span>(<span class="fu">table</span>(myXCut), <span class="at">las =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="fu">rgb</span>(rColX, gColX, bColX))</span>
+<span id="cb1151-33"><a href="graph2.html#cb1151-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">x =</span> myX, <span class="at">y =</span> myY, <span class="at">col =</span> myCol, <span class="at">pch =</span> <span class="dv">16</span>, </span>
+<span id="cb1151-34"><a href="graph2.html#cb1151-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>), <span class="at">cex =</span> <span class="fl">1.5</span>, </span>
+<span id="cb1151-35"><a href="graph2.html#cb1151-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">panel.first =</span> <span class="fu">grid</span>())</span>
+<span id="cb1151-36"><a href="graph2.html#cb1151-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">barplot</span>(<span class="fu">table</span>(myYCut), <span class="at">las =</span> <span class="dv">1</span>, <span class="at">horiz =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb1151-37"><a href="graph2.html#cb1151-37" aria-hidden="true" tabindex="-1"></a>          <span class="at">col =</span> <span class="fu">rgb</span>(rColY, gColY, bColY))</span>
+<span id="cb1151-38"><a href="graph2.html#cb1151-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(op)</span>
+<span id="cb1151-39"><a href="graph2.html#cb1151-39" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1151-40"><a href="graph2.html#cb1151-40" aria-hidden="true" tabindex="-1"></a><span class="fu">graphBarplotCol</span>(<span class="at">n =</span> <span class="dv">50</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/021-02-graphiques-4-1.png" width="672" /></p>
 <p>Con la función <code>rgb()</code> podemos representar 256^3 colores, o 167 777 216 colores diferentes. Nuestro objetivo, sin embargo, es hacer gráficos que sean divertidos de leer y que hagan un buen uso de nuestros resultados científicos. Por lo tanto, debemos elegir los colores adecuados para nuestro propósito. Por eso utilizaremos paletas de colores.</p>
 </div>
-<div id="paletas-de-colores" class="section level2">
+<div id="paletas-de-colores" class="section level2" number="12.3">
 <h2><span class="header-section-number">12.3</span> Paletas de colores</h2>
 <p>Las paletas son esquemas de color representados como un <code>vector</code> con colores en formato hexadecimal (valor devuelto por la función <code>rgb()</code>).</p>
-<div class="sourceCode" id="cb1152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1152-1"><a href="graph2.html#cb1152-1"></a>myPal &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
-<span id="cb1152-2"><a href="graph2.html#cb1152-2"></a>  <span class="kw">rgb</span>(<span class="dv">0</span>, <span class="dv">94</span>, <span class="dv">255</span>, <span class="dt">maxColorValue =</span> <span class="dv">255</span>),  </span>
-<span id="cb1152-3"><a href="graph2.html#cb1152-3"></a>  <span class="kw">rgb</span>(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">174</span>, <span class="dt">maxColorValue =</span> <span class="dv">255</span>),  </span>
-<span id="cb1152-4"><a href="graph2.html#cb1152-4"></a>  <span class="kw">rgb</span>(<span class="dv">255</span>, <span class="dv">136</span>, <span class="dv">0</span>, <span class="dt">maxColorValue =</span> <span class="dv">255</span>),  </span>
-<span id="cb1152-5"><a href="graph2.html#cb1152-5"></a>  <span class="kw">rgb</span>(<span class="dv">119</span>, <span class="dv">255</span>, <span class="dv">0</span>, <span class="dt">maxColorValue =</span> <span class="dv">255</span>))</span>
-<span id="cb1152-6"><a href="graph2.html#cb1152-6"></a><span class="kw">print</span>(myPal)</span></code></pre></div>
+<div class="sourceCode" id="cb1152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1152-1"><a href="graph2.html#cb1152-1" aria-hidden="true" tabindex="-1"></a>myPal <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1152-2"><a href="graph2.html#cb1152-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">94</span>, <span class="dv">255</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>),  </span>
+<span id="cb1152-3"><a href="graph2.html#cb1152-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rgb</span>(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">174</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>),  </span>
+<span id="cb1152-4"><a href="graph2.html#cb1152-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rgb</span>(<span class="dv">255</span>, <span class="dv">136</span>, <span class="dv">0</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>),  </span>
+<span id="cb1152-5"><a href="graph2.html#cb1152-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rgb</span>(<span class="dv">119</span>, <span class="dv">255</span>, <span class="dv">0</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>))</span>
+<span id="cb1152-6"><a href="graph2.html#cb1152-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(myPal)</span></code></pre></div>
 <pre><code>## [1] &quot;#005EFF&quot; &quot;#FF00AE&quot; &quot;#FF8800&quot; &quot;#77FF00&quot;</code></pre>
-<div class="sourceCode" id="cb1154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1154-1"><a href="graph2.html#cb1154-1"></a><span class="kw">boxplot</span>(<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">100</span>), <span class="dt">ncol =</span> <span class="dv">5</span>), <span class="dt">col =</span> myPal, <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1154-2"><a href="graph2.html#cb1154-2"></a><span class="kw">axis</span>(<span class="dv">1</span>)</span>
-<span id="cb1154-3"><a href="graph2.html#cb1154-3"></a><span class="kw">axis</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1154-1"><a href="graph2.html#cb1154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">ncol =</span> <span class="dv">5</span>), <span class="at">col =</span> myPal, <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1154-2"><a href="graph2.html#cb1154-2" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>)</span>
+<span id="cb1154-3"><a href="graph2.html#cb1154-3" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/021-02-graphiques-5-1.png" width="672" /></p>
 <p>Hay paletas de colores incluidos en R: <code>terrain.colors()</code>, <code>heat.colors()</code>, <code>topo.colors()</code>,
 <code>cm.colors()</code>, <code>rainbow()</code>.</p>
-<div class="sourceCode" id="cb1155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1155-1"><a href="graph2.html#cb1155-1"></a>op &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1155-2"><a href="graph2.html#cb1155-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
-<span id="cb1155-3"><a href="graph2.html#cb1155-3"></a><span class="kw">boxplot</span>(<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>), <span class="dt">ncol =</span> <span class="dv">10</span>), <span class="dt">main =</span> <span class="st">&quot;terrain.colors()&quot;</span>, </span>
-<span id="cb1155-4"><a href="graph2.html#cb1155-4"></a>        <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">10</span>), <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1155-5"><a href="graph2.html#cb1155-5"></a><span class="kw">boxplot</span>(<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>), <span class="dt">ncol =</span> <span class="dv">10</span>), <span class="dt">main =</span> <span class="st">&quot;heat.colors()&quot;</span>, </span>
-<span id="cb1155-6"><a href="graph2.html#cb1155-6"></a>        <span class="dt">col =</span> <span class="kw">heat.colors</span>(<span class="dv">10</span>), <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1155-7"><a href="graph2.html#cb1155-7"></a><span class="kw">boxplot</span>(<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>), <span class="dt">ncol =</span> <span class="dv">10</span>), <span class="dt">main =</span> <span class="st">&quot;topo.colors()&quot;</span>, </span>
-<span id="cb1155-8"><a href="graph2.html#cb1155-8"></a>        <span class="dt">col =</span> <span class="kw">topo.colors</span>(<span class="dv">10</span>), <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1155-9"><a href="graph2.html#cb1155-9"></a><span class="kw">boxplot</span>(<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>), <span class="dt">ncol =</span> <span class="dv">10</span>), <span class="dt">main =</span> <span class="st">&quot;cm.colors()&quot;</span>, </span>
-<span id="cb1155-10"><a href="graph2.html#cb1155-10"></a>        <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">10</span>), <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1155-11"><a href="graph2.html#cb1155-11"></a><span class="kw">boxplot</span>(<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>), <span class="dt">ncol =</span> <span class="dv">10</span>), <span class="dt">main =</span> <span class="st">&quot;rainbow()&quot;</span>, </span>
-<span id="cb1155-12"><a href="graph2.html#cb1155-12"></a>        <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="dv">10</span>), <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1155-13"><a href="graph2.html#cb1155-13"></a><span class="kw">par</span>(op)</span></code></pre></div>
+<div class="sourceCode" id="cb1155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1155-1"><a href="graph2.html#cb1155-1" aria-hidden="true" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1155-2"><a href="graph2.html#cb1155-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb1155-3"><a href="graph2.html#cb1155-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>), <span class="at">ncol =</span> <span class="dv">10</span>), <span class="at">main =</span> <span class="st">&quot;terrain.colors()&quot;</span>, </span>
+<span id="cb1155-4"><a href="graph2.html#cb1155-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">10</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1155-5"><a href="graph2.html#cb1155-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>), <span class="at">ncol =</span> <span class="dv">10</span>), <span class="at">main =</span> <span class="st">&quot;heat.colors()&quot;</span>, </span>
+<span id="cb1155-6"><a href="graph2.html#cb1155-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">heat.colors</span>(<span class="dv">10</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1155-7"><a href="graph2.html#cb1155-7" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>), <span class="at">ncol =</span> <span class="dv">10</span>), <span class="at">main =</span> <span class="st">&quot;topo.colors()&quot;</span>, </span>
+<span id="cb1155-8"><a href="graph2.html#cb1155-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">topo.colors</span>(<span class="dv">10</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1155-9"><a href="graph2.html#cb1155-9" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>), <span class="at">ncol =</span> <span class="dv">10</span>), <span class="at">main =</span> <span class="st">&quot;cm.colors()&quot;</span>, </span>
+<span id="cb1155-10"><a href="graph2.html#cb1155-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">cm.colors</span>(<span class="dv">10</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1155-11"><a href="graph2.html#cb1155-11" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>), <span class="at">ncol =</span> <span class="dv">10</span>), <span class="at">main =</span> <span class="st">&quot;rainbow()&quot;</span>, </span>
+<span id="cb1155-12"><a href="graph2.html#cb1155-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="dv">10</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1155-13"><a href="graph2.html#cb1155-13" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(op)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/021-02-graphiques-6-1.png" width="672" /></p>
 <p>También hay una función <code>colorRampPalette()</code> que nos permite crear un degradado de color.</p>
-<div class="sourceCode" id="cb1156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1156-1"><a href="graph2.html#cb1156-1"></a>op &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1156-2"><a href="graph2.html#cb1156-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">1</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb1156-3"><a href="graph2.html#cb1156-3"></a><span class="kw">boxplot</span>(<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">2500</span>), <span class="dt">ncol =</span> <span class="dv">25</span>), </span>
-<span id="cb1156-4"><a href="graph2.html#cb1156-4"></a>        <span class="dt">col =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&#39;blue&#39;</span>, <span class="st">&#39;red&#39;</span>))(<span class="dv">25</span>), <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1156-5"><a href="graph2.html#cb1156-5"></a><span class="kw">boxplot</span>(<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">2500</span>), <span class="dt">ncol =</span> <span class="dv">25</span>), </span>
-<span id="cb1156-6"><a href="graph2.html#cb1156-6"></a>        <span class="dt">col =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&#39;blue&#39;</span>, <span class="st">&#39;white&#39;</span>, <span class="st">&#39;red&#39;</span>))(<span class="dv">25</span>), <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1156-7"><a href="graph2.html#cb1156-7"></a><span class="kw">boxplot</span>(<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">2500</span>), <span class="dt">ncol =</span> <span class="dv">25</span>), </span>
-<span id="cb1156-8"><a href="graph2.html#cb1156-8"></a>        <span class="dt">col =</span>  <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="kw">rgb</span>(<span class="dv">255</span>, <span class="dv">136</span>, <span class="dv">0</span>, <span class="dt">maxColorValue =</span> <span class="dv">255</span>),  </span>
-<span id="cb1156-9"><a href="graph2.html#cb1156-9"></a>                                  <span class="kw">rgb</span>(<span class="dv">0</span>, <span class="dv">94</span>, <span class="dv">255</span>, <span class="dt">maxColorValue =</span> <span class="dv">255</span>)))(<span class="dv">25</span>), </span>
-<span id="cb1156-10"><a href="graph2.html#cb1156-10"></a>        <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1156-1"><a href="graph2.html#cb1156-1" aria-hidden="true" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1156-2"><a href="graph2.html#cb1156-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb1156-3"><a href="graph2.html#cb1156-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2500</span>), <span class="at">ncol =</span> <span class="dv">25</span>), </span>
+<span id="cb1156-4"><a href="graph2.html#cb1156-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&#39;blue&#39;</span>, <span class="st">&#39;red&#39;</span>))(<span class="dv">25</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1156-5"><a href="graph2.html#cb1156-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2500</span>), <span class="at">ncol =</span> <span class="dv">25</span>), </span>
+<span id="cb1156-6"><a href="graph2.html#cb1156-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&#39;blue&#39;</span>, <span class="st">&#39;white&#39;</span>, <span class="st">&#39;red&#39;</span>))(<span class="dv">25</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1156-7"><a href="graph2.html#cb1156-7" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2500</span>), <span class="at">ncol =</span> <span class="dv">25</span>), </span>
+<span id="cb1156-8"><a href="graph2.html#cb1156-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span>  <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="fu">rgb</span>(<span class="dv">255</span>, <span class="dv">136</span>, <span class="dv">0</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>),  </span>
+<span id="cb1156-9"><a href="graph2.html#cb1156-9" aria-hidden="true" tabindex="-1"></a>                                  <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">94</span>, <span class="dv">255</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>)))(<span class="dv">25</span>), </span>
+<span id="cb1156-10"><a href="graph2.html#cb1156-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/021-02-graphiques-7-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1157-1"><a href="graph2.html#cb1157-1"></a><span class="kw">par</span>(op)</span></code></pre></div>
+<div class="sourceCode" id="cb1157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1157-1"><a href="graph2.html#cb1157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(op)</span></code></pre></div>
 <p>También podemos crear nuestras propias paletas utilizando sitios web de selección de colores como <a href="http://paletton.com/" class="uri">http://paletton.com/</a> o <a href="https://coolors.co/" class="uri">https://coolors.co/</a> (hay muchos más), y luego utilizarlos en R copiando en un <code>vector</code> los valores hexadecimales o rgb.</p>
 <p>R es un lenguaje de programación muy poderoso. Podemos imaginar muchas formas de crear paletas automáticamente de acuerdo con varios criterios. Por ejemplo, podemos importar una imagen cuyos tonos nos parezcan relevantes, luego extraer la información de cada uno de los puntos y luego seleccionar los colores dominantes a través de una agrupación tipo <code>kmeans</code>. Eso es lo que hace la siguiente función.</p>
 <p>Primero, cargaremos los paquetes <code>raster</code>,<code>rgdal</code> y <code>jpeg</code> que se utilizarán para manipular nuestra imagen en R.</p>
-<div class="sourceCode" id="cb1158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1158-1"><a href="graph2.html#cb1158-1"></a>pkgCheck &lt;-<span class="st"> </span><span class="cf">function</span>(x){ </span>
-<span id="cb1158-2"><a href="graph2.html#cb1158-2"></a>  <span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(x, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)){</span>
-<span id="cb1158-3"><a href="graph2.html#cb1158-3"></a>    <span class="kw">install.packages</span>(x, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1158-4"><a href="graph2.html#cb1158-4"></a>      <span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(x, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)) {</span>
-<span id="cb1158-5"><a href="graph2.html#cb1158-5"></a>        <span class="kw">stop</span>()</span>
-<span id="cb1158-6"><a href="graph2.html#cb1158-6"></a>    }</span>
-<span id="cb1158-7"><a href="graph2.html#cb1158-7"></a>  }</span>
-<span id="cb1158-8"><a href="graph2.html#cb1158-8"></a>}</span>
-<span id="cb1158-9"><a href="graph2.html#cb1158-9"></a><span class="kw">pkgCheck</span>(<span class="st">&quot;raster&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1158-1"><a href="graph2.html#cb1158-1" aria-hidden="true" tabindex="-1"></a>pkgCheck <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ </span>
+<span id="cb1158-2"><a href="graph2.html#cb1158-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(x, <span class="at">character.only =</span> <span class="cn">TRUE</span>)){</span>
+<span id="cb1158-3"><a href="graph2.html#cb1158-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(x, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1158-4"><a href="graph2.html#cb1158-4" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(x, <span class="at">character.only =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1158-5"><a href="graph2.html#cb1158-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">stop</span>()</span>
+<span id="cb1158-6"><a href="graph2.html#cb1158-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1158-7"><a href="graph2.html#cb1158-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1158-8"><a href="graph2.html#cb1158-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1158-9"><a href="graph2.html#cb1158-9" aria-hidden="true" tabindex="-1"></a><span class="fu">pkgCheck</span>(<span class="st">&quot;raster&quot;</span>)</span></code></pre></div>
 <pre><code>## Le chargement a nécessité le package : raster</code></pre>
 <pre><code>## Le chargement a nécessité le package : sp</code></pre>
-<div class="sourceCode" id="cb1161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1161-1"><a href="graph2.html#cb1161-1"></a><span class="kw">pkgCheck</span>(<span class="st">&quot;rgdal&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1161-1"><a href="graph2.html#cb1161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkgCheck</span>(<span class="st">&quot;rgdal&quot;</span>)</span></code></pre></div>
 <pre><code>## Le chargement a nécessité le package : rgdal</code></pre>
-<pre><code>## rgdal: version: 1.5-19, (SVN revision 1092)
+<pre><code>## rgdal: version: 1.5-23, (SVN revision 1121)
 ## Geospatial Data Abstraction Library extensions to R successfully loaded
-## Loaded GDAL runtime: GDAL 3.0.4, released 2020/01/28
-## Path to GDAL shared files: C:/Users/nous/Documents/R/win-library/4.0/rgdal/gdal
+## Loaded GDAL runtime: GDAL 3.2.1, released 2020/12/29
+## Path to GDAL shared files: C:/Users/nous/Documents/R/win-library/4.1/rgdal/gdal
 ## GDAL binary built with GEOS: TRUE 
-## Loaded PROJ runtime: Rel. 6.3.1, February 10th, 2020, [PJ_VERSION: 631]
-## Path to PROJ shared files: C:/Users/nous/Documents/R/win-library/4.0/rgdal/proj
+## Loaded PROJ runtime: Rel. 7.2.1, January 1st, 2021, [PJ_VERSION: 721]
+## Path to PROJ shared files: C:/Users/nous/Documents/R/win-library/4.1/rgdal/proj
+## PROJ CDN enabled: FALSE
 ## Linking to sp version:1.4-5
 ## To mute warnings of possible GDAL/OSR exportToProj4() degradation,
-## use options(&quot;rgdal_show_exportToProj4_warnings&quot;=&quot;none&quot;) before loading rgdal.</code></pre>
-<div class="sourceCode" id="cb1164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1164-1"><a href="graph2.html#cb1164-1"></a><span class="kw">pkgCheck</span>(<span class="st">&quot;jpeg&quot;</span>)</span></code></pre></div>
+## use options(&quot;rgdal_show_exportToProj4_warnings&quot;=&quot;none&quot;) before loading rgdal.
+## Overwritten PROJ_LIB was C:/Users/nous/Documents/R/win-library/4.1/rgdal/proj</code></pre>
+<div class="sourceCode" id="cb1164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1164-1"><a href="graph2.html#cb1164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkgCheck</span>(<span class="st">&quot;jpeg&quot;</span>)</span></code></pre></div>
 <pre><code>## Le chargement a nécessité le package : jpeg</code></pre>
 <p>Luego usaremos la función <code>kmeans()</code> para realizar grupos de colores usando los valores RGB de cada punto en nuestra imagen. Aquí tenemos dos métodos posibles, el primero usa la función <code>kmeans()</code> para los tres valores RGB, y el segundo usa la función <code>kmeans()</code> para cada valor RGB individualmente (esta segunda función proporciona una paleta que puede ser bastante alejado de los colores de la imagen original).</p>
-<div class="sourceCode" id="cb1166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1166-1"><a href="graph2.html#cb1166-1"></a>createPal &lt;-<span class="st"> </span><span class="cf">function</span>(photo, <span class="dt">met =</span> <span class="dv">1</span>, <span class="dt">graph =</span> <span class="ot">TRUE</span>, <span class="dt">k =</span> <span class="dv">9</span>){</span>
-<span id="cb1166-2"><a href="graph2.html#cb1166-2"></a>  <span class="cf">if</span>(met <span class="op">==</span><span class="st"> </span><span class="dv">1</span>){</span>
-<span id="cb1166-3"><a href="graph2.html#cb1166-3"></a>    colR &lt;-<span class="st"> </span><span class="kw">getValues</span>(<span class="kw">raster</span>(photo, <span class="dt">band =</span> <span class="dv">1</span>))</span>
-<span id="cb1166-4"><a href="graph2.html#cb1166-4"></a>    colG &lt;-<span class="st"> </span><span class="kw">getValues</span>(<span class="kw">raster</span>(photo, <span class="dt">band =</span> <span class="dv">2</span>))</span>
-<span id="cb1166-5"><a href="graph2.html#cb1166-5"></a>    colB &lt;-<span class="st"> </span><span class="kw">getValues</span>(<span class="kw">raster</span>(photo, <span class="dt">band =</span> <span class="dv">3</span>))</span>
-<span id="cb1166-6"><a href="graph2.html#cb1166-6"></a>    kMeans &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">data.frame</span>(colR, colG, colB), <span class="dt">centers =</span> k)</span>
-<span id="cb1166-7"><a href="graph2.html#cb1166-7"></a>    kCol &lt;-<span class="st"> </span><span class="kw">rgb</span>(kMeans<span class="op">$</span>centers, <span class="dt">maxColorValue =</span> <span class="dv">255</span>)[<span class="kw">order</span>(<span class="kw">table</span>(</span>
-<span id="cb1166-8"><a href="graph2.html#cb1166-8"></a>      kMeans<span class="op">$</span>cluster), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)]</span>
-<span id="cb1166-9"><a href="graph2.html#cb1166-9"></a>    <span class="cf">if</span>(graph <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>){</span>
-<span id="cb1166-10"><a href="graph2.html#cb1166-10"></a>      op &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1166-11"><a href="graph2.html#cb1166-11"></a>      <span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span> (<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
-<span id="cb1166-12"><a href="graph2.html#cb1166-12"></a>      myJpg &lt;-<span class="st"> </span><span class="kw">readJPEG</span>(<span class="st">&quot;./myFiles/photoKmeans.jpg&quot;</span>, <span class="dt">native =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1166-13"><a href="graph2.html#cb1166-13"></a>      <span class="kw">plot</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1166-14"><a href="graph2.html#cb1166-14"></a>      <span class="kw">rasterImage</span>(myJpg, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb1166-15"><a href="graph2.html#cb1166-15"></a>      <span class="kw">barplot</span>(<span class="kw">table</span>(kMeans<span class="op">$</span>cluster)[<span class="kw">order</span>(<span class="kw">table</span>(kMeans<span class="op">$</span>cluster), </span>
-<span id="cb1166-16"><a href="graph2.html#cb1166-16"></a>        <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)], <span class="dt">col =</span> kCol, <span class="dt">names.arg =</span> <span class="ot">NA</span>)</span>
-<span id="cb1166-17"><a href="graph2.html#cb1166-17"></a>      <span class="kw">par</span>(op)</span>
-<span id="cb1166-18"><a href="graph2.html#cb1166-18"></a>    }</span>
-<span id="cb1166-19"><a href="graph2.html#cb1166-19"></a>    <span class="kw">return</span>(kCol)</span>
-<span id="cb1166-20"><a href="graph2.html#cb1166-20"></a>  } <span class="cf">else</span> {</span>
-<span id="cb1166-21"><a href="graph2.html#cb1166-21"></a>    <span class="cf">if</span>(met <span class="op">==</span><span class="st"> </span><span class="dv">2</span>){</span>
-<span id="cb1166-22"><a href="graph2.html#cb1166-22"></a>      kColR &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="dt">x =</span> <span class="kw">getValues</span>(<span class="kw">raster</span>(photo, <span class="dt">band =</span> <span class="dv">1</span>)), </span>
-<span id="cb1166-23"><a href="graph2.html#cb1166-23"></a>                      <span class="dt">centers =</span> k)</span>
-<span id="cb1166-24"><a href="graph2.html#cb1166-24"></a>      kColG &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="dt">x =</span> <span class="kw">getValues</span>(<span class="kw">raster</span>(photo, <span class="dt">band =</span> <span class="dv">2</span>)), </span>
-<span id="cb1166-25"><a href="graph2.html#cb1166-25"></a>                      <span class="dt">centers =</span> k)</span>
-<span id="cb1166-26"><a href="graph2.html#cb1166-26"></a>      kColB &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="dt">x =</span> <span class="kw">getValues</span>(<span class="kw">raster</span>(photo, <span class="dt">band =</span> <span class="dv">3</span>)), </span>
-<span id="cb1166-27"><a href="graph2.html#cb1166-27"></a>                      <span class="dt">centers =</span> k)</span>
-<span id="cb1166-28"><a href="graph2.html#cb1166-28"></a>      kCol &lt;-<span class="st"> </span>(<span class="kw">rgb</span>(kColR<span class="op">$</span>centers, kColG<span class="op">$</span>centers, kColB<span class="op">$</span>centers,</span>
-<span id="cb1166-29"><a href="graph2.html#cb1166-29"></a>                   <span class="dt">maxColorValue =</span> <span class="dv">255</span>))</span>
-<span id="cb1166-30"><a href="graph2.html#cb1166-30"></a>      <span class="cf">if</span>(graph <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>){</span>
-<span id="cb1166-31"><a href="graph2.html#cb1166-31"></a>        op &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1166-32"><a href="graph2.html#cb1166-32"></a>        <span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span> (<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
-<span id="cb1166-33"><a href="graph2.html#cb1166-33"></a>        myJpg &lt;-<span class="st"> </span><span class="kw">readJPEG</span>(<span class="st">&quot;./myFiles/photoKmeans.jpg&quot;</span>, <span class="dt">native =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1166-34"><a href="graph2.html#cb1166-34"></a>        <span class="kw">plot</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1166-35"><a href="graph2.html#cb1166-35"></a>        <span class="kw">rasterImage</span>(myJpg, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb1166-36"><a href="graph2.html#cb1166-36"></a>        <span class="kw">plot</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span>k, <span class="dt">y =</span> <span class="kw">rep</span>(<span class="dv">1</span>, k), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
-<span id="cb1166-37"><a href="graph2.html#cb1166-37"></a>             <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, k), <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, </span>
-<span id="cb1166-38"><a href="graph2.html#cb1166-38"></a>             <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</span>
-<span id="cb1166-39"><a href="graph2.html#cb1166-39"></a>        <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>k){</span>
-<span id="cb1166-40"><a href="graph2.html#cb1166-40"></a>          <span class="kw">polygon</span>(<span class="dt">x =</span> <span class="kw">c</span>(i<span class="dv">-1</span>, i, i, i<span class="dv">-1</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>), </span>
-<span id="cb1166-41"><a href="graph2.html#cb1166-41"></a>                  <span class="dt">col =</span> kCol[i])</span>
-<span id="cb1166-42"><a href="graph2.html#cb1166-42"></a>          <span class="kw">text</span>(<span class="dt">x =</span> i <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dt">y =</span> <span class="fl">0.5</span>, </span>
-<span id="cb1166-43"><a href="graph2.html#cb1166-43"></a>               <span class="dt">labels =</span> <span class="kw">as.character</span>(kCol[i]), <span class="dt">srt =</span> <span class="dv">90</span>)</span>
-<span id="cb1166-44"><a href="graph2.html#cb1166-44"></a>        }</span>
-<span id="cb1166-45"><a href="graph2.html#cb1166-45"></a>        <span class="kw">par</span>(op)</span>
-<span id="cb1166-46"><a href="graph2.html#cb1166-46"></a>      }</span>
-<span id="cb1166-47"><a href="graph2.html#cb1166-47"></a>      <span class="kw">return</span>(kCol)</span>
-<span id="cb1166-48"><a href="graph2.html#cb1166-48"></a>    } <span class="cf">else</span> {</span>
-<span id="cb1166-49"><a href="graph2.html#cb1166-49"></a>      <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;No method &quot;</span>, met, <span class="st">&quot;.&quot;</span>))</span>
-<span id="cb1166-50"><a href="graph2.html#cb1166-50"></a>      <span class="kw">return</span>(<span class="kw">rgb</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb1166-51"><a href="graph2.html#cb1166-51"></a>    }</span>
-<span id="cb1166-52"><a href="graph2.html#cb1166-52"></a>  }</span>
-<span id="cb1166-53"><a href="graph2.html#cb1166-53"></a>}</span>
-<span id="cb1166-54"><a href="graph2.html#cb1166-54"></a></span>
-<span id="cb1166-55"><a href="graph2.html#cb1166-55"></a>myPalMet1 &lt;-<span class="st"> </span><span class="kw">createPal</span>(<span class="dt">photo =</span> <span class="st">&quot;./myFiles/photoKmeans.jpg&quot;</span>, </span>
-<span id="cb1166-56"><a href="graph2.html#cb1166-56"></a>                       <span class="dt">met =</span> <span class="dv">1</span>, <span class="dt">graph =</span> <span class="ot">TRUE</span>, <span class="dt">k =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1166-1"><a href="graph2.html#cb1166-1" aria-hidden="true" tabindex="-1"></a>createPal <span class="ot">&lt;-</span> <span class="cf">function</span>(photo, <span class="at">met =</span> <span class="dv">1</span>, <span class="at">graph =</span> <span class="cn">TRUE</span>, <span class="at">k =</span> <span class="dv">9</span>){</span>
+<span id="cb1166-2"><a href="graph2.html#cb1166-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(met <span class="sc">==</span> <span class="dv">1</span>){</span>
+<span id="cb1166-3"><a href="graph2.html#cb1166-3" aria-hidden="true" tabindex="-1"></a>    colR <span class="ot">&lt;-</span> <span class="fu">getValues</span>(<span class="fu">raster</span>(photo, <span class="at">band =</span> <span class="dv">1</span>))</span>
+<span id="cb1166-4"><a href="graph2.html#cb1166-4" aria-hidden="true" tabindex="-1"></a>    colG <span class="ot">&lt;-</span> <span class="fu">getValues</span>(<span class="fu">raster</span>(photo, <span class="at">band =</span> <span class="dv">2</span>))</span>
+<span id="cb1166-5"><a href="graph2.html#cb1166-5" aria-hidden="true" tabindex="-1"></a>    colB <span class="ot">&lt;-</span> <span class="fu">getValues</span>(<span class="fu">raster</span>(photo, <span class="at">band =</span> <span class="dv">3</span>))</span>
+<span id="cb1166-6"><a href="graph2.html#cb1166-6" aria-hidden="true" tabindex="-1"></a>    kMeans <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(<span class="fu">data.frame</span>(colR, colG, colB), <span class="at">centers =</span> k)</span>
+<span id="cb1166-7"><a href="graph2.html#cb1166-7" aria-hidden="true" tabindex="-1"></a>    kCol <span class="ot">&lt;-</span> <span class="fu">rgb</span>(kMeans<span class="sc">$</span>centers, <span class="at">maxColorValue =</span> <span class="dv">255</span>)[<span class="fu">order</span>(<span class="fu">table</span>(</span>
+<span id="cb1166-8"><a href="graph2.html#cb1166-8" aria-hidden="true" tabindex="-1"></a>      kMeans<span class="sc">$</span>cluster), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)]</span>
+<span id="cb1166-9"><a href="graph2.html#cb1166-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(graph <span class="sc">==</span> <span class="cn">TRUE</span>){</span>
+<span id="cb1166-10"><a href="graph2.html#cb1166-10" aria-hidden="true" tabindex="-1"></a>      op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1166-11"><a href="graph2.html#cb1166-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span> (<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb1166-12"><a href="graph2.html#cb1166-12" aria-hidden="true" tabindex="-1"></a>      myJpg <span class="ot">&lt;-</span> <span class="fu">readJPEG</span>(<span class="st">&quot;./myFiles/photoKmeans.jpg&quot;</span>, <span class="at">native =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1166-13"><a href="graph2.html#cb1166-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">ann =</span> <span class="cn">FALSE</span>, <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1166-14"><a href="graph2.html#cb1166-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rasterImage</span>(myJpg, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb1166-15"><a href="graph2.html#cb1166-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">barplot</span>(<span class="fu">table</span>(kMeans<span class="sc">$</span>cluster)[<span class="fu">order</span>(<span class="fu">table</span>(kMeans<span class="sc">$</span>cluster), </span>
+<span id="cb1166-16"><a href="graph2.html#cb1166-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">decreasing =</span> <span class="cn">TRUE</span>)], <span class="at">col =</span> kCol, <span class="at">names.arg =</span> <span class="cn">NA</span>)</span>
+<span id="cb1166-17"><a href="graph2.html#cb1166-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">par</span>(op)</span>
+<span id="cb1166-18"><a href="graph2.html#cb1166-18" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1166-19"><a href="graph2.html#cb1166-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(kCol)</span>
+<span id="cb1166-20"><a href="graph2.html#cb1166-20" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb1166-21"><a href="graph2.html#cb1166-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(met <span class="sc">==</span> <span class="dv">2</span>){</span>
+<span id="cb1166-22"><a href="graph2.html#cb1166-22" aria-hidden="true" tabindex="-1"></a>      kColR <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(<span class="at">x =</span> <span class="fu">getValues</span>(<span class="fu">raster</span>(photo, <span class="at">band =</span> <span class="dv">1</span>)), </span>
+<span id="cb1166-23"><a href="graph2.html#cb1166-23" aria-hidden="true" tabindex="-1"></a>                      <span class="at">centers =</span> k)</span>
+<span id="cb1166-24"><a href="graph2.html#cb1166-24" aria-hidden="true" tabindex="-1"></a>      kColG <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(<span class="at">x =</span> <span class="fu">getValues</span>(<span class="fu">raster</span>(photo, <span class="at">band =</span> <span class="dv">2</span>)), </span>
+<span id="cb1166-25"><a href="graph2.html#cb1166-25" aria-hidden="true" tabindex="-1"></a>                      <span class="at">centers =</span> k)</span>
+<span id="cb1166-26"><a href="graph2.html#cb1166-26" aria-hidden="true" tabindex="-1"></a>      kColB <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(<span class="at">x =</span> <span class="fu">getValues</span>(<span class="fu">raster</span>(photo, <span class="at">band =</span> <span class="dv">3</span>)), </span>
+<span id="cb1166-27"><a href="graph2.html#cb1166-27" aria-hidden="true" tabindex="-1"></a>                      <span class="at">centers =</span> k)</span>
+<span id="cb1166-28"><a href="graph2.html#cb1166-28" aria-hidden="true" tabindex="-1"></a>      kCol <span class="ot">&lt;-</span> (<span class="fu">rgb</span>(kColR<span class="sc">$</span>centers, kColG<span class="sc">$</span>centers, kColB<span class="sc">$</span>centers,</span>
+<span id="cb1166-29"><a href="graph2.html#cb1166-29" aria-hidden="true" tabindex="-1"></a>                   <span class="at">maxColorValue =</span> <span class="dv">255</span>))</span>
+<span id="cb1166-30"><a href="graph2.html#cb1166-30" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(graph <span class="sc">==</span> <span class="cn">TRUE</span>){</span>
+<span id="cb1166-31"><a href="graph2.html#cb1166-31" aria-hidden="true" tabindex="-1"></a>        op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1166-32"><a href="graph2.html#cb1166-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span> (<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>))</span>
+<span id="cb1166-33"><a href="graph2.html#cb1166-33" aria-hidden="true" tabindex="-1"></a>        myJpg <span class="ot">&lt;-</span> <span class="fu">readJPEG</span>(<span class="st">&quot;./myFiles/photoKmeans.jpg&quot;</span>, <span class="at">native =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1166-34"><a href="graph2.html#cb1166-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">ann =</span> <span class="cn">FALSE</span>, <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1166-35"><a href="graph2.html#cb1166-35" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rasterImage</span>(myJpg, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb1166-36"><a href="graph2.html#cb1166-36" aria-hidden="true" tabindex="-1"></a>        <span class="fu">plot</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span>k, <span class="at">y =</span> <span class="fu">rep</span>(<span class="dv">1</span>, k), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
+<span id="cb1166-37"><a href="graph2.html#cb1166-37" aria-hidden="true" tabindex="-1"></a>             <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, k), <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb1166-38"><a href="graph2.html#cb1166-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>)</span>
+<span id="cb1166-39"><a href="graph2.html#cb1166-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
+<span id="cb1166-40"><a href="graph2.html#cb1166-40" aria-hidden="true" tabindex="-1"></a>          <span class="fu">polygon</span>(<span class="at">x =</span> <span class="fu">c</span>(i<span class="dv">-1</span>, i, i, i<span class="dv">-1</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>), </span>
+<span id="cb1166-41"><a href="graph2.html#cb1166-41" aria-hidden="true" tabindex="-1"></a>                  <span class="at">col =</span> kCol[i])</span>
+<span id="cb1166-42"><a href="graph2.html#cb1166-42" aria-hidden="true" tabindex="-1"></a>          <span class="fu">text</span>(<span class="at">x =</span> i <span class="sc">-</span> <span class="fl">0.5</span>, <span class="at">y =</span> <span class="fl">0.5</span>, </span>
+<span id="cb1166-43"><a href="graph2.html#cb1166-43" aria-hidden="true" tabindex="-1"></a>               <span class="at">labels =</span> <span class="fu">as.character</span>(kCol[i]), <span class="at">srt =</span> <span class="dv">90</span>)</span>
+<span id="cb1166-44"><a href="graph2.html#cb1166-44" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1166-45"><a href="graph2.html#cb1166-45" aria-hidden="true" tabindex="-1"></a>        <span class="fu">par</span>(op)</span>
+<span id="cb1166-46"><a href="graph2.html#cb1166-46" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1166-47"><a href="graph2.html#cb1166-47" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(kCol)</span>
+<span id="cb1166-48"><a href="graph2.html#cb1166-48" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb1166-49"><a href="graph2.html#cb1166-49" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;No method &quot;</span>, met, <span class="st">&quot;.&quot;</span>))</span>
+<span id="cb1166-50"><a href="graph2.html#cb1166-50" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(<span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb1166-51"><a href="graph2.html#cb1166-51" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1166-52"><a href="graph2.html#cb1166-52" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1166-53"><a href="graph2.html#cb1166-53" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1166-54"><a href="graph2.html#cb1166-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1166-55"><a href="graph2.html#cb1166-55" aria-hidden="true" tabindex="-1"></a>myPalMet1 <span class="ot">&lt;-</span> <span class="fu">createPal</span>(<span class="at">photo =</span> <span class="st">&quot;./myFiles/photoKmeans.jpg&quot;</span>, </span>
+<span id="cb1166-56"><a href="graph2.html#cb1166-56" aria-hidden="true" tabindex="-1"></a>                       <span class="at">met =</span> <span class="dv">1</span>, <span class="at">graph =</span> <span class="cn">TRUE</span>, <span class="at">k =</span> <span class="dv">5</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/021-02-graphiques-9-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1167-1"><a href="graph2.html#cb1167-1"></a>myPalMet2 &lt;-<span class="st"> </span><span class="kw">createPal</span>(<span class="dt">photo =</span> <span class="st">&quot;./myFiles/photoKmeans.jpg&quot;</span>, </span>
-<span id="cb1167-2"><a href="graph2.html#cb1167-2"></a>                       <span class="dt">met =</span> <span class="dv">2</span>, <span class="dt">graph =</span> <span class="ot">TRUE</span>, <span class="dt">k =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1167-1"><a href="graph2.html#cb1167-1" aria-hidden="true" tabindex="-1"></a>myPalMet2 <span class="ot">&lt;-</span> <span class="fu">createPal</span>(<span class="at">photo =</span> <span class="st">&quot;./myFiles/photoKmeans.jpg&quot;</span>, </span>
+<span id="cb1167-2"><a href="graph2.html#cb1167-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">met =</span> <span class="dv">2</span>, <span class="at">graph =</span> <span class="cn">TRUE</span>, <span class="at">k =</span> <span class="dv">5</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/021-02-graphiques-9-2.png" width="672" /></p>
 <p>La función nos devuelve los colores de la paleta con un gráfico de barras que representa el número de puntos de la imagen en cada uno de los grupos de colores. Ahora podemos usar nuestra nueva paleta para hacer nuestros gráficos.</p>
-<div class="sourceCode" id="cb1168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1168-1"><a href="graph2.html#cb1168-1"></a>makeImpact &lt;-<span class="st"> </span><span class="cf">function</span>(myPal, <span class="dt">numP =</span> <span class="dv">300</span>, <span class="dt">impact =</span> <span class="fl">0.33</span>, <span class="dt">multCex =</span> <span class="dv">3</span>){</span>
-<span id="cb1168-2"><a href="graph2.html#cb1168-2"></a>  myX &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1000</span>, <span class="dt">size =</span> numP, <span class="dt">replace =</span> <span class="ot">TRUE</span>)<span class="op">/</span><span class="dv">1000</span></span>
-<span id="cb1168-3"><a href="graph2.html#cb1168-3"></a>  myY &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1000</span>, <span class="dt">size =</span> numP, <span class="dt">replace =</span> <span class="ot">TRUE</span>)<span class="op">/</span><span class="dv">1000</span></span>
-<span id="cb1168-4"><a href="graph2.html#cb1168-4"></a>  distImpact &lt;-<span class="st"> </span><span class="kw">sqrt</span>((myX <span class="op">-</span><span class="st"> </span>impact)<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>(myY <span class="op">-</span><span class="st"> </span>impact)<span class="op">^</span><span class="dv">2</span>)</span>
-<span id="cb1168-5"><a href="graph2.html#cb1168-5"></a>  dfXY &lt;-<span class="st"> </span><span class="kw">data.frame</span>(myX, myY, distImpact)</span>
-<span id="cb1168-6"><a href="graph2.html#cb1168-6"></a>  <span class="kw">plot</span>(<span class="dt">x =</span> dfXY<span class="op">$</span>myX, <span class="dt">y =</span> dfXY<span class="op">$</span>myY, <span class="dt">axes =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb1168-7"><a href="graph2.html#cb1168-7"></a>    <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">cex =</span> dfXY<span class="op">$</span>distImpact<span class="op">*</span>multCex, </span>
-<span id="cb1168-8"><a href="graph2.html#cb1168-8"></a>    <span class="dt">col =</span> myPal, <span class="dt">pch =</span> <span class="dv">16</span>)</span>
-<span id="cb1168-9"><a href="graph2.html#cb1168-9"></a>}</span>
-<span id="cb1168-10"><a href="graph2.html#cb1168-10"></a></span>
-<span id="cb1168-11"><a href="graph2.html#cb1168-11"></a>op &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1168-12"><a href="graph2.html#cb1168-12"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span> (<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb1168-13"><a href="graph2.html#cb1168-13"></a><span class="kw">makeImpact</span>(<span class="dt">myPal =</span> myPalMet1, <span class="dt">numP =</span> <span class="dv">3000</span>, <span class="dt">impact =</span> <span class="fl">0.33</span>)</span>
-<span id="cb1168-14"><a href="graph2.html#cb1168-14"></a><span class="kw">makeImpact</span>(<span class="dt">myPal =</span> myPalMet2, <span class="dt">numP =</span> <span class="dv">3000</span>, <span class="dt">impact =</span> <span class="fl">0.66</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1168-1"><a href="graph2.html#cb1168-1" aria-hidden="true" tabindex="-1"></a>makeImpact <span class="ot">&lt;-</span> <span class="cf">function</span>(myPal, <span class="at">numP =</span> <span class="dv">300</span>, <span class="at">impact =</span> <span class="fl">0.33</span>, <span class="at">multCex =</span> <span class="dv">3</span>){</span>
+<span id="cb1168-2"><a href="graph2.html#cb1168-2" aria-hidden="true" tabindex="-1"></a>  myX <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1000</span>, <span class="at">size =</span> numP, <span class="at">replace =</span> <span class="cn">TRUE</span>)<span class="sc">/</span><span class="dv">1000</span></span>
+<span id="cb1168-3"><a href="graph2.html#cb1168-3" aria-hidden="true" tabindex="-1"></a>  myY <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1000</span>, <span class="at">size =</span> numP, <span class="at">replace =</span> <span class="cn">TRUE</span>)<span class="sc">/</span><span class="dv">1000</span></span>
+<span id="cb1168-4"><a href="graph2.html#cb1168-4" aria-hidden="true" tabindex="-1"></a>  distImpact <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((myX <span class="sc">-</span> impact)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (myY <span class="sc">-</span> impact)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb1168-5"><a href="graph2.html#cb1168-5" aria-hidden="true" tabindex="-1"></a>  dfXY <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(myX, myY, distImpact)</span>
+<span id="cb1168-6"><a href="graph2.html#cb1168-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">x =</span> dfXY<span class="sc">$</span>myX, <span class="at">y =</span> dfXY<span class="sc">$</span>myY, <span class="at">axes =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb1168-7"><a href="graph2.html#cb1168-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">cex =</span> dfXY<span class="sc">$</span>distImpact<span class="sc">*</span>multCex, </span>
+<span id="cb1168-8"><a href="graph2.html#cb1168-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> myPal, <span class="at">pch =</span> <span class="dv">16</span>)</span>
+<span id="cb1168-9"><a href="graph2.html#cb1168-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1168-10"><a href="graph2.html#cb1168-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1168-11"><a href="graph2.html#cb1168-11" aria-hidden="true" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1168-12"><a href="graph2.html#cb1168-12" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span> (<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb1168-13"><a href="graph2.html#cb1168-13" aria-hidden="true" tabindex="-1"></a><span class="fu">makeImpact</span>(<span class="at">myPal =</span> myPalMet1, <span class="at">numP =</span> <span class="dv">3000</span>, <span class="at">impact =</span> <span class="fl">0.33</span>)</span>
+<span id="cb1168-14"><a href="graph2.html#cb1168-14" aria-hidden="true" tabindex="-1"></a><span class="fu">makeImpact</span>(<span class="at">myPal =</span> myPalMet2, <span class="at">numP =</span> <span class="dv">3000</span>, <span class="at">impact =</span> <span class="fl">0.66</span>)</span></code></pre></div>
 <p><img src="myRBook_SP_files/figure-html/021-02-graphiques-10-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1169-1"><a href="graph2.html#cb1169-1"></a><span class="kw">par</span>(op)</span></code></pre></div>
+<div class="sourceCode" id="cb1169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1169-1"><a href="graph2.html#cb1169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(op)</span></code></pre></div>
 </div>
-<div id="conclusión-9" class="section level2">
+<div id="conclusión-9" class="section level2" number="12.4">
 <h2><span class="header-section-number">12.4</span> Conclusión</h2>
 <p>Felicitaciones ! Este es el final de este capítulo sobre la gestión del color. Ahora sabemos cómo usar colores y paletas, y cómo guiar la selección de colores para resaltar nuestros resultados. En el siguiente capítulo veremos algunos ejemplos de paquetes de gráficos y las últimas tendencias, como los gráficos dinámicos.</p>
 
@@ -614,6 +650,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
