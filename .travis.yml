@@ -1,6 +1,6 @@
 language: R
 sudo: required #false
-dist: trusty
+dist: focal
 addons:
   apt:
     packages:
